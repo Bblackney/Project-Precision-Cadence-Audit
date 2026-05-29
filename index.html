@@ -817,7 +817,7 @@ function isNumeric(v) { return v !== null && v !== '' && v !== undefined && !isN
 // ── Rendering ────────────────────────────────────────────────────────────────
 function pct(v) {
   if (v === null || v === '' || v === undefined || isNaN(parseFloat(v))) return '<span class="metric-nil">—</span>';
-  return '<span class="metric-val">' + (parseFloat(v) * 100).toFixed(1) + '%</span>';
+  return '<span class="metric-val">' + parseFloat(v).toFixed(1) + '%</span>';
 }
 
 function scoreColor(s) {
