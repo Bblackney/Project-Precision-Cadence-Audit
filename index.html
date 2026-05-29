@@ -684,6 +684,7 @@
         <th data-col="open_rate" class="metric-cell">Open %</th>
         <th data-col="reply_rate" class="metric-cell">Reply %</th>
         <th data-col="connect_rate" class="metric-cell">Connect %</th>
+        <th data-col="meeting_rate" class="metric-cell">Meeting %</th>
         <th data-col="skip_rate" class="metric-cell">Skip %</th>
         <th data-col="emails_sent" class="metric-cell">Sent</th>
         <th data-col="run_date">Run Date</th>
@@ -893,6 +894,7 @@ function renderTable(rows) {
       <td class="metric-cell">${pct(r.open_rate)}</td>
       <td class="metric-cell">${pct(r.reply_rate)}</td>
       <td class="metric-cell">${pct(r.connect_rate)}</td>
+      <td class="metric-cell">${pct(r.meeting_rate)}</td>
       <td class="metric-cell">${pct(r.skip_rate)}</td>
       <td class="metric-cell"><span class="metric-val">${r.emails_sent || '—'}</span></td>
       <td>${r.run_date || '—'}</td>
