@@ -913,9 +913,9 @@ function renderTiles(rows) {
   const scores  = rows.map(r => parseFloat(r.score)).filter(n => !isNaN(n));
   const avgScore = scores.length ? (scores.reduce((a,b) => a+b,0) / scores.length).toFixed(0) : '—';
   const replies  = rows.map(r => parseFloat(r.reply_rate)).filter(n => !isNaN(n));
-  const avgReply = replies.length ? (replies.reduce((a,b) => a+b,0) / replies.length * 100).toFixed(1) + '%' : '—';
+  const avgReply = replies.length ? (replies.reduce((a,b) => a+b,0) / replies.length).toFixed(1) + '%' : '—';
   const opens    = rows.map(r => parseFloat(r.open_rate)).filter(n => !isNaN(n));
-  const avgOpen  = opens.length ? (opens.reduce((a,b) => a+b,0) / opens.length * 100).toFixed(1) + '%' : '—';
+  const avgOpen  = opens.length ? (opens.reduce((a,b) => a+b,0) / opens.length).toFixed(1) + '%' : '—';
 
   document.getElementById('t-total').textContent  = rows.length;
   document.getElementById('t-keep').textContent   = keep;
