@@ -110,6 +110,7 @@ tbody tr:last-child td { border-bottom: none; }
     </div>
     <table>
       <thead><tr>
+        <th data-col="cadence_id">Cadence ID</th>
         <th data-col="cadence_name">Cadence</th>
         <th data-col="score" style="text-align:right">Score</th>
         <th data-col="verdict">Verdict</th>
@@ -258,6 +259,7 @@ function renderTable(){
     var dv=displayVerdict(r),dl=displayLabel(r);
     var steps=r.steps_completed>=0?r.steps_completed.toLocaleString():'—';
     html+='<tr>';
+    html+='<td>'+r.cadence_id+'</td>';
     html+='<td>'+r.cadence_name.slice(0,55)+(r.cadence_name.length>55?'…':'')+'</td>';
     html+='<td style="text-align:right;font-weight:800;color:#003366">'+r.score+'</td>';
     html+='<td><span class="badge badge-'+dv+'">'+dl+'</span></td>';
