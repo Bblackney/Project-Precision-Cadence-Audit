@@ -36,7 +36,7 @@ select option{background:#04304C}
 .tval{font-family:"Poppins",sans-serif;font-size:28px;font-weight:700;color:var(--txt);line-height:1}
 .tsub{font-size:12px;color:var(--muted);margin-top:4px}
 .tile.keep .tval{color:var(--keep)}.tile.rev .tval{color:var(--review)}.tile.arc .tval{color:var(--archive)}
-.chart-row{display:grid;grid-template-columns:260px 1fr 300px;gap:16px;padding:0 40px 24px}
+.chart-row{display:grid;grid-template-columns:260px 1fr 420px;gap:16px;padding:0 40px 24px}
 .ctile{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
 .clbl{font-size:10px;font-weight:700;color:var(--stone);letter-spacing:.09em;text-transform:uppercase;margin-bottom:14px}
 .donut-row{display:flex;flex-direction:column;align-items:center;gap:14px}
@@ -178,6 +178,7 @@ footer{padding:20px 40px;border-top:1px solid var(--border);font-size:12px;color
     <thead><tr>
       <th data-col="cadence_name">Cadence</th>
       <th data-col="cadence_id">ID</th>
+      <th data-col="owner">Owner</th>
       <th data-col="created_at">Created</th>
       <th data-col="model_applied">Model</th>
       <th data-col="score" class="sorted">Score</th>
@@ -296,7 +297,7 @@ function bdown(r){
     var d=(v!==null&&v!=="")?(parseFloat(v).toFixed(1)+"%"):"-";
     h+="<div class=\"bm\"><div class=\"bml\">"+m.l+"</div><div class=\"bmv\">"+d+"</div><div class=\"bmp\">"+pts+" / "+m.mx+" pts</div></div>";
   }
-  return "<td colspan=\"14\"><div class=\"binner\">"+h+"</div></td>";
+  return "<td colspan=\"15\"><div class=\"binner\">"+h+"</div></td>";
 }
 
 function drawDonut(arc,rev,kp){
@@ -396,7 +397,7 @@ function renderTiles(rows){
 
 function renderTable(rows){
   var tb=document.getElementById("tbody");
-  if(!rows.length){tb.innerHTML="<tr><td colspan=\"14\" class=\"nodata\">No cadences match.</td></tr>";return;}
+  if(!rows.length){tb.innerHTML="<tr><td colspan=\"15\" class=\"nodata\">No cadences match.</td></tr>";return;}
   var h="";
   for(var i=0;i<rows.length;i++){
     var r=rows[i],s=parseInt(r.score)||0;
@@ -404,7 +405,7 @@ function renderTable(rows){
     var nm=(r.cadence_name||"-").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
     h+="<tr>"
       +"<td><span class=\"cname\" title=\""+nm+"\">"+nm+"</span></td>"
-      +"<td style=\"font-size:11px;color:#a0c4d8\">"+(r.cadence_id||"-")+"</td>"
+      +"<td style=\"font-size:11px;color:#a0c4d8\">"+(r.cadence_id||"-")+"</td>"+"<td style=\"font-size:12px\">"+(r.owner||"-")+"</td>"
       +"<td style=\"font-size:11px;color:#a0c4d8\">"+(r.created_at||"-")+"</td>"
       +"<td>"+mtag(r.model_applied)+"</td>"
       +"<td><div class=\"sbar-wrap\"><div class=\"sbar\"><div class=\"sbar-fill\" style=\"width:"+s+"%;background:"+sc(s)+"\"></div></div><span class=\"sval\" style=\"color:"+sc(s)+"\">"+s+"</span></div></td>"
