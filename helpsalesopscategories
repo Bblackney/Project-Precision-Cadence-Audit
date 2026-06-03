@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #08090d; --surface: #0f1117; --border: #1a1f2e; --text: #e8edf5;
+    --muted: #5a6478; --dim: #2e3748;
+    --blue: #4f8ef7; --purple: #b06ef3; --orange: #ff7b3d;
+    --green: #34d97b; --red: #f05252; --yellow: #f5c542;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; min-height: 100vh; padding: 24px; line-height: 1.5; }
+  .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .channel-tag { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--blue); background: rgba(79,142,247,0.08); border: 1px solid rgba(79,142,247,0.2); padding: 3px 8px; border-radius: 2px; display: inline-block; margin-bottom: 6px; letter-spacing: .06em; }
+  .title { font-size: 19px; font-weight: 700; color: var(--text); letter-spacing: -.025em; line-height: 1.2; }
+  .subtitle { font-size: 10px; color: var(--muted); margin-top: 4px; }
+  .meta { text-align: right; font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--dim); line-height: 1.7; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
+  .kpi { background: var(--surface); border: 1px solid var(--border); border-radius: 5px; padding: 13px 15px; position: relative; overflow: hidden; }
+  .kpi-top { position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+  .kpi-label { font-size: 8px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; font-family: 'IBM Plex Mono', monospace; }
+  .kpi-value { font-size: 24px; font-weight: 700; line-height: 1; font-family: 'IBM Plex Mono', monospace; }
+  .kpi-hint { font-size: 9px; color: var(--dim); margin-top: 4px; }
+  .tabs { display: flex; gap: 2px; margin-bottom: 16px; }
+  .tab { padding: 6px 14px; border-radius: 3px; border: 1px solid transparent; background: transparent; color: var(--muted); cursor: pointer; font-size: 11px; font-weight: 500; font-family: 'IBM Plex Sans', sans-serif; transition: all .15s; }
+  .tab:hover { color: var(--text); }
+  .tab.active { border-color: var(--border); background: var(--surface); color: var(--text); font-weight: 600; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .two-col { display: grid; grid-template-columns: 1fr 1.7fr; gap: 12px; }
+  .two-equal { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .three-col { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 5px; padding: 16px; }
+  .card-title { font-size: 11px; font-weight: 700; color: var(--text); margin-bottom: 14px; }
+  .badge { font-family: 'IBM Plex Mono', monospace; font-size: 8px; padding: 2px 7px; border-radius: 2px; letter-spacing: .04em; }
+  .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .donut-wrap { display: flex; align-items: center; gap: 18px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; }
+  .legend-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .legend-name { flex: 1; font-size: 11px; color: var(--text); }
+  .legend-pct { font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; }
+  .bar-row { display: grid; grid-template-columns: 150px 1fr 52px; align-items: center; gap: 9px; margin-bottom: 6px; }
+  .bar-label { font-size: 9px; color: var(--muted); text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: 'IBM Plex Mono', monospace; }
+  .bar-track { background: var(--dim); border-radius: 2px; height: 4px; }
+  .bar-fill { height: 4px; border-radius: 2px; }
+  .bar-lvl { font-family: 'IBM Plex Mono', monospace; font-size: 8px; text-align: right; }
+  .subtype-item { display: flex; justify-content: space-between; align-items: center; padding: 7px 10px; background: rgba(255,255,255,0.015); border: 1px solid var(--border); border-radius: 3px; margin-bottom: 5px; }
+  .subtype-name { font-size: 11px; color: var(--text); flex: 1; padding-right: 8px; }
+  .level-badge { font-family: 'IBM Plex Mono', monospace; font-size: 8px; flex-shrink: 0; }
+  .ex-table { width: 100%; border-collapse: collapse; }
+  .ex-table th { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+  .ex-table td { padding: 8px 10px; font-size: 11px; vertical-align: top; border-bottom: 1px solid rgba(26,31,46,0.6); }
+  .cat-pill { font-size: 8px; padding: 2px 7px; border-radius: 99px; font-weight: 600; white-space: nowrap; }
+  .insight-card { background: rgba(255,255,255,0.015); border: 1px solid var(--border); border-radius: 4px; padding: 14px; }
+  .insight-title { font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 7px; }
+  .insight-body { font-size: 11px; color: var(--muted); line-height: 1.65; }
+  .footer { font-size: 9px; color: var(--dim); margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace; }
+  .tbl-header-row { font-family: 'IBM Plex Mono', monospace; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); margin-bottom: 12px; padding-bottom: 7px; border-bottom: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="channel-tag">#help-salesops</div>
+    <div class="title">Request Categorization — 2026 YTD</div>
+    <div class="subtitle">Jan 1 – Jun 30, 2026 &middot; ~300 parent messages sampled &middot; Bot/merge-bot confirmations excluded</div>
+  </div>
+  <div class="meta">Generated Jun 3, 2026<br>Brett Blackney &middot; Sales Ops</div>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="kpi-top" style="background:#4f8ef7"></div><div class="kpi-label">Admin / Systems Fix</div><div class="kpi-value" style="color:#4f8ef7">~55%</div><div class="kpi-hint">Largest single bucket</div></div>
+  <div class="kpi"><div class="kpi-top" style="background:#b06ef3"></div><div class="kpi-label">General Questions</div><div class="kpi-value" style="color:#b06ef3">~30%</div><div class="kpi-hint">How-to, data, access, process</div></div>
+  <div class="kpi"><div class="kpi-top" style="background:#ff7b3d"></div><div class="kpi-label">ROE / Credit Dispute</div><div class="kpi-value" style="color:#ff7b3d">~15%</div><div class="kpi-hint">Ownership, territory, credit</div></div>
+  <div class="kpi"><div class="kpi-top" style="background:#34d97b"></div><div class="kpi-label">Avg Daily Volume</div><div class="kpi-value" style="color:#34d97b">40&ndash;70</div><div class="kpi-hint">EOM spikes 2&ndash;3&times; normal</div></div>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('overview',this)">Overview</button>
+  <button class="tab" onclick="switchTab('subtypes',this)">Sub-types</button>
+  <button class="tab" onclick="switchTab('examples',this)">Examples</button>
+  <button class="tab" onclick="switchTab('insights',this)">Insights</button>
+</div>
+
+<!-- OVERVIEW -->
+<div class="panel active" id="overview">
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Overall Split</div>
+      <div class="donut-wrap">
+        <svg width="120" height="120" viewBox="0 0 120 120" style="flex-shrink:0">
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#1a1f2e" stroke-width="14"/>
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#4f8ef7" stroke-width="14" stroke-dasharray="152 125" stroke-dashoffset="0" transform="rotate(-90 60 60)"/>
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#b06ef3" stroke-width="14" stroke-dasharray="83 194" stroke-dashoffset="-152" transform="rotate(-90 60 60)"/>
+          <circle cx="60" cy="60" r="44" fill="none" stroke="#ff7b3d" stroke-width="14" stroke-dasharray="42 235" stroke-dashoffset="-235" transform="rotate(-90 60 60)"/>
+          <text x="60" y="56" text-anchor="middle" fill="#e8edf5" font-family="IBM Plex Mono" font-size="14" font-weight="700">3</text>
+          <text x="60" y="68" text-anchor="middle" fill="#5a6478" font-family="IBM Plex Sans" font-size="8">buckets</text>
+        </svg>
+        <div>
+          <div class="legend-item"><div class="legend-dot" style="background:#4f8ef7"></div><span class="legend-name">Admin / Systems</span><span class="legend-pct" style="color:#4f8ef7">55%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#b06ef3"></div><span class="legend-name">General Questions</span><span class="legend-pct" style="color:#b06ef3">30%</span></div>
+          <div class="legend-item"><div class="legend-dot" style="background:#ff7b3d"></div><span class="legend-name">ROE / Credit</span><span class="legend-pct" style="color:#ff7b3d">15%</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title" style="margin:0">Admin / Systems &mdash; Sub-types</span>
+        <span class="badge" style="background:rgba(79,142,247,0.1);color:#4f8ef7">Relative frequency</span>
+      </div>
+      <div id="admin-bars"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SUBTYPES -->
+<div class="panel" id="subtypes">
+  <div class="two-equal">
+    <div class="card">
+      <div class="card-header"><span class="card-title" style="margin:0">General Questions</span><span class="badge" style="background:rgba(176,110,243,0.1);color:#b06ef3">~30% of total</span></div>
+      <div id="general-items"></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-title" style="margin:0">ROE / Credit Dispute</span><span class="badge" style="background:rgba(255,123,61,0.1);color:#ff7b3d">~15% of total</span></div>
+      <div id="roe-items"></div>
+    </div>
+  </div>
+</div>
+
+<!-- EXAMPLES -->
+<div class="panel" id="examples">
+  <div class="card">
+    <div class="tbl-header-row">Representative Examples by Category</div>
+    <table class="ex-table">
+      <thead><tr><th>Category</th><th>Sub-type</th><th>Example (paraphrased)</th><th>Pattern / Signal</th></tr></thead>
+      <tbody id="examples-tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- INSIGHTS -->
+<div class="panel" id="insights">
+  <div class="three-col" id="insights-grid"></div>
+</div>
+
+<div class="footer">Sample: ~300 parent messages, Jan&ndash;Jun 2026. Percentages are directional estimates. Analysis by Brett Blackney, Sales Ops &mdash; Jun 3, 2026.</div>
+
+<script>
+var adminBars=[
+  {label:"Merge dupe accounts/contacts",pct:100,level:"Very High",color:"#4f8ef7"},
+  {label:"MRR sync / paid MRR issue",pct:86,level:"High",color:"#5f98f8"},
+  {label:"Discount / PW approval",pct:80,level:"High",color:"#5f98f8"},
+  {label:"Opp re-open / CL in error",pct:60,level:"Med",color:"#7aaff9"},
+  {label:"Lead merge / lead\u2192contact",pct:55,level:"Med",color:"#7aaff9"},
+  {label:"Close date / locked field edit",pct:48,level:"Med",color:"#9ac3fb"},
+  {label:"Quote error / trial link",pct:44,level:"Med",color:"#9ac3fb"},
+  {label:"SDR / BDR owner change",pct:40,level:"Med",color:"#9ac3fb"},
+  {label:"Salesloft issues",pct:26,level:"Low",color:"#b8d5fc"},
+  {label:"ChiliPiper booking error",pct:18,level:"Low",color:"#b8d5fc"},
+  {label:"Gong / SFDC access error",pct:13,level:"Low",color:"#b8d5fc"},
+];
+var generalItems=[
+  {name:"How SFDC fields / logic works (stages, dates, formulas)",level:"Very High",color:"#b06ef3"},
+  {name:"Segment / territory questions (is this Velocity? MM?)",level:"High",color:"#b06ef3"},
+  {name:"Process questions (AQL, Gov flag, comp eligibility)",level:"High",color:"#b06ef3"},
+  {name:"Custom report or data requests",level:"Medium",color:"#c89df6"},
+  {name:"Tool access / provisioning (ZoomInfo, Scratchpad, SL)",level:"Medium",color:"#c89df6"},
+  {name:"Hot lead / MQL logic questions",level:"Low",color:"#5a6478"},
+  {name:"Routing / LeanData questions",level:"Low",color:"#5a6478"},
+];
+var roeItems=[
+  {name:"BDR/SDR credit claim on closed opp or card-in",level:"High",color:"#ff7b3d"},
+  {name:"Account relinquish to Velocity / resegment",level:"High",color:"#ff7b3d"},
+  {name:"Account reassignment (wrong AE / post-recarve)",level:"Medium",color:"#ffaa80"},
+  {name:"Opp ownership transfer (open territory, referral)",level:"Medium",color:"#ffaa80"},
+  {name:"Consultant / partner credit (sourced vs. influenced)",level:"Medium",color:"#ffaa80"},
+  {name:"ROE edge cases (30-day rule, no connect/reply)",level:"Low",color:"#5a6478"},
+];
+var examples=[
+  {cat:"Admin",catColor:"#4f8ef7",subtype:"Merge dupe accounts",example:"Can you merge these two accounts? One is from the integration.",pattern:"~Daily; spikes post-integration"},
+  {cat:"Admin",catColor:"#4f8ef7",subtype:"MRR not syncing",example:"Paid MRR showing on quote but not syncing to opp / dashboard.",pattern:"Repeating; multiple reps, same root cause"},
+  {cat:"Admin",catColor:"#4f8ef7",subtype:"PW / discount approval",example:"Client on the line \u2014 can you approve this summer promo PW?",pattern:"EOM surge; urgency framing universal"},
+  {cat:"Admin",catColor:"#4f8ef7",subtype:"Quote build error",example:"Getting an error sending a quote \u2014 trial account not linking.",pattern:"Distinct from MRR sync; UX friction in quoting"},
+  {cat:"General Q",catColor:"#b06ef3",subtype:"SFDC logic / how-to",example:"What does stage_date_accepted mean? Same as S2?",pattern:"Same questions repeat; training gap clear"},
+  {cat:"General Q",catColor:"#b06ef3",subtype:"Segment / territory",example:"This account has 47 attorneys \u2014 should it be MM or Strat?",pattern:"Firmographic ambiguity; not self-serve"},
+  {cat:"General Q",catColor:"#b06ef3",subtype:"Data request",example:"Can you build a report of MM firms in MW2 with no activity in 5+ years?",pattern:"Custom one-offs; not achievable without admin"},
+  {cat:"ROE / Credit",catColor:"#ff7b3d",subtype:"BDR/SDR credit",example:"This customer is the same contact my BDR has been working \u2014 how do we get credit?",pattern:"Missing BDR attribution on inbound card-ins"},
+  {cat:"ROE / Credit",catColor:"#ff7b3d",subtype:"Account relinquish",example:"Relinquishing to Velocity \u2014 solo firm per website.",pattern:"Strat AEs holding Velocity accounts; routing gap"},
+  {cat:"ROE / Credit",catColor:"#ff7b3d",subtype:"Territory dispute",example:"Account was supposed to move to my name in the 2025 recarve.",pattern:"Post-recarve data hygiene failure"},
+];
+var insights=[
+  {icon:"\u26a1",title:"Automation Opportunity",color:"#4f8ef7",body:"Merges, MRR syncs, opp re-opens are rule-based and high-frequency. Merge bot is already partially there. Self-service flows would meaningfully cut daily admin load."},
+  {icon:"\ud83d\udcda",title:"Training Signal",color:"#b06ef3",body:"~30% of volume is 'how does this work' questions \u2014 same questions repeat across reps and months. A searchable KB or updated Seismic content would deflect this without any systems work."},
+  {icon:"\u2696\ufe0f",title:"ROE Clarity Gap",color:"#ff7b3d",body:"BDR credit on card-ins and strat reps holding velocity accounts are the two dominant ROE patterns. Both are structural routing/policy gaps \u2014 solvable at the system level."},
+  {icon:"\ud83d\udcc5",title:"EOM Surge Risk",color:"#f05252",body:"Discount/PW approvals spike 2\u20133\u00d7 at EOM with 'client on the line' urgency. An approval queue or dedicated EOM coverage would reduce SLA pressure on the team."},
+  {icon:"\ud83d\udd00",title:"Integration Watch",color:"#34d97b",body:"Dupe merges are already the #1 request type. Post Themis/Core integration (July 2026) expect another spike. Proactive dupe detection should be scoped now, not after launch."},
+  {icon:"\ud83d\udd27",title:"Salesloft Cluster Risk",color:"#f5c542",body:"SL issues cluster around release windows \u2014 each incident generates 10\u201320+ individual help requests. Proactive comms at SL release time would reduce this noise significantly."},
+];
+
+var adminEl=document.getElementById('admin-bars');
+adminBars.forEach(function(b){
+  adminEl.innerHTML+='<div class="bar-row"><div class="bar-label">'+b.label+'</div><div class="bar-track"><div class="bar-fill" style="width:'+b.pct+'%;background:'+b.color+'"></div></div><div class="bar-lvl" style="color:'+b.color+'">'+b.level+'</div></div>';
+});
+
+var genEl=document.getElementById('general-items');
+generalItems.forEach(function(i){
+  genEl.innerHTML+='<div class="subtype-item"><span class="subtype-name">'+i.name+'</span><span class="level-badge" style="color:'+i.color+'">'+i.level+'</span></div>';
+});
+
+var roeEl=document.getElementById('roe-items');
+roeItems.forEach(function(i){
+  roeEl.innerHTML+='<div class="subtype-item"><span class="subtype-name">'+i.name+'</span><span class="level-badge" style="color:'+i.color+'">'+i.level+'</span></div>';
+});
+
+var tbody=document.getElementById('examples-tbody');
+examples.forEach(function(r){
+  tbody.innerHTML+='<tr><td><span class="cat-pill" style="background:'+r.catColor+'22;color:'+r.catColor+'">'+r.cat+'</span></td><td style="color:#5a6478;font-family:IBM Plex Mono,monospace;font-size:10px;white-space:nowrap">'+r.subtype+'</td><td style="color:#e8edf5">"'+r.example+'"</td><td style="color:#5a6478">'+r.pattern+'</td></tr>';
+});
+
+var insEl=document.getElementById('insights-grid');
+insights.forEach(function(ins){
+  insEl.innerHTML+='<div class="insight-card" style="border-left:3px solid '+ins.color+'"><div class="insight-title" style="color:'+ins.color+'">'+ins.icon+' '+ins.title+'</div><div class="insight-body">'+ins.body+'</div></div>';
+});
+
+function switchTab(id,btn){
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');});
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
