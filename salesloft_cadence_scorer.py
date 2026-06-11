@@ -25,7 +25,9 @@ SCORING MODEL v2.1 — both BDR and SDR max 100 pts, no skip rate
     Connect Rate  ≥15% →20 | ≥7%  →13 | ≥3% →6  | <3% →0
     Open Rate     ≥35% →15 | ≥25% →10 | ≥15% →5 | <15% →0
 
-Sample gate: people_acted_on_count < 100 → ARCHIVE, all pts = 0, low_sample = True
+Sample flag: people_acted_on_count < 100 → low_sample = True. The cadence is STILL
+             scored normally — it is only flagged in the dashboard, never gated to 0 pts
+             or forced to ARCHIVE.
 Verdicts:    ≥75 KEEP | 50–74 REVIEW | <50 ARCHIVE
 
 Credentials: salesloft_credentials.json  {"api_token": "v2_ak_..."}
@@ -51,7 +53,7 @@ MASTER_HTML = os.path.join(BASE_DIR, "index.html")
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 SL_BASE_URL   = "https://api.salesloft.com/v2"
-MIN_PEOPLE    = 100    # sample gate: people_acted_on_count must be >= this
+MIN_PEOPLE    = 100    # low-sample threshold: < this → low_sample flag (still scored)
 REQUEST_DELAY = 0.5    # seconds between API calls (~2 req/sec, avoids rate limits)
 
 # ── API helpers ───────────────────────────────────────────────────────────────
