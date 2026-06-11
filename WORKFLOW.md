@@ -1,6 +1,6 @@
 # Cadence Performance Scorecard — Workflow (current)
 
-_Last updated: 2026-06-10. Supersedes the SFDC + CSV-upload workflow, `SKILL_cadence_scoring_updated.md`, and the Cowork scheduled task `cadence-api-weekly-scoring`._
+_Last updated: 2026-06-11. Supersedes the SFDC + CSV-upload workflow, `SKILL_cadence_scoring_updated.md`, and the Cowork scheduled task `cadence-api-weekly-scoring`._
 
 ## What it does
 
@@ -41,7 +41,7 @@ Edit `com.clio.cadence-scorer.plist`, then run `bash install_scheduler.sh`.
 - Cadences: `/v2/cadences?status[]=active` (active only)
 - Filter: `team_cadence == true` (personal copies excluded)
 - Per-cadence stats: `/v2/cadence_stats/:id` (emails, opens, replies, calls, meetings, people_acted_on)
-- Connected calls: `/v2/activities/calls?connected=true` (streamed, aggregated by cadence_id)
+- Connected calls: `/v2/activities/calls?disposition[]=Connected` (streamed all-time; aggregated by cadence_id; non-cadence calls skipped)
 - Credentials: `salesloft_credentials.json` (gitignored — never commit)
 
 Rates:
