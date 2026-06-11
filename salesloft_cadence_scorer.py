@@ -78,7 +78,16 @@ def _get(token, path, params=None, _retry=0):
         print(f"    [HTTP {e.code}] {path}: {body[:200]}")
         return None
     except Exception as e:
-        print(f"    [ERR] {path}: {e}")
+        # Transient read/connection errors (IncompleteRead, timeouts, dropped
+        # sockets) — retry with backoff instead of giving up, so a single network
+        # hiccup can't truncate the connected-calls stream (Phase 3) mid-run.
+        if _retry < 4:
+            wait = 5 * (2 ** _retry)   # 5s, 10s, 20s, 40s
+            print(f"    [retry] {path}: {type(e).__name__} — waiting {wait}s "
+                  f"before retry {_retry + 1}/4…")
+            time.sleep(wait)
+            return _get(token, path, params, _retry + 1)
+        print(f"    [ERR] {path}: {e} (gave up after 4 retries)")
         return None
 
 
