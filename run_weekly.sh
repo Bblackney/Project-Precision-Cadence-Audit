@@ -20,7 +20,8 @@ echo "=================================================================" >> "$LO
 echo "$(date '+%F %T') >> Starting weekly cadence run" >> "$LOG"
 
 # 1) Score (fetch Salesloft, score, append CSV, regenerate index.html)
-python3 salesloft_cadence_scorer.py >> "$LOG" 2>&1
+# -u = unbuffered stdout so progress lines stream to scheduler.log live (tail -f).
+python3 -u salesloft_cadence_scorer.py >> "$LOG" 2>&1
 RC=$?
 if [ "$RC" -ne 0 ]; then
   echo "$(date '+%F %T') [ERR] scorer exited $RC — skipping git push" >> "$LOG"
@@ -28,6 +29,9 @@ if [ "$RC" -ne 0 ]; then
 fi
 
 # 2) Commit + push refreshed outputs (push failure is non-fatal)
+# Clear any stale git locks first — a crashed/previous git op leaves a *.lock
+# that would otherwise block this commit (and thus the weekly push).
+find .git -name '*.lock' -delete 2>/dev/null
 git add cadence_scores_master.csv index.html >> "$LOG" 2>&1
 if git diff --cached --quiet; then
   echo "$(date '+%F %T') no output changes to commit" >> "$LOG"
