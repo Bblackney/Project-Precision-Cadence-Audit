@@ -57,13 +57,13 @@ Also excluded: archived cadences, and non-team (personal) cadences.
 
 ## Scoring model v2.1 (both models max 100 pts; no skip rate)
 
-Sample flag: `people_acted_on_count < 100` → `low_sample = True` (still scored, flagged in dashboard).
+Sample handling: `people_acted_on_count == 0` → **NO DATA**. `1–99` → **LOW SAMPLE** (scored & shown, not bucketed). `≥100` → bucketed KEEP/REVIEW/ARCHIVE by score. (`low_sample` column still written: `True` when <100.)
 
 **BDR:** Meeting ≥15→35, ≥5→20, <5→0 | Reply ≥10→30, ≥5→22, ≥2→13, <2→0 | Connect ≥15→20, ≥7→13, ≥3→6, <3→0 | Open ≥50→15, ≥35→10, ≥20→5, <20→0
 
 **SDR:** Meeting ≥10→35, ≥5→20, ≥2→13, <2→0 | Reply ≥3→30, ≥1→22, <1→0 | Connect ≥15→20, ≥7→13, ≥3→6, <3→0 | Open ≥35→15, ≥25→10, ≥15→5, <15→0
 
-Verdicts: ≥75 KEEP | 50–74 REVIEW | <50 ARCHIVE
+Verdicts (≥100 people only): ≥75 KEEP | 50–74 REVIEW | <50 ARCHIVE. Cadences with <100 people → LOW SAMPLE; 0 people → NO DATA (neither is bucketed).
 
 ## Master CSV schema (append-only — never overwrite)
 

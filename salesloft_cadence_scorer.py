@@ -25,10 +25,8 @@ SCORING MODEL v2.1 — both BDR and SDR max 100 pts, no skip rate
     Connect Rate  ≥15% →20 | ≥7%  →13 | ≥3% →6  | <3% →0
     Open Rate     ≥35% →15 | ≥25% →10 | ≥15% →5 | <15% →0
 
-Sample flag: people_acted_on_count < 100 → low_sample = True. The cadence is STILL
-             scored normally — it is only flagged in the dashboard, never gated to 0 pts
-             or forced to ARCHIVE.
-Verdicts:    ≥75 KEEP | 50–74 REVIEW | <50 ARCHIVE
+Verdict buckets: people_acted_on_count == 0 → NO DATA; 1–99 → LOW SAMPLE (scored & shown,
+             not bucketed); ≥100 → KEEP/REVIEW/ARCHIVE by score (≥75 / 50–74 / <50).
 
 Credentials: salesloft_credentials.json  {"api_token": "v2_ak_..."}
 Outputs:     cadence_scores_master.csv (appended), index.html (regenerated)
@@ -181,8 +179,8 @@ def read_all_csv():
 
 
 # ── HTML dashboard ─────────────────────────────────────────────────────────────
-VERDICT_COLOR = {"KEEP": "#16a34a", "REVIEW": "#d97706", "ARCHIVE": "#dc2626"}
-VERDICT_BG    = {"KEEP": "#dcfce7", "REVIEW": "#fef9c3", "ARCHIVE": "#fee2e2"}
+VERDICT_COLOR = {"KEEP": "#16a34a", "REVIEW": "#d97706", "ARCHIVE": "#dc2626", "LOW SAMPLE": "#475569", "NO DATA": "#94a3b8"}
+VERDICT_BG    = {"KEEP": "#dcfce7", "REVIEW": "#fef9c3", "ARCHIVE": "#fee2e2", "LOW SAMPLE": "#e2e8f0", "NO DATA": "#f8fafc"}
 
 
 def _safe_float(v, default=0.0):
@@ -231,12 +229,14 @@ def generate_html(all_rows, run_date):
     dates       = sorted(set(r["run_date"] for r in all_rows if r.get("run_date")), reverse=True)
     latest      = dates[0] if dates else run_date
     latest_rows = [r for r in all_rows if r.get("run_date") == latest]
-    scored      = [r for r in latest_rows if _safe_float(r.get("steps_completed")) >= MIN_PEOPLE]
-    low_n       = len(latest_rows) - len(scored)
-    keep_n      = sum(1 for r in scored if r.get("verdict") == "KEEP")
-    review_n    = sum(1 for r in scored if r.get("verdict") == "REVIEW")
-    archive_n   = sum(1 for r in scored if r.get("verdict") == "ARCHIVE")
-    total_n     = len(scored)
+
+    # Every cadence in the latest run carries exactly one verdict:
+    # KEEP/REVIEW/ARCHIVE (only for ≥100-people cadences), LOW SAMPLE (<100), or NO DATA (0).
+    keep_n      = sum(1 for r in latest_rows if r.get("verdict") == "KEEP")
+    review_n    = sum(1 for r in latest_rows if r.get("verdict") == "REVIEW")
+    archive_n   = sum(1 for r in latest_rows if r.get("verdict") == "ARCHIVE")
+    low_n       = sum(1 for r in latest_rows if r.get("verdict") == "LOW SAMPLE")
+    nodata_n    = sum(1 for r in latest_rows if r.get("verdict") == "NO DATA")
 
     all_rows_html = "\n".join(_row_html(r) for r in all_rows)
     date_options  = "\n      ".join(
@@ -263,8 +263,8 @@ def generate_html(all_rows, run_date):
     .kpi.keep .num{{color:#16a34a}}.kpi.keep .lbl{{color:#166534}}
     .kpi.review .num{{color:#d97706}}.kpi.review .lbl{{color:#92400e}}
     .kpi.archive .num{{color:#dc2626}}.kpi.archive .lbl{{color:#991b1b}}
-    .kpi.total .num{{color:#1e40af}}.kpi.total .lbl{{color:#1e3a8a}}
-    .kpi.low .num{{color:#9ca3af}}.kpi.low .lbl{{color:#6b7280}}
+    .kpi.low .num{{color:#475569}}.kpi.low .lbl{{color:#334155}}
+    .kpi.nodata .num{{color:#94a3b8}}.kpi.nodata .lbl{{color:#64748b}}
     .ctrl{{background:white;padding:12px 32px;border-bottom:1px solid #e2e8f0;display:flex;gap:14px;align-items:center;flex-wrap:wrap}}
     .ctrl label{{font-size:12px;font-weight:500;color:#374151;display:flex;flex-direction:column;gap:3px}}
     .ctrl select,.ctrl input{{border:1px solid #d1d5db;border-radius:5px;padding:5px 8px;font-size:12px;outline:none;background:white;min-width:120px}}
@@ -290,8 +290,8 @@ def generate_html(all_rows, run_date):
   <div class="kpi keep">   <div class="num" id="kpiKeep">{keep_n}</div>    <div class="lbl">Keep</div></div>
   <div class="kpi review"> <div class="num" id="kpiReview">{review_n}</div> <div class="lbl">Review</div></div>
   <div class="kpi archive"><div class="num" id="kpiArchive">{archive_n}</div><div class="lbl">Archive</div></div>
-  <div class="kpi total">  <div class="num" id="kpiTotal">{total_n}</div>   <div class="lbl">Scored</div></div>
   <div class="kpi low">    <div class="num" id="kpiLow">{low_n}</div>       <div class="lbl">Low Sample</div></div>
+  <div class="kpi nodata"> <div class="num" id="kpiNoData">{nodata_n}</div> <div class="lbl">No Data</div></div>
 </div>
 
 <div class="ctrl">
@@ -314,6 +314,8 @@ def generate_html(all_rows, run_date):
       <option value="KEEP">KEEP</option>
       <option value="REVIEW">REVIEW</option>
       <option value="ARCHIVE">ARCHIVE</option>
+      <option value="LOW SAMPLE">LOW SAMPLE</option>
+      <option value="NO DATA">NO DATA</option>
     </select>
   </label>
   <label>Search
@@ -345,7 +347,7 @@ def generate_html(all_rows, run_date):
 </div>
 
 <div class="foot">
-  Both models max 100 pts &nbsp;|&nbsp; Verdicts: ≥75 KEEP · 50–74 REVIEW · &lt;50 ARCHIVE &nbsp;|&nbsp; ⚠ = fewer than 100 people acted on (scored, treat with caution)<br>
+  Both models max 100 pts &nbsp;|&nbsp; KEEP / REVIEW / ARCHIVE apply only to cadences with ≥100 people acted on (≥75 KEEP · 50–74 REVIEW · &lt;50 ARCHIVE) &nbsp;|&nbsp; LOW SAMPLE = &lt;100 people (scored &amp; shown, not bucketed) &nbsp;|&nbsp; NO DATA = no one acted on<br>
   BDR: Mtg ≥15%=35, ≥5%=20 &nbsp;· Reply ≥10%=30, ≥5%=22, ≥2%=13 &nbsp;· Connect ≥15%=20, ≥7%=13, ≥3%=6 &nbsp;· Open ≥50%=15, ≥35%=10, ≥20%=5<br>
   SDR: Mtg ≥10%=35, ≥5%=20, ≥2%=13 &nbsp;· Reply ≥3%=30, ≥1%=22 &nbsp;· Connect ≥15%=20, ≥7%=13, ≥3%=6 &nbsp;· Open ≥35%=15, ≥25%=10, ≥15%=5
 </div>
@@ -360,23 +362,22 @@ function filter(){{
   const m=document.getElementById('fModel').value;
   const v=document.getElementById('fVerdict').value;
   const s=document.getElementById('fSearch').value.toLowerCase();
-  let vis=0,k=0,rv=0,ar=0,lo=0,tot=0;
+  let vis=0,k=0,rv=0,ar=0,lo=0,nd=0;
   allRows.forEach(r=>{{
     const show=(!d||r.dataset.date===d)&&(!m||r.dataset.model===m)&&(!v||r.dataset.verdict===v)&&(!s||r.cells[0].textContent.toLowerCase().includes(s));
     r.style.display=show?'':'none';
     if(show){{
       vis++;
-      const ls=r.cells[0].querySelector('span[title]')!==null;
-      if(ls)lo++;else tot++;
-      if(r.dataset.verdict==='KEEP')k++;else if(r.dataset.verdict==='REVIEW')rv++;else ar++;
+      const vd=r.dataset.verdict;
+      if(vd==='KEEP')k++;else if(vd==='REVIEW')rv++;else if(vd==='ARCHIVE')ar++;else if(vd==='LOW SAMPLE')lo++;else if(vd==='NO DATA')nd++;
     }}
   }});
   document.getElementById('rowCount').textContent=vis+' cadences';
   document.getElementById('kpiKeep').textContent=k;
   document.getElementById('kpiReview').textContent=rv;
   document.getElementById('kpiArchive').textContent=ar;
-  document.getElementById('kpiTotal').textContent=tot;
   document.getElementById('kpiLow').textContent=lo;
+  document.getElementById('kpiNoData').textContent=nd;
 }}
 
 function sort(col){{
@@ -593,6 +594,16 @@ def main():
             c["model"], meeting_rate, reply_rate, connect_rate, open_rate
         )
         cadence_verdict = get_verdict(total_score)
+        # Verdict buckets — every cadence gets exactly one:
+        #  • Zero activity (nobody acted on) → NO DATA.
+        #  • Low sample (<100 people) → LOW SAMPLE — scored and shown, but NOT
+        #    bucketed as KEEP/REVIEW/ARCHIVE (too thin to judge).
+        #  • Only cadences with ≥100 people acted on get KEEP/REVIEW/ARCHIVE by score.
+        if people_acted_on == 0:
+            cadence_verdict = "NO DATA"
+            total_score = 0
+        elif low_sample:
+            cadence_verdict = "LOW SAMPLE"
 
         scored_rows.append({
             "run_date":         run_date,
