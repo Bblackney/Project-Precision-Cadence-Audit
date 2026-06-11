@@ -1,2 +1,10 @@
 .DS_Store
 *.tmp
+
+salesloft_credentials.json
+sfdc_credentials.json
+scheduler.log
+launchd.out.log
+launchd.err.log
+*.BACKUP_*.csv
+*.BACKUP_*.html
