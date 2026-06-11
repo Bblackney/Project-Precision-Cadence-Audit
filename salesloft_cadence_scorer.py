@@ -527,10 +527,12 @@ def main():
 
     pg = 1
     total_records = 0
+    skipped_no_cadence = 0
     while True:
-        resp = _get(token, "/activities/calls", {
-            "connected": "true", "per_page": 100, "page": pg,
-        })
+        # disposition[]=Connected — the documented filter for connected calls
+        # (replaces the undocumented connected=true). Brackets are written into
+        # the URL by hand so urlencode can't escape them (same pattern as Phase 1).
+        resp = _get(token, f"/activities/calls?disposition[]=Connected&per_page=100&page={pg}")
         time.sleep(REQUEST_DELAY)
         if resp is None:
             break
@@ -538,14 +540,18 @@ def main():
         if not records:
             break
         if pg == 1 and records:
-            # Debug: show cadence-related keys from first record to confirm field name
             sample = records[0]
-            cadence_keys = {k: v for k, v in sample.items()
-                            if "cadence" in k.lower() or k == "id"}
-            print(f"  [debug] first record keys with 'cadence': {cadence_keys}")
+            print(f"  [debug] first record disposition={sample.get('disposition')!r} "
+                  f"cadence={sample.get('cadence')}")
         for rec in records:
-            # cadence_id may be top-level or nested under a "cadence" object
+            # Defensive: only count true connects, in case the API ignores the filter.
+            if rec.get("disposition") != "Connected":
+                continue
+            # Cadence-attributed calls only — skip one-off calls (cadence is null).
             cid = rec.get("cadence_id") or (rec.get("cadence") or {}).get("id")
+            if cid is None:
+                skipped_no_cadence += 1
+                continue
             if cid in target_ids:
                 connected_calls[cid] = connected_calls.get(cid, 0) + 1
         total_records += len(records)
@@ -557,8 +563,9 @@ def main():
             break
         pg += 1
 
-    print(f"  → {total_records:,} connected calls across {pg} pages  |  "
-          f"{len(connected_calls)}/{len(target_ids)} cadences have connect data")
+    print(f"  → {total_records:,} connected records across {pg} pages  |  "
+          f"{len(connected_calls)}/{len(target_ids)} cadences have connect data  |  "
+          f"{skipped_no_cadence:,} connected calls had no cadence (skipped)")
 
     # ── Phase 4: Score ────────────────────────────────────────────────────────
     print("\n[4/4] Scoring…")
