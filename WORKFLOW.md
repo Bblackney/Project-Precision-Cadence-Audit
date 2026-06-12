@@ -22,6 +22,8 @@ No CSV upload, no SFDC, no manual steps. Runs unattended.
 - Files in the project folder:
   - `run_weekly.sh` — wrapper launchd runs: score → commit → push
   - `salesloft_cadence_scorer.py` — the scorer
+  - `build_connected_cache.py` — ONE-TIME resumable backfill of the connected-calls cache
+  - `connected_calls_cache.json` — all-time per-cadence connected counts + cursor (gitignored)
   - `com.clio.cadence-scorer.plist` — source plist (installer copies it into LaunchAgents)
   - `install_scheduler.sh` — one-time installer
 - Logs: `scheduler.log` (run output), `launchd.out.log` / `launchd.err.log` (launchd-level)
@@ -41,7 +43,7 @@ Edit `com.clio.cadence-scorer.plist`, then run `bash install_scheduler.sh`.
 - Cadences: `/v2/cadences?status[]=active` (active only)
 - Filter: `team_cadence == true` (personal copies excluded)
 - Per-cadence stats: `/v2/cadence_stats/:id` (emails, opens, replies, calls, meetings, people_acted_on)
-- Connected calls: `/v2/activities/calls?disposition[]=Connected` (streamed all-time; aggregated by cadence_id; non-cadence calls skipped)
+- Connected calls: `disposition[]=Call - Connected` from `/v2/activities/calls`, accumulated in `connected_calls_cache.json` (all-time per-cadence counts). Backfilled ONCE via `build_connected_cache.py` (~1.4M records, resumable, cursor-based); each weekly run adds only the delta since the saved cursor. `connect_rate = cached connected ÷ lifetime calls_count` (both all-time, so the denominator matches).
 - Credentials: `salesloft_credentials.json` (gitignored — never commit)
 
 Rates:

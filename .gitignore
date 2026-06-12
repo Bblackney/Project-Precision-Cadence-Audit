@@ -8,5 +8,7 @@ sfdc_credentials.json
 scheduler.log
 launchd.out.log
 launchd.err.log
+connected_calls_cache.json
+connected_calls_cache.json.tmp
 *.BACKUP_*.csv
 *.BACKUP_*.html

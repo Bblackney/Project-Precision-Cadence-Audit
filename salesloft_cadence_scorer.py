@@ -48,11 +48,13 @@ BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 CREDS_FILE  = os.path.join(BASE_DIR, "salesloft_credentials.json")
 MASTER_CSV  = os.path.join(BASE_DIR, "cadence_scores_master.csv")
 MASTER_HTML = os.path.join(BASE_DIR, "index.html")
+CACHE_FILE  = os.path.join(BASE_DIR, "connected_calls_cache.json")
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 SL_BASE_URL   = "https://api.salesloft.com/v2"
 MIN_PEOPLE    = 100    # low-sample threshold: < this → low_sample flag (still scored)
 REQUEST_DELAY = 0.5    # seconds between API calls (~2 req/sec, avoids rate limits)
+CONNECTED_DISPOSITION = "Call - Connected"   # exact Salesloft disposition for a live connect
 
 # ── API helpers ───────────────────────────────────────────────────────────────
 def _get(token, path, params=None, _retry=0):
@@ -103,6 +105,69 @@ def paginate(token, path, params=None):
         if not data.get("metadata", {}).get("paging", {}).get("next_page"):
             break
         page += 1
+
+
+# ── Connected-calls cache (all-time per-cadence count: built once + weekly delta) ─
+def _load_cache():
+    if os.path.exists(CACHE_FILE):
+        try:
+            with open(CACHE_FILE, encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {"counts": {}, "cursor": None, "backfill_complete": False, "updated_at": None}
+
+
+def _save_cache(cache):
+    cache["updated_at"] = datetime.now(timezone.utc).isoformat()
+    tmp = CACHE_FILE + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(cache, f)
+    os.replace(tmp, CACHE_FILE)   # atomic write — never leaves a half-written cache
+
+
+def _update_connected_cache(token, cache):
+    """Fetch 'Call - Connected' calls created since cache['cursor'], add to the
+    per-cadence counts, advance the cursor, and save after EVERY page (crash-safe).
+    Cursor-based (always page=1, created_at[gt]=cursor, sorted ASC) so it resumes
+    cleanly with no overlap. With an empty cursor this walks all history (backfill);
+    with a populated cursor it pulls only the delta. Returns
+    (counts_by_int_id, new_count, pages, caught_up)."""
+    counts  = cache.setdefault("counts", {})
+    cursor  = cache.get("cursor")
+    disp    = urllib.parse.quote(CONNECTED_DISPOSITION)
+    new_n = pages = 0
+    caught_up = False
+    while True:
+        q = (f"/activities/calls?disposition[]={disp}"
+             "&sort_by=created_at&sort_direction=ASC&per_page=100&page=1")
+        if cursor:
+            q += "&created_at[gt]=" + urllib.parse.quote(cursor)
+        data = _get(token, q)
+        time.sleep(REQUEST_DELAY)
+        if data is None:
+            break                      # error after retries — not caught up
+        recs = data.get("data", [])
+        if not recs:
+            caught_up = True
+            break
+        for rec in recs:
+            cid = rec.get("cadence_id") or (rec.get("cadence") or {}).get("id")
+            if cid is not None:
+                k = str(cid)
+                counts[k] = counts.get(k, 0) + 1
+        new_n += len(recs)
+        pages += 1
+        cursor = recs[-1].get("created_at") or cursor
+        cache["cursor"] = cursor
+        _save_cache(cache)
+        if pages % 50 == 0:
+            print(f"    …{new_n:,} connected calls, {len(counts)} cadences, "
+                  f"cursor {str(cursor)[:10]}", flush=True)
+        if len(recs) < 100:
+            caught_up = True
+            break
+    return {int(k): v for k, v in counts.items()}, new_n, pages, caught_up
 
 
 # ── Model detection ───────────────────────────────────────────────────────────
@@ -510,63 +575,22 @@ def main():
         if i % 50 == 0 or i == len(ids):
             print(f"  {i}/{len(ids)} stats fetched…")
 
-    # ── Phase 3: Fetch connected calls (global stream) ───────────────────────
-    # Stream ALL connected calls in one paginated request (no per-cadence filtering).
-    # Each record contains cadence_id — we aggregate client-side.
-    # One steady stream = no rate limit burst, no per-cadence API explosion.
-    print("\n[3/4] Fetching connected calls via global stream…")
-    print("      (pausing 5 min to fully reset rate limit from Phase 2)")
-    time.sleep(300)
-    connected_calls = {}  # cadence_id → int
-
-    # Only track cadences that have call activity — ignore the rest
-    target_ids = {
-        cid for cid in ids
-        if (stats.get(cid) or {}).get("calls_count", 0) > 0
-    }
-    print(f"  Streaming all connected calls — tracking {len(target_ids)} call cadences…")
-
-    pg = 1
-    total_records = 0
-    skipped_no_cadence = 0
-    while True:
-        # disposition[]=Connected — the documented filter for connected calls
-        # (replaces the undocumented connected=true). Brackets are written into
-        # the URL by hand so urlencode can't escape them (same pattern as Phase 1).
-        resp = _get(token, f"/activities/calls?disposition[]=Connected&per_page=100&page={pg}")
-        time.sleep(REQUEST_DELAY)
-        if resp is None:
-            break
-        records = resp.get("data", [])
-        if not records:
-            break
-        if pg == 1 and records:
-            sample = records[0]
-            print(f"  [debug] first record disposition={sample.get('disposition')!r} "
-                  f"cadence={sample.get('cadence')}")
-        for rec in records:
-            # Defensive: only count true connects, in case the API ignores the filter.
-            if rec.get("disposition") != "Connected":
-                continue
-            # Cadence-attributed calls only — skip one-off calls (cadence is null).
-            cid = rec.get("cadence_id") or (rec.get("cadence") or {}).get("id")
-            if cid is None:
-                skipped_no_cadence += 1
-                continue
-            if cid in target_ids:
-                connected_calls[cid] = connected_calls.get(cid, 0) + 1
-        total_records += len(records)
-        paging = resp.get("metadata", {}).get("paging", {})
-        if pg % 100 == 0:
-            print(f"  Page {pg} — {total_records:,} calls processed, "
-                  f"{len(connected_calls)}/{len(target_ids)} cadences seen…")
-        if not paging.get("next_page"):
-            break
-        pg += 1
-
-    print(f"  → {total_records:,} connected records across {pg} pages  |  "
-          f"{len(connected_calls)}/{len(target_ids)} cadences have connect data  |  "
-          f"{skipped_no_cadence:,} connected calls had no cadence (skipped)")
+    # ── Phase 3: Connected calls — cumulative cache + weekly delta ───────────
+    # We no longer stream all-time connected calls every run (≈1.4M records,
+    # hours). build_connected_cache.py backfills an all-time per-cadence count
+    # ONCE into connected_calls_cache.json; here we fetch only the delta (calls
+    # created since the saved cursor), add it to the cache, and read cumulative
+    # counts. connect_rate = cached all-time connected / lifetime calls_count.
+    print("\n[3/4] Connected calls — updating cache (delta since last run)…")
+    cache = _load_cache()
+    if not cache.get("backfill_complete"):
+        print("  [WARN] connected-calls backfill NOT complete — run build_connected_cache.py.")
+        print("         Connect rate will be partial/zero until the backfill finishes.")
+        connected_calls = {int(k): v for k, v in cache.get("counts", {}).items()}
+    else:
+        connected_calls, new_n, pages, _ = _update_connected_cache(token, cache)
+        print(f"  → delta: +{new_n:,} new connected calls over {pages} page(s); "
+              f"cache now covers {len(connected_calls)} cadences.")
 
     # ── Phase 4: Score ────────────────────────────────────────────────────────
     print("\n[4/4] Scoring…")
