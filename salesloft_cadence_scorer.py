@@ -354,6 +354,12 @@ def generate_html(all_rows, run_date):
     .ctrl label{{font-size:12px;font-weight:500;color:#374151;display:flex;flex-direction:column;gap:3px}}
     .ctrl select,.ctrl input{{border:1px solid #d1d5db;border-radius:5px;padding:5px 8px;font-size:12px;outline:none;background:white;min-width:120px}}
     .ctrl input[type=checkbox]{{min-width:auto;width:14px;height:14px;padding:0;margin:0;border-radius:3px;vertical-align:middle}}
+    .dd{{position:relative}}
+    .dd-btn{{border:1px solid #d1d5db;border-radius:5px;padding:5px 8px;font-size:12px;background:white;cursor:pointer;min-width:120px;text-align:left;font-weight:400;color:#374151}}
+    .dd-btn:hover{{border-color:#2563eb}}
+    .dd-panel{{display:none;position:absolute;z-index:20;background:white;border:1px solid #d1d5db;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.14);padding:6px 10px;margin-top:3px;min-width:150px}}
+    .dd-panel.open{{display:block}}
+    .dd-panel label{{display:flex;flex-direction:row;align-items:center;gap:7px;padding:4px 2px;font-size:12px;font-weight:400;color:#374151;white-space:nowrap;cursor:pointer}}
     .ctrl select:focus,.ctrl input:focus{{border-color:#2563eb}}
     .tbl-wrap{{padding:20px 32px;overflow-x:auto}}
     table{{width:100%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.07);font-size:13px}}
@@ -381,24 +387,29 @@ def generate_html(all_rows, run_date):
 </div>
 
 <div class="ctrl">
-  <label>Verdict
-    <select id="fVerdict" onchange="filter()">
-      <option value="">All</option>
-      <option value="KEEP">KEEP</option>
-      <option value="REVIEW">REVIEW</option>
-      <option value="ARCHIVE">ARCHIVE</option>
-      <option value="LOW SAMPLE">LOW SAMPLE</option>
-      <option value="NO DATA">NO DATA</option>
-    </select>
-  </label>
-  <div style="display:flex;flex-direction:column;gap:3px;font-size:12px;font-weight:500;color:#374151;">Team (pick any)
-    <span style="display:flex;flex-direction:row;gap:10px;flex-wrap:wrap;padding-top:2px;">
-      <label style="display:flex;flex-direction:row;align-items:center;gap:3px;font-weight:400;cursor:pointer;"><input type="checkbox" class="fTeam" value="SDR" onchange="filter()">SDR</label>
-      <label style="display:flex;flex-direction:row;align-items:center;gap:3px;font-weight:400;cursor:pointer;"><input type="checkbox" class="fTeam" value="BDR-S" onchange="filter()">BDR-S</label>
-      <label style="display:flex;flex-direction:row;align-items:center;gap:3px;font-weight:400;cursor:pointer;"><input type="checkbox" class="fTeam" value="BDR-V" onchange="filter()">BDR-V</label>
-      <label style="display:flex;flex-direction:row;align-items:center;gap:3px;font-weight:400;cursor:pointer;"><input type="checkbox" class="fTeam" value="BDR-MM" onchange="filter()">BDR-MM</label>
-      <label style="display:flex;flex-direction:row;align-items:center;gap:3px;font-weight:400;cursor:pointer;"><input type="checkbox" class="fTeam" value="BDR-CS" onchange="filter()">BDR-CS</label>
-    </span>
+  <div style="display:flex;flex-direction:column;gap:3px;font-size:12px;font-weight:500;color:#374151;">Verdict
+    <div class="dd">
+      <button type="button" class="dd-btn" id="vBtn" onclick="toggleDD('vPanel')">Verdict (3)</button>
+      <div class="dd-panel" id="vPanel">
+        <label><input type="checkbox" class="fVerdict" value="KEEP" checked onchange="filter()">KEEP</label>
+        <label><input type="checkbox" class="fVerdict" value="REVIEW" checked onchange="filter()">REVIEW</label>
+        <label><input type="checkbox" class="fVerdict" value="ARCHIVE" checked onchange="filter()">ARCHIVE</label>
+        <label><input type="checkbox" class="fVerdict" value="LOW SAMPLE" onchange="filter()">LOW SAMPLE</label>
+        <label><input type="checkbox" class="fVerdict" value="NO DATA" onchange="filter()">NO DATA</label>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:3px;font-size:12px;font-weight:500;color:#374151;">Team
+    <div class="dd">
+      <button type="button" class="dd-btn" id="tBtn" onclick="toggleDD('tPanel')">Team (all)</button>
+      <div class="dd-panel" id="tPanel">
+        <label><input type="checkbox" class="fTeam" value="SDR" onchange="filter()">SDR</label>
+        <label><input type="checkbox" class="fTeam" value="BDR-S" onchange="filter()">BDR-S</label>
+        <label><input type="checkbox" class="fTeam" value="BDR-V" onchange="filter()">BDR-V</label>
+        <label><input type="checkbox" class="fTeam" value="BDR-MM" onchange="filter()">BDR-MM</label>
+        <label><input type="checkbox" class="fTeam" value="BDR-CS" onchange="filter()">BDR-CS</label>
+      </div>
+    </div>
   </div>
   <label>Search
     <input type="text" id="fSearch" placeholder="Cadence name…" oninput="filter()">
@@ -446,22 +457,33 @@ const tbody=document.getElementById('tbody');
 const allRows=Array.from(tbody.querySelectorAll('tr'));
 let sc=3,sd=-1;
 
+function toggleDD(id){{
+  const p=document.getElementById(id), wasOpen=p.classList.contains('open');
+  document.querySelectorAll('.dd-panel').forEach(x=>x.classList.remove('open'));
+  if(!wasOpen) p.classList.add('open');
+}}
+document.addEventListener('click',e=>{{
+  if(!e.target.closest('.dd')) document.querySelectorAll('.dd-panel').forEach(x=>x.classList.remove('open'));
+}});
+
 function filter(){{
   const d=document.getElementById('fDate').value;
   const teams=Array.from(document.querySelectorAll('.fTeam:checked')).map(c=>c.value.toUpperCase());
-  const v=document.getElementById('fVerdict').value;
+  const verdicts=Array.from(document.querySelectorAll('.fVerdict:checked')).map(c=>c.value);
   const s=document.getElementById('fSearch').value.toLowerCase();
+  document.getElementById('tBtn').textContent=teams.length?('Team ('+teams.length+')'):'Team (all)';
+  document.getElementById('vBtn').textContent=verdicts.length===5?'Verdict (all)':('Verdict ('+verdicts.length+')');
   let vis=0,k=0,rv=0,ar=0,lo=0,nd=0;
   allRows.forEach(r=>{{
+    const dateOk=!d||r.dataset.date===d;
+    const vd=r.dataset.verdict;
+    // KPI cards reflect the run (date filter only) — independent of verdict/team/search.
+    if(dateOk){{if(vd==='KEEP')k++;else if(vd==='REVIEW')rv++;else if(vd==='ARCHIVE')ar++;else if(vd==='LOW SAMPLE')lo++;else if(vd==='NO DATA')nd++;}}
     const nameU=r.cells[0].textContent.toUpperCase();
     const teamOk=teams.length===0||teams.some(tm=>tm==='SDR'?(nameU.includes('SDR')&&!nameU.includes('BDR')):nameU.includes(tm));
-    const show=(!d||r.dataset.date===d)&&teamOk&&(!v||r.dataset.verdict===v)&&(!s||r.cells[0].textContent.toLowerCase().includes(s));
+    const show=dateOk&&teamOk&&verdicts.includes(vd)&&(!s||r.cells[0].textContent.toLowerCase().includes(s));
     r.style.display=show?'':'none';
-    if(show){{
-      vis++;
-      const vd=r.dataset.verdict;
-      if(vd==='KEEP')k++;else if(vd==='REVIEW')rv++;else if(vd==='ARCHIVE')ar++;else if(vd==='LOW SAMPLE')lo++;else if(vd==='NO DATA')nd++;
-    }}
+    if(show)vis++;
   }});
   document.getElementById('rowCount').textContent=vis+' cadences';
   document.getElementById('kpiKeep').textContent=k;
