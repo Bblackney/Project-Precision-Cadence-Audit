@@ -5,7 +5,6 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,4064673, BDR-V 2026 H1 Outbound Motion,13,ARCHIVE,BDR,0.54,0.24,7.3,17.06,0.0,2645,10308,,0,0,13,0,0,False,2026-01-08
 2026-06-13,all-time,4132594, Canada Draft BDR - Strat,20,LOW SAMPLE,BDR,0.0,0.0,25.0,17.65,0.0,12,17,,0,0,20,0,0,True,2026-04-01
 2026-06-13,all-time,4135410, Canada Draft BDR - Strat - nurture email,5,ARCHIVE,BDR,0.33,0.56,0.0,25.42,0.0,183,897,,0,0,0,5,0,False,2026-04-06
-2026-06-13,all-time,4026815,#BDR MM CAN,11,ARCHIVE,BDR,0.63,0.63,4.21,20.76,0.0,255,631,,0,0,6,5,0,False,2025-11-04
 2026-06-13,all-time,2278025,$BDR-MM - AQL - General Content,38,ARCHIVE,BDR,1.19,2.07,21.05,25.06,0.0,7182,19194,,0,13,20,5,0,False,2021-09-20
 2026-06-13,all-time,2721914,$BDR-MM - AQL - Webinar Download / Attendee,31,ARCHIVE,BDR,1.96,3.0,7.76,24.78,0.0,945,3628,,0,13,13,5,0,False,2022-07-29
 2026-06-13,all-time,2983272,$BDR-MM - Closed Lost - Revival,31,ARCHIVE,BDR,1.65,3.75,7.39,21.24,0.0,8956,18899,,0,13,13,5,0,False,2023-02-09
@@ -14,10 +13,6 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,4133126,AE/BDR-CS | CAM - Draft Product Offer - OBC,0,ARCHIVE,BDR,1.95,0.59,0.0,17.97,0.0,475,512,,0,0,0,0,0,False,2026-04-01
 2026-06-13,all-time,4133141,AE/BDR-CS | CAM - Grow Product Offer - OBC,25,LOW SAMPLE,BDR,9.76,0.0,0.0,21.95,0.0,25,41,,20,0,0,5,0,True,2026-04-01
 2026-06-13,all-time,4133117,AE/BDR-CS | CAM - Manage AI Product Offer - OBC,38,LOW SAMPLE,BDR,10.71,2.68,0.0,28.57,0.0,62,112,,20,13,0,5,0,True,2026-04-01
-2026-06-13,all-time,3795406,APAC - BDR/AE - New Outbound,25,ARCHIVE,BDR,0.99,1.73,21.0,23.52,0.0,1292,3929,,0,0,20,5,0,False,2025-02-05
-2026-06-13,all-time,3580170,APAC MQL - SDR - Request A Demo,100,KEEP,SDR,15.53,11.92,16.24,47.77,0.0,3441,6898,,35,30,20,15,0,False,2024-06-06
-2026-06-13,all-time,3840378,APAC MQL - SDR - Trial Sign Ups ,71,REVIEW,SDR,3.18,3.51,8.99,42.64,0.0,188,598,,13,30,13,15,0,False,2025-03-25
-2026-06-13,all-time,3865783,APAC MQL - SDR - Trial Sign Ups 2026,93,KEEP,SDR,19.84,7.21,7.1,44.26,0.0,1995,610,,35,30,13,15,0,False,2025-04-22
 2026-06-13,all-time,4003304,AQL/NMQL - BDR-S - Email Only  ,0,ARCHIVE,BDR,0.06,0.12,0.0,19.94,0.0,396,1715,,0,0,0,0,0,False,2025-10-07
 2026-06-13,all-time,3953332,All BDR - AI Summer Camp AQL - Follow Up,11,ARCHIVE,BDR,0.8,0.27,6.32,28.42,0.0,177,373,,0,0,6,5,0,False,2025-08-05
 2026-06-13,all-time,4079054,BDR - Event: NTLS,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,,0,0,0,0,0,True,2026-01-28
@@ -29,16 +24,6 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,3948175,BDR Draft - AQL Webinar MS Word - Post Webinar,18,ARCHIVE,BDR,0.71,0.85,11.52,30.31,0.0,247,706,,0,0,13,5,0,False,2025-07-29
 2026-06-13,all-time,3963947,BDR Draft - Lead Nurture Revisit,18,ARCHIVE,BDR,4.0,1.2,8.12,27.2,0.0,112,250,,0,0,13,5,0,False,2025-08-18
 2026-06-13,all-time,3939471,BDR Draft - OB -Family Law Firm - 2025,44,LOW SAMPLE,BDR,6.82,2.27,4.71,22.73,0.0,29,44,,20,13,6,5,0,True,2025-07-18
-2026-06-13,all-time,4048419,BDR EMEA - December Foundry - The Legal Trends Report,6,LOW SAMPLE,BDR,0.0,0.0,3.7,12.15,0.0,98,321,,0,0,6,0,0,True,2025-12-03
-2026-06-13,all-time,4091931,BDR EMEA - Feb 2026 Foundry - The Essential Guide to Legal Document Automation,6,ARCHIVE,BDR,0.19,0.37,3.03,10.63,0.0,142,536,,0,0,6,0,0,False,2026-02-13
-2026-06-13,all-time,4098453,BDR EMEA - February Netline 2026 - The Law Firm Leader's Checklist for OKRs and KPIs ,0,LOW SAMPLE,BDR,0.0,0.54,0.0,11.89,0.0,49,185,,0,0,0,0,0,True,2026-02-23
-2026-06-13,all-time,4040770,BDR EMEA - IT Manager/Director ,6,LOW SAMPLE,BDR,0.0,0.0,3.97,10.0,0.0,79,350,,0,0,6,0,0,True,2025-11-20
-2026-06-13,all-time,4076970,BDR EMEA - Jan 2026 Netline - The Essential Guide to Legal Document Automation,0,LOW SAMPLE,BDR,0.45,0.45,2.13,7.69,0.0,44,221,,0,0,0,0,0,True,2026-01-27
-2026-06-13,all-time,4120205,BDR EMEA - March Interlink - AI Buyer Guide,0,ARCHIVE,BDR,0.18,0.54,0.0,14.65,0.0,146,553,,0,0,0,0,0,False,2026-03-18
-2026-06-13,all-time,4028095,BDR EMEA - November Netline - The Legal Trends Report,20,ARCHIVE,BDR,0.0,0.6,15.29,11.14,0.0,100,332,,0,0,20,0,0,False,2025-11-05
-2026-06-13,all-time,3759959,BDR EMEA - Nurture AQL Outbound (Strat/MM),18,ARCHIVE,BDR,0.51,1.72,8.54,28.82,0.0,300,989,,0,0,13,5,0,False,2024-12-16
-2026-06-13,all-time,4001073,BDR EMEA - October Netline - The Legal AI Buyer’s Guide: A Checklist for Legal Professionals,20,LOW SAMPLE,BDR,0.0,0.0,20.0,5.73,0.0,64,227,,0,0,20,0,0,True,2025-10-03
-2026-06-13,all-time,4019725,BDR EMEA Outbound Mid Market,13,LOW SAMPLE,BDR,0.0,2.41,0.0,9.64,0.0,17,83,,0,13,0,0,0,True,2025-10-27
 2026-06-13,all-time,3973541,BDR | CS - August Draft AMA | Attendees CQLs,72,LOW SAMPLE,BDR,10.0,7.5,17.48,44.17,0.0,54,120,,20,22,20,10,0,True,2025-08-28
 2026-06-13,all-time,3913755,BDR | CS: Clio Connects  - Attended an Event CQLs,72,REVIEW,BDR,10.94,9.38,17.35,39.84,0.0,102,128,,20,22,20,10,0,False,2025-06-16
 2026-06-13,all-time,4193637,BDR | CS: Clio Connects  - Registered but did not attend ,15,LOW SAMPLE,BDR,0.0,0.0,0.0,61.54,0.0,17,13,,0,0,0,15,0,True,2026-05-15
@@ -85,7 +70,7 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,4195716,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 1 (Strat)",51,REVIEW,BDR,5.41,2.46,8.89,29.0,0.0,632,1424,,20,13,13,5,0,False,2026-05-18
 2026-06-13,all-time,4219469,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 2 (MM non-CSM)",25,ARCHIVE,BDR,1.64,0.65,15.56,25.53,0.0,180,611,,0,0,20,5,0,False,2026-06-02
 2026-06-13,all-time,4219447,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 2 (Strat)",25,ARCHIVE,BDR,4.5,1.25,16.13,32.47,0.0,596,1044,,0,0,20,5,0,False,2026-06-02
-2026-06-13,all-time,4225423,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 3 (MM non-CSM)",5,ARCHIVE,BDR,1.28,0.69,0.0,30.41,0.0,424,1016,,0,0,0,5,0,False,2026-06-04
+2026-06-13,all-time,4225423,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 3 (MM non-CSM)",5,ARCHIVE,BDR,1.28,0.69,0.0,30.61,0.0,424,1016,,0,0,0,5,0,False,2026-06-04
 2026-06-13,all-time,4225406,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 3 (Strat)",25,ARCHIVE,BDR,3.13,1.1,15.25,25.55,0.0,1185,1726,,0,0,20,5,0,False,2026-06-04
 2026-06-13,all-time,4196209,BDR-CS Apex 30 day Work Trial - Hand Raises HOT All Segments ,45,LOW SAMPLE,BDR,0.0,50.0,0.0,50.0,0.0,2,2,,0,30,0,15,0,True,2026-05-18
 2026-06-13,all-time,4201325,BDR-CS Call Only Nurture,13,ARCHIVE,BDR,0.0,0.0,9.0,0.0,0.0,124,0,,0,0,13,0,0,False,2026-05-21
@@ -195,7 +180,7 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,4201331,BDR-CS-V SOLOS - Apex 30 day Work Trial - Pre-trial BDR cadence,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,,0,0,0,0,0,True,2026-05-21
 2026-06-13,all-time,4214165,BDR-CS-V SOLOS COHORT 1 Apex 30 day Work Trial,23,ARCHIVE,BDR,1.46,3.89,0.0,37.29,0.0,660,1853,,0,13,0,10,0,False,2026-05-29
 2026-06-13,all-time,4220232,BDR-CS-V SOLOS COHORT 2 Apex 30 day Work Trial,23,ARCHIVE,BDR,0.82,2.27,0.0,37.67,0.0,270,2068,,0,13,0,10,0,False,2026-06-02
-2026-06-13,all-time,4225422,BDR-CS-V SOLOS COHORT 3 Apex 30 day Work Trial,18,ARCHIVE,BDR,0.79,2.03,0.0,33.4,0.0,189,4284,,0,13,0,5,0,False,2026-06-04
+2026-06-13,all-time,4225422,BDR-CS-V SOLOS COHORT 3 Apex 30 day Work Trial,18,ARCHIVE,BDR,0.78,2.02,0.0,33.47,0.0,189,4356,,0,13,0,5,0,False,2026-06-04
 2026-06-13,all-time,4238466,BDR-CS-V SOLOS COHORT 4 Apex 30 day Work Trial,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,,0,0,0,0,0,True,2026-06-10
 2026-06-13,all-time,4178964,BDR-CS-V | PLG Work Trial FU,93,LOW SAMPLE,BDR,21.52,22.78,7.94,55.7,0.0,50,79,,35,30,13,15,0,True,2026-05-07
 2026-06-13,all-time,3850647,"BDR-CS: 2025-04-08 Webinar: Intake CLE - Attended ""Optional Grow Demo"" CQLs",52,LOW SAMPLE,BDR,2.63,5.26,15.15,39.47,0.0,19,38,,0,22,20,10,0,True,2025-04-06
@@ -211,12 +196,10 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,3926329,BDR-CS: Clio Draft Demo Request,88,KEEP,BDR,44.77,10.95,12.35,39.58,0.0,1135,1617,,35,30,13,10,0,False,2025-07-02
 2026-06-13,all-time,4052667,BDR-CS: Clio Manage AI Demo Webinar - Invite,5,ARCHIVE,BDR,1.45,0.72,0.0,28.26,0.0,135,138,,0,0,0,5,0,False,2025-12-09
 2026-06-13,all-time,4013180,BDR-CS: Clio Work Demo Request,80,KEEP,BDR,33.52,6.23,11.11,36.97,0.0,1488,2375,,35,22,13,10,0,False,2025-10-17
-2026-06-13,all-time,4061550,BDR-CS: Clio Work Demo Request - APAC,0,NO DATA,BDR,0.0,0.0,100.0,0.0,0.0,0,0,,0,0,20,0,0,True,2026-01-05
 2026-06-13,all-time,4021814,BDR-CS: Clio Work Demo Webinar (Weekly on Friday) - Invite Copy ,5,ARCHIVE,BDR,3.99,0.46,0.0,31.75,0.0,641,652,,0,0,0,5,0,False,2025-10-28
 2026-06-13,all-time,4193342,BDR-CS: Clio Work Litigation Webinar - Poll CQLs - IBC,63,LOW SAMPLE,BDR,30.43,4.35,0.0,65.22,0.0,13,23,,35,13,0,15,0,True,2026-05-15
 2026-06-13,all-time,4193398,BDR-CS: Clio Work Litigation Webinar - Registered (Attended + Not Attended) - IBC,31,LOW SAMPLE,BDR,3.73,4.48,12.82,26.12,0.0,43,134,,0,13,13,5,0,True,2026-05-15
 2026-06-13,all-time,4027144,BDR-CS: Clio Work OPT OUT CQLs,73,REVIEW,BDR,13.41,11.96,9.82,43.12,0.0,205,276,,20,30,13,10,0,False,2025-11-04
-2026-06-13,all-time,4061566,BDR-CS: Clio Work OPT OUT CQLs - APAC,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,,0,0,0,0,0,True,2026-01-05
 2026-06-13,all-time,4013445,BDR-CS: Clio Work Outbound,18,ARCHIVE,BDR,3.32,0.53,10.91,27.79,0.0,5627,10516,,0,0,13,5,0,False,2025-10-17
 2026-06-13,all-time,4190221,BDR-CS: Clio Work PA Webinars - Invite (May 2026),10,ARCHIVE,BDR,2.08,0.55,0.0,36.69,0.0,777,913,,0,0,0,10,0,False,2026-05-14
 2026-06-13,all-time,4193374,BDR-CS: Clio Work Transactional Webinar - Poll CQLs - IBC,85,LOW SAMPLE,BDR,63.64,9.09,7.69,54.55,0.0,5,11,,35,22,13,15,0,True,2026-05-15
@@ -225,7 +208,7 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,3966318,BDR-CS: ClioCon 2025: Invite to customers - Ciara,38,ARCHIVE,BDR,9.01,2.15,0.0,33.05,0.0,149,233,,20,13,0,5,0,False,2025-08-20
 2026-06-13,all-time,3966324,BDR-CS: ClioCon 2025: Invite to customers - Gareth,10,ARCHIVE,BDR,3.5,1.62,0.0,38.81,0.0,173,371,,0,0,0,10,0,False,2025-08-20
 2026-06-13,all-time,3966340,BDR-CS: ClioCon 2025: Invite to customers - Liz,5,ARCHIVE,BDR,2.23,1.4,0.0,31.56,0.0,327,358,,0,0,0,5,0,False,2025-08-20
-2026-06-13,all-time,4133512,BDR-CS: Customer AMA Webinar (AI Focus) - Invite,43,ARCHIVE,BDR,8.4,3.82,0.0,41.22,0.0,130,131,,20,13,0,10,0,False,2026-04-01
+2026-06-13,all-time,4133512,BDR-CS: Customer AMA Webinar (AI Focus) - Invite,43,ARCHIVE,BDR,9.16,3.82,0.0,41.22,0.0,130,131,,20,13,0,10,0,False,2026-04-01
 2026-06-13,all-time,4134164,BDR-CS: Customer AMA Webinar (AI Focus) - Invite,5,ARCHIVE,BDR,4.45,0.0,0.0,30.36,0.0,248,247,,0,0,0,5,0,False,2026-04-02
 2026-06-13,all-time,4134159,BDR-CS: Customer AMA Webinar (Clio Work) - Invite,5,ARCHIVE,BDR,4.35,1.09,0.0,31.52,0.0,184,184,,0,0,0,5,0,False,2026-04-02
 2026-06-13,all-time,4133526,BDR-CS: Customer AMA Webinar (Clio Work) - Invite,5,ARCHIVE,BDR,0.56,0.56,0.0,30.9,0.0,178,178,,0,0,0,5,0,False,2026-04-01
@@ -262,9 +245,6 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,3938327,BDR-CS: Personal Injury Outbound Cadence Part 2 Shorter emails,35,LOW SAMPLE,BDR,6.67,0.0,0.0,60.0,0.0,5,15,,20,0,0,15,0,True,2025-07-17
 2026-06-13,all-time,4024841,BDR-CS: Webinar Poll Follow-Up: Work CQLs - IBC,73,LOW SAMPLE,BDR,24.69,5.56,6.83,43.21,0.0,92,162,,35,22,6,10,0,True,2025-10-31
 2026-06-13,all-time,3691796,BDR-Customer Sales - Hot Leads - Call Only Cadence,6,LOW SAMPLE,BDR,0.0,0.0,4.35,0.0,0.0,14,0,,0,0,6,0,0,True,2024-09-24
-2026-06-13,all-time,3805187,BDR-EMEA - Nurture MQLs,18,ARCHIVE,BDR,1.03,0.93,11.15,28.57,0.0,622,2142,,0,0,13,5,0,False,2025-02-17
-2026-06-13,all-time,3786150,BDR-EMEA - UK MQLs - Jan 2025,63,REVIEW,BDR,11.46,3.96,17.58,38.54,0.0,186,480,,20,13,20,10,0,False,2025-01-28
-2026-06-13,all-time,3706298,BDR-EMEA- AQL pre call,20,LOW SAMPLE,BDR,0.0,0.0,25.0,0.0,0.0,35,0,,0,0,20,0,0,True,2024-10-09
 2026-06-13,all-time,3946557,BDR-MM - Call Only Cadence,6,ARCHIVE,BDR,0.0,0.0,4.49,0.0,0.0,741,0,,0,0,6,0,0,False,2025-07-28
 2026-06-13,all-time,4148573,BDR-MM - In person conference - ALA 2026,44,LOW SAMPLE,BDR,5.56,2.78,4.29,22.22,0.0,12,36,,20,13,6,5,0,True,2026-04-16
 2026-06-13,all-time,4136824,BDR-MM 2026 - Revised Cadence,5,ARCHIVE,BDR,0.0,0.27,0.0,21.86,0.0,899,2594,,0,0,0,5,0,False,2026-04-07
@@ -301,7 +281,7 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,4129934,BDR-S Enriched Accounts - Multi-Practice,6,ARCHIVE,BDR,0.95,0.48,4.66,17.94,0.0,357,630,,0,0,6,0,0,False,2026-03-30
 2026-06-13,all-time,4131563,BDR-S Enriched Accounts - Multi-Practice - Email Only,0,ARCHIVE,BDR,0.0,0.06,0.0,13.48,0.0,817,3538,,0,0,0,0,0,False,2026-03-31
 2026-06-13,all-time,4124516,BDR-S Enriched Accounts - Personal Injury,11,ARCHIVE,BDR,0.42,0.21,3.82,22.76,0.0,322,479,,0,0,6,5,0,False,2026-03-23
-2026-06-13,all-time,4131551,BDR-S Enriched Accounts - Personal Injury - Email Only,0,ARCHIVE,BDR,0.09,0.09,0.0,18.95,0.0,1211,4343,,0,0,0,0,0,False,2026-03-31
+2026-06-13,all-time,4131551,BDR-S Enriched Accounts - Personal Injury - Email Only,0,ARCHIVE,BDR,0.09,0.09,0.0,18.97,0.0,1211,4343,,0,0,0,0,0,False,2026-03-31
 2026-06-13,all-time,4124505,BDR-S Enriched Accounts - Transactional,11,ARCHIVE,BDR,0.53,0.27,4.2,25.0,0.0,210,376,,0,0,6,5,0,False,2026-03-23
 2026-06-13,all-time,4131537,BDR-S Enriched Accounts - Transactional - Email Only,0,ARCHIVE,BDR,0.0,0.0,0.0,19.03,0.0,432,1545,,0,0,0,0,0,False,2026-03-31
 2026-06-13,all-time,4117451,BDR-S HH Litigation Sprint - EMAIL ONLY - Copy,0,ARCHIVE,BDR,0.06,0.13,0.0,19.74,0.0,773,3105,,0,0,0,0,0,False,2026-03-16
@@ -363,11 +343,6 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,4187515,BDR-Velo-CS Real Estate Grow,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,,0,0,0,0,0,True,2026-05-13
 2026-06-13,all-time,4083068,BDR-Velo-CS Wills & Estates Draft Cadence,29,ARCHIVE,BDR,4.35,4.13,6.07,39.24,0.0,1737,3127,,0,13,6,10,0,False,2026-02-03
 2026-06-13,all-time,4157023,BDR-Velo-CS Work Call Only,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,,0,0,0,0,0,True,2026-04-24
-2026-06-13,all-time,3777172,BDR/AE-EMEA - DM/Owner - Prospecting,6,ARCHIVE,BDR,0.85,1.15,6.15,14.31,0.0,493,1992,,0,0,6,0,0,False,2025-01-16
-2026-06-13,all-time,3778386,BDR/AE-EMEA - Email Only - Jan 2025,0,ARCHIVE,BDR,0.3,0.66,0.0,17.44,0.0,1006,4271,,0,0,0,0,0,False,2025-01-17
-2026-06-13,all-time,3791073,BDR/AE-EMEA - Partners - Prospecting,6,ARCHIVE,BDR,0.21,0.58,5.93,11.04,0.0,1710,7029,,0,0,6,0,0,False,2025-02-03
-2026-06-13,all-time,3788895,BDR/AE-EMEA - Practice Manager - Prospecting,26,ARCHIVE,BDR,0.1,2.0,7.08,10.82,0.0,532,2098,,0,13,13,0,0,False,2025-01-30
-2026-06-13,all-time,3755803,BDR/AE-EMEA - Re-engage,26,ARCHIVE,BDR,0.54,2.04,12.05,18.4,0.0,897,3131,,0,13,13,0,0,False,2024-12-10
 2026-06-13,all-time,4030811,BDR:CS MQL vLex Free Trial from customers,56,REVIEW,BDR,9.14,2.87,7.57,36.2,0.0,202,558,,20,13,13,10,0,False,2025-11-07
 2026-06-13,all-time,3973351,BDRV - AQL - Draft - General Practice ,23,ARCHIVE,BDR,1.55,0.89,8.9,36.14,0.0,243,451,,0,0,13,10,0,False,2025-08-28
 2026-06-13,all-time,4017580,BDRV - C/L - ClioWork Litigators,11,ARCHIVE,BDR,4.85,1.04,6.58,29.04,0.0,590,2207,,0,0,6,5,0,False,2025-10-22
@@ -418,19 +393,8 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,4009959,CS-BDR | ClioCon - Virtual [AI Session CQL],38,ARCHIVE,BDR,12.62,0.32,7.81,30.42,0.0,135,309,,20,0,13,5,0,False,2025-10-14
 2026-06-13,all-time,4017290,CS-BDR | ClioCon - Virtual [Draft Session CQL],46,LOW SAMPLE,BDR,17.02,0.0,5.0,23.4,0.0,29,47,,35,0,6,5,0,True,2025-10-22
 2026-06-13,all-time,4009957,CS-BDR | ClioCon - Virtual [Poll CQL],73,LOW SAMPLE,BDR,30.0,3.33,15.0,33.33,0.0,53,60,,35,13,20,5,0,True,2025-10-14
-2026-06-13,all-time,3874471,Cadences / SDR-EMEA Small Firm Growth Handbook - UKI - Netline May 2025,13,LOW SAMPLE,SDR,0.0,0.0,7.14,14.02,0.0,1,107,,0,0,13,0,0,True,2025-05-02
 2026-06-13,all-time,4130858,Canada Draft BDR - MM,23,LOW SAMPLE,BDR,0.0,0.0,8.7,40.28,0.0,74,72,,0,0,13,10,0,True,2026-03-30
 2026-06-13,all-time,4132697,Canada Draft BDR - MM - nurture,10,LOW SAMPLE,BDR,0.0,1.27,0.0,47.77,0.0,26,157,,0,0,0,10,0,True,2026-04-01
-2026-06-13,all-time,2708423,DO NOT USE* SDR-EMEA - Demo Request - Aug 2023,100,KEEP,SDR,17.47,7.48,24.98,41.7,0.0,1736,4053,,35,30,20,15,0,False,2022-07-21
-2026-06-13,all-time,3685435,EMEA - BDR GROW UK&I,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,,0,0,0,0,0,True,2024-09-17
-2026-06-13,all-time,3459195,EMEA - HTSALF - SDR -2024,30,ARCHIVE,SDR,1.63,0.09,20.41,29.5,0.0,235,1166,,0,0,20,10,0,False,2024-03-25
-2026-06-13,all-time,3565143,EMEA - SDR - A Lawyer’s Guide to a Paperless Office,0,NO DATA,SDR,0.0,0.0,0.0,0.0,0.0,0,0,,0,0,0,0,0,True,2024-05-28
-2026-06-13,all-time,4018882,EMEA - SDR - Clio Work - Demo Request (MQL),100,LOW SAMPLE,SDR,15.38,14.29,24.19,41.76,0.0,64,91,,35,30,20,15,0,True,2025-10-24
-2026-06-13,all-time,4018586,EMEA - SDR - vLex - Free Trial,60,REVIEW,SDR,1.51,3.65,19.57,30.64,0.0,868,1919,,0,30,20,10,0,False,2025-10-23
-2026-06-13,all-time,3982410,EMEA BDR - ReEngage - South Africa,58,REVIEW,BDR,5.03,4.18,20.08,31.88,0.0,300,1173,,20,13,20,5,0,False,2025-09-11
-2026-06-13,all-time,3753733,Email Cadence - BDR EMEA - Outbound (Velocity),13,ARCHIVE,BDR,0.47,1.41,11.22,18.51,0.0,1254,5520,,0,0,13,0,0,False,2024-12-06
-2026-06-13,all-time,3754090,Email Cadence - BDR EMEA Outbound Strat,13,ARCHIVE,BDR,0.14,1.32,7.97,13.87,0.0,1773,8330,,0,0,13,0,0,False,2024-12-06
-2026-06-13,all-time,3852619,Email Only - BDR EMEA Outbound (Strat/MM),0,ARCHIVE,BDR,0.18,1.75,0.0,16.52,0.0,1743,8693,,0,0,0,0,0,False,2025-04-08
 2026-06-13,all-time,3982399,European Countries - BDR Outbound,18,ARCHIVE,BDR,0.2,1.21,11.92,27.46,0.0,210,994,,0,0,13,5,0,False,2025-09-11
 2026-06-13,all-time,3982463,European Countries - BDR ReEngage,43,ARCHIVE,BDR,2.32,2.32,17.35,35.93,0.0,159,604,,0,13,20,10,0,False,2025-09-11
 2026-06-13,all-time,3978560,Intent Outbound - BDR-S - AWARE - Email Only ,0,ARCHIVE,BDR,0.08,0.06,0.0,17.16,0.0,18834,78915,,0,0,0,0,0,False,2025-09-07
@@ -455,18 +419,13 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,4184987,MM-BDR-CS | [Plaintiff] Complaint Filing - Clio Work Outreach - OBC,5,LOW SAMPLE,BDR,0.46,0.23,0.0,32.33,0.0,98,433,,0,0,0,5,0,True,2026-05-12
 2026-06-13,all-time,3986840,NOLA BDRV New Firm Nurture Follow Up,18,ARCHIVE,BDR,1.99,0.18,7.47,21.48,0.0,559,554,,0,0,13,5,0,False,2025-09-16
 2026-06-13,all-time,4089134,No Intent - CL - BDR-S - Email Only,0,ARCHIVE,BDR,0.19,0.19,0.0,19.48,0.0,137,539,,0,0,0,0,0,False,2026-02-10
-2026-06-13,all-time,3801482,ReEngage Cadence - EMEA BDR (Mid Market),26,ARCHIVE,BDR,0.53,2.42,7.58,13.04,0.0,1414,6035,,0,13,13,0,0,False,2025-02-12
-2026-06-13,all-time,3786158,ReEngage Cadence - EMEA BDR (Strat),38,ARCHIVE,BDR,1.15,3.52,15.66,20.09,0.0,1320,6338,,0,13,20,5,0,False,2025-01-28
-2026-06-13,all-time,3802512,ReEngage Cadence - EMEA BDR (Velocity),38,ARCHIVE,BDR,2.98,2.23,15.75,27.86,0.0,1304,4397,,0,13,20,5,0,False,2025-02-13
 2026-06-13,all-time,4106547,SDR - AI Rebook Cadence (blank) ,93,KEEP,SDR,29.25,8.84,7.42,38.1,0.0,152,147,,35,30,13,15,0,False,2026-03-03
 2026-06-13,all-time,4163406,SDR - Attended Event,35,LOW SAMPLE,SDR,0.0,18.18,0.0,18.18,0.0,3,11,,0,30,0,5,0,True,2026-04-29
 2026-06-13,all-time,1031700,SDR - Bad Phone Number,40,ARCHIVE,SDR,0.0,3.54,0.0,34.89,0.0,10601,34466,,0,30,0,10,0,False,2019-05-06
 2026-06-13,all-time,1477409,SDR - Booked Call - Followup,65,REVIEW,SDR,0.0,17.04,39.94,48.06,0.0,12847,14260,,0,30,20,15,0,False,2020-03-03
 2026-06-13,all-time,4017688,SDR - Clio Work - Demo Request (MQL),93,LOW SAMPLE,SDR,24.19,3.72,7.8,45.12,0.0,80,215,,35,30,13,15,0,True,2025-10-22
-2026-06-13,all-time,4061563,SDR - Clio Work - Demo Request (MQL) - APAC,0,LOW SAMPLE,SDR,0.0,0.0,0.0,0.0,0.0,1,0,,0,0,0,0,0,True,2026-01-05
 2026-06-13,all-time,4018883,SDR - Clio Work - Demo Request (MQL) - Copy,93,LOW SAMPLE,SDR,60.0,20.0,14.29,80.0,0.0,4,5,,35,30,13,15,0,True,2025-10-24
 2026-06-13,all-time,4015077,SDR - Clio Work - Pricing Page (MQL),60,LOW SAMPLE,SDR,5.15,5.88,2.81,33.09,0.0,50,136,,20,30,0,10,0,True,2025-10-20
-2026-06-13,all-time,4061562,SDR - Clio Work - Pricing Page (MQL) - APAC,0,NO DATA,SDR,0.0,0.0,0.0,0.0,0.0,0,0,,0,0,0,0,0,True,2026-01-05
 2026-06-13,all-time,2389828,SDR - Contact Us Form,100,KEEP,SDR,27.68,15.93,17.5,46.42,0.0,1509,1846,,35,30,20,15,0,False,2021-12-14
 2026-06-13,all-time,3974220,SDR - Demo Request - DRAFT ONLY MQLS,63,REVIEW,SDR,8.04,2.27,6.44,35.75,0.0,404,1144,,20,22,6,15,0,False,2025-08-29
 2026-06-13,all-time,4078929,SDR - Demo Request - Event: NTLS,63,LOW SAMPLE,SDR,8.11,2.7,4.17,56.76,0.0,10,37,,20,22,6,15,0,True,2026-01-28
@@ -500,28 +459,11 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,1348039,SDR - Student - Disqualified,65,REVIEW,SDR,0.0,18.94,18.82,49.12,0.0,401,908,,0,30,20,15,0,False,2019-11-26
 2026-06-13,all-time,4163409,SDR - Watched On-Demand Webinar,70,LOW SAMPLE,SDR,6.08,2.7,7.75,45.95,0.0,49,148,,20,22,13,15,0,True,2026-04-29
 2026-06-13,all-time,4015093,SDR - vLex - Demo Request (MQL),93,KEEP,SDR,37.55,10.99,9.64,41.76,0.0,240,546,,35,30,13,15,0,False,2025-10-20
-2026-06-13,all-time,4061560,SDR - vLex - Demo Request (MQL) - APAC,0,LOW SAMPLE,SDR,0.0,0.0,0.0,0.0,0.0,1,3,,0,0,0,0,0,True,2026-01-05
 2026-06-13,all-time,4017681,SDR - vLex - Free Trial,51,REVIEW,SDR,2.97,1.43,4.48,30.98,0.0,6742,20641,,13,22,6,10,0,False,2025-10-22
-2026-06-13,all-time,4061556,SDR - vLex - Free Trial - APAC,75,LOW SAMPLE,SDR,10.0,20.0,0.0,30.0,0.0,4,10,,35,30,0,10,0,True,2026-01-05
 2026-06-13,all-time,4030812,SDR - vLex - Free Trial - Copy,30,LOW SAMPLE,SDR,0.0,4.35,0.0,13.04,0.0,13,23,,0,30,0,0,0,True,2025-11-07
 2026-06-13,all-time,4020919,SDR - vLex - Not a Lawyer,58,REVIEW,SDR,0.54,4.92,9.91,35.89,0.0,1927,6320,,0,30,13,15,0,False,2025-10-28
-2026-06-13,all-time,4023298,SDR - vLex - Not a Lawyer - EMEA,65,LOW SAMPLE,SDR,0.0,12.5,54.55,87.5,0.0,6,8,,0,30,20,15,0,True,2025-10-30
 2026-06-13,all-time,4038321,SDR - vLex - Warm Nurture ,45,ARCHIVE,SDR,2.19,1.37,0.46,29.32,0.0,155,365,,13,22,0,10,0,False,2025-11-18
 2026-06-13,all-time,4036658,SDR - vLex -Booked Call - Followup ,81,LOW SAMPLE,SDR,24.05,11.39,4.76,32.91,0.0,40,79,,35,30,6,10,0,True,2025-11-14
-2026-06-13,all-time,3393102,SDR EMEA // Re-Engage Cadence // Untouched Leads,5,ARCHIVE,SDR,0.06,0.11,0.0,24.69,0.0,372,1750,,0,0,0,5,0,False,2024-02-07
 2026-06-13,all-time,3556685,SDR- 2024 Demo No Show / Cancellation,93,KEEP,SDR,27.72,10.17,8.5,41.37,0.0,2312,4895,,35,30,13,15,0,False,2024-05-22
-2026-06-13,all-time,3370023,SDR-EMEA - Demo Request - 2026,100,KEEP,SDR,15.01,6.09,20.76,40.15,0.0,5270,10858,,35,30,20,15,0,False,2024-01-18
-2026-06-13,all-time,3210053,SDR-EMEA - Pricing Page - Aug 2023 Prospecting,78,KEEP,SDR,6.79,6.79,13.56,38.21,0.0,136,280,,20,30,13,15,0,False,2023-08-09
-2026-06-13,all-time,2708450,SDR-EMEA - Trial Sign Up - 2026,70,REVIEW,SDR,3.83,2.73,21.21,44.23,0.0,7173,19427,,13,22,20,15,0,False,2022-07-21
-2026-06-13,all-time,3370502,SDR-EMEA - Trial Sign Up - DEC 2023,63,REVIEW,SDR,4.41,2.11,15.0,35.97,0.0,4197,11946,,13,22,13,15,0,False,2024-01-18
-2026-06-13,all-time,3870726,SDR-EMEA Legal Trends Report 2025 - Netline July Campaign ,13,ARCHIVE,SDR,0.0,0.0,11.36,11.82,0.0,119,330,,0,0,13,0,0,False,2025-04-29
-2026-06-13,all-time,3518925,SDR-EMEA Marketing Your Law Firm - UAE,15,LOW SAMPLE,SDR,0.0,0.0,0.0,55.56,0.0,4,9,,0,0,0,15,0,True,2024-05-02
-2026-06-13,all-time,3518892,SDR-EMEA Marketing Your Law Firm - UKI,13,LOW SAMPLE,SDR,0.0,0.0,14.29,0.0,0.0,15,105,,0,0,13,0,0,True,2024-05-02
-2026-06-13,all-time,3692995,SDR/AE-EMEA - AQL Re-engage - Niall,65,LOW SAMPLE,SDR,1.08,3.23,27.47,41.94,0.0,59,93,,0,30,20,15,0,True,2024-09-25
-2026-06-13,all-time,2708480,SDR/AE-EMEA - MQLs - Aug 2023,85,KEEP,SDR,7.96,7.96,22.42,42.35,0.0,1037,2550,,20,30,20,15,0,False,2022-07-21
-2026-06-13,all-time,2701627,SDR/AE-EMEA - Re-engage - Email Cadence,45,ARCHIVE,SDR,1.42,2.38,9.49,27.23,0.0,842,1763,,0,22,13,10,0,False,2022-07-18
-2026-06-13,all-time,2700707,SDR/BDR-EMEA - AQL Cadence - 2026,25,ARCHIVE,BDR,1.14,1.79,16.62,33.9,0.0,6558,20059,,0,0,20,5,0,False,2022-07-18
 2026-06-13,all-time,3600828,SILVER - PI July Refresher BDRV,6,ARCHIVE,BDR,0.87,0.13,5.83,15.14,0.0,2971,5305,,0,0,6,0,0,False,2024-06-24
-2026-06-13,all-time,4044263,TD 2026 - APAC MQL - SDR - Request A Demo,93,LOW SAMPLE,SDR,16.33,16.33,10.0,44.9,0.0,20,49,,35,30,13,15,0,True,2025-11-25
-2026-06-13,all-time,4044260,TD 2026 - APAC MQL - SDR - Trial Sign Ups,45,LOW SAMPLE,SDR,0.93,3.74,0.0,42.06,0.0,30,107,,0,30,0,15,0,True,2025-11-25
 2026-06-13,all-time,3937623,VAN BDRV Call ONLY ,13,ARCHIVE,BDR,0.0,0.0,12.31,0.0,0.0,534,0,,0,0,13,0,0,False,2025-07-16

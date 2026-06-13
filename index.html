@@ -41,11 +41,11 @@
 </div>
 
 <div class="kpi-bar" id="kpiBar">
-  <div class="kpi keep">   <div class="num" id="kpiKeep">33</div>    <div class="lbl">Keep</div></div>
-  <div class="kpi review"> <div class="num" id="kpiReview">57</div> <div class="lbl">Review</div></div>
-  <div class="kpi archive"><div class="num" id="kpiArchive">212</div><div class="lbl">Archive</div></div>
-  <div class="kpi low">    <div class="num" id="kpiLow">188</div>       <div class="lbl">Low Sample</div></div>
-  <div class="kpi nodata"> <div class="num" id="kpiNoData">36</div> <div class="lbl">No Data</div></div>
+  <div class="kpi keep">   <div class="num" id="kpiKeep">27</div>    <div class="lbl">Keep</div></div>
+  <div class="kpi review"> <div class="num" id="kpiReview">51</div> <div class="lbl">Review</div></div>
+  <div class="kpi archive"><div class="num" id="kpiArchive">189</div><div class="lbl">Archive</div></div>
+  <div class="kpi low">    <div class="num" id="kpiLow">170</div>       <div class="lbl">Low Sample</div></div>
+  <div class="kpi nodata"> <div class="num" id="kpiNoData">31</div> <div class="lbl">No Data</div></div>
 </div>
 
 <div class="ctrl">
@@ -60,6 +60,16 @@
       <option value="">All</option>
       <option value="BDR">BDR</option>
       <option value="SDR">SDR</option>
+    </select>
+  </label>
+  <label>Team
+    <select id="fTeam" onchange="filter()">
+      <option value="">All</option>
+      <option value="SDR">SDR</option>
+      <option value="BDR-S">BDR-S</option>
+      <option value="BDR-V">BDR-V</option>
+      <option value="BDR-MM">BDR-MM</option>
+      <option value="BDR-CS">BDR-CS</option>
     </select>
   </label>
   <label>Verdict
@@ -180,20 +190,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
       <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="#BDR MM CAN">#BDR MM CAN</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">11</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">4.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">20.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">255</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 6 / 5</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="$BDR-MM - AQL - General Content">$BDR-MM - AQL - General Content</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
@@ -302,62 +298,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">28.6%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">62</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">20 / 13 / 0 / 5</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="APAC - BDR/AE - New Outbound">APAC - BDR/AE - New Outbound</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">25</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.7%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">21.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">23.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1,292</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 20 / 5</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="KEEP">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="APAC MQL - SDR - Request A Demo">APAC MQL - SDR - Request A Demo</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#dcfce7;color:#16a34a;">KEEP</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#16a34a;">100</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">15.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">11.9%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">16.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">47.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">3,441</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">35 / 30 / 20 / 15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="REVIEW">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="APAC MQL - SDR - Trial Sign Ups ">APAC MQL - SDR - Trial Sign Ups </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fef9c3;color:#d97706;">REVIEW</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#d97706;">71</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">3.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">3.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">9.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">42.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">188</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">13 / 30 / 13 / 15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="KEEP">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="APAC MQL - SDR - Trial Sign Ups 2026">APAC MQL - SDR - Trial Sign Ups 2026</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#dcfce7;color:#16a34a;">KEEP</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#16a34a;">93</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">19.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">7.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">7.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">44.3%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1,995</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">35 / 30 / 13 / 15</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
@@ -512,146 +452,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">22.7%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">29</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">20 / 13 / 6 / 5</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR EMEA - December Foundry - The Legal Trends Report"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>BDR EMEA - December Foundry - The Legal Trends Report</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">6</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">3.7%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">12.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">98</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 6 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR EMEA - Feb 2026 Foundry - The Essential Guide to Legal Document Automation">BDR EMEA - Feb 2026 Foundry - The Essential Guide to Legal Document Automation</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">6</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.4%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">3.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">10.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">142</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 6 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR EMEA - February Netline 2026 - The Law Firm Leader&#x27;s Checklist for OKRs and KPIs "><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>BDR EMEA - February Netline 2026 - The Law Firm Leader&#x27;s Checklist for OKRs and KPIs </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">11.9%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">49</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR EMEA - IT Manager/Director "><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>BDR EMEA - IT Manager/Director </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">6</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">4.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">10.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">79</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 6 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR EMEA - Jan 2026 Netline - The Essential Guide to Legal Document Automation"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>BDR EMEA - Jan 2026 Netline - The Essential Guide to Legal Document Automation</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">2.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">7.7%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">44</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR EMEA - March Interlink - AI Buyer Guide">BDR EMEA - March Interlink - AI Buyer Guide</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">14.7%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">146</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR EMEA - November Netline - The Legal Trends Report">BDR EMEA - November Netline - The Legal Trends Report</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">20</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">15.3%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">11.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">100</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 20 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR EMEA - Nurture AQL Outbound (Strat/MM)">BDR EMEA - Nurture AQL Outbound (Strat/MM)</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">18</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.7%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">8.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">28.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">300</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 13 / 5</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR EMEA - October Netline - The Legal AI Buyer’s Guide: A Checklist for Legal Professionals"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>BDR EMEA - October Netline - The Legal AI Buyer’s Guide: A Checklist for Legal Professionals</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">20</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">20.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">5.7%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">64</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 20 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR EMEA Outbound Mid Market"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>BDR EMEA Outbound Mid Market</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">13</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">2.4%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">9.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">17</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 13 / 0 / 0</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
@@ -1307,7 +1107,7 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.3%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.7%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">30.4%</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">30.6%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">424</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 5</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
@@ -2847,7 +2647,7 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.8%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">2.0%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">33.4%</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">33.5%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">189</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 13 / 0 / 5</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
@@ -3063,20 +2863,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="NO DATA">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR-CS: Clio Work Demo Request - APAC"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>BDR-CS: Clio Work Demo Request - APAC</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#f8fafc;color:#94a3b8;">NO DATA</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#94a3b8;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">100.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 20 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
       <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR-CS: Clio Work Demo Webinar (Weekly on Friday) - Invite Copy ">BDR-CS: Clio Work Demo Webinar (Weekly on Friday) - Invite Copy </td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
@@ -3130,20 +2916,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">43.1%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">205</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">20 / 30 / 13 / 10</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="NO DATA">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR-CS: Clio Work OPT OUT CQLs - APAC"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>BDR-CS: Clio Work OPT OUT CQLs - APAC</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#f8fafc;color:#94a3b8;">NO DATA</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#94a3b8;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 0</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
@@ -3264,7 +3036,7 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">43</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">8.4%</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">9.2%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">3.8%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">41.2%</td>
@@ -3774,48 +3546,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">14</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 6 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR-EMEA - Nurture MQLs">BDR-EMEA - Nurture MQLs</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">18</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.9%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">11.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">28.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">622</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 13 / 5</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="REVIEW">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR-EMEA - UK MQLs - Jan 2025">BDR-EMEA - UK MQLs - Jan 2025</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fef9c3;color:#d97706;">REVIEW</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#d97706;">63</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">11.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">4.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">17.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">38.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">186</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">20 / 13 / 20 / 10</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR-EMEA- AQL pre call"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>BDR-EMEA- AQL pre call</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">20</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">25.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">35</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 20 / 0</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
@@ -4331,7 +4061,7 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.1%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.1%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">18.9%</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">19.0%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1,211</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 0</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
@@ -5191,76 +4921,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR/AE-EMEA - DM/Owner - Prospecting">BDR/AE-EMEA - DM/Owner - Prospecting</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">6</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">6.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">14.3%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">493</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 6 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR/AE-EMEA - Email Only - Jan 2025">BDR/AE-EMEA - Email Only - Jan 2025</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.3%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.7%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">17.4%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1,006</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR/AE-EMEA - Partners - Prospecting">BDR/AE-EMEA - Partners - Prospecting</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">6</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">5.9%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">11.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1,710</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 6 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR/AE-EMEA - Practice Manager - Prospecting">BDR/AE-EMEA - Practice Manager - Prospecting</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">26</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">2.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">7.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">10.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">532</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 13 / 13 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR/AE-EMEA - Re-engage">BDR/AE-EMEA - Re-engage</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">26</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">2.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">12.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">18.4%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">897</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 13 / 13 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
       <tr data-date="2026-06-13" data-model="BDR" data-verdict="REVIEW">
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="BDR:CS MQL vLex Free Trial from customers">BDR:CS MQL vLex Free Trial from customers</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
@@ -5961,20 +5621,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="Cadences / SDR-EMEA Small Firm Growth Handbook - UKI - Netline May 2025"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>Cadences / SDR-EMEA Small Firm Growth Handbook - UKI - Netline May 2025</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">13</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">7.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">14.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 13 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
       <tr data-date="2026-06-13" data-model="BDR" data-verdict="LOW SAMPLE">
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="Canada Draft BDR - MM"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>Canada Draft BDR - MM</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
@@ -6000,146 +5646,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">47.8%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">26</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 10</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="KEEP">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="DO NOT USE* SDR-EMEA - Demo Request - Aug 2023">DO NOT USE* SDR-EMEA - Demo Request - Aug 2023</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#dcfce7;color:#16a34a;">KEEP</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#16a34a;">100</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">17.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">7.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">25.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">41.7%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1,736</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">35 / 30 / 20 / 15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="NO DATA">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="EMEA - BDR GROW UK&amp;I"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>EMEA - BDR GROW UK&amp;I</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#f8fafc;color:#94a3b8;">NO DATA</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#94a3b8;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="EMEA - HTSALF - SDR -2024">EMEA - HTSALF - SDR -2024</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">30</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">20.4%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">29.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">235</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 20 / 10</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="NO DATA">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="EMEA - SDR - A Lawyer’s Guide to a Paperless Office"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>EMEA - SDR - A Lawyer’s Guide to a Paperless Office</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#f8fafc;color:#94a3b8;">NO DATA</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#94a3b8;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="EMEA - SDR - Clio Work - Demo Request (MQL)"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>EMEA - SDR - Clio Work - Demo Request (MQL)</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">100</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">15.4%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">14.3%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">24.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">41.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">64</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">35 / 30 / 20 / 15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="REVIEW">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="EMEA - SDR - vLex - Free Trial">EMEA - SDR - vLex - Free Trial</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fef9c3;color:#d97706;">REVIEW</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#d97706;">60</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">3.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">19.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">30.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">868</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 30 / 20 / 10</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="REVIEW">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="EMEA BDR - ReEngage - South Africa">EMEA BDR - ReEngage - South Africa</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fef9c3;color:#d97706;">REVIEW</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#d97706;">58</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">5.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">4.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">20.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">31.9%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">300</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">20 / 13 / 20 / 5</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="Email Cadence - BDR EMEA - Outbound (Velocity)">Email Cadence - BDR EMEA - Outbound (Velocity)</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">13</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.4%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">11.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">18.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1,254</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 13 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="Email Cadence - BDR EMEA Outbound Strat">Email Cadence - BDR EMEA Outbound Strat</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">13</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.3%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">8.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">13.9%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1,773</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 13 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="Email Only - BDR EMEA Outbound (Strat/MM)">Email Only - BDR EMEA Outbound (Strat/MM)</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">16.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1,743</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 0</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
@@ -6479,48 +5985,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="ReEngage Cadence - EMEA BDR (Mid Market)">ReEngage Cadence - EMEA BDR (Mid Market)</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">26</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">2.4%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">7.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">13.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1,414</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 13 / 13 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="ReEngage Cadence - EMEA BDR (Strat)">ReEngage Cadence - EMEA BDR (Strat)</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">38</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">3.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">15.7%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">20.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1,320</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 13 / 20 / 5</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="ReEngage Cadence - EMEA BDR (Velocity)">ReEngage Cadence - EMEA BDR (Velocity)</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">38</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">3.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">2.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">15.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">27.9%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1,304</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 13 / 20 / 5</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
       <tr data-date="2026-06-13" data-model="SDR" data-verdict="KEEP">
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR - AI Rebook Cadence (blank) ">SDR - AI Rebook Cadence (blank) </td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
@@ -6592,20 +6056,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
       <tr data-date="2026-06-13" data-model="SDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR - Clio Work - Demo Request (MQL) - APAC"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>SDR - Clio Work - Demo Request (MQL) - APAC</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="LOW SAMPLE">
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR - Clio Work - Demo Request (MQL) - Copy"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>SDR - Clio Work - Demo Request (MQL) - Copy</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
@@ -6630,20 +6080,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">33.1%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">50</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">20 / 30 / 0 / 10</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="NO DATA">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR - Clio Work - Pricing Page (MQL) - APAC"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>SDR - Clio Work - Pricing Page (MQL) - APAC</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#f8fafc;color:#94a3b8;">NO DATA</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#94a3b8;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 0</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
@@ -7109,20 +6545,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR - vLex - Demo Request (MQL) - APAC"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>SDR - vLex - Demo Request (MQL) - APAC</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
       <tr data-date="2026-06-13" data-model="SDR" data-verdict="REVIEW">
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR - vLex - Free Trial">SDR - vLex - Free Trial</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
@@ -7134,20 +6556,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">31.0%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">6,742</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">13 / 22 / 6 / 10</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR - vLex - Free Trial - APAC"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>SDR - vLex - Free Trial - APAC</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">75</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">10.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">20.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">30.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">4</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">35 / 30 / 0 / 10</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
@@ -7179,20 +6587,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR - vLex - Not a Lawyer - EMEA"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>SDR - vLex - Not a Lawyer - EMEA</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">65</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">12.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">54.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">87.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">6</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 30 / 20 / 15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
       <tr data-date="2026-06-13" data-model="SDR" data-verdict="ARCHIVE">
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR - vLex - Warm Nurture ">SDR - vLex - Warm Nurture </td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
@@ -7221,20 +6615,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR EMEA // Re-Engage Cadence // Untouched Leads">SDR EMEA // Re-Engage Cadence // Untouched Leads</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">5</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">24.7%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">372</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 5</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
       <tr data-date="2026-06-13" data-model="SDR" data-verdict="KEEP">
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR- 2024 Demo No Show / Cancellation">SDR- 2024 Demo No Show / Cancellation</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
@@ -7249,160 +6629,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="KEEP">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR-EMEA - Demo Request - 2026">SDR-EMEA - Demo Request - 2026</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#dcfce7;color:#16a34a;">KEEP</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#16a34a;">100</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">15.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">6.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">20.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">40.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">5,270</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">35 / 30 / 20 / 15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="KEEP">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR-EMEA - Pricing Page - Aug 2023 Prospecting">SDR-EMEA - Pricing Page - Aug 2023 Prospecting</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#dcfce7;color:#16a34a;">KEEP</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#16a34a;">78</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">6.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">6.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">13.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">38.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">136</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">20 / 30 / 13 / 15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="REVIEW">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR-EMEA - Trial Sign Up - 2026">SDR-EMEA - Trial Sign Up - 2026</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fef9c3;color:#d97706;">REVIEW</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#d97706;">70</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">3.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">2.7%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">21.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">44.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">7,173</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">13 / 22 / 20 / 15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="REVIEW">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR-EMEA - Trial Sign Up - DEC 2023">SDR-EMEA - Trial Sign Up - DEC 2023</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fef9c3;color:#d97706;">REVIEW</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#d97706;">63</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">4.4%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">2.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">15.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">36.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">4,197</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">13 / 22 / 13 / 15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR-EMEA Legal Trends Report 2025 - Netline July Campaign ">SDR-EMEA Legal Trends Report 2025 - Netline July Campaign </td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">13</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">11.4%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">11.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">119</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 13 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR-EMEA Marketing Your Law Firm - UAE"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>SDR-EMEA Marketing Your Law Firm - UAE</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">55.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">4</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 0 / 15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR-EMEA Marketing Your Law Firm - UKI"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>SDR-EMEA Marketing Your Law Firm - UKI</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">13</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">14.3%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 13 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR/AE-EMEA - AQL Re-engage - Niall"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>SDR/AE-EMEA - AQL Re-engage - Niall</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">65</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">3.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">27.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">41.9%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">59</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 30 / 20 / 15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="KEEP">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR/AE-EMEA - MQLs - Aug 2023">SDR/AE-EMEA - MQLs - Aug 2023</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#dcfce7;color:#16a34a;">KEEP</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#16a34a;">85</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">8.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">8.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">22.4%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">42.4%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1,037</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">20 / 30 / 20 / 15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR/AE-EMEA - Re-engage - Email Cadence">SDR/AE-EMEA - Re-engage - Email Cadence</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">45</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.4%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">2.4%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">9.5%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">27.2%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">842</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 22 / 13 / 10</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SDR/BDR-EMEA - AQL Cadence - 2026">SDR/BDR-EMEA - AQL Cadence - 2026</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#fee2e2;color:#dc2626;">ARCHIVE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#dc2626;">25</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">1.8%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">16.6%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">33.9%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">6,558</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 20 / 5</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
       <tr data-date="2026-06-13" data-model="BDR" data-verdict="ARCHIVE">
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="SILVER - PI July Refresher BDRV">SILVER - PI July Refresher BDRV</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#dbeafe;color:#1e40af;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">BDR</span></td>
@@ -7414,34 +6640,6 @@
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">15.1%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">2,971</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 0 / 6 / 0</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="TD 2026 - APAC MQL - SDR - Request A Demo"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>TD 2026 - APAC MQL - SDR - Request A Demo</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">93</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">16.3%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">16.3%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">10.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">44.9%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">20</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">35 / 30 / 13 / 15</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
-      </tr>
-      <tr data-date="2026-06-13" data-model="SDR" data-verdict="LOW SAMPLE">
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="TD 2026 - APAC MQL - SDR - Trial Sign Ups"><span title="Low sample — fewer than 100 people acted on" style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>TD 2026 - APAC MQL - SDR - Trial Sign Ups</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="background:#ede9fe;color:#4c1d95;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:700;">SDR</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:#e2e8f0;color:#475569;">LOW SAMPLE</span></td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:#475569;">45</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.9%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">3.7%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">0.0%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">42.1%</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">30</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">0 / 30 / 0 / 15</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;"></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">2026-06-13</td>
       </tr>
@@ -7477,11 +6675,12 @@ let sc=3,sd=-1;
 function filter(){
   const d=document.getElementById('fDate').value;
   const m=document.getElementById('fModel').value;
+  const t=document.getElementById('fTeam').value.toUpperCase();
   const v=document.getElementById('fVerdict').value;
   const s=document.getElementById('fSearch').value.toLowerCase();
   let vis=0,k=0,rv=0,ar=0,lo=0,nd=0;
   allRows.forEach(r=>{
-    const show=(!d||r.dataset.date===d)&&(!m||r.dataset.model===m)&&(!v||r.dataset.verdict===v)&&(!s||r.cells[0].textContent.toLowerCase().includes(s));
+    const show=(!d||r.dataset.date===d)&&(!m||r.dataset.model===m)&&(!t||r.cells[0].textContent.toUpperCase().includes(t))&&(!v||r.dataset.verdict===v)&&(!s||r.cells[0].textContent.toLowerCase().includes(s));
     r.style.display=show?'':'none';
     if(show){
       vis++;
