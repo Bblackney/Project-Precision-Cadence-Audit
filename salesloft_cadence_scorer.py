@@ -476,12 +476,15 @@ function filter(){{
   let vis=0,k=0,rv=0,ar=0,lo=0,nd=0;
   allRows.forEach(r=>{{
     const dateOk=!d||r.dataset.date===d;
-    const vd=r.dataset.verdict;
-    // KPI cards reflect the run (date filter only) — independent of verdict/team/search.
-    if(dateOk){{if(vd==='KEEP')k++;else if(vd==='REVIEW')rv++;else if(vd==='ARCHIVE')ar++;else if(vd==='LOW SAMPLE')lo++;else if(vd==='NO DATA')nd++;}}
     const nameU=r.cells[0].textContent.toUpperCase();
     const teamOk=teams.length===0||teams.some(tm=>tm==='SDR'?(nameU.includes('SDR')&&!nameU.includes('BDR')):nameU.includes(tm));
-    const show=dateOk&&teamOk&&verdicts.includes(vd)&&(!s||r.cells[0].textContent.toLowerCase().includes(s));
+    const searchOk=!s||r.cells[0].textContent.toLowerCase().includes(s);
+    const vd=r.dataset.verdict;
+    // KPI cards reflect Date + Team + Search scope (not the Verdict picker) — so they
+    // update as you filter, but always show every verdict's count for that scope.
+    const kpiScope=dateOk&&teamOk&&searchOk;
+    if(kpiScope){{if(vd==='KEEP')k++;else if(vd==='REVIEW')rv++;else if(vd==='ARCHIVE')ar++;else if(vd==='LOW SAMPLE')lo++;else if(vd==='NO DATA')nd++;}}
+    const show=kpiScope&&verdicts.includes(vd);
     r.style.display=show?'':'none';
     if(show)vis++;
   }});
