@@ -175,6 +175,20 @@ def _update_connected_cache(token, cache):
     return {int(k): v for k, v in counts.items()}, new_n, pages, caught_up
 
 
+def fetch_user_map(token):
+    """Return {user_id: 'Full Name'} for all Salesloft users — used to resolve a
+    cadence's creator ID into the 'Created by' name."""
+    users = {}
+    for u in paginate(token, "/users", {"per_page": 100}):
+        uid = u.get("id")
+        if uid is None:
+            continue
+        users[uid] = (u.get("name")
+                      or f"{u.get('first_name','')} {u.get('last_name','')}".strip()
+                      or u.get("email", ""))
+    return users
+
+
 # ── Model detection ───────────────────────────────────────────────────────────
 def detect_model(name):
     """Returns 'BDR', 'SDR', or None (exclude)."""
@@ -224,7 +238,7 @@ CSV_FIELDS = [
     "meeting_rate", "reply_rate", "connect_rate", "open_rate",
     "skip_rate",         # legacy column — always 0.0
     "steps_completed",   # populated with people_acted_on_count
-    "emails_sent", "owner",
+    "emails_sent", "created_by",
     "pts_meeting_rate", "pts_reply_rate", "pts_connect_rate", "pts_open_rate",
     "pts_skip_rate",     # legacy column — always 0
     "low_sample", "created_at",
@@ -290,7 +304,7 @@ def _row_html(r):
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">{_safe_float(r.get('open_rate')):.1f}%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">{ppl:,}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">{escape(str(r.get('pts_meeting_rate','0')))} / {escape(str(r.get('pts_reply_rate','0')))} / {escape(str(r.get('pts_connect_rate','0')))} / {escape(str(r.get('pts_open_rate','0')))}</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;">{escape(r.get('owner',''))}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;">{escape(r.get('created_by',''))}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">{escape(r.get('created_at',''))}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">{escape(r.get('run_date',''))}</td>
       </tr>"""
@@ -417,7 +431,7 @@ def generate_html(all_rows, run_date):
       <th onclick="sort(7)" style="text-align:right">Open Rate</th>
       <th onclick="sort(8)" style="text-align:right" title="people_acted_on_count">People</th>
       <th onclick="sort(9)" style="text-align:right" title="Mtg / Reply / Connect / Open">Pts Breakdown</th>
-      <th onclick="sort(10)">Owner</th>
+      <th onclick="sort(10)">Created by</th>
       <th onclick="sort(11)" style="text-align:center" title="When the cadence was created in Salesloft">Created</th>
       <th onclick="sort(12)" style="text-align:center">Run Date</th>
     </tr></thead>
@@ -564,15 +578,14 @@ def main():
                 excl_personal += 1
                 continue
             cid        = c.get("id")
-            owner_obj  = c.get("owner") or {}
-            owner_name = (
-                f"{owner_obj.get('first_name','')} {owner_obj.get('last_name','')}".strip()
-                or owner_obj.get("name", "")
-            )
-            created = (c.get("created_at") or "")[:10]
+            # owner/creator come back as ID references ({"id":N,"_href":...}) with
+            # no name — we resolve the creator ID to a name after Phase 1.
+            creator    = c.get("creator") or c.get("owner") or {}
+            created    = (c.get("created_at") or "")[:10]
             cadences[cid] = {
                 "id": cid, "name": name, "model": model,
-                "owner": owner_name, "created_at": created,
+                "created_by_id": creator.get("id"), "created_by": "",
+                "created_at": created,
             }
         paging = data.get("metadata", {}).get("paging", {})
         if not paging.get("next_page"):
@@ -589,6 +602,12 @@ def main():
         return 1
 
     # ── Phase 2: Fetch cadence stats ─────────────────────────────────────────
+    # Resolve creator IDs → names for the "Created by" column.
+    print("  Resolving creator names from /v2/users…")
+    user_map = fetch_user_map(token)
+    for cad_row in cadences.values():
+        cad_row["created_by"] = user_map.get(cad_row.get("created_by_id"), "")
+
     print("\n[2/4] Fetching cadence stats…")
     stats = {}  # cadence_id → stats dict
     ids   = list(cadences.keys())
@@ -668,7 +687,7 @@ def main():
             "skip_rate":        0.0,
             "steps_completed":  people_acted_on,
             "emails_sent":      emails_sent,
-            "owner":            c["owner"],
+            "created_by":       c["created_by"],
             "pts_meeting_rate": pts_m,
             "pts_reply_rate":   pts_r,
             "pts_connect_rate": pts_c,
