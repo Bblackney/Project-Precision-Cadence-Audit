@@ -35,6 +35,7 @@ Outputs:     cadence_scores_master.csv (appended), index.html (regenerated)
 import csv
 import json
 import os
+import re
 import sys
 import time
 import urllib.request
@@ -55,6 +56,8 @@ SL_BASE_URL   = "https://api.salesloft.com/v2"
 MIN_PEOPLE    = 100    # low-sample threshold: < this → low_sample flag (still scored)
 REQUEST_DELAY = 0.5    # seconds between API calls (~2 req/sec, avoids rate limits)
 CONNECTED_DISPOSITION = "Call - Connected"   # exact Salesloft disposition for a live connect
+# Regions excluded for now (whole-word match so 'CAN' won't hit 'cancel'/'scan').
+EXCLUDED_REGION_RE = re.compile(r"\b(EMEA|CAN|APAC)\b", re.IGNORECASE)
 
 # ── API helpers ───────────────────────────────────────────────────────────────
 def _get(token, path, params=None, _retry=0):
@@ -373,6 +376,16 @@ def generate_html(all_rows, run_date):
       <option value="SDR">SDR</option>
     </select>
   </label>
+  <label>Team
+    <select id="fTeam" onchange="filter()">
+      <option value="">All</option>
+      <option value="SDR">SDR</option>
+      <option value="BDR-S">BDR-S</option>
+      <option value="BDR-V">BDR-V</option>
+      <option value="BDR-MM">BDR-MM</option>
+      <option value="BDR-CS">BDR-CS</option>
+    </select>
+  </label>
   <label>Verdict
     <select id="fVerdict" onchange="filter()">
       <option value="">All</option>
@@ -425,11 +438,12 @@ let sc=3,sd=-1;
 function filter(){{
   const d=document.getElementById('fDate').value;
   const m=document.getElementById('fModel').value;
+  const t=document.getElementById('fTeam').value.toUpperCase();
   const v=document.getElementById('fVerdict').value;
   const s=document.getElementById('fSearch').value.toLowerCase();
   let vis=0,k=0,rv=0,ar=0,lo=0,nd=0;
   allRows.forEach(r=>{{
-    const show=(!d||r.dataset.date===d)&&(!m||r.dataset.model===m)&&(!v||r.dataset.verdict===v)&&(!s||r.cells[0].textContent.toLowerCase().includes(s));
+    const show=(!d||r.dataset.date===d)&&(!m||r.dataset.model===m)&&(!t||r.cells[0].textContent.toUpperCase().includes(t))&&(!v||r.dataset.verdict===v)&&(!s||r.cells[0].textContent.toLowerCase().includes(s));
     r.style.display=show?'':'none';
     if(show){{
       vis++;
@@ -508,6 +522,7 @@ def main():
     total_seen    = 0
     excl_personal = 0   # dropped: not a team cadence
     excl_archived = 0   # dropped: archived
+    excl_region   = 0   # dropped: EMEA / CAN / APAC (excluded for now)
     page = 1
     while True:
         # Build URL manually — status[] brackets must not be percent-encoded
@@ -529,6 +544,10 @@ def main():
             name  = c.get("name") or ""
             model = detect_model(name)
             if model is None:
+                continue
+            # Region exclusion (EMEA / CAN / APAC) — excluded for now.
+            if EXCLUDED_REGION_RE.search(name):
+                excl_region += 1
                 continue
             # Exclude archived (defensive — the query already requests active)
             if c.get("archived_at") or str(c.get("archived", "")).strip().lower() == "true":
@@ -557,7 +576,7 @@ def main():
 
     print(f"  → {len(cadences)} active team BDR/SDR cadences kept "
           f"(from {total_seen} total; excluded {excl_personal} personal, "
-          f"{excl_archived} archived)")
+          f"{excl_archived} archived, {excl_region} EMEA/CAN/APAC)")
     if not cadences:
         print("  [ERR] No active team BDR/SDR cadences found.")
         print("        If the [debug] field list above has no 'team_cadence' key,")
