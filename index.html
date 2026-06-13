@@ -22,6 +22,7 @@
     .ctrl{background:white;padding:12px 32px;border-bottom:1px solid #e2e8f0;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
     .ctrl label{font-size:12px;font-weight:500;color:#374151;display:flex;flex-direction:column;gap:3px}
     .ctrl select,.ctrl input{border:1px solid #d1d5db;border-radius:5px;padding:5px 8px;font-size:12px;outline:none;background:white;min-width:120px}
+    .ctrl input[type=checkbox]{min-width:auto;width:14px;height:14px;padding:0;margin:0;border-radius:3px;vertical-align:middle}
     .ctrl select:focus,.ctrl input:focus{border-color:#2563eb}
     .tbl-wrap{padding:20px 32px;overflow-x:auto}
     table{width:100%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.07);font-size:13px}
@@ -49,17 +50,14 @@
 </div>
 
 <div class="ctrl">
-  <label>Run Date
-    <select id="fDate" onchange="filter()">
-      <option value="">All dates</option>
-      <option value="2026-06-13" selected>2026-06-13</option>
-    </select>
-  </label>
-  <label>Model
-    <select id="fModel" onchange="filter()">
+  <label>Verdict
+    <select id="fVerdict" onchange="filter()">
       <option value="">All</option>
-      <option value="BDR">BDR</option>
-      <option value="SDR">SDR</option>
+      <option value="KEEP">KEEP</option>
+      <option value="REVIEW">REVIEW</option>
+      <option value="ARCHIVE">ARCHIVE</option>
+      <option value="LOW SAMPLE">LOW SAMPLE</option>
+      <option value="NO DATA">NO DATA</option>
     </select>
   </label>
   <div style="display:flex;flex-direction:column;gap:3px;font-size:12px;font-weight:500;color:#374151;">Team (pick any)
@@ -71,18 +69,14 @@
       <label style="display:flex;flex-direction:row;align-items:center;gap:3px;font-weight:400;cursor:pointer;"><input type="checkbox" class="fTeam" value="BDR-CS" onchange="filter()">BDR-CS</label>
     </span>
   </div>
-  <label>Verdict
-    <select id="fVerdict" onchange="filter()">
-      <option value="">All</option>
-      <option value="KEEP">KEEP</option>
-      <option value="REVIEW">REVIEW</option>
-      <option value="ARCHIVE">ARCHIVE</option>
-      <option value="LOW SAMPLE">LOW SAMPLE</option>
-      <option value="NO DATA">NO DATA</option>
-    </select>
-  </label>
   <label>Search
     <input type="text" id="fSearch" placeholder="Cadence name…" oninput="filter()">
+  </label>
+  <label>Run Date
+    <select id="fDate" onchange="filter()">
+      <option value="">All dates</option>
+      <option value="2026-06-13" selected>2026-06-13</option>
+    </select>
   </label>
   <span id="rowCount"></span>
 </div>
@@ -6947,7 +6941,6 @@ let sc=3,sd=-1;
 
 function filter(){
   const d=document.getElementById('fDate').value;
-  const m=document.getElementById('fModel').value;
   const teams=Array.from(document.querySelectorAll('.fTeam:checked')).map(c=>c.value.toUpperCase());
   const v=document.getElementById('fVerdict').value;
   const s=document.getElementById('fSearch').value.toLowerCase();
@@ -6955,7 +6948,7 @@ function filter(){
   allRows.forEach(r=>{
     const nameU=r.cells[0].textContent.toUpperCase();
     const teamOk=teams.length===0||teams.some(tm=>tm==='SDR'?(nameU.includes('SDR')&&!nameU.includes('BDR')):nameU.includes(tm));
-    const show=(!d||r.dataset.date===d)&&(!m||r.dataset.model===m)&&teamOk&&(!v||r.dataset.verdict===v)&&(!s||r.cells[0].textContent.toLowerCase().includes(s));
+    const show=(!d||r.dataset.date===d)&&teamOk&&(!v||r.dataset.verdict===v)&&(!s||r.cells[0].textContent.toLowerCase().includes(s));
     r.style.display=show?'':'none';
     if(show){
       vis++;
