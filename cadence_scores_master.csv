@@ -70,7 +70,7 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,4195716,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 1 (Strat)",51,REVIEW,BDR,5.41,2.46,8.89,29.0,0.0,632,1424,,20,13,13,5,0,False,2026-05-18
 2026-06-13,all-time,4219469,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 2 (MM non-CSM)",25,ARCHIVE,BDR,1.64,0.65,15.56,25.53,0.0,180,611,,0,0,20,5,0,False,2026-06-02
 2026-06-13,all-time,4219447,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 2 (Strat)",25,ARCHIVE,BDR,4.5,1.25,16.13,32.47,0.0,596,1044,,0,0,20,5,0,False,2026-06-02
-2026-06-13,all-time,4225423,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 3 (MM non-CSM)",5,ARCHIVE,BDR,1.28,0.69,0.0,30.61,0.0,424,1016,,0,0,0,5,0,False,2026-06-04
+2026-06-13,all-time,4225423,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 3 (MM non-CSM)",5,ARCHIVE,BDR,1.28,0.69,0.0,30.71,0.0,424,1016,,0,0,0,5,0,False,2026-06-04
 2026-06-13,all-time,4225406,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 3 (Strat)",25,ARCHIVE,BDR,3.13,1.1,15.25,25.55,0.0,1185,1726,,0,0,20,5,0,False,2026-06-04
 2026-06-13,all-time,4196209,BDR-CS Apex 30 day Work Trial - Hand Raises HOT All Segments ,45,LOW SAMPLE,BDR,0.0,50.0,0.0,50.0,0.0,2,2,,0,30,0,15,0,True,2026-05-18
 2026-06-13,all-time,4201325,BDR-CS Call Only Nurture,13,ARCHIVE,BDR,0.0,0.0,9.0,0.0,0.0,124,0,,0,0,13,0,0,False,2026-05-21
@@ -180,7 +180,7 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,4201331,BDR-CS-V SOLOS - Apex 30 day Work Trial - Pre-trial BDR cadence,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,,0,0,0,0,0,True,2026-05-21
 2026-06-13,all-time,4214165,BDR-CS-V SOLOS COHORT 1 Apex 30 day Work Trial,23,ARCHIVE,BDR,1.46,3.89,0.0,37.29,0.0,660,1853,,0,13,0,10,0,False,2026-05-29
 2026-06-13,all-time,4220232,BDR-CS-V SOLOS COHORT 2 Apex 30 day Work Trial,23,ARCHIVE,BDR,0.82,2.27,0.0,37.67,0.0,270,2068,,0,13,0,10,0,False,2026-06-02
-2026-06-13,all-time,4225422,BDR-CS-V SOLOS COHORT 3 Apex 30 day Work Trial,18,ARCHIVE,BDR,0.78,2.02,0.0,33.47,0.0,189,4356,,0,13,0,5,0,False,2026-06-04
+2026-06-13,all-time,4225422,BDR-CS-V SOLOS COHORT 3 Apex 30 day Work Trial,18,ARCHIVE,BDR,0.78,2.01,0.0,33.46,0.0,189,4372,,0,13,0,5,0,False,2026-06-04
 2026-06-13,all-time,4238466,BDR-CS-V SOLOS COHORT 4 Apex 30 day Work Trial,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,,0,0,0,0,0,True,2026-06-10
 2026-06-13,all-time,4178964,BDR-CS-V | PLG Work Trial FU,93,LOW SAMPLE,BDR,21.52,22.78,7.94,55.7,0.0,50,79,,35,30,13,15,0,True,2026-05-07
 2026-06-13,all-time,3850647,"BDR-CS: 2025-04-08 Webinar: Intake CLE - Attended ""Optional Grow Demo"" CQLs",52,LOW SAMPLE,BDR,2.63,5.26,15.15,39.47,0.0,19,38,,0,22,20,10,0,True,2025-04-06
@@ -281,7 +281,7 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,4129934,BDR-S Enriched Accounts - Multi-Practice,6,ARCHIVE,BDR,0.95,0.48,4.66,17.94,0.0,357,630,,0,0,6,0,0,False,2026-03-30
 2026-06-13,all-time,4131563,BDR-S Enriched Accounts - Multi-Practice - Email Only,0,ARCHIVE,BDR,0.0,0.06,0.0,13.48,0.0,817,3538,,0,0,0,0,0,False,2026-03-31
 2026-06-13,all-time,4124516,BDR-S Enriched Accounts - Personal Injury,11,ARCHIVE,BDR,0.42,0.21,3.82,22.76,0.0,322,479,,0,0,6,5,0,False,2026-03-23
-2026-06-13,all-time,4131551,BDR-S Enriched Accounts - Personal Injury - Email Only,0,ARCHIVE,BDR,0.09,0.09,0.0,18.97,0.0,1211,4343,,0,0,0,0,0,False,2026-03-31
+2026-06-13,all-time,4131551,BDR-S Enriched Accounts - Personal Injury - Email Only,0,ARCHIVE,BDR,0.09,0.09,0.0,19.0,0.0,1211,4343,,0,0,0,0,0,False,2026-03-31
 2026-06-13,all-time,4124505,BDR-S Enriched Accounts - Transactional,11,ARCHIVE,BDR,0.53,0.27,4.2,25.0,0.0,210,376,,0,0,6,5,0,False,2026-03-23
 2026-06-13,all-time,4131537,BDR-S Enriched Accounts - Transactional - Email Only,0,ARCHIVE,BDR,0.0,0.0,0.0,19.03,0.0,432,1545,,0,0,0,0,0,False,2026-03-31
 2026-06-13,all-time,4117451,BDR-S HH Litigation Sprint - EMAIL ONLY - Copy,0,ARCHIVE,BDR,0.06,0.13,0.0,19.74,0.0,773,3105,,0,0,0,0,0,False,2026-03-16
@@ -319,7 +319,7 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,4177505,BDR-V - Medium Intent - Remote/Efficiency AQL 2026  ,18,LOW SAMPLE,BDR,1.96,0.0,8.18,32.35,0.0,43,102,,0,0,13,5,0,True,2026-05-06
 2026-06-13,all-time,4175687,BDR-V - Outbound New Firm - Litigators,10,LOW SAMPLE,BDR,0.0,0.0,2.5,37.1,0.0,23,62,,0,0,0,10,0,True,2026-05-05
 2026-06-13,all-time,4181125,BDR-V - Outbound New Firm - Transactional,25,LOW SAMPLE,BDR,0.0,0.0,16.67,30.91,0.0,26,55,,0,0,20,5,0,True,2026-05-08
-2026-06-13,all-time,4042240,BDR-V - vLex AQL,11,ARCHIVE,BDR,1.39,0.57,6.76,29.02,0.0,4768,12830,,0,0,6,5,0,False,2025-11-21
+2026-06-13,all-time,4042240,BDR-V - vLex AQL,11,ARCHIVE,BDR,1.39,0.57,6.76,29.03,0.0,4768,12830,,0,0,6,5,0,False,2025-11-21
 2026-06-13,all-time,4057774,BDR-V - vLex Territory Revival Blitz December 2025 - Prospecting,18,ARCHIVE,BDR,2.76,1.28,7.05,26.35,0.0,1106,3048,,0,0,13,5,0,False,2025-12-17
 2026-06-13,all-time,4076501,BDR-V - vLex Territory Revival January 26- Prospecting ,25,ARCHIVE,BDR,1.12,0.43,16.32,28.64,0.0,2596,8321,,0,0,20,5,0,False,2026-01-26
 2026-06-13,all-time,3688424,BDR-V / BDR-S - Sendoso Golf Accounting Direct Mail Follow-up - Prospecting,60,LOW SAMPLE,BDR,9.64,6.02,13.25,33.73,0.0,51,83,,20,22,13,5,0,True,2024-09-19
@@ -375,19 +375,6 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,4172434,BDRV VAN C/L Revival Cadence ,11,ARCHIVE,BDR,1.37,1.27,5.79,25.49,0.0,475,1024,,0,0,6,5,0,False,2026-05-04
 2026-06-13,all-time,4150440,BDRs-Strat - In person conference - ALA 2026 ,30,LOW SAMPLE,BDR,0.0,20.0,0.0,0.0,0.0,5,5,,0,30,0,0,0,True,2026-04-17
 2026-06-13,all-time,4115269,Belgium - BDR Email Only,5,ARCHIVE,BDR,0.12,0.87,0.0,21.14,0.0,142,804,,0,0,0,5,0,False,2026-03-12
-2026-06-13,all-time,4116542,CAD BDR - AQL - AI Focus - MM,11,LOW SAMPLE,BDR,0.44,0.0,6.12,29.96,0.0,95,227,,0,0,6,5,0,True,2026-03-13
-2026-06-13,all-time,4131578,CAD BDR - AQL - AI Focus - MM -  email only,5,LOW SAMPLE,BDR,0.23,0.7,0.0,28.81,0.0,87,427,,0,0,0,5,0,True,2026-03-31
-2026-06-13,all-time,4116696,CAD BDR - AQL - AI Focus - Strat,18,LOW SAMPLE,BDR,1.42,1.42,11.38,25.47,0.0,90,212,,0,0,13,5,0,True,2026-03-13
-2026-06-13,all-time,4169097,CAD BDR - AQL - AI Focus - Strat - email only,18,LOW SAMPLE,BDR,0.0,3.92,0.0,25.49,0.0,14,51,,0,13,0,5,0,True,2026-05-04
-2026-06-13,all-time,4132082,CAD BDR - AQL - AI Focus - Velo,18,ARCHIVE,BDR,1.28,1.28,13.43,28.66,0.0,811,2655,,0,0,13,5,0,False,2026-03-31
-2026-06-13,all-time,4116623,CAD BDR - Closed Lost - MM,11,ARCHIVE,BDR,0.44,1.32,3.69,26.47,0.0,283,680,,0,0,6,5,0,False,2026-03-13
-2026-06-13,all-time,4116711,CAD BDR - Closed Lost - Strat,31,LOW SAMPLE,BDR,3.85,2.56,10.74,32.05,0.0,69,78,,0,13,13,5,0,True,2026-03-13
-2026-06-13,all-time,4132083,CAD BDR - Closed Lost - Velo,25,ARCHIVE,BDR,3.07,0.45,19.42,32.27,0.0,408,880,,0,0,20,5,0,False,2026-03-31
-2026-06-13,all-time,4205810,CAD BDR - Reschedule MM ,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,,0,0,0,0,0,True,2026-05-25
-2026-06-13,all-time,4205818,CAD BDR - Reschedule Strat,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,,0,0,0,0,0,True,2026-05-25
-2026-06-13,all-time,4205823,CAD BDR - Reschedule Velo,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,,0,0,0,0,0,True,2026-05-25
-2026-06-13,all-time,4136012,CAD BDR Outbound nurture,5,LOW SAMPLE,BDR,0.0,0.0,0.0,33.33,0.0,3,3,,0,0,0,5,0,True,2026-04-06
-2026-06-13,all-time,4225965,CAD BDR- high growth,0,NO DATA,BDR,0.0,0.0,33.33,0.0,0.0,0,0,,0,0,20,0,0,True,2026-06-04
 2026-06-13,all-time,4009954,CS-BDR | ClioCon - In Person & Virtual [Attended No CQL],0,NO DATA,BDR,8.46,0.37,0.0,37.87,0.0,0,272,,20,0,0,10,0,True,2025-10-14
 2026-06-13,all-time,4009952,CS-BDR | ClioCon - In Person [Lead Scan CQL],73,LOW SAMPLE,BDR,52.73,7.27,5.32,46.36,0.0,88,110,,35,22,6,10,0,True,2025-10-14
 2026-06-13,all-time,4009959,CS-BDR | ClioCon - Virtual [AI Session CQL],38,ARCHIVE,BDR,12.62,0.32,7.81,30.42,0.0,135,309,,20,0,13,5,0,False,2025-10-14
@@ -417,7 +404,7 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-06-13,all-time,4058549,MM-BDR-CS - Clio Timekeeping Cohort 1 Outreach - OBC,5,ARCHIVE,BDR,1.44,1.64,0.0,22.79,0.0,133,487,,0,0,0,5,0,False,2025-12-18
 2026-06-13,all-time,4184989,MM-BDR-CS | [Defendant] Complaint Filing - Clio Work Outreach - OBC,0,LOW SAMPLE,BDR,0.0,0.0,0.0,16.3,0.0,18,184,,0,0,0,0,0,True,2026-05-12
 2026-06-13,all-time,4184987,MM-BDR-CS | [Plaintiff] Complaint Filing - Clio Work Outreach - OBC,5,LOW SAMPLE,BDR,0.46,0.23,0.0,32.33,0.0,98,433,,0,0,0,5,0,True,2026-05-12
-2026-06-13,all-time,3986840,NOLA BDRV New Firm Nurture Follow Up,18,ARCHIVE,BDR,1.99,0.18,7.47,21.48,0.0,559,554,,0,0,13,5,0,False,2025-09-16
+2026-06-13,all-time,3986840,NOLA BDRV New Firm Nurture Follow Up,18,ARCHIVE,BDR,1.98,0.18,7.47,21.44,0.0,559,555,,0,0,13,5,0,False,2025-09-16
 2026-06-13,all-time,4089134,No Intent - CL - BDR-S - Email Only,0,ARCHIVE,BDR,0.19,0.19,0.0,19.48,0.0,137,539,,0,0,0,0,0,False,2026-02-10
 2026-06-13,all-time,4106547,SDR - AI Rebook Cadence (blank) ,93,KEEP,SDR,29.25,8.84,7.42,38.1,0.0,152,147,,35,30,13,15,0,False,2026-03-03
 2026-06-13,all-time,4163406,SDR - Attended Event,35,LOW SAMPLE,SDR,0.0,18.18,0.0,18.18,0.0,3,11,,0,30,0,5,0,True,2026-04-29
