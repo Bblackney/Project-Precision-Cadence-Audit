@@ -379,16 +379,15 @@ def generate_html(all_rows, run_date):
       <option value="SDR">SDR</option>
     </select>
   </label>
-  <label>Team
-    <select id="fTeam" onchange="filter()">
-      <option value="">All</option>
-      <option value="SDR">SDR</option>
-      <option value="BDR-S">BDR-S</option>
-      <option value="BDR-V">BDR-V</option>
-      <option value="BDR-MM">BDR-MM</option>
-      <option value="BDR-CS">BDR-CS</option>
-    </select>
-  </label>
+  <div style="display:flex;flex-direction:column;gap:3px;font-size:12px;font-weight:500;color:#374151;">Team (pick any)
+    <span style="display:flex;flex-direction:row;gap:10px;flex-wrap:wrap;padding-top:2px;">
+      <label style="display:flex;flex-direction:row;align-items:center;gap:3px;font-weight:400;cursor:pointer;"><input type="checkbox" class="fTeam" value="SDR" onchange="filter()">SDR</label>
+      <label style="display:flex;flex-direction:row;align-items:center;gap:3px;font-weight:400;cursor:pointer;"><input type="checkbox" class="fTeam" value="BDR-S" onchange="filter()">BDR-S</label>
+      <label style="display:flex;flex-direction:row;align-items:center;gap:3px;font-weight:400;cursor:pointer;"><input type="checkbox" class="fTeam" value="BDR-V" onchange="filter()">BDR-V</label>
+      <label style="display:flex;flex-direction:row;align-items:center;gap:3px;font-weight:400;cursor:pointer;"><input type="checkbox" class="fTeam" value="BDR-MM" onchange="filter()">BDR-MM</label>
+      <label style="display:flex;flex-direction:row;align-items:center;gap:3px;font-weight:400;cursor:pointer;"><input type="checkbox" class="fTeam" value="BDR-CS" onchange="filter()">BDR-CS</label>
+    </span>
+  </div>
   <label>Verdict
     <select id="fVerdict" onchange="filter()">
       <option value="">All</option>
@@ -442,13 +441,13 @@ let sc=3,sd=-1;
 function filter(){{
   const d=document.getElementById('fDate').value;
   const m=document.getElementById('fModel').value;
-  const t=document.getElementById('fTeam').value.toUpperCase();
+  const teams=Array.from(document.querySelectorAll('.fTeam:checked')).map(c=>c.value.toUpperCase());
   const v=document.getElementById('fVerdict').value;
   const s=document.getElementById('fSearch').value.toLowerCase();
   let vis=0,k=0,rv=0,ar=0,lo=0,nd=0;
   allRows.forEach(r=>{{
     const nameU=r.cells[0].textContent.toUpperCase();
-    const teamOk=!t||(t==='SDR'?(nameU.includes('SDR')&&!nameU.includes('BDR')):nameU.includes(t));
+    const teamOk=teams.length===0||teams.some(tm=>tm==='SDR'?(nameU.includes('SDR')&&!nameU.includes('BDR')):nameU.includes(tm));
     const show=(!d||r.dataset.date===d)&&(!m||r.dataset.model===m)&&teamOk&&(!v||r.dataset.verdict===v)&&(!s||r.cells[0].textContent.toLowerCase().includes(s));
     r.style.display=show?'':'none';
     if(show){{
