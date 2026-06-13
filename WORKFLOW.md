@@ -55,7 +55,7 @@ Rates:
 ## Model detection & exclusion
 
 `cadence_name` (case-insensitive): contains BDR → BDR; contains SDR → SDR; neither → excluded.
-Also excluded: archived cadences, non-team (personal) cadences, and any cadence whose name contains **EMEA / CAN / APAC** (region exclusion, for now — whole-word match).
+Also excluded: archived cadences, non-team (personal) cadences, and region cadences (for now): name contains **EMEA / CAN / APAC** (whole word) or **starts with CAD**.
 
 ## Scoring model v2.1 (both models max 100 pts; no skip rate)
 

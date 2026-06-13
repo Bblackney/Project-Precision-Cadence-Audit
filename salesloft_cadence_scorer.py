@@ -56,8 +56,10 @@ SL_BASE_URL   = "https://api.salesloft.com/v2"
 MIN_PEOPLE    = 100    # low-sample threshold: < this → low_sample flag (still scored)
 REQUEST_DELAY = 0.5    # seconds between API calls (~2 req/sec, avoids rate limits)
 CONNECTED_DISPOSITION = "Call - Connected"   # exact Salesloft disposition for a live connect
-# Regions excluded for now (whole-word match so 'CAN' won't hit 'cancel'/'scan').
+# Regions excluded for now. EMEA/CAN/APAC match as whole words anywhere in the name;
+# CAD only when the name STARTS with it (so mid-name 'CAD' and the word 'cadence' are safe).
 EXCLUDED_REGION_RE = re.compile(r"\b(EMEA|CAN|APAC)\b", re.IGNORECASE)
+CAD_PREFIX_RE      = re.compile(r"^\s*CAD\b", re.IGNORECASE)
 
 # ── API helpers ───────────────────────────────────────────────────────────────
 def _get(token, path, params=None, _retry=0):
@@ -289,6 +291,7 @@ def _row_html(r):
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">{ppl:,}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-size:12px;color:#6b7280;">{escape(str(r.get('pts_meeting_rate','0')))} / {escape(str(r.get('pts_reply_rate','0')))} / {escape(str(r.get('pts_connect_rate','0')))} / {escape(str(r.get('pts_open_rate','0')))}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;">{escape(r.get('owner',''))}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">{escape(r.get('created_at',''))}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;font-size:12px;color:#9ca3af;">{escape(r.get('run_date',''))}</td>
       </tr>"""
 
@@ -416,7 +419,8 @@ def generate_html(all_rows, run_date):
       <th onclick="sort(8)" style="text-align:right" title="people_acted_on_count">People</th>
       <th onclick="sort(9)" style="text-align:right" title="Mtg / Reply / Connect / Open">Pts Breakdown</th>
       <th onclick="sort(10)">Owner</th>
-      <th onclick="sort(11)" style="text-align:center">Run Date</th>
+      <th onclick="sort(11)" style="text-align:center" title="When the cadence was created in Salesloft">Created</th>
+      <th onclick="sort(12)" style="text-align:center">Run Date</th>
     </tr></thead>
     <tbody id="tbody">
 {all_rows_html}
@@ -443,7 +447,9 @@ function filter(){{
   const s=document.getElementById('fSearch').value.toLowerCase();
   let vis=0,k=0,rv=0,ar=0,lo=0,nd=0;
   allRows.forEach(r=>{{
-    const show=(!d||r.dataset.date===d)&&(!m||r.dataset.model===m)&&(!t||r.cells[0].textContent.toUpperCase().includes(t))&&(!v||r.dataset.verdict===v)&&(!s||r.cells[0].textContent.toLowerCase().includes(s));
+    const nameU=r.cells[0].textContent.toUpperCase();
+    const teamOk=!t||(t==='SDR'?(nameU.includes('SDR')&&!nameU.includes('BDR')):nameU.includes(t));
+    const show=(!d||r.dataset.date===d)&&(!m||r.dataset.model===m)&&teamOk&&(!v||r.dataset.verdict===v)&&(!s||r.cells[0].textContent.toLowerCase().includes(s));
     r.style.display=show?'':'none';
     if(show){{
       vis++;
@@ -545,8 +551,8 @@ def main():
             model = detect_model(name)
             if model is None:
                 continue
-            # Region exclusion (EMEA / CAN / APAC) — excluded for now.
-            if EXCLUDED_REGION_RE.search(name):
+            # Region exclusion — EMEA/CAN/APAC anywhere, or a name that STARTS with CAD.
+            if EXCLUDED_REGION_RE.search(name) or CAD_PREFIX_RE.search(name):
                 excl_region += 1
                 continue
             # Exclude archived (defensive — the query already requests active)
