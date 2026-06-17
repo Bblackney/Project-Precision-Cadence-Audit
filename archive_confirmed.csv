@@ -1,0 +1,1 @@
+run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meeting_rate,reply_rate,connect_rate,open_rate,skip_rate,steps_completed,emails_sent,created_by,pts_meeting_rate,pts_reply_rate,pts_connect_rate,pts_open_rate,pts_skip_rate,low_sample,created_at,archive_confirmed,confirmed_at

@@ -50,6 +50,7 @@ CREDS_FILE  = os.path.join(BASE_DIR, "salesloft_credentials.json")
 MASTER_CSV  = os.path.join(BASE_DIR, "cadence_scores_master.csv")
 MASTER_HTML = os.path.join(BASE_DIR, "index.html")
 CACHE_FILE  = os.path.join(BASE_DIR, "connected_calls_cache.json")
+ARCHIVE_CSV = os.path.join(BASE_DIR, "archive_confirmed.csv")
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 SL_BASE_URL   = "https://api.salesloft.com/v2"
@@ -262,6 +263,33 @@ def read_all_csv():
         return list(csv.DictReader(f))
 
 
+# Extra columns written to archive_confirmed.csv on top of the standard CSV_FIELDS.
+ARCHIVE_EXTRA_FIELDS = ["archive_confirmed", "confirmed_at"]
+
+
+def read_archive_confirmed():
+    """Master record of archive decisions, keyed by cadence_id.
+
+    Returns {cadence_id(str): confirmed_at(str)} for every cadence whose
+    archive_confirmed flag is truthy in archive_confirmed.csv. The dashboard's
+    "Archive Confirmed" checkboxes write this file (one row per confirmed
+    cadence, full line-item info); the weekly run reads it back so the boxes
+    stay checked across regenerations. Missing file → empty (no-op)."""
+    if not os.path.exists(ARCHIVE_CSV):
+        return {}
+    out = {}
+    try:
+        with open(ARCHIVE_CSV, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                cid = str(row.get("cadence_id", "")).strip()
+                flag = str(row.get("archive_confirmed", "")).strip().upper()
+                if cid and flag in ("TRUE", "1", "YES", "Y"):
+                    out[cid] = str(row.get("confirmed_at", "")).strip()
+    except Exception as e:  # never let a malformed file break the weekly run
+        print(f"  [WARN] could not read {os.path.basename(ARCHIVE_CSV)}: {e}")
+    return out
+
+
 # ── HTML dashboard ─────────────────────────────────────────────────────────────
 VERDICT_COLOR = {"KEEP": "#16a34a", "REVIEW": "#d97706", "ARCHIVE": "#dc2626", "LOW SAMPLE": "#475569", "NO DATA": "#94a3b8"}
 VERDICT_BG    = {"KEEP": "#dcfce7", "REVIEW": "#fef9c3", "ARCHIVE": "#fee2e2", "LOW SAMPLE": "#e2e8f0", "NO DATA": "#f8fafc"}
@@ -274,7 +302,10 @@ def _safe_float(v, default=0.0):
         return default
 
 
-def _row_html(r):
+def _row_html(r, confirmed=None):
+    confirmed = confirmed or {}
+    cid = str(r.get("cadence_id", "")).strip()
+    chk = " checked" if cid in confirmed else ""
     v   = r.get("verdict", "ARCHIVE")
     ls  = str(r.get("low_sample", "")).strip().lower() in ("true", "1")
     s   = int(_safe_float(r.get("score")))
@@ -293,10 +324,12 @@ def _row_html(r):
         if ls else ""
     )
     ppl = int(_safe_float(r.get("steps_completed")))
-    return f"""      <tr data-date="{escape(r.get('run_date',''))}" data-model="{escape(r.get('model_applied',''))}" data-verdict="{escape(v)}">
+    return f"""      <tr data-date="{escape(r.get('run_date',''))}" data-model="{escape(r.get('model_applied',''))}" data-verdict="{escape(v)}" data-cid="{escape(cid)}">
+        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;font-variant-numeric:tabular-nums;">{escape(cid)}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="{escape(r.get('cadence_name',''))}">{low_flag}{escape(r.get('cadence_name',''))}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;">{model_badge}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:{bg};color:{fg};">{v}</span></td>
+        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><input type="checkbox" class="archChk" data-cid="{escape(cid)}" onchange="onArch(this)"{chk}></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:{fg};">{s}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">{_safe_float(r.get('meeting_rate')):.1f}%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">{_safe_float(r.get('reply_rate')):.1f}%</td>
@@ -323,7 +356,11 @@ def generate_html(all_rows, run_date):
     low_n       = sum(1 for r in latest_rows if r.get("verdict") == "LOW SAMPLE")
     nodata_n    = sum(1 for r in latest_rows if r.get("verdict") == "NO DATA")
 
-    all_rows_html = "\n".join(_row_html(r) for r in all_rows)
+    confirmed      = read_archive_confirmed()
+    all_rows_html  = "\n".join(_row_html(r, confirmed) for r in all_rows)
+    rows_json      = json.dumps(all_rows, ensure_ascii=True)
+    confirmed_json = json.dumps(confirmed, ensure_ascii=True)
+    fields_json    = json.dumps(CSV_FIELDS, ensure_ascii=True)
     date_options  = "\n      ".join(
         f'<option value="{d}"{" selected" if d == latest else ""}>{d}</option>'
         for d in dates
@@ -387,6 +424,7 @@ def generate_html(all_rows, run_date):
 </div>
 
 <div class="ctrl">
+  <button type="button" id="saveArchBtn" onclick="saveArchiveCSV()" title="Save every Archive-Confirmed cadence (full info) to archive_confirmed.csv" style="border:1px solid #b91c1c;background:#dc2626;color:#fff;border-radius:5px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">⬇ Save Archive-Confirmed CSV <span id="archCount">(0)</span></button>
   <div style="display:flex;flex-direction:column;gap:3px;font-size:12px;font-weight:500;color:#374151;">Verdict
     <div class="dd">
       <button type="button" class="dd-btn" id="vBtn" onclick="toggleDD('vPanel')">Verdict (3)</button>
@@ -426,19 +464,21 @@ def generate_html(all_rows, run_date):
 <div class="tbl-wrap">
   <table id="tbl">
     <thead><tr>
-      <th onclick="sort(0)">Cadence Name</th>
-      <th onclick="sort(1)" style="text-align:center">Model</th>
-      <th onclick="sort(2)" style="text-align:center">Verdict</th>
-      <th onclick="sort(3)" style="text-align:right">Score</th>
-      <th onclick="sort(4)" style="text-align:right">Mtg Rate</th>
-      <th onclick="sort(5)" style="text-align:right">Reply Rate</th>
-      <th onclick="sort(6)" style="text-align:right">Connect Rate</th>
-      <th onclick="sort(7)" style="text-align:right">Open Rate</th>
-      <th onclick="sort(8)" style="text-align:right" title="people_acted_on_count">People</th>
-      <th onclick="sort(9)" style="text-align:right" title="Mtg / Reply / Connect / Open">Pts Breakdown</th>
-      <th onclick="sort(10)">Created by</th>
-      <th onclick="sort(11)" style="text-align:center" title="When the cadence was created in Salesloft">Created</th>
-      <th onclick="sort(12)" style="text-align:center">Run Date</th>
+      <th onclick="sort(0)" title="Salesloft cadence ID">Cadence ID</th>
+      <th onclick="sort(1)">Cadence Name</th>
+      <th onclick="sort(2)" style="text-align:center">Model</th>
+      <th onclick="sort(3)" style="text-align:center">Verdict</th>
+      <th onclick="sort(4)" style="text-align:center" title="Tick to confirm this cadence for archive — saves to archive_confirmed.csv">Archive Confirmed</th>
+      <th onclick="sort(5)" style="text-align:right">Score</th>
+      <th onclick="sort(6)" style="text-align:right">Mtg Rate</th>
+      <th onclick="sort(7)" style="text-align:right">Reply Rate</th>
+      <th onclick="sort(8)" style="text-align:right">Connect Rate</th>
+      <th onclick="sort(9)" style="text-align:right">Open Rate</th>
+      <th onclick="sort(10)" style="text-align:right" title="people_acted_on_count">People</th>
+      <th onclick="sort(11)" style="text-align:right" title="Mtg / Reply / Connect / Open">Pts Breakdown</th>
+      <th onclick="sort(12)">Created by</th>
+      <th onclick="sort(13)" style="text-align:center" title="When the cadence was created in Salesloft">Created</th>
+      <th onclick="sort(14)" style="text-align:center">Run Date</th>
     </tr></thead>
     <tbody id="tbody">
 {all_rows_html}
@@ -452,10 +492,121 @@ def generate_html(all_rows, run_date):
   SDR: Mtg ≥10%=35, ≥5%=20, ≥2%=13 &nbsp;· Reply ≥3%=30, ≥1%=22 &nbsp;· Connect ≥15%=20, ≥7%=13, ≥3%=6 &nbsp;· Open ≥35%=15, ≥25%=10, ≥15%=5
 </div>
 
+<script id="cadenceData">
+// Full per-row data (every column, every run) so the CSV export carries complete
+// line-item info — not the rounded text shown in the table.
+const ALL_ROWS = {rows_json};
+// Cadences already confirmed-for-archive in the committed archive_confirmed.csv.
+const SERVER_CONFIRMED = {confirmed_json};
+// Column order of cadence_scores_master.csv — export uses this + the 2 archive cols.
+const CSV_FIELDS = {fields_json};
+</script>
 <script>
 const tbody=document.getElementById('tbody');
 const allRows=Array.from(tbody.querySelectorAll('tr'));
-let sc=3,sd=-1;
+let sc=5,sd=-1;
+
+// ── Archive-Confirmed state ─────────────────────────────────────────────────
+// localStorage gives instant persistence across reloads AND across the Friday
+// regeneration (boxes stay ticked on this browser). The downloaded
+// archive_confirmed.csv is the durable, shared master record the scorer reads back.
+const LS_KEY='cadenceArchiveConfirmed';            // {{cid:{{c:bool,t:isoDate}}}}
+function loadLS(){{ try{{return JSON.parse(localStorage.getItem(LS_KEY))||{{}};}}catch(e){{return {{}};}} }}
+function saveLS(m){{ try{{localStorage.setItem(LS_KEY,JSON.stringify(m));}}catch(e){{}} }}
+function todayISO(){{ return new Date().toISOString().slice(0,10); }}
+
+// Fired when any checkbox toggles. Treats Archive Confirmed as per-cadence:
+// every row for that cadence_id mirrors the new state.
+function onArch(box){{
+  const cid=box.dataset.cid, on=box.checked;
+  const m=loadLS();
+  m[cid]={{c:on, t:on?(((m[cid]||{{}}).t)||SERVER_CONFIRMED[cid]||todayISO()):''}};
+  saveLS(m);
+  document.querySelectorAll('input.archChk[data-cid="'+cid+'"]').forEach(b=>{{b.checked=on;}});
+  updateArchCount();
+}}
+
+// Apply saved state on load: localStorage override wins; otherwise the
+// server-rendered (committed-file) state already set by the generator stands.
+function applyArchState(){{
+  const m=loadLS();
+  document.querySelectorAll('input.archChk').forEach(b=>{{
+    const cid=b.dataset.cid;
+    if(Object.prototype.hasOwnProperty.call(m,cid)) b.checked=!!m[cid].c;
+  }});
+  updateArchCount();
+}}
+
+// Distinct confirmed cadence_ids (deduped — same cadence can appear across runs).
+function confirmedCids(){{
+  const s=new Set();
+  document.querySelectorAll('input.archChk:checked').forEach(b=>s.add(b.dataset.cid));
+  return s;
+}}
+function updateArchCount(){{
+  const n=confirmedCids().size;
+  const el=document.getElementById('archCount'); if(el) el.textContent='('+n+')';
+}}
+
+function csvCell(v){{
+  v=(v===null||v===undefined)?'':String(v);
+  return /[",\\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;
+}}
+
+// ── Archive CSV builder (APPEND-MERGE — never duplicates, never drops rows) ───
+// Existing rows already on disk are preserved verbatim (incl. their original
+// confirmed_at); only cadence_ids NOT already in the file are appended.
+// Dedupe key = cadence_id. Un-ticking a box does NOT remove an existing row.
+function latestRowFor(cid){{
+  let best=null;
+  ALL_ROWS.forEach(r=>{{ if(String(r.cadence_id||'').trim()!==cid) return;
+    if(!best||String(r.run_date||'')>String(best.run_date||'')) best=r; }});
+  return best;
+}}
+function archiveLineFor(cid,m){{
+  const r=latestRowFor(cid)||{{}};
+  const when=((m[cid]||{{}}).t)||SERVER_CONFIRMED[cid]||todayISO();
+  return CSV_FIELDS.map(f=>csvCell(r[f])).concat(['TRUE',csvCell(when)]).join(',');
+}}
+function parseCSVLine(line){{
+  const out=[]; let cur='',q=false;
+  for(let i=0;i<line.length;i++){{ const ch=line[i];
+    if(q){{ if(ch==='"'){{ if(line[i+1]==='"'){{cur+='"';i++;}} else q=false; }} else cur+=ch; }}
+    else {{ if(ch===','){{out.push(cur);cur='';}} else if(ch==='"'){{q=true;}} else cur+=ch; }}
+  }}
+  out.push(cur); return out;
+}}
+// Read the file already on disk (via the saved handle) so we can append to it.
+async function readExistingArchive(handle){{
+  try{{
+    let text=await (await handle.getFile()).text();
+    text=text.replace(/\\r\\n/g,'\\n').replace(/\\r/g,'\\n');
+    const rows=text.split('\\n').filter(l=>l.length);
+    if(!rows.length) return {{header:null,order:[],byId:{{}}}};
+    const cidIdx=CSV_FIELDS.indexOf('cadence_id');
+    const order=[], byId={{}};
+    for(let i=1;i<rows.length;i++){{
+      const cid=String(parseCSVLine(rows[i])[cidIdx]||'').trim();
+      if(!cid||byId[cid]) continue;
+      byId[cid]=rows[i]; order.push(cid);
+    }}
+    return {{header:rows[0],order:order,byId:byId}};
+  }}catch(e){{ return null; }}
+}}
+// Merge: keep every existing row, append only the confirmed cadences that are missing.
+function buildMergedCSV(existing){{
+  const m=loadLS();
+  const header=(existing&&existing.header)?existing.header
+              :CSV_FIELDS.concat(['archive_confirmed','confirmed_at']).join(',');
+  const lines=[header]; const seen={{}};
+  if(existing) existing.order.forEach(cid=>{{ lines.push(existing.byId[cid]); seen[cid]=1; }});
+  let added=0;
+  Array.from(confirmedCids()).sort().forEach(cid=>{{
+    if(!seen[cid]){{ lines.push(archiveLineFor(cid,m)); added++; }}
+  }});
+  buildMergedCSV._added=added; buildMergedCSV._total=lines.length-1;
+  return lines.join('\\n')+'\\n';
+}}
 
 function toggleDD(id){{
   const p=document.getElementById(id), wasOpen=p.classList.contains('open');
@@ -476,9 +627,9 @@ function filter(){{
   let vis=0,k=0,rv=0,ar=0,lo=0,nd=0;
   allRows.forEach(r=>{{
     const dateOk=!d||r.dataset.date===d;
-    const nameU=r.cells[0].textContent.toUpperCase();
+    const nameU=r.cells[1].textContent.toUpperCase();
     const teamOk=teams.length===0||teams.some(tm=>tm==='SDR'?(nameU.includes('SDR')&&!nameU.includes('BDR')):nameU.includes(tm));
-    const searchOk=!s||r.cells[0].textContent.toLowerCase().includes(s);
+    const searchOk=!s||r.cells[1].textContent.toLowerCase().includes(s);
     const vd=r.dataset.verdict;
     // KPI cards reflect Date + Team + Search scope (not the Verdict picker) — so they
     // update as you filter, but always show every verdict's count for that scope.
@@ -501,6 +652,9 @@ function sort(col){{
   document.querySelectorAll('thead th').forEach((th,i)=>{{th.className=i===col?(sd===1?'asc':'desc'):'';}} );
   const rows=allRows.filter(r=>r.style.display!=='none');
   rows.sort((a,b)=>{{
+    const acb=a.cells[col]?.querySelector('input[type=checkbox]');
+    const bcb=b.cells[col]?.querySelector('input[type=checkbox]');
+    if(acb&&bcb) return ((acb.checked?1:0)-(bcb.checked?1:0))*sd;
     const av=a.cells[col]?.textContent.trim()||'';
     const bv=b.cells[col]?.textContent.trim()||'';
     const an=parseFloat(av.replace(/[^0-9.\-]/g,''));
@@ -511,9 +665,59 @@ function sort(col){{
   rows.forEach(r=>tbody.appendChild(r));
 }}
 
+// ── One-click save to archive_confirmed.csv (File System Access API) ──────────
+// First save: pick/create the file in the project folder (grant once). The handle
+// is remembered (IndexedDB) so later saves write in one click. Browsers without the
+// API (e.g. Safari) fall back to a normal download you drop into the folder.
+const FS_DB='cadenceFS', FS_STORE='handles', FS_KEY='archiveCsv';
+function fsOpen(){{return new Promise((res,rej)=>{{const r=indexedDB.open(FS_DB,1);r.onupgradeneeded=()=>r.result.createObjectStore(FS_STORE);r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error);}});}}
+async function fsPut(h){{const db=await fsOpen();return new Promise((res,rej)=>{{const tx=db.transaction(FS_STORE,'readwrite');tx.objectStore(FS_STORE).put(h,FS_KEY);tx.oncomplete=()=>res();tx.onerror=()=>rej(tx.error);}});}}
+async function fsGet(){{const db=await fsOpen();return new Promise(res=>{{const tx=db.transaction(FS_STORE,'readonly');const q=tx.objectStore(FS_STORE).get(FS_KEY);q.onsuccess=()=>res(q.result||null);q.onerror=()=>res(null);}});}}
+async function fsPerm(h){{const o={{mode:'readwrite'}};if((await h.queryPermission(o))==='granted')return true;if((await h.requestPermission(o))==='granted')return true;return false;}}
+
+let archHandle=null;
+async function saveArchiveCSV(){{
+  if(window.showSaveFilePicker){{
+    try{{
+      if(!archHandle) archHandle=await fsGet();
+      if(archHandle && !(await fsPerm(archHandle))) archHandle=null;
+      if(!archHandle){{
+        archHandle=await window.showSaveFilePicker({{suggestedName:'archive_confirmed.csv',types:[{{description:'CSV file',accept:{{'text/csv':['.csv']}}}}]}});
+        await fsPut(archHandle);
+      }}
+      const existing=await readExistingArchive(archHandle);   // read what's on disk first
+      const csv=buildMergedCSV(existing);                     // keep existing rows, append missing
+      const w=await archHandle.createWritable();
+      await w.write(csv); await w.close();
+      const added=buildMergedCSV._added, total=buildMergedCSV._total;
+      toast(added>0 ? ('Added '+added+' new — '+total+' total in '+archHandle.name)
+                    : ('No new cadences — '+total+' already in '+archHandle.name));
+      return;
+    }}catch(e){{ if(e&&e.name==='AbortError') return; console.warn('FS save failed; downloading instead:',e); }}
+  }}
+  // Fallback (no disk access): write the full current confirmed set.
+  const csv=buildMergedCSV(null);
+  downloadArchiveCSV(csv);
+}}
+function downloadArchiveCSV(csv){{
+  const blob=new Blob([csv],{{type:'text/csv;charset=utf-8'}});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob); a.download='archive_confirmed.csv';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1500);
+  toast('Downloaded archive_confirmed.csv ('+buildMergedCSV._total+') — merge it into the project folder');
+}}
+function toast(msg){{
+  let t=document.getElementById('archToast');
+  if(!t){{t=document.createElement('div');t.id='archToast';t.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#111827;color:#fff;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;box-shadow:0 6px 20px rgba(0,0,0,.25);z-index:50;opacity:0;transition:opacity .2s';document.body.appendChild(t);}}
+  t.textContent=msg; t.style.opacity='1';
+  clearTimeout(t._h); t._h=setTimeout(()=>{{t.style.opacity='0';}},3200);
+}}
+
 window.onload=()=>{{
+  applyArchState();
   const sel=document.getElementById('fDate');
-  if(sel.options.length>1){{sel.selectedIndex=1;filter();sort(3);}}
+  if(sel.options.length>1){{sel.selectedIndex=1;filter();sort(5);}}
   else filter();
 }};
 </script>
