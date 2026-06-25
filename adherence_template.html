@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadence Adherence — Manager Dashboard</title>
+<style>
+  :root{
+    --bg:#f5f6f8; --card:#ffffff; --ink:#1c2530; --muted:#65707d; --line:#e3e7ec;
+    --accent:#2f5bd0; --accent-soft:#eaf0fc;
+    --good:#1f9d57; --good-bg:#e7f6ee; --bad:#d23f43; --bad-bg:#fdecec; --neutral:#8a94a1;
+    --warn:#b9791f; --warn-bg:#fbf2e2;
+    --shadow:0 1px 2px rgba(20,30,45,.06),0 4px 14px rgba(20,30,45,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1320px;margin:0 auto;padding:22px 22px 60px}
+  .tabbar{display:flex;gap:8px;margin-bottom:16px}
+  .tab{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:999px;border:1px solid var(--line);
+    background:#fff;color:var(--muted);font-weight:600;font-size:13px;text-decoration:none}
+  .tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .tab:hover:not(.active){background:#f0f3f8;color:var(--ink)}
+  header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
+  h1{font-size:21px;margin:0 0 3px;font-weight:680;letter-spacing:-.2px}
+  .sub{color:var(--muted);font-size:13px;margin:0}
+  .stamp{font-size:12px;color:var(--muted);white-space:nowrap}
+  .controls{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:18px 0 16px;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+  .ctl{display:flex;flex-direction:column;gap:5px}
+  .ctl label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:600}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+  .seg button{border:0;background:#fff;padding:7px 13px;font-size:13px;cursor:pointer;color:var(--muted);font-weight:600}
+  .seg button.on{background:var(--accent);color:#fff}
+  select,input[type=search]{border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:13px;
+    background:#fff;color:var(--ink);min-width:150px;font-family:inherit}
+  select#cadenceFilter{min-width:240px;max-width:340px}
+  input[type=search]{min-width:170px}
+  .spacer{flex:1}
+  .cards{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:18px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 14px;box-shadow:var(--shadow)}
+  .kpi .k-label{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);font-weight:600}
+  .kpi .k-val{font-size:23px;font-weight:700;margin-top:5px;letter-spacing:-.5px}
+  .kpi .k-sub{font-size:11.5px;color:var(--muted);margin-top:3px}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);margin-bottom:18px}
+  .panel h2{font-size:14px;margin:0;padding:14px 16px 0;font-weight:680}
+  .panel .p-sub{font-size:12px;color:var(--muted);padding:2px 16px 0;margin:0}
+  .chart{padding:12px 16px 16px}
+  .bar-row{display:grid;grid-template-columns:180px 1fr 92px;align-items:center;gap:10px;margin:4px 0}
+  .bar-row .name{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar-row .name span{color:var(--muted);font-size:11px}
+  .track{position:relative;background:#eef1f5;border-radius:6px;height:18px;overflow:hidden}
+  .fill{position:absolute;left:0;top:0;bottom:0;border-radius:6px}
+  .bar-row .pct{text-align:right;font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums}
+  .avgline{position:absolute;top:-3px;bottom:-3px;width:2px;background:#34404e;z-index:3}
+  .avgtag{font-size:11px;color:var(--muted);padding:6px 16px 0}
+  .tbl-wrap{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;font-size:12.5px}
+  th,td{padding:9px 10px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:var(--card);z-index:2}
+  thead th{position:sticky;top:0;background:#fbfcfd;color:var(--muted);font-weight:600;font-size:11px;
+    text-transform:uppercase;letter-spacing:.3px;cursor:pointer;border-bottom:2px solid var(--line);z-index:3}
+  thead th:first-child{z-index:4}
+  thead th .arrow{opacity:.4;font-size:9px}
+  thead th.sorted{color:var(--ink)} thead th.sorted .arrow{opacity:1}
+  tbody tr:hover td{background:#fafbfc} tbody tr:hover td:first-child{background:#fafbfc}
+  td.num{font-variant-numeric:tabular-nums;font-weight:600}
+  .repcell{display:flex;flex-direction:column}.repcell b{font-weight:640}
+  .teamtag{display:inline-block;font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:20px;background:var(--accent-soft);color:var(--accent)}
+  .cell-good{background:var(--good-bg)} .cell-bad{background:var(--bad-bg)}
+  .delta{font-weight:700;font-variant-numeric:tabular-nums}
+  .delta.up{color:var(--good)} .delta.down{color:var(--bad)} .delta.flat{color:var(--neutral)}
+  .flags{display:flex;gap:4px;justify-content:flex-end;flex-wrap:wrap}
+  .pill{font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;border:1px solid transparent}
+  .pill.backlog{background:var(--bad-bg);color:var(--bad);border-color:#f3c6c7}
+  .pill.stale{background:var(--warn-bg);color:var(--warn);border-color:#ecd9b3}
+  .pill.none{color:var(--neutral)}
+  thead th.cadcol{white-space:normal;text-align:center;min-width:96px;max-width:120px;vertical-align:bottom;line-height:1.2}
+  td.mcell{text-align:center;min-width:96px}
+  td.mcell .ma{font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+  td.mcell .mb{font-size:11px;color:var(--good);font-weight:600}
+  td.mcell.empty{color:#c7ced7;font-weight:400}
+  td.mtot,th.mtot{background:#f4f6f9;font-weight:700}
+  tr.totrow td{background:#eef1f6;font-weight:700;border-top:2px solid var(--line)}
+  details.method{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:0 16px}
+  details.method summary{cursor:pointer;padding:14px 0;font-weight:680;font-size:14px;list-style:none}
+  details.method summary::-webkit-details-marker{display:none}
+  details.method summary::before{content:"▸ ";color:var(--accent)}
+  details.method[open] summary::before{content:"▾ "}
+  .method-grid{border-top:1px solid var(--line);padding:14px 0 18px}
+  .mrow{display:grid;grid-template-columns:210px 1fr;gap:14px;padding:9px 0;border-bottom:1px solid #f0f2f5;font-size:12.5px}
+  .mrow:last-child{border-bottom:0}.mrow b{font-weight:640}.mrow code{background:#f1f3f6;border-radius:5px;padding:1px 6px;font-size:11.5px;color:#3a4655}
+  .note{font-size:12px;color:var(--muted);background:var(--warn-bg);border:1px solid #ecd9b3;border-radius:8px;padding:10px 12px;margin:12px 0}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);padding:0 16px 14px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}.sw{width:11px;height:11px;border-radius:3px;display:inline-block}
+  footer{color:var(--muted);font-size:11.5px;text-align:center;margin-top:24px}
+  @media(max-width:1100px){.cards{grid-template-columns:repeat(3,1fr)}.mrow{grid-template-columns:1fr}}
+  @media(max-width:680px){.cards{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="tabbar">
+    <a class="tab" href="index.html">Cadence Performance</a>
+    <a class="tab active" href="adherence.html">Cadence Adherence</a>
+  </nav>
+  <header class="top">
+    <div>
+      <h1>Cadence Adherence — Manager Dashboard</h1>
+      <p class="sub">BDR / SDR Salesloft cadence execution by rep, team, and cadence. Grouped by cadence assignee.</p>
+    </div>
+    <div class="stamp" id="stamp"></div>
+  </header>
+
+  <div class="controls">
+    <div class="ctl"><label>Window (Added)</label>
+      <div class="seg" id="winSeg">
+        <button data-win="this_week" class="on">This week</button>
+        <button data-win="last_week">Last week</button>
+        <button data-win="last_30">Last 30 days</button>
+      </div>
+    </div>
+    <div class="ctl"><label>View</label>
+      <div class="seg" id="viewSeg">
+        <button data-view="team" class="on">By Team</button>
+        <button data-view="rep">By User</button>
+      </div>
+    </div>
+    <div class="ctl"><label>Show</label>
+      <div class="seg" id="modeSeg">
+        <button data-mode="standard" class="on">Standard</button>
+        <button data-mode="active">Active by Cadence</button>
+        <button data-mode="overdue">Overdue by Cadence</button>
+      </div>
+    </div>
+    <div class="ctl"><label>Team</label><select id="teamFilter"><option value="ALL">All teams</option></select></div>
+    <div class="ctl"><label>Sub-group</label><select id="subFilter"><option value="ALL">All sub-groups</option></select></div>
+    <div class="ctl"><label>Cadence</label><select id="cadenceFilter"><option value="ALL">All cadences</option></select></div>
+    <div class="ctl" id="searchCtl"><label>Search rep</label><input type="search" id="searchBox" placeholder="Name…"></div>
+  </div>
+
+  <div class="cards" id="kpiCards"></div>
+
+  <section class="panel" id="chartPanel">
+    <h2 id="chartTitle"></h2>
+    <p class="p-sub" id="chartSub"></p>
+    <div class="chart" id="chart"></div>
+    <p class="avgtag" id="avgTag"></p>
+  </section>
+
+  <section class="panel">
+    <h2 id="tblTitle">Adherence detail</h2>
+    <p class="p-sub" id="tblSub"></p>
+    <div class="legend" id="legend"></div>
+    <div class="tbl-wrap"><table id="tbl"><thead></thead><tbody></tbody></table></div>
+  </section>
+
+  <details class="method">
+    <summary>Methodology &amp; Salesloft API source</summary>
+    <div class="method-grid">
+      <div class="note"><b>Live v1.</b> Grouped by cadence ASSIGNEE (the rep working the step), team from the rep's Salesloft group. Scope is usage-based: every cadence your XDRs have open work in (not name-filtered). Refreshed daily.
+        <br><br><b>Two honest caveats:</b> (1) <b>Cadence Completion %</b> and <b>Premature Removal %</b> are computed over each cadence's full membership history, so they are lifetime rates, not windowed. (2) <b>Avg Days Late</b> can be very large where people sit in a cadence with a long-overdue step; read it alongside the overdue count.
+        <br><br><b>Coming in v2:</b> On-Time % (the actions-ledger is now accumulating daily and will compute completed-on-time vs late over the next few weeks), plus Owner=Assignee %, throughput, and call/email step completion.</div>
+      <div id="methodRows"></div>
+    </div>
+  </details>
+
+  <footer id="footer"></footer>
+</div>
+
+<script>
+const RAW = __ADHERENCE_DATA__;
+const ROWS = RAW.rows || [];
+const TEAMS = RAW.team_order || [];
+const WIN_FIELD = {this_week:"added_this_week", last_week:"added_last_week", last_30:"added_last_30"};
+const WIN_LABEL = {this_week:"This week", last_week:"Last week", last_30:"Last 30 days"};
+
+const METRICS = [
+  {key:"active",     label:"Active People",        short:"Active",     fmt:"int", better:null,  bench:false,
+   def:"People currently in the cadence (currently_on_cadence).", src:"/v2/cadence_memberships"},
+  {key:"added",      label:"Added (window)",       short:"Added",      fmt:"int", better:null,  bench:false,
+   def:"People added in the selected window (added_at).", src:"/v2/cadence_memberships added_at"},
+  {key:"open",       label:"Open Steps",           short:"Open",       fmt:"int", better:null,  bench:false,
+   def:"Open steps queued for the rep right now (in_progress actions). The denominator for overdue %.", src:"/v2/actions in_progress"},
+  {key:"overdue",    label:"Overdue Steps",        short:"Overdue",    fmt:"int", better:false, bench:true,
+   def:"Open steps past their due date right now (live backlog).", src:"/v2/actions due_on < now"},
+  {key:"overduePct", label:"% Steps Overdue",      short:"Overdue %",  fmt:"pct", better:false, bench:true,
+   def:"Overdue steps ÷ open steps. Share of the rep's queued steps that are past due (0–100%).", src:"derived"},
+  {key:"avgDaysLate",label:"Avg Days Late",        short:"Days Late",  fmt:"day", better:false, bench:true,
+   def:"Average age of overdue actions (days). Backlog staleness.", src:"/v2/actions now − due_on"},
+  {key:"completed",  label:"Completed (lifetime)", short:"Completed",  fmt:"int", better:true,  bench:false,
+   def:"Memberships that reached natural completion (all-time).", src:"/v2/cadence_memberships current_state=completed"},
+  {key:"removed",    label:"Removed (lifetime)",   short:"Removed",    fmt:"int", better:false, bench:false,
+   def:"Memberships removed early (all-time, incl removed_no_action).", src:"/v2/cadence_memberships current_state=removed"},
+  {key:"completionPct",label:"Cadence Completion %",short:"Compl %",   fmt:"pct", better:true,  bench:false,
+   def:"Completed ÷ (completed + removed), lifetime.", src:"derived"},
+  {key:"prematurePct", label:"Premature Removal %", short:"Prem.Rem %",fmt:"pct", better:false, bench:false,
+   def:"Removed ÷ (completed + removed), lifetime. Flags pulling people before the cadence finishes.", src:"derived"},
+];
+const TABLE_KEYS = ["active","added","open","overdue","overduePct","avgDaysLate","completed","removed","completionPct","prematurePct"];
+const M={}; METRICS.forEach(m=>M[m.key]=m);
+
+function blank(){return {active:0,added:0,open:0,overdue:0,daysum:0,completed:0,removed:0};}
+function addInto(acc,r,win){
+  acc.active   += +r.active_people || 0;
+  acc.added    += +r[WIN_FIELD[win]] || 0;
+  acc.open     += +r.open_actions || 0;
+  acc.overdue  += +r.overdue_actions || 0;
+  acc.daysum   += +r.days_overdue_sum || 0;
+  acc.completed+= +r.completed_memberships || 0;
+  acc.removed  += +r.removed_memberships || 0;
+}
+function derive(a){
+  const ended = a.completed + a.removed;
+  return {active:a.active, added:a.added, open:a.open, overdue:a.overdue,
+    overduePct: a.open ? a.overdue/a.open*100 : 0,
+    avgDaysLate: a.overdue ? a.daysum/a.overdue : 0,
+    completed:a.completed, removed:a.removed,
+    completionPct: ended ? a.completed/ended*100 : 0,
+    prematurePct: ended ? a.removed/ended*100 : 0};
+}
+function aggregate(rows,win){ const a=blank(); rows.forEach(r=>addInto(a,r,win)); const d=derive(a); d._n=rows.length; return d; }
+
+let state={win:"this_week", view:"team", mode:"standard", team:"ALL", subgroup:"ALL", cadence:"ALL", search:"", sortKey:"overduePct", sortDir:-1};
+
+function scopeRows(){
+  return ROWS.filter(r => (state.team==="ALL"||r.team===state.team)
+    && (state.subgroup==="ALL"||r.group_name===state.subgroup)
+    && (state.cadence==="ALL"||String(r.cadence_id)===state.cadence));
+}
+function fmt(v,t){ if(v==null||isNaN(v))return "—";
+  if(t==="pct")return v.toFixed(1)+"%"; if(t==="day")return v.toFixed(1)+"d";
+  if(t==="int")return Math.round(v).toLocaleString(); return v.toFixed(1); }
+
+function renderCards(){
+  const rows=scopeRows(); const a=aggregate(rows,state.win);
+  const reps=new Set(rows.map(r=>r.user_id)).size;
+  const scope = state.team==="ALL"?"all teams":state.team;
+  const cards=[
+    {l:"Active People", v:fmt(a.active,"int"), s:`${reps} reps · ${scope}`},
+    {l:"Open Steps", v:fmt(a.open,"int"), s:"queued now"},
+    {l:"Overdue Steps", v:fmt(a.overdue,"int"), s:"past due now"},
+    {l:"% Steps Overdue", v:fmt(a.overduePct,"pct"), s:"of open steps"},
+    {l:"Avg Days Late", v:fmt(a.avgDaysLate,"day"), s:"backlog staleness"},
+    {l:"Added", v:fmt(a.added,"int"), s:WIN_LABEL[state.win].toLowerCase()},
+  ];
+  document.getElementById("kpiCards").innerHTML=cards.map(c=>
+    `<div class="kpi"><div class="k-label">${c.l}</div><div class="k-val">${c.v}</div><div class="k-sub">${c.s}</div></div>`).join("");
+}
+
+function byRep(rows,win){
+  const g={};
+  rows.forEach(r=>{ const k=r.user_id; (g[k]=g[k]||{rep:r.rep_name,team:r.team,rows:[]}).rows.push(r); });
+  return Object.entries(g).map(([uid,o])=>({uid,rep:o.rep,team:o.team,m:aggregate(o.rows,win)}));
+}
+function byTeam(rows,win){
+  // when a single team is selected, break into its Salesloft sub-groups (pods); else by team
+  const useSub = state.team!=="ALL";
+  const g={}; rows.forEach(r=>{ const k=useSub?(r.group_name||r.team):r.team; (g[k]=g[k]||[]).push(r); });
+  const keys = useSub ? Object.keys(g).sort() : TEAMS.filter(t=>g[t]);
+  return keys.map(k=>({label:k, sub:useSub, reps:new Set(g[k].map(r=>r.user_id)).size, m:aggregate(g[k],win)}));
+}
+function teamAgg(team,win){ return aggregate(ROWS.filter(r=>r.team===team && (state.cadence==="ALL"||String(r.cadence_id)===state.cadence)),win); }
+
+function renderChart(){
+  const rows=scopeRows(); const scopeAvg=aggregate(rows,state.win).overduePct;
+  let data;
+  if(state.view==="team") data=byTeam(rows,state.win).map(x=>({label:x.label,sub:x.reps+" reps",val:x.m.overduePct,active:x.m.active}));
+  else { let reps=byRep(rows,state.win); if(state.search)reps=reps.filter(x=>x.rep.toLowerCase().includes(state.search));
+         data=reps.map(x=>({label:x.rep,sub:x.team,val:x.m.overduePct,active:x.m.active})); }
+  data.sort((a,b)=>b.val-a.val); data=data.slice(0,40);
+  document.getElementById("chartTitle").textContent="% of open steps overdue — "+(state.view==="team"?(state.team==="ALL"?"by team":"by sub-group"):"by rep");
+  document.getElementById("chartSub").textContent=`${state.cadence==="ALL"?(state.team==="ALL"?"all teams":state.team):cadName(state.cadence)} · higher = more queued steps past due · line = scope avg (${scopeAvg.toFixed(1)}%)`;
+  const max=Math.max(100,...data.map(d=>d.val));
+  document.getElementById("chart").innerHTML=data.map(d=>{
+    const w=d.val/max*100, avg=scopeAvg/max*100, bad=d.val>=scopeAvg;
+    return `<div class="bar-row"><div class="name">${esc(d.label)} <span>${d.sub}</span></div>
+      <div class="track"><div class="fill" style="width:${w.toFixed(1)}%;background:${bad?'var(--bad)':'var(--good)'}"></div>
+      <div class="avgline" style="left:${avg.toFixed(1)}%"></div></div>
+      <div class="pct">${d.val.toFixed(1)}%</div></div>`;
+  }).join("")||`<p class="p-sub">No rows in scope.</p>`;
+  document.getElementById("avgTag").textContent="Showing top "+data.length+" by overdue %. Bars right of the line are worse than the scope average.";
+}
+
+function benchClass(v,t,better){ if(better===null)return ""; const diff=v-t, tol=Math.max(0.5,Math.abs(t)*0.05);
+  if(Math.abs(diff)<tol)return ""; return (better?diff>0:diff<0)?"cell-good":"cell-bad"; }
+function arrow(k){return state.sortKey===k?(state.sortDir>0?"▲":"▼"):"▲";}
+function flags(m,t){ const f=[];
+  if(m.overduePct>t.overduePct+8) f.push(["backlog","Behind team"]);
+  if(m.avgDaysLate>30) f.push(["stale","Stale"]);
+  return f; }
+
+function renderTable(){
+  if(state.mode==="active"){renderMatrix("active");return;}
+  if(state.mode==="overdue"){renderMatrix("overdue");return;}
+  const thead=document.querySelector("#tbl thead"), tbody=document.querySelector("#tbl tbody");
+  const first= state.view==="team"?(state.team==="ALL"?"Team":"Sub-group"):"Rep";
+  let h=`<th data-k="__name__" class="${state.sortKey==='__name__'?'sorted':''}">${first} <span class="arrow">${arrow('__name__')}</span></th>`;
+  if(state.view==="rep") h+=`<th data-k="__delta__" class="${state.sortKey==='__delta__'?'sorted':''}">Overdue% vs Team <span class="arrow">${arrow('__delta__')}</span></th>`;
+  TABLE_KEYS.forEach(k=> h+=`<th data-k="${k}" title="${M[k].def}" class="${state.sortKey===k?'sorted':''}">${M[k].short} <span class="arrow">${arrow(k)}</span></th>`);
+  if(state.view==="rep") h+=`<th data-k="__flags__">Flags</th>`;
+  thead.innerHTML=`<tr>${h}</tr>`;
+  thead.querySelectorAll("th").forEach(th=>{const k=th.getAttribute("data-k"); if(k==="__flags__")return;
+    th.onclick=()=>{ if(state.sortKey===k)state.sortDir*=-1; else{state.sortKey=k;state.sortDir=(k==='__name__')?1:-1;} renderTable(); };});
+  const rows=scopeRows();
+  if(state.view==="team"){
+    let data=byTeam(rows,state.win);
+    data.sort((p,q)=> state.sortKey==='__name__'? p.label.localeCompare(q.label)*state.sortDir : (p.m[state.sortKey]-q.m[state.sortKey])*state.sortDir);
+    tbody.innerHTML=data.map(x=>{ let tds=`<td><span class="teamtag">${esc(x.label)}</span> <span style="color:var(--muted)">${x.reps} reps</span></td>`;
+      TABLE_KEYS.forEach(k=> tds+=`<td class="num">${fmt(x.m[k],M[k].fmt)}</td>`); return `<tr>${tds}</tr>`;}).join("");
+    document.getElementById("tblTitle").textContent="Adherence detail — "+(state.team==="ALL"?"by team":"by sub-group of "+state.team); return;
+  }
+  let data=byRep(rows,state.win); if(state.search)data=data.filter(x=>x.rep.toLowerCase().includes(state.search));
+  const tcache={}; TEAMS.forEach(t=>tcache[t]=teamAgg(t,state.win));
+  data.forEach(x=> x.delta=x.m.overduePct-(tcache[x.team]?tcache[x.team].overduePct:0));
+  data.sort((p,q)=>{ if(state.sortKey==='__name__')return p.rep.localeCompare(q.rep)*state.sortDir;
+    if(state.sortKey==='__delta__')return (p.delta-q.delta)*state.sortDir; return (p.m[state.sortKey]-q.m[state.sortKey])*state.sortDir;});
+  tbody.innerHTML=data.map(x=>{ const m=x.m,t=tcache[x.team]||m;
+    let tds=`<td><div class="repcell"><b>${esc(x.rep)}</b><span><span class="teamtag">${x.team}</span></span></div></td>`;
+    const d=x.delta, dc=Math.abs(d)<0.5?"flat":(d>0?"down":"up"), sg=d>0?"+":"";   // higher overdue% is worse
+    tds+=`<td class="num"><span class="delta ${dc}">${sg}${d.toFixed(1)} pp</span></td>`;
+    TABLE_KEYS.forEach(k=>{const cls=M[k].bench?benchClass(m[k],t[k],M[k].better):""; tds+=`<td class="num ${cls}">${fmt(m[k],M[k].fmt)}</td>`;});
+    const fl=flags(m,t); tds+=`<td><div class="flags">${fl.length?fl.map(([c,l])=>`<span class="pill ${c}">${l}</span>`).join(""):`<span class="pill none">—</span>`}</div></td>`;
+    return `<tr>${tds}</tr>`;}).join("")||`<tr><td colspan="${TABLE_KEYS.length+3}" style="color:var(--muted)">No reps in scope.</td></tr>`;
+  document.getElementById("tblTitle").textContent="Adherence detail — by rep ("+data.length+")";
+}
+
+function renderMatrix(metric){   // metric = "active" | "overdue"
+  const thead=document.querySelector("#tbl thead"), tbody=document.querySelector("#tbl tbody");
+  let rows=scopeRows();
+  if(state.view==="rep" && state.search) rows=rows.filter(r=>r.rep_name.toLowerCase().includes(state.search));
+  // row groups: by user, or by team / sub-group
+  let groups;
+  if(state.view==="rep"){
+    const g={}; rows.forEach(r=>{(g[r.user_id]=g[r.user_id]||{label:r.rep_name,tag:r.team,rows:[]}).rows.push(r);});
+    groups=Object.values(g);
+  } else {
+    const useSub=state.team!=="ALL"; const g={};
+    rows.forEach(r=>{const k=useSub?(r.group_name||r.team):r.team;(g[k]=g[k]||{label:k,tag:null,rows:[]}).rows.push(r);});
+    const keys=useSub?Object.keys(g).sort():TEAMS.filter(t=>g[t]); groups=keys.map(k=>g[k]);
+  }
+  const cadNm={}; rows.forEach(r=>cadNm[String(r.cadence_id)]=r.cadence_name);
+  const prim = metric==="active" ? (r=>+r.active_people||0) : (r=>+r.overdue_actions||0);
+  const sec  = metric==="active" ? (r=>+r[WIN_FIELD[state.win]]||0) : (r=>+r.open_actions||0);
+  groups.forEach(gr=>{ gr.cells={}; gr.tp=0; gr.ts=0;
+    gr.rows.forEach(r=>{ const k=String(r.cadence_id); const c=gr.cells[k]=gr.cells[k]||{p:0,s:0}; c.p+=prim(r); c.s+=sec(r); });
+    Object.values(gr.cells).forEach(c=>{gr.tp+=c.p; gr.ts+=c.s;}); });
+  // columns by total primary; trim to 30 when viewing all cadences
+  const colTot={}; rows.forEach(r=>{const k=String(r.cadence_id); colTot[k]=(colTot[k]||0)+prim(r);});
+  let cadList=Object.keys(colTot).sort((a,b)=>colTot[b]-colTot[a]);
+  const trimmed=state.cadence==="ALL" && cadList.length>30; if(trimmed)cadList=cadList.slice(0,30);
+  let maxP=1; groups.forEach(gr=>cadList.forEach(k=>{const c=gr.cells[k]; if(c)maxP=Math.max(maxP,c.p);}));
+  const rgb = metric==="active" ? "47,91,208" : "210,63,67";
+  const subCol = metric==="active" ? "var(--good)" : "var(--muted)";
+  const subTxt = (v)=> metric==="active" ? "+"+v : "of "+v.toLocaleString();
+  // header
+  let h=`<th data-k="__name__">${state.view==="rep"?"User":(state.team==="ALL"?"Team":"Sub-group")} <span class="arrow">${arrow('__name__')}</span></th>`;
+  cadList.forEach(k=> h+=`<th class="cadcol" title="${esc(cadNm[k])}">${esc(shortCad(cadNm[k]))}</th>`);
+  h+=`<th class="mtot" data-k="__total__" style="cursor:pointer">Total <span class="arrow">${arrow('__total__')}</span></th>`;
+  thead.innerHTML=`<tr>${h}</tr>`;
+  thead.querySelector('[data-k="__name__"]').onclick=()=>{if(state.sortKey==='__name__')state.sortDir*=-1;else{state.sortKey='__name__';state.sortDir=1;}renderTable();};
+  thead.querySelector('[data-k="__total__"]').onclick=()=>{if(state.sortKey==='__total__')state.sortDir*=-1;else{state.sortKey='__total__';state.sortDir=-1;}renderTable();};
+  if(state.sortKey==='__name__')groups.sort((p,q)=>p.label.localeCompare(q.label)*state.sortDir);
+  else groups.sort((p,q)=>(p.tp-q.tp)*(state.sortKey==='__total__'?state.sortDir:-1));
+  const colP={},colS={}; let gP=0,gS=0;
+  const body=groups.map(gr=>{ let tds=`<td><div class="repcell"><b>${esc(gr.label)}</b>${gr.tag?`<span><span class="teamtag">${gr.tag}</span></span>`:""}</div></td>`;
+    cadList.forEach(k=>{ const c=gr.cells[k]; if(!c){tds+=`<td class="mcell empty">·</td>`;return;}
+      colP[k]=(colP[k]||0)+c.p; colS[k]=(colS[k]||0)+c.s;
+      const al=(0.05+0.5*(c.p/maxP)).toFixed(3);
+      tds+=`<td class="mcell" style="background:rgba(${rgb},${al})"><div class="ma">${c.p.toLocaleString()}</div><div class="mb" style="color:${subCol}">${subTxt(c.s)}</div></td>`;});
+    gP+=gr.tp; gS+=gr.ts;
+    tds+=`<td class="mtot"><div class="ma">${gr.tp.toLocaleString()}</div><div class="mb" style="color:${subCol}">${subTxt(gr.ts)}</div></td>`;
+    return `<tr>${tds}</tr>`;}).join("")||`<tr><td style="color:var(--muted)">No rows in scope.</td></tr>`;
+  let tot=`<td>${state.view==="rep"?"All users":"All"} in scope</td>`;
+  cadList.forEach(k=> tot+=`<td class="mcell"><div class="ma">${(colP[k]||0).toLocaleString()}</div><div class="mb">${subTxt(colS[k]||0)}</div></td>`);
+  tot+=`<td class="mtot"><div class="ma">${gP.toLocaleString()}</div><div class="mb">${subTxt(gS)}</div></td>`;
+  tbody.innerHTML=body+`<tr class="totrow">${tot}</tr>`;
+  const what=metric==="active"?"Active people":"Overdue steps";
+  const byTxt=state.view==="rep"?"user":(state.team==="ALL"?"team":"sub-group");
+  document.getElementById("tblTitle").textContent=`${what} by cadence — ${byTxt} × cadence`+(trimmed?" (top 30 cadences)":"");
+}
+
+function cadName(id){ const r=ROWS.find(x=>String(x.cadence_id)===String(id)); return r?r.cadence_name:id; }
+function shortCad(n){ const p=(n||"").split("·"); return (p.length>1?p.slice(1).join("·"):n||"").trim()||n||""; }
+function esc(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function renderChrome(){
+  const matrix=state.mode!=="standard";
+  document.getElementById("chartPanel").style.display=matrix?"none":"";
+  document.getElementById("searchCtl").style.display=state.view==="rep"?"flex":"none";
+  const legend=document.getElementById("legend"), sub=document.getElementById("tblSub");
+  const by = state.view==="rep" ? "user" : (state.team==="ALL"?"team":"sub-group");
+  if(state.mode==="active"){
+    legend.innerHTML=`<span><span class="sw" style="background:rgba(47,91,208,.45)"></span> darker = more active people</span><span><b style="color:var(--good)">+N</b> = added · ${WIN_LABEL[state.win].toLowerCase()}</span>`;
+    sub.textContent=`Active people (bold) and added (+N), ${by} × cadence.`; }
+  else if(state.mode==="overdue"){
+    legend.innerHTML=`<span><span class="sw" style="background:rgba(210,63,67,.45)"></span> darker = more overdue steps</span><span>cell = overdue <b>of</b> open steps</span>`;
+    sub.textContent=`Overdue steps (bold) of open steps, ${by} × cadence.`; }
+  else if(state.view==="team"){ legend.innerHTML=""; sub.textContent=(state.team==="ALL"?"Team":"Sub-group")+" aggregates. Click any column to sort."; }
+  else { legend.innerHTML=`<span><span class="sw" style="background:var(--good-bg);border:1px solid #bfe3cd"></span> better than team avg</span><span><span class="sw" style="background:var(--bad-bg);border:1px solid #f3c6c7"></span> worse than team avg</span><span><span class="pill backlog">Behind team</span> overdue % above team</span><span><span class="pill stale">Stale</span> avg &gt;30 days late</span>`;
+    sub.textContent="Tinted cells / vs-team delta compare each user to their team average. Click any column to sort."; }
+}
+function renderMethod(){ document.getElementById("methodRows").innerHTML=METRICS.map(m=>
+  `<div class="mrow"><div><b>${m.short}</b><div style="font-size:11px;color:var(--muted);margin-top:2px">${m.label}</div></div><div><div>${m.def}</div><div style="margin-top:3px"><code>${m.src}</code></div></div></div>`).join(""); }
+
+function populateSubgroups(){
+  const sf=document.getElementById("subFilter");
+  if(state.team==="ALL"){ sf.innerHTML='<option value="ALL">All sub-groups</option>'; sf.disabled=true; state.subgroup="ALL"; return; }
+  sf.disabled=false;
+  const subs=[...new Set(ROWS.filter(r=>r.team===state.team).map(r=>r.group_name))].sort();
+  const cur=state.subgroup;
+  sf.innerHTML='<option value="ALL">All sub-groups ('+subs.length+')</option>'+subs.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join("");
+  if(cur!=="ALL" && subs.includes(cur)) sf.value=cur; else { state.subgroup="ALL"; sf.value="ALL"; }
+}
+function repopulateCadences(){
+  const cf=document.getElementById("cadenceFilter");
+  const rs=ROWS.filter(r=>(state.team==="ALL"||r.team===state.team)&&(state.subgroup==="ALL"||r.group_name===state.subgroup));
+  // only cadences with current activity: active people OR overdue steps > 0
+  // (a cadence with everyone completed — no active, no overdue — drops out)
+  const nm={}, live={};
+  rs.forEach(r=>{ const k=String(r.cadence_id); nm[k]=r.cadence_name;
+    live[k]=(live[k]||0)+(+r.active_people||0)+(+r.overdue_actions||0); });
+  const opts=Object.keys(nm).filter(k=>live[k]>0).map(k=>[k,nm[k]]).sort((a,b)=>a[1].localeCompare(b[1]));
+  const cur=state.cadence;
+  cf.innerHTML='<option value="ALL">All cadences ('+opts.length+')</option>'+opts.map(([id,n])=>`<option value="${id}">${esc(n)}</option>`).join("");
+  if(cur!=="ALL" && live[cur]>0)cf.value=cur; else {state.cadence="ALL";cf.value="ALL";}
+}
+function setSeg(id,b){document.querySelectorAll("#"+id+" button").forEach(x=>x.classList.remove("on"));b.classList.add("on");}
+function renderAll(){renderChrome();renderCards();renderChart();renderTable();}
+function init(){
+  document.getElementById("stamp").textContent="Run "+RAW.run_date+" · "+ROWS.length.toLocaleString()+" rep×cadence rows · "+new Set(ROWS.map(r=>r.user_id)).size+" reps · "+new Set(ROWS.map(r=>r.cadence_id)).size+" cadences";
+  document.getElementById("footer").textContent="Cadence Adherence · generated "+(RAW.generated_at||RAW.run_date)+" · live Salesloft data, refreshed daily";
+  const tf=document.getElementById("teamFilter"); TEAMS.forEach(t=>{const o=document.createElement("option");o.value=t;o.textContent=t;tf.appendChild(o);});
+  tf.onchange=()=>{state.team=tf.value;state.subgroup="ALL";populateSubgroups();repopulateCadences();renderAll();};
+  document.getElementById("subFilter").onchange=e=>{state.subgroup=e.target.value;repopulateCadences();renderAll();};
+  document.getElementById("cadenceFilter").onchange=e=>{state.cadence=e.target.value;renderAll();};
+  document.querySelectorAll("#winSeg button").forEach(b=>b.onclick=()=>{state.win=b.dataset.win;setSeg("winSeg",b);renderAll();});
+  document.querySelectorAll("#viewSeg button").forEach(b=>b.onclick=()=>{state.view=b.dataset.view;setSeg("viewSeg",b);
+    if(state.sortKey==='__delta__'&&state.view!=='rep')state.sortKey='overduePct'; renderAll();});
+  document.querySelectorAll("#modeSeg button").forEach(b=>b.onclick=()=>{state.mode=b.dataset.mode;setSeg("modeSeg",b);
+    state.sortKey = state.mode==="standard" ? "overduePct" : "__total__"; renderAll();});
+  document.getElementById("searchBox").oninput=e=>{state.search=e.target.value.toLowerCase().trim();renderCards();renderChart();renderTable();};
+  populateSubgroups(); repopulateCadences(); renderMethod(); renderAll();
+}
+init();
+</script>
+</body>
+</html>

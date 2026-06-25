@@ -135,6 +135,7 @@
       </div>
     </div>
     <div class="ctl"><label>Team</label><select id="teamFilter"><option value="ALL">All teams</option></select></div>
+    <div class="ctl"><label>Sub-group</label><select id="subFilter"><option value="ALL">All sub-groups</option></select></div>
     <div class="ctl"><label>Cadence</label><select id="cadenceFilter"><option value="ALL">All cadences</option></select></div>
     <div class="ctl" id="searchCtl"><label>Search rep</label><input type="search" id="searchBox" placeholder="Name…"></div>
   </div>
@@ -221,10 +222,12 @@ function derive(a){
 }
 function aggregate(rows,win){ const a=blank(); rows.forEach(r=>addInto(a,r,win)); const d=derive(a); d._n=rows.length; return d; }
 
-let state={win:"this_week", view:"team", mode:"standard", team:"ALL", cadence:"ALL", search:"", sortKey:"overduePct", sortDir:-1};
+let state={win:"this_week", view:"team", mode:"standard", team:"ALL", subgroup:"ALL", cadence:"ALL", search:"", sortKey:"overduePct", sortDir:-1};
 
 function scopeRows(){
-  return ROWS.filter(r => (state.team==="ALL"||r.team===state.team) && (state.cadence==="ALL"||String(r.cadence_id)===state.cadence));
+  return ROWS.filter(r => (state.team==="ALL"||r.team===state.team)
+    && (state.subgroup==="ALL"||r.group_name===state.subgroup)
+    && (state.cadence==="ALL"||String(r.cadence_id)===state.cadence));
 }
 function fmt(v,t){ if(v==null||isNaN(v))return "—";
   if(t==="pct")return v.toFixed(1)+"%"; if(t==="day")return v.toFixed(1)+"d";
@@ -401,9 +404,18 @@ function renderChrome(){
 function renderMethod(){ document.getElementById("methodRows").innerHTML=METRICS.map(m=>
   `<div class="mrow"><div><b>${m.short}</b><div style="font-size:11px;color:var(--muted);margin-top:2px">${m.label}</div></div><div><div>${m.def}</div><div style="margin-top:3px"><code>${m.src}</code></div></div></div>`).join(""); }
 
+function populateSubgroups(){
+  const sf=document.getElementById("subFilter");
+  if(state.team==="ALL"){ sf.innerHTML='<option value="ALL">All sub-groups</option>'; sf.disabled=true; state.subgroup="ALL"; return; }
+  sf.disabled=false;
+  const subs=[...new Set(ROWS.filter(r=>r.team===state.team).map(r=>r.group_name))].sort();
+  const cur=state.subgroup;
+  sf.innerHTML='<option value="ALL">All sub-groups ('+subs.length+')</option>'+subs.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join("");
+  if(cur!=="ALL" && subs.includes(cur)) sf.value=cur; else { state.subgroup="ALL"; sf.value="ALL"; }
+}
 function repopulateCadences(){
   const cf=document.getElementById("cadenceFilter");
-  const rs=ROWS.filter(r=>state.team==="ALL"||r.team===state.team);
+  const rs=ROWS.filter(r=>(state.team==="ALL"||r.team===state.team)&&(state.subgroup==="ALL"||r.group_name===state.subgroup));
   // only cadences with current activity: active people OR overdue steps > 0
   // (a cadence with everyone completed — no active, no overdue — drops out)
   const nm={}, live={};
@@ -420,7 +432,8 @@ function init(){
   document.getElementById("stamp").textContent="Run "+RAW.run_date+" · "+ROWS.length.toLocaleString()+" rep×cadence rows · "+new Set(ROWS.map(r=>r.user_id)).size+" reps · "+new Set(ROWS.map(r=>r.cadence_id)).size+" cadences";
   document.getElementById("footer").textContent="Cadence Adherence · generated "+(RAW.generated_at||RAW.run_date)+" · live Salesloft data, refreshed daily";
   const tf=document.getElementById("teamFilter"); TEAMS.forEach(t=>{const o=document.createElement("option");o.value=t;o.textContent=t;tf.appendChild(o);});
-  tf.onchange=()=>{state.team=tf.value;repopulateCadences();renderAll();};
+  tf.onchange=()=>{state.team=tf.value;state.subgroup="ALL";populateSubgroups();repopulateCadences();renderAll();};
+  document.getElementById("subFilter").onchange=e=>{state.subgroup=e.target.value;repopulateCadences();renderAll();};
   document.getElementById("cadenceFilter").onchange=e=>{state.cadence=e.target.value;renderAll();};
   document.querySelectorAll("#winSeg button").forEach(b=>b.onclick=()=>{state.win=b.dataset.win;setSeg("winSeg",b);renderAll();});
   document.querySelectorAll("#viewSeg button").forEach(b=>b.onclick=()=>{state.view=b.dataset.view;setSeg("viewSeg",b);
@@ -428,7 +441,7 @@ function init(){
   document.querySelectorAll("#modeSeg button").forEach(b=>b.onclick=()=>{state.mode=b.dataset.mode;setSeg("modeSeg",b);
     state.sortKey = state.mode==="standard" ? "overduePct" : "__total__"; renderAll();});
   document.getElementById("searchBox").oninput=e=>{state.search=e.target.value.toLowerCase().trim();renderCards();renderChart();renderTable();};
-  repopulateCadences(); renderMethod(); renderAll();
+  populateSubgroups(); repopulateCadences(); renderMethod(); renderAll();
 }
 init();
 </script>
