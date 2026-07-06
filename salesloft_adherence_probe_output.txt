@@ -1,0 +1,344 @@
+==============================================================================
+SALESLOFT ADHERENCE PROBE  (read-only)
+==============================================================================
+
+### 1. USERS / GROUPS (rep -> team mapping) ###
+users on page 1: 1190
+  user fields: ['_private_fields', 'active', 'bcc_email_address', 'calendar_connection_status', 'click_to_call_enabled', 'created_at', 'crm_connected', 'current_sign_in_at', 'email', 'email_client_configured', 'email_client_email_address', 'email_signature', 'email_signature_click_tracking_disabled', 'email_signature_type', 'external_feature_flags', 'first_name', 'from_address', 'full_email_address', 'group', 'guid', 'id', 'job_role', 'last_name', 'local_dial_enabled', 'locale_utc_offset', 'manager_user_guid', 'name', 'phone_client', 'phone_number_assignment', 'role', 'seat_package', 'sending_email_address', 'slack_username', 'team', 'team_admin', 'time_zone', 'twitter_handle', 'updated_at', 'work_country']
+  has group field: True  (group={"_href": "https://api.salesloft.com/v2/groups/26891", "id": 26891}, group_id=None)
+  distinct groups seen on page 1 (name -> #users):
+    group_id=None: 1190
+  >>> CONFIRM: do these group names map cleanly to SDR / BDR-S / BDR-V / BDR-MM / BDR-CS?
+
+### 2. IN-SCOPE CADENCES (active + team + BDR/SDR, region excluded) ###
+active cadences on page 1: 100
+  cadence fields: ['added_stage', 'archived', 'archived_at', 'archived_by', 'bounced_stage', 'cadence_collection_id', 'cadence_framework_id', 'cadence_function', 'cadence_priority', 'cadence_purpose', 'counts', 'created_at', 'creator', 'current_state', 'draft', 'email_footer_id', 'external_identifier', 'finished_stage', 'groups', 'id', 'knowledge_library_document_ids', 'latest_active_date', 'name', 'opt_out_link_included', 'override_contact_restrictions', 'owner', 'remove_bounces_enabled', 'remove_meetings_booked_enabled', 'remove_replies_enabled', 'replied_stage', 'shared', 'tags', 'target_date', 'team_cadence', 'updated_at']
+in-scope after filters: 61
+    id=3937721  team_cadence=True  name='SDR - SMS - Demo Request - Manage'
+    id=4133314  team_cadence=True  name='BDR-CS | April AI Demo Webinar Invite Promo - OBC'
+    id=4058977  team_cadence=True  name='$BDR-MM - OB CWS - April 26'
+    id=3760609  team_cadence=True  name='* DO NOT ADD* BDR-S - AQL - Artificial Intelligence (AI) - 2025'
+    id=3324138  team_cadence=True  name='BDR-CS - Disco No Show'
+    id=3770220  team_cadence=True  name='BDRV AQL - Legal Trends + AI'
+
+------------------------------------------------------------------------------
+SAMPLE CADENCE id=3937721  name='SDR - SMS - Demo Request - Manage'
+------------------------------------------------------------------------------
+
+### 3. CADENCE_MEMBERSHIPS ###
+  memberships fetched: 5
+
+  cadence_membership — fields: ['added_at', 'cadence', 'counts', 'created_at', 'current_state', 'currently_on_cadence', 'id', 'latest_action', 'person', 'person_deleted', 'step', 'updated_at', 'user']
+  sample (PII masked):
+  {
+    "id": 773724995,
+    "added_at": "2026-06-22T06:40:59.022041-07:00",
+    "created_at": "2026-06-22T06:40:59.029089-07:00",
+    "updated_at": "2026-06-24T11:47:36.786587-07:00",
+    "person_deleted": false,
+    "currently_on_cadence": true,
+    "current_state": "active",
+    "cadence": {
+      "_href": "https://api.salesloft.com/v2/cadences/3937721",
+      "id": 3937721
+    },
+    "step": {
+      "_href": "https://api.salesloft.com/v2/steps/27247981",
+      "id": 27247981
+    },
+    "person": {
+      "_href": "https://api.salesloft.com/v2/people/350771007",
+      "id": 350771007
+    },
+    "user": {
+      "_href": "https://api.salesloft.com/v2/users/227855",
+      "id": 227855
+    },
+    "latest_action": {
+      "id": 3742383692
+    },
+    "counts": {
+      "views": 3,
+      "clicks": 0,
+      "replies": 0,
+      "calls": 4,
+      "sent_emails": 3,
+      "bounces": 0
+    }
+  }
+  current_state values seen: {'active': 4, 'scheduled': 1}
+  added_at present: True   user(assignee) present: True
+  counts object: {"views": 3, "clicks": 0, "replies": 0, "calls": 4, "sent_emails": 3, "bounces": 0}
+  >>> CONFIRM: which current_state values mean completed vs removed-early (premature removal)?
+
+### 4. STEPS ###
+  steps fetched: 39
+  step fields: ['cadence', 'created_at', 'day', 'details', 'disabled', 'display_name', 'id', 'multitouch_enabled', 'name', 'step_number', 'type', 'updated_at']
+  step type distribution: {'phone': 13, 'email': 23, 'other': 3}
+  potential TEXT/SMS steps (type integration/other): 3  e.g. ['SMS (A)', 'SMS (B)', 'Nurture/ DQ as appropriate']
+    day 4 step 9: type=phone name='4th Demo Call - Ghost or Voicemail'
+    day 3 step 8: A: type=email name='Availability - Clio demo'
+    day 3 step 7: type=phone name='3rd Demo Phone Call to Contact and Qualify'
+    day 1 step 4: type=phone name='Day 1 double dial'
+    day 2 step 5: type=phone name='2nd Demo Call - Ghost'
+    day 1 step 2: A: type=email name='Demo 1'
+    day 1 step 3: A: type=other name='SMS (A)'
+    day 7 step 13: A: type=email name="Haven't heard back from you"
+
+### 5. ACTIONS (via step_id) ###
+  actions fetched for step 27247981: 5
+
+  action — fields: ['action_details', 'cadence', 'created_at', 'due', 'due_on', 'id', 'multitouch_group_id', 'person', 'status', 'step', 'task', 'type', 'updated_at', 'user']
+  sample (PII masked):
+  {
+    "id": 3742383692,
+    "due": false,
+    "created_at": "2026-06-24T11:46:32.045089-07:00",
+    "updated_at": "2026-06-24T11:46:32.063460-07:00",
+    "type": "phone",
+    "status": "in_progress",
+    "due_on": "2026-06-25T00:00:00.000000+00:00",
+    "multitouch_group_id": null,
+    "action_details": {
+      "_href": "https://api.salesloft.com/v2/action_details/call_instructions/27247981",
+      "id": 27247981
+    },
+    "user": {
+      "_href": "https://api.salesloft.com/v2/users/227855",
+      "id": 227855
+    },
+    "person": {
+      "_href": "https://api.salesloft.com/v2/people/350771007",
+      "id": 350771007
+    },
+    "cadence": {
+      "_href": "https://api.salesloft.com/v2/cadences/3937721",
+      "id": 3937721
+    },
+    "step": {
+      "_href": "https://api.salesloft.com/v2/steps/27247981",
+      "id": 27247981
+    },
+    "task": {
+      "_href": "https://api.salesloft.com/v2/tasks/1130409557",
+      "id": 1130409557
+    }
+  }
+  due_on present: True   user present: True   type=phone  status fields: ['due', 'status', 'due_on']
+
+------------------------------------------------------------------------------
+SAMPLE CADENCE id=4133314  name='BDR-CS | April AI Demo Webinar Invite Promo - OBC'
+------------------------------------------------------------------------------
+
+### 3. CADENCE_MEMBERSHIPS ###
+  memberships fetched: 5
+
+  cadence_membership — fields: ['added_at', 'cadence', 'counts', 'created_at', 'current_state', 'currently_on_cadence', 'id', 'latest_action', 'person', 'person_deleted', 'step', 'updated_at', 'user']
+  sample (PII masked):
+  {
+    "id": 763303118,
+    "added_at": "2026-04-07T07:03:14.464046-07:00",
+    "created_at": "2026-04-07T07:03:14.481346-07:00",
+    "updated_at": "2026-06-19T17:32:06.938670-07:00",
+    "person_deleted": false,
+    "currently_on_cadence": false,
+    "current_state": "completed",
+    "cadence": {
+      "_href": "https://api.salesloft.com/v2/cadences/4133314",
+      "id": 4133314
+    },
+    "step": {
+      "_href": "https://api.salesloft.com/v2/steps/28620663",
+      "id": 28620663
+    },
+    "person": {
+      "_href": "https://api.salesloft.com/v2/people/695453133",
+      "id": 695453133
+    },
+    "user": {
+      "_href": "https://api.salesloft.com/v2/users/248620",
+      "id": 248620
+    },
+    "latest_action": {
+      "id": 3691875661
+    },
+    "counts": {
+      "views": 5,
+      "clicks": 0,
+      "replies": 0,
+      "calls": 0,
+      "sent_emails": 3,
+      "bounces": 0
+    }
+  }
+  current_state values seen: {'completed': 3, 'active': 1, 'removed': 1}
+  added_at present: True   user(assignee) present: True
+  counts object: {"views": 5, "clicks": 0, "replies": 0, "calls": 0, "sent_emails": 3, "bounces": 0}
+  >>> CONFIRM: which current_state values mean completed vs removed-early (premature removal)?
+
+### 4. STEPS ###
+  steps fetched: 3
+  step fields: ['cadence', 'created_at', 'day', 'details', 'disabled', 'display_name', 'id', 'multitouch_enabled', 'name', 'step_number', 'type', 'updated_at']
+  step type distribution: {'email': 3}
+  potential TEXT/SMS steps (type integration/other): 0  -> none (SMS column would be empty)
+    day 5 step 3: type=email name='Email 3 - Clio Work Focused'
+    day 3 step 2: type=email name='Email 2 - Follow-Up'
+    day 1 step 1: type=email name='Email 1: April 10 webinar invite'
+
+### 5. ACTIONS (via step_id) ###
+  actions fetched for step 28620663: 5
+
+  action — fields: ['action_details', 'cadence', 'created_at', 'due', 'due_on', 'id', 'multitouch_group_id', 'person', 'status', 'step', 'task', 'type', 'updated_at', 'user']
+  sample (PII masked):
+  {
+    "id": 3694550309,
+    "due": true,
+    "created_at": "2026-04-15T06:07:28.778952-07:00",
+    "updated_at": "2026-04-15T06:07:28.794241-07:00",
+    "type": "email",
+    "status": "in_progress",
+    "due_on": "2026-04-17T00:00:00.000000+00:00",
+    "multitouch_group_id": null,
+    "action_details": {
+      "_href": "https://api.salesloft.com/v2/action_details/email_details/28620663",
+      "id": 28620663
+    },
+    "user": {
+      "_href": "https://api.salesloft.com/v2/users/251158",
+      "id": 251158
+    },
+    "person": {
+      "_href": "https://api.salesloft.com/v2/people/734581544",
+      "id": 734581544
+    },
+    "cadence": {
+      "_href": "https://api.salesloft.com/v2/cadences/4133314",
+      "id": 4133314
+    },
+    "step": {
+      "_href": "https://api.salesloft.com/v2/steps/28620663",
+      "id": 28620663
+    },
+    "task": {
+      "_href": "https://api.salesloft.com/v2/tasks/1086213857",
+      "id": 1086213857
+    }
+  }
+  due_on present: True   user present: True   type=email  status fields: ['due', 'status', 'due_on']
+
+### 6. ACTIVITIES (calls + emails) — completion timestamps + cadence/step linkage ###
+
+  /activities/calls: 2 fetched
+  fields: ['action', 'cadence', 'call_data_record_ids', 'called_person', 'connected', 'created_at', 'crm_activity', 'direction', 'disposition', 'duration', 'id', 'log_source', 'note', 'positive', 'recordings', 'sentiment', 'step', 'task', 'to', 'updated_at', 'user']
+  cadence/step linkage fields present: ['action', 'cadence', 'step']
+  timestamp fields present: ['created_at', 'updated_at']
+
+  activity/calls — fields: ['action', 'cadence', 'call_data_record_ids', 'called_person', 'connected', 'created_at', 'crm_activity', 'direction', 'disposition', 'duration', 'id', 'log_source', 'note', 'positive', 'recordings', 'sentiment', 'step', 'task', 'to', 'updated_at', 'user']
+  sample (PII masked):
+  {
+    "id": 500705468,
+    "to": "+16306535775",
+    "duration": null,
+    "sentiment": "Left Message",
+    "disposition": "Call - Did Not Connect",
+    "positive": false,
+    "connected": false,
+    "call_data_record_ids": [
+      500335379
+    ],
+    "direction": "outbound",
+    "log_source": "dialer",
+    "created_at": "2026-06-24T11:47:50.542898-07:00",
+    "updated_at": "2026-06-24T11:47:51.111544-07:00",
+    "recordings": [],
+    "user": {
+      "_href": "https://api.salesloft.com/v2/users/214958",
+      "id": 214958
+    },
+    "action": {
+      "id": 3728865210
+    },
+    "task": {
+      "_href": "https://api.salesloft.com/v2/tasks/1118116160",
+      "id": 1118116160
+    },
+    "called_person": {
+      "_href": "https://api.salesloft.com/v2/people/618506441",
+      "id": 618506441
+    },
+    "crm_activity": {
+      "_href": "https://api.salesloft.com/v2/crm_activities/2613931788",
+      "id": 2613931788
+    },
+    "note": null,
+    "cadence": {
+      "_href": "https://api.salesloft.com/v2/cadences/3946557",
+      "id": 3946557
+    },
+    "step": {
+      "_href": "https://api.salesloft.com/v2/steps/27311318",
+      "id": 27311318
+    }
+  }
+
+  /activities/emails: 2 fetched
+  fields: ['action', 'additional_recipients', 'bounced', 'cadence', 'click_tracking', 'counts', 'created_at', 'crm_activity', 'draft_with_ai', 'email_template', 'email_thread_id', 'headers', 'id', 'mailing', 'message_id', 'personalization', 'recipient', 'recipient_email_address', 'send_after', 'sent_at', 'status', 'step', 'task', 'updated_at', 'user', 'view_tracking']
+  cadence/step linkage fields present: ['action', 'cadence', 'step']
+  timestamp fields present: ['created_at', 'updated_at', 'sent_at']
+
+  activity/emails — fields: ['action', 'additional_recipients', 'bounced', 'cadence', 'click_tracking', 'counts', 'created_at', 'crm_activity', 'draft_with_ai', 'email_template', 'email_thread_id', 'headers', 'id', 'mailing', 'message_id', 'personalization', 'recipient', 'recipient_email_address', 'send_after', 'sent_at', 'status', 'step', 'task', 'updated_at', 'user', 'view_tracking']
+  sample (PII masked):
+  {
+    "id": 1877981206,
+    "created_at": "2026-06-24T11:47:03.403984-07:00",
+    "updated_at": "2026-06-24T11:47:40.374671-07:00",
+    "recipient_email_address": "kdalmeida@hainternational.org",
+    "status": "sent",
+    "bounced": false,
+    "send_after": "2026-06-24T11:47:03.376538-07:00",
+    "sent_at": "2026-06-24T11:47:40.036438-07:00",
+    "view_tracking": true,
+    "click_tracking": true,
+    "message_id": "CAJniCXL=jx6mYgmHmLCJzXkPa8B8ffbfyqkgRzZX8rQtSTp48w@mail.gmail.com",
+    "headers": {},
+    "personalization": "0.0",
+    "draft_with_ai": false,
+    "email_thread_id": 184474065,
+    "counts": {
+      "clicks": 0,
+      "views": 0,
+      "replies": 0,
+      "unique_devices": 0,
+      "unique_locations": 0,
+      "attachments": 0
+    },
+    "user": {
+      "_href": "https://api.salesloft.com/v2/users/248618",
+      "id": 248618
+    },
+    "recipient": {
+      "_href": "https://api.salesloft.com/v2/people/747762679",
+      "id": 747762679
+    },
+    "mailing": {
+      "id": 677322805
+    },
+    "action": null,
+    "task": null,
+    "crm_activity": {
+      "_href": "https://api.salesloft.com/v2/crm_activities/2613931645",
+      "id": 2613931645
+    },
+    "cadence": null,
+    "step": null,
+    "email_template": {
+      "_href": "https://api.salesloft.com/v2/email_templates/287901641",
+      "id": 287901641
+    },
+    "additional_recipients": []
+  }
+  >>> CONFIRM: can a completed activity be tied to its step/cadence (for on-time vs step due_on)?
+
+==============================================================================
+DONE. Review above, then paste salesloft_adherence_probe_output.txt back.
+==============================================================================

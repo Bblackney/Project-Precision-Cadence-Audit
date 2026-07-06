@@ -1,0 +1,140 @@
+==============================================================================
+SALESLOFT ADHERENCE PROBE 2 (read-only)
+==============================================================================
+
+### A1. GROUPS (id -> name) ###
+  total groups: 76
+    16912: 'Clio'
+    16913: 'Account Executive'
+    6605: 'AE Mid-Market'
+    33216: 'AE Government'
+    33206: 'BDR - Enterprise'
+    12176: 'Business Development'
+    12175: 'BDR'
+    30807: 'BDR - MM Nicky'
+    33159: 'BDRS Ilyas'
+    6559: 'BDR - Strategic'
+    6604: 'AE Velocity'
+    32990: 'AE-V-ATL'
+    32948: 'XDR-Canada'
+    32728: 'Customer Sales Velocity AE'
+    31350: 'Customer Support'
+    31342: 'Sales Enablement'
+    31311: 'vLex'
+    31001: 'Engagement Specialist'
+    31000: 'Onboarding'
+    30999: 'Launch Team'
+    30852: 'Custom Training'
+    30851: 'Data Migration'
+    30850: 'Account Set Up'
+    30808: 'BDR - MM Aaqib'
+    30765: 'BDR Draft'
+    30761: 'BDRS Cooper'
+    30760: 'BDRS Kaeli'
+    30759: 'BDRS Hannah'
+    30420: 'AE CAD - Mid-Market'
+    30419: 'AE CAD - Strategic'
+    30418: 'AE CAD - Velocity'
+    30417: 'AE Canada'
+    30366: 'BDR CS - Strategic'
+    30365: 'AE-V-SE'
+    29804: 'AE-S CEN'
+    29803: 'AE-S ME'
+    29779: 'SDR - Alex'
+    29778: 'SDR - Lars'
+    29777: 'SDR - Matt'
+    29529: 'BDR CS - Velocity'
+    29497: 'Customer Sales Strat AE'
+    28796: 'Data Science'
+    28639: 'BDR - EMEA'
+    26891: 'Professional Services'
+    26221: 'BDRV Sarah'
+    25845: 'AE SWAT'
+    24104: 'AE-S SE Coast'
+    22906: 'AE-V-MW'
+    22905: 'AE-V-ME'
+    22904: 'AE-V-CEN'
+    22903: 'AE-V-NE'
+    22902: 'AE-V-CAL'
+    22901: 'AE-V-NW'
+    22492: 'BDRV Jessica'
+    22491: 'BDRV Daniel'
+    22102: 'AE-S NE Coast'
+    22101: 'AE-S W Coast'
+    22012: 'AE APAC'
+    17074: 'AE - LawYaw Cross-Sell'
+    16919: 'AE EMEA'
+  groups whose name has BDR/SDR/XDR: ['33206:BDR - Enterprise', '12175:BDR', '30807:BDR - MM Nicky', '33159:BDRS Ilyas', '6559:BDR - Strategic', '32948:XDR-Canada', '30808:BDR - MM Aaqib', '30765:BDR Draft', '30761:BDRS Cooper', '30760:BDRS Kaeli', '30759:BDRS Hannah', '30366:BDR CS - Strategic', '29779:SDR - Alex', '29778:SDR - Lars', '29777:SDR - Matt', '29529:BDR CS - Velocity', '28639:BDR - EMEA', '26221:BDRV Sarah', '22492:BDRV Jessica', '22491:BDRV Daniel', '16917:SDR - EMEA', '16916:SDR - NA', '15583:BDR - Customer Sales', '10818:BDR - Velocity', '10588:BDR - MM', '6558:SDR']
+
+### A2. USER ATTRIBUTES — which one splits the teams? ###
+  sampled users: 300
+  sample: team={"_href": "https://api.salesloft.com/v2/team", "id": 11541}  job_role=None  role='2856'  group={"_href": "https://api.salesloft.com/v2/groups/26891", "id": 26891}  group_id=None
+
+  distinct team (value -> #users), top 30:
+    11541: 300
+
+  distinct job_role (value -> #users), top 30:
+    None: 207
+    'xDR': 52
+    'Account Executive': 27
+    'Account Manager': 4
+    'Marketing': 2
+    'Rev Ops': 2
+    'Other': 2
+    'xDR Manager': 2
+    'Management': 1
+    '': 1
+
+  distinct role (value -> #users), top 30:
+    'User': 237
+    '7058': 34
+    '2243': 11
+    '2856': 6
+    'Admin': 4
+    '2684': 4
+    '6682': 2
+    '6633': 2
+
+  distinct group name (resolved) (value -> #users), top 30:
+    'vLex': 109
+    None: 55
+    'Account Manager': 24
+    'Account Executive': 8
+    'BDR - Enterprise': 6
+    'BDR CS - Velocity': 6
+    'BDRS Ilyas': 5
+    'Sales Engineering': 5
+    'BDRS Cooper': 4
+    'BDRV Daniel': 4
+    'Professional Services': 3
+    'AE Velocity': 3
+    'AE APAC': 3
+    'AE-V-CEN': 3
+    'BDRS Hannah': 3
+    'SDR': 3
+    'SDR - Alex': 3
+    'Customer Sales Velocity AE': 3
+    'AE Customer Sales': 3
+    'AE-S W Coast': 2
+    'BDR - MM': 2
+    'BDR - MM Nicky': 2
+    'XDR-Canada': 2
+    'BDRV Jessica': 2
+    'BDRV Sarah': 2
+    'Customer Support': 2
+    'Administrator': 2
+    'AE Strategic': 2
+    'SDR - Lars': 2
+    'BDR CS - Strategic': 2
+
+  >>> Tell me which attribute cleanly = SDR / BDR-S / BDR-V / BDR-MM / BDR-CS.
+
+### B. ON-TIME FEASIBILITY — can we read a completed action's due_on? ###
+  testing completed action id=3742389788 (from a logged cadence step)
+  GET /actions/3742389788 -> HTTP 404
+  NOT retrievable (resp: {"_error": "{\"error\":\"Not found\"}"}).
+  >>> RESULT: completed actions drop out -> we accumulate a DAILY actions ledger (snapshot open actions + due_on each run) to compute On-Time over time.
+
+==============================================================================
+DONE. Paste salesloft_adherence_probe2_output.txt back.
+==============================================================================

@@ -410,6 +410,10 @@ def generate_html(all_rows, run_date):
   </style>
 </head>
 <body>
+<nav style="padding:14px 32px 0;display:flex;gap:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <a href="index.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #2f5bd0;background:#2f5bd0;color:#fff;font-weight:600;font-size:13px;text-decoration:none">Cadence Performance</a>
+  <a href="adherence.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #e3e7ec;background:#fff;color:#65707d;font-weight:600;font-size:13px;text-decoration:none">Cadence Adherence</a>
+</nav>
 <div class="hdr">
   <h1>Cadence Performance Scorecard</h1>
   <p>Model v2.1 · Salesloft API · BDR &amp; SDR both max 100 pts · Generated {escape(run_date)}</p>

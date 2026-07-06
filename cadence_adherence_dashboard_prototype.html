@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadence Adherence — Manager Dashboard (Prototype)</title>
+<style>
+  :root{
+    --bg:#f5f6f8; --card:#ffffff; --ink:#1c2530; --muted:#65707d; --line:#e3e7ec;
+    --accent:#2f5bd0; --accent-soft:#eaf0fc;
+    --good:#1f9d57; --good-bg:#e7f6ee; --bad:#d23f43; --bad-bg:#fdecec; --neutral:#8a94a1;
+    --warn:#b9791f; --warn-bg:#fbf2e2;
+    --shadow:0 1px 2px rgba(20,30,45,.06),0 4px 14px rgba(20,30,45,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1320px;margin:0 auto;padding:22px 22px 60px}
+  .tabbar{display:flex;gap:8px;margin-bottom:16px}
+  .tab{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:999px;border:1px solid var(--line);
+    background:#fff;color:var(--muted);font-weight:600;font-size:13px;text-decoration:none}
+  .tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .tab:hover:not(.active){background:#f0f3f8;color:var(--ink)}
+  header.top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
+  h1{font-size:21px;margin:0 0 3px;font-weight:680;letter-spacing:-.2px}
+  .sub{color:var(--muted);font-size:13px;margin:0}
+  .badge-sample{display:inline-flex;align-items:center;gap:7px;background:var(--warn-bg);color:var(--warn);
+    border:1px solid #ecd9b3;border-radius:7px;padding:7px 11px;font-size:12px;font-weight:600;white-space:nowrap}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--warn);display:inline-block}
+
+  .controls{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:18px 0 16px;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+  .ctl{display:flex;flex-direction:column;gap:5px}
+  .ctl label{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:600}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+  .seg button{border:0;background:#fff;padding:7px 13px;font-size:13px;cursor:pointer;color:var(--muted);font-weight:600}
+  .seg button.on{background:var(--accent);color:#fff}
+  select,input[type=search]{border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:13px;
+    background:#fff;color:var(--ink);min-width:150px;font-family:inherit}
+  select#cadenceFilter{min-width:230px}
+  input[type=search]{min-width:170px}
+  .spacer{flex:1}
+
+  .cards{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:18px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 14px;box-shadow:var(--shadow)}
+  .kpi .k-label{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);font-weight:600}
+  .kpi .k-val{font-size:24px;font-weight:700;margin-top:5px;letter-spacing:-.5px}
+  .kpi .k-sub{font-size:11.5px;color:var(--muted);margin-top:3px}
+
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);margin-bottom:18px}
+  .panel h2{font-size:14px;margin:0;padding:14px 16px 0;font-weight:680}
+  .panel .p-sub{font-size:12px;color:var(--muted);padding:2px 16px 0;margin:0}
+
+  .chart{padding:12px 16px 16px}
+  .bar-row{display:grid;grid-template-columns:170px 1fr 56px;align-items:center;gap:10px;margin:4px 0}
+  .bar-row .name{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar-row .name span{color:var(--muted);font-size:11px}
+  .track{position:relative;background:#eef1f5;border-radius:6px;height:18px;overflow:hidden}
+  .fill{position:absolute;left:0;top:0;bottom:0;border-radius:6px}
+  .bar-row .pct{text-align:right;font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums}
+  .avgline{position:absolute;top:-3px;bottom:-3px;width:2px;background:#34404e;z-index:3}
+  .avgtag{font-size:11px;color:var(--muted);padding:6px 16px 0}
+
+  .tbl-wrap{overflow-x:auto}
+  table{border-collapse:collapse;width:100%;font-size:12.5px}
+  th,td{padding:9px 10px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:var(--card);z-index:2}
+  thead th{position:sticky;top:0;background:#fbfcfd;color:var(--muted);font-weight:600;font-size:11px;
+    text-transform:uppercase;letter-spacing:.3px;cursor:pointer;border-bottom:2px solid var(--line);z-index:3}
+  thead th:first-child{z-index:4}
+  thead th .arrow{opacity:.4;font-size:9px}
+  thead th.sorted{color:var(--ink)} thead th.sorted .arrow{opacity:1}
+  tbody tr:hover td{background:#fafbfc}
+  tbody tr:hover td:first-child{background:#fafbfc}
+  td.num{font-variant-numeric:tabular-nums;font-weight:600}
+  .repcell{display:flex;flex-direction:column}
+  .repcell b{font-weight:640}
+  .teamtag{display:inline-block;font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:20px;background:var(--accent-soft);color:var(--accent)}
+  .cell-good{background:var(--good-bg)} .cell-bad{background:var(--bad-bg)}
+  .delta{font-weight:700;font-variant-numeric:tabular-nums}
+  .delta.up{color:var(--good)} .delta.down{color:var(--bad)} .delta.flat{color:var(--neutral)}
+  .flags{display:flex;gap:4px;justify-content:flex-end;flex-wrap:wrap}
+  .pill{font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;border:1px solid transparent}
+  .pill.backlog{background:var(--bad-bg);color:var(--bad);border-color:#f3c6c7}
+  .pill.skips{background:var(--warn-bg);color:var(--warn);border-color:#ecd9b3}
+  .pill.slow{background:#eef0fb;color:#4655c4;border-color:#d4d9f5}
+  .pill.calls{background:#eef6f9;color:#1f7a99;border-color:#cbe6ef}
+  .pill.none{color:var(--neutral)}
+
+  /* matrix */
+  thead th.cadcol{white-space:normal;text-align:center;min-width:96px;max-width:120px;vertical-align:bottom;line-height:1.2}
+  td.mcell{text-align:center;min-width:96px}
+  td.mcell .ma{font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+  td.mcell .mb{font-size:11px;color:var(--good);font-weight:600;font-variant-numeric:tabular-nums}
+  td.mcell.empty{color:#c7ced7;font-weight:400}
+  td.mtot,th.mtot{background:#f4f6f9;font-weight:700}
+  td.mtot .ma{font-weight:700} td.mtot .mb{font-size:11px;color:var(--good);font-weight:600}
+  tr.totrow td{background:#eef1f6;font-weight:700;border-top:2px solid var(--line)}
+  tr.totrow td .mb{color:var(--good)}
+
+  details.method{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:0 16px}
+  details.method summary{cursor:pointer;padding:14px 0;font-weight:680;font-size:14px;list-style:none}
+  details.method summary::-webkit-details-marker{display:none}
+  details.method summary::before{content:"▸ ";color:var(--accent)}
+  details.method[open] summary::before{content:"▾ "}
+  .method-grid{border-top:1px solid var(--line);padding:14px 0 18px}
+  .mrow{display:grid;grid-template-columns:200px 1fr 250px;gap:14px;padding:9px 0;border-bottom:1px solid #f0f2f5;font-size:12.5px}
+  .mrow:last-child{border-bottom:0}
+  .mrow b{font-weight:640} .mrow code{background:#f1f3f6;border-radius:5px;padding:1px 6px;font-size:11.5px;color:#3a4655}
+  .mrow .def{color:#3a4655} .mrow .src{color:var(--muted)}
+  .srctag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.4px;padding:2px 6px;border-radius:5px;margin-bottom:5px}
+  .t-DIRECT{background:var(--good-bg);color:var(--good)}
+  .t-DERIVED{background:#eef0fb;color:#4655c4}
+  .t-SNAPSHOT{background:var(--warn-bg);color:var(--warn)}
+  .t-EXPORT{background:var(--bad-bg);color:var(--bad)}
+  .note{font-size:12px;color:var(--muted);background:var(--warn-bg);border:1px solid #ecd9b3;border-radius:8px;padding:10px 12px;margin:12px 0}
+  footer{color:var(--muted);font-size:11.5px;text-align:center;margin-top:24px}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);padding:0 16px 14px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:11px;height:11px;border-radius:3px;display:inline-block}
+  @media(max-width:1100px){.cards{grid-template-columns:repeat(3,1fr)} .mrow{grid-template-columns:1fr}}
+  @media(max-width:680px){.cards{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="tabbar">
+    <a class="tab" href="index.html">Cadence Performance</a>
+    <a class="tab active" href="adherence.html">Cadence Adherence</a>
+  </nav>
+
+  <header class="top">
+    <div>
+      <h1>Cadence Adherence — Manager Dashboard</h1>
+      <p class="sub">BDR / SDR Salesloft cadence execution by rep, team, and cadence. Companion to the weekly Cadence Performance Scorecard.</p>
+    </div>
+    <div class="badge-sample"><span class="dot"></span> SAMPLE DATA — layout &amp; KPI alignment only. Reps and cadences are fictional. Wire to live Salesloft after sign-off.</div>
+  </header>
+
+  <div class="controls">
+    <div class="ctl">
+      <label>Window</label>
+      <div class="seg" id="winSeg">
+        <button data-win="this_week" class="on">This week</button>
+        <button data-win="last_week">Last week</button>
+        <button data-win="last_30">Last 30 days</button>
+      </div>
+    </div>
+    <div class="ctl">
+      <label>View</label>
+      <div class="seg" id="viewSeg">
+        <button data-view="rep" class="on">By Rep</button>
+        <button data-view="team">By Team</button>
+        <button data-view="matrix">Active by Cadence</button>
+      </div>
+    </div>
+    <div class="ctl">
+      <label>Team</label>
+      <select id="teamFilter"><option value="ALL">All teams</option></select>
+    </div>
+    <div class="ctl">
+      <label>Cadence</label>
+      <select id="cadenceFilter"><option value="ALL">All cadences</option></select>
+    </div>
+    <div class="ctl" id="searchCtl">
+      <label>Search rep</label>
+      <input type="search" id="searchBox" placeholder="Name…">
+    </div>
+    <div class="spacer"></div>
+    <div class="ctl">
+      <label>Benchmark</label>
+      <div class="seg"><button class="on" style="cursor:default">Rep vs team avg</button></div>
+    </div>
+  </div>
+
+  <div class="cards" id="kpiCards"></div>
+
+  <section class="panel" id="chartPanel">
+    <h2 id="chartTitle">On-time completion rate</h2>
+    <p class="p-sub" id="chartSub"></p>
+    <div class="chart" id="chart"></div>
+    <p class="avgtag" id="avgTag"></p>
+  </section>
+
+  <section class="panel">
+    <h2 id="tblTitle">Adherence detail</h2>
+    <p class="p-sub" id="tblSub"></p>
+    <div class="legend" id="legend"></div>
+    <div class="tbl-wrap"><table id="tbl"><thead></thead><tbody></tbody></table></div>
+  </section>
+
+  <details class="method">
+    <summary>Methodology &amp; Salesloft API source (read before wiring live data)</summary>
+    <div class="method-grid">
+      <div class="note"><b>Verified against Salesloft docs, June 2026.</b> The in-app Analytics rates (% On-Time, % Overdue, % Skipped steps) are <b>not exposed by the v2 REST API</b>; the closest endpoint, <code>cadence_stats</code>, returns engagement counts only. Tags show the real source per metric: <span class="srctag t-DIRECT">DIRECT</span> API field · <span class="srctag t-DERIVED">DERIVED</span> rebuilt from <code>/actions</code> + <code>/activities</code> · <span class="srctag t-SNAPSHOT">SNAPSHOT</span> live backlog, point-in-time · <span class="srctag t-EXPORT">EXPORT</span> Analytics CSV only.
+        <br><br><b>Two senses of "overdue", they behave oppositely.</b> Salesloft Analytics <b>% Overdue</b> counts steps <i>completed late</i> (historical: once a step is done late it stays counted, it does not clear when the rep catches up; On-Time + Overdue = 100% of completed steps). The API <code>/actions</code> overdue counts steps <i>currently past due and not yet done</i> (a live backlog that drops out the moment the step is completed). In this dashboard, <b>Overdue %</b> uses the completed-late sense and <b>Avg Days Overdue</b> uses the live-backlog sense.
+        <br><br><b>On-Time denominator excludes skipped steps</b>, and multi-step cadences recalibrate each step's due date from when the prior step was completed.</div>
+      <div id="methodRows"></div>
+    </div>
+  </details>
+
+  <footer>Prototype generated for Sales-leadership review · deterministic sample data · v0.3 · API sourcing verified against Salesloft docs (Jun 2026)</footer>
+</div>
+
+<script>
+/* ---------- metric definitions ---------- */
+const METRICS = [
+  {key:"activePeople", label:"Active People",   short:"Active People", fmt:"int", better:null,  bench:false, tag:"DIRECT",
+   def:"People currently active in a cadence (load / context). Maps to the Analytics 'Activated' column.", src:"GET /v2/cadence_memberships (state) · or /v2/cadence_stats.people_acted_on_count"},
+  {key:"added",        label:"Added (window)",  short:"Added",       fmt:"int", better:null,  bench:false, tag:"DIRECT",
+   def:"New people added to cadences in the window. Maps to the Analytics 'Enrolled' column.", src:"GET /v2/cadence_memberships where added_at in window, group by user(+cadence)"},
+  {key:"stepsDue",     label:"Steps Due",       short:"Steps Due",   fmt:"int", better:null,  bench:false, tag:"DERIVED",
+   def:"Steps that came due in the window (denominator for completion).", src:"derive: /v2/actions (due) + completed /v2/activities in window"},
+  {key:"onTime",       label:"On-Time %",       short:"On-Time",     fmt:"pct", better:true,  bench:true, tag:"DERIVED",
+   def:"Steps completed ON or BEFORE the due date ÷ total steps completed. Skipped steps are excluded from the denominator. Multi-step: each step's due date recalibrates from when the prior step was completed.", src:"Analytics (Process); via API derive completed /v2/activities vs step due_on"},
+  {key:"overdue",      label:"Overdue %",       short:"Overdue",     fmt:"pct", better:false, bench:true, tag:"DERIVED",
+   def:"Steps completed AFTER the due date ÷ total completed (the complement of On-Time). HISTORICAL: completing a late step lands it here permanently, it does NOT clear when the rep catches up.", src:"Analytics (completed-late). NOT the live /v2/actions snapshot."},
+  {key:"avgDaysOverdue",label:"Avg Days Overdue",short:"Days Late",  fmt:"day", better:false, bench:true, tag:"SNAPSHOT",
+   def:"Live backlog staleness: of steps currently past due and NOT yet done, the average age. A point-in-time snapshot that shrinks as reps catch up. Different lens than Overdue %.", src:"GET /v2/actions where due_on < now · now − due_on, averaged"},
+  {key:"skipped",      label:"Skipped %",       short:"Skipped",     fmt:"pct", better:false, bench:true, tag:"EXPORT",
+   def:"Steps skipped ÷ total steps. Excluded from the On-Time denominator.", src:"Salesloft Analytics export only; no API field exposed."},
+  {key:"callComp",     label:"Call-Step %",     short:"Calls",       fmt:"pct", better:true,  bench:false, tag:"DERIVED",
+   def:"Completion rate of CALL steps only. Reps tend to skip calls before emails.", src:"/v2/activities/calls vs call steps in /v2/steps (phone step detail is API-supported)"},
+  {key:"emailComp",    label:"Email-Step %",    short:"Emails",      fmt:"pct", better:true,  bench:false, tag:"DERIVED",
+   def:"Completion rate of EMAIL steps only.", src:"derive /v2/activities/emails vs steps; email step detail is limited via API"},
+  {key:"ttft",         label:"Time to 1st Touch",short:"TTFT (h)",   fmt:"hr",  better:false, bench:false, tag:"DERIVED",
+   def:"Hours from person added (added_at) to first completed step. Speed-to-lead.", src:"/v2/cadence_memberships.added_at vs first /v2/activities"},
+  {key:"premature",    label:"Premature Removal %",short:"Prem.Rem", fmt:"pct", better:false, bench:false, tag:"DERIVED",
+   def:"People removed before cadence completion ÷ ended memberships. Flags adherence gaming.", src:"/v2/cadence_memberships current_state = removed vs completed"},
+  {key:"throughput",   label:"Steps / Active Day",short:"Steps/Day", fmt:"int", better:true,  bench:false, tag:"DERIVED",
+   def:"Completed steps per active working day. Effort overlay on adherence.", src:"/v2/activities count ÷ active days in window"},
+  {key:"cadenceComp",  label:"Cadence Completion %",short:"Cad.Compl",fmt:"pct",better:true,  bench:false, tag:"DERIVED",
+   def:"Memberships that reached natural completion ÷ all ended memberships.", src:"/v2/cadence_memberships current_state = completed"},
+  {key:"ownerMatch",   label:"Owner = Assignee %",short:"Owner=Assignee",fmt:"pct",better:null,bench:false, tag:"DERIVED",
+   def:"Share of the assignee's worked records (people in the cadence) whose Salesloft record owner is also the assignee. Low % means the rep is working records owned by someone else.", src:"join /v2/people owner vs cadence_membership.user (assignee)"}
+];
+const TABLE_KEYS = ["activePeople","added","stepsDue","onTime","overdue","avgDaysOverdue","skipped","callComp","emailComp","ttft","premature","throughput","ownerMatch"];
+const M = {}; METRICS.forEach(m=>M[m.key]=m);
+
+/* ---------- reporting windows ---------- */
+const WINDOWS = [
+  {key:"this_week", label:"This week",    stepBase:0.7, stepDisc:0.4, addBase:0.06, addRand:0.10},
+  {key:"last_week", label:"Last week",    stepBase:1.2, stepDisc:0.6, addBase:0.16, addRand:0.18},
+  {key:"last_30",   label:"Last 30 days", stepBase:4.6, stepDisc:2.6, addBase:0.50, addRand:0.40}
+];
+const WMAP = {}; WINDOWS.forEach(w=>WMAP[w.key]=w);
+
+/* ---------- roster (fictional) ---------- */
+const TEAMS = ["SDR","BDR-S","BDR-V","BDR-MM","BDR-CS"];
+const ROSTER = [
+  ["Maya Chen","SDR"],["Devin Park","SDR"],["Aisha Bello","SDR"],["Tomas Rivera","SDR"],["Grace Lin","SDR"],
+  ["Liam Foster","BDR-S"],["Priya Nair","BDR-S"],["Jordan Webb","BDR-S"],["Sofia Marenco","BDR-S"],
+  ["Ethan Cole","BDR-V"],["Hana Kim","BDR-V"],["Marcus Lee","BDR-V"],["Yara Haddad","BDR-V"],
+  ["Noah Brooks","BDR-MM"],["Elena Popov","BDR-MM"],["Caleb Stone","BDR-MM"],["Ines Duarte","BDR-MM"],
+  ["Owen Fisher","BDR-CS"],["Tara Singh","BDR-CS"],["Diego Alvarez","BDR-CS"]
+];
+
+/* ---------- cadences (fictional) ---------- */
+const CADENCES = [
+  {name:"SDR · Inbound Demo Request", team:"SDR"},
+  {name:"SDR · Trial Signup Follow-up", team:"SDR"},
+  {name:"SDR · Marketing Nurture", team:"SDR"},
+  {name:"SDR · Webinar Follow-up", team:"SDR"},
+  {name:"BDR-S · Cold Outbound SMB", team:"BDR-S"},
+  {name:"BDR-S · Solo & Small Firm", team:"BDR-S"},
+  {name:"BDR-S · Re-engage Closed Lost", team:"BDR-S"},
+  {name:"BDR-V · Velocity Outbound", team:"BDR-V"},
+  {name:"BDR-V · Inbound Speed-to-Lead", team:"BDR-V"},
+  {name:"BDR-V · Event Follow-up", team:"BDR-V"},
+  {name:"BDR-MM · Mid-Market Outbound", team:"BDR-MM"},
+  {name:"BDR-MM · Multithread Outreach", team:"BDR-MM"},
+  {name:"BDR-MM · ClioCon Follow-up", team:"BDR-MM"},
+  {name:"BDR-CS · Expansion Outbound", team:"BDR-CS"},
+  {name:"BDR-CS · Cross-sell", team:"BDR-CS"},
+  {name:"BDR-CS · Win-back", team:"BDR-CS"}
+];
+
+/* ---------- deterministic RNG ---------- */
+function hashStr(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+const clamp=(v,lo,hi)=>Math.max(lo,Math.min(hi,v));
+
+/* ---------- reps ---------- */
+const REPS = ROSTER.map(([name,team])=>{
+  const d = mulberry32(hashStr(name+"|disc"));
+  const disc = 0.34 + d()*0.6;
+  const activeBase = Math.round(85 + d()*230);
+  const ownBase = 0.40 + d()*0.55;   // share of worked records the rep also owns
+  return {name, team, disc, activeBase, ownBase};
+});
+
+/* ---------- rep -> cadence membership (stable) ---------- */
+const _repCadCache={};
+function repCadences(rep){
+  if(_repCadCache[rep.name]) return _repCadCache[rep.name];
+  const list = CADENCES.filter(c=>c.team===rep.team);
+  const r = mulberry32(hashStr(rep.name+"|cad"));
+  let entries = list.map(c=>{ const v=r(); return {cad:c, active: v<0.20?0:(0.35+v)}; });
+  if(entries.filter(e=>e.active>0).length<2){ entries.forEach((e,i)=>{ if(i<2) e.active=Math.max(e.active,0.6); }); }
+  const tot = entries.reduce((s,e)=>s+e.active,0)||1;
+  entries.forEach(e=>e.share=e.active/tot);
+  entries = entries.filter(e=>e.active>0);
+  _repCadCache[rep.name]=entries;
+  return entries;
+}
+
+/* ---------- per rep x cadence x window ---------- */
+function cellFor(rep, entry, winKey){
+  const W = WMAP[winKey] || WMAP.this_week;
+  const r = mulberry32(hashStr(rep.name+"|"+entry.cad.name+"|"+winKey));
+  const disc=rep.disc, n=()=>(r()-0.5);
+  const active = Math.max(1, Math.round(rep.activeBase*entry.share));
+  const addFactor = W.addBase + W.addRand*r();
+  const added = Math.max(0, Math.round(active*addFactor));
+  const mult = W.stepBase + W.stepDisc*disc;
+  const stepsDue = Math.max(1, Math.round(active*mult));
+  const onTime = clamp(58 + disc*36 + n()*8, 50, 99);
+  const overdue = clamp((100-onTime)*0.55 + n()*5 + 2, 2, 42);
+  const avgDaysOverdue = clamp((1-disc)*4.2 + n()*1.0 + 0.5, 0.3, 6.5);
+  const skipped = clamp((1-disc)*20 + n()*6 + 3, 1, 30);
+  const callComp = clamp(onTime - (6 + (1-disc)*14) + n()*5, 30, 97);
+  const emailComp = clamp(onTime + (1 + disc*5) + n()*3, 55, 99.5);
+  const ttft = clamp((1-disc)*34 + n()*7 + 3, 1, 48);
+  const premature = clamp((1-disc)*13 + n()*4 + 1.5, 0.5, 20);
+  const throughput = clamp(16 + disc*30 + n()*7, 10, 55);
+  const cadenceComp = clamp(45 + disc*45 + n()*7, 38, 96);
+  const ownerMatch = clamp(rep.ownBase*100 + n()*8, 30, 99);
+  return {cadName:entry.cad.name, active, added, stepsDue, onTime, overdue, avgDaysOverdue,
+          skipped, callComp, emailComp, ttft, premature, throughput:Math.round(throughput), cadenceComp, ownerMatch};
+}
+
+/* ---------- roll up to rep (optionally one cadence) ---------- */
+function metricsFor(rep, win, cadFilter){
+  let entries = repCadences(rep);
+  if(cadFilter && cadFilter!=="ALL") entries = entries.filter(e=>e.cad.name===cadFilter);
+  if(!entries.length) return null;
+  const parts = entries.map(e=>cellFor(rep,e,win));
+  let A=0,S=0,ADD=0; parts.forEach(p=>{A+=p.active;S+=p.stepsDue;ADD+=p.added;});
+  const ws=k=>parts.reduce((s,p)=>s+p[k]*(S?p.stepsDue/S:0),0);
+  const wp=k=>parts.reduce((s,p)=>s+p[k]*(A?p.active/A:0),0);
+  return {activePeople:A, added:ADD, stepsDue:S,
+    onTime:ws("onTime"), overdue:ws("overdue"), skipped:ws("skipped"),
+    callComp:ws("callComp"), emailComp:ws("emailComp"), cadenceComp:ws("cadenceComp"),
+    avgDaysOverdue:wp("avgDaysOverdue"), ttft:wp("ttft"), premature:wp("premature"),
+    throughput:Math.round(wp("throughput")), ownerMatch:wp("ownerMatch")};
+}
+
+/* ---------- aggregate across reps ---------- */
+function aggregate(reps, win, cadFilter){
+  const ms = reps.map(r=>metricsFor(r,win,cadFilter)).filter(Boolean);
+  if(!ms.length) return null;
+  let A=0,S=0,ADD=0; ms.forEach(m=>{A+=m.activePeople;S+=m.stepsDue;ADD+=m.added;});
+  const ws=k=>ms.reduce((s,m)=>s+m[k]*(S?m.stepsDue/S:0),0);
+  const wp=k=>ms.reduce((s,m)=>s+m[k]*(A?m.activePeople/A:0),0);
+  return {activePeople:A, added:ADD, stepsDue:S, _n:ms.length,
+    onTime:ws("onTime"), overdue:ws("overdue"), skipped:ws("skipped"),
+    callComp:ws("callComp"), emailComp:ws("emailComp"), cadenceComp:ws("cadenceComp"),
+    avgDaysOverdue:wp("avgDaysOverdue"), ttft:wp("ttft"), premature:wp("premature"),
+    throughput:Math.round(wp("throughput")), ownerMatch:wp("ownerMatch")};
+}
+
+/* ---------- formatting ---------- */
+function fmt(v,type){
+  if(v==null||isNaN(v)) return "—";
+  if(type==="pct") return v.toFixed(1)+"%";
+  if(type==="day") return v.toFixed(1)+"d";
+  if(type==="hr")  return v.toFixed(1)+"h";
+  if(type==="int") return Math.round(v).toLocaleString();
+  return v.toFixed(1);
+}
+function shortCad(name){ const p=name.split("·"); return (p[1]||name).trim(); }
+
+/* ---------- state ---------- */
+let state={win:"this_week", view:"rep", team:"ALL", cadence:"ALL", search:"", sortKey:"onTime", sortDir:-1};
+
+function teamReps(team){ return REPS.filter(r=>team==="ALL"||r.team===team); }
+function scopeReps(){ let r=teamReps(state.team); if(state.search) r=r.filter(x=>x.name.toLowerCase().includes(state.search)); return r; }
+function scopeCadences(){
+  let cs=CADENCES.filter(c=>state.team==="ALL"||c.team===state.team);
+  if(state.cadence!=="ALL") cs=cs.filter(c=>c.name===state.cadence);
+  return cs;
+}
+
+/* ---------- KPI cards ---------- */
+function renderCards(){
+  const reps = teamReps(state.team);
+  const a = aggregate(reps, state.win, state.cadence);
+  const scope = state.team==="ALL" ? "all teams" : state.team;
+  const cadLabel = state.cadence==="ALL" ? "" : " · "+shortCad(state.cadence);
+  const F=(v,t)=>a?fmt(v,t):"—";
+  const cards=[
+    {l:"Active People", v:F(a&&a.activePeople,"int"), s:`${a?a._n:0} reps · ${scope}${cadLabel}`},
+    {l:"Added", v:F(a&&a.added,"int"), s:`new · ${WMAP[state.win].label.toLowerCase()}`},
+    {l:"On-Time Completion", v:F(a&&a.onTime,"pct"), s:`${F(a&&a.stepsDue,"int")} steps due`},
+    {l:"Overdue Step Rate", v:F(a&&a.overdue,"pct"), s:"past-due, uncompleted"},
+    {l:"Avg Days Overdue", v:F(a&&a.avgDaysOverdue,"day"), s:"backlog staleness"},
+    {l:"Skipped Step Rate", v:F(a&&a.skipped,"pct"), s:"manual skips"}
+  ];
+  document.getElementById("kpiCards").innerHTML = cards.map(c=>
+    `<div class="kpi"><div class="k-label">${c.l}</div><div class="k-val">${c.v}</div><div class="k-sub">${c.s}</div></div>`
+  ).join("");
+}
+
+/* ---------- ranking chart ---------- */
+function renderChart(){
+  const scopeAgg = aggregate(scopeReps(),state.win,state.cadence);
+  const scopeAvg = scopeAgg?scopeAgg.onTime:0;
+  let data;
+  if(state.view==="team"){
+    data = TEAMS.filter(t=>state.team==="ALL"||t===state.team).map(t=>{
+      const a=aggregate(teamReps(t),state.win,state.cadence); return a?{label:t,sub:a._n+" reps",val:a.onTime}:null;
+    }).filter(Boolean);
+  } else {
+    data = scopeReps().map(r=>{ const m=metricsFor(r,state.win,state.cadence); return m?{label:r.name,sub:r.team,val:m.onTime}:null; }).filter(Boolean);
+  }
+  data.sort((a,b)=>b.val-a.val);
+  const cadTxt = state.cadence==="ALL"?"":(" · "+shortCad(state.cadence));
+  document.getElementById("chartTitle").textContent="On-time completion rate — "+(state.view==="team"?"by team":"by rep");
+  document.getElementById("chartSub").textContent=
+    `${WMAP[state.win].label}${cadTxt} · sorted high to low · line = ${state.team==="ALL"?"all-team":state.team} average (${scopeAvg.toFixed(1)}%)`;
+  const avgPos=scopeAvg;
+  document.getElementById("chart").innerHTML = data.map(d=>{
+    const good=d.val>=scopeAvg;
+    return `<div class="bar-row">
+      <div class="name">${d.label} <span>${d.sub}</span></div>
+      <div class="track">
+        <div class="fill" style="width:${d.val.toFixed(1)}%;background:${good?'var(--good)':'var(--bad)'}"></div>
+        <div class="avgline" style="left:${avgPos.toFixed(1)}%"></div>
+      </div>
+      <div class="pct">${d.val.toFixed(1)}%</div>
+    </div>`;
+  }).join("") || `<p class="p-sub">No reps in this scope.</p>`;
+  document.getElementById("avgTag").textContent=
+    `Bars above the line beat the ${state.team==="ALL"?"company":state.team} average; bars below trail it.`;
+}
+
+/* ---------- flags ---------- */
+function flagsFor(x, teamAgg){
+  const f=[];
+  if(x.overdue>teamAgg.overdue*1.3 || x.avgDaysOverdue>3) f.push(["backlog","Backlog"]);
+  if(x.skipped>teamAgg.skipped+5) f.push(["skips","Skips"]);
+  if(x.ttft>24) f.push(["slow","Slow start"]);
+  if(x.callComp < x.emailComp-15) f.push(["calls","Calls"]);
+  return f;
+}
+function benchClass(val, teamVal, better){
+  if(better===null) return "";
+  const diff=val-teamVal, tol=Math.max(0.5,Math.abs(teamVal)*0.03);
+  if(Math.abs(diff)<tol) return "";
+  return (better?diff>0:diff<0) ? "cell-good" : "cell-bad";
+}
+function arrow(k){ return state.sortKey===k ? (state.sortDir>0?"▲":"▼") : "▲"; }
+
+/* ---------- table (rep / team) ---------- */
+function renderTable(){
+  if(state.view==="matrix"){ renderMatrix(); return; }
+  const thead=document.querySelector("#tbl thead"), tbody=document.querySelector("#tbl tbody");
+  const firstLabel = state.view==="team" ? "Team" : "Rep";
+  let h=`<th data-k="__name__" class="${state.sortKey==='__name__'?'sorted':''}">${firstLabel} <span class="arrow">${arrow('__name__')}</span></th>`;
+  if(state.view==="rep") h+=`<th data-k="__delta__" class="${state.sortKey==='__delta__'?'sorted':''}">On-Time vs Team <span class="arrow">${arrow('__delta__')}</span></th>`;
+  TABLE_KEYS.forEach(k=>{ h+=`<th data-k="${k}" title="${M[k].def}" class="${state.sortKey===k?'sorted':''}">${M[k].short} <span class="arrow">${arrow(k)}</span></th>`; });
+  if(state.view==="rep") h+=`<th data-k="__flags__">Flags</th>`;
+  thead.innerHTML=`<tr>${h}</tr>`;
+  thead.querySelectorAll("th").forEach(th=>{
+    const k=th.getAttribute("data-k"); if(k==="__flags__") return;
+    th.onclick=()=>{ if(state.sortKey===k) state.sortDir*=-1; else {state.sortKey=k;state.sortDir=(k==='__name__')?1:-1;} renderTable(); };
+  });
+
+  if(state.view==="team"){
+    let rows=TEAMS.filter(t=>state.team==="ALL"||t===state.team)
+      .map(t=>({team:t, m:aggregate(teamReps(t),state.win,state.cadence)})).filter(r=>r.m);
+    rows.sort((p,q)=> state.sortKey==='__name__'? p.team.localeCompare(q.team)*state.sortDir : (p.m[state.sortKey]-q.m[state.sortKey])*state.sortDir);
+    tbody.innerHTML=rows.map(r=>{
+      let tds=`<td><span class="teamtag">${r.team}</span> <span style="color:var(--muted)">${r.m._n} reps</span></td>`;
+      TABLE_KEYS.forEach(k=> tds+=`<td class="num">${fmt(r.m[k],M[k].fmt)}</td>`);
+      return `<tr>${tds}</tr>`;
+    }).join("");
+    document.getElementById("tblTitle").textContent="Adherence detail — by team";
+    return;
+  }
+
+  // rep view
+  const teamAgg={}; TEAMS.forEach(t=>teamAgg[t]=aggregate(teamReps(t),state.win,state.cadence));
+  let rows=scopeReps().map(r=>({rep:r, m:metricsFor(r,state.win,state.cadence), t:teamAgg[r.team]})).filter(x=>x.m && x.t);
+  rows.forEach(x=> x.delta = x.m.onTime - x.t.onTime);
+  rows.sort((p,q)=>{
+    if(state.sortKey==='__name__') return p.rep.name.localeCompare(q.rep.name)*state.sortDir;
+    if(state.sortKey==='__delta__') return (p.delta-q.delta)*state.sortDir;
+    return (p.m[state.sortKey]-q.m[state.sortKey])*state.sortDir;
+  });
+  tbody.innerHTML=rows.map(x=>{
+    const m=x.m,t=x.t;
+    let tds=`<td><div class="repcell"><b>${x.rep.name}</b><span><span class="teamtag">${x.rep.team}</span></span></div></td>`;
+    const d=x.delta, dc=Math.abs(d)<0.5?"flat":(d>0?"up":"down"), sign=d>0?"+":"";
+    tds+=`<td class="num"><span class="delta ${dc}">${sign}${d.toFixed(1)} pp</span></td>`;
+    TABLE_KEYS.forEach(k=>{ const cls=M[k].bench?benchClass(m[k],t[k],M[k].better):""; tds+=`<td class="num ${cls}">${fmt(m[k],M[k].fmt)}</td>`; });
+    const fl=flagsFor(m,t);
+    tds+=`<td><div class="flags">${fl.length?fl.map(([c,l])=>`<span class="pill ${c}">${l}</span>`).join(""):`<span class="pill none">—</span>`}</div></td>`;
+    return `<tr>${tds}</tr>`;
+  }).join("") || `<tr><td colspan="${TABLE_KEYS.length+3}" style="color:var(--muted)">No reps in this scope.</td></tr>`;
+  document.getElementById("tblTitle").textContent="Adherence detail — by rep ("+rows.length+")";
+}
+
+/* ---------- matrix: active people + added, rep x cadence ---------- */
+function renderMatrix(){
+  const thead=document.querySelector("#tbl thead"), tbody=document.querySelector("#tbl tbody");
+  const cads=scopeCadences();
+  const reps=scopeReps();
+  // cell lookup
+  function cell(rep,cad){ const e=repCadences(rep).find(x=>x.cad.name===cad.name); return e?cellFor(rep,e,state.win):null; }
+  // max active for heatmap
+  let maxA=1; reps.forEach(rp=>cads.forEach(c=>{const x=cell(rp,c); if(x)maxA=Math.max(maxA,x.active);}));
+  // header
+  let h=`<th data-k="__name__" class="${state.sortKey==='__name__'?'sorted':''}">Rep <span class="arrow">${arrow('__name__')}</span></th>`;
+  cads.forEach(c=> h+=`<th class="cadcol" data-cad="${c.name}" title="${c.name}">${shortCad(c.name)}</th>`);
+  h+=`<th class="mtot" data-k="__total__">Total</th>`;
+  thead.innerHTML=`<tr>${h}</tr>`;
+  // allow sorting by total active or name only (clicking cadence cols not sortable here)
+  thead.querySelector('[data-k="__name__"]').onclick=()=>{ if(state.sortKey==='__name__') state.sortDir*=-1; else {state.sortKey='__name__';state.sortDir=1;} renderMatrix(); };
+  const totTh=thead.querySelector('[data-k="__total__"]');
+  totTh.style.cursor="pointer";
+  totTh.onclick=()=>{ if(state.sortKey==='__total__') state.sortDir*=-1; else {state.sortKey='__total__';state.sortDir=-1;} renderMatrix(); };
+
+  // rows
+  let rowObjs=reps.map(rp=>{
+    let totA=0,totAdd=0; const cells=cads.map(c=>{ const x=cell(rp,c); if(x){totA+=x.active;totAdd+=x.added;} return x; });
+    return {rep:rp, cells, totA, totAdd};
+  });
+  if(state.sortKey==='__total__') rowObjs.sort((p,q)=>(p.totA-q.totA)*state.sortDir);
+  else if(state.sortKey==='__name__') rowObjs.sort((p,q)=>p.rep.name.localeCompare(q.rep.name)*state.sortDir);
+  else rowObjs.sort((p,q)=>q.totA-p.totA);
+
+  const colTotA=cads.map(()=>0), colTotAdd=cads.map(()=>0); let grandA=0,grandAdd=0;
+  const body=rowObjs.map(ro=>{
+    let tds=`<td><div class="repcell"><b>${ro.rep.name}</b><span><span class="teamtag">${ro.rep.team}</span></span></div></td>`;
+    ro.cells.forEach((x,i)=>{
+      if(!x){ tds+=`<td class="mcell empty">·</td>`; return; }
+      colTotA[i]+=x.active; colTotAdd[i]+=x.added;
+      const alpha=(0.05+0.5*(x.active/maxA)).toFixed(3);
+      tds+=`<td class="mcell" style="background:rgba(47,91,208,${alpha})"><div class="ma">${x.active}</div><div class="mb">+${x.added}</div></td>`;
+    });
+    grandA+=ro.totA; grandAdd+=ro.totAdd;
+    tds+=`<td class="mtot"><div class="ma">${ro.totA.toLocaleString()}</div><div class="mb">+${ro.totAdd}</div></td>`;
+    return `<tr>${tds}</tr>`;
+  }).join("");
+  // totals row
+  let tot=`<td>All reps in scope</td>`;
+  cads.forEach((c,i)=> tot+=`<td class="mcell"><div class="ma">${colTotA[i].toLocaleString()}</div><div class="mb">+${colTotAdd[i]}</div></td>`);
+  tot+=`<td class="mtot"><div class="ma">${grandA.toLocaleString()}</div><div class="mb">+${grandAdd}</div></td>`;
+  tbody.innerHTML = body + `<tr class="totrow">${tot}</tr>`;
+  document.getElementById("tblTitle").textContent="Active people by cadence — rep × cadence";
+}
+
+/* ---------- panel chrome per view ---------- */
+function renderChrome(){
+  const isMatrix=state.view==="matrix";
+  document.getElementById("chartPanel").style.display = isMatrix ? "none" : "";
+  document.getElementById("searchCtl").style.display = state.view==="team" ? "none" : "flex";
+  const legend=document.getElementById("legend"), sub=document.getElementById("tblSub");
+  if(isMatrix){
+    legend.innerHTML=`<span><span class="sw" style="background:rgba(47,91,208,.45)"></span> darker = more active people</span>
+      <span><b style="color:var(--good)">+N</b> = added · ${WMAP[state.win].label.toLowerCase()}</span>`;
+    sub.textContent="Each cell: active people in that cadence (bold) and how many were added in the window (+N). Click Rep or Total to sort.";
+  } else if(state.view==="team"){
+    legend.innerHTML="";
+    sub.textContent="Team aggregates. Click any column to sort.";
+  } else {
+    legend.innerHTML=`<span><span class="sw" style="background:var(--good-bg);border:1px solid #bfe3cd"></span> better than team avg</span>
+      <span><span class="sw" style="background:var(--bad-bg);border:1px solid #f3c6c7"></span> worse than team avg</span>
+      <span><span class="pill backlog">Backlog</span> overdue / stale</span>
+      <span><span class="pill skips">Skips</span> high skip rate</span>
+      <span><span class="pill slow">Slow start</span> TTFT &gt;24h</span>
+      <span><span class="pill calls">Calls</span> calls lag email</span>`;
+    sub.textContent="Tinted cells and the vs-team delta compare each rep to their team average. Click any column to sort.";
+  }
+}
+
+/* ---------- methodology ---------- */
+function renderMethod(){
+  let rows = METRICS.map(m=>
+    `<div class="mrow"><div><span class="srctag t-${m.tag}">${m.tag}</span><br><b>${m.short}</b>${m.short!==m.label?`<div style="font-size:11px;color:var(--muted);margin-top:2px">${m.label}</div>`:""}</div><div class="def">${m.def}</div><div class="src"><code>${m.src}</code></div></div>`
+  ).join("");
+  rows += `<div class="mrow"><div><span class="srctag t-DERIVED">DERIVED</span><br><b>On-Time vs Team</b><div style="font-size:11px;color:var(--muted);margin-top:2px">rep view only</div></div><div class="def">Rep On-Time rate minus the rep's team average, in percentage points. Green = ahead of team, red = behind. Benchmark column, not a separate metric.</div><div class="src"><code>derived display column</code></div></div>`;
+  rows += `<div class="mrow"><div><span class="srctag t-DERIVED">DERIVED</span><br><b>Flags</b><div style="font-size:11px;color:var(--muted);margin-top:2px">rep view only</div></div><div class="def">Auto badges vs team avg: Backlog (overdue or stale), Skips (high skip rate), Slow start (TTFT over 24h), Calls (call steps lagging email).</div><div class="src"><code>derived display column</code></div></div>`;
+  document.getElementById("methodRows").innerHTML = rows;
+}
+
+/* ---------- controls ---------- */
+function repopulateCadences(){
+  const cf=document.getElementById("cadenceFilter");
+  const cs=CADENCES.filter(c=>state.team==="ALL"||c.team===state.team);
+  const cur=state.cadence;
+  cf.innerHTML='<option value="ALL">All cadences</option>'+cs.map(c=>`<option value="${c.name}">${c.name}</option>`).join("");
+  if(cur!=="ALL" && cs.some(c=>c.name===cur)) cf.value=cur; else { state.cadence="ALL"; cf.value="ALL"; }
+}
+function initControls(){
+  const tf=document.getElementById("teamFilter");
+  TEAMS.forEach(t=>{const o=document.createElement("option");o.value=t;o.textContent=t;tf.appendChild(o);});
+  tf.onchange=()=>{ state.team=tf.value; repopulateCadences(); renderAll(); };
+  document.getElementById("cadenceFilter").onchange=(e)=>{ state.cadence=e.target.value; renderAll(); };
+  document.querySelectorAll("#winSeg button").forEach(b=>b.onclick=()=>{ state.win=b.dataset.win; setSeg("winSeg",b); renderAll(); });
+  document.querySelectorAll("#viewSeg button").forEach(b=>b.onclick=()=>{
+    state.view=b.dataset.view; setSeg("viewSeg",b);
+    if(state.sortKey==="__delta__" && state.view!=="rep") state.sortKey="onTime";
+    if(state.view==="matrix") state.sortKey="__total__";
+    renderAll();
+  });
+  document.getElementById("searchBox").oninput=(e)=>{ state.search=e.target.value.toLowerCase().trim(); renderChart(); renderTable(); renderCards(); };
+}
+function setSeg(id,btn){ document.querySelectorAll("#"+id+" button").forEach(x=>x.classList.remove("on")); btn.classList.add("on"); }
+function renderAll(){ renderChrome(); renderCards(); renderChart(); renderTable(); }
+
+repopulateCadences(); initControls(); renderMethod(); renderAll();
+</script>
+</body>
+</html>
