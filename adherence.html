@@ -132,6 +132,7 @@
         <button data-mode="standard" class="on">Standard</button>
         <button data-mode="active">Active by Cadence</button>
         <button data-mode="overdue">Overdue by Cadence</button>
+        <button data-mode="cnv">Project Precision Cadences</button>
       </div>
     </div>
     <div class="ctl"><label>Team</label><select id="teamFilter"><option value="ALL">All teams</option></select></div>
@@ -227,7 +228,8 @@ let state={win:"this_week", view:"team", mode:"standard", team:"ALL", subgroup:"
 function scopeRows(){
   return ROWS.filter(r => (state.team==="ALL"||r.team===state.team)
     && (state.subgroup==="ALL"||r.group_name===state.subgroup)
-    && (state.cadence==="ALL"||String(r.cadence_id)===state.cadence));
+    && (state.cadence==="ALL"||String(r.cadence_id)===state.cadence)
+    && (state.mode!=="cnv"||(r.cadence_name||"").toUpperCase().includes("CNV")));
 }
 function fmt(v,t){ if(v==null||isNaN(v))return "—";
   if(t==="pct")return v.toFixed(1)+"%"; if(t==="day")return v.toFixed(1)+"d";
@@ -271,7 +273,7 @@ function renderChart(){
          data=reps.map(x=>({label:x.rep,sub:x.team,val:x.m.overduePct,active:x.m.active})); }
   data.sort((a,b)=>b.val-a.val); data=data.slice(0,40);
   document.getElementById("chartTitle").textContent="% of open steps overdue — "+(state.view==="team"?(state.team==="ALL"?"by team":"by sub-group"):"by rep");
-  document.getElementById("chartSub").textContent=`${state.cadence==="ALL"?(state.team==="ALL"?"all teams":state.team):cadName(state.cadence)} · higher = more queued steps past due · line = scope avg (${scopeAvg.toFixed(1)}%)`;
+  document.getElementById("chartSub").textContent=`${state.cadence==="ALL"?(state.team==="ALL"?"all teams":state.team):cadName(state.cadence)}${state.mode==="cnv"?" · Project Precision (CNV) cadences only":""} · higher = more queued steps past due · line = scope avg (${scopeAvg.toFixed(1)}%)`;
   const max=Math.max(100,...data.map(d=>d.val));
   document.getElementById("chart").innerHTML=data.map(d=>{
     const w=d.val/max*100, avg=scopeAvg/max*100, bad=d.val>=scopeAvg;
@@ -308,8 +310,8 @@ function renderTable(){
     let data=byTeam(rows,state.win);
     data.sort((p,q)=> state.sortKey==='__name__'? p.label.localeCompare(q.label)*state.sortDir : (p.m[state.sortKey]-q.m[state.sortKey])*state.sortDir);
     tbody.innerHTML=data.map(x=>{ let tds=`<td><span class="teamtag">${esc(x.label)}</span> <span style="color:var(--muted)">${x.reps} reps</span></td>`;
-      TABLE_KEYS.forEach(k=> tds+=`<td class="num">${fmt(x.m[k],M[k].fmt)}</td>`); return `<tr>${tds}</tr>`;}).join("");
-    document.getElementById("tblTitle").textContent="Adherence detail — "+(state.team==="ALL"?"by team":"by sub-group of "+state.team); return;
+      TABLE_KEYS.forEach(k=> tds+=`<td class="num">${fmt(x.m[k],M[k].fmt)}</td>`); return `<tr>${tds}</tr>`;}).join("")||`<tr><td colspan="${TABLE_KEYS.length+1}" style="color:var(--muted)">No cadences in scope.</td></tr>`;
+    document.getElementById("tblTitle").textContent="Adherence detail — "+(state.team==="ALL"?"by team":"by sub-group of "+state.team)+(state.mode==="cnv"?" — Project Precision (CNV) cadences":""); return;
   }
   let data=byRep(rows,state.win); if(state.search)data=data.filter(x=>x.rep.toLowerCase().includes(state.search));
   const tcache={}; TEAMS.forEach(t=>tcache[t]=teamAgg(t,state.win));
@@ -323,7 +325,7 @@ function renderTable(){
     TABLE_KEYS.forEach(k=>{const cls=M[k].bench?benchClass(m[k],t[k],M[k].better):""; tds+=`<td class="num ${cls}">${fmt(m[k],M[k].fmt)}</td>`;});
     const fl=flags(m,t); tds+=`<td><div class="flags">${fl.length?fl.map(([c,l])=>`<span class="pill ${c}">${l}</span>`).join(""):`<span class="pill none">—</span>`}</div></td>`;
     return `<tr>${tds}</tr>`;}).join("")||`<tr><td colspan="${TABLE_KEYS.length+3}" style="color:var(--muted)">No reps in scope.</td></tr>`;
-  document.getElementById("tblTitle").textContent="Adherence detail — by rep ("+data.length+")";
+  document.getElementById("tblTitle").textContent="Adherence detail — by rep ("+data.length+")"+(state.mode==="cnv"?" — Project Precision (CNV) cadences":"");
 }
 
 function renderMatrix(metric){   // metric = "active" | "overdue"
@@ -386,7 +388,7 @@ function shortCad(n){ const p=(n||"").split("·"); return (p.length>1?p.slice(1)
 function esc(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 
 function renderChrome(){
-  const matrix=state.mode!=="standard";
+  const matrix=state.mode==="active"||state.mode==="overdue";
   document.getElementById("chartPanel").style.display=matrix?"none":"";
   document.getElementById("searchCtl").style.display=state.view==="rep"?"flex":"none";
   const legend=document.getElementById("legend"), sub=document.getElementById("tblSub");
@@ -397,9 +399,9 @@ function renderChrome(){
   else if(state.mode==="overdue"){
     legend.innerHTML=`<span><span class="sw" style="background:rgba(210,63,67,.45)"></span> darker = more overdue steps</span><span>cell = overdue <b>of</b> open steps</span>`;
     sub.textContent=`Overdue steps (bold) of open steps, ${by} × cadence.`; }
-  else if(state.view==="team"){ legend.innerHTML=""; sub.textContent=(state.team==="ALL"?"Team":"Sub-group")+" aggregates. Click any column to sort."; }
+  else if(state.view==="team"){ legend.innerHTML=""; sub.textContent=(state.team==="ALL"?"Team":"Sub-group")+" aggregates."+(state.mode==="cnv"?" Project Precision (CNV) cadences only.":"")+" Click any column to sort."; }
   else { legend.innerHTML=`<span><span class="sw" style="background:var(--good-bg);border:1px solid #bfe3cd"></span> better than team avg</span><span><span class="sw" style="background:var(--bad-bg);border:1px solid #f3c6c7"></span> worse than team avg</span><span><span class="pill backlog">Behind team</span> overdue % above team</span><span><span class="pill stale">Stale</span> avg &gt;30 days late</span>`;
-    sub.textContent="Tinted cells / vs-team delta compare each user to their team average. Click any column to sort."; }
+    sub.textContent="Tinted cells / vs-team delta compare each user to their team average."+(state.mode==="cnv"?" Project Precision (CNV) cadences only.":"")+" Click any column to sort."; }
 }
 function renderMethod(){ document.getElementById("methodRows").innerHTML=METRICS.map(m=>
   `<div class="mrow"><div><b>${m.short}</b><div style="font-size:11px;color:var(--muted);margin-top:2px">${m.label}</div></div><div><div>${m.def}</div><div style="margin-top:3px"><code>${m.src}</code></div></div></div>`).join(""); }
@@ -415,7 +417,8 @@ function populateSubgroups(){
 }
 function repopulateCadences(){
   const cf=document.getElementById("cadenceFilter");
-  const rs=ROWS.filter(r=>(state.team==="ALL"||r.team===state.team)&&(state.subgroup==="ALL"||r.group_name===state.subgroup));
+  const rs=ROWS.filter(r=>(state.team==="ALL"||r.team===state.team)&&(state.subgroup==="ALL"||r.group_name===state.subgroup)
+    &&(state.mode!=="cnv"||(r.cadence_name||"").toUpperCase().includes("CNV")));
   // only cadences with current activity: active people OR overdue steps > 0
   // (a cadence with everyone completed — no active, no overdue — drops out)
   const nm={}, live={};
@@ -439,7 +442,8 @@ function init(){
   document.querySelectorAll("#viewSeg button").forEach(b=>b.onclick=()=>{state.view=b.dataset.view;setSeg("viewSeg",b);
     if(state.sortKey==='__delta__'&&state.view!=='rep')state.sortKey='overduePct'; renderAll();});
   document.querySelectorAll("#modeSeg button").forEach(b=>b.onclick=()=>{state.mode=b.dataset.mode;setSeg("modeSeg",b);
-    state.sortKey = state.mode==="standard" ? "overduePct" : "__total__"; renderAll();});
+    state.sortKey = (state.mode==="standard"||state.mode==="cnv") ? "overduePct" : "__total__";
+    repopulateCadences(); renderAll();});
   document.getElementById("searchBox").oninput=e=>{state.search=e.target.value.toLowerCase().trim();renderCards();renderChart();renderTable();};
   populateSubgroups(); repopulateCadences(); renderMethod(); renderAll();
 }

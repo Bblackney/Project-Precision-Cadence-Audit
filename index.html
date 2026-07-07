@@ -61,6 +61,7 @@
 
 <div class="ctrl">
   <button type="button" id="saveArchBtn" onclick="saveArchiveCSV()" title="Save every Archive-Confirmed cadence (full info) to archive_confirmed.csv" style="border:1px solid #b91c1c;background:#dc2626;color:#fff;border-radius:5px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">⬇ Save Archive-Confirmed CSV <span id="archCount">(0)</span></button>
+  <button type="button" id="cnvBtn" onclick="toggleCnv()" title="Show only cadences whose name contains 'CNV'" style="border:1px solid #2563eb;background:#fff;color:#2563eb;border-radius:5px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">Project Precision Cadences</button>
   <div style="display:flex;flex-direction:column;gap:3px;font-size:12px;font-weight:500;color:#374151;">Verdict
     <div class="dd">
       <button type="button" class="dd-btn" id="vBtn" onclick="toggleDD('vPanel')">Verdict (3)</button>
@@ -33497,6 +33498,14 @@ const CSV_FIELDS = ["run_date", "period_label", "cadence_id", "cadence_name", "s
 const tbody=document.getElementById('tbody');
 const allRows=Array.from(tbody.querySelectorAll('tr'));
 let sc=5,sd=-1;
+let cnvOnly=false;
+function toggleCnv(){
+  cnvOnly=!cnvOnly;
+  const b=document.getElementById('cnvBtn');
+  b.style.background=cnvOnly?'#2563eb':'#fff';
+  b.style.color=cnvOnly?'#fff':'#2563eb';
+  filter();
+}
 
 // ── Archive-Confirmed state ─────────────────────────────────────────────────
 // localStorage gives instant persistence across reloads AND across the Friday
@@ -33622,10 +33631,11 @@ function filter(){
     const nameU=r.cells[1].textContent.toUpperCase();
     const teamOk=teams.length===0||teams.some(tm=>tm==='SDR'?(nameU.includes('SDR')&&!nameU.includes('BDR')):nameU.includes(tm));
     const searchOk=!s||r.cells[1].textContent.toLowerCase().includes(s);
+    const cnvOk=!cnvOnly||nameU.includes('CNV');
     const vd=r.dataset.verdict;
-    // KPI cards reflect Date + Team + Search scope (not the Verdict picker) — so they
-    // update as you filter, but always show every verdict's count for that scope.
-    const kpiScope=dateOk&&teamOk&&searchOk;
+    // KPI cards reflect Date + Team + Search + Project Precision scope (not the Verdict
+    // picker) — so they update as you filter, but always show every verdict's count for that scope.
+    const kpiScope=dateOk&&teamOk&&searchOk&&cnvOk;
     if(kpiScope){if(vd==='KEEP')k++;else if(vd==='REVIEW')rv++;else if(vd==='ARCHIVE')ar++;else if(vd==='LOW SAMPLE')lo++;else if(vd==='NO DATA')nd++;}
     const show=kpiScope&&verdicts.includes(vd);
     r.style.display=show?'':'none';
