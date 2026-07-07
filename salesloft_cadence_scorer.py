@@ -649,7 +649,10 @@ function filter(){{
     // picker) — so they update as you filter, but always show every verdict's count for that scope.
     const kpiScope=dateOk&&teamOk&&searchOk&&cnvOk;
     if(kpiScope){{if(vd==='KEEP')k++;else if(vd==='REVIEW')rv++;else if(vd==='ARCHIVE')ar++;else if(vd==='LOW SAMPLE')lo++;else if(vd==='NO DATA')nd++;}}
-    const show=kpiScope&&verdicts.includes(vd);
+    // Project Precision toggle bypasses the Verdict picker — it should always surface every
+    // CNV cadence regardless of verdict bucket (most are Low Sample / No Data, which are
+    // unchecked by default and would otherwise hide every match).
+    const show=kpiScope&&(cnvOnly||verdicts.includes(vd));
     r.style.display=show?'':'none';
     if(show)vis++;
   }});

@@ -40,7 +40,16 @@ else
   if git push origin main >> "$LOG" 2>&1; then
     echo "$(date '+%F %T') OK pushed to origin/main" >> "$LOG"
   else
-    echo "$(date '+%F %T') [WARN] git push failed — outputs are committed locally" >> "$LOG"
+    echo "$(date '+%F %T') [WARN] git push to origin failed — outputs are committed locally" >> "$LOG"
+  fi
+  # Also push to the legacy repo (origin-old-personal) that bblackney.github.io/Project-Precision-Cadence-Audit/
+  # still serves from, so that published URL doesn't drift out of sync with origin/main.
+  if git remote get-url origin-old-personal >> "$LOG" 2>&1; then
+    if git push origin-old-personal main >> "$LOG" 2>&1; then
+      echo "$(date '+%F %T') OK pushed to origin-old-personal/main" >> "$LOG"
+    else
+      echo "$(date '+%F %T') [WARN] git push to origin-old-personal failed — outputs are committed locally" >> "$LOG"
+    fi
   fi
 fi
 
