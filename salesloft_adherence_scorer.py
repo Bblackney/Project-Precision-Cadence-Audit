@@ -208,11 +208,15 @@ def collect_open_actions(token, users, now, ledger):
 # ── cadence names for the universe ─────────────────────────────────────────────
 def cadence_names(token, ids):
     names = {}
-    for cid in ids:
+    ids = list(ids)
+    print(f"  fetching cadence names for {len(ids)} cadences…", flush=True)
+    for i, cid in enumerate(ids, 1):
         d = _get(token, f"/cadences/{cid}")
         time.sleep(REQUEST_DELAY)
         rec = (d or {}).get("data", d) or {}
         names[cid] = rec.get("name", f"cadence {cid}")
+        if i % 50 == 0 or i == len(ids):
+            print(f"    …names {i}/{len(ids)} cadences", flush=True)
     return names
 
 # ── 3) memberships per universe cadence ────────────────────────────────────────
