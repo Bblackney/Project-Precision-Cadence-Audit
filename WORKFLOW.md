@@ -38,6 +38,46 @@ Or directly: `cd <project> && bash run_weekly.sh`
 ### Reinstall / change schedule
 Edit `com.clio.cadence-scorer.plist`, then run `bash install_scheduler.sh`.
 
+## Archive-Confirmed autosave (Friday 4:00 PM, Brett's machine only)
+
+The dashboard's "Archive Confirmed" checkboxes are per-cadence, browser-local by default
+(`localStorage`) and only become durable/shared once written to `archive_confirmed.csv`
+(read back by the scorer on every run so ticked boxes survive the regen for everyone).
+Brett is the only person who can write that file directly, since it lives in this git repo
+on his Mac — anyone else's "Save" click writes to a disconnected local file on *their* own
+machine instead (see the red button's tooltip). A 4:00 PM Friday job — one hour before the
+5:00 PM scorer run — automates Brett's own save so he doesn't have to remember to click it:
+
+- Agent label: `com.clio.cadence-archive-autosave`
+- Schedule: Friday 4:00 PM (plist `Weekday 5`, `Hour 16`) — deliberately before the 5pm
+  scorer run, so this week's confirmations are baked into that run's regenerated `index.html`
+  and swept into its own `git add`.
+- Files: `archive_autosave.py` (drives Chrome via AppleScript to read the live dashboard's
+  confirmed state and merge it into `archive_confirmed.csv`), `run_archive_autosave.sh`
+  (wrapper: run the script, then commit+push `archive_confirmed.csv` directly as a backup
+  in case that week's 5pm run doesn't happen), `com.clio.cadence-archive-autosave.plist`,
+  `install_archive_autosave_scheduler.sh`.
+- Logs: `archive_autosave.log` (script output), `archive_autosave.launchd.out.log` /
+  `.err.log` (launchd-level).
+
+**One-time setup (do this before installing):**
+1. In Chrome: View menu (or Chrome menu) → Developer → check **"Allow JavaScript from Apple
+   Events"**. Without this, `execute javascript` from AppleScript is refused.
+2. Install: `bash install_archive_autosave_scheduler.sh`
+3. Test manually while logged in and watching: `launchctl start com.clio.cadence-archive-autosave`
+   then `tail -f archive_autosave.log`. The first run needs a human to approve macOS's
+   "Terminal wants to control Google Chrome" Automation prompt (System Settings → Privacy &
+   Security → Automation) — it cannot be approved unattended, so don't trust the Friday
+   schedule until one manual run has succeeded end-to-end.
+
+Reliability note: this has the same fragility as the 5pm scorer job — it needs Brett's Mac
+awake (not asleep/off) at 4pm Friday, and Chrome installed with a normal (non-Incognito)
+window. If the Mac was off/asleep, this simply doesn't fire that week; nothing catches up
+retroactively (see [[cadence-scorecard-ops]] memory on the missed 7/24 and 7/31 runs for the
+same underlying limitation). Brett accepted this tradeoff over the more robust
+"auto-save-on-every-checkbox-click" alternative because the button is single-curator (his
+machine only) regardless, so a once-a-week sweep on his own machine is simpler.
+
 ## Data source — Salesloft API v2
 
 - Cadences: `/v2/cadences?status[]=active` (active only)
@@ -92,6 +132,13 @@ project folder (gitignored). The historical trend builds forward from the first 
 - **`git push` fails:** the remote uses an embedded GitHub token (rotate to a credential helper when
   convenient). `run_weekly.sh` treats push failure as non-fatal — outputs still commit locally.
 - **Stale git locks** (`index.lock` / `HEAD.lock`): `rm -f .git/*.lock` then retry.
+- **`archive_autosave.log` shows "osascript failed" / "not allowed to send Apple events":**
+  Chrome's "Allow JavaScript from Apple Events" setting (View/Chrome menu → Developer) isn't
+  checked, or macOS's Automation permission for Terminal→Chrome was never granted/was revoked.
+  Run `launchctl start com.clio.cadence-archive-autosave` manually while logged in to
+  re-trigger the permission prompt.
+- **Archive autosave silently does nothing on Fridays:** check the Mac wasn't asleep/off at
+  4pm — same as the scorer job, this can't run if nobody's logged in / the machine is off.
 
 ## Deprecated — do not use
 

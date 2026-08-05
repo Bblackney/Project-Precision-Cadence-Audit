@@ -60,7 +60,6 @@
 </div>
 
 <div class="ctrl">
-  <button type="button" id="saveArchBtn" onclick="saveArchiveCSV()" title="Save every Archive-Confirmed cadence (full info) to archive_confirmed.csv" style="border:1px solid #b91c1c;background:#dc2626;color:#fff;border-radius:5px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">⬇ Save Archive-Confirmed CSV <span id="archCount">(0)</span></button>
   <button type="button" id="cnvBtn" onclick="toggleCnv()" title="Show only cadences whose name contains 'CNV'" style="border:1px solid #2563eb;background:#fff;color:#2563eb;border-radius:5px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">Project Precision Cadences</button>
   <button type="button" id="pilotBtn" onclick="togglePilot()" title="Show only the 15 Pilot cadences" style="border:1px solid #7c3aed;background:#fff;color:#7c3aed;border-radius:5px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">Pilot Cadences</button>
   <div style="display:flex;flex-direction:column;gap:3px;font-size:12px;font-weight:500;color:#374151;">Verdict
@@ -103,6 +102,7 @@
     </select>
   </label>
   <span id="rowCount"></span>
+  <button type="button" id="saveArchBtn" onclick="saveArchiveCSV()" title="Save every Archive-Confirmed cadence (full info) to archive_confirmed.csv — for Brett only, needs local file access on his Mac" style="border:1px solid #b91c1c;background:#dc2626;color:#fff;border-radius:5px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">⬇ Save Archive-Confirmed CSV <span id="archCount">(0)</span></button>
 </div>
 
 <div class="tbl-wrap">
@@ -61484,7 +61484,6 @@ function onArch(box){
   saveLS(m);
   document.querySelectorAll('input.archChk[data-cid="'+cid+'"]').forEach(b=>{b.checked=on;});
   updateArchCount();
-  maybeAutoSave(); // background write to archive_confirmed.csv if already granted (no-op otherwise)
 }
 
 // Apply saved state on load: localStorage override wins; otherwise the
@@ -61672,29 +61671,6 @@ async function saveArchiveCSV(){
   const csv=buildMergedCSV(null);
   downloadArchiveCSV(csv);
 }
-
-// Silent background save — only runs once a file handle has already been granted
-// via the manual Save button (never prompts; queryPermission only, not
-// requestPermission). Fired after every checkbox toggle and once on page load so
-// confirmations are durable immediately instead of depending on someone
-// remembering to click Save. No-op if never set up yet, permission was revoked,
-// or the browser lacks the File System Access API (e.g. Safari) — those cases
-// still fall back to localStorage-only persistence until the next manual Save.
-async function maybeAutoSave(){
-  if(!window.showSaveFilePicker) return;
-  try{
-    if(!archHandle) archHandle=await fsGet();
-    if(!archHandle) return;
-    const granted=(await archHandle.queryPermission({mode:'readwrite'}))==='granted';
-    if(!granted) return;
-    const existing=await readExistingArchive(archHandle);
-    const csv=buildMergedCSV(existing);
-    const w=await archHandle.createWritable();
-    await w.write(csv); await w.close();
-    const added=buildMergedCSV._added, total=buildMergedCSV._total;
-    if(added>0) toast('Auto-saved +'+added+' — '+total+' total in '+archHandle.name);
-  }catch(e){ console.warn('Auto-save skipped:',e); }
-}
 function downloadArchiveCSV(csv){
   const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});
   const a=document.createElement('a');
@@ -61715,7 +61691,6 @@ window.onload=()=>{
   const sel=document.getElementById('fDate');
   if(sel.options.length>1){sel.selectedIndex=1;filter();sort(5);}
   else filter();
-  maybeAutoSave(); // reconcile any drift silently if already granted; no-op otherwise
 };
 </script>
 </body>
