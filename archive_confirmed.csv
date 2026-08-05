@@ -1,1 +1,25 @@
 run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meeting_rate,reply_rate,connect_rate,open_rate,skip_rate,steps_completed,emails_sent,created_by,pts_meeting_rate,pts_reply_rate,pts_connect_rate,pts_open_rate,pts_skip_rate,low_sample,created_at,archive_confirmed,confirmed_at
+2026-08-05,all-time,1031700,SDR - Bad Phone Number,40,ARCHIVE,SDR,0.0,3.53,0.0,34.89,0.0,10785,35085,Gareth Ritcey,0,30,0,10,0,False,2019-05-06,TRUE,2026-07-23
+2026-08-05,all-time,1327272,SDR - LinkedIn,65,REVIEW,SDR,0.0,7.44,17.88,45.11,0.0,2961,6087,Mike Wei,0,30,20,15,0,False,2019-11-12,TRUE,2026-07-23
+2026-07-04,all-time,1346767,SDR - Demo Request - Manage (via Webinar),58,REVIEW,SDR,0.0,7.55,8.64,41.0,0.0,2639,6692,Gareth Ritcey,0,30,13,15,0,False,2019-11-25,TRUE,2026-07-08
+2026-08-05,all-time,1346849,SDR - Non-Prospect (LinkedIn) - Disqualified,58,REVIEW,SDR,0.0,12.63,14.65,46.74,0.0,1388,3785,Derek Biondi,0,30,13,15,0,False,2019-11-25,TRUE,2026-07-23
+2026-08-05,all-time,1348039,SDR - Student - Disqualified,65,REVIEW,SDR,0.0,18.94,18.82,49.12,0.0,401,908,Gareth Ritcey,0,30,20,15,0,False,2019-11-26,TRUE,2026-07-23
+2026-08-05,all-time,1388930,SDR - Non-Prospect (Website) - Disqualified,65,REVIEW,SDR,0.0,19.41,17.04,47.11,0.0,1070,2401,Gareth Ritcey,0,30,20,15,0,False,2020-01-07,TRUE,2026-07-23
+2026-08-05,all-time,1477409,SDR - Booked Call - Followup,65,REVIEW,SDR,0.0,17.05,39.8,48.11,0.0,12907,14369,Gareth Ritcey,0,30,20,15,0,False,2020-03-03,TRUE,2026-07-23
+2026-08-05,all-time,1482615,SDR - Next Steps - HOT (multiple) - Followup,65,REVIEW,SDR,0.0,12.33,16.51,44.83,0.0,4260,3170,Gareth Ritcey,0,30,20,15,0,False,2020-03-05,TRUE,2026-07-23
+2026-08-05,all-time,1540401,SDR - Next Step Email Opt Out - Followup,13,ARCHIVE,SDR,0.0,0.0,10.05,0.0,0.0,1613,0,Mike Wei,0,0,13,0,0,False,2020-04-07,TRUE,2026-07-23
+2026-07-04,all-time,1718940,SDR - Pricing Page - B - Content,58,REVIEW,SDR,0.0,5.09,7.57,39.35,0.0,12372,34993,Gareth Ritcey,0,30,13,15,0,False,2020-08-06,TRUE,2026-07-08
+2026-08-05,all-time,1911581,SDR - International Lead Cadence,45,ARCHIVE,SDR,0.0,4.96,0.0,48.24,0.0,4413,15816,Marika McTague,0,30,0,15,0,False,2020-12-14,TRUE,2026-07-23
+2026-08-05,all-time,1955893,SDR - Dupe Check,65,REVIEW,SDR,0.0,24.54,24.86,50.75,0.0,1096,2266,Palak Ghambhir,0,30,20,15,0,False,2021-01-28,TRUE,2026-07-23
+2026-08-05,all-time,1959654,SDR - Not a Law Firm - Automated,65,REVIEW,SDR,0.0,12.01,17.45,43.35,0.0,10042,25183,Palak Ghambhir,0,30,20,15,0,False,2021-02-01,TRUE,2026-07-23
+2026-07-04,all-time,2034007,SDR - Software Advice,58,REVIEW,SDR,0.0,7.33,14.52,38.35,0.0,9479,16742,Palak Ghambhir,0,30,13,15,0,False,2021-03-23,TRUE,2026-07-08
+2026-08-05,all-time,2145617,SDR - Facebook Demo Request,65,REVIEW,SDR,5.8,2.61,8.12,29.54,0.0,8924,23240,Ryan Basco,20,22,13,10,0,False,2021-06-10,TRUE,2026-07-23
+2026-08-05,all-time,3556685,SDR- 2024 Demo No Show / Cancellation,93,KEEP,SDR,27.1,10.12,8.53,41.35,0.0,2438,5200,Leora Winkler,35,30,13,15,0,False,2024-05-22,TRUE,2026-07-23
+2026-07-04,all-time,3937721,SDR - SMS - Demo Request - Manage,93,KEEP,SDR,18.53,4.69,8.02,35.63,0.0,13687,36782,Brett Blackney,35,30,13,15,0,False,2025-07-16,TRUE,2026-07-08
+2026-07-04,all-time,3937722,SDR - SMS - Trial Follow Up - MQL ,66,REVIEW,SDR,7.79,3.05,4.98,34.34,0.0,12944,44499,Brett Blackney,20,30,6,10,0,False,2025-07-16,TRUE,2026-07-08
+2026-08-05,all-time,4015093,SDR - vLex - Demo Request (MQL),93,KEEP,SDR,34.16,10.03,9.08,40.7,0.0,287,688,Brett Blackney,35,30,13,15,0,False,2025-10-20,TRUE,2026-07-23
+2026-08-05,all-time,4020919,SDR - vLex - Not a Lawyer,58,REVIEW,SDR,0.57,4.98,9.32,36.02,0.0,2096,6987,Brittany Baron,0,30,13,15,0,False,2025-10-28,TRUE,2026-07-23
+2026-08-05,all-time,4036658,SDR - vLex -Booked Call - Followup,81,LOW SAMPLE,SDR,22.73,12.5,4.44,32.95,0.0,42,88,Brittany Baron,35,30,6,10,0,True,2025-11-14,TRUE,2026-07-23
+2026-08-05,all-time,4106547,SDR - AI Rebook Cadence (blank),93,KEEP,SDR,34.46,11.3,7.65,41.24,0.0,204,177,Alex Moore,35,30,13,15,0,False,2026-03-03,TRUE,2026-07-23
+2026-08-05,all-time,4163397,SDR - Downloaded a Guide,38,LOW SAMPLE,SDR,0.54,2.69,3.08,28.49,0.0,60,186,Alex Moore,0,22,6,10,0,True,2026-04-29,TRUE,2026-07-23
+2026-08-05,all-time,4163409,SDR - Watched On-Demand Webinar,64,REVIEW,SDR,3.21,3.74,6.58,39.93,0.0,150,561,Alex Moore,13,30,6,15,0,False,2026-04-29,TRUE,2026-07-23
