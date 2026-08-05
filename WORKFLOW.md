@@ -10,7 +10,8 @@ Every **Friday 5:00 PM**, a launchd job on Brett's Mac:
 2. Scores every **active, team** BDR/SDR cadence (model v2.1)
 3. Appends a dated snapshot to `cadence_scores_master.csv` (historical, append-only)
 4. Regenerates `index.html` (dashboard — all runs, filterable by date)
-5. `git commit` + `push` both files to GitHub
+5. Regenerates `pilot_comparison.html` (new pilot cadence vs. its retired legacy predecessor — see "Pilot Comparison tab" below)
+6. `git commit` + `push` the outputs to GitHub
 
 No CSV upload, no SFDC, no manual steps. Runs unattended.
 
@@ -37,6 +38,40 @@ Or directly: `cd <project> && bash run_weekly.sh`
 
 ### Reinstall / change schedule
 Edit `com.clio.cadence-scorer.plist`, then run `bash install_scheduler.sh`.
+
+## Pilot Comparison tab (added 2026-08-05)
+
+A third nav link/page, `pilot_comparison.html`, sits alongside `index.html` and
+`adherence.html`. For each Pilot cadence that replaced an older, now-retired
+cadence, it shows the **New** cadence's live metrics (recomputed every Friday,
+same scoring model as the main scorecard) with the **Legacy** cadence's metrics
+directly below it, plus ▲/▼ delta annotations next to the New row's numbers
+(New − Legacy: percentage points for rates, points for Score, % relative change
+for People). Filters: Run Date (New side only), Team (BDR Strategic / SDR),
+Search.
+
+- The pilot↔legacy pair mapping lives in `PILOT_LEGACY_PAIRS` in
+  `salesloft_cadence_scorer.py` — edit there if pilot/legacy IDs change. One pair
+  (`Webinar Demo`) has `legacy_id: None` — it's a brand-new cadence with no
+  predecessor, so the tab shows it with no legacy row/delta.
+- **Legacy side is a locked, one-time snapshot** — those cadences are retired
+  and get no new activity, so there's no reason to ever refetch them. Pulled by
+  `build_pilot_legacy_snapshot.py` (needs Salesloft API access — run on Brett's
+  Mac, same as the weekly job; the Cowork sandbox can't reach the API) into
+  `pilot_legacy_snapshot.json`. **Run this once** before the tab shows any
+  legacy rows/deltas:
+  ```
+  cd <project> && python3 build_pilot_legacy_snapshot.py
+  ```
+  It's safe to rerun (idempotent overwrite) but should never need to be, since
+  the legacy cadences don't change. `pilot_legacy_snapshot.json` is **not**
+  gitignored — it's the permanent baseline, committed like `archive_confirmed.csv`.
+- The weekly scorer reads that snapshot (if present) and regenerates
+  `pilot_comparison.html` on every run — no separate schedule needed. If the
+  snapshot file is missing, the page still renders (New rows only, with a
+  banner explaining the missing legacy baseline) instead of failing the run.
+- `run_weekly.sh` now also `git add`s `pilot_comparison.html` and
+  `pilot_legacy_snapshot.json`.
 
 ## Archive-Confirmed autosave (Friday 2:00 PM, Brett's machine only)
 

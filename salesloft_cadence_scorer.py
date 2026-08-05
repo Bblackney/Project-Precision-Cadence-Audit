@@ -51,6 +51,8 @@ MASTER_CSV  = os.path.join(BASE_DIR, "cadence_scores_master.csv")
 MASTER_HTML = os.path.join(BASE_DIR, "index.html")
 CACHE_FILE  = os.path.join(BASE_DIR, "connected_calls_cache.json")
 ARCHIVE_CSV = os.path.join(BASE_DIR, "archive_confirmed.csv")
+PILOT_HTML           = os.path.join(BASE_DIR, "pilot_comparison.html")
+PILOT_SNAPSHOT_FILE  = os.path.join(BASE_DIR, "pilot_legacy_snapshot.json")
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 SL_BASE_URL   = "https://api.salesloft.com/v2"
@@ -61,6 +63,26 @@ CONNECTED_DISPOSITION = "Call - Connected"   # exact Salesloft disposition for a
 # CAD only when the name STARTS with it (so mid-name 'CAD' and the word 'cadence' are safe).
 EXCLUDED_REGION_RE = re.compile(r"\b(EMEA|CAN|APAC)\b", re.IGNORECASE)
 CAD_PREFIX_RE      = re.compile(r"^\s*CAD\b", re.IGNORECASE)
+
+# ── Pilot Comparison — new pilot cadence → legacy (retired) cadence pairs ──────
+# Added 2026-08-05. Legacy cadences are retired (no longer used, no new activity),
+# so their numbers are pulled ONCE by build_pilot_legacy_snapshot.py and locked into
+# PILOT_SNAPSHOT_FILE — never refetched on the weekly run. The "new" side is scored
+# live every week from cadence_scores_master.csv like every other cadence.
+# legacy_id=None means the pilot has no predecessor (brand-new cadence, nothing to
+# compare against) — the Pilot Comparison tab shows it with no legacy row/delta.
+PILOT_LEGACY_PAIRS = [
+    {"team": "BDR Strategic", "model": "BDR", "label": "Websights",       "new_id": 4295394, "legacy_id": 3948800},
+    {"team": "BDR Strategic", "model": "BDR", "label": "Intent - CL",     "new_id": 4295483, "legacy_id": 3946742},
+    {"team": "BDR Strategic", "model": "BDR", "label": "Intent - NMQL",   "new_id": 4295482, "legacy_id": 3946741},
+    {"team": "BDR Strategic", "model": "BDR", "label": "AQL",            "new_id": 4295481, "legacy_id": 3760621},
+    {"team": "BDR Strategic", "model": "BDR", "label": "NMQL",           "new_id": 4295484, "legacy_id": 3764782},
+    {"team": "SDR",           "model": "SDR", "label": "Software Advice","new_id": 4295352, "legacy_id": 2034007},
+    {"team": "SDR",           "model": "SDR", "label": "Pricing",        "new_id": 4295294, "legacy_id": 1718940},
+    {"team": "SDR",           "model": "SDR", "label": "Trial",          "new_id": 4291323, "legacy_id": 3937722},
+    {"team": "SDR",           "model": "SDR", "label": "Demo",           "new_id": 4291091, "legacy_id": 3937721},
+    {"team": "SDR",           "model": "SDR", "label": "Webinar Demo",   "new_id": 4294374, "legacy_id": None},
+]
 
 # ── API helpers ───────────────────────────────────────────────────────────────
 def _get(token, path, params=None, _retry=0):
@@ -290,6 +312,21 @@ def read_archive_confirmed():
     return out
 
 
+def read_pilot_snapshot():
+    """Locked-in legacy cadence metrics, keyed by legacy cadence_id (str).
+    Written ONCE by build_pilot_legacy_snapshot.py — read-only here. Missing file
+    (backfill not run yet) → {} so the Pilot Comparison page still renders, just
+    without legacy rows/deltas until Brett runs the one-time script."""
+    if not os.path.exists(PILOT_SNAPSHOT_FILE):
+        return {}
+    try:
+        with open(PILOT_SNAPSHOT_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"  [WARN] could not read {os.path.basename(PILOT_SNAPSHOT_FILE)}: {e}")
+        return {}
+
+
 # ── HTML dashboard ─────────────────────────────────────────────────────────────
 VERDICT_COLOR = {"KEEP": "#16a34a", "REVIEW": "#d97706", "ARCHIVE": "#dc2626", "LOW SAMPLE": "#475569", "NO DATA": "#94a3b8"}
 VERDICT_BG    = {"KEEP": "#dcfce7", "REVIEW": "#fef9c3", "ARCHIVE": "#fee2e2", "LOW SAMPLE": "#e2e8f0", "NO DATA": "#f8fafc"}
@@ -413,6 +450,7 @@ def generate_html(all_rows, run_date):
 <nav style="padding:14px 32px 0;display:flex;gap:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
   <a href="index.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #2f5bd0;background:#2f5bd0;color:#fff;font-weight:600;font-size:13px;text-decoration:none">Cadence Performance</a>
   <a href="adherence.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #e3e7ec;background:#fff;color:#65707d;font-weight:600;font-size:13px;text-decoration:none">Cadence Adherence</a>
+  <a href="pilot_comparison.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #e3e7ec;background:#fff;color:#65707d;font-weight:600;font-size:13px;text-decoration:none">Pilot Comparison</a>
 </nav>
 <div class="hdr">
   <h1>Cadence Performance Scorecard</h1>
@@ -792,6 +830,271 @@ window.onload=()=>{{
 </html>"""
 
 
+# ── Pilot Comparison page ──────────────────────────────────────────────────────
+def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
+    """New pilot cadence vs. its retired legacy predecessor, side by side.
+
+    'New' side is live — recomputed every weekly run from cadence_scores_master.csv
+    (all_rows, same as index.html). 'Legacy' side is a locked, one-time snapshot
+    (legacy_snapshot, from pilot_legacy_snapshot.json — see build_pilot_legacy_snapshot.py)
+    that never changes, since those cadences are retired and generate no new activity.
+    """
+    new_ids = {str(p["new_id"]) for p in PILOT_LEGACY_PAIRS if p.get("new_id")}
+    new_rows = [
+        {
+            "run_date": r.get("run_date", ""),
+            "cadence_id": str(r.get("cadence_id", "")).strip(),
+            "cadence_name": r.get("cadence_name", ""),
+            "score": _safe_float(r.get("score")),
+            "verdict": r.get("verdict", ""),
+            "meeting_rate": _safe_float(r.get("meeting_rate")),
+            "reply_rate": _safe_float(r.get("reply_rate")),
+            "connect_rate": _safe_float(r.get("connect_rate")),
+            "open_rate": _safe_float(r.get("open_rate")),
+            "people": _safe_float(r.get("steps_completed")),
+        }
+        for r in all_rows
+        if str(r.get("cadence_id", "")).strip() in new_ids
+    ]
+    dates = sorted({r["run_date"] for r in new_rows if r["run_date"]}, reverse=True)
+    latest = dates[0] if dates else run_date
+
+    pair_defs = [
+        {
+            "team": p["team"],
+            "model": p["model"],
+            "label": p["label"],
+            "new_id": str(p["new_id"]) if p.get("new_id") else None,
+            "legacy_id": str(p["legacy_id"]) if p.get("legacy_id") else None,
+        }
+        for p in PILOT_LEGACY_PAIRS
+    ]
+
+    pairs_json    = json.dumps(pair_defs, ensure_ascii=True)
+    new_rows_json = json.dumps(new_rows, ensure_ascii=True)
+    legacy_json   = json.dumps(legacy_snapshot, ensure_ascii=True)
+    date_options  = "\n      ".join(
+        f'<option value="{d}"{" selected" if d == latest else ""}>{d}</option>'
+        for d in dates
+    )
+    has_snapshot = bool(legacy_snapshot)
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilot Comparison — Cadence Performance Scorecard</title>
+  <style>
+    *{{box-sizing:border-box;margin:0;padding:0}}
+    body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f8fafc;color:#1e293b}}
+    .hdr{{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);color:white;padding:24px 32px}}
+    .hdr h1{{font-size:20px;font-weight:700;letter-spacing:-.3px}}
+    .hdr p{{font-size:12px;opacity:.75;margin-top:4px}}
+    .kpi-bar{{background:white;padding:14px 32px;border-bottom:1px solid #e2e8f0;display:flex;gap:28px;flex-wrap:wrap;align-items:center}}
+    .kpi{{text-align:center;min-width:90px}}
+    .kpi .num{{font-size:26px;font-weight:800;line-height:1}}
+    .kpi .lbl{{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}}
+    .kpi.up .num{{color:#16a34a}}.kpi.up .lbl{{color:#166534}}
+    .kpi.down .num{{color:#dc2626}}.kpi.down .lbl{{color:#991b1b}}
+    .kpi.flat .num{{color:#475569}}.kpi.flat .lbl{{color:#334155}}
+    .kpi.nolegacy .num{{color:#94a3b8}}.kpi.nolegacy .lbl{{color:#64748b}}
+    .ctrl{{background:white;padding:12px 32px;border-bottom:1px solid #e2e8f0;display:flex;gap:14px;align-items:center;flex-wrap:wrap}}
+    .ctrl label{{font-size:12px;font-weight:500;color:#374151;display:flex;flex-direction:column;gap:3px}}
+    .ctrl select,.ctrl input{{border:1px solid #d1d5db;border-radius:5px;padding:5px 8px;font-size:12px;outline:none;background:white;min-width:120px}}
+    .ctrl input[type=checkbox]{{min-width:auto;width:14px;height:14px;padding:0;margin:0;border-radius:3px;vertical-align:middle}}
+    .ctrl select:focus,.ctrl input:focus{{border-color:#2563eb}}
+    .teamChk{{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:#374151;white-space:nowrap}}
+    .warn-banner{{background:#fef3c7;border-bottom:1px solid #f59e0b;color:#92400e;font-size:12.5px;padding:10px 32px;line-height:1.5}}
+    .tbl-wrap{{padding:20px 32px;overflow-x:auto}}
+    table{{width:100%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.07);font-size:13px}}
+    thead th{{background:#f8fafc;padding:9px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#64748b;border-bottom:2px solid #e2e8f0;white-space:nowrap}}
+    td{{padding:8px 12px;border-bottom:1px solid #f3f4f6}}
+    tr.pairNew td{{font-weight:700}}
+    tr.pairNew{{border-top:2px solid #e2e8f0}}
+    tr.pairLegacy td{{color:#6b7280;font-style:italic;background:#fafbfc}}
+    tr.pairNone td{{color:#9ca3af;font-style:italic;background:#fafbfc;font-size:12px}}
+    .delta{{display:inline-block;margin-left:5px;font-size:11px;font-weight:700;font-style:normal}}
+    .delta.up{{color:#16a34a}}
+    .delta.down{{color:#dc2626}}
+    .delta.flat{{color:#94a3b8}}
+    .lockBadge{{display:inline-block;background:#e2e8f0;color:#475569;font-size:10px;font-weight:700;padding:1px 6px;border-radius:8px;margin-right:6px;text-transform:uppercase;letter-spacing:.3px}}
+    .teamHdr{{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#64748b;padding:14px 4px 4px}}
+    .foot{{font-size:11px;color:#6b7280;padding:4px 32px 20px;line-height:1.7}}
+  </style>
+</head>
+<body>
+<nav style="padding:14px 32px 0;display:flex;gap:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <a href="index.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #e3e7ec;background:#fff;color:#65707d;font-weight:600;font-size:13px;text-decoration:none">Cadence Performance</a>
+  <a href="adherence.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #e3e7ec;background:#fff;color:#65707d;font-weight:600;font-size:13px;text-decoration:none">Cadence Adherence</a>
+  <a href="pilot_comparison.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #7c3aed;background:#7c3aed;color:#fff;font-weight:600;font-size:13px;text-decoration:none">Pilot Comparison</a>
+</nav>
+<div class="hdr">
+  <h1>Pilot Comparison</h1>
+  <p>New pilot cadence vs. retired legacy predecessor · Generated {escape(run_date)}</p>
+</div>
+
+{"" if has_snapshot else '''<div class="warn-banner">⚠ pilot_legacy_snapshot.json not found — legacy rows/deltas can't be shown yet. Run <code>python3 build_pilot_legacy_snapshot.py</code> once (on Brett's Mac, needs Salesloft API access) to lock in the legacy baseline, then the next weekly run will pick it up.</div>'''}
+
+<div class="kpi-bar" id="kpiBar">
+  <div class="kpi up">      <div class="num" id="kpiUp">0</div>       <div class="lbl">Improved</div></div>
+  <div class="kpi down">    <div class="num" id="kpiDown">0</div>     <div class="lbl">Declined</div></div>
+  <div class="kpi flat">    <div class="num" id="kpiFlat">0</div>     <div class="lbl">No Change</div></div>
+  <div class="kpi nolegacy"><div class="num" id="kpiNoLegacy">0</div> <div class="lbl">No Legacy Baseline</div></div>
+</div>
+
+<div class="ctrl">
+  <label>Run Date (New cadence)
+    <select id="fDate" onchange="render()">
+      {date_options}
+    </select>
+  </label>
+  <div style="display:flex;flex-direction:column;gap:5px;">
+    <span style="font-size:12px;font-weight:500;color:#374151;">Team</span>
+    <div style="display:flex;gap:12px;">
+      <label class="teamChk"><input type="checkbox" class="fTeam" value="BDR Strategic" checked onchange="render()">BDR Strategic</label>
+      <label class="teamChk"><input type="checkbox" class="fTeam" value="SDR" checked onchange="render()">SDR</label>
+    </div>
+  </div>
+  <label>Search
+    <input type="text" id="fSearch" placeholder="Cadence / pair name…" oninput="render()">
+  </label>
+  <span id="rowCount" style="font-size:11px;color:#9ca3af;margin-left:auto"></span>
+</div>
+
+<div class="tbl-wrap">
+  <table id="tbl">
+    <thead><tr>
+      <th>Cadence</th>
+      <th style="text-align:center">Verdict</th>
+      <th style="text-align:right">Score</th>
+      <th style="text-align:right">Mtg Rate</th>
+      <th style="text-align:right">Reply Rate</th>
+      <th style="text-align:right">Connect Rate</th>
+      <th style="text-align:right">Open Rate</th>
+      <th style="text-align:right">People</th>
+    </tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<div class="foot">
+  <b>New</b> row = live, recomputed every weekly run (same scoring model as the main scorecard) &nbsp;|&nbsp;
+  <span class="lockBadge">Locked</span> <b>Legacy</b> row = one-time snapshot of the retired predecessor cadence, pulled once and never refetched &nbsp;|&nbsp;
+  Deltas next to the New row's metrics = New − Legacy (percentage points for rates, points for Score, % relative change for People)&nbsp;|&nbsp; ▲ improved · ▼ declined · ▬ no change
+</div>
+
+<script id="pilotData">
+const PAIRS = {pairs_json};
+const NEW_ROWS = {new_rows_json};
+const LEGACY = {legacy_json};
+</script>
+<script>
+function fmtPct(v){{return (Math.round(v*10)/10).toFixed(1)+'%';}}
+function fmtPts(v){{return Math.round(v);}}
+function deltaSpan(diff,suffix,digits){{
+  digits=(digits===undefined)?1:digits;
+  const av=Math.abs(diff);
+  if(av<0.05) return '<span class="delta flat">▬0.0'+suffix+'</span>';
+  const cls=diff>0?'up':'down', arrow=diff>0?'▲':'▼';
+  return '<span class="delta '+cls+'">'+arrow+av.toFixed(digits)+suffix+'</span>';
+}}
+function newRowFor(newId,date){{
+  if(!newId) return null;
+  let best=null;
+  NEW_ROWS.forEach(r=>{{ if(r.cadence_id===newId&&r.run_date===date) best=r; }});
+  return best;
+}}
+function legacyFor(legacyId){{
+  if(!legacyId) return null;
+  return LEGACY[legacyId]||null;
+}}
+function verdictBadge(v){{
+  const colors={{'KEEP':['#dcfce7','#16a34a'],'REVIEW':['#fef9c3','#d97706'],'ARCHIVE':['#fee2e2','#dc2626'],'LOW SAMPLE':['#e2e8f0','#475569'],'NO DATA':['#f8fafc','#94a3b8']}};
+  const c=colors[v]||['#f3f4f6','#374151'];
+  return '<span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:'+c[0]+';color:'+c[1]+';">'+(v||'—')+'</span>';
+}}
+function render(){{
+  const date=document.getElementById('fDate').value;
+  const teams=Array.from(document.querySelectorAll('.fTeam:checked')).map(c=>c.value);
+  const s=document.getElementById('fSearch').value.toLowerCase();
+  const tbody=document.getElementById('tbody');
+  tbody.innerHTML='';
+  let vis=0,up=0,down=0,flat=0,noLegacy=0;
+  let lastTeam=null;
+  PAIRS.forEach(p=>{{
+    if(teams.length&&!teams.includes(p.team)) return;
+    const nRow=newRowFor(p.new_id,date);
+    const lRow=legacyFor(p.legacy_id);
+    const nameForSearch=(p.label+' '+(nRow?nRow.cadence_name:'')+' '+(lRow?lRow.cadence_name:'')).toLowerCase();
+    if(s&&!nameForSearch.includes(s)) return;
+    vis++;
+    if(!lRow) noLegacy++;
+    else{{
+      const d=(nRow?nRow.score:0)-lRow.score;
+      if(Math.abs(d)<0.5) flat++; else if(d>0) up++; else down++;
+    }}
+    if(p.team!==lastTeam){{
+      const hdr=document.createElement('tr');
+      hdr.innerHTML='<td colspan="8" class="teamHdr">'+p.team+'</td>';
+      tbody.appendChild(hdr);
+      lastTeam=p.team;
+    }}
+    const newTr=document.createElement('tr');
+    newTr.className='pairNew';
+    if(nRow){{
+      const dScore=lRow?nRow.score-lRow.score:null;
+      const dMtg=lRow?nRow.meeting_rate-lRow.meeting_rate:null;
+      const dReply=lRow?nRow.reply_rate-lRow.reply_rate:null;
+      const dConn=lRow?nRow.connect_rate-lRow.connect_rate:null;
+      const dOpen=lRow?nRow.open_rate-lRow.open_rate:null;
+      const dPeople=(lRow&&lRow.people_acted_on)?((nRow.people-lRow.people_acted_on)/lRow.people_acted_on*100):null;
+      newTr.innerHTML=
+        '<td>'+p.label+' <span style="color:#9ca3af;font-weight:400;font-size:11px;">#'+p.new_id+'</span></td>'+
+        '<td style="text-align:center">'+verdictBadge(nRow.verdict)+'</td>'+
+        '<td style="text-align:right">'+fmtPts(nRow.score)+(dScore!==null?deltaSpan(dScore,'',0):'')+'</td>'+
+        '<td style="text-align:right">'+fmtPct(nRow.meeting_rate)+(dMtg!==null?deltaSpan(dMtg,'%'):'')+'</td>'+
+        '<td style="text-align:right">'+fmtPct(nRow.reply_rate)+(dReply!==null?deltaSpan(dReply,'%'):'')+'</td>'+
+        '<td style="text-align:right">'+fmtPct(nRow.connect_rate)+(dConn!==null?deltaSpan(dConn,'%'):'')+'</td>'+
+        '<td style="text-align:right">'+fmtPct(nRow.open_rate)+(dOpen!==null?deltaSpan(dOpen,'%'):'')+'</td>'+
+        '<td style="text-align:right">'+Math.round(nRow.people).toLocaleString()+(dPeople!==null?deltaSpan(dPeople,'%'):'')+'</td>';
+    }}else{{
+      newTr.innerHTML='<td>'+p.label+' <span style="color:#9ca3af;font-weight:400;font-size:11px;">#'+(p.new_id||'?')+'</span></td>'+
+        '<td colspan="7" style="color:#9ca3af;">No data for '+date+'</td>';
+    }}
+    tbody.appendChild(newTr);
+    if(lRow){{
+      const legTr=document.createElement('tr');
+      legTr.className='pairLegacy';
+      legTr.innerHTML=
+        '<td><span class="lockBadge">Locked '+lRow.pulled_at+'</span>'+(lRow.cadence_name||('#'+p.legacy_id))+'</td>'+
+        '<td style="text-align:center">'+verdictBadge(lRow.verdict)+'</td>'+
+        '<td style="text-align:right">'+fmtPts(lRow.score)+'</td>'+
+        '<td style="text-align:right">'+fmtPct(lRow.meeting_rate)+'</td>'+
+        '<td style="text-align:right">'+fmtPct(lRow.reply_rate)+'</td>'+
+        '<td style="text-align:right">'+fmtPct(lRow.connect_rate)+'</td>'+
+        '<td style="text-align:right">'+fmtPct(lRow.open_rate)+'</td>'+
+        '<td style="text-align:right">'+Math.round(lRow.people_acted_on).toLocaleString()+'</td>';
+      tbody.appendChild(legTr);
+    }}else{{
+      const noneTr=document.createElement('tr');
+      noneTr.className='pairNone';
+      noneTr.innerHTML='<td colspan="8">'+(p.legacy_id?'Legacy snapshot not pulled yet — run build_pilot_legacy_snapshot.py':'No legacy predecessor — new cadence')+'</td>';
+      tbody.appendChild(noneTr);
+    }}
+  }});
+  document.getElementById('rowCount').textContent=vis+' pairs';
+  document.getElementById('kpiUp').textContent=up;
+  document.getElementById('kpiDown').textContent=down;
+  document.getElementById('kpiFlat').textContent=flat;
+  document.getElementById('kpiNoLegacy').textContent=noLegacy;
+}}
+window.onload=render;
+</script>
+</body>
+</html>"""
+
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 def main():
     print("=" * 62)
@@ -1008,6 +1311,18 @@ def main():
         f"  → {os.path.basename(MASTER_HTML)} regenerated  "
         f"({len(all_csv_rows)} total rows across all runs)"
     )
+
+    legacy_snapshot = read_pilot_snapshot()
+    pilot_html = generate_pilot_comparison_html(all_csv_rows, run_date, legacy_snapshot)
+    with open(PILOT_HTML, "w", encoding="utf-8") as f:
+        f.write(pilot_html)
+    if legacy_snapshot:
+        print(f"  → {os.path.basename(PILOT_HTML)} regenerated  "
+              f"({len(legacy_snapshot)} legacy cadences locked in)")
+    else:
+        print(f"  → {os.path.basename(PILOT_HTML)} regenerated  "
+              f"(no {os.path.basename(PILOT_SNAPSHOT_FILE)} yet — run "
+              f"build_pilot_legacy_snapshot.py once to add legacy rows/deltas)")
 
     print(f"\n✓ Done — {len(scored_rows)} cadences scored  |  Run date: {run_date}")
     return 0

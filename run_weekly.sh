@@ -32,7 +32,7 @@ fi
 # Clear any stale git locks first — a crashed/previous git op leaves a *.lock
 # that would otherwise block this commit (and thus the weekly push).
 find .git -name '*.lock' -delete 2>/dev/null
-git add cadence_scores_master.csv index.html archive_confirmed.csv >> "$LOG" 2>&1
+git add cadence_scores_master.csv index.html archive_confirmed.csv pilot_comparison.html pilot_legacy_snapshot.json >> "$LOG" 2>&1
 if git diff --cached --quiet; then
   echo "$(date '+%F %T') no output changes to commit" >> "$LOG"
 else

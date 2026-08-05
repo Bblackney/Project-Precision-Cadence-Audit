@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilot Comparison — Cadence Performance Scorecard</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f8fafc;color:#1e293b}
+    .hdr{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);color:white;padding:24px 32px}
+    .hdr h1{font-size:20px;font-weight:700;letter-spacing:-.3px}
+    .hdr p{font-size:12px;opacity:.75;margin-top:4px}
+    .kpi-bar{background:white;padding:14px 32px;border-bottom:1px solid #e2e8f0;display:flex;gap:28px;flex-wrap:wrap;align-items:center}
+    .kpi{text-align:center;min-width:90px}
+    .kpi .num{font-size:26px;font-weight:800;line-height:1}
+    .kpi .lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+    .kpi.up .num{color:#16a34a}.kpi.up .lbl{color:#166534}
+    .kpi.down .num{color:#dc2626}.kpi.down .lbl{color:#991b1b}
+    .kpi.flat .num{color:#475569}.kpi.flat .lbl{color:#334155}
+    .kpi.nolegacy .num{color:#94a3b8}.kpi.nolegacy .lbl{color:#64748b}
+    .ctrl{background:white;padding:12px 32px;border-bottom:1px solid #e2e8f0;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .ctrl label{font-size:12px;font-weight:500;color:#374151;display:flex;flex-direction:column;gap:3px}
+    .ctrl select,.ctrl input{border:1px solid #d1d5db;border-radius:5px;padding:5px 8px;font-size:12px;outline:none;background:white;min-width:120px}
+    .ctrl input[type=checkbox]{min-width:auto;width:14px;height:14px;padding:0;margin:0;border-radius:3px;vertical-align:middle}
+    .ctrl select:focus,.ctrl input:focus{border-color:#2563eb}
+    .teamChk{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:#374151;white-space:nowrap}
+    .warn-banner{background:#fef3c7;border-bottom:1px solid #f59e0b;color:#92400e;font-size:12.5px;padding:10px 32px;line-height:1.5}
+    .tbl-wrap{padding:20px 32px;overflow-x:auto}
+    table{width:100%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.07);font-size:13px}
+    thead th{background:#f8fafc;padding:9px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#64748b;border-bottom:2px solid #e2e8f0;white-space:nowrap}
+    td{padding:8px 12px;border-bottom:1px solid #f3f4f6}
+    tr.pairNew td{font-weight:700}
+    tr.pairNew{border-top:2px solid #e2e8f0}
+    tr.pairLegacy td{color:#6b7280;font-style:italic;background:#fafbfc}
+    tr.pairNone td{color:#9ca3af;font-style:italic;background:#fafbfc;font-size:12px}
+    .delta{display:inline-block;margin-left:5px;font-size:11px;font-weight:700;font-style:normal}
+    .delta.up{color:#16a34a}
+    .delta.down{color:#dc2626}
+    .delta.flat{color:#94a3b8}
+    .lockBadge{display:inline-block;background:#e2e8f0;color:#475569;font-size:10px;font-weight:700;padding:1px 6px;border-radius:8px;margin-right:6px;text-transform:uppercase;letter-spacing:.3px}
+    .teamHdr{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#64748b;padding:14px 4px 4px}
+    .foot{font-size:11px;color:#6b7280;padding:4px 32px 20px;line-height:1.7}
+  </style>
+</head>
+<body>
+<nav style="padding:14px 32px 0;display:flex;gap:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <a href="index.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #e3e7ec;background:#fff;color:#65707d;font-weight:600;font-size:13px;text-decoration:none">Cadence Performance</a>
+  <a href="adherence.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #e3e7ec;background:#fff;color:#65707d;font-weight:600;font-size:13px;text-decoration:none">Cadence Adherence</a>
+  <a href="pilot_comparison.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #7c3aed;background:#7c3aed;color:#fff;font-weight:600;font-size:13px;text-decoration:none">Pilot Comparison</a>
+</nav>
+<div class="hdr">
+  <h1>Pilot Comparison</h1>
+  <p>New pilot cadence vs. retired legacy predecessor · Generated 2026-08-05</p>
+</div>
+
+
+
+<div class="kpi-bar" id="kpiBar">
+  <div class="kpi up">      <div class="num" id="kpiUp">0</div>       <div class="lbl">Improved</div></div>
+  <div class="kpi down">    <div class="num" id="kpiDown">0</div>     <div class="lbl">Declined</div></div>
+  <div class="kpi flat">    <div class="num" id="kpiFlat">0</div>     <div class="lbl">No Change</div></div>
+  <div class="kpi nolegacy"><div class="num" id="kpiNoLegacy">0</div> <div class="lbl">No Legacy Baseline</div></div>
+</div>
+
+<div class="ctrl">
+  <label>Run Date (New cadence)
+    <select id="fDate" onchange="render()">
+      <option value="2026-08-05" selected>2026-08-05</option>
+      <option value="2026-07-18">2026-07-18</option>
+      <option value="2026-07-11">2026-07-11</option>
+      <option value="2026-07-04">2026-07-04</option>
+      <option value="2026-06-27">2026-06-27</option>
+    </select>
+  </label>
+  <div style="display:flex;flex-direction:column;gap:5px;">
+    <span style="font-size:12px;font-weight:500;color:#374151;">Team</span>
+    <div style="display:flex;gap:12px;">
+      <label class="teamChk"><input type="checkbox" class="fTeam" value="BDR Strategic" checked onchange="render()">BDR Strategic</label>
+      <label class="teamChk"><input type="checkbox" class="fTeam" value="SDR" checked onchange="render()">SDR</label>
+    </div>
+  </div>
+  <label>Search
+    <input type="text" id="fSearch" placeholder="Cadence / pair name…" oninput="render()">
+  </label>
+  <span id="rowCount" style="font-size:11px;color:#9ca3af;margin-left:auto"></span>
+</div>
+
+<div class="tbl-wrap">
+  <table id="tbl">
+    <thead><tr>
+      <th>Cadence</th>
+      <th style="text-align:center">Verdict</th>
+      <th style="text-align:right">Score</th>
+      <th style="text-align:right">Mtg Rate</th>
+      <th style="text-align:right">Reply Rate</th>
+      <th style="text-align:right">Connect Rate</th>
+      <th style="text-align:right">Open Rate</th>
+      <th style="text-align:right">People</th>
+    </tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<div class="foot">
+  <b>New</b> row = live, recomputed every weekly run (same scoring model as the main scorecard) &nbsp;|&nbsp;
+  <span class="lockBadge">Locked</span> <b>Legacy</b> row = one-time snapshot of the retired predecessor cadence, pulled once and never refetched &nbsp;|&nbsp;
+  Deltas next to the New row's metrics = New − Legacy (percentage points for rates, points for Score, % relative change for People)&nbsp;|&nbsp; ▲ improved · ▼ declined · ▬ no change
+</div>
+
+<script id="pilotData">
+const PAIRS = [{"team": "BDR Strategic", "model": "BDR", "label": "Websights", "new_id": "4295394", "legacy_id": "3948800"}, {"team": "BDR Strategic", "model": "BDR", "label": "Intent - CL", "new_id": "4295483", "legacy_id": "3946742"}, {"team": "BDR Strategic", "model": "BDR", "label": "Intent - NMQL", "new_id": "4295482", "legacy_id": "3946741"}, {"team": "BDR Strategic", "model": "BDR", "label": "AQL", "new_id": "4295481", "legacy_id": "3760621"}, {"team": "BDR Strategic", "model": "BDR", "label": "NMQL", "new_id": "4295484", "legacy_id": "3764782"}, {"team": "SDR", "model": "SDR", "label": "Software Advice", "new_id": "4295352", "legacy_id": "2034007"}, {"team": "SDR", "model": "SDR", "label": "Pricing", "new_id": "4295294", "legacy_id": "1718940"}, {"team": "SDR", "model": "SDR", "label": "Trial", "new_id": "4291323", "legacy_id": "3937722"}, {"team": "SDR", "model": "SDR", "label": "Demo", "new_id": "4291091", "legacy_id": "3937721"}, {"team": "SDR", "model": "SDR", "label": "Webinar Demo", "new_id": "4294374", "legacy_id": null}];
+const NEW_ROWS = [{"run_date": "2026-06-27", "cadence_id": "4295481", "cadence_name": "BDR - Strategic - AQLs Excl Draft  - en-US - CNV", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-06-27", "cadence_id": "4295483", "cadence_name": "BDR - Strategic - CL INTENT - en-US - CNV", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-06-27", "cadence_id": "4295482", "cadence_name": "BDR - Strategic - NMQL - en-US - CNV ", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-06-27", "cadence_id": "4295484", "cadence_name": "BDR - Strategic - NMQL INTENT - en-US - CNV ", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-06-27", "cadence_id": "4295394", "cadence_name": "BDR - Strategic - WebSights INTENT - en-US - CNV ", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-06-27", "cadence_id": "4291091", "cadence_name": "SDR - DEMO-REQ - en-US - CNV - PREDEMO", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-06-27", "cadence_id": "4294374", "cadence_name": "SDR - DEMO-REQ-WEBINAR - en-US - CNV - PREDEMO", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-06-27", "cadence_id": "4295352", "cadence_name": "SDR - Software Advice -en-US-CNV", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-06-27", "cadence_id": "4291323", "cadence_name": "SDR - TRIAL - en-US - CNV - TRIALON ", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-06-27", "cadence_id": "4295294", "cadence_name": "SDR - WEB-PRICING-en-US-CNV ", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-07-04", "cadence_id": "4295481", "cadence_name": "BDR - Strategic - AQLs Excl Draft  - en-US - CNV", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-07-04", "cadence_id": "4295482", "cadence_name": "BDR - Strategic - NMQL - en-US - CNV ", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-07-04", "cadence_id": "4295483", "cadence_name": "BDR - Strategic - OB - CL INTENT - en-US - CNV", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-07-04", "cadence_id": "4295484", "cadence_name": "BDR - Strategic - OB - NMQL INTENT - en-US - CNV ", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-07-04", "cadence_id": "4295394", "cadence_name": "BDR - Strategic - WebSights INTENT - en-US - CNV ", "score": 15.0, "verdict": "LOW SAMPLE", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 100.0, "people": 1.0}, {"run_date": "2026-07-04", "cadence_id": "4291091", "cadence_name": "SDR - DEMO-REQ - en-US - CNV - PREDEMO", "score": 0.0, "verdict": "LOW SAMPLE", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 1.0}, {"run_date": "2026-07-04", "cadence_id": "4294374", "cadence_name": "SDR - DEMO-REQ-WEBINAR - en-US - CNV - PREDEMO", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-07-04", "cadence_id": "4291323", "cadence_name": "SDR - MANAGE TRIAL - en-US - CNV - TRIALON ", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-07-04", "cadence_id": "4295352", "cadence_name": "SDR - Software Advice -en-US-CNV", "score": 0.0, "verdict": "NO DATA", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 0.0}, {"run_date": "2026-07-04", "cadence_id": "4295294", "cadence_name": "SDR - WEB-PRICING-en-US-CNV ", "score": 0.0, "verdict": "LOW SAMPLE", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 1.0}, {"run_date": "2026-07-11", "cadence_id": "4295481", "cadence_name": "BDR - Strategic - AQLs Excl Draft  - en-US - CNV", "score": 16.0, "verdict": "LOW SAMPLE", "meeting_rate": 1.41, "reply_rate": 0.0, "connect_rate": 4.35, "open_rate": 49.3, "people": 63.0}, {"run_date": "2026-07-11", "cadence_id": "4295482", "cadence_name": "BDR - Strategic - NMQL - en-US - CNV", "score": 18.0, "verdict": "LOW SAMPLE", "meeting_rate": 1.25, "reply_rate": 1.25, "connect_rate": 8.8, "open_rate": 27.5, "people": 94.0}, {"run_date": "2026-07-11", "cadence_id": "4295483", "cadence_name": "BDR - Strategic - OB - CL INTENT - en-US - CNV", "score": 31.0, "verdict": "LOW SAMPLE", "meeting_rate": 1.57, "reply_rate": 3.15, "connect_rate": 7.04, "open_rate": 28.35, "people": 93.0}, {"run_date": "2026-07-11", "cadence_id": "4295484", "cadence_name": "BDR - Strategic - OB - NMQL INTENT - en-US - CNV", "score": 0.0, "verdict": "LOW SAMPLE", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 7.0}, {"run_date": "2026-07-11", "cadence_id": "4295394", "cadence_name": "BDR - Strategic - WebSights INTENT - en-US - CNV", "score": 18.0, "verdict": "ARCHIVE", "meeting_rate": 0.96, "reply_rate": 1.92, "connect_rate": 8.51, "open_rate": 34.62, "people": 125.0}, {"run_date": "2026-07-11", "cadence_id": "4291091", "cadence_name": "SDR - DEMO-REQ - en-US - CNV - PREDEMO", "score": 95.0, "verdict": "KEEP", "meeting_rate": 27.78, "reply_rate": 6.48, "connect_rate": 20.13, "open_rate": 32.41, "people": 128.0}, {"run_date": "2026-07-11", "cadence_id": "4294374", "cadence_name": "SDR - DEMO-REQ-WEBINAR - en-US - CNV - PREDEMO", "score": 45.0, "verdict": "LOW SAMPLE", "meeting_rate": 7.69, "reply_rate": 0.0, "connect_rate": 15.38, "open_rate": 15.38, "people": 10.0}, {"run_date": "2026-07-11", "cadence_id": "4291323", "cadence_name": "SDR - MANAGE TRIAL - en-US - CNV - TRIALON", "score": 93.0, "verdict": "KEEP", "meeting_rate": 11.92, "reply_rate": 7.95, "connect_rate": 10.5, "open_rate": 47.02, "people": 153.0}, {"run_date": "2026-07-11", "cadence_id": "4295352", "cadence_name": "SDR - Software Advice -en-US-CNV", "score": 36.0, "verdict": "LOW SAMPLE", "meeting_rate": 9.52, "reply_rate": 0.0, "connect_rate": 4.17, "open_rate": 33.33, "people": 18.0}, {"run_date": "2026-07-11", "cadence_id": "4295294", "cadence_name": "SDR - WEB-PRICING-en-US-CNV", "score": 58.0, "verdict": "LOW SAMPLE", "meeting_rate": 4.84, "reply_rate": 4.84, "connect_rate": 1.82, "open_rate": 41.94, "people": 55.0}, {"run_date": "2026-07-18", "cadence_id": "4295481", "cadence_name": "BDR - Strategic - AQLs Excl Draft  - en-US - CNV", "score": 16.0, "verdict": "ARCHIVE", "meeting_rate": 1.69, "reply_rate": 1.13, "connect_rate": 4.68, "open_rate": 40.68, "people": 144.0}, {"run_date": "2026-07-18", "cadence_id": "4295482", "cadence_name": "BDR - Strategic - NMQL - en-US - CNV", "score": 24.0, "verdict": "ARCHIVE", "meeting_rate": 0.93, "reply_rate": 2.31, "connect_rate": 6.15, "open_rate": 32.41, "people": 405.0}, {"run_date": "2026-07-18", "cadence_id": "4295483", "cadence_name": "BDR - Strategic - OB - CL INTENT - en-US - CNV", "score": 31.0, "verdict": "ARCHIVE", "meeting_rate": 2.05, "reply_rate": 2.05, "connect_rate": 7.91, "open_rate": 34.87, "people": 137.0}, {"run_date": "2026-07-18", "cadence_id": "4295484", "cadence_name": "BDR - Strategic - OB - NMQL INTENT - en-US - CNV", "score": 0.0, "verdict": "LOW SAMPLE", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 0.0, "open_rate": 0.0, "people": 9.0}, {"run_date": "2026-07-18", "cadence_id": "4295394", "cadence_name": "BDR - Strategic - WebSights INTENT - en-US - CNV", "score": 31.0, "verdict": "ARCHIVE", "meeting_rate": 0.92, "reply_rate": 2.76, "connect_rate": 7.46, "open_rate": 32.26, "people": 236.0}, {"run_date": "2026-07-18", "cadence_id": "4291091", "cadence_name": "SDR - DEMO-REQ - en-US - CNV - PREDEMO", "score": 88.0, "verdict": "KEEP", "meeting_rate": 26.39, "reply_rate": 6.33, "connect_rate": 13.26, "open_rate": 30.61, "people": 346.0}, {"run_date": "2026-07-18", "cadence_id": "4294374", "cadence_name": "SDR - DEMO-REQ-WEBINAR - en-US - CNV - PREDEMO", "score": 93.0, "verdict": "LOW SAMPLE", "meeting_rate": 15.52, "reply_rate": 5.17, "connect_rate": 9.09, "open_rate": 36.21, "people": 51.0}, {"run_date": "2026-07-18", "cadence_id": "4291323", "cadence_name": "SDR - MANAGE TRIAL - en-US - CNV - TRIALON", "score": 86.0, "verdict": "KEEP", "meeting_rate": 13.0, "reply_rate": 6.2, "connect_rate": 6.51, "open_rate": 40.8, "people": 384.0}, {"run_date": "2026-07-18", "cadence_id": "4295352", "cadence_name": "SDR - Software Advice -en-US-CNV", "score": 66.0, "verdict": "LOW SAMPLE", "meeting_rate": 9.38, "reply_rate": 6.25, "connect_rate": 6.0, "open_rate": 31.25, "people": 64.0}, {"run_date": "2026-07-18", "cadence_id": "4295294", "cadence_name": "SDR - WEB-PRICING-en-US-CNV", "score": 71.0, "verdict": "REVIEW", "meeting_rate": 9.09, "reply_rate": 5.45, "connect_rate": 6.17, "open_rate": 42.73, "people": 149.0}, {"run_date": "2026-08-05", "cadence_id": "4295481", "cadence_name": "BDR - Strategic - AQLs Excl Draft  - en-US - CNV", "score": 16.0, "verdict": "ARCHIVE", "meeting_rate": 1.37, "reply_rate": 1.37, "connect_rate": 5.56, "open_rate": 35.53, "people": 486.0}, {"run_date": "2026-08-05", "cadence_id": "4295482", "cadence_name": "BDR - Strategic - NMQL - en-US - CNV", "score": 11.0, "verdict": "ARCHIVE", "meeting_rate": 1.83, "reply_rate": 1.83, "connect_rate": 5.95, "open_rate": 32.56, "people": 653.0}, {"run_date": "2026-08-05", "cadence_id": "4295483", "cadence_name": "BDR - Strategic - OB - CL INTENT - en-US - CNV", "score": 16.0, "verdict": "ARCHIVE", "meeting_rate": 1.13, "reply_rate": 1.58, "connect_rate": 4.83, "open_rate": 35.97, "people": 254.0}, {"run_date": "2026-08-05", "cadence_id": "4295484", "cadence_name": "BDR - Strategic - OB - NMQL INTENT - en-US - CNV", "score": 6.0, "verdict": "LOW SAMPLE", "meeting_rate": 0.0, "reply_rate": 0.0, "connect_rate": 4.76, "open_rate": 9.52, "people": 19.0}, {"run_date": "2026-08-05", "cadence_id": "4295394", "cadence_name": "BDR - Strategic - WebSights INTENT - en-US - CNV", "score": 11.0, "verdict": "ARCHIVE", "meeting_rate": 0.7, "reply_rate": 1.26, "connect_rate": 5.65, "open_rate": 31.46, "people": 585.0}, {"run_date": "2026-08-05", "cadence_id": "4291091", "cadence_name": "SDR - DEMO-REQ - en-US - CNV - PREDEMO", "score": 93.0, "verdict": "KEEP", "meeting_rate": 21.67, "reply_rate": 5.94, "connect_rate": 8.48, "open_rate": 35.05, "people": 929.0}, {"run_date": "2026-08-05", "cadence_id": "4294374", "cadence_name": "SDR - DEMO-REQ-WEBINAR - en-US - CNV - PREDEMO", "score": 86.0, "verdict": "LOW SAMPLE", "meeting_rate": 14.83, "reply_rate": 5.74, "connect_rate": 5.51, "open_rate": 37.32, "people": 99.0}, {"run_date": "2026-08-05", "cadence_id": "4291323", "cadence_name": "SDR - MANAGE TRIAL - en-US - CNV - TRIALON", "score": 86.0, "verdict": "KEEP", "meeting_rate": 10.26, "reply_rate": 4.7, "connect_rate": 5.46, "open_rate": 40.09, "people": 967.0}, {"run_date": "2026-08-05", "cadence_id": "4295352", "cadence_name": "SDR - Software Advice -en-US-CNV", "score": 73.0, "verdict": "REVIEW", "meeting_rate": 8.03, "reply_rate": 5.69, "connect_rate": 8.47, "open_rate": 34.45, "people": 138.0}, {"run_date": "2026-08-05", "cadence_id": "4295294", "cadence_name": "SDR - WEB-PRICING-en-US-CNV", "score": 71.0, "verdict": "REVIEW", "meeting_rate": 7.56, "reply_rate": 4.53, "connect_rate": 5.35, "open_rate": 43.26, "people": 401.0}];
+const LEGACY = {"3948800": {"cadence_id": 3948800, "cadence_name": "Intent Outbound WebSights - BDR-S", "team": "BDR Strategic", "model": "BDR", "pair_label": "Websights", "score": 18, "verdict": "ARCHIVE", "meeting_rate": 2.67, "reply_rate": 0.93, "connect_rate": 8.13, "open_rate": 23.1, "people_acted_on": 5753, "emails_sent": 5499, "calls_count": 19897, "connected_calls": 1618, "pulled_at": "2026-08-05"}, "3946742": {"cadence_id": 3946742, "cadence_name": "Intent Outbound Closed Lost - BDR-S", "team": "BDR Strategic", "model": "BDR", "pair_label": "Intent - CL", "score": 44, "verdict": "ARCHIVE", "meeting_rate": 11.02, "reply_rate": 3.07, "connect_rate": 6.86, "open_rate": 28.82, "people_acted_on": 3678, "emails_sent": 2051, "calls_count": 17702, "connected_calls": 1214, "pulled_at": "2026-08-05"}, "3946741": {"cadence_id": 3946741, "cadence_name": "Intent Outbound NMQL - BDR-S", "team": "BDR Strategic", "model": "BDR", "pair_label": "Intent - NMQL", "score": 31, "verdict": "ARCHIVE", "meeting_rate": 3.65, "reply_rate": 3.48, "connect_rate": 10.33, "open_rate": 28.45, "people_acted_on": 1198, "emails_sent": 1838, "calls_count": 3058, "connected_calls": 316, "pulled_at": "2026-08-05"}, "3760621": {"cadence_id": 3760621, "cadence_name": "BDR-S - AQLs Excl Draft - September 2025", "team": "BDR Strategic", "model": "BDR", "pair_label": "AQL", "score": 18, "verdict": "ARCHIVE", "meeting_rate": 1.98, "reply_rate": 1.84, "connect_rate": 7.57, "open_rate": 28.74, "people_acted_on": 8219, "emails_sent": 19439, "calls_count": 34087, "connected_calls": 2579, "pulled_at": "2026-08-05"}, "3764782": {"cadence_id": 3764782, "cadence_name": "BDR-S - NMQLs - 2025", "team": "BDR Strategic", "model": "BDR", "pair_label": "NMQL", "score": 11, "verdict": "ARCHIVE", "meeting_rate": 3.43, "reply_rate": 1.72, "connect_rate": 5.75, "open_rate": 25.85, "people_acted_on": 9126, "emails_sent": 17280, "calls_count": 45932, "connected_calls": 2639, "pulled_at": "2026-08-05"}, "2034007": {"cadence_id": 2034007, "cadence_name": "SDR - Software Advice", "team": "SDR", "model": "SDR", "pair_label": "Software Advice", "score": 58, "verdict": "REVIEW", "meeting_rate": 0.0, "reply_rate": 7.28, "connect_rate": 14.46, "open_rate": 38.29, "people_acted_on": 9486, "emails_sent": 16927, "calls_count": 41638, "connected_calls": 6019, "pulled_at": "2026-08-05"}, "1718940": {"cadence_id": 1718940, "cadence_name": "SDR - Pricing Page - B - Content", "team": "SDR", "model": "SDR", "pair_label": "Pricing", "score": 58, "verdict": "REVIEW", "meeting_rate": 0.0, "reply_rate": 5.05, "connect_rate": 7.48, "open_rate": 39.27, "people_acted_on": 12409, "emails_sent": 35590, "calls_count": 50545, "connected_calls": 3782, "pulled_at": "2026-08-05"}, "3937722": {"cadence_id": 3937722, "cadence_name": "SDR - SMS - Trial Follow Up - MQL", "team": "SDR", "model": "SDR", "pair_label": "Trial", "score": 58, "verdict": "REVIEW", "meeting_rate": 7.6, "reply_rate": 2.97, "connect_rate": 4.85, "open_rate": 33.9, "people_acted_on": 13084, "emails_sent": 46690, "calls_count": 72447, "connected_calls": 3515, "pulled_at": "2026-08-05"}, "3937721": {"cadence_id": 3937721, "cadence_name": "SDR - SMS - Demo Request - Manage", "team": "SDR", "model": "SDR", "pair_label": "Demo", "score": 93, "verdict": "KEEP", "meeting_rate": 18.28, "reply_rate": 4.62, "connect_rate": 7.9, "open_rate": 35.4, "people_acted_on": 13808, "emails_sent": 38296, "calls_count": 59761, "connected_calls": 4720, "pulled_at": "2026-08-05"}};
+</script>
+<script>
+function fmtPct(v){return (Math.round(v*10)/10).toFixed(1)+'%';}
+function fmtPts(v){return Math.round(v);}
+function deltaSpan(diff,suffix,digits){
+  digits=(digits===undefined)?1:digits;
+  const av=Math.abs(diff);
+  if(av<0.05) return '<span class="delta flat">▬0.0'+suffix+'</span>';
+  const cls=diff>0?'up':'down', arrow=diff>0?'▲':'▼';
+  return '<span class="delta '+cls+'">'+arrow+av.toFixed(digits)+suffix+'</span>';
+}
+function newRowFor(newId,date){
+  if(!newId) return null;
+  let best=null;
+  NEW_ROWS.forEach(r=>{ if(r.cadence_id===newId&&r.run_date===date) best=r; });
+  return best;
+}
+function legacyFor(legacyId){
+  if(!legacyId) return null;
+  return LEGACY[legacyId]||null;
+}
+function verdictBadge(v){
+  const colors={'KEEP':['#dcfce7','#16a34a'],'REVIEW':['#fef9c3','#d97706'],'ARCHIVE':['#fee2e2','#dc2626'],'LOW SAMPLE':['#e2e8f0','#475569'],'NO DATA':['#f8fafc','#94a3b8']};
+  const c=colors[v]||['#f3f4f6','#374151'];
+  return '<span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:'+c[0]+';color:'+c[1]+';">'+(v||'—')+'</span>';
+}
+function render(){
+  const date=document.getElementById('fDate').value;
+  const teams=Array.from(document.querySelectorAll('.fTeam:checked')).map(c=>c.value);
+  const s=document.getElementById('fSearch').value.toLowerCase();
+  const tbody=document.getElementById('tbody');
+  tbody.innerHTML='';
+  let vis=0,up=0,down=0,flat=0,noLegacy=0;
+  let lastTeam=null;
+  PAIRS.forEach(p=>{
+    if(teams.length&&!teams.includes(p.team)) return;
+    const nRow=newRowFor(p.new_id,date);
+    const lRow=legacyFor(p.legacy_id);
+    const nameForSearch=(p.label+' '+(nRow?nRow.cadence_name:'')+' '+(lRow?lRow.cadence_name:'')).toLowerCase();
+    if(s&&!nameForSearch.includes(s)) return;
+    vis++;
+    if(!lRow) noLegacy++;
+    else{
+      const d=(nRow?nRow.score:0)-lRow.score;
+      if(Math.abs(d)<0.5) flat++; else if(d>0) up++; else down++;
+    }
+    if(p.team!==lastTeam){
+      const hdr=document.createElement('tr');
+      hdr.innerHTML='<td colspan="8" class="teamHdr">'+p.team+'</td>';
+      tbody.appendChild(hdr);
+      lastTeam=p.team;
+    }
+    const newTr=document.createElement('tr');
+    newTr.className='pairNew';
+    if(nRow){
+      const dScore=lRow?nRow.score-lRow.score:null;
+      const dMtg=lRow?nRow.meeting_rate-lRow.meeting_rate:null;
+      const dReply=lRow?nRow.reply_rate-lRow.reply_rate:null;
+      const dConn=lRow?nRow.connect_rate-lRow.connect_rate:null;
+      const dOpen=lRow?nRow.open_rate-lRow.open_rate:null;
+      const dPeople=(lRow&&lRow.people_acted_on)?((nRow.people-lRow.people_acted_on)/lRow.people_acted_on*100):null;
+      newTr.innerHTML=
+        '<td>'+p.label+' <span style="color:#9ca3af;font-weight:400;font-size:11px;">#'+p.new_id+'</span></td>'+
+        '<td style="text-align:center">'+verdictBadge(nRow.verdict)+'</td>'+
+        '<td style="text-align:right">'+fmtPts(nRow.score)+(dScore!==null?deltaSpan(dScore,'',0):'')+'</td>'+
+        '<td style="text-align:right">'+fmtPct(nRow.meeting_rate)+(dMtg!==null?deltaSpan(dMtg,'%'):'')+'</td>'+
+        '<td style="text-align:right">'+fmtPct(nRow.reply_rate)+(dReply!==null?deltaSpan(dReply,'%'):'')+'</td>'+
+        '<td style="text-align:right">'+fmtPct(nRow.connect_rate)+(dConn!==null?deltaSpan(dConn,'%'):'')+'</td>'+
+        '<td style="text-align:right">'+fmtPct(nRow.open_rate)+(dOpen!==null?deltaSpan(dOpen,'%'):'')+'</td>'+
+        '<td style="text-align:right">'+Math.round(nRow.people).toLocaleString()+(dPeople!==null?deltaSpan(dPeople,'%'):'')+'</td>';
+    }else{
+      newTr.innerHTML='<td>'+p.label+' <span style="color:#9ca3af;font-weight:400;font-size:11px;">#'+(p.new_id||'?')+'</span></td>'+
+        '<td colspan="7" style="color:#9ca3af;">No data for '+date+'</td>';
+    }
+    tbody.appendChild(newTr);
+    if(lRow){
+      const legTr=document.createElement('tr');
+      legTr.className='pairLegacy';
+      legTr.innerHTML=
+        '<td><span class="lockBadge">Locked '+lRow.pulled_at+'</span>'+(lRow.cadence_name||('#'+p.legacy_id))+'</td>'+
+        '<td style="text-align:center">'+verdictBadge(lRow.verdict)+'</td>'+
+        '<td style="text-align:right">'+fmtPts(lRow.score)+'</td>'+
+        '<td style="text-align:right">'+fmtPct(lRow.meeting_rate)+'</td>'+
+        '<td style="text-align:right">'+fmtPct(lRow.reply_rate)+'</td>'+
+        '<td style="text-align:right">'+fmtPct(lRow.connect_rate)+'</td>'+
+        '<td style="text-align:right">'+fmtPct(lRow.open_rate)+'</td>'+
+        '<td style="text-align:right">'+Math.round(lRow.people_acted_on).toLocaleString()+'</td>';
+      tbody.appendChild(legTr);
+    }else{
+      const noneTr=document.createElement('tr');
+      noneTr.className='pairNone';
+      noneTr.innerHTML='<td colspan="8">'+(p.legacy_id?'Legacy snapshot not pulled yet — run build_pilot_legacy_snapshot.py':'No legacy predecessor — new cadence')+'</td>';
+      tbody.appendChild(noneTr);
+    }
+  });
+  document.getElementById('rowCount').textContent=vis+' pairs';
+  document.getElementById('kpiUp').textContent=up;
+  document.getElementById('kpiDown').textContent=down;
+  document.getElementById('kpiFlat').textContent=flat;
+  document.getElementById('kpiNoLegacy').textContent=noLegacy;
+}
+window.onload=render;
+</script>
+</body>
+</html>
