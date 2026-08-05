@@ -1,7 +1,7 @@
 #!/bin/bash
 # ─────────────────────────────────────────────────────────────────────────────
 # install_archive_autosave_scheduler.sh — one-time installer for the Friday
-# 4pm Archive-Confirmed autosave.
+# 2pm Archive-Confirmed autosave.
 #
 # BEFORE running this:
 #   1. In Chrome: View menu (or Chrome menu) -> Developer -> check
@@ -13,7 +13,7 @@
 # After install, TEST IT MANUALLY before trusting the schedule — the very
 # first run needs a human logged in to approve macOS's "Terminal wants to
 # control Google Chrome" Automation prompt. It will silently fail if that
-# prompt only ever appears unattended on a Friday at 4pm with nobody there
+# prompt only ever appears unattended on a Friday at 2pm with nobody there
 # to click Allow.
 #   launchctl start com.clio.cadence-archive-autosave
 #   tail -f "archive_autosave.log"
@@ -31,7 +31,7 @@ cp "$PLIST_SRC" "$PLIST_DEST"
 launchctl unload "$PLIST_DEST" 2>/dev/null || true
 launchctl load -w "$PLIST_DEST"
 
-echo "✓ Installed: com.clio.cadence-archive-autosave — runs every Friday 4:00 PM."
+echo "✓ Installed: com.clio.cadence-archive-autosave — runs every Friday 2:00 PM."
 echo ""
 echo "  Verify it's loaded:   launchctl list | grep com.clio.cadence-archive-autosave"
 echo "  Run a test now:       launchctl start com.clio.cadence-archive-autosave"
