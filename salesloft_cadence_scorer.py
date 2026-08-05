@@ -845,13 +845,10 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
             "run_date": r.get("run_date", ""),
             "cadence_id": str(r.get("cadence_id", "")).strip(),
             "cadence_name": r.get("cadence_name", ""),
-            "score": _safe_float(r.get("score")),
-            "verdict": r.get("verdict", ""),
             "meeting_rate": _safe_float(r.get("meeting_rate")),
             "reply_rate": _safe_float(r.get("reply_rate")),
             "connect_rate": _safe_float(r.get("connect_rate")),
             "open_rate": _safe_float(r.get("open_rate")),
-            "people": _safe_float(r.get("steps_completed")),
         }
         for r in all_rows
         if str(r.get("cadence_id", "")).strip() in new_ids
@@ -918,8 +915,9 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
     .delta.up{{color:#16a34a}}
     .delta.down{{color:#dc2626}}
     .delta.flat{{color:#94a3b8}}
-    .lockBadge{{display:inline-block;background:#e2e8f0;color:#475569;font-size:10px;font-weight:700;padding:1px 6px;border-radius:8px;margin-right:6px;text-transform:uppercase;letter-spacing:.3px}}
     .teamHdr{{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#64748b;padding:14px 4px 4px}}
+    .pairHdr{{font-size:13px;font-weight:700;color:#1e293b;padding:10px 4px 2px}}
+    .cadLine{{font-size:12px;color:#6b7280;font-weight:400}}
     .foot{{font-size:11px;color:#6b7280;padding:4px 32px 20px;line-height:1.7}}
   </style>
 </head>
@@ -966,13 +964,10 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
   <table id="tbl">
     <thead><tr>
       <th>Cadence</th>
-      <th style="text-align:center">Verdict</th>
-      <th style="text-align:right">Score</th>
-      <th style="text-align:right">Mtg Rate</th>
+      <th style="text-align:right">Open Rate</th>
       <th style="text-align:right">Reply Rate</th>
       <th style="text-align:right">Connect Rate</th>
-      <th style="text-align:right">Open Rate</th>
-      <th style="text-align:right">People</th>
+      <th style="text-align:right">Mtg Rate</th>
     </tr></thead>
     <tbody id="tbody"></tbody>
   </table>
@@ -980,8 +975,8 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
 
 <div class="foot">
   <b>New</b> row = live, recomputed every weekly run (same scoring model as the main scorecard) &nbsp;|&nbsp;
-  <span class="lockBadge">Locked</span> <b>Legacy</b> row = one-time snapshot of the retired predecessor cadence, pulled once and never refetched &nbsp;|&nbsp;
-  Deltas next to the New row's metrics = New − Legacy (percentage points for rates, points for Score, % relative change for People)&nbsp;|&nbsp; ▲ improved · ▼ declined · ▬ no change
+  <b>Legacy</b> row = one-time snapshot of the retired predecessor cadence, pulled once and never refetched &nbsp;|&nbsp;
+  Deltas next to the New row's metrics = New − Legacy, in percentage points &nbsp;|&nbsp; ▲ improved · ▼ declined · ▬ no change
 </div>
 
 <script id="pilotData">
@@ -991,7 +986,6 @@ const LEGACY = {legacy_json};
 </script>
 <script>
 function fmtPct(v){{return (Math.round(v*10)/10).toFixed(1)+'%';}}
-function fmtPts(v){{return Math.round(v);}}
 function deltaSpan(diff,suffix,digits){{
   digits=(digits===undefined)?1:digits;
   const av=Math.abs(diff);
@@ -1009,10 +1003,8 @@ function legacyFor(legacyId){{
   if(!legacyId) return null;
   return LEGACY[legacyId]||null;
 }}
-function verdictBadge(v){{
-  const colors={{'KEEP':['#dcfce7','#16a34a'],'REVIEW':['#fef9c3','#d97706'],'ARCHIVE':['#fee2e2','#dc2626'],'LOW SAMPLE':['#e2e8f0','#475569'],'NO DATA':['#f8fafc','#94a3b8']}};
-  const c=colors[v]||['#f3f4f6','#374151'];
-  return '<span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:'+c[0]+';color:'+c[1]+';">'+(v||'—')+'</span>';
+function cadLine(id,name){{
+  return '#'+id+' <span class="cadLine">'+(name||'')+'</span>';
 }}
 function render(){{
   const date=document.getElementById('fDate').value;
@@ -1031,55 +1023,50 @@ function render(){{
     vis++;
     if(!lRow) noLegacy++;
     else{{
-      const d=(nRow?nRow.score:0)-lRow.score;
+      const d=nRow?(nRow.open_rate-lRow.open_rate)+(nRow.reply_rate-lRow.reply_rate)+(nRow.connect_rate-lRow.connect_rate)+(nRow.meeting_rate-lRow.meeting_rate):0;
       if(Math.abs(d)<0.5) flat++; else if(d>0) up++; else down++;
     }}
     if(p.team!==lastTeam){{
       const hdr=document.createElement('tr');
-      hdr.innerHTML='<td colspan="8" class="teamHdr">'+p.team+'</td>';
+      hdr.innerHTML='<td colspan="5" class="teamHdr">'+p.team+'</td>';
       tbody.appendChild(hdr);
       lastTeam=p.team;
     }}
+    const pairHdr=document.createElement('tr');
+    pairHdr.innerHTML='<td colspan="5" class="pairHdr">'+p.label+'</td>';
+    tbody.appendChild(pairHdr);
     const newTr=document.createElement('tr');
     newTr.className='pairNew';
     if(nRow){{
-      const dScore=lRow?nRow.score-lRow.score:null;
-      const dMtg=lRow?nRow.meeting_rate-lRow.meeting_rate:null;
+      const dOpen=lRow?nRow.open_rate-lRow.open_rate:null;
       const dReply=lRow?nRow.reply_rate-lRow.reply_rate:null;
       const dConn=lRow?nRow.connect_rate-lRow.connect_rate:null;
-      const dOpen=lRow?nRow.open_rate-lRow.open_rate:null;
-      const dPeople=(lRow&&lRow.people_acted_on)?((nRow.people-lRow.people_acted_on)/lRow.people_acted_on*100):null;
+      const dMtg=lRow?nRow.meeting_rate-lRow.meeting_rate:null;
       newTr.innerHTML=
-        '<td>'+p.label+' <span style="color:#9ca3af;font-weight:400;font-size:11px;">#'+p.new_id+'</span></td>'+
-        '<td style="text-align:center">'+verdictBadge(nRow.verdict)+'</td>'+
-        '<td style="text-align:right">'+fmtPts(nRow.score)+(dScore!==null?deltaSpan(dScore,'',0):'')+'</td>'+
-        '<td style="text-align:right">'+fmtPct(nRow.meeting_rate)+(dMtg!==null?deltaSpan(dMtg,'%'):'')+'</td>'+
+        '<td>'+cadLine(p.new_id,nRow.cadence_name)+'</td>'+
+        '<td style="text-align:right">'+fmtPct(nRow.open_rate)+(dOpen!==null?deltaSpan(dOpen,'%'):'')+'</td>'+
         '<td style="text-align:right">'+fmtPct(nRow.reply_rate)+(dReply!==null?deltaSpan(dReply,'%'):'')+'</td>'+
         '<td style="text-align:right">'+fmtPct(nRow.connect_rate)+(dConn!==null?deltaSpan(dConn,'%'):'')+'</td>'+
-        '<td style="text-align:right">'+fmtPct(nRow.open_rate)+(dOpen!==null?deltaSpan(dOpen,'%'):'')+'</td>'+
-        '<td style="text-align:right">'+Math.round(nRow.people).toLocaleString()+(dPeople!==null?deltaSpan(dPeople,'%'):'')+'</td>';
+        '<td style="text-align:right">'+fmtPct(nRow.meeting_rate)+(dMtg!==null?deltaSpan(dMtg,'%'):'')+'</td>';
     }}else{{
-      newTr.innerHTML='<td>'+p.label+' <span style="color:#9ca3af;font-weight:400;font-size:11px;">#'+(p.new_id||'?')+'</span></td>'+
-        '<td colspan="7" style="color:#9ca3af;">No data for '+date+'</td>';
+      newTr.innerHTML='<td>#'+(p.new_id||'?')+'</td>'+
+        '<td colspan="4" style="color:#9ca3af;">No data for '+date+'</td>';
     }}
     tbody.appendChild(newTr);
     if(lRow){{
       const legTr=document.createElement('tr');
       legTr.className='pairLegacy';
       legTr.innerHTML=
-        '<td><span class="lockBadge">Locked '+lRow.pulled_at+'</span>'+(lRow.cadence_name||('#'+p.legacy_id))+'</td>'+
-        '<td style="text-align:center">'+verdictBadge(lRow.verdict)+'</td>'+
-        '<td style="text-align:right">'+fmtPts(lRow.score)+'</td>'+
-        '<td style="text-align:right">'+fmtPct(lRow.meeting_rate)+'</td>'+
+        '<td>'+cadLine(p.legacy_id,lRow.cadence_name)+'</td>'+
+        '<td style="text-align:right">'+fmtPct(lRow.open_rate)+'</td>'+
         '<td style="text-align:right">'+fmtPct(lRow.reply_rate)+'</td>'+
         '<td style="text-align:right">'+fmtPct(lRow.connect_rate)+'</td>'+
-        '<td style="text-align:right">'+fmtPct(lRow.open_rate)+'</td>'+
-        '<td style="text-align:right">'+Math.round(lRow.people_acted_on).toLocaleString()+'</td>';
+        '<td style="text-align:right">'+fmtPct(lRow.meeting_rate)+'</td>';
       tbody.appendChild(legTr);
     }}else{{
       const noneTr=document.createElement('tr');
       noneTr.className='pairNone';
-      noneTr.innerHTML='<td colspan="8">'+(p.legacy_id?'Legacy snapshot not pulled yet — run build_pilot_legacy_snapshot.py':'No legacy predecessor — new cadence')+'</td>';
+      noneTr.innerHTML='<td colspan="5">'+(p.legacy_id?'Legacy snapshot not pulled yet — run build_pilot_legacy_snapshot.py':'No legacy predecessor — new cadence')+'</td>';
       tbody.appendChild(noneTr);
     }}
   }});
