@@ -136,6 +136,22 @@ end tell
 '''
 
 
+def _js_for_applescript(js: str) -> str:
+    """Collapse to one line and escape for embedding inside an AppleScript
+    "..." string literal.
+
+    AppleScript string literals can't contain a raw newline, and any literal
+    double-quote or backslash inside the JS has to be backslash-escaped or it
+    prematurely closes the AppleScript string — that's exactly what produced
+    `syntax error: Expected end of line ... (-2741)` here before this fix.
+    Safe to collapse all whitespace to single spaces because JS_SNIPPET has
+    no multi-word string literals where whitespace is meaningful; if that
+    ever changes, this needs a smarter (non-whitespace-collapsing) escape.
+    """
+    one_line = " ".join(js.split())
+    return one_line.replace("\\", "\\\\").replace('"', '\\"')
+
+
 def log(msg: str) -> None:
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     line = f"{ts} {msg}"
@@ -213,7 +229,7 @@ def main() -> int:
     log("=" * 60)
     log(">> Archive-confirmed autosave starting")
 
-    script = APPLESCRIPT_TEMPLATE.format(url=DASHBOARD_URL, js=JS_SNIPPET.strip())
+    script = APPLESCRIPT_TEMPLATE.format(url=DASHBOARD_URL, js=_js_for_applescript(JS_SNIPPET))
     rc, out, err = run_applescript(script)
     if rc != 0:
         detail = err or out
