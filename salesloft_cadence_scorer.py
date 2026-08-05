@@ -82,6 +82,19 @@ PILOT_LEGACY_PAIRS = [
     {"team": "SDR",           "model": "SDR", "label": "Trial",          "new_id": 4291323, "legacy_id": 3937722},
     {"team": "SDR",           "model": "SDR", "label": "Demo",           "new_id": 4291091, "legacy_id": 3937721},
     {"team": "SDR",           "model": "SDR", "label": "Webinar Demo",   "new_id": 4294374, "legacy_id": None},
+    # BDR-Velocity, added 2026-08-05. Labels derived from each pilot cadence's own
+    # Salesloft name (stripped of the "BDR - Velocity - " / " - en-US - CNV"
+    # boilerplate) — rename here if a different label is preferred.
+    {"team": "BDR Velocity",  "model": "BDR", "label": "AQL / NMQL",                 "new_id": 4328921, "legacy_id": 3770220},
+    # "Closed Lost AI" legacy_id intentionally left None — Brett's provided legacy ID
+    # (4337959) is actually the *new* pilot ID for the "Closed Lost Transactional"
+    # pair below (it's a currently-active cadence, not a retired one), so it can't
+    # be right for this pair. Needs the correct legacy ID before this comparison
+    # can show a Legacy row/delta.
+    {"team": "BDR Velocity",  "model": "BDR", "label": "Closed Lost AI",             "new_id": 4328957, "legacy_id": None},
+    {"team": "BDR Velocity",  "model": "BDR", "label": "Closed Lost Transactional",  "new_id": 4337959, "legacy_id": 4017668},
+    {"team": "BDR Velocity",  "model": "BDR", "label": "Litigation AI",              "new_id": 4329154, "legacy_id": None},
+    {"team": "BDR Velocity",  "model": "BDR", "label": "Outbound",                   "new_id": 4328970, "legacy_id": 4064673},
 ]
 
 # ── API helpers ───────────────────────────────────────────────────────────────
@@ -888,14 +901,6 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
     .hdr{{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);color:white;padding:24px 32px}}
     .hdr h1{{font-size:20px;font-weight:700;letter-spacing:-.3px}}
     .hdr p{{font-size:12px;opacity:.75;margin-top:4px}}
-    .kpi-bar{{background:white;padding:14px 32px;border-bottom:1px solid #e2e8f0;display:flex;gap:28px;flex-wrap:wrap;align-items:center}}
-    .kpi{{text-align:center;min-width:90px}}
-    .kpi .num{{font-size:26px;font-weight:800;line-height:1}}
-    .kpi .lbl{{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}}
-    .kpi.up .num{{color:#16a34a}}.kpi.up .lbl{{color:#166534}}
-    .kpi.down .num{{color:#dc2626}}.kpi.down .lbl{{color:#991b1b}}
-    .kpi.flat .num{{color:#475569}}.kpi.flat .lbl{{color:#334155}}
-    .kpi.nolegacy .num{{color:#94a3b8}}.kpi.nolegacy .lbl{{color:#64748b}}
     .ctrl{{background:white;padding:12px 32px;border-bottom:1px solid #e2e8f0;display:flex;gap:14px;align-items:center;flex-wrap:wrap}}
     .ctrl label{{font-size:12px;font-weight:500;color:#374151;display:flex;flex-direction:column;gap:3px}}
     .ctrl select,.ctrl input{{border:1px solid #d1d5db;border-radius:5px;padding:5px 8px;font-size:12px;outline:none;background:white;min-width:120px}}
@@ -904,20 +909,24 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
     .teamChk{{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:#374151;white-space:nowrap}}
     .warn-banner{{background:#fef3c7;border-bottom:1px solid #f59e0b;color:#92400e;font-size:12.5px;padding:10px 32px;line-height:1.5}}
     .tbl-wrap{{padding:20px 32px;overflow-x:auto}}
-    table{{width:100%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.07);font-size:13px}}
+    table{{width:100%;table-layout:fixed;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.07);font-size:13px}}
     thead th{{background:#f8fafc;padding:9px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#64748b;border-bottom:2px solid #e2e8f0;white-space:nowrap}}
-    td{{padding:8px 12px;border-bottom:1px solid #f3f4f6}}
-    tr.pairNew td{{font-weight:700}}
+    th:first-child,td:first-child{{width:44%}}
+    td{{padding:8px 12px;border-bottom:1px solid #f3f4f6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+    tr.pairNew td:first-child{{font-weight:700}}
     tr.pairNew{{border-top:2px solid #e2e8f0}}
     tr.pairLegacy td{{color:#6b7280;font-style:italic;background:#fafbfc}}
-    tr.pairNone td{{color:#9ca3af;font-style:italic;background:#fafbfc;font-size:12px}}
+    tr.pairNone td{{color:#9ca3af;font-style:italic;background:#fafbfc;font-size:12px;white-space:normal}}
     .delta{{display:inline-block;margin-left:5px;font-size:11px;font-weight:700;font-style:normal}}
     .delta.up{{color:#16a34a}}
     .delta.down{{color:#dc2626}}
     .delta.flat{{color:#94a3b8}}
-    .teamHdr{{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#64748b;padding:14px 4px 4px}}
-    .pairHdr{{font-size:13px;font-weight:700;color:#1e293b;padding:10px 4px 2px}}
-    .cadLine{{font-size:12px;color:#6b7280;font-weight:400}}
+    .teamHdr{{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#64748b;padding:14px 4px 4px;white-space:normal}}
+    .pairHdr{{font-size:13px;font-weight:700;color:#1e293b;padding:10px 4px 2px;white-space:normal}}
+    .typeTag{{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 6px;border-radius:8px;margin-right:7px;text-transform:uppercase;letter-spacing:.3px}}
+    .typeTag.pilot{{background:#ede9fe;color:#6d28d9}}
+    .typeTag.legacy{{background:#e2e8f0;color:#475569}}
+    .cadId{{color:#9ca3af;font-size:11.5px}}
     .foot{{font-size:11px;color:#6b7280;padding:4px 32px 20px;line-height:1.7}}
   </style>
 </head>
@@ -934,13 +943,6 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
 
 {"" if has_snapshot else '''<div class="warn-banner">⚠ pilot_legacy_snapshot.json not found — legacy rows/deltas can't be shown yet. Run <code>python3 build_pilot_legacy_snapshot.py</code> once (on Brett's Mac, needs Salesloft API access) to lock in the legacy baseline, then the next weekly run will pick it up.</div>'''}
 
-<div class="kpi-bar" id="kpiBar">
-  <div class="kpi up">      <div class="num" id="kpiUp">0</div>       <div class="lbl">Improved</div></div>
-  <div class="kpi down">    <div class="num" id="kpiDown">0</div>     <div class="lbl">Declined</div></div>
-  <div class="kpi flat">    <div class="num" id="kpiFlat">0</div>     <div class="lbl">No Change</div></div>
-  <div class="kpi nolegacy"><div class="num" id="kpiNoLegacy">0</div> <div class="lbl">No Legacy Baseline</div></div>
-</div>
-
 <div class="ctrl">
   <label>Run Date (New cadence)
     <select id="fDate" onchange="render()">
@@ -951,6 +953,7 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
     <span style="font-size:12px;font-weight:500;color:#374151;">Team</span>
     <div style="display:flex;gap:12px;">
       <label class="teamChk"><input type="checkbox" class="fTeam" value="BDR Strategic" checked onchange="render()">BDR Strategic</label>
+      <label class="teamChk"><input type="checkbox" class="fTeam" value="BDR Velocity" checked onchange="render()">BDR Velocity</label>
       <label class="teamChk"><input type="checkbox" class="fTeam" value="SDR" checked onchange="render()">SDR</label>
     </div>
   </div>
@@ -1003,8 +1006,12 @@ function legacyFor(legacyId){{
   if(!legacyId) return null;
   return LEGACY[legacyId]||null;
 }}
-function cadLine(id,name){{
-  return '#'+id+' <span class="cadLine">'+(name||'')+'</span>';
+function esc(s){{
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}}
+function cadLine(type,id,name){{
+  const tag='<span class="typeTag '+type+'">'+(type==='pilot'?'PILOT':'LEGACY')+'</span>';
+  return '<span title="'+esc(name)+' (#'+id+')">'+tag+esc(name)+' <span class="cadId">(#'+id+')</span></span>';
 }}
 function render(){{
   const date=document.getElementById('fDate').value;
@@ -1012,7 +1019,7 @@ function render(){{
   const s=document.getElementById('fSearch').value.toLowerCase();
   const tbody=document.getElementById('tbody');
   tbody.innerHTML='';
-  let vis=0,up=0,down=0,flat=0,noLegacy=0;
+  let vis=0;
   let lastTeam=null;
   PAIRS.forEach(p=>{{
     if(teams.length&&!teams.includes(p.team)) return;
@@ -1021,11 +1028,6 @@ function render(){{
     const nameForSearch=(p.label+' '+(nRow?nRow.cadence_name:'')+' '+(lRow?lRow.cadence_name:'')).toLowerCase();
     if(s&&!nameForSearch.includes(s)) return;
     vis++;
-    if(!lRow) noLegacy++;
-    else{{
-      const d=nRow?(nRow.open_rate-lRow.open_rate)+(nRow.reply_rate-lRow.reply_rate)+(nRow.connect_rate-lRow.connect_rate)+(nRow.meeting_rate-lRow.meeting_rate):0;
-      if(Math.abs(d)<0.5) flat++; else if(d>0) up++; else down++;
-    }}
     if(p.team!==lastTeam){{
       const hdr=document.createElement('tr');
       hdr.innerHTML='<td colspan="5" class="teamHdr">'+p.team+'</td>';
@@ -1043,13 +1045,13 @@ function render(){{
       const dConn=lRow?nRow.connect_rate-lRow.connect_rate:null;
       const dMtg=lRow?nRow.meeting_rate-lRow.meeting_rate:null;
       newTr.innerHTML=
-        '<td>'+cadLine(p.new_id,nRow.cadence_name)+'</td>'+
+        '<td>'+cadLine('pilot',p.new_id,nRow.cadence_name)+'</td>'+
         '<td style="text-align:right">'+fmtPct(nRow.open_rate)+(dOpen!==null?deltaSpan(dOpen,'%'):'')+'</td>'+
         '<td style="text-align:right">'+fmtPct(nRow.reply_rate)+(dReply!==null?deltaSpan(dReply,'%'):'')+'</td>'+
         '<td style="text-align:right">'+fmtPct(nRow.connect_rate)+(dConn!==null?deltaSpan(dConn,'%'):'')+'</td>'+
         '<td style="text-align:right">'+fmtPct(nRow.meeting_rate)+(dMtg!==null?deltaSpan(dMtg,'%'):'')+'</td>';
     }}else{{
-      newTr.innerHTML='<td>#'+(p.new_id||'?')+'</td>'+
+      newTr.innerHTML='<td>'+cadLine('pilot',p.new_id||'?','')+'</td>'+
         '<td colspan="4" style="color:#9ca3af;">No data for '+date+'</td>';
     }}
     tbody.appendChild(newTr);
@@ -1057,7 +1059,7 @@ function render(){{
       const legTr=document.createElement('tr');
       legTr.className='pairLegacy';
       legTr.innerHTML=
-        '<td>'+cadLine(p.legacy_id,lRow.cadence_name)+'</td>'+
+        '<td>'+cadLine('legacy',p.legacy_id,lRow.cadence_name)+'</td>'+
         '<td style="text-align:right">'+fmtPct(lRow.open_rate)+'</td>'+
         '<td style="text-align:right">'+fmtPct(lRow.reply_rate)+'</td>'+
         '<td style="text-align:right">'+fmtPct(lRow.connect_rate)+'</td>'+
@@ -1071,10 +1073,6 @@ function render(){{
     }}
   }});
   document.getElementById('rowCount').textContent=vis+' pairs';
-  document.getElementById('kpiUp').textContent=up;
-  document.getElementById('kpiDown').textContent=down;
-  document.getElementById('kpiFlat').textContent=flat;
-  document.getElementById('kpiNoLegacy').textContent=noLegacy;
 }}
 window.onload=render;
 </script>
