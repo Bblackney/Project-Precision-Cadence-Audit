@@ -61420,12 +61420,30 @@ function normPilot(s){return s.toUpperCase().replace(/[^A-Z0-9]/g,'');}
 // The 15 Pilot cadences (exact names, whitespace/punctuation-normalized so minor
 // spacing drift between weekly runs doesn't break the match).
 const PILOT_SET=new Set(["SDRDEMOREQENUSCNVPREDEMO","SDRMANAGETRIALENUSCNVTRIALON","SDRDEMOREQWEBINARENUSCNVPREDEMO","SDRWEBPRICINGENUSCNV","SDRSOFTWAREADVICEENUSCNV","BDRVELOCITYTRANSACTIONALAIENUSCNV","BDRVELOCITYLITIGATIONAIENUSCNV","BDRVELOCITYAQLNMQLENUSCNV","BDRVELOCITYCLOSEDLOSTAIENUSCNV","BDRVELOCITYOUTBOUNDENUSCNV","BDRSTRATEGICWEBSIGHTSINTENTENUSCNV","BDRSTRATEGICAQLSEXCLDRAFTENUSCNV","BDRSTRATEGICNMQLENUSCNV","BDRSTRATEGICOBCLINTENTENUSCNV","BDRSTRATEGICOBNMQLINTENTENUSCNV"]);
+function setAllVerdicts(on){
+  document.querySelectorAll('.fVerdict').forEach(cb=>cb.checked=on);
+}
+function setDefaultVerdicts(){
+  document.querySelectorAll('.fVerdict').forEach(cb=>{
+    cb.checked=(cb.value==='KEEP'||cb.value==='REVIEW'||cb.value==='ARCHIVE');
+  });
+}
 let cnvOnly=false;
 function toggleCnv(){
   cnvOnly=!cnvOnly;
   const b=document.getElementById('cnvBtn');
   b.style.background=cnvOnly?'#2563eb':'#fff';
   b.style.color=cnvOnly?'#fff':'#2563eb';
+  if(cnvOnly){
+    // Mutually exclusive with Pilot — turning this on turns Pilot off.
+    pilotOnly=false;
+    const pb=document.getElementById('pilotBtn');
+    pb.style.background='#fff';
+    pb.style.color='#7c3aed';
+    setAllVerdicts(true); // most CNV cadences are Low Sample/No Data — show them by default
+  }else if(!pilotOnly){
+    setDefaultVerdicts();
+  }
   filter();
 }
 
@@ -61435,6 +61453,16 @@ function togglePilot(){
   const b=document.getElementById('pilotBtn');
   b.style.background=pilotOnly?'#7c3aed':'#fff';
   b.style.color=pilotOnly?'#fff':'#7c3aed';
+  if(pilotOnly){
+    // Mutually exclusive with Project Precision — turning this on turns it off.
+    cnvOnly=false;
+    const cb=document.getElementById('cnvBtn');
+    cb.style.background='#fff';
+    cb.style.color='#2563eb';
+    setAllVerdicts(true);
+  }else if(!cnvOnly){
+    setDefaultVerdicts();
+  }
   filter();
 }
 
@@ -61560,7 +61588,14 @@ function filter(){
   allRows.forEach(r=>{
     const dateOk=!d||r.dataset.date===d;
     const nameU=r.cells[1].textContent.toUpperCase();
-    const teamOk=teams.length===0||teams.some(tm=>tm==='SDR'?(nameU.includes('SDR')&&!nameU.includes('BDR')):nameU.includes(tm));
+    const teamOk=teams.length===0||teams.some(tm=>{
+      if(tm==='SDR')    return nameU.includes('SDR')&&!nameU.includes('BDR');
+      if(tm==='BDR-S')  return nameU.includes('BDR-S')||nameU.includes('BDR - S')||nameU.includes('STRATEGIC')||nameU.includes('STRAT');
+      if(tm==='BDR-V')  return nameU.includes('BDR-V')||nameU.includes('BDR - V')||nameU.includes('BDRV')||nameU.includes('VELOCITY');
+      if(tm==='BDR-MM') return nameU.includes('BDR-MM')||nameU.includes('BDR - MM')||nameU.includes('MID-MARKET');
+      if(tm==='BDR-CS') return nameU.includes('BDR-CS')||nameU.includes('BDR - CS');
+      return nameU.includes(tm);
+    });
     const searchOk=!s||r.cells[1].textContent.toLowerCase().includes(s);
     const cnvOk=!cnvOnly||nameU.includes('CNV');
     const pilotOk=!pilotOnly||PILOT_SET.has(normPilot(r.cells[1].textContent));
@@ -61569,10 +61604,10 @@ function filter(){
     // picker) — so they update as you filter, but always show every verdict's count for that scope.
     const kpiScope=dateOk&&teamOk&&searchOk&&cnvOk&&pilotOk;
     if(kpiScope){if(vd==='KEEP')k++;else if(vd==='REVIEW')rv++;else if(vd==='ARCHIVE')ar++;else if(vd==='LOW SAMPLE')lo++;else if(vd==='NO DATA')nd++;}
-    // Project Precision / Pilot toggles bypass the Verdict picker — they should always surface
-    // every matching cadence regardless of verdict bucket (most are Low Sample / No Data, which
-    // are unchecked by default and would otherwise hide every match).
-    const show=kpiScope&&(cnvOnly||pilotOnly||verdicts.includes(vd));
+    // Verdict picker stays live even inside Project Precision/Pilot scope — those toggles
+    // pre-check every Verdict box (see toggleCnv()/togglePilot()) instead of bypassing the
+    // picker, so users can still narrow further by verdict while scoped in.
+    const show=kpiScope&&verdicts.includes(vd);
     r.style.display=show?'':'none';
     if(show)vis++;
   });
