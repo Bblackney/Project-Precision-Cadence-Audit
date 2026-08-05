@@ -579,6 +579,7 @@ function onArch(box){{
   saveLS(m);
   document.querySelectorAll('input.archChk[data-cid="'+cid+'"]').forEach(b=>{{b.checked=on;}});
   updateArchCount();
+  maybeAutoSave(); // background write to archive_confirmed.csv if already granted (no-op otherwise)
 }}
 
 // Apply saved state on load: localStorage override wins; otherwise the
@@ -766,6 +767,29 @@ async function saveArchiveCSV(){{
   const csv=buildMergedCSV(null);
   downloadArchiveCSV(csv);
 }}
+
+// Silent background save — only runs once a file handle has already been granted
+// via the manual Save button (never prompts; queryPermission only, not
+// requestPermission). Fired after every checkbox toggle and once on page load so
+// confirmations are durable immediately instead of depending on someone
+// remembering to click Save. No-op if never set up yet, permission was revoked,
+// or the browser lacks the File System Access API (e.g. Safari) — those cases
+// still fall back to localStorage-only persistence until the next manual Save.
+async function maybeAutoSave(){{
+  if(!window.showSaveFilePicker) return;
+  try{{
+    if(!archHandle) archHandle=await fsGet();
+    if(!archHandle) return;
+    const granted=(await archHandle.queryPermission({{mode:'readwrite'}}))==='granted';
+    if(!granted) return;
+    const existing=await readExistingArchive(archHandle);
+    const csv=buildMergedCSV(existing);
+    const w=await archHandle.createWritable();
+    await w.write(csv); await w.close();
+    const added=buildMergedCSV._added, total=buildMergedCSV._total;
+    if(added>0) toast('Auto-saved +'+added+' — '+total+' total in '+archHandle.name);
+  }}catch(e){{ console.warn('Auto-save skipped:',e); }}
+}}
 function downloadArchiveCSV(csv){{
   const blob=new Blob([csv],{{type:'text/csv;charset=utf-8'}});
   const a=document.createElement('a');
@@ -786,6 +810,7 @@ window.onload=()=>{{
   const sel=document.getElementById('fDate');
   if(sel.options.length>1){{sel.selectedIndex=1;filter();sort(5);}}
   else filter();
+  maybeAutoSave(); // reconcile any drift silently if already granted; no-op otherwise
 }};
 </script>
 </body>
