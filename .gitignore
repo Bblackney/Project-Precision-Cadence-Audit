@@ -5,9 +5,13 @@ __pycache__/
 
 salesloft_credentials.json
 sfdc_credentials.json
+slack_webhook.json
 scheduler.log
 launchd.out.log
 launchd.err.log
+archive_autosave.log
+archive_autosave.launchd.out.log
+archive_autosave.launchd.err.log
 connected_calls_cache.json
 connected_calls_cache.json.tmp
 *.BACKUP_*.csv

@@ -1,8 +1,8 @@
 #!/bin/bash
 # ─────────────────────────────────────────────────────────────────────────────
-# run_archive_autosave.sh — Friday 4:00 PM Archive-Confirmed autosave.
-# Invoked by launchd (see com.clio.cadence-archive-autosave.plist), one hour
-# before com.clio.cadence-scorer's 5:00 PM weekly run.
+# run_archive_autosave.sh — Friday 2:00 PM Archive-Confirmed autosave.
+# Invoked by launchd (see com.clio.cadence-archive-autosave.plist), three
+# hours before com.clio.cadence-scorer's 5:00 PM weekly run.
 #
 # Drives Chrome via AppleScript (archive_autosave.py) to read whatever's
 # currently ticked on the live dashboard and merge it into

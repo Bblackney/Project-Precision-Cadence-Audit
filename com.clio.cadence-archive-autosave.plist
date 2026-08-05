@@ -11,13 +11,13 @@
     <string>/Users/brettblackney/Documents/Claude/Project Precision/Cadence Performance Scorecard — Weekly Scoring/run_archive_autosave.sh</string>
   </array>
 
-  <!-- Fire every Friday at 4:00 PM — one hour before com.clio.cadence-scorer's
+  <!-- Fire every Friday at 2:00 PM — three hours before com.clio.cadence-scorer's
        5:00 PM run, so whatever gets confirmed here is baked into that run's
        regenerated index.html and captured by its own git add. -->
   <key>StartCalendarInterval</key>
   <dict>
     <key>Weekday</key><integer>5</integer>
-    <key>Hour</key><integer>16</integer>
+    <key>Hour</key><integer>14</integer>
     <key>Minute</key><integer>0</integer>
   </dict>
 

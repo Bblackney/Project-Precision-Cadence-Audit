@@ -38,18 +38,19 @@ Or directly: `cd <project> && bash run_weekly.sh`
 ### Reinstall / change schedule
 Edit `com.clio.cadence-scorer.plist`, then run `bash install_scheduler.sh`.
 
-## Archive-Confirmed autosave (Friday 4:00 PM, Brett's machine only)
+## Archive-Confirmed autosave (Friday 2:00 PM, Brett's machine only)
 
 The dashboard's "Archive Confirmed" checkboxes are per-cadence, browser-local by default
 (`localStorage`) and only become durable/shared once written to `archive_confirmed.csv`
 (read back by the scorer on every run so ticked boxes survive the regen for everyone).
 Brett is the only person who can write that file directly, since it lives in this git repo
 on his Mac — anyone else's "Save" click writes to a disconnected local file on *their* own
-machine instead (see the red button's tooltip). A 4:00 PM Friday job — one hour before the
+machine instead (see the red button's tooltip, and it's now positioned at the far right of
+the toolbar since it's only relevant to him). A 2:00 PM Friday job — three hours before the
 5:00 PM scorer run — automates Brett's own save so he doesn't have to remember to click it:
 
 - Agent label: `com.clio.cadence-archive-autosave`
-- Schedule: Friday 4:00 PM (plist `Weekday 5`, `Hour 16`) — deliberately before the 5pm
+- Schedule: Friday 2:00 PM (plist `Weekday 5`, `Hour 14`) — deliberately well before the 5pm
   scorer run, so this week's confirmations are baked into that run's regenerated `index.html`
   and swept into its own `git add`.
 - Files: `archive_autosave.py` (drives Chrome via AppleScript to read the live dashboard's
@@ -60,23 +61,44 @@ machine instead (see the red button's tooltip). A 4:00 PM Friday job — one hou
 - Logs: `archive_autosave.log` (script output), `archive_autosave.launchd.out.log` /
   `.err.log` (launchd-level).
 
+**Important implementation detail:** the JS injected via AppleScript's `execute javascript`
+runs in an isolated world that shares the page's `document` (DOM) and `localStorage` but
+NOT its top-level `var`/`function` declarations. So it can't call the page's own
+`loadLS()`/`confirmedCids()`/`archiveLineFor()`/`CSV_FIELDS`/`ALL_ROWS` — it re-derives
+everything from `document.querySelectorAll` + `localStorage` directly instead. If this script
+ever needs editing, don't "simplify" it back to calling the page's helpers — that's exactly
+what caused `ReferenceError: loadLS is not defined` the first time this was built.
+
 **One-time setup (do this before installing):**
 1. In Chrome: View menu (or Chrome menu) → Developer → check **"Allow JavaScript from Apple
-   Events"**. Without this, `execute javascript` from AppleScript is refused.
-2. Install: `bash install_archive_autosave_scheduler.sh`
-3. Test manually while logged in and watching: `launchctl start com.clio.cadence-archive-autosave`
+   Events"**. Without this, `execute javascript` from AppleScript is refused. **This setting
+   does NOT persist across a Chrome restart** — it resets to off every time Chrome fully
+   quits and relaunches (crash, auto-update, manual quit). Re-check it any time
+   `archive_autosave.log` shows "Executing JavaScript through AppleScript is turned off."
+2. (Optional but recommended) Slack failure alerts: create a Slack Incoming Webhook
+   (api.slack.com/apps → your app → Incoming Webhooks → Add New Webhook to Workspace → pick a
+   channel/DM) and save the URL into a new file `slack_webhook.json` in this folder:
+   `{"webhook_url": "https://hooks.slack.com/services/…"}`. This file is gitignored — never
+   commit it. Without it, failures still log to `archive_autosave.log` but nothing pings
+   Brett, so he won't find out unless he checks manually.
+3. Install: `bash install_archive_autosave_scheduler.sh`
+4. Test manually while logged in and watching: `launchctl start com.clio.cadence-archive-autosave`
    then `tail -f archive_autosave.log`. The first run needs a human to approve macOS's
    "Terminal wants to control Google Chrome" Automation prompt (System Settings → Privacy &
    Security → Automation) — it cannot be approved unattended, so don't trust the Friday
    schedule until one manual run has succeeded end-to-end.
 
 Reliability note: this has the same fragility as the 5pm scorer job — it needs Brett's Mac
-awake (not asleep/off) at 4pm Friday, and Chrome installed with a normal (non-Incognito)
-window. If the Mac was off/asleep, this simply doesn't fire that week; nothing catches up
-retroactively (see [[cadence-scorecard-ops]] memory on the missed 7/24 and 7/31 runs for the
-same underlying limitation). Brett accepted this tradeoff over the more robust
-"auto-save-on-every-checkbox-click" alternative because the button is single-curator (his
-machine only) regardless, so a once-a-week sweep on his own machine is simpler.
+awake (not asleep/off) at 2pm Friday, and Chrome installed with a normal (non-Incognito)
+window with the "Allow JavaScript from Apple Events" box freshly re-checked since its last
+restart. If the Mac was off/asleep, or that Chrome setting reset itself, this simply doesn't
+fire/succeed that week; nothing catches up retroactively (see [[cadence-scorecard-ops]]
+memory on the missed 7/24 and 7/31 scorer runs for the same underlying limitation on the
+Mac-asleep case). The Slack alert (if configured) is the safety net for this — on failure,
+Brett gets pinged to click the manual Save button himself that week. Brett accepted the
+Mac-awake/Chrome-setting tradeoff over the more robust "auto-save-on-every-checkbox-click"
+alternative because the archive-confirm workflow is single-curator (his machine only)
+regardless of mechanism, so a once-a-week sweep on his own machine is simpler.
 
 ## Data source — Salesloft API v2
 
@@ -132,13 +154,21 @@ project folder (gitignored). The historical trend builds forward from the first 
 - **`git push` fails:** the remote uses an embedded GitHub token (rotate to a credential helper when
   convenient). `run_weekly.sh` treats push failure as non-fatal — outputs still commit locally.
 - **Stale git locks** (`index.lock` / `HEAD.lock`): `rm -f .git/*.lock` then retry.
-- **`archive_autosave.log` shows "osascript failed" / "not allowed to send Apple events":**
+- **`archive_autosave.log` shows "Executing JavaScript through AppleScript is turned off":**
   Chrome's "Allow JavaScript from Apple Events" setting (View/Chrome menu → Developer) isn't
-  checked, or macOS's Automation permission for Terminal→Chrome was never granted/was revoked.
-  Run `launchctl start com.clio.cadence-archive-autosave` manually while logged in to
-  re-trigger the permission prompt.
+  checked right now. Re-check it — remember it resets every time Chrome restarts, so this is
+  the most common failure. A Slack alert should have pinged Brett if `slack_webhook.json` is
+  configured; if not, this can fail silently for weeks.
+- **`archive_autosave.log` shows some other "osascript failed" error:** macOS's Automation
+  permission for Terminal→Chrome was never granted or was revoked. Run
+  `launchctl start com.clio.cadence-archive-autosave` manually while logged in to re-trigger
+  the permission prompt.
+- **`archive_autosave.log` shows "X is not defined" (e.g. `loadLS is not defined`):** someone
+  edited `JS_SNIPPET` in `archive_autosave.py` to call the page's own JS functions again. See
+  the "Important implementation detail" note above — the isolated-world JS can only use
+  `document` and `localStorage`, not the page's `var`/`function` globals.
 - **Archive autosave silently does nothing on Fridays:** check the Mac wasn't asleep/off at
-  4pm — same as the scorer job, this can't run if nobody's logged in / the machine is off.
+  2pm — same as the scorer job, this can't run if nobody's logged in / the machine is off.
 
 ## Deprecated — do not use
 
