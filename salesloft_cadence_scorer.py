@@ -430,6 +430,7 @@ def generate_html(all_rows, run_date):
 <div class="ctrl">
   <button type="button" id="saveArchBtn" onclick="saveArchiveCSV()" title="Save every Archive-Confirmed cadence (full info) to archive_confirmed.csv" style="border:1px solid #b91c1c;background:#dc2626;color:#fff;border-radius:5px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">⬇ Save Archive-Confirmed CSV <span id="archCount">(0)</span></button>
   <button type="button" id="cnvBtn" onclick="toggleCnv()" title="Show only cadences whose name contains 'CNV'" style="border:1px solid #2563eb;background:#fff;color:#2563eb;border-radius:5px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">Project Precision Cadences</button>
+  <button type="button" id="pilotBtn" onclick="togglePilot()" title="Show only the 15 Pilot cadences" style="border:1px solid #7c3aed;background:#fff;color:#7c3aed;border-radius:5px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">Pilot Cadences</button>
   <div style="display:flex;flex-direction:column;gap:3px;font-size:12px;font-weight:500;color:#374151;">Verdict
     <div class="dd">
       <button type="button" class="dd-btn" id="vBtn" onclick="toggleDD('vPanel')">Verdict (3)</button>
@@ -510,12 +511,25 @@ const CSV_FIELDS = {fields_json};
 const tbody=document.getElementById('tbody');
 const allRows=Array.from(tbody.querySelectorAll('tr'));
 let sc=5,sd=-1;
+function normPilot(s){{return s.toUpperCase().replace(/[^A-Z0-9]/g,'');}}
+// The 15 Pilot cadences (exact names, whitespace/punctuation-normalized so minor
+// spacing drift between weekly runs doesn't break the match).
+const PILOT_SET=new Set(["SDRDEMOREQENUSCNVPREDEMO","SDRMANAGETRIALENUSCNVTRIALON","SDRDEMOREQWEBINARENUSCNVPREDEMO","SDRWEBPRICINGENUSCNV","SDRSOFTWAREADVICEENUSCNV","BDRVELOCITYTRANSACTIONALAIENUSCNV","BDRVELOCITYLITIGATIONAIENUSCNV","BDRVELOCITYAQLNMQLENUSCNV","BDRVELOCITYCLOSEDLOSTAIENUSCNV","BDRVELOCITYOUTBOUNDENUSCNV","BDRSTRATEGICWEBSIGHTSINTENTENUSCNV","BDRSTRATEGICAQLSEXCLDRAFTENUSCNV","BDRSTRATEGICNMQLENUSCNV","BDRSTRATEGICOBCLINTENTENUSCNV","BDRSTRATEGICOBNMQLINTENTENUSCNV"]);
 let cnvOnly=false;
 function toggleCnv(){{
   cnvOnly=!cnvOnly;
   const b=document.getElementById('cnvBtn');
   b.style.background=cnvOnly?'#2563eb':'#fff';
   b.style.color=cnvOnly?'#fff':'#2563eb';
+  filter();
+}}
+
+let pilotOnly=false;
+function togglePilot(){{
+  pilotOnly=!pilotOnly;
+  const b=document.getElementById('pilotBtn');
+  b.style.background=pilotOnly?'#7c3aed':'#fff';
+  b.style.color=pilotOnly?'#fff':'#7c3aed';
   filter();
 }}
 
@@ -644,15 +658,16 @@ function filter(){{
     const teamOk=teams.length===0||teams.some(tm=>tm==='SDR'?(nameU.includes('SDR')&&!nameU.includes('BDR')):nameU.includes(tm));
     const searchOk=!s||r.cells[1].textContent.toLowerCase().includes(s);
     const cnvOk=!cnvOnly||nameU.includes('CNV');
+    const pilotOk=!pilotOnly||PILOT_SET.has(normPilot(r.cells[1].textContent));
     const vd=r.dataset.verdict;
-    // KPI cards reflect Date + Team + Search + Project Precision scope (not the Verdict
+    // KPI cards reflect Date + Team + Search + Project Precision/Pilot scope (not the Verdict
     // picker) — so they update as you filter, but always show every verdict's count for that scope.
-    const kpiScope=dateOk&&teamOk&&searchOk&&cnvOk;
+    const kpiScope=dateOk&&teamOk&&searchOk&&cnvOk&&pilotOk;
     if(kpiScope){{if(vd==='KEEP')k++;else if(vd==='REVIEW')rv++;else if(vd==='ARCHIVE')ar++;else if(vd==='LOW SAMPLE')lo++;else if(vd==='NO DATA')nd++;}}
-    // Project Precision toggle bypasses the Verdict picker — it should always surface every
-    // CNV cadence regardless of verdict bucket (most are Low Sample / No Data, which are
-    // unchecked by default and would otherwise hide every match).
-    const show=kpiScope&&(cnvOnly||verdicts.includes(vd));
+    // Project Precision / Pilot toggles bypass the Verdict picker — they should always surface
+    // every matching cadence regardless of verdict bucket (most are Low Sample / No Data, which
+    // are unchecked by default and would otherwise hide every match).
+    const show=kpiScope&&(cnvOnly||pilotOnly||verdicts.includes(vd));
     r.style.display=show?'':'none';
     if(show)vis++;
   }});
