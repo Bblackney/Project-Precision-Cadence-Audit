@@ -862,6 +862,7 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
             "reply_rate": _safe_float(r.get("reply_rate")),
             "connect_rate": _safe_float(r.get("connect_rate")),
             "open_rate": _safe_float(r.get("open_rate")),
+            "people": _safe_float(r.get("steps_completed")),
         }
         for r in all_rows
         if str(r.get("cadence_id", "")).strip() in new_ids
@@ -911,13 +912,16 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
     .tbl-wrap{{padding:20px 32px;overflow-x:auto}}
     table{{width:100%;table-layout:fixed;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.07);font-size:13px}}
     thead th{{background:#f8fafc;padding:9px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#64748b;border-bottom:2px solid #e2e8f0;white-space:nowrap}}
-    th:first-child,td:first-child{{width:44%}}
+    th:first-child,td:first-child{{width:36%}}
     td{{padding:8px 12px;border-bottom:1px solid #f3f4f6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
     tr.pairNew td:first-child{{font-weight:700}}
     tr.pairNew{{border-top:2px solid #e2e8f0}}
     tr.pairLegacy td{{color:#6b7280;font-style:italic;background:#fafbfc}}
     tr.pairNone td{{color:#9ca3af;font-style:italic;background:#fafbfc;font-size:12px;white-space:normal}}
-    .delta{{display:inline-block;margin-left:5px;font-size:11px;font-weight:700;font-style:normal}}
+    td.metric{{text-align:right}}
+    .mVal{{display:inline-block;width:50px;text-align:right}}
+    .mDelta{{display:inline-block;width:58px;text-align:right}}
+    .delta{{display:inline-block;margin-left:4px;font-size:11px;font-weight:700;font-style:normal}}
     .delta.up{{color:#16a34a}}
     .delta.down{{color:#dc2626}}
     .delta.flat{{color:#94a3b8}}
@@ -971,6 +975,7 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
       <th style="text-align:right">Reply Rate</th>
       <th style="text-align:right">Connect Rate</th>
       <th style="text-align:right">Mtg Rate</th>
+      <th style="text-align:right">People</th>
     </tr></thead>
     <tbody id="tbody"></tbody>
   </table>
@@ -979,7 +984,7 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
 <div class="foot">
   <b>New</b> row = live, recomputed every weekly run (same scoring model as the main scorecard) &nbsp;|&nbsp;
   <b>Legacy</b> row = one-time snapshot of the retired predecessor cadence, pulled once and never refetched &nbsp;|&nbsp;
-  Deltas next to the New row's metrics = New − Legacy, in percentage points &nbsp;|&nbsp; ▲ improved · ▼ declined · ▬ no change
+  Deltas next to the New row's rate metrics = New − Legacy, in percentage points (People shows raw count only, no delta) &nbsp;|&nbsp; ▲ improved · ▼ declined · ▬ no change
 </div>
 
 <script id="pilotData">
@@ -989,12 +994,16 @@ const LEGACY = {legacy_json};
 </script>
 <script>
 function fmtPct(v){{return (Math.round(v*10)/10).toFixed(1)+'%';}}
+function fmtNum(v){{return Math.round(v).toLocaleString();}}
 function deltaSpan(diff,suffix,digits){{
   digits=(digits===undefined)?1:digits;
   const av=Math.abs(diff);
   if(av<0.05) return '<span class="delta flat">▬0.0'+suffix+'</span>';
   const cls=diff>0?'up':'down', arrow=diff>0?'▲':'▼';
   return '<span class="delta '+cls+'">'+arrow+av.toFixed(digits)+suffix+'</span>';
+}}
+function metricCell(valText,deltaHtml){{
+  return '<span class="mVal">'+valText+'</span><span class="mDelta">'+(deltaHtml||'')+'</span>';
 }}
 function newRowFor(newId,date){{
   if(!newId) return null;
@@ -1030,12 +1039,12 @@ function render(){{
     vis++;
     if(p.team!==lastTeam){{
       const hdr=document.createElement('tr');
-      hdr.innerHTML='<td colspan="5" class="teamHdr">'+p.team+'</td>';
+      hdr.innerHTML='<td colspan="6" class="teamHdr">'+p.team+'</td>';
       tbody.appendChild(hdr);
       lastTeam=p.team;
     }}
     const pairHdr=document.createElement('tr');
-    pairHdr.innerHTML='<td colspan="5" class="pairHdr">'+p.label+'</td>';
+    pairHdr.innerHTML='<td colspan="6" class="pairHdr">'+p.label+'</td>';
     tbody.appendChild(pairHdr);
     const newTr=document.createElement('tr');
     newTr.className='pairNew';
@@ -1046,13 +1055,14 @@ function render(){{
       const dMtg=lRow?nRow.meeting_rate-lRow.meeting_rate:null;
       newTr.innerHTML=
         '<td>'+cadLine('pilot',p.new_id,nRow.cadence_name)+'</td>'+
-        '<td style="text-align:right">'+fmtPct(nRow.open_rate)+(dOpen!==null?deltaSpan(dOpen,'%'):'')+'</td>'+
-        '<td style="text-align:right">'+fmtPct(nRow.reply_rate)+(dReply!==null?deltaSpan(dReply,'%'):'')+'</td>'+
-        '<td style="text-align:right">'+fmtPct(nRow.connect_rate)+(dConn!==null?deltaSpan(dConn,'%'):'')+'</td>'+
-        '<td style="text-align:right">'+fmtPct(nRow.meeting_rate)+(dMtg!==null?deltaSpan(dMtg,'%'):'')+'</td>';
+        '<td class="metric">'+metricCell(fmtPct(nRow.open_rate),dOpen!==null?deltaSpan(dOpen,'%'):'')+'</td>'+
+        '<td class="metric">'+metricCell(fmtPct(nRow.reply_rate),dReply!==null?deltaSpan(dReply,'%'):'')+'</td>'+
+        '<td class="metric">'+metricCell(fmtPct(nRow.connect_rate),dConn!==null?deltaSpan(dConn,'%'):'')+'</td>'+
+        '<td class="metric">'+metricCell(fmtPct(nRow.meeting_rate),dMtg!==null?deltaSpan(dMtg,'%'):'')+'</td>'+
+        '<td class="metric">'+metricCell(fmtNum(nRow.people),'')+'</td>';
     }}else{{
       newTr.innerHTML='<td>'+cadLine('pilot',p.new_id||'?','')+'</td>'+
-        '<td colspan="4" style="color:#9ca3af;">No data for '+date+'</td>';
+        '<td colspan="5" style="color:#9ca3af;">No data for '+date+'</td>';
     }}
     tbody.appendChild(newTr);
     if(lRow){{
@@ -1060,15 +1070,16 @@ function render(){{
       legTr.className='pairLegacy';
       legTr.innerHTML=
         '<td>'+cadLine('legacy',p.legacy_id,lRow.cadence_name)+'</td>'+
-        '<td style="text-align:right">'+fmtPct(lRow.open_rate)+'</td>'+
-        '<td style="text-align:right">'+fmtPct(lRow.reply_rate)+'</td>'+
-        '<td style="text-align:right">'+fmtPct(lRow.connect_rate)+'</td>'+
-        '<td style="text-align:right">'+fmtPct(lRow.meeting_rate)+'</td>';
+        '<td class="metric">'+metricCell(fmtPct(lRow.open_rate),'')+'</td>'+
+        '<td class="metric">'+metricCell(fmtPct(lRow.reply_rate),'')+'</td>'+
+        '<td class="metric">'+metricCell(fmtPct(lRow.connect_rate),'')+'</td>'+
+        '<td class="metric">'+metricCell(fmtPct(lRow.meeting_rate),'')+'</td>'+
+        '<td class="metric">'+metricCell(fmtNum(lRow.people_acted_on),'')+'</td>';
       tbody.appendChild(legTr);
     }}else{{
       const noneTr=document.createElement('tr');
       noneTr.className='pairNone';
-      noneTr.innerHTML='<td colspan="5">'+(p.legacy_id?'Legacy snapshot not pulled yet — run build_pilot_legacy_snapshot.py':'No legacy predecessor — new cadence')+'</td>';
+      noneTr.innerHTML='<td colspan="6">'+(p.legacy_id?'Legacy snapshot not pulled yet — run build_pilot_legacy_snapshot.py':'No legacy predecessor — new cadence')+'</td>';
       tbody.appendChild(noneTr);
     }}
   }});
