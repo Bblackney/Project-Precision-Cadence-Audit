@@ -14,5 +14,7 @@ archive_autosave.launchd.out.log
 archive_autosave.launchd.err.log
 connected_calls_cache.json
 connected_calls_cache.json.tmp
+step_call_metrics_cache.json
+step_call_metrics_cache.json.tmp
 *.BACKUP_*.csv
 *.BACKUP_*.html

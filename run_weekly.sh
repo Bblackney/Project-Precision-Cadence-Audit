@@ -28,11 +28,24 @@ if [ "$RC" -ne 0 ]; then
   exit "$RC"
 fi
 
+# 1b) Step-level detail cache (email/call breakdown for the "▸ steps" popup).
+# Must run AFTER the scorer above, since it reads the just-refreshed
+# cadence_scores_master.csv to determine which cadences are in scope.
+# Non-fatal: incremental (only fetches the delta since last run — see
+# build_step_stats_cache.py's docstring), so it's normally quick, but a
+# failure here should never block the main scorecard from publishing.
+python3 -u build_step_stats_cache.py >> "$LOG" 2>&1
+RC2=$?
+if [ "$RC2" -ne 0 ]; then
+  echo "$(date '+%F %T') [WARN] build_step_stats_cache.py exited $RC2 — step-level detail may be " \
+       "stale this week, continuing with the rest of the push anyway" >> "$LOG"
+fi
+
 # 2) Commit + push refreshed outputs (push failure is non-fatal)
 # Clear any stale git locks first — a crashed/previous git op leaves a *.lock
 # that would otherwise block this commit (and thus the weekly push).
 find .git -name '*.lock' -delete 2>/dev/null
-git add cadence_scores_master.csv index.html archive_confirmed.csv pilot_comparison.html pilot_legacy_snapshot.json >> "$LOG" 2>&1
+git add cadence_scores_master.csv index.html archive_confirmed.csv pilot_comparison.html pilot_legacy_snapshot.json step_stats_cache.json >> "$LOG" 2>&1
 if git diff --cached --quiet; then
   echo "$(date '+%F %T') no output changes to commit" >> "$LOG"
 else

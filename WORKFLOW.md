@@ -73,6 +73,68 @@ Search.
 - `run_weekly.sh` now also `git add`s `pilot_comparison.html` and
   `pilot_legacy_snapshot.json`.
 
+## Step-level detail popup on the Cadence Scorecard (added 2026-08-05)
+
+Clicking a cadence name on `index.html` (a "▸ steps" pill appears next to
+eligible names) opens a modal showing that cadence's per-step breakdown —
+Sent / Open % / Click % / Reply % for email steps, Calls / Connect % for call
+steps — so a specific step (e.g. one variant of an A/B-tested email) can be
+inspected instead of only the cadence-level aggregate. Steps with
+`multitouch_enabled` show an "A/B step" tag; disabled steps are dimmed.
+
+- **Scope is deliberately narrow**, not the whole scorecard: the 15 named
+  Pilot cadences plus any "Project Precision" (CNV-named) cadence — same set
+  `in_step_detail_scope()` in `salesloft_cadence_scorer.py` matches. This
+  keeps the API load bounded; see the "why" below.
+- Data comes from `step_stats_cache.json`, written by
+  `build_step_stats_cache.py` (needs Salesloft API access — run on Brett's
+  Mac, not in the Cowork sandbox). **Runs automatically every Friday as a
+  step in `run_weekly.sh`**, right after the main scorer (added 2026-08-06) —
+  no separate schedule needed. Still fine to run manually between Fridays
+  too, for a fresher mid-week view:
+  ```
+  cd <project> && python3 build_step_stats_cache.py            # backfill once, then delta every run after
+  python3 build_step_stats_cache.py --days 30   # first backfill only: last 30 days (faster)
+  python3 build_step_stats_cache.py --days 0    # skip call metrics entirely this run
+  ```
+- **Email-step metrics are true all-time**, cheap and targeted
+  (`/v2/activities/emails` supports `cadence_id[]`+`step_id[]` filters
+  directly, so every run re-pulls the full history fresh — no incremental
+  state needed there).
+- **Call-step metrics are incremental** (rewritten 2026-08-06, v3).
+  `/v2/activities/calls` has no cadence or step filter at all, so getting
+  call-to-step attribution requires filtering client-side by the call's
+  embedded cadence/step. v1 tried an org-wide scan bounded to 120 days —
+  confirmed on a real run to take ~2.5 hours (org does ~7,000 calls/day). v2
+  used the documented `person_id[]` filter on `/v2/activities/calls` plus
+  `/v2/cadence_memberships?cadence_id=X` to get the roster of everyone ever
+  on an in-scope cadence, then queried calls scoped to just those people —
+  confirmed on a real run to take ~31 minutes for 13,176 people (much
+  better, but still too slow to redo in full every Friday forever as
+  rosters keep growing). v3 (current): same person-scoped approach, but now
+  **incremental** — same cursor pattern as `connected_calls_cache.json`
+  elsewhere in this project. The full all-time history is pulled ONCE (or
+  seeded automatically from whatever's already in `step_stats_cache.json`
+  from a prior all-time run, avoiding a redundant re-pull), then every
+  subsequent run only fetches calls created since the last run's cursor and
+  adds them to a persistent running total — fast and roughly constant-time
+  regardless of roster growth. State lives in
+  `step_call_metrics_cache.json` (**gitignored** — internal bookkeeping,
+  not published; `step_stats_cache.json` remains the committed, dashboard-
+  facing output). `--days N` only affects the very first backfill (before
+  any cursor exists); after that it's ignored — every run is just "since
+  last time." Safe to Ctrl+C at any point: the cursor only advances and
+  counts only merge after a full successful run, so an interrupted run
+  never loses progress or double-counts on retry. The popup's footer note
+  and `smSub` text always show `pulled_at` (when steps/email were last
+  refreshed — every run, since those aren't incremental).
+- `read_step_stats_cache()` returns `{}` if the file is missing, so
+  `index.html` still renders fine (just with no clickable rows) until the
+  first run of `build_step_stats_cache.py`.
+- `run_weekly.sh` now also `git add`s `step_stats_cache.json`, so if Brett
+  refreshes it between Friday runs the file doesn't get orphaned/overwritten
+  by the next auto-push — the weekly job itself never regenerates it.
+
 ## Archive-Confirmed autosave (Friday 2:00 PM, Brett's machine only)
 
 The dashboard's "Archive Confirmed" checkboxes are per-cadence, browser-local by default
@@ -156,13 +218,13 @@ Also excluded: archived cadences, non-team (personal) cadences, and region caden
 
 ## Scoring model v2.1 (both models max 100 pts; no skip rate)
 
-Sample handling: `people_acted_on_count == 0` → **NO DATA**. `1–99` → **LOW SAMPLE** (scored & shown, not bucketed). `≥100` → bucketed KEEP/REVIEW/ARCHIVE by score. (`low_sample` column still written: `True` when <100.)
+Sample handling: `people_acted_on_count == 0` → **NO DATA**. `1–499` → **LOW SAMPLE** (scored & shown, not bucketed). `≥500` → bucketed KEEP/REVIEW/ARCHIVE by score. (`low_sample` column still written: `True` when <500.)
 
 **BDR:** Meeting ≥15→35, ≥5→20, <5→0 | Reply ≥10→30, ≥5→22, ≥2→13, <2→0 | Connect ≥15→20, ≥7→13, ≥3→6, <3→0 | Open ≥50→15, ≥35→10, ≥20→5, <20→0
 
 **SDR:** Meeting ≥10→35, ≥5→20, ≥2→13, <2→0 | Reply ≥3→30, ≥1→22, <1→0 | Connect ≥15→20, ≥7→13, ≥3→6, <3→0 | Open ≥35→15, ≥25→10, ≥15→5, <15→0
 
-Verdicts (≥100 people only): ≥75 KEEP | 50–74 REVIEW | <50 ARCHIVE. Cadences with <100 people → LOW SAMPLE; 0 people → NO DATA (neither is bucketed).
+Verdicts (≥500 people only): ≥75 KEEP | 50–74 REVIEW | <50 ARCHIVE. Cadences with <500 people → LOW SAMPLE; 0 people → NO DATA (neither is bucketed).
 
 ## Master CSV schema (append-only — never overwrite)
 

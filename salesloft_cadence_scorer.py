@@ -25,8 +25,8 @@ SCORING MODEL v2.1 — both BDR and SDR max 100 pts, no skip rate
     Connect Rate  ≥15% →20 | ≥7%  →13 | ≥3% →6  | <3% →0
     Open Rate     ≥35% →15 | ≥25% →10 | ≥15% →5 | <15% →0
 
-Verdict buckets: people_acted_on_count == 0 → NO DATA; 1–99 → LOW SAMPLE (scored & shown,
-             not bucketed); ≥100 → KEEP/REVIEW/ARCHIVE by score (≥75 / 50–74 / <50).
+Verdict buckets: people_acted_on_count == 0 → NO DATA; 1–499 → LOW SAMPLE (scored & shown,
+             not bucketed); ≥500 → KEEP/REVIEW/ARCHIVE by score (≥75 / 50–74 / <50).
 
 Credentials: salesloft_credentials.json  {"api_token": "v2_ak_..."}
 Outputs:     cadence_scores_master.csv (appended), index.html (regenerated)
@@ -53,10 +53,11 @@ CACHE_FILE  = os.path.join(BASE_DIR, "connected_calls_cache.json")
 ARCHIVE_CSV = os.path.join(BASE_DIR, "archive_confirmed.csv")
 PILOT_HTML           = os.path.join(BASE_DIR, "pilot_comparison.html")
 PILOT_SNAPSHOT_FILE  = os.path.join(BASE_DIR, "pilot_legacy_snapshot.json")
+STEP_STATS_FILE      = os.path.join(BASE_DIR, "step_stats_cache.json")
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 SL_BASE_URL   = "https://api.salesloft.com/v2"
-MIN_PEOPLE    = 100    # low-sample threshold: < this → low_sample flag (still scored)
+MIN_PEOPLE    = 500    # low-sample threshold: < this → low_sample flag (still scored)
 REQUEST_DELAY = 0.5    # seconds between API calls (~2 req/sec, avoids rate limits)
 CONNECTED_DISPOSITION = "Call - Connected"   # exact Salesloft disposition for a live connect
 # Regions excluded for now. EMEA/CAN/APAC match as whole words anywhere in the name;
@@ -96,6 +97,36 @@ PILOT_LEGACY_PAIRS = [
     {"team": "BDR Velocity",  "model": "BDR", "label": "Litigation AI",              "new_id": 4329154, "legacy_id": None},
     {"team": "BDR Velocity",  "model": "BDR", "label": "Outbound",                   "new_id": 4328970, "legacy_id": 4064673},
 ]
+
+# ── Step-detail popup scope ─────────────────────────────────────────────────────
+# Added 2026-08-05. Cadences eligible for the Cadence Scorecard's click-through
+# step-level detail popup: the 15 exact Pilot cadences (same set as the dashboard's
+# "Pilot Cadences" quick-filter button) plus any "Project Precision" cadence (name
+# contains CNV). Kept here (not just in JS) so build_step_stats_cache.py and
+# generate_html() agree on scope without duplicating the matching logic. Deliberately
+# NOT the full scorecard — see build_step_stats_cache.py's docstring for why.
+STEP_DETAIL_PILOT_SET = {
+    "SDRDEMOREQENUSCNVPREDEMO", "SDRMANAGETRIALENUSCNVTRIALON",
+    "SDRDEMOREQWEBINARENUSCNVPREDEMO", "SDRWEBPRICINGENUSCNV",
+    "SDRSOFTWAREADVICEENUSCNV", "BDRVELOCITYTRANSACTIONALAIENUSCNV",
+    "BDRVELOCITYLITIGATIONAIENUSCNV", "BDRVELOCITYAQLNMQLENUSCNV",
+    "BDRVELOCITYCLOSEDLOSTAIENUSCNV", "BDRVELOCITYOUTBOUNDENUSCNV",
+    "BDRSTRATEGICWEBSIGHTSINTENTENUSCNV", "BDRSTRATEGICAQLSEXCLDRAFTENUSCNV",
+    "BDRSTRATEGICNMQLENUSCNV", "BDRSTRATEGICOBCLINTENTENUSCNV",
+    "BDRSTRATEGICOBNMQLINTENTENUSCNV",
+}
+
+
+def _norm_pilot_name(name):
+    return re.sub(r"[^A-Z0-9]", "", (name or "").upper())
+
+
+def in_step_detail_scope(name):
+    """True for cadences eligible for the step-level popup: the 15 exact Pilot
+    cadences, or any Project Precision cadence (name contains CNV)."""
+    n = name or ""
+    return _norm_pilot_name(n) in STEP_DETAIL_PILOT_SET or "CNV" in n.upper()
+
 
 # ── API helpers ───────────────────────────────────────────────────────────────
 def _get(token, path, params=None, _retry=0):
@@ -340,6 +371,22 @@ def read_pilot_snapshot():
         return {}
 
 
+def read_step_stats_cache():
+    """Per-cadence, per-step detail for the Cadence Scorecard's click-through
+    popup, keyed by cadence_id (str). Written by build_step_stats_cache.py, which
+    Brett re-runs whenever he wants fresher numbers (unlike the legacy pilot
+    snapshot, these cadences are active). Missing file → {} so index.html still
+    renders fine, just with no clickable rows yet."""
+    if not os.path.exists(STEP_STATS_FILE):
+        return {}
+    try:
+        with open(STEP_STATS_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"  [WARN] could not read {os.path.basename(STEP_STATS_FILE)}: {e}")
+        return {}
+
+
 # ── HTML dashboard ─────────────────────────────────────────────────────────────
 VERDICT_COLOR = {"KEEP": "#16a34a", "REVIEW": "#d97706", "ARCHIVE": "#dc2626", "LOW SAMPLE": "#475569", "NO DATA": "#94a3b8"}
 VERDICT_BG    = {"KEEP": "#dcfce7", "REVIEW": "#fef9c3", "ARCHIVE": "#fee2e2", "LOW SAMPLE": "#e2e8f0", "NO DATA": "#f8fafc"}
@@ -352,8 +399,9 @@ def _safe_float(v, default=0.0):
         return default
 
 
-def _row_html(r, confirmed=None):
+def _row_html(r, confirmed=None, step_ids=None):
     confirmed = confirmed or {}
+    step_ids  = step_ids or set()
     cid = str(r.get("cadence_id", "")).strip()
     chk = " checked" if cid in confirmed else ""
     v   = r.get("verdict", "ARCHIVE")
@@ -369,14 +417,21 @@ def _row_html(r, confirmed=None):
         'font-size:11px;font-weight:700;">SDR</span>'
     )
     low_flag = (
-        '<span title="Low sample — fewer than 100 people acted on" '
+        '<span title="Low sample — fewer than 500 people acted on" '
         'style="color:#9ca3af;font-size:11px;margin-right:3px;">⚠</span>'
         if ls else ""
     )
     ppl = int(_safe_float(r.get("steps_completed")))
+    has_steps  = cid in step_ids
+    name_cursor = "cursor:pointer;" if has_steps else ""
+    name_click  = f' onclick="openStepModal(event,\'{escape(cid)}\')"' if has_steps else ""
+    step_btn = (
+        '<span class="stepBtn" title="Click for step-level detail (email/call breakdown)">▸ steps</span>'
+        if has_steps else ""
+    )
     return f"""      <tr data-date="{escape(r.get('run_date',''))}" data-model="{escape(r.get('model_applied',''))}" data-verdict="{escape(v)}" data-cid="{escape(cid)}">
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;font-variant-numeric:tabular-nums;">{escape(cid)}</td>
-        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="{escape(r.get('cadence_name',''))}">{low_flag}{escape(r.get('cadence_name',''))}</td>
+        <td{name_click} style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;{name_cursor}" title="{escape(r.get('cadence_name',''))}{' — click for step-level detail' if has_steps else ''}">{low_flag}{escape(r.get('cadence_name',''))} {step_btn}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;">{model_badge}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:{bg};color:{fg};">{v}</span></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><input type="checkbox" class="archChk" data-cid="{escape(cid)}" onchange="onArch(this)"{chk}></td>
@@ -399,7 +454,7 @@ def generate_html(all_rows, run_date):
     latest_rows = [r for r in all_rows if r.get("run_date") == latest]
 
     # Every cadence in the latest run carries exactly one verdict:
-    # KEEP/REVIEW/ARCHIVE (only for ≥100-people cadences), LOW SAMPLE (<100), or NO DATA (0).
+    # KEEP/REVIEW/ARCHIVE (only for ≥500-people cadences), LOW SAMPLE (<500), or NO DATA (0).
     keep_n      = sum(1 for r in latest_rows if r.get("verdict") == "KEEP")
     review_n    = sum(1 for r in latest_rows if r.get("verdict") == "REVIEW")
     archive_n   = sum(1 for r in latest_rows if r.get("verdict") == "ARCHIVE")
@@ -407,10 +462,13 @@ def generate_html(all_rows, run_date):
     nodata_n    = sum(1 for r in latest_rows if r.get("verdict") == "NO DATA")
 
     confirmed      = read_archive_confirmed()
-    all_rows_html  = "\n".join(_row_html(r, confirmed) for r in all_rows)
+    step_stats     = read_step_stats_cache()
+    step_ids       = set(step_stats.keys())
+    all_rows_html  = "\n".join(_row_html(r, confirmed, step_ids) for r in all_rows)
     rows_json      = json.dumps(all_rows, ensure_ascii=True)
     confirmed_json = json.dumps(confirmed, ensure_ascii=True)
     fields_json    = json.dumps(CSV_FIELDS, ensure_ascii=True)
+    step_stats_json = json.dumps(step_stats, ensure_ascii=True)
     date_options  = "\n      ".join(
         f'<option value="{d}"{" selected" if d == latest else ""}>{d}</option>'
         for d in dates
@@ -457,6 +515,28 @@ def generate_html(all_rows, run_date):
     tbody tr:hover{{background:#f8fafc}}
     .foot{{font-size:11px;color:#6b7280;padding:4px 32px 20px;line-height:1.7}}
     #rowCount{{font-size:11px;color:#9ca3af;margin-left:auto}}
+    .stepBtn{{display:inline-block;font-size:10.5px;font-weight:700;color:#7c3aed;background:#ede9fe;padding:1px 7px;border-radius:9px;margin-left:4px;white-space:nowrap;vertical-align:middle}}
+    .stepBtn:hover{{background:#ddd6fe}}
+    #stepOverlay{{display:none;position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:100;align-items:center;justify-content:center;padding:24px}}
+    #stepOverlay.open{{display:flex}}
+    #stepModal{{background:#fff;border-radius:12px;max-width:920px;width:100%;max-height:85vh;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.25)}}
+    #stepModal .smHdr{{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);color:#fff;padding:18px 24px;border-radius:12px 12px 0 0;position:sticky;top:0;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}}
+    #stepModal .smHdr h2{{font-size:16px;font-weight:700;margin-bottom:2px}}
+    #stepModal .smHdr p{{font-size:11.5px;opacity:.75}}
+    #stepModal .smClose{{cursor:pointer;font-size:20px;line-height:1;background:rgba(255,255,255,.15);border-radius:6px;padding:2px 9px;flex-shrink:0}}
+    #stepModal .smClose:hover{{background:rgba(255,255,255,.28)}}
+    #stepModal .smBody{{padding:18px 24px 24px}}
+    #stepModal table{{width:100%;font-size:12.5px;box-shadow:none;border-radius:0}}
+    #stepModal thead th{{cursor:default}}
+    #stepModal td,#stepModal th{{padding:7px 10px}}
+    #stepModal tr.disabledStep{{opacity:.45}}
+    .abTag{{display:inline-block;font-size:9.5px;font-weight:700;color:#b45309;background:#fef3c7;padding:1px 6px;border-radius:8px;margin-left:6px;text-transform:uppercase;letter-spacing:.3px}}
+    .typeTagSm{{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 6px;border-radius:8px;text-transform:uppercase;letter-spacing:.3px}}
+    .typeTagSm.email{{background:#dbeafe;color:#1e40af}}
+    .typeTagSm.phone{{background:#dcfce7;color:#166534}}
+    .typeTagSm.other{{background:#f3f4f6;color:#374151}}
+    #stepModal .smMeta{{font-size:11px;color:#6b7280;padding-bottom:10px}}
+    #stepModal .smEmpty{{padding:20px 0;color:#9ca3af;font-size:13px}}
   </style>
 </head>
 <body>
@@ -544,9 +624,39 @@ def generate_html(all_rows, run_date):
 </div>
 
 <div class="foot">
-  Both models max 100 pts &nbsp;|&nbsp; KEEP / REVIEW / ARCHIVE apply only to cadences with ≥100 people acted on (≥75 KEEP · 50–74 REVIEW · &lt;50 ARCHIVE) &nbsp;|&nbsp; LOW SAMPLE = &lt;100 people (scored &amp; shown, not bucketed) &nbsp;|&nbsp; NO DATA = no one acted on<br>
+  Both models max 100 pts &nbsp;|&nbsp; KEEP / REVIEW / ARCHIVE apply only to cadences with ≥500 people acted on (≥75 KEEP · 50–74 REVIEW · &lt;50 ARCHIVE) &nbsp;|&nbsp; LOW SAMPLE = &lt;500 people (scored &amp; shown, not bucketed) &nbsp;|&nbsp; NO DATA = no one acted on<br>
   BDR: Mtg ≥15%=35, ≥5%=20 &nbsp;· Reply ≥10%=30, ≥5%=22, ≥2%=13 &nbsp;· Connect ≥15%=20, ≥7%=13, ≥3%=6 &nbsp;· Open ≥50%=15, ≥35%=10, ≥20%=5<br>
-  SDR: Mtg ≥10%=35, ≥5%=20, ≥2%=13 &nbsp;· Reply ≥3%=30, ≥1%=22 &nbsp;· Connect ≥15%=20, ≥7%=13, ≥3%=6 &nbsp;· Open ≥35%=15, ≥25%=10, ≥15%=5
+  SDR: Mtg ≥10%=35, ≥5%=20, ≥2%=13 &nbsp;· Reply ≥3%=30, ≥1%=22 &nbsp;· Connect ≥15%=20, ≥7%=13, ≥3%=6 &nbsp;· Open ≥35%=15, ≥25%=10, ≥15%=5<br>
+  <span class="stepBtn" style="cursor:default">▸ steps</span> next to a cadence name = click for step-level email/call detail (currently tracked for Pilot + Project Precision cadences only)
+</div>
+
+<div id="stepOverlay" onclick="if(event.target===this)closeStepModal()">
+  <div id="stepModal">
+    <div class="smHdr">
+      <div>
+        <h2 id="smTitle">Step Detail</h2>
+        <p id="smSub"></p>
+      </div>
+      <div class="smClose" onclick="closeStepModal()">✕</div>
+    </div>
+    <div class="smBody">
+      <div class="smMeta" id="smMeta"></div>
+      <table>
+        <thead><tr>
+          <th>Step</th>
+          <th style="text-align:center">Type</th>
+          <th style="text-align:right">Sent</th>
+          <th style="text-align:right">Open %</th>
+          <th style="text-align:right">Click %</th>
+          <th style="text-align:right">Reply %</th>
+          <th style="text-align:right">Calls</th>
+          <th style="text-align:right">Connect %</th>
+        </tr></thead>
+        <tbody id="smTbody"></tbody>
+      </table>
+      <div class="smEmpty" id="smEmpty" style="display:none">No step-level data for this cadence yet.</div>
+    </div>
+  </div>
 </div>
 
 <script id="cadenceData">
@@ -557,6 +667,9 @@ const ALL_ROWS = {rows_json};
 const SERVER_CONFIRMED = {confirmed_json};
 // Column order of cadence_scores_master.csv — export uses this + the 2 archive cols.
 const CSV_FIELDS = {fields_json};
+// Per-cadence, per-step detail for the click-through popup (build_step_stats_cache.py).
+// Scoped to Pilot + Project Precision cadences — see in_step_detail_scope() in the scorer.
+const STEP_STATS = {step_stats_json};
 </script>
 <script>
 const tbody=document.getElementById('tbody');
@@ -831,6 +944,55 @@ function toast(msg){{
   t.textContent=msg; t.style.opacity='1';
   clearTimeout(t._h); t._h=setTimeout(()=>{{t.style.opacity='0';}},3200);
 }}
+
+// ── Step-level detail modal ────────────────────────────────────────────────
+function smPct(n,d){{return d>0?(n/d*100).toFixed(1)+'%':'—';}}
+function stepLabel(st){{
+  if(st.display_name) return st.display_name;
+  const dn=(st.day!=null&&st.step_number!=null)?('Day '+st.day+': Step '+st.step_number+' — '):'';
+  return dn+(st.name||'(unnamed step)');
+}}
+function openStepModal(ev,cid){{
+  if(ev) ev.stopPropagation();
+  const rec=STEP_STATS[cid];
+  document.getElementById('smTitle').textContent=rec?rec.cadence_name:('Cadence #'+cid);
+  document.getElementById('smSub').textContent='Cadence #'+cid+(rec&&rec.pulled_at?' · data as of '+rec.pulled_at:'');
+  const tbody=document.getElementById('smTbody');
+  const empty=document.getElementById('smEmpty');
+  tbody.innerHTML='';
+  const steps=(rec&&rec.steps)||[];
+  document.getElementById('smMeta').textContent=steps.length
+    ? steps.length+' step'+(steps.length===1?'':'s')+' · email steps show Open/Click/Reply as % of sent · call steps show Connect as % of calls made'
+    : '';
+  if(!steps.length){{
+    empty.style.display='block';
+  }}else{{
+    empty.style.display='none';
+    steps.forEach(st=>{{
+      const tr=document.createElement('tr');
+      if(st.disabled) tr.className='disabledStep';
+      const isEmail=st.type==='email';
+      const isPhone=st.type==='phone';
+      const typeCls=isEmail?'email':(isPhone?'phone':'other');
+      const abTag=st.multitouch_enabled?'<span class="abTag">A/B step</span>':'';
+      tr.innerHTML=
+        '<td>'+stepLabel(st)+abTag+(st.disabled?' <span style="color:#9ca3af;font-size:11px;">(disabled)</span>':'')+'</td>'+
+        '<td style="text-align:center"><span class="typeTagSm '+typeCls+'">'+(st.type||'?')+'</span></td>'+
+        '<td style="text-align:right">'+(isEmail?st.sent.toLocaleString():'—')+'</td>'+
+        '<td style="text-align:right">'+(isEmail?smPct(st.opened,st.sent):'—')+'</td>'+
+        '<td style="text-align:right">'+(isEmail?smPct(st.clicked,st.sent):'—')+'</td>'+
+        '<td style="text-align:right">'+(isEmail?smPct(st.replied,st.sent):'—')+'</td>'+
+        '<td style="text-align:right">'+(isPhone?st.calls_made.toLocaleString():'—')+'</td>'+
+        '<td style="text-align:right">'+(isPhone?smPct(st.calls_connected,st.calls_made):'—')+'</td>';
+      tbody.appendChild(tr);
+    }});
+  }}
+  document.getElementById('stepOverlay').classList.add('open');
+}}
+function closeStepModal(){{
+  document.getElementById('stepOverlay').classList.remove('open');
+}}
+document.addEventListener('keydown',e=>{{ if(e.key==='Escape') closeStepModal(); }});
 
 window.onload=()=>{{
   applyArchState();
@@ -1251,9 +1413,9 @@ def main():
         cadence_verdict = get_verdict(total_score)
         # Verdict buckets — every cadence gets exactly one:
         #  • Zero activity (nobody acted on) → NO DATA.
-        #  • Low sample (<100 people) → LOW SAMPLE — scored and shown, but NOT
+        #  • Low sample (<500 people) → LOW SAMPLE — scored and shown, but NOT
         #    bucketed as KEEP/REVIEW/ARCHIVE (too thin to judge).
-        #  • Only cadences with ≥100 people acted on get KEEP/REVIEW/ARCHIVE by score.
+        #  • Only cadences with ≥500 people acted on get KEEP/REVIEW/ARCHIVE by score.
         if people_acted_on == 0:
             cadence_verdict = "NO DATA"
             total_score = 0
