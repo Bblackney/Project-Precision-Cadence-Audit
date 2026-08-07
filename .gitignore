@@ -22,3 +22,8 @@ step_call_metrics_cache.json
 step_call_metrics_cache.json.tmp
 *.BACKUP_*.csv
 *.BACKUP_*.html
+
+# Large local data exports (may contain PII; do not commit)
+overdue_cleanup_*.csv
+overdue_cleanup_*.json
+list0_*.csv
