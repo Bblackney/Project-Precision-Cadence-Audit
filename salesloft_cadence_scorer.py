@@ -1087,6 +1087,26 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot, period_m
     has_snapshot = bool(legacy_snapshot)
     has_periods  = bool(period_metrics)
 
+    # Quarter granularity is only useful once at least one PILOT cadence has a
+    # derived quarter with real signal in it. A quarter gets derived as soon as
+    # its 3 constituent months exist in pilot_period_metrics.json — but for
+    # newly-launched pilot cadences, those months are legitimately all-zero
+    # (the cadence didn't exist yet), so the derived quarter is technically
+    # present but meaningless. Checking for non-zero counts (not just presence)
+    # avoids offering a granularity that would show every pilot row as "no
+    # data" — Month stays available throughout since it reflects real launch
+    # dates correctly. Once a full quarter of real pilot activity exists
+    # (first candidate: 2026-Q3, once September closes), this flips to True
+    # automatically on the next build_period_metrics.py run — no code change
+    # needed.
+    def _quarter_has_signal(q):
+        return any(q.get(k, 0) for k in ("emails_sent", "calls_made", "people", "meetings_booked"))
+    has_pilot_quarter_data = any(
+        _quarter_has_signal(qrec)
+        for cid in new_ids
+        for qrec in (period_metrics.get(cid) or {}).get("quarters", {}).values()
+    )
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1167,7 +1187,7 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot, period_m
   <div id="periodCtrl" style="display:none;gap:14px;">
     <label>Granularity
       <select id="fGran" onchange="onGranChange()">
-        <option value="quarter">Quarter</option>
+        {'<option value="quarter">Quarter</option>' if has_pilot_quarter_data else ''}
         <option value="month">Month</option>
       </select>
     </label>

@@ -100,6 +100,20 @@ Q2 2025, or July 2026 vs. July 2025), the tab has a **View** toggle:
   this is 3x cheaper than separately querying quarter-bounded date ranges
   and guarantees month/quarter figures are always internally consistent. A
   quarter only appears once all 3 of its months have been pulled.
+- **The Quarter granularity option is hidden until it's actually useful.**
+  Pilot cadences launched ~2026-06-25, so every quarter that existed before
+  they did (2025-Q2 through 2026-Q2, as of writing) technically "derives"
+  fine — 3 real months exist, they're just all zero because the cadence
+  wasn't running yet. Showing Quarter as a choice in that state means every
+  pilot row looks like "no data," which reads as broken even though the
+  underlying numbers are correct. `generate_pilot_comparison_html()` checks
+  whether any Pilot (New) cadence has at least one quarter with real signal
+  (non-zero emails_sent/calls_made/people/meetings_booked) before rendering
+  the `<option value="quarter">` at all — if not, only Month is offered.
+  This flips on its own the next time `build_period_metrics.py` runs after
+  a real quarter closes (first candidate: 2026-Q3, once September ends) —
+  no code change needed. Month has always shown correct numbers throughout;
+  this only affects the Quarter toggle's visibility.
 - **Each month's data is pulled once and never re-pulled** (pass `--force`
   to override) — this matches the "locked snapshot" philosophy of
   `pilot_legacy_snapshot.json`, but per-period instead of all-time. This is
