@@ -15,6 +15,7 @@ archive_autosave.launchd.err.log
 adherence_scheduler.log
 adherence.launchd.out.log
 adherence.launchd.err.log
+Cadence_Archive_Cleanup_Audit.xlsx
 connected_calls_cache.json
 connected_calls_cache.json.tmp
 step_call_metrics_cache.json

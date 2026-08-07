@@ -1171,7 +1171,7 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot, period_m
         <option value="month">Month</option>
       </select>
     </label>
-    <label>New period
+    <label>Pilot period
       <select id="fPeriodNew" onchange="render()"></select>
     </label>
     <label>Legacy period
