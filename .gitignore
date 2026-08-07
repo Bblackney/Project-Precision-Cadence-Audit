@@ -12,6 +12,9 @@ launchd.err.log
 archive_autosave.log
 archive_autosave.launchd.out.log
 archive_autosave.launchd.err.log
+adherence_scheduler.log
+adherence.launchd.out.log
+adherence.launchd.err.log
 connected_calls_cache.json
 connected_calls_cache.json.tmp
 step_call_metrics_cache.json

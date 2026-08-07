@@ -54,6 +54,7 @@ ARCHIVE_CSV = os.path.join(BASE_DIR, "archive_confirmed.csv")
 PILOT_HTML           = os.path.join(BASE_DIR, "pilot_comparison.html")
 PILOT_SNAPSHOT_FILE  = os.path.join(BASE_DIR, "pilot_legacy_snapshot.json")
 STEP_STATS_FILE      = os.path.join(BASE_DIR, "step_stats_cache.json")
+PERIOD_METRICS_FILE  = os.path.join(BASE_DIR, "pilot_period_metrics.json")
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 SL_BASE_URL   = "https://api.salesloft.com/v2"
@@ -371,6 +372,25 @@ def read_pilot_snapshot():
         return {}
 
 
+def read_period_metrics():
+    """Date-bounded (month/quarter) performance snapshots for the Pilot
+    Comparison tab's period-vs-period picker, keyed by cadence_id (str).
+    Written by build_period_metrics.py — see that script's docstring for why
+    this can't be derived from pilot_legacy_snapshot.json or cadence_stats
+    (both are all-time cumulative totals; there's no way to slice a specific
+    calendar month/quarter out of a single running total after the fact).
+    Missing file → {} so the tab still renders fine in All-Time mode, just
+    without the Period Comparison toggle having any data yet."""
+    if not os.path.exists(PERIOD_METRICS_FILE):
+        return {}
+    try:
+        with open(PERIOD_METRICS_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"  [WARN] could not read {os.path.basename(PERIOD_METRICS_FILE)}: {e}")
+        return {}
+
+
 def read_step_stats_cache():
     """Per-cadence, per-step detail for the Cadence Scorecard's click-through
     popup, keyed by cadence_id (str). Written by build_step_stats_cache.py, which
@@ -425,17 +445,20 @@ def _row_html(r, confirmed=None, step_ids=None):
     has_steps  = cid in step_ids
     name_cursor = "cursor:pointer;" if has_steps else ""
     name_click  = f' onclick="openStepModal(event,\'{escape(cid)}\')"' if has_steps else ""
-    step_btn = (
-        '<span class="stepBtn" title="Click for step-level detail (email/call breakdown)">▸ steps</span>'
-        if has_steps else ""
+    step_col_btn = (
+        f'<span class="stepBtn" onclick="openStepModal(event,\'{escape(cid)}\')" '
+        'style="cursor:pointer;margin-left:0;" title="Click for step-level email/call detail">▸ Steps</span>'
+        if has_steps else
+        '<span style="color:#d1d5db;">—</span>'
     )
-    return f"""      <tr data-date="{escape(r.get('run_date',''))}" data-model="{escape(r.get('model_applied',''))}" data-verdict="{escape(v)}" data-cid="{escape(cid)}">
+    return f"""      <tr data-date="{escape(r.get('run_date',''))}" data-model="{escape(r.get('model_applied',''))}" data-verdict="{escape(v)}" data-cid="{escape(cid)}" data-name="{escape(r.get('cadence_name',''))}">
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;font-size:12px;color:#6b7280;font-variant-numeric:tabular-nums;">{escape(cid)}</td>
-        <td{name_click} style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;{name_cursor}" title="{escape(r.get('cadence_name',''))}{' — click for step-level detail' if has_steps else ''}">{low_flag}{escape(r.get('cadence_name',''))} {step_btn}</td>
+        <td{name_click} style="padding:8px 12px;border-bottom:1px solid #f3f4f6;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;{name_cursor}" title="{escape(r.get('cadence_name',''))}{' — click for step-level detail' if has_steps else ''}">{low_flag}{escape(r.get('cadence_name',''))}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;">{model_badge}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background:{bg};color:{fg};">{v}</span></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;"><input type="checkbox" class="archChk" data-cid="{escape(cid)}" onchange="onArch(this)"{chk}></td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;font-weight:700;color:{fg};">{s}</td>
+        <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:center;">{step_col_btn}</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">{_safe_float(r.get('meeting_rate')):.1f}%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">{_safe_float(r.get('reply_rate')):.1f}%</td>
         <td style="padding:8px 12px;border-bottom:1px solid #f3f4f6;text-align:right;">{_safe_float(r.get('connect_rate')):.1f}%</td>
@@ -607,15 +630,16 @@ def generate_html(all_rows, run_date):
       <th onclick="sort(3)" style="text-align:center">Verdict</th>
       <th onclick="sort(4)" style="text-align:center" title="Tick to confirm this cadence for archive — saves to archive_confirmed.csv">Archive Confirmed</th>
       <th onclick="sort(5)" style="text-align:right">Score</th>
-      <th onclick="sort(6)" style="text-align:right">Mtg Rate</th>
-      <th onclick="sort(7)" style="text-align:right">Reply Rate</th>
-      <th onclick="sort(8)" style="text-align:right">Connect Rate</th>
-      <th onclick="sort(9)" style="text-align:right">Open Rate</th>
-      <th onclick="sort(10)" style="text-align:right" title="people_acted_on_count">People</th>
-      <th onclick="sort(11)" style="text-align:right" title="Mtg / Reply / Connect / Open">Pts Breakdown</th>
-      <th onclick="sort(12)">Created by</th>
-      <th onclick="sort(13)" style="text-align:center" title="When the cadence was created in Salesloft">Created</th>
-      <th onclick="sort(14)" style="text-align:center">Run Date</th>
+      <th onclick="sort(6)" style="text-align:center" title="Click-through step-level email/call detail (Pilot + Project Precision cadences only)">Step Metrics</th>
+      <th onclick="sort(7)" style="text-align:right">Mtg Rate</th>
+      <th onclick="sort(8)" style="text-align:right">Reply Rate</th>
+      <th onclick="sort(9)" style="text-align:right">Connect Rate</th>
+      <th onclick="sort(10)" style="text-align:right">Open Rate</th>
+      <th onclick="sort(11)" style="text-align:right" title="people_acted_on_count">People</th>
+      <th onclick="sort(12)" style="text-align:right" title="Mtg / Reply / Connect / Open">Pts Breakdown</th>
+      <th onclick="sort(13)">Created by</th>
+      <th onclick="sort(14)" style="text-align:center" title="When the cadence was created in Salesloft">Created</th>
+      <th onclick="sort(15)" style="text-align:center">Run Date</th>
     </tr></thead>
     <tbody id="tbody">
 {all_rows_html}
@@ -627,7 +651,7 @@ def generate_html(all_rows, run_date):
   Both models max 100 pts &nbsp;|&nbsp; KEEP / REVIEW / ARCHIVE apply only to cadences with ≥500 people acted on (≥75 KEEP · 50–74 REVIEW · &lt;50 ARCHIVE) &nbsp;|&nbsp; LOW SAMPLE = &lt;500 people (scored &amp; shown, not bucketed) &nbsp;|&nbsp; NO DATA = no one acted on<br>
   BDR: Mtg ≥15%=35, ≥5%=20 &nbsp;· Reply ≥10%=30, ≥5%=22, ≥2%=13 &nbsp;· Connect ≥15%=20, ≥7%=13, ≥3%=6 &nbsp;· Open ≥50%=15, ≥35%=10, ≥20%=5<br>
   SDR: Mtg ≥10%=35, ≥5%=20, ≥2%=13 &nbsp;· Reply ≥3%=30, ≥1%=22 &nbsp;· Connect ≥15%=20, ≥7%=13, ≥3%=6 &nbsp;· Open ≥35%=15, ≥25%=10, ≥15%=5<br>
-  <span class="stepBtn" style="cursor:default">▸ steps</span> next to a cadence name = click for step-level email/call detail (currently tracked for Pilot + Project Precision cadences only)
+  <span class="stepBtn" style="cursor:default">▸ Steps</span> in the Step Metrics column = click for step-level email/call detail (currently tracked for Pilot + Project Precision cadences only); "—" means it's not tracked for that cadence.
 </div>
 
 <div id="stepOverlay" onclick="if(event.target===this)closeStepModal()">
@@ -846,7 +870,7 @@ function filter(){{
   let vis=0,k=0,rv=0,ar=0,lo=0,nd=0;
   allRows.forEach(r=>{{
     const dateOk=!d||r.dataset.date===d;
-    const nameU=r.cells[1].textContent.toUpperCase();
+    const nameU=(r.dataset.name||'').toUpperCase();
     const teamOk=teams.length===0||teams.some(tm=>{{
       if(tm==='SDR')    return nameU.includes('SDR')&&!nameU.includes('BDR');
       if(tm==='BDR-S')  return nameU.includes('BDR-S')||nameU.includes('BDR - S')||nameU.includes('STRATEGIC')||nameU.includes('STRAT');
@@ -855,9 +879,9 @@ function filter(){{
       if(tm==='BDR-CS') return nameU.includes('BDR-CS')||nameU.includes('BDR - CS');
       return nameU.includes(tm);
     }});
-    const searchOk=!s||r.cells[1].textContent.toLowerCase().includes(s);
+    const searchOk=!s||(r.dataset.name||'').toLowerCase().includes(s);
     const cnvOk=!cnvOnly||nameU.includes('CNV');
-    const pilotOk=!pilotOnly||PILOT_SET.has(normPilot(r.cells[1].textContent));
+    const pilotOk=!pilotOnly||PILOT_SET.has(normPilot(r.dataset.name||''));
     const vd=r.dataset.verdict;
     // KPI cards reflect Date + Team + Search + Project Precision/Pilot scope (not the Verdict
     // picker) — so they update as you filter, but always show every verdict's count for that scope.
@@ -1006,14 +1030,23 @@ window.onload=()=>{{
 
 
 # ── Pilot Comparison page ──────────────────────────────────────────────────────
-def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
+def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot, period_metrics=None):
     """New pilot cadence vs. its retired legacy predecessor, side by side.
 
     'New' side is live — recomputed every weekly run from cadence_scores_master.csv
     (all_rows, same as index.html). 'Legacy' side is a locked, one-time snapshot
     (legacy_snapshot, from pilot_legacy_snapshot.json — see build_pilot_legacy_snapshot.py)
     that never changes, since those cadences are retired and generate no new activity.
+
+    Also renders a "By Period" mode (added 2026-08-06, see build_period_metrics.py)
+    that lets either side be pinned to a specific month/quarter instead of
+    all-time — e.g. New cadence's Q2 2026 vs Legacy cadence's Q2 2025, to
+    compare seasonally-aligned windows instead of two very differently-sized
+    all-time totals. Data comes from period_metrics (pilot_period_metrics.json);
+    {} if that script hasn't been run yet — the toggle still renders, it just
+    shows a "no data" state until it has.
     """
+    period_metrics = period_metrics or {}
     new_ids = {str(p["new_id"]) for p in PILOT_LEGACY_PAIRS if p.get("new_id")}
     new_rows = [
         {
@@ -1046,11 +1079,13 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
     pairs_json    = json.dumps(pair_defs, ensure_ascii=True)
     new_rows_json = json.dumps(new_rows, ensure_ascii=True)
     legacy_json   = json.dumps(legacy_snapshot, ensure_ascii=True)
+    period_json   = json.dumps(period_metrics, ensure_ascii=True)
     date_options  = "\n      ".join(
         f'<option value="{d}"{" selected" if d == latest else ""}>{d}</option>'
         for d in dates
     )
     has_snapshot = bool(legacy_snapshot)
+    has_periods  = bool(period_metrics)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -1071,6 +1106,10 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
     .ctrl select:focus,.ctrl input:focus{{border-color:#2563eb}}
     .teamChk{{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:#374151;white-space:nowrap}}
     .warn-banner{{background:#fef3c7;border-bottom:1px solid #f59e0b;color:#92400e;font-size:12.5px;padding:10px 32px;line-height:1.5}}
+    .modeSeg{{display:flex;border:1px solid #7c3aed;border-radius:5px;overflow:hidden}}
+    .modeSeg button{{border:none;background:#fff;color:#7c3aed;font-size:12px;font-weight:700;padding:6px 12px;cursor:pointer}}
+    .modeSeg button.activeMode{{background:#7c3aed;color:#fff}}
+    .modeSeg button:not(:first-child){{border-left:1px solid #7c3aed}}
     .tbl-wrap{{padding:20px 32px;overflow-x:auto}}
     table{{width:100%;table-layout:fixed;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.07);font-size:13px}}
     thead th{{background:#f8fafc;padding:9px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#64748b;border-bottom:2px solid #e2e8f0;white-space:nowrap}}
@@ -1108,13 +1147,37 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
 </div>
 
 {"" if has_snapshot else '''<div class="warn-banner">⚠ pilot_legacy_snapshot.json not found — legacy rows/deltas can't be shown yet. Run <code>python3 build_pilot_legacy_snapshot.py</code> once (on Brett's Mac, needs Salesloft API access) to lock in the legacy baseline, then the next weekly run will pick it up.</div>'''}
+{"" if has_periods else '''<div class="warn-banner">⚠ pilot_period_metrics.json not found — "By Period" mode can't show any data yet. Run <code>python3 build_period_metrics.py</code> once (on Brett's Mac, needs Salesloft API access) to backfill month/quarter history, then the next weekly run will pick it up.</div>'''}
 
 <div class="ctrl">
-  <label>Run Date (New cadence)
-    <select id="fDate" onchange="render()">
-      {date_options}
-    </select>
-  </label>
+  <div style="display:flex;flex-direction:column;gap:5px;">
+    <span style="font-size:12px;font-weight:500;color:#374151;">View</span>
+    <div class="modeSeg">
+      <button type="button" id="modeAllBtn" class="activeMode" onclick="setMode('all')">All-Time</button>
+      <button type="button" id="modePeriodBtn" onclick="setMode('period')">By Period</button>
+    </div>
+  </div>
+  <div id="allTimeCtrl" style="display:flex;gap:14px;">
+    <label>Run Date (New cadence)
+      <select id="fDate" onchange="render()">
+        {date_options}
+      </select>
+    </label>
+  </div>
+  <div id="periodCtrl" style="display:none;gap:14px;">
+    <label>Granularity
+      <select id="fGran" onchange="onGranChange()">
+        <option value="quarter">Quarter</option>
+        <option value="month">Month</option>
+      </select>
+    </label>
+    <label>New period
+      <select id="fPeriodNew" onchange="render()"></select>
+    </label>
+    <label>Legacy period
+      <select id="fPeriodLegacy" onchange="render()"></select>
+    </label>
+  </div>
   <div style="display:flex;flex-direction:column;gap:5px;">
     <span style="font-size:12px;font-weight:500;color:#374151;">Team</span>
     <div style="display:flex;gap:12px;">
@@ -1144,8 +1207,8 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
 </div>
 
 <div class="foot">
-  <b>New</b> row = live, recomputed every weekly run (same scoring model as the main scorecard) &nbsp;|&nbsp;
-  <b>Legacy</b> row = one-time snapshot of the retired predecessor cadence, pulled once and never refetched &nbsp;|&nbsp;
+  <b>All-Time mode:</b> New row = live, recomputed every weekly run (same scoring model as the main scorecard); Legacy row = one-time snapshot of the retired predecessor, pulled once and never refetched.<br>
+  <b>By Period mode:</b> each side is pinned to a specific month/quarter (independently selectable) instead of all-time — e.g. New's Q2 2026 vs Legacy's Q2 2025 — computed from date-bounded activity pulls, see build_period_metrics.py. Defaults to the most recent period vs. the same period one year back.<br>
   Deltas next to the New row's rate metrics = New − Legacy, in percentage points (People shows raw count only, no delta) &nbsp;|&nbsp; ▲ improved · ▼ declined · ▬ no change
 </div>
 
@@ -1153,6 +1216,7 @@ def generate_pilot_comparison_html(all_rows, run_date, legacy_snapshot):
 const PAIRS = {pairs_json};
 const NEW_ROWS = {new_rows_json};
 const LEGACY = {legacy_json};
+const PERIOD_METRICS = {period_json};
 </script>
 <script>
 function fmtPct(v){{return (Math.round(v*10)/10).toFixed(1)+'%';}}
@@ -1175,7 +1239,9 @@ function newRowFor(newId,date){{
 }}
 function legacyFor(legacyId){{
   if(!legacyId) return null;
-  return LEGACY[legacyId]||null;
+  const r=LEGACY[legacyId]; if(!r) return null;
+  return {{cadence_name:r.cadence_name, open_rate:r.open_rate, reply_rate:r.reply_rate,
+           connect_rate:r.connect_rate, meeting_rate:r.meeting_rate, people:r.people_acted_on}};
 }}
 function esc(s){{
   return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -1184,18 +1250,102 @@ function cadLine(type,id,name){{
   const tag='<span class="typeTag '+type+'">'+(type==='pilot'?'PILOT':'LEGACY')+'</span>';
   return '<span title="'+esc(name)+' (#'+id+')">'+tag+esc(name)+' <span class="cadId">(#'+id+')</span></span>';
 }}
+
+// ── By Period mode ───────────────────────────────────────────────────────
+// PERIOD_METRICS[cadence_id].months['2026-08'] / .quarters['2026-Q3'] — see
+// build_period_metrics.py. Both sides (New/Legacy) pick their period
+// independently, so e.g. New's Q2 2026 can be compared against Legacy's
+// Q2 2025 — a seasonally-aligned window instead of two very differently
+// sized all-time totals.
+let mode='all';   // 'all' | 'period'
+const MONTH_NAMES=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function labelForPeriod(key,gran){{
+  if(!key) return '';
+  if(gran==='quarter'){{ const parts=key.split('-Q'); return 'Q'+parts[1]+' '+parts[0]; }}
+  const parts=key.split('-'); return MONTH_NAMES[parseInt(parts[1],10)-1]+' '+parts[0];
+}}
+function allPeriodKeysFor(gran){{
+  const set=new Set();
+  Object.values(PERIOD_METRICS).forEach(entry=>{{
+    const bucket=gran==='quarter'?entry.quarters:entry.months;
+    Object.keys(bucket||{{}}).forEach(k=>set.add(k));
+  }});
+  return Array.from(set).sort().reverse();
+}}
+function periodMinusYear(key,gran){{
+  if(!key) return '';
+  if(gran==='quarter'){{ const parts=key.split('-Q'); return (parseInt(parts[0],10)-1)+'-Q'+parts[1]; }}
+  const parts=key.split('-'); return (parseInt(parts[0],10)-1)+'-'+parts[1];
+}}
+function populatePeriodSelects(){{
+  const gran=document.getElementById('fGran').value;
+  const keys=allPeriodKeysFor(gran);
+  const newSel=document.getElementById('fPeriodNew'), legSel=document.getElementById('fPeriodLegacy');
+  const prevNew=newSel.value, prevLeg=legSel.value;
+  function fill(sel,preferred){{
+    sel.innerHTML='';
+    keys.forEach(k=>{{
+      const opt=document.createElement('option'); opt.value=k; opt.textContent=labelForPeriod(k,gran);
+      sel.appendChild(opt);
+    }});
+    if(keys.includes(preferred)) sel.value=preferred;
+  }}
+  const defaultNew=keys[0]||'';
+  const yearBack=periodMinusYear(defaultNew,gran);
+  const defaultLeg=keys.includes(yearBack)?yearBack:(keys[keys.length-1]||'');
+  fill(newSel, keys.includes(prevNew)?prevNew:defaultNew);
+  fill(legSel, keys.includes(prevLeg)?prevLeg:defaultLeg);
+}}
+function onGranChange(){{ populatePeriodSelects(); render(); }}
+function periodRowFor(cid,periodKey,gran){{
+  if(!cid||!periodKey) return null;
+  const entry=PERIOD_METRICS[cid];
+  if(!entry) return null;
+  const bucket=gran==='quarter'?entry.quarters:entry.months;
+  const r=(bucket&&bucket[periodKey])||null;
+  if(!r) return null;
+  return {{cadence_name:entry.cadence_name, open_rate:r.open_rate, reply_rate:r.reply_rate,
+           connect_rate:r.connect_rate, meeting_rate:r.meeting_rate, people:r.people}};
+}}
+function setMode(m){{
+  mode=m;
+  document.getElementById('modeAllBtn').classList.toggle('activeMode', m==='all');
+  document.getElementById('modePeriodBtn').classList.toggle('activeMode', m==='period');
+  document.getElementById('allTimeCtrl').style.display = m==='all' ? 'flex':'none';
+  document.getElementById('periodCtrl').style.display = m==='period' ? 'flex':'none';
+  if(m==='period') populatePeriodSelects();
+  render();
+}}
+
 function render(){{
-  const date=document.getElementById('fDate').value;
   const teams=Array.from(document.querySelectorAll('.fTeam:checked')).map(c=>c.value);
   const s=document.getElementById('fSearch').value.toLowerCase();
   const tbody=document.getElementById('tbody');
   tbody.innerHTML='';
   let vis=0;
   let lastTeam=null;
+
+  let getNew, getLeg, noNewMsg, noLegMsg;
+  if(mode==='period'){{
+    const gran=document.getElementById('fGran').value;
+    const pNew=document.getElementById('fPeriodNew').value;
+    const pLeg=document.getElementById('fPeriodLegacy').value;
+    getNew=(p)=>periodRowFor(p.new_id,pNew,gran);
+    getLeg=(p)=>periodRowFor(p.legacy_id,pLeg,gran);
+    noNewMsg='No data for '+labelForPeriod(pNew,gran);
+    noLegMsg=(legacyId)=>legacyId?('No data for '+labelForPeriod(pLeg,gran)):'No legacy predecessor — new cadence';
+  }}else{{
+    const date=document.getElementById('fDate').value;
+    getNew=(p)=>newRowFor(p.new_id,date);
+    getLeg=(p)=>legacyFor(p.legacy_id);
+    noNewMsg='No data for '+date;
+    noLegMsg=(legacyId)=>legacyId?'Legacy snapshot not pulled yet — run build_pilot_legacy_snapshot.py':'No legacy predecessor — new cadence';
+  }}
+
   PAIRS.forEach(p=>{{
     if(teams.length&&!teams.includes(p.team)) return;
-    const nRow=newRowFor(p.new_id,date);
-    const lRow=legacyFor(p.legacy_id);
+    const nRow=getNew(p);
+    const lRow=getLeg(p);
     const nameForSearch=(p.label+' '+(nRow?nRow.cadence_name:'')+' '+(lRow?lRow.cadence_name:'')).toLowerCase();
     if(s&&!nameForSearch.includes(s)) return;
     vis++;
@@ -1224,7 +1374,7 @@ function render(){{
         '<td class="metric">'+metricCell(fmtNum(nRow.people),'')+'</td>';
     }}else{{
       newTr.innerHTML='<td>'+cadLine('pilot',p.new_id||'?','')+'</td>'+
-        '<td colspan="5" style="color:#9ca3af;">No data for '+date+'</td>';
+        '<td colspan="5" style="color:#9ca3af;">'+noNewMsg+'</td>';
     }}
     tbody.appendChild(newTr);
     if(lRow){{
@@ -1236,18 +1386,18 @@ function render(){{
         '<td class="metric">'+metricCell(fmtPct(lRow.reply_rate),'')+'</td>'+
         '<td class="metric">'+metricCell(fmtPct(lRow.connect_rate),'')+'</td>'+
         '<td class="metric">'+metricCell(fmtPct(lRow.meeting_rate),'')+'</td>'+
-        '<td class="metric">'+metricCell(fmtNum(lRow.people_acted_on),'')+'</td>';
+        '<td class="metric">'+metricCell(fmtNum(lRow.people),'')+'</td>';
       tbody.appendChild(legTr);
     }}else{{
       const noneTr=document.createElement('tr');
       noneTr.className='pairNone';
-      noneTr.innerHTML='<td colspan="6">'+(p.legacy_id?'Legacy snapshot not pulled yet — run build_pilot_legacy_snapshot.py':'No legacy predecessor — new cadence')+'</td>';
+      noneTr.innerHTML='<td colspan="6">'+noLegMsg(p.legacy_id)+'</td>';
       tbody.appendChild(noneTr);
     }}
   }});
   document.getElementById('rowCount').textContent=vis+' pairs';
 }}
-window.onload=render;
+window.onload=()=>{{ populatePeriodSelects(); render(); }};
 </script>
 </body>
 </html>"""
@@ -1471,7 +1621,8 @@ def main():
     )
 
     legacy_snapshot = read_pilot_snapshot()
-    pilot_html = generate_pilot_comparison_html(all_csv_rows, run_date, legacy_snapshot)
+    period_metrics = read_period_metrics()
+    pilot_html = generate_pilot_comparison_html(all_csv_rows, run_date, legacy_snapshot, period_metrics)
     with open(PILOT_HTML, "w", encoding="utf-8") as f:
         f.write(pilot_html)
     if legacy_snapshot:

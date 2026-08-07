@@ -49,7 +49,7 @@ else
   fi
   # Also push to the legacy repo (origin-old-personal) that bblackney.github.io/Project-Precision-Cadence-Audit/
   # still serves from, so that published URL doesn't drift out of sync with origin/main.
-  if git remote get-url origin-old-personal >> "$LOG" 2>&1; then
+  if git remote get-url origin-old-personal >/dev/null 2>&1; then
     if git push origin-old-personal main >> "$LOG" 2>&1; then
       echo "$(date '+%F %T') OK pushed to origin-old-personal/main" >> "$LOG"
     else

@@ -45,7 +45,7 @@ fi
 # Clear any stale git locks first — a crashed/previous git op leaves a *.lock
 # that would otherwise block this commit (and thus the weekly push).
 find .git -name '*.lock' -delete 2>/dev/null
-git add cadence_scores_master.csv index.html archive_confirmed.csv pilot_comparison.html pilot_legacy_snapshot.json step_stats_cache.json >> "$LOG" 2>&1
+git add cadence_scores_master.csv index.html archive_confirmed.csv pilot_comparison.html pilot_legacy_snapshot.json pilot_period_metrics.json step_stats_cache.json >> "$LOG" 2>&1
 if git diff --cached --quiet; then
   echo "$(date '+%F %T') no output changes to commit" >> "$LOG"
 else
@@ -57,7 +57,7 @@ else
   fi
   # Also push to the legacy repo (origin-old-personal) that bblackney.github.io/Project-Precision-Cadence-Audit/
   # still serves from, so that published URL doesn't drift out of sync with origin/main.
-  if git remote get-url origin-old-personal >> "$LOG" 2>&1; then
+  if git remote get-url origin-old-personal >/dev/null 2>&1; then
     if git push origin-old-personal main >> "$LOG" 2>&1; then
       echo "$(date '+%F %T') OK pushed to origin-old-personal/main" >> "$LOG"
     else

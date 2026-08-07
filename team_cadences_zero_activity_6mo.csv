@@ -1,0 +1,989 @@
+cadence_id,cadence_name,model,created_at,most_recent_person_added,calls_ever_alltime,salesloft_url
+3042820, **RETIRING USE 2024 CADCENCE** BDR-MM - Office/Operations - T1 ,BDR,2023-03-22,2024-03-01T08:39:20.612405-08:00,7393,https://app.salesloft.com/app/cadences/3042820
+3072743, **RETIRING USE 2024 CADCENCE** BDR-MM - Partners - T1 ,BDR,2023-04-13,2024-02-14T09:11:11.728239-08:00,2334,https://app.salesloft.com/app/cadences/3072743
+3973543, BDR | CS - August Draft AMA | Demo Requests CQLs,BDR,2025-08-28,2025-08-29T10:16:36.558528-07:00,7,https://app.salesloft.com/app/cadences/3973543
+3966561, BDR | CS - Q3 Advanced Plan Webinar | Demo Requests,BDR,2025-08-20,2025-11-18T07:02:18.818482-08:00,4,https://app.salesloft.com/app/cadences/3966561
+3919958, BDR | CS - Q3 Duo Demo Webinar | Demo Requests,BDR,2025-06-24,2025-07-24T09:28:26.990657-07:00,40,https://app.salesloft.com/app/cadences/3919958
+3453995, BDR-CS: PI Summit Follow Up - Non Attended PI CQLs,BDR,2024-03-20,2024-03-24T18:50:06.845792-07:00,225,https://app.salesloft.com/app/cadences/3453995
+3485947, BDR-CS: PI Webinar April 10th Non Attended PI CQLs ,BDR,2024-04-11,2024-05-09T14:06:07.909577-07:00,7,https://app.salesloft.com/app/cadences/3485947
+3760091, BDR-S - Intent - AI - 2025,BDR,2024-12-16,2025-04-08T07:26:30.901195-07:00,2290,https://app.salesloft.com/app/cadences/3760091
+3899534, OB - Ops/Billing/Office - BDR-S - 2025,BDR,2025-05-30,2025-07-11T14:25:20.584600-07:00,1,https://app.salesloft.com/app/cadences/3899534
+3899539, OB - Ops/Billing/Office - BDR-V - 2025,BDR,2025-05-30,2025-10-27T12:26:59.377483-07:00,6,https://app.salesloft.com/app/cadences/3899539
+3898869, OB - Personal Injury - BDR-MM - 2025,BDR,2025-05-29,2025-09-22T07:04:38.047352-07:00,60,https://app.salesloft.com/app/cadences/3898869
+3764878,$BDR - MM - A Tier Accounts Attack - Hottest Accounts,BDR,2024-12-30,2025-07-03T06:19:42.062433-07:00,26,https://app.salesloft.com/app/cadences/3764878
+3970122,$BDR-Draft - B.T.L W&E Cadence 2025,BDR,2025-08-25,2025-11-26T14:45:13.738685-08:00,0,https://app.salesloft.com/app/cadences/3970122
+3541979,$BDR-MM - ALA Outreach - Pre Event,BDR,2024-05-15,2024-07-17T10:58:47.539375-07:00,174,https://app.salesloft.com/app/cadences/3541979
+3687896,$BDR-MM - ALL Firm Central - High Touch ,BDR,2024-09-18,2025-02-18T11:45:12.812091-08:00,0,https://app.salesloft.com/app/cadences/3687896
+3448796,$BDR-MM - AQL - Low Tier ,BDR,2024-03-18,2025-03-13T06:42:21.370329-07:00,217,https://app.salesloft.com/app/cadences/3448796
+3455872,$BDR-MM - AQL - PI Summit - Follow Up ,BDR,2024-03-21,2024-04-26T09:24:46.001322-07:00,7,https://app.salesloft.com/app/cadences/3455872
+2191697,$BDR-MM - AQL / MQL - Revival ,BDR,2021-07-15,2025-01-29T10:36:56.874306-08:00,1161,https://app.salesloft.com/app/cadences/2191697
+3626944,$BDR-MM - ClioCon 2024 - Pre Event Outreach,BDR,2024-07-17,2025-06-04T18:39:03.464200-07:00,2069,https://app.salesloft.com/app/cadences/3626944
+3707150,$BDR-MM - ClioCon24 Follow Up - Attendees,BDR,2024-10-10,2024-12-04T12:46:18.537630-08:00,41,https://app.salesloft.com/app/cadences/3707150
+3489796,$BDR-MM - Closed Lost - Tier 2,BDR,2024-04-15,2024-05-27T17:25:32.620851-07:00,10,https://app.salesloft.com/app/cadences/3489796
+3727045,$BDR-MM - Closed Lost Q4 24 ,BDR,2024-11-03,never,0,https://app.salesloft.com/app/cadences/3727045
+3727047,$BDR-MM - Closed Lost Q4 24 ,BDR,2024-11-03,never,0,https://app.salesloft.com/app/cadences/3727047
+3727048,$BDR-MM - Closed Lost Q4 24 ,BDR,2024-11-03,never,0,https://app.salesloft.com/app/cadences/3727048
+3727046,$BDR-MM - Closed Lost Q4 24 ,BDR,2024-11-03,never,0,https://app.salesloft.com/app/cadences/3727046
+3623261,$BDR-MM - Connected Bad Timing - Send Information + Follow Up,BDR,2024-07-15,2025-06-25T14:49:23.929895-07:00,34,https://app.salesloft.com/app/cadences/3623261
+3623241,$BDR-MM - Connected Interest - Send Information + Follow Up,BDR,2024-07-15,2025-05-30T13:18:13.050193-07:00,133,https://app.salesloft.com/app/cadences/3623241
+4050476,$BDR-MM - FV Security Incident Outreach Dec 2025,BDR,2025-12-05,2025-12-05T12:58:51.287858-08:00,21,https://app.salesloft.com/app/cadences/4050476
+3432860,$BDR-MM - GOOD FIT ACCOUNTS - Long Terms Nurtures,BDR,2024-03-06,2025-05-15T11:12:46.325097-07:00,0,https://app.salesloft.com/app/cadences/3432860
+3075530,$BDR-MM - General Tier 1 - IT ,BDR,2023-04-17,2025-06-04T07:30:43.844024-07:00,2532,https://app.salesloft.com/app/cadences/3075530
+3403273,$BDR-MM - General Tier 1 - Office/Operations/Billing  ,BDR,2024-02-14,2025-06-04T12:56:39.310011-07:00,3583,https://app.salesloft.com/app/cadences/3403273
+3403280,$BDR-MM - General Tier 1 - Paralegals / Attorneys,BDR,2024-02-14,2025-06-02T21:03:12.355549-07:00,340,https://app.salesloft.com/app/cadences/3403280
+3403277,$BDR-MM - General Tier 1 - Partners & Decision Makers,BDR,2024-02-14,2025-07-08T07:42:46.233440-07:00,7522,https://app.salesloft.com/app/cadences/3403277
+3772004,$BDR-MM - High-Impact OKRs and KPIs for Mid-Sized Firms (Webinar),BDR,2025-01-09,2025-03-14T12:29:05.022472-07:00,0,https://app.salesloft.com/app/cadences/3772004
+3771620,$BDR-MM - High-Impact OKRs and KPIs for Mid-Sized Firms (Webinar),BDR,2025-01-09,2025-01-09T14:47:52.736968-08:00,0,https://app.salesloft.com/app/cadences/3771620
+3677063,$BDR-MM - Hot Leads - Call Only Cadence,BDR,2024-09-06,2025-02-04T06:55:27.603392-08:00,240,https://app.salesloft.com/app/cadences/3677063
+3582433,$BDR-MM - ILTACON 2024 - Pre-Outreach - IT Personas,BDR,2024-06-10,2024-08-06T10:53:10.143742-07:00,46,https://app.salesloft.com/app/cadences/3582433
+3785143,$BDR-MM - Intent - Document Management - Outbound,BDR,2025-01-27,2025-10-31T07:23:41.465295-07:00,352,https://app.salesloft.com/app/cadences/3785143
+3785145,$BDR-MM - Intent - Practice Management - Outbound,BDR,2025-01-27,2025-12-01T07:38:16.036841-08:00,1259,https://app.salesloft.com/app/cadences/3785145
+3452077,$BDR-MM - Legal Insider Magazine Q1 - Delivery Follow Up,BDR,2024-03-19,2024-06-07T11:45:45.937544-07:00,174,https://app.salesloft.com/app/cadences/3452077
+3615298,$BDR-MM - LinkedIn + Calls Cadence Outbound,BDR,2024-07-08,2025-06-16T12:03:30.274087-07:00,118,https://app.salesloft.com/app/cadences/3615298
+3421390,$BDR-MM - NURTURE LEADS - Priority 3 - Future Follow Ups,BDR,2024-02-27,2025-02-12T08:57:59.296611-08:00,0,https://app.salesloft.com/app/cadences/3421390
+3660422,$BDR-MM - Nurture - A-Tier (High Priority) - Actively Engaged,BDR,2024-08-20,never,0,https://app.salesloft.com/app/cadences/3660422
+3660423,$BDR-MM - Nurture - B-Tier (Med Priority) - Potential Fit,BDR,2024-08-20,never,0,https://app.salesloft.com/app/cadences/3660423
+3760485,$BDR-MM - Only Document Management - Outbound,BDR,2024-12-16,never,0,https://app.salesloft.com/app/cadences/3760485
+3303986,$BDR-MM - Opp No Shows - Follow Ups,BDR,2023-11-01,2024-11-01T13:47:54.515915-07:00,93,https://app.salesloft.com/app/cadences/3303986
+3760453,$BDR-MM - Outdated Billing Solution - Outbound,BDR,2024-12-16,2025-06-04T06:43:38.901491-07:00,63,https://app.salesloft.com/app/cadences/3760453
+3342682,$BDR-MM - PI Power Hour - Wave 1,BDR,2023-12-12,2024-06-21T10:12:38.282781-07:00,315,https://app.salesloft.com/app/cadences/3342682
+3634944,$BDR-MM - Practice Panther Displacement - Prospecting,BDR,2024-07-24,2025-04-10T16:43:29.497685-07:00,128,https://app.salesloft.com/app/cadences/3634944
+3677336,$BDR-MM - Practice Panther Increase - Closed Lost,BDR,2024-09-06,never,0,https://app.salesloft.com/app/cadences/3677336
+3582098,$BDR-MM - Previous Conversation - Revival,BDR,2024-06-10,2025-11-10T11:52:06.259632-08:00,317,https://app.salesloft.com/app/cadences/3582098
+3735758,$BDR-MM - Sendoso Nov 2024 Campaign,BDR,2024-11-12,2025-04-10T11:47:29.770374-07:00,467,https://app.salesloft.com/app/cadences/3735758
+3676275,$BDR-MM - Target Account - Office/Operations/Billing,BDR,2024-09-05,2025-06-04T13:19:49.514526-07:00,157,https://app.salesloft.com/app/cadences/3676275
+3434377,$BDR-MM - Target Account - Paralegals,BDR,2024-03-07,2025-06-04T11:00:59.811799-07:00,213,https://app.salesloft.com/app/cadences/3434377
+3676274,$BDR-MM - Target Account - Partners & Decision Makers,BDR,2024-09-05,2025-06-02T09:00:01.138888-07:00,468,https://app.salesloft.com/app/cadences/3676274
+3328114,$BDR-MM - Target Accounts - Sendoso Cookie Follow-up - Prospecting,BDR,2023-11-28,2025-04-16T13:22:19.321830-07:00,1175,https://app.salesloft.com/app/cadences/3328114
+3702929,$BDR-MM - Target State - California,BDR,2024-10-07,2025-03-05T19:28:17.543191-08:00,242,https://app.salesloft.com/app/cadences/3702929
+3702704,$BDR-MM - Target State - Colorado ,BDR,2024-10-06,2024-10-07T10:51:37.086872-07:00,21,https://app.salesloft.com/app/cadences/3702704
+3702927,$BDR-MM - Target State - Florida,BDR,2024-10-07,2024-12-17T11:57:24.113551-08:00,108,https://app.salesloft.com/app/cadences/3702927
+3704781,$BDR-MM - Target State - Georgia,BDR,2024-10-08,2024-10-17T13:04:04.640297-07:00,27,https://app.salesloft.com/app/cadences/3704781
+3702701,$BDR-MM - Target State - Illinois ,BDR,2024-10-06,2024-11-18T12:13:05.918411-08:00,357,https://app.salesloft.com/app/cadences/3702701
+3702932,$BDR-MM - Target State - Massachusetts,BDR,2024-10-07,2024-11-07T10:43:44.326941-08:00,4,https://app.salesloft.com/app/cadences/3702932
+3704785,$BDR-MM - Target State - Michigan,BDR,2024-10-08,never,0,https://app.salesloft.com/app/cadences/3704785
+3702930,$BDR-MM - Target State - North Carolina,BDR,2024-10-07,2024-10-31T09:00:57.898942-07:00,10,https://app.salesloft.com/app/cadences/3702930
+3702931,$BDR-MM - Target State - Pennsylvania,BDR,2024-10-07,2024-12-30T11:48:38.819331-08:00,87,https://app.salesloft.com/app/cadences/3702931
+3702915,$BDR-MM - Target State - Texas,BDR,2024-10-07,2025-03-11T15:38:24.333786-07:00,579,https://app.salesloft.com/app/cadences/3702915
+3251109,$BDR-MM - Tier 1 - Call Only Cadence ,BDR,2023-09-15,2025-06-04T06:51:18.805704-07:00,637,https://app.salesloft.com/app/cadences/3251109
+3485814,$BDR-MM - Tier 2 Nurture MQL - Automated,BDR,2024-04-11,2024-07-12T10:07:21.906588-07:00,3,https://app.salesloft.com/app/cadences/3485814
+3764752,$BDR-MM - Using Multiple Tools - Outbound,BDR,2024-12-27,2025-05-16T12:07:04.046732-07:00,20,https://app.salesloft.com/app/cadences/3764752
+3760519,$BDR-MM - Using On-Premise Solutions - Outbound,BDR,2024-12-16,2025-06-09T11:22:58.815757-07:00,45,https://app.salesloft.com/app/cadences/3760519
+3701438,$BDR-MM - Virtual ClioCon - Fast Touch,BDR,2024-10-03,2024-10-04T12:53:19.323061-07:00,207,https://app.salesloft.com/app/cadences/3701438
+3727049,$BDR-MM - Warm - Identified Pains - Revival - Q4 24 ,BDR,2024-11-03,2025-05-21T20:41:49.344580-07:00,748,https://app.salesloft.com/app/cadences/3727049
+3421434,$BDR-MM - Working Pipeline - Future Follow Ups ,BDR,2024-02-27,2025-05-21T07:26:25.124392-07:00,0,https://app.salesloft.com/app/cadences/3421434
+3030337,$BDR-MM - Working Pipeline - HOT LEADS - Priority 1 ,BDR,2023-03-14,2025-05-28T14:17:57.997163-07:00,74,https://app.salesloft.com/app/cadences/3030337
+3424480,$BDR-MM - Working Pipeline - WARM LEADS - Priority 2 ,BDR,2024-02-29,2025-05-27T10:55:07.710490-07:00,0,https://app.salesloft.com/app/cadences/3424480
+3878349,$BDR-MM Webinar Follow Up - Watch How Mid-Sized Law Firms Use Clio,BDR,2025-05-07,2025-05-28T12:21:36.019695-07:00,27,https://app.salesloft.com/app/cadences/3878349
+3821508,$MM-BDR - Sendoso Gift Card - Prospecting,BDR,2025-03-05,2025-08-27T08:09:46.792181-07:00,364,https://app.salesloft.com/app/cadences/3821508
+3177527,(DO NOT USE) BDR - AI Content - Follow-up,BDR,2023-07-11,2023-07-12T11:08:41.765862-07:00,0,https://app.salesloft.com/app/cadences/3177527
+3485863,(NOT READY) $BDR-MM - NMQL Revival - Tier 1 - Nurture ,BDR,2024-04-11,never,0,https://app.salesloft.com/app/cadences/3485863
+3792452,* DO NOT ADD * BDR-S - Closed Lost Showing Intent - 2025,BDR,2025-02-04,2025-08-26T15:44:10.344314-07:00,7998,https://app.salesloft.com/app/cadences/3792452
+3760602,* DO NOT ADD * BDR-S - Intent - WebSights - 2025,BDR,2024-12-16,2025-09-15T11:36:12.140965-07:00,12395,https://app.salesloft.com/app/cadences/3760602
+3791240,* DO NOT ADD * BDR-S - NMQLs Showing Intent - 2025 ,BDR,2025-02-03,2025-09-25T15:07:06.583830-07:00,2169,https://app.salesloft.com/app/cadences/3791240
+3458837,* DO NOT ADD NEW CONTACTS * BDR-S - Cold Outbound ,BDR,2024-03-25,2024-05-30T16:31:51.170642-07:00,2077,https://app.salesloft.com/app/cadences/3458837
+3760609,* DO NOT ADD* BDR-S - AQL - Artificial Intelligence (AI) - 2025,BDR,2024-12-16,2025-09-22T05:26:05.397782-07:00,3936,https://app.salesloft.com/app/cadences/3760609
+2950153,* DO NOT USE *BDR-S - TR - Previous Closed Lost - Prospecting - V1,BDR,2023-01-17,2025-01-06T16:49:51.971792-08:00,29275,https://app.salesloft.com/app/cadences/2950153
+3321077,* DO NOT USE - BDR-S - AQL 2024,BDR,2023-11-18,2025-01-09T06:36:25.669983-08:00,16716,https://app.salesloft.com/app/cadences/3321077
+2956147,* DO NOT USE - BDR-S - CL all reasons - High Grade,BDR,2023-01-23,2024-09-30T14:39:21.456391-07:00,9421,https://app.salesloft.com/app/cadences/2956147
+3744474,* DO NOT USE - BDR-S - Intent V1,BDR,2024-11-22,2025-01-08T09:01:45.464101-08:00,937,https://app.salesloft.com/app/cadences/3744474
+3321933,* DO NOT USE - BDR-S - Nurture MQLs 2024,BDR,2023-11-20,2025-01-09T23:00:43.619352-08:00,13666,https://app.salesloft.com/app/cadences/3321933
+3679323,* DO NOT USE - BDR-S - Nurture MQLs and AQLs - John,BDR,2024-09-10,2024-11-07T10:25:40.426335-08:00,0,https://app.salesloft.com/app/cadences/3679323
+3707472,* DO NOT USE - BDR-S - TR - Previous Closed Lost - Prospecting - V1 - Florida,BDR,2024-10-10,2025-01-07T06:20:01.335787-08:00,109,https://app.salesloft.com/app/cadences/3707472
+3947331,** DO NOT ADD Intent Outbound Hybrid - BDR-S,BDR,2025-07-29,2025-10-01T10:10:09.506809-07:00,2059,https://app.salesloft.com/app/cadences/3947331
+3228522,***ARCHIVING*** BDR-MM - ZI Intent /,BDR,2023-08-25,2023-12-11T15:35:39.202140-08:00,434,https://app.salesloft.com/app/cadences/3228522
+3402863,**ARCHIVING** $BDR-MM - Intent & Website - Office/Operations/Billing ,BDR,2024-02-14,2024-07-22T10:30:13.641203-07:00,1224,https://app.salesloft.com/app/cadences/3402863
+3178066,**ARCHIVING** $BDR-MM - Maintain Touch - Tier 1 Accounts ,BDR,2023-07-12,2024-10-10T08:08:29.394107-07:00,257,https://app.salesloft.com/app/cadences/3178066
+3408819,**ARCHIVING** $BDR-MM - Target Account 2024 - Office/Admin/Operations/Billing/Assistant,BDR,2024-02-20,2024-07-16T08:40:19.800414-07:00,1116,https://app.salesloft.com/app/cadences/3408819
+3408811,**ARCHIVING** $BDR-MM - Target Account 2024 - Partners ,BDR,2024-02-20,2024-07-16T10:18:38.877251-07:00,1038,https://app.salesloft.com/app/cadences/3408811
+3612115,**ARCHIVING** $BDR-MM - Tier 1 Validated List Motion - Partners ,BDR,2024-07-03,2024-07-11T10:16:04.297432-07:00,47,https://app.salesloft.com/app/cadences/3612115
+3403079,**ARCHIVING** BDR-MM - Intent & Website - Partners,BDR,2024-02-14,2024-07-22T11:00:17.807945-07:00,1641,https://app.salesloft.com/app/cadences/3403079
+3403197,**ARVCHIVING** BDR-MM - Intent 2024 - Paralegals ,BDR,2024-02-14,2024-07-22T10:27:22.313054-07:00,44,https://app.salesloft.com/app/cadences/3403197
+3981595,**DO NOT USE** BDR-S Sprint: Summer Promo Connect Interest Sept 2025,BDR,2025-09-10,2025-09-19T09:50:44.852292-07:00,99,https://app.salesloft.com/app/cadences/3981595
+3263714,**RETIRING** BDR-MM- 2024 Ready,BDR,2023-09-27,2023-10-13T10:34:18.386406-07:00,0,https://app.salesloft.com/app/cadences/3263714
+3612117,*ARCHIVING* $BDR-MM - Tier 1 Validated List Motion - Office/Operations/Billing,BDR,2024-07-03,2024-07-11T10:15:23.991520-07:00,7,https://app.salesloft.com/app/cadences/3612117
+3612119,*ARCHIVING* $BDR-MM - Tier 1 Validated List Motion - Paralegals / Attorneys,BDR,2024-07-03,2024-07-11T09:57:49.967627-07:00,0,https://app.salesloft.com/app/cadences/3612119
+3772683,*DO NOT ADD NEW CONTACTS* BDR-S - Intent Email Only - Jan 2025,BDR,2025-01-10,2025-01-30T15:03:44.040421-08:00,0,https://app.salesloft.com/app/cadences/3772683
+3779682,*DO NOT ADD NEW CONTACTS* MM-BDR - Webinar: How to Drive Change At Mid-Sized Firms,BDR,2025-01-20,2025-02-03T06:53:39.851616-08:00,34,https://app.salesloft.com/app/cadences/3779682
+3422653,*DONT USE* $BDR-MM - Consensus - AQL - Tier 1 ,BDR,2024-02-28,2024-04-15T07:42:05.877334-07:00,320,https://app.salesloft.com/app/cadences/3422653
+3427112,*DONT USE* $BDR-MM - Consensus - Closed Lost - Part 1 ,BDR,2024-03-04,2024-04-10T05:59:59.944846-07:00,73,https://app.salesloft.com/app/cadences/3427112
+3427107,*DONT USE* $BDR-MM - Consensus - Nurture MQL Revival,BDR,2024-03-04,2024-04-22T14:24:38.812160-07:00,22,https://app.salesloft.com/app/cadences/3427107
+3247409,2023-09 - BDR-CS: AI in Legal Marketing Webinar Follow-Up ,BDR,2023-09-12,2024-09-05T14:00:53.959513-07:00,304,https://app.salesloft.com/app/cadences/3247409
+2842911,AE/BDR-CS - Outbound 2022 (Public Copy),BDR,2022-10-18,2024-04-26T07:05:20.894954-07:00,1546,https://app.salesloft.com/app/cadences/2842911
+2778321,AE/BDR-MM - DM/Partner - Prospecting,BDR,2022-09-06,2025-02-19T02:38:10.335564-08:00,1550,https://app.salesloft.com/app/cadences/2778321
+2778324,AE/BDR-MM - Family Law - Lawyers - Prospecting,BDR,2022-09-06,2025-05-30T10:10:59.347033-07:00,206,https://app.salesloft.com/app/cadences/2778324
+2978958,AE/BDR-MM - New to Role ,BDR,2023-02-07,2024-08-09T15:21:52.567208-07:00,201,https://app.salesloft.com/app/cadences/2978958
+3082166,AE/BDR-MM - Target Accounts - Office/Operations,BDR,2023-04-20,2024-09-04T07:02:41.537592-07:00,440,https://app.salesloft.com/app/cadences/3082166
+1982086,AE/BDR-S - PCLaw DOG/Closed-Lost [CAD Accounts] ,BDR,2021-02-16,2024-03-28T05:27:01.957497-07:00,35,https://app.salesloft.com/app/cadences/1982086
+3126227,AE/BDR-S/V - Cookies to CL June/July '23 - Follow Up,BDR,2023-05-24,2025-05-16T07:32:42.218286-07:00,166,https://app.salesloft.com/app/cadences/3126227
+2751781,ALL BDR - Legal Trends Report 2021 - Prospecting - Copy,BDR,2022-08-18,2023-01-31T06:55:40.201267-08:00,47,https://app.salesloft.com/app/cadences/2751781
+2845572,ALL BDR - NA LegalEx Nov22 - Follow Up,BDR,2022-10-19,2022-10-28T09:48:38.062949-07:00,0,https://app.salesloft.com/app/cadences/2845572
+3329599,ALL BDR - NA LegalEx Nov23 - Follow Up,BDR,2023-11-29,never,0,https://app.salesloft.com/app/cadences/3329599
+3621838,Accounting Prospect Launch SL Cadence - BDR-V,BDR,2024-07-12,2024-12-19T02:28:22.128431-08:00,17,https://app.salesloft.com/app/cadences/3621838
+3412236,BC - BOFU - NMQL March 5 Invite - BDRV,BDR,2024-02-21,2025-01-29T07:17:41.349417-08:00,1830,https://app.salesloft.com/app/cadences/3412236
+3489711,BC - Tax Day Email Blitz BDRV,BDR,2024-04-15,2024-04-24T10:37:17.149856-07:00,2963,https://app.salesloft.com/app/cadences/3489711
+3369811,BC BDRV - PI Power Hour - Wave 2,BDR,2024-01-18,2024-02-16T08:43:11.993847-08:00,328,https://app.salesloft.com/app/cadences/3369811
+3395555,BC BDRV - PI Power Hour - Wave 3 ,BDR,2024-02-08,2024-09-18T06:45:39.246245-07:00,101,https://app.salesloft.com/app/cadences/3395555
+3428661,BC BDRV - PI Power Hour - Wave 4,BDR,2024-03-05,2024-12-11T09:23:25.575222-08:00,1190,https://app.salesloft.com/app/cadences/3428661
+3365871,BC BDRV Reschedule Blitz,BDR,2024-01-16,2025-01-07T06:40:58.215909-08:00,100,https://app.salesloft.com/app/cadences/3365871
+3476716,BC BDRV- Disco Reschedule Cadence ,BDR,2024-04-05,2025-05-20T12:01:10.418787-07:00,483,https://app.salesloft.com/app/cadences/3476716
+3428654,BC BLIND CAL SEND - Reschedule BDR Opps,BDR,2024-03-05,2024-03-20T13:12:19.909824-07:00,17,https://app.salesloft.com/app/cadences/3428654
+3392547,BC Zoom Info - BDRV March '24 Webinar - Top Strategies for Improving Your Firm's Client Intake,BDR,2024-02-06,2024-04-11T13:42:56.979807-07:00,243,https://app.salesloft.com/app/cadences/3392547
+3178199,BDR - AI Content - Follow-up - V2,BDR,2023-07-12,2025-05-13T08:34:44.958497-07:00,2548,https://app.salesloft.com/app/cadences/3178199
+1418810,BDR - Book Download,BDR,2020-01-27,2022-08-29T13:19:55.035386-07:00,607,https://app.salesloft.com/app/cadences/1418810
+1993283,BDR - BrandPost Webinar Follow Up,BDR,2021-02-24,2022-09-12T14:23:40.156746-07:00,4,https://app.salesloft.com/app/cadences/1993283
+3638291,BDR - CaseLoad Lunch Offer - Closed Lost,BDR,2024-07-26,2024-07-29T08:19:38.158262-07:00,0,https://app.salesloft.com/app/cadences/3638291
+3622073,BDR - CaseLode Outreach ,BDR,2024-07-12,2024-09-17T11:17:24.845835-07:00,126,https://app.salesloft.com/app/cadences/3622073
+2280370,BDR - ClioCon - Mid-Sized Firms - Pre-Event Nurturing - Copy,BDR,2021-09-21,2021-10-08T06:33:58.248436-07:00,10,https://app.salesloft.com/app/cadences/2280370
+2304957,BDR - ClioCon - Mid-Sized Firms - Pre-Event Nurturing - V2,BDR,2021-10-08,2021-10-22T08:23:32.418976-07:00,3,https://app.salesloft.com/app/cadences/2304957
+2280367,BDR - ClioCon - Small Firms - Pre-Event Nurturing,BDR,2021-09-21,2021-10-08T07:56:24.583869-07:00,9,https://app.salesloft.com/app/cadences/2280367
+2304955,BDR - ClioCon - Small Firms - Pre-Event Nurturing - V2,BDR,2021-10-08,2022-01-06T13:23:51.078559-08:00,6,https://app.salesloft.com/app/cadences/2304955
+2280361,BDR - ClioCon - Solo - Pre-Event Nurturing,BDR,2021-09-21,2021-10-08T07:55:55.205757-07:00,2,https://app.salesloft.com/app/cadences/2280361
+2304949,BDR - ClioCon - Solo - Pre-Event Nurturing - V2,BDR,2021-10-08,2021-10-21T11:56:08.317776-07:00,1,https://app.salesloft.com/app/cadences/2304949
+2889821,BDR - DOG Opps Cadence - V2,BDR,2022-11-18,2025-01-28T20:42:17.114302-08:00,4343,https://app.salesloft.com/app/cadences/2889821
+2414234,BDR - Demo Request - Lawyaw ,BDR,2022-01-11,2022-07-28T08:03:53.864760-07:00,11,https://app.salesloft.com/app/cadences/2414234
+3932995,BDR - Draft Follow up after engagement,BDR,2025-07-11,2025-10-23T09:01:03.119288-07:00,33,https://app.salesloft.com/app/cadences/3932995
+1955120,BDR - Drip Nurture Emails,BDR,2021-01-28,2022-10-26T14:30:13.656128-07:00,0,https://app.salesloft.com/app/cadences/1955120
+4079054,BDR - Event: NTLS,BDR,2026-01-28,never,0,https://app.salesloft.com/app/cadences/4079054
+3389107,BDR - Firm Central - Nurture Followup,BDR,2024-02-05,2024-09-18T13:44:19.903050-07:00,481,https://app.salesloft.com/app/cadences/3389107
+2057735,BDR - Forgotten Pipeline Email Cadence,BDR,2021-04-09,2025-03-12T07:58:22.889754-07:00,0,https://app.salesloft.com/app/cadences/2057735
+2566899,BDR - HIPAA - DOG Winback Cadence,BDR,2022-04-19,2023-11-16T12:43:55.086114-08:00,9,https://app.salesloft.com/app/cadences/2566899
+3741716,BDR - ITS Solutions Event - Jan 2025,BDR,2024-11-19,2025-01-21T10:48:42.306347-08:00,38,https://app.salesloft.com/app/cadences/3741716
+3891751,BDR - In person conference - ALA 2025,BDR,2025-05-21,2025-06-06T12:07:16.635375-07:00,401,https://app.salesloft.com/app/cadences/3891751
+3964536,BDR - In person conference - ILTACON 2025,BDR,2025-08-19,2025-09-24T09:03:44.521939-07:00,84,https://app.salesloft.com/app/cadences/3964536
+1401057,BDR - LTR 2019 Download,BDR,2020-01-14,2022-05-17T06:11:30.238394-07:00,1766,https://app.salesloft.com/app/cadences/1401057
+1845371,BDR - LTR 2020 Download,BDR,2020-10-21,2023-02-27T08:42:36.861350-08:00,2299,https://app.salesloft.com/app/cadences/1845371
+3419922,BDR - Law Firm Admin Series - Invite - 03 -2024,BDR,2024-02-27,2024-03-18T07:07:16.571062-07:00,137,https://app.salesloft.com/app/cadences/3419922
+2068719,BDR - Law Firm Communication Webinar/Forgotten Pipeline,BDR,2021-04-16,2022-06-13T09:38:10.256028-07:00,0,https://app.salesloft.com/app/cadences/2068719
+1403368,BDR - Legal Rates Calculator,BDR,2020-01-15,2022-12-01T14:19:35.329491-08:00,112,https://app.salesloft.com/app/cadences/1403368
+2828430,BDR - Legal Trends Report 2022 - Prospecting,BDR,2022-10-10,2025-05-02T08:31:01.384491-07:00,3071,https://app.salesloft.com/app/cadences/2828430
+3015237,BDR - MM - Above The Line - Tier 1,BDR,2023-03-03,2023-03-22T14:13:33.104627-07:00,0,https://app.salesloft.com/app/cadences/3015237
+3015239,BDR - MM - Below The Line - Tier 1 ,BDR,2023-03-03,2023-04-06T08:13:02.434828-07:00,5,https://app.salesloft.com/app/cadences/3015239
+3822174,BDR - MyCase- Cold - March price increase,BDR,2025-03-05,2025-04-18T14:03:36.807462-07:00,96,https://app.salesloft.com/app/cadences/3822174
+1432337,BDR - Nurtured Meaningful Touch- Revival,BDR,2020-02-04,2024-03-04T07:51:59.746504-08:00,3089,https://app.salesloft.com/app/cadences/1432337
+2288419,BDR - Outbound Cadence,BDR,2021-09-28,2025-04-11T02:04:49.689033-07:00,2102,https://app.salesloft.com/app/cadences/2288419
+1961464,BDR - PCLaw Win Over,BDR,2021-02-02,2025-04-01T12:58:17.531183-07:00,170,https://app.salesloft.com/app/cadences/1961464
+1698826,BDR - Persona - OM,BDR,2020-07-22,2021-02-04T11:26:54.675661-08:00,139,https://app.salesloft.com/app/cadences/1698826
+3734507,BDR - PracticePanther General Win Back,BDR,2024-11-11,never,0,https://app.salesloft.com/app/cadences/3734507
+3738118,BDR - Rainmaker Retreat - Nov 2024,BDR,2024-11-14,2024-11-25T10:13:42.720913-08:00,69,https://app.salesloft.com/app/cadences/3738118
+3388092,BDR - Rainmaker Webinar Follow Up,BDR,2024-02-02,2024-02-15T10:45:36.597577-08:00,49,https://app.salesloft.com/app/cadences/3388092
+3510886,BDR - TechnologyByDesign + Clio Lunch and Learn - May 2024,BDR,2024-04-29,2024-05-08T11:20:53.584331-07:00,540,https://app.salesloft.com/app/cadences/3510886
+2588196,BDR - Test Cross-Sell Payments Cadence ,BDR,2022-05-03,never,0,https://app.salesloft.com/app/cadences/2588196
+1403374,BDR - White paper Download (OLD),BDR,2020-01-15,2022-10-19T16:30:39.222304-07:00,4482,https://app.salesloft.com/app/cadences/1403374
+3898086,BDR - [Channel] Clio/ICS - Happy Hour - ALA 2025,BDR,2025-05-29,2025-06-09T06:57:46.064046-07:00,27,https://app.salesloft.com/app/cadences/3898086
+3772593,BDR -CS: Clio Duo Pilot to Paid,BDR,2025-01-10,2025-01-27T12:22:14.468463-08:00,94,https://app.salesloft.com/app/cadences/3772593
+3134904,BDR CS - Re-Engage Nurture/Closed Lost,BDR,2023-06-01,2025-09-08T10:16:51.065770-07:00,393,https://app.salesloft.com/app/cadences/3134904
+3838798,BDR CS | CSQL - Q1 Grow Incentive ,BDR,2025-03-24,2025-04-29T12:34:53.763948-07:00,9,https://app.salesloft.com/app/cadences/3838798
+2147615,BDR Cross-Sell - Email Nurture June: Online Intake Forms_Request to Chat,BDR,2021-06-11,2021-07-13T08:02:55.522624-07:00,1,https://app.salesloft.com/app/cadences/2147615
+3939471,BDR Draft - OB -Family Law Firm - 2025,BDR,2025-07-18,2026-01-21T10:18:20.789291-08:00,85,https://app.salesloft.com/app/cadences/3939471
+3940461,BDR Draft AQL Pre-Webinar Registrants,BDR,2025-07-21,2025-09-03T14:22:36.281417-07:00,210,https://app.salesloft.com/app/cadences/3940461
+3926730,BDR Draft CF  Intro - California,BDR,2025-07-02,2025-10-06T15:37:40.662876-07:00,151,https://app.salesloft.com/app/cadences/3926730
+3998986,BDR S- Wills and Estates - Draft ,BDR,2025-10-01,never,0,https://app.salesloft.com/app/cadences/3998986
+1460403,BDR Strat  - LTR 2019 Download,BDR,2020-02-21,2021-08-12T08:42:57.857170-07:00,56,https://app.salesloft.com/app/cadences/1460403
+1460435,BDR Strat - White paper Download,BDR,2020-02-21,2025-05-20T08:07:54.246039-07:00,2610,https://app.salesloft.com/app/cadences/1460435
+3283487,BDR TRIAL - CONVERTED,BDR,2023-10-13,2023-11-06T11:07:56.703425-08:00,0,https://app.salesloft.com/app/cadences/3283487
+3261132,BDR TRIAL - Calendar Invite + Email NMQLs,BDR,2023-09-25,2025-06-18T08:47:27.898059-07:00,787,https://app.salesloft.com/app/cadences/3261132
+3269583,BDR TRIAL - Calendar Invite + Email NMQLs - MM,BDR,2023-10-03,never,0,https://app.salesloft.com/app/cadences/3269583
+3283478,BDR TRIAL - Negative Feedback,BDR,2023-10-13,2025-04-03T07:41:17.716324-07:00,0,https://app.salesloft.com/app/cadences/3283478
+3283471,BDR TRIAL - Positive Feedback,BDR,2023-10-13,2024-05-17T07:08:48.028104-07:00,0,https://app.salesloft.com/app/cadences/3283471
+3973541,BDR | CS - August Draft AMA | Attendees CQLs,BDR,2025-08-28,2025-08-28T12:50:32.323537-07:00,103,https://app.salesloft.com/app/cadences/3973541
+3857553,BDR | CS - Clio Connects Portland - Call Only,BDR,2025-04-14,2025-04-23T13:33:19.297959-07:00,68,https://app.salesloft.com/app/cadences/3857553
+3827714,BDR | CS - Criminal Law Summit 2025 (Attended CQLs),BDR,2025-03-11,2025-04-09T10:43:03.550870-07:00,16,https://app.salesloft.com/app/cadences/3827714
+3827713,BDR | CS - Criminal Law Summit 2025 (Demo Requests),BDR,2025-03-11,2025-03-20T14:00:11.077040-07:00,32,https://app.salesloft.com/app/cadences/3827713
+3824177,BDR | CS - Doc Automation Draft CLE - March 2025 (Platform CQL Follow-Up),BDR,2025-03-07,2025-03-07T10:27:15.665201-08:00,3,https://app.salesloft.com/app/cadences/3824177
+3919947,BDR | CS - June Duo Demo Webinar | Registrants but no show,BDR,2025-06-24,2025-07-24T18:44:08.448207-07:00,3,https://app.salesloft.com/app/cadences/3919947
+3892000,BDR | CS - May Duo Demo Webinar | Incentive Test - Attendees,BDR,2025-05-21,2025-05-23T11:15:22.008206-07:00,25,https://app.salesloft.com/app/cadences/3892000
+3892101,BDR | CS - May Duo Demo Webinar | Incentive Test - Poll CQLs,BDR,2025-05-21,2025-05-22T09:59:37.661705-07:00,20,https://app.salesloft.com/app/cadences/3892101
+3892079,BDR | CS - May Duo Demo Webinar | Incentive Test - Registrants but no show,BDR,2025-05-21,2025-05-22T08:36:51.891297-07:00,47,https://app.salesloft.com/app/cadences/3892079
+3892801,BDR | CS - May Duo Demo Webinar | Non-Incentive Test ,BDR,2025-05-22,2025-05-22T10:56:23.343480-07:00,3,https://app.salesloft.com/app/cadences/3892801
+3830091,BDR | CS - Q1 Duo Incentive Test,BDR,2025-03-13,2025-04-29T13:33:53.922226-07:00,1064,https://app.salesloft.com/app/cadences/3830091
+3836568,BDR | CS - Q1 Grow Incentive Test,BDR,2025-03-20,2025-04-30T12:55:09.657598-07:00,206,https://app.salesloft.com/app/cadences/3836568
+3966914,BDR | CS - Q3 Advanced Plan Webinar | Registrants,BDR,2025-08-20,2025-08-25T11:22:11.936903-07:00,56,https://app.salesloft.com/app/cadences/3966914
+3919946,BDR | CS - Q3 Duo Demo Webinar | Attendees,BDR,2025-06-24,2025-08-29T09:19:36.338827-07:00,98,https://app.salesloft.com/app/cadences/3919946
+3932086,BDR | CS - Wills & Estates Summit 2025 (Attended CQLs: AI Session) ,BDR,2025-07-10,2025-07-22T12:19:45.233701-07:00,308,https://app.salesloft.com/app/cadences/3932086
+3913764,BDR | CS : Clio Connects Denver 2025 - No Show Follow-up,BDR,2025-06-16,2025-06-17T13:40:33.723339-07:00,0,https://app.salesloft.com/app/cadences/3913764
+3830948,BDR | CS : Clio Connects Orlando 2025 - No Show Follow-up,BDR,2025-03-14,2025-03-18T14:58:25.840779-07:00,10,https://app.salesloft.com/app/cadences/3830948
+3868274,BDR | CS : Clio Connects Portland 2025 - No Show Follow-up,BDR,2025-04-24,2025-05-02T09:45:32.674392-07:00,24,https://app.salesloft.com/app/cadences/3868274
+3830819,BDR | CS: Clio Connects Orlando (All CQLs),BDR,2025-03-14,2025-03-20T11:49:27.503022-07:00,16,https://app.salesloft.com/app/cadences/3830819
+3868272,BDR | CS: Clio Connects Portland (All CQLs),BDR,2025-04-24,2025-05-02T08:58:50.585068-07:00,2,https://app.salesloft.com/app/cadences/3868272
+3767037,BDR | CS: Heckerling Pre-Event Customer Registrants,BDR,2025-01-03,2025-01-07T12:49:30.773402-08:00,0,https://app.salesloft.com/app/cadences/3767037
+3754425,BDR | Family Law Summit 12/24 - Attended,BDR,2024-12-06,2025-11-11T19:30:35.798660-08:00,2,https://app.salesloft.com/app/cadences/3754425
+3754454,BDR | Family Law Summit 12/24 - No Show,BDR,2024-12-06,2024-12-10T08:11:23.098832-08:00,0,https://app.salesloft.com/app/cadences/3754454
+3753662,BDR | Family Law Summit 2024- Requested Demo Leads,BDR,2024-12-05,2025-11-10T07:17:15.275154-08:00,133,https://app.salesloft.com/app/cadences/3753662
+2987588,BDR- MM - Displacement Cadence,BDR,2023-02-13,never,0,https://app.salesloft.com/app/cadences/2987588
+3307964,BDR- Nov 7 Uptime Legal Webinar Follow Up,BDR,2023-11-06,2023-11-21T10:52:47.954893-08:00,6,https://app.salesloft.com/app/cadences/3307964
+3064187,BDR-CS - 2023 Solo & Small Firm - Outbound (no calls),BDR,2023-04-06,2025-05-14T13:12:55.769224-07:00,0,https://app.salesloft.com/app/cadences/3064187
+3649249,BDR-CS - Accounting CLE Webinar Follow Up (August 7),BDR,2024-08-07,2025-09-24T07:07:31.814380-07:00,403,https://app.salesloft.com/app/cadences/3649249
+3777257,BDR-CS - Accounting CLE Webinar Follow Up (Jan 15 2025) - Reg/Attended,BDR,2025-01-16,2025-11-21T08:42:20.980529-08:00,104,https://app.salesloft.com/app/cadences/3777257
+3673391,BDR-CS - Accounting Webinar Follow Up,BDR,2024-09-03,2025-12-05T12:32:11.188431-08:00,275,https://app.salesloft.com/app/cadences/3673391
+3738536,BDR-CS - Accounting Webinar Follow Up Nov 14 Attended/No show,BDR,2024-11-14,2024-11-21T09:32:53.686111-08:00,74,https://app.salesloft.com/app/cadences/3738536
+2919387,BDR-CS - CSQL Requests - Grow (12/2022),BDR,2022-12-14,2025-09-29T13:21:15.407740-07:00,1966,https://app.salesloft.com/app/cadences/2919387
+2896117,BDR-CS - Civil Litigation - Follow Up ,BDR,2022-11-24,2024-02-28T12:28:15.132263-08:00,1,https://app.salesloft.com/app/cadences/2896117
+3278937,BDR-CS - Clio Con 2023 - Post Prospecting,BDR,2023-10-10,2023-10-24T05:57:37.765126-07:00,5,https://app.salesloft.com/app/cadences/3278937
+3707787,"BDR-CS - Clio Con 2024 Virtual: Attended Accounting Session ""Connect your Financial Processes""",BDR,2024-10-10,2024-11-05T07:53:59.285005-08:00,163,https://app.salesloft.com/app/cadences/3707787
+3707638,"BDR-CS - Clio Con 2024 Virtual: Attended Grow and Accounting Sessions ""What's New with Clio Grow"" & ""Connect your Financial Processes""",BDR,2024-10-10,2024-10-23T11:34:44.189190-07:00,22,https://app.salesloft.com/app/cadences/3707638
+3746365,BDR-CS - End-Of-Year Review 11-2024 | Clicked CTA,BDR,2024-11-25,2024-11-27T10:29:49.898799-08:00,58,https://app.salesloft.com/app/cadences/3746365
+1403389,BDR-CS - Follow Up Cadence,BDR,2020-01-15,2024-03-18T11:01:10.823142-07:00,3621,https://app.salesloft.com/app/cadences/1403389
+3743042,BDR-CS - Grand Slam Accounting + Payments Follow Up (Nov 20),BDR,2024-11-20,2024-11-22T12:08:20.393202-08:00,58,https://app.salesloft.com/app/cadences/3743042
+3766828,BDR-CS - Grand Slam Accounting + Payments Jan 1 Reason Follow Up (Jan 2025),BDR,2025-01-03,never,0,https://app.salesloft.com/app/cadences/3766828
+3278943,BDR-CS - Grow - Clio Con 2023 - Post Prospecting,BDR,2023-10-10,2024-01-09T14:35:12.871985-08:00,199,https://app.salesloft.com/app/cadences/3278943
+3285343,BDR-CS - Grow - Clio Con 2023 - Post Prospecting - (No calls),BDR,2023-10-16,2024-02-28T18:52:02.950339-08:00,0,https://app.salesloft.com/app/cadences/3285343
+3276389,BDR-CS - Grow - Clio Con Demo Requests,BDR,2023-10-06,2025-08-14T08:39:59.588730-07:00,27,https://app.salesloft.com/app/cadences/3276389
+3584280,BDR-CS - Grow - Demo Request - $200 Demo,BDR,2024-06-11,2024-07-09T10:16:35.992483-07:00,319,https://app.salesloft.com/app/cadences/3584280
+3225749,BDR-CS - Grow - LSA,BDR,2023-08-23,2025-07-09T17:34:07.571430-07:00,796,https://app.salesloft.com/app/cadences/3225749
+3822236,BDR-CS - Grow - March 2025 CQLs,BDR,2025-03-05,2025-04-14T11:49:20.115142-07:00,73,https://app.salesloft.com/app/cadences/3822236
+3713855,BDR-CS - Hot Outbound Prospect,BDR,2024-10-17,never,0,https://app.salesloft.com/app/cadences/3713855
+3436920,BDR-CS - Law Firm Admin Series - ATTENDED - Follow-up ,BDR,2024-03-08,2024-03-18T10:46:32.592223-07:00,147,https://app.salesloft.com/app/cadences/3436920
+3436950,BDR-CS - Law Firm Admin Series - NO SHOW - Follow-up,BDR,2024-03-08,2024-03-13T13:55:13.683426-07:00,129,https://app.salesloft.com/app/cadences/3436950
+3470809,BDR-CS - PI - Downloaded Guide: Template Checklist,BDR,2024-04-02,2025-11-20T12:56:06.253183-08:00,381,https://app.salesloft.com/app/cadences/3470809
+3313915,BDR-CS - PI Pilot 2 - Convert Prospecting,BDR,2023-11-10,2024-04-24T11:15:36.846246-07:00,75,https://app.salesloft.com/app/cadences/3313915
+3333948,BDR-CS - Personal Injury - Prospecting (No Calls),BDR,2023-12-04,2025-09-29T10:53:31.336899-07:00,0,https://app.salesloft.com/app/cadences/3333948
+2252501,BDR-CS - Visited App Directory IM (Direct),BDR,2021-08-31,2021-11-23T07:58:50.190205-08:00,23,https://app.salesloft.com/app/cadences/2252501
+3370955,BDR-CS 2024 $1 Opps Winback,BDR,2024-01-18,2024-02-22T09:07:29.496682-08:00,179,https://app.salesloft.com/app/cadences/3370955
+3757963,BDR-CS Clio Duo Demo Request - 1st email automated ,BDR,2024-12-11,2025-10-16T12:51:21.978757-07:00,0,https://app.salesloft.com/app/cadences/3757963
+4016440,BDR-CS Clio Work Demo Request - Post Clio Con,BDR,2025-10-21,2025-10-22T13:50:22.240556-07:00,5,https://app.salesloft.com/app/cadences/4016440
+3704948,BDR-CS ClioCon Attended/Registered,BDR,2024-10-08,2025-11-07T06:12:48.542637-08:00,8,https://app.salesloft.com/app/cadences/3704948
+3704316,BDR-CS ClioCon Generic Demo Request,BDR,2024-10-08,2025-11-07T12:11:03.525751-08:00,140,https://app.salesloft.com/app/cadences/3704316
+3855309,BDR-CS [CAM] Sweepstakes Follow Up- CQLs (Complete Plans),BDR,2025-04-10,2025-04-16T09:41:05.453576-07:00,356,https://app.salesloft.com/app/cadences/3855309
+3855234,"BDR-CS [CAM] Sweepstakes Follow Up- CQLs (EasyStart, Essentials, Advanced Plans)",BDR,2025-04-10,2025-04-23T11:50:16.008932-07:00,700,https://app.salesloft.com/app/cadences/3855234
+3799264,BDR-CS | 2025 -02 AI Summit - Duo Demo Requests ,BDR,2025-02-10,2025-09-24T07:47:01.787126-07:00,1187,https://app.salesloft.com/app/cadences/3799264
+3913251,BDR-CS | 2025 -06 Customer Spotlight Webinar - Expressed Interest via Poll,BDR,2025-06-16,2025-06-16T12:28:49.699794-07:00,11,https://app.salesloft.com/app/cadences/3913251
+3913311,BDR-CS | 2025 -06 Customer Spotlight Webinar - Registered,BDR,2025-06-16,2025-06-25T07:12:16.627741-07:00,0,https://app.salesloft.com/app/cadences/3913311
+3904715,BDR-CS | 2025 -06 Legal AI Ladder CLE - Expressed Interest in Duo via Poll ,BDR,2025-06-05,2025-06-25T10:29:57.191463-07:00,427,https://app.salesloft.com/app/cadences/3904715
+4031582,BDR-CS | 2025 Family Law Summit - Multi-Product CQL Follow-Up,BDR,2025-11-10,2025-12-02T12:20:03.436933-08:00,145,https://app.salesloft.com/app/cadences/4031582
+3932858,BDR-CS | 2025 July Security CLE -Poll CQLs (Multi-product),BDR,2025-07-10,2025-07-22T06:17:06.143040-07:00,38,https://app.salesloft.com/app/cadences/3932858
+3880560,BDR-CS | 2025 Solo & Small Firm Summit - DUO POLL CQLs,BDR,2025-05-09,2025-06-02T13:28:24.475732-07:00,581,https://app.salesloft.com/app/cadences/3880560
+3909537,BDR-CS | 2025 Trial Lawyer Summit -Poll CQLs (Multi-product) ,BDR,2025-06-11,2025-06-23T10:41:03.962823-07:00,150,https://app.salesloft.com/app/cadences/3909537
+3930898,BDR-CS | 2025 Wills & Estates Summit -Poll CQLs (Multi-product) ,BDR,2025-07-09,2025-07-30T12:42:15.140806-07:00,702,https://app.salesloft.com/app/cadences/3930898
+3961505,BDR-CS | 2025-07 CLE Process Optimization -Poll CQLs (Multi-product),BDR,2025-08-14,2025-08-19T12:23:49.462971-07:00,54,https://app.salesloft.com/app/cadences/3961505
+3980132,BDR-CS | 2025-09 Email Marketing Webinar - GROW POLL CQLs,BDR,2025-09-09,2025-09-16T10:28:11.553572-07:00,1,https://app.salesloft.com/app/cadences/3980132
+4035083,BDR-CS | 2025-11 AI CLE - Poll CQLs,BDR,2025-11-13,2025-11-17T11:33:34.313220-08:00,80,https://app.salesloft.com/app/cadences/4035083
+4039185,BDR-CS | 2025-11 Family Law WHLFUC - Poll CQL - IBC,BDR,2025-11-18,2025-11-20T09:05:38.280887-08:00,3,https://app.salesloft.com/app/cadences/4039185
+4041494,BDR-CS | 2025-11 Power Up Mobile App - Poll CQL - IBC,BDR,2025-11-20,2025-11-24T07:57:53.325310-08:00,13,https://app.salesloft.com/app/cadences/4041494
+4035758,BDR-CS | 2025-12 AI CLE- Poll CQLs TO BE UPDATED,BDR,2025-11-13,never,0,https://app.salesloft.com/app/cadences/4035758
+4050116,BDR-CS | 2025-12 Legal AI Summit - Session CQL - IBC,BDR,2025-12-04,2025-12-08T08:05:29.401113-08:00,16,https://app.salesloft.com/app/cadences/4050116
+4052743,BDR-CS | 2025-12 Succession Planning - Poll CQL - IBC,BDR,2025-12-09,2025-12-10T05:24:37.528627-08:00,12,https://app.salesloft.com/app/cadences/4052743
+4052745,BDR-CS | 2025-12 Succession Planning CLE - Session CQL - IBC,BDR,2025-12-09,2025-12-10T05:29:34.984944-08:00,5,https://app.salesloft.com/app/cadences/4052745
+4048144,BDR-CS | 2025-12 [CLE] 5 Levers to Maximize Impact - Poll CQL - IBC,BDR,2025-12-02,2025-12-03T11:54:21.625351-08:00,12,https://app.salesloft.com/app/cadences/4048144
+3856843,BDR-CS | ABA - Lunch Session Follow Up ,BDR,2025-04-11,2025-04-16T14:10:33.131221-07:00,8,https://app.salesloft.com/app/cadences/3856843
+3851928,BDR-CS | ABA Techshow 2025 - Demo Request Follow Up,BDR,2025-04-07,2025-04-14T06:54:55.666876-07:00,0,https://app.salesloft.com/app/cadences/3851928
+3959860,BDR-CS | AI Summer Camp - Attendee CQLs,BDR,2025-08-12,2025-09-19T11:52:28.535245-07:00,108,https://app.salesloft.com/app/cadences/3959860
+3799266,BDR-CS | AI Summit - Duo Attended CQLs,BDR,2025-02-10,2025-06-11T07:19:05.552942-07:00,73,https://app.salesloft.com/app/cadences/3799266
+3897165,BDR-CS | ALA - Booth Raffle Follow Up,BDR,2025-05-28,2025-05-28T14:44:33.670967-07:00,6,https://app.salesloft.com/app/cadences/3897165
+3995873,BDR-CS | Admin Essentials Resource Page - CQLs,BDR,2025-09-27,never,0,https://app.salesloft.com/app/cadences/3995873
+3988504,BDR-CS | Attorney Essentials Resource Page - CQLs,BDR,2025-09-18,2025-09-23T06:14:51.595125-07:00,1,https://app.salesloft.com/app/cadences/3988504
+4021862,BDR-CS | Attorney Webinar - Poll CQLs,BDR,2025-10-28,2025-10-29T08:57:14.545924-07:00,3,https://app.salesloft.com/app/cadences/4021862
+3796731,BDR-CS | Change Management CLE - Webinar Follow-Up (Registrants) (Strat),BDR,2025-02-06,2025-04-14T09:00:44.181430-07:00,4,https://app.salesloft.com/app/cadences/3796731
+3941382,BDR-CS | Draft Customer AMA Invite (CQLs),BDR,2025-07-22,2025-09-23T14:09:53.100788-07:00,0,https://app.salesloft.com/app/cadences/3941382
+3805754,BDR-CS | Duo Deep Dive Series - Attendee CQLs,BDR,2025-02-17,2025-08-19T09:06:00.397031-07:00,80,https://app.salesloft.com/app/cadences/3805754
+3805751,BDR-CS | Duo Deep Dive Series - Demo Requests,BDR,2025-02-17,2025-07-22T12:40:06.871013-07:00,75,https://app.salesloft.com/app/cadences/3805751
+3805763,BDR-CS | Duo Deep Dive Series - No Shows,BDR,2025-02-17,2025-07-23T06:19:01.764717-07:00,149,https://app.salesloft.com/app/cadences/3805763
+3819181,BDR-CS | Duo Deep Dive Series - No Shows,BDR,2025-03-03,never,0,https://app.salesloft.com/app/cadences/3819181
+3819747,BDR-CS | Duo Deep Dive Series - No Shows (Solos),BDR,2025-03-04,2025-04-09T09:09:11.936687-07:00,81,https://app.salesloft.com/app/cadences/3819747
+3861363,BDR-CS | Duo Demo Webinar + CAM 25% off Duo Follow Up - Registered (Complete Plan),BDR,2025-04-16,2025-04-22T08:18:35.535374-07:00,5,https://app.salesloft.com/app/cadences/3861363
+3861361,BDR-CS | Duo Demo Webinar + CAM 25% off Product Follow Up - Demo CQLs,BDR,2025-04-16,2025-04-17T13:23:36.853955-07:00,3,https://app.salesloft.com/app/cadences/3861361
+3861366,"BDR-CS | Duo Demo Webinar Follow Up - Registered (EasyStart, Essentials, Advanced) ",BDR,2025-04-16,2025-04-23T07:37:50.960576-07:00,12,https://app.salesloft.com/app/cadences/3861366
+3917353,BDR-CS | Efficiency Resource Hub Follow-Up,BDR,2025-06-20,2025-08-07T13:04:25.520337-07:00,84,https://app.salesloft.com/app/cadences/3917353
+3927852,BDR-CS | Essentials Customer Upgrade Interest - [Custom Reports Intro],BDR,2025-07-06,2025-09-16T10:07:10.774594-07:00,1,https://app.salesloft.com/app/cadences/3927852
+4026882,BDR-CS | Family Law Summit 2025 Invite,BDR,2025-11-04,2026-01-27T07:41:23.636808-08:00,0,https://app.salesloft.com/app/cadences/4026882
+3995874,BDR-CS | Firm Leader Essentials Resource Page - CQLs ,BDR,2025-09-27,never,0,https://app.salesloft.com/app/cadences/3995874
+3995819,BDR-CS | Firm Leader Webinar - Attended,BDR,2025-09-26,2025-09-29T07:00:15.250620-07:00,0,https://app.salesloft.com/app/cadences/3995819
+3861356,BDR-CS | Grow Demo Webinar + CAM 25% off Product Follow Up - Demo CQLs,BDR,2025-04-16,2025-04-17T07:44:50.546172-07:00,1,https://app.salesloft.com/app/cadences/3861356
+3861359,BDR-CS | Grow Demo Webinar + CAM 25% off Product Follow Up - Registered CQLs,BDR,2025-04-16,never,0,https://app.salesloft.com/app/cadences/3861359
+3779169,BDR-CS | Heckerling - Lunch Attendees,BDR,2025-01-19,2025-01-31T10:59:03.536571-08:00,9,https://app.salesloft.com/app/cadences/3779169
+3779166,BDR-CS | Heckerling - Onsite Booth Attendees,BDR,2025-01-19,2025-02-04T12:56:42.901568-08:00,2,https://app.salesloft.com/app/cadences/3779166
+3902132,BDR-CS | Large Efficiency Quiz Follow-Up,BDR,2025-06-03,2025-06-27T05:00:19.997314-07:00,11,https://app.salesloft.com/app/cadences/3902132
+3988028,BDR-CS | Leadership Summit - Demo Attendance CQLs,BDR,2025-09-17,2025-09-29T07:01:40.690905-07:00,52,https://app.salesloft.com/app/cadences/3988028
+3987906,BDR-CS | Leadership Summit - Poll CQLs,BDR,2025-09-17,2025-09-22T09:13:57.430049-07:00,55,https://app.salesloft.com/app/cadences/3987906
+3991695,BDR-CS | Leadership Summit - Recent Non-Summit CQLs,BDR,2025-09-23,2025-09-24T12:24:15.491359-07:00,87,https://app.salesloft.com/app/cadences/3991695
+3904748,BDR-CS | Legal AI Ladder Webinar - Duo Attended CQLs,BDR,2025-06-05,2025-06-18T09:25:58.351656-07:00,79,https://app.salesloft.com/app/cadences/3904748
+3846225,BDR-CS | LegalWeek- Onsite Booth Attendees ,BDR,2025-04-01,2025-05-02T13:26:47.887505-07:00,8,https://app.salesloft.com/app/cadences/3846225
+3789978,BDR-CS | NTLS - Onsite Booth Attendees,BDR,2025-01-30,2025-02-04T12:55:27.356508-08:00,4,https://app.salesloft.com/app/cadences/3789978
+4027692,BDR-CS | November What's New - CQL Follow-Up,BDR,2025-11-04,2025-11-12T08:37:15.402091-08:00,195,https://app.salesloft.com/app/cadences/4027692
+3983436,BDR-CS | Office Manager & Admin Webinar - Attended CQLs ,BDR,2025-09-12,2025-10-27T06:40:58.414785-07:00,91,https://app.salesloft.com/app/cadences/3983436
+3983430,BDR-CS | Office Manager & Admin Webinar - Poll CQLs,BDR,2025-09-12,2025-10-27T12:25:46.512353-07:00,31,https://app.salesloft.com/app/cadences/3983430
+4021851,BDR-CS | Paralegal Webinar - Attended CQLs,BDR,2025-10-28,2025-11-18T08:07:38.771787-08:00,29,https://app.salesloft.com/app/cadences/4021851
+4021847,BDR-CS | Paralegal Webinar - Poll CQLs ,BDR,2025-10-28,2025-10-29T08:44:41.426227-07:00,25,https://app.salesloft.com/app/cadences/4021847
+3994941,BDR-CS | Persona Webinar Series Invite - Attorney,BDR,2025-09-25,never,0,https://app.salesloft.com/app/cadences/3994941
+3971021,BDR-CS | Persona Webinar Series Invite - Managing Partner,BDR,2025-08-26,2025-09-25T15:12:34.791769-07:00,0,https://app.salesloft.com/app/cadences/3971021
+3971011,BDR-CS | Persona Webinar Series Invite - Office Manager,BDR,2025-08-26,2025-09-10T05:12:14.801541-07:00,0,https://app.salesloft.com/app/cadences/3971011
+3994938,BDR-CS | Persona Webinar Series Invite - Paralegal,BDR,2025-09-25,never,0,https://app.salesloft.com/app/cadences/3994938
+3902130,BDR-CS | Small Efficiency Quiz Follow-Up ,BDR,2025-06-03,2025-07-17T11:18:23.633486-07:00,32,https://app.salesloft.com/app/cadences/3902130
+3880305,BDR-CS | Solo & Small Firm Summit -Poll CQLs (Multi-product),BDR,2025-05-08,2025-09-25T10:49:38.572599-07:00,51,https://app.salesloft.com/app/cadences/3880305
+3880552,BDR-CS | Solo & Small Firm Summit -Poll DUO CQLs,BDR,2025-05-09,never,0,https://app.salesloft.com/app/cadences/3880552
+3902103,BDR-CS | Solo Efficiency Quiz Follow-Up,BDR,2025-06-03,2025-08-07T14:31:25.828346-07:00,21,https://app.salesloft.com/app/cadences/3902103
+3859781,BDR-CS | What's New with Clio + CAM 25% off Product Follow Up (Complete) ,BDR,2025-04-15,2025-04-25T14:22:49.654209-07:00,26,https://app.salesloft.com/app/cadences/3859781
+3859603,"BDR-CS | What's New with Clio + CAM 25% off Product Follow Up (EasyStart, Essentials, Advanced)",BDR,2025-04-15,2025-04-25T14:21:53.692916-07:00,58,https://app.salesloft.com/app/cadences/3859603
+4036799,BDR-CS-MM: November AI CLE - Attended CQL Follow-Up - IBC,BDR,2025-11-14,2025-11-20T09:22:48.399681-08:00,1,https://app.salesloft.com/app/cadences/4036799
+3223080,"BDR-CS: 2023-08 - Attended webinar, did not request info",BDR,2023-08-21,2025-09-23T11:02:06.993717-07:00,127,https://app.salesloft.com/app/cadences/3223080
+3223075,BDR-CS: 2023-08 - Registered but did not attend ,BDR,2023-08-21,2023-09-26T13:29:30.160197-07:00,287,https://app.salesloft.com/app/cadences/3223075
+3287723,"BDR-CS: 2023-10 Webinar - Demystifying Digital Advertising - Attended webinar, did not request info",BDR,2023-10-17,2023-10-19T15:40:08.273841-07:00,7,https://app.salesloft.com/app/cadences/3287723
+3287721,BDR-CS: 2023-10 Webinar - Demystifying Digital Advertising - Registered but did not attend,BDR,2023-10-17,2023-10-22T11:40:57.076876-07:00,60,https://app.salesloft.com/app/cadences/3287721
+3296114,"BDR-CS: 2023-10-25 Webinar - Watch How Law Firms Automate Intake - Attended, did not request info",BDR,2023-10-25,2023-10-26T08:31:21.228689-07:00,12,https://app.salesloft.com/app/cadences/3296114
+3296131,"BDR-CS: 2023-10-25 Webinar - Watch How Law Firms Automate Intake - Registered, did not attend",BDR,2023-10-25,2024-11-05T14:14:28.095170-08:00,43,https://app.salesloft.com/app/cadences/3296131
+3315393,"BDR-CS: 2023-11 Webinar - Personal Injury, Registered or Attended",BDR,2023-11-13,2024-03-21T08:29:32.651443-07:00,71,https://app.salesloft.com/app/cadences/3315393
+3338609,BDR-CS: 2023-12-06 Webinar - Personal Injury - How to Manage Medical Records and Settlements,BDR,2023-12-07,2024-08-23T14:57:47.563139-07:00,72,https://app.salesloft.com/app/cadences/3338609
+3655711,BDR-CS: 2024 Webinar Invite: Personal Injury Product Tour Aug 20 2024 1PM,BDR,2024-08-14,2024-08-14T11:44:50.822370-07:00,0,https://app.salesloft.com/app/cadences/3655711
+3616464,BDR-CS: 2024 Webinar Invite: Watch How Law Firms Use Clio for Client Intake,BDR,2024-07-09,2025-09-12T12:18:36.026795-07:00,0,https://app.salesloft.com/app/cadences/3616464
+3741069,BDR-CS: 2024 Webinar Invite: Watch How Law Firms Use Clio for Client Intake - Copy,BDR,2024-11-19,never,0,https://app.salesloft.com/app/cadences/3741069
+3428629,BDR-CS: 2024-03-05 CLE Webinar: Top Strategies for Improving Your Firm's Client Intake - Registered,BDR,2024-03-05,2025-04-23T10:43:36.417724-07:00,348,https://app.salesloft.com/app/cadences/3428629
+3776165,BDR-CS: 2025-01 MM CLE Webinar - Requested Demo (MM),BDR,2025-01-15,2025-08-28T08:36:48.703536-07:00,3,https://app.salesloft.com/app/cadences/3776165
+3775785,BDR-CS: 2025-01 MM CLE Webinar - Requested Demo (strat),BDR,2025-01-14,never,0,https://app.salesloft.com/app/cadences/3775785
+3796727,BDR-CS: 2025-02 Change Management CLE Webinar - Requested Demo (Strat) ,BDR,2025-02-06,2025-02-07T10:23:53.805335-08:00,2,https://app.salesloft.com/app/cadences/3796727
+3850647,"BDR-CS: 2025-04-08 Webinar: Intake CLE - Attended ""Optional Grow Demo"" CQLs",BDR,2025-04-06,2025-11-05T12:39:27.284220-08:00,33,https://app.salesloft.com/app/cadences/3850647
+3854212,BDR-CS: 2025-04-08 Webinar: Intake CLE - Complete Plan + Duo Demo CQLs,BDR,2025-04-09,2025-04-16T10:16:24.796693-07:00,55,https://app.salesloft.com/app/cadences/3854212
+3885353,BDR-CS: 2025-05 Webinar: Grow Walkthrough - CQLs,BDR,2025-05-14,2025-11-17T07:55:54.023847-08:00,20,https://app.salesloft.com/app/cadences/3885353
+3886077,BDR-CS: 2025-05 Webinar: Grow Walkthrough - Poll CQLs,BDR,2025-05-15,2025-05-20T09:26:48.811036-07:00,5,https://app.salesloft.com/app/cadences/3886077
+3915030,BDR-CS: 2025-06 Webinar: Grow Walkthrough - CQLs,BDR,2025-06-17,2025-06-18T08:43:05.137425-07:00,8,https://app.salesloft.com/app/cadences/3915030
+3915028,BDR-CS: 2025-06 Webinar: Grow Walkthrough - Poll CQLs,BDR,2025-06-17,2025-06-18T08:49:25.849681-07:00,2,https://app.salesloft.com/app/cadences/3915028
+3916093,BDR-CS: 2025-06 Webinar: Grow Walkthrough - Recording,BDR,2025-06-18,2025-06-19T09:58:38.920684-07:00,0,https://app.salesloft.com/app/cadences/3916093
+3947221,BDR-CS: August Duo Demo Webinar Promo,BDR,2025-07-29,2025-08-12T07:18:11.242104-07:00,0,https://app.salesloft.com/app/cadences/3947221
+3947247,BDR-CS: August WHLFUC Advanced Features Webinar Promo,BDR,2025-07-29,2025-08-15T12:49:34.396882-07:00,0,https://app.salesloft.com/app/cadences/3947247
+3954418,BDR-CS: Canada - Duo Outbound Feature Heavy - Upload Canadian Firms on US server,BDR,2025-08-06,2026-01-28T11:12:55.235797-08:00,21,https://app.salesloft.com/app/cadences/3954418
+3965018,BDR-CS: ClioCon 2025: Invite to customers,BDR,2025-08-19,2025-08-21T11:15:34.924503-07:00,0,https://app.salesloft.com/app/cadences/3965018
+3965390,BDR-CS: ClioCon 2025: Invite to customers - Anita,BDR,2025-08-19,2025-08-22T10:38:21.257548-07:00,19,https://app.salesloft.com/app/cadences/3965390
+3966327,BDR-CS: ClioCon 2025: Invite to customers - Brittany,BDR,2025-08-20,2025-08-27T12:50:32.107568-07:00,0,https://app.salesloft.com/app/cadences/3966327
+3966318,BDR-CS: ClioCon 2025: Invite to customers - Ciara,BDR,2025-08-20,2025-08-22T10:16:56.407167-07:00,0,https://app.salesloft.com/app/cadences/3966318
+3966324,BDR-CS: ClioCon 2025: Invite to customers - Gareth,BDR,2025-08-20,2025-08-22T06:53:24.128345-07:00,0,https://app.salesloft.com/app/cadences/3966324
+3965395,BDR-CS: ClioCon 2025: Invite to customers - Jarred,BDR,2025-08-19,2025-08-19T13:45:36.480297-07:00,16,https://app.salesloft.com/app/cadences/3965395
+3966311,BDR-CS: ClioCon 2025: Invite to customers - Kelly,BDR,2025-08-20,2025-08-22T10:57:27.921254-07:00,0,https://app.salesloft.com/app/cadences/3966311
+3966340,BDR-CS: ClioCon 2025: Invite to customers - Liz,BDR,2025-08-20,2025-08-22T10:04:29.745761-07:00,0,https://app.salesloft.com/app/cadences/3966340
+3965397,BDR-CS: ClioCon 2025: Invite to customers - Ridwan,BDR,2025-08-19,2025-08-19T13:45:38.344897-07:00,0,https://app.salesloft.com/app/cadences/3965397
+3965396,BDR-CS: ClioCon 2025: Invite to customers - Sarah,BDR,2025-08-19,2025-08-20T10:40:04.750104-07:00,0,https://app.salesloft.com/app/cadences/3965396
+3688390,BDR-CS: ClioCon In-Person Follow-up Account Reviews ,BDR,2024-09-19,never,0,https://app.salesloft.com/app/cadences/3688390
+4044925,BDR-CS: December 2025 Webinar Events Email Invite,BDR,2025-11-26,2025-12-15T09:22:29.133241-08:00,0,https://app.salesloft.com/app/cadences/4044925
+3775462,BDR-CS: Duo CQL = Visited Feature Page | Solo ,BDR,2025-01-14,2025-08-27T14:44:17.278766-07:00,18,https://app.salesloft.com/app/cadences/3775462
+3913862,BDR-CS: Duo CQL= AI Course Completion ,BDR,2025-06-16,2025-11-25T12:01:44.791752-08:00,62,https://app.salesloft.com/app/cadences/3913862
+3891563,BDR-CS: Duo CQL= Downloaded a Guide (AI Content) | May - Trial Lawyers Push,BDR,2025-05-21,2025-06-06T07:08:27.837407-07:00,222,https://app.salesloft.com/app/cadences/3891563
+3898163,BDR-CS: Duo CQL= Downloaded a Guide (AI Content) | Q2,BDR,2025-05-29,never,0,https://app.salesloft.com/app/cadences/3898163
+3771727,BDR-CS: Duo CQL= Visited Feature Page | Strategic,BDR,2025-01-09,2025-10-15T11:21:45.799361-07:00,171,https://app.salesloft.com/app/cadences/3771727
+3906189,BDR-CS: Duo Deep Dive Demo Webinar - Invite Copy - June 2025,BDR,2025-06-06,2025-07-22T11:41:45.029779-07:00,0,https://app.salesloft.com/app/cadences/3906189
+3938080,BDR-CS: Duo Outbound - Value Driven Outbound Cadence ,BDR,2025-07-17,2025-10-29T10:33:19.632821-07:00,115,https://app.salesloft.com/app/cadences/3938080
+3938458,BDR-CS: Duo Outbound Feature Heavy Auto,BDR,2025-07-17,2025-11-06T11:12:46.678608-08:00,121,https://app.salesloft.com/app/cadences/3938458
+4028314,BDR-CS: Family Law Summit - Webinar Poll Follow-Up: Manage AI CQLs,BDR,2025-11-05,2025-12-17T13:18:34.409181-08:00,193,https://app.salesloft.com/app/cadences/4028314
+3669362,"BDR-CS: Family Law Webinar- ""Best Practices for Family Law Firms: Tools & Tips for Intake"" ",BDR,2024-08-28,2025-09-23T10:59:14.316404-07:00,88,https://app.salesloft.com/app/cadences/3669362
+3744366,BDR-CS: Family Law outbound cadence ,BDR,2024-11-21,never,0,https://app.salesloft.com/app/cadences/3744366
+3745193,BDR-CS: Family and Criminal EOY outbound ,BDR,2024-11-24,2024-12-12T06:25:24.095863-08:00,31,https://app.salesloft.com/app/cadences/3745193
+3742168,BDR-CS: Family law firm webinar Dec 5 Invite ,BDR,2024-11-20,2024-11-20T06:42:25.285011-08:00,0,https://app.salesloft.com/app/cadences/3742168
+3740122,BDR-CS: Feature Heavy Accounting  - Auto emails,BDR,2024-11-18,2025-07-21T13:40:52.632794-07:00,0,https://app.salesloft.com/app/cadences/3740122
+4035847,BDR-CS: Feature Heavy Draft Outbound - Wills & Estates/Family - COPY V.C.,BDR,2025-11-13,never,0,https://app.salesloft.com/app/cadences/4035847
+3404329,BDR-CS: Feature Heavy Grow/PI,BDR,2024-02-15,2025-10-07T08:35:06.670848-07:00,1076,https://app.salesloft.com/app/cadences/3404329
+3737278,BDR-CS: Goal Setting CLE (Nov 12) - Attended/Registered ,BDR,2024-11-13,2024-11-25T11:02:30.297325-08:00,648,https://app.salesloft.com/app/cadences/3737278
+3735684,BDR-CS: Goal Setting CLE (Nov 12) - Demo Request,BDR,2024-11-12,2024-11-14T13:53:06.645582-08:00,50,https://app.salesloft.com/app/cadences/3735684
+3603046,"BDR-CS: Grow Demo Webinar + Promo ""Watch How Law Firms Use Clio for Client Intake""   - Copy",BDR,2024-06-26,never,0,https://app.salesloft.com/app/cadences/3603046
+3907120,BDR-CS: Grow Webinar June - Invite Cadence,BDR,2025-06-09,2025-06-11T13:15:32.236271-07:00,0,https://app.salesloft.com/app/cadences/3907120
+3926964,BDR-CS: July 2025 Webinar Events email Invite ,BDR,2025-07-03,2025-07-29T11:29:19.361823-07:00,0,https://app.salesloft.com/app/cadences/3926964
+3929610,BDR-CS: July 9th Draft Webinar email Invite,BDR,2025-07-08,2025-07-08T07:57:19.780529-07:00,0,https://app.salesloft.com/app/cadences/3929610
+3926428,BDR-CS: July Duo Demo Webinar Promo,BDR,2025-07-02,2025-07-18T09:30:17.211524-07:00,0,https://app.salesloft.com/app/cadences/3926428
+3916992,BDR-CS: June Duo Demo Webinar Promo,BDR,2025-06-19,2025-06-20T07:14:13.754427-07:00,0,https://app.salesloft.com/app/cadences/3916992
+3948939,BDR-CS: MS Word Webinar CQL Follow-Up,BDR,2025-07-30,2025-08-08T06:40:39.461303-07:00,2,https://app.salesloft.com/app/cadences/3948939
+3543045,BDR-CS: May 2024 $200 Gift Card Promotion - OLD CQLS,BDR,2024-05-15,2024-07-01T09:18:53.569073-07:00,783,https://app.salesloft.com/app/cadences/3543045
+3882507,BDR-CS: May Grow Demo Webinar Promo,BDR,2025-05-12,2025-05-12T15:09:26.758879-07:00,0,https://app.salesloft.com/app/cadences/3882507
+4036842,BDR-CS: Mid-Market Webinar CQL Follow-Ups (IBS),BDR,2025-11-14,never,0,https://app.salesloft.com/app/cadences/4036842
+4027952,BDR-CS: November 2025 Webinar Events Email Invite,BDR,2025-11-05,2025-11-05T16:35:55.689145-08:00,0,https://app.salesloft.com/app/cadences/4027952
+4035936,BDR-CS: November AI CLE - Attended CQL Follow-Up (IDS),BDR,2025-11-13,2025-11-14T12:34:27.593349-08:00,33,https://app.salesloft.com/app/cadences/4035936
+3995018,BDR-CS: October 2025 Webinar Events Email Invite,BDR,2025-09-25,2025-10-09T10:31:05.580971-07:00,0,https://app.salesloft.com/app/cadences/3995018
+3453882,BDR-CS: PI Summit Follow Up - Attended PI CQLs ,BDR,2024-03-20,2024-03-24T18:37:51.107742-07:00,125,https://app.salesloft.com/app/cadences/3453882
+3485700,BDR-CS: PI Webinar April 10th Follow Up - Attended CQLs ,BDR,2024-04-11,2024-04-12T10:52:37.458155-07:00,1,https://app.salesloft.com/app/cadences/3485700
+3935745,BDR-CS: Personal Injury Outbound Cadence PART 2 ,BDR,2025-07-15,2025-12-10T06:29:21.824390-08:00,971,https://app.salesloft.com/app/cadences/3935745
+3938327,BDR-CS: Personal Injury Outbound Cadence Part 2 Shorter emails,BDR,2025-07-17,2025-10-01T09:29:45.821772-07:00,2,https://app.salesloft.com/app/cadences/3938327
+3835346,"BDR-CS: STRAT Grow Demo Webinar-  ""Watch How Law Firms Use Clio for Client Intake""   ",BDR,2025-03-19,2025-03-20T15:00:52.535467-07:00,8,https://app.salesloft.com/app/cadences/3835346
+3928673,BDR-CS: Scorpion Clients Outbound Cadence,BDR,2025-07-07,2025-07-23T10:19:14.617334-07:00,81,https://app.salesloft.com/app/cadences/3928673
+3971065,BDR-CS: September 2025 Webinar Events Email Invite,BDR,2025-08-26,2025-09-12T12:24:12.103281-07:00,0,https://app.salesloft.com/app/cadences/3971065
+3835352,"BDR-CS: VELOCITY Grow Demo Webinar-  ""Watch How Law Firms Use Clio for Client Intake""",BDR,2025-03-19,2025-12-05T07:07:40.895296-08:00,12,https://app.salesloft.com/app/cadences/3835352
+3486165,BDR-CS: Webinar + Offer- Personal Injury - How to Manage Medical Records and Settlements - Project Catalyst,BDR,2024-04-11,2024-04-15T13:50:58.822153-07:00,51,https://app.salesloft.com/app/cadences/3486165
+3597292,BDR-CS: Webinar - Personal Injury - How to Manage Medical Records and Settlements ,BDR,2024-06-20,2024-09-19T10:26:58.633625-07:00,51,https://app.salesloft.com/app/cadences/3597292
+3317987,"BDR-CS: Webinar 11-15-2023 - How to Automate Your Firm With Clio, Registered or Attended",BDR,2023-11-15,2023-12-01T11:01:32.646683-08:00,120,https://app.salesloft.com/app/cadences/3317987
+3327160,"BDR-CS: Webinar 11-28-2023 -  ""Watch How Law Firms Use Clio for Client Intake""",BDR,2023-11-27,2023-11-29T18:36:04.990198-08:00,31,https://app.salesloft.com/app/cadences/3327160
+3336904,"BDR-CS: Webinar 12-05-2023 -  ""Annual Planning for Law Firms""",BDR,2023-12-06,2023-12-13T10:24:48.422002-08:00,128,https://app.salesloft.com/app/cadences/3336904
+3340563,"BDR-CS: Webinar 12-14-2023 -  ""Watch How Law Firms Use Clio for Client Intake"" ",BDR,2023-12-11,2024-06-27T16:40:49.093821-07:00,16,https://app.salesloft.com/app/cadences/3340563
+3398353,BDR-CS: Webinar Personal Injury FU - How to Manage Medical Records and Settlements,BDR,2024-02-12,2024-12-10T08:21:15.249154-08:00,340,https://app.salesloft.com/app/cadences/3398353
+3926522,BDR-CS: Wills & Estates Customer Webinar ,BDR,2025-07-02,2025-07-09T07:43:52.729456-07:00,0,https://app.salesloft.com/app/cadences/3926522
+3691802,BDR-Customer Sales - CQL pre call  ,BDR,2024-09-24,2025-08-07T17:11:04.423190-07:00,233,https://app.salesloft.com/app/cadences/3691802
+3932625,BDR-D Doc Auto Intro- California,BDR,2025-07-10,2025-08-07T08:30:14.031290-07:00,48,https://app.salesloft.com/app/cadences/3932625
+3677062,BDR-MM - AQL pre call ,BDR,2024-09-06,2025-01-14T10:28:31.268675-08:00,369,https://app.salesloft.com/app/cadences/3677062
+3346128,BDR-MM - Account Revival - Re-Engage ,BDR,2023-12-18,2024-06-18T10:14:55.693847-07:00,8,https://app.salesloft.com/app/cadences/3346128
+3275977,BDR-MM - BMC Webinar Webinar Download ,BDR,2023-10-06,2023-12-08T11:12:27.924317-08:00,38,https://app.salesloft.com/app/cadences/3275977
+3327740,BDR-MM - Direct Mail Follow-up MM LTR + Donuts - Target Accounts (OLD),BDR,2023-11-28,never,0,https://app.salesloft.com/app/cadences/3327740
+3396150,BDR-MM - Firm Central - Nurture Followup ,BDR,2024-02-08,2024-06-14T13:50:55.846161-07:00,39,https://app.salesloft.com/app/cadences/3396150
+3665554,BDR-MM - G2,BDR,2024-08-23,never,0,https://app.salesloft.com/app/cadences/3665554
+3342264,BDR-MM - General - Quick Call Cadence,BDR,2023-12-12,2024-01-15T13:36:39.484890-08:00,1,https://app.salesloft.com/app/cadences/3342264
+2987010,BDR-MM - General Cold Outbound/Multi Thread ,BDR,2023-02-13,2025-05-22T06:52:47.869106-07:00,764,https://app.salesloft.com/app/cadences/2987010
+3351134,BDR-MM - Intent/Websights - Billing,BDR,2024-01-01,2025-01-20T09:00:13.764387-08:00,28,https://app.salesloft.com/app/cadences/3351134
+3351139,BDR-MM - Intent/Websights - Case Management ,BDR,2024-01-01,2024-02-13T14:28:01.658386-08:00,2,https://app.salesloft.com/app/cadences/3351139
+3377725,BDR-MM - Legacy Software - Prospecting,BDR,2024-01-25,2024-03-01T07:44:10.579150-08:00,75,https://app.salesloft.com/app/cadences/3377725
+3000968,BDR-MM - Legal Trends Report 2022 - Prospecting ,BDR,2023-02-22,2023-10-11T15:24:55.999352-07:00,116,https://app.salesloft.com/app/cadences/3000968
+3349445,BDR-MM - Legal Week - DMs,BDR,2023-12-21,2025-03-17T11:28:12.074454-07:00,188,https://app.salesloft.com/app/cadences/3349445
+3037144,BDR-MM - Meaningful Touch,BDR,2023-03-17,2024-03-08T13:56:52.063940-08:00,9,https://app.salesloft.com/app/cadences/3037144
+3255827,BDR-MM - Multithread,BDR,2023-09-20,2024-05-02T15:05:12.121980-07:00,18,https://app.salesloft.com/app/cadences/3255827
+2847733,BDR-MM - NYC Meetup Invitation Low Touch - Prospecting,BDR,2022-10-20,2022-11-04T15:26:31.300552-07:00,0,https://app.salesloft.com/app/cadences/2847733
+3261122,BDR-MM - PCLaw Displacement Reboot - Prospecting,BDR,2023-09-25,2024-06-20T07:59:02.367408-07:00,15,https://app.salesloft.com/app/cadences/3261122
+3249221,BDR-MM - Partners - Utilization ,BDR,2023-09-13,2023-12-19T11:29:42.010483-08:00,460,https://app.salesloft.com/app/cadences/3249221
+3289861,BDR-MM - Personal Injury Add-On - Prospecting,BDR,2023-10-19,2025-04-18T07:28:38.092167-07:00,274,https://app.salesloft.com/app/cadences/3289861
+3218031,BDR-MM - Practice Areas 1 - All DM - Aug 23,BDR,2023-08-16,2024-01-26T07:48:47.651881-08:00,907,https://app.salesloft.com/app/cadences/3218031
+3304927,BDR-MM - TA Autobound - ATL,BDR,2023-11-02,2023-11-16T07:08:11.776979-08:00,121,https://app.salesloft.com/app/cadences/3304927
+3304513,BDR-MM - TA Autobound - BTL,BDR,2023-11-02,2023-11-17T12:09:15.696992-08:00,130,https://app.salesloft.com/app/cadences/3304513
+3279560,BDR-MM - Target Accounts - Paralegals ,BDR,2023-10-10,2024-02-07T16:33:19.719017-08:00,12,https://app.salesloft.com/app/cadences/3279560
+3006540,BDR-MM - Target Accounts - Partners,BDR,2023-02-27,2024-03-26T08:40:45.159965-07:00,268,https://app.salesloft.com/app/cadences/3006540
+3224288,BDR-MM - Territory Revival AQL ,BDR,2023-08-22,2023-11-22T10:05:25.823157-08:00,18,https://app.salesloft.com/app/cadences/3224288
+3287161,BDR-MM - Uptime Legal  Webinar Download,BDR,2023-10-17,2023-10-26T11:24:04.817544-07:00,8,https://app.salesloft.com/app/cadences/3287161
+3351531,BDR-MM - Websights - Billing/Time/Payments,BDR,2024-01-02,2025-01-10T14:13:40.651388-08:00,9,https://app.salesloft.com/app/cadences/3351531
+3351661,BDR-MM - Websights - Case Management,BDR,2024-01-02,2024-06-11T14:21:28.933624-07:00,5,https://app.salesloft.com/app/cadences/3351661
+4017166,BDR-MM ClioCon 2025 Follow Up -,BDR,2025-10-22,2025-11-10T09:34:04.143493-08:00,119,https://app.salesloft.com/app/cadences/4017166
+2990285,BDR-MM- High Growth,BDR,2023-02-14,2023-04-12T06:59:18.646470-07:00,401,https://app.salesloft.com/app/cadences/2990285
+3717573,BDR-MM-Alumni/Movers 2024,BDR,2024-10-22,never,0,https://app.salesloft.com/app/cadences/3717573
+3132702,BDR-S - AE Field Trip - Meeting Invitations,BDR,2023-05-31,never,0,https://app.salesloft.com/app/cadences/3132702
+3845900,BDR-S - AMA Blast One Off,BDR,2025-04-01,2025-04-01T08:29:49.218845-07:00,0,https://app.salesloft.com/app/cadences/3845900
+3649827,BDR-S - AQL - Artificial Intelligence (AI),BDR,2024-08-08,2024-12-12T15:06:38.827630-08:00,232,https://app.salesloft.com/app/cadences/3649827
+2974769,BDR-S - AQL - Follow-Up - DO NOT USE!!!!! ,BDR,2023-02-03,2024-08-02T06:54:03.208808-07:00,12387,https://app.salesloft.com/app/cadences/2974769
+3662792,BDR-S - AQL pre call ,BDR,2024-08-21,2025-09-08T06:25:12.766963-07:00,62,https://app.salesloft.com/app/cadences/3662792
+3923089,BDR-S - AQL showing Intent - July 2025,BDR,2025-06-28,2025-07-28T14:30:18.349647-07:00,248,https://app.salesloft.com/app/cadences/3923089
+3625052,BDR-S - Accounting Prospect Launch SL Cadence,BDR,2024-07-16,2024-12-03T11:57:29.331646-08:00,347,https://app.salesloft.com/app/cadences/3625052
+3621898,BDR-S - CL Pricing - 2 months Free,BDR,2024-07-12,2024-07-26T10:50:30.633973-07:00,173,https://app.salesloft.com/app/cadences/3621898
+3396822,BDR-S - Call List Initiative 2024,BDR,2024-02-09,2024-04-17T10:14:29.999595-07:00,2271,https://app.salesloft.com/app/cadences/3396822
+3218729,BDR-S - Capterra Intent - Email Only,BDR,2023-08-17,2023-08-21T17:37:23.222683-07:00,0,https://app.salesloft.com/app/cadences/3218729
+3210475,BDR-S - Capterra Intent - Prospecting,BDR,2023-08-09,2023-08-28T08:01:54.680695-07:00,502,https://app.salesloft.com/app/cadences/3210475
+3218543,BDR-S - Capterra Intent - Prospecting V2 (Daily Signals),BDR,2023-08-16,2023-09-20T10:17:11.023983-07:00,676,https://app.salesloft.com/app/cadences/3218543
+3222621,BDR-S - Capterra Intent - Prospecting V3 (Daily Signals),BDR,2023-08-21,never,0,https://app.salesloft.com/app/cadences/3222621
+3620528,BDR-S - ClioCon 2024 - Pre Event Outreach - Texas Firms,BDR,2024-07-11,never,0,https://app.salesloft.com/app/cadences/3620528
+3620555,BDR-S - ClioCon 2024 - Pre Event Outreach - Texas Firms - EMAIL ONLY,BDR,2024-07-11,never,0,https://app.salesloft.com/app/cadences/3620555
+3921569,BDR-S - Closed Lost Showing Intent - July 2025,BDR,2025-06-26,2025-07-28T11:28:47.914460-07:00,172,https://app.salesloft.com/app/cadences/3921569
+3592697,BDR-S - Cold Email Only (Regie),BDR,2024-06-18,2024-06-24T02:32:48.865586-07:00,0,https://app.salesloft.com/app/cadences/3592697
+3497744,BDR-S - Cold Email Only - 2024 ,BDR,2024-04-19,2024-12-17T08:34:58.207366-08:00,0,https://app.salesloft.com/app/cadences/3497744
+3572337,BDR-S - Cold Outbound  - V2,BDR,2024-06-01,2024-12-19T11:00:28.862614-08:00,877,https://app.salesloft.com/app/cadences/3572337
+3421702,BDR-S - Consensus - AQL 2024,BDR,2024-02-27,2024-05-17T06:41:42.703624-07:00,1312,https://app.salesloft.com/app/cadences/3421702
+3422627,BDR-S - Consensus - Call List Initiative 2024,BDR,2024-02-28,2024-04-16T08:30:14.066633-07:00,1558,https://app.salesloft.com/app/cadences/3422627
+3422644,BDR-S - Consensus - NO SHOW - Aggressive Cadence - Engage - V2,BDR,2024-02-28,2025-06-02T13:43:31.039849-07:00,104,https://app.salesloft.com/app/cadences/3422644
+3422610,BDR-S - Consensus - Nurture MQLs 2024,BDR,2024-02-28,2024-12-02T10:02:06.642313-08:00,1042,https://app.salesloft.com/app/cadences/3422610
+3421749,BDR-S - Consensus - TR - Previous Closed Lost - Prospecting - V1 ,BDR,2024-02-27,2024-12-24T18:36:39.985704-08:00,2583,https://app.salesloft.com/app/cadences/3421749
+4048478,BDR-S - Coyote Analytics Sunset Outreach Dec 2025 ,BDR,2025-12-03,2025-12-09T10:06:07.332381-08:00,6,https://app.salesloft.com/app/cadences/4048478
+3046251,BDR-S - Customer Near You - Denver,BDR,2023-03-24,2023-04-13T07:11:46.858124-07:00,41,https://app.salesloft.com/app/cadences/3046251
+3024499,BDR-S - Customer Near You - LA,BDR,2023-03-09,2023-04-13T07:39:02.250485-07:00,622,https://app.salesloft.com/app/cadences/3024499
+3024833,BDR-S - Customer Near You - NC,BDR,2023-03-09,2023-04-13T07:22:22.927805-07:00,53,https://app.salesloft.com/app/cadences/3024833
+3026052,BDR-S - Customer Near You - NYC,BDR,2023-03-10,2023-06-09T13:32:22.424787-07:00,322,https://app.salesloft.com/app/cadences/3026052
+3026972,BDR-S - Customer Near You - Philadelphia,BDR,2023-03-11,2023-04-13T07:18:37.834607-07:00,334,https://app.salesloft.com/app/cadences/3026972
+3046252,"BDR-S - Customer Near You - Washington, VA",BDR,2023-03-24,2023-06-29T19:36:38.791332-07:00,114,https://app.salesloft.com/app/cadences/3046252
+3914066,"BDR-S - Customers Near You -  Cantor, Wolff, Nicastro & Hall - New York",BDR,2025-06-17,never,0,https://app.salesloft.com/app/cadences/3914066
+3914026,BDR-S - Customers Near You -  Hemmat Law - Seattle,BDR,2025-06-17,never,0,https://app.salesloft.com/app/cadences/3914026
+3914051,BDR-S - Customers Near You -  Pritzker Hageman - Minneapolis,BDR,2025-06-17,never,0,https://app.salesloft.com/app/cadences/3914051
+3168221,BDR-S - Customers Near You - Customized Prospecting,BDR,2023-06-30,2023-10-25T13:32:13.399997-07:00,9,https://app.salesloft.com/app/cadences/3168221
+2981299,BDR-S - DM/Owner - Prospecting  - Rev 1 - Email Only SR,BDR,2023-02-08,never,0,https://app.salesloft.com/app/cadences/2981299
+3087452,BDR-S - DO NOT USE,BDR,2023-04-25,2024-04-02T12:31:00.599852-07:00,5315,https://app.salesloft.com/app/cadences/3087452
+2981281,BDR-S - DO NOT USE!,BDR,2023-02-08,2024-04-01T11:16:45.306658-07:00,0,https://app.salesloft.com/app/cadences/2981281
+3835638,BDR-S - Email Only - AI,BDR,2025-03-20,2025-06-02T15:00:41.017618-07:00,0,https://app.salesloft.com/app/cadences/3835638
+3824694,BDR-S - Enriched Accounts - Family Law - Prospecting,BDR,2025-03-09,2025-06-03T14:00:18.823317-07:00,332,https://app.salesloft.com/app/cadences/3824694
+3824685,BDR-S - Enriched Accounts - Generic Attorney - Prospecting,BDR,2025-03-09,2025-05-29T08:23:59.218955-07:00,3784,https://app.salesloft.com/app/cadences/3824685
+3824702,BDR-S - Enriched Accounts - Personal Injury - Prospecting,BDR,2025-03-09,2025-06-02T12:46:15.025890-07:00,714,https://app.salesloft.com/app/cadences/3824702
+3307700,BDR-S - EoY Bundle Series ,BDR,2023-11-06,2023-12-19T12:30:44.970765-08:00,0,https://app.salesloft.com/app/cadences/3307700
+3660392,BDR-S - G2,BDR,2024-08-20,2025-02-06T02:25:54.453090-08:00,0,https://app.salesloft.com/app/cadences/3660392
+3169271,BDR-S - Hiring Firms,BDR,2023-07-03,2023-07-07T12:58:42.300759-07:00,0,https://app.salesloft.com/app/cadences/3169271
+3662769,BDR-S - Hot Leads - Call Only Cadence,BDR,2024-08-21,2025-01-06T13:51:30.795308-08:00,102,https://app.salesloft.com/app/cadences/3662769
+3760568,BDR-S - Intent - Billing - January 2025,BDR,2024-12-16,2025-02-03T12:19:59.250775-08:00,847,https://app.salesloft.com/app/cadences/3760568
+3779084,BDR-S - Intent - Management - January 2025,BDR,2025-01-18,2025-01-31T07:33:36.666993-08:00,54,https://app.salesloft.com/app/cadences/3779084
+3792626,BDR-S - Intent - Strong Signal ,BDR,2025-02-04,2025-04-25T06:53:01.211331-07:00,385,https://app.salesloft.com/app/cadences/3792626
+3792718,BDR-S - Intent - Strong Signal  - Sendoso,BDR,2025-02-04,2025-04-03T10:38:42.081359-07:00,9,https://app.salesloft.com/app/cadences/3792718
+3755412,BDR-S - Intent AI - Dec24,BDR,2024-12-09,2025-01-09T12:09:10.064813-08:00,0,https://app.salesloft.com/app/cadences/3755412
+3791114,BDR-S - Intent Email Only - 2025 - V1,BDR,2025-02-03,2025-06-03T23:10:35.984056-07:00,0,https://app.salesloft.com/app/cadences/3791114
+3752387,BDR-S - Intent V1 - Copy,BDR,2024-12-04,never,0,https://app.salesloft.com/app/cadences/3752387
+3269581,BDR-S - JM Intent Email Only - Billing & Invoice,BDR,2023-10-03,2023-12-07T11:39:29.340164-08:00,0,https://app.salesloft.com/app/cadences/3269581
+3266421,"BDR-S - JM Intent Email Only - Lead, Document Management & Legal Technology",BDR,2023-09-29,2023-12-10T21:06:29.384565-08:00,0,https://app.salesloft.com/app/cadences/3266421
+3269869,BDR-S - JM Intent Email Only - Legal Operations,BDR,2023-10-03,2023-12-10T21:06:11.446532-08:00,0,https://app.salesloft.com/app/cadences/3269869
+3283479,BDR-S - JM PI Email Only,BDR,2023-10-13,2023-11-06T13:03:02.548133-08:00,0,https://app.salesloft.com/app/cadences/3283479
+3197163,BDR-S - JM WebSights Email Only,BDR,2023-07-28,2024-03-13T12:39:20.005982-07:00,0,https://app.salesloft.com/app/cadences/3197163
+3491174,BDR-S - JM WebSights Email Only - 2024,BDR,2024-04-16,2025-01-06T19:06:16.526981-08:00,0,https://app.salesloft.com/app/cadences/3491174
+3452336,BDR-S - Legal Insider Magazine,BDR,2024-03-19,2024-06-12T09:06:48.889006-07:00,232,https://app.salesloft.com/app/cadences/3452336
+3808640,BDR-S - MOFU TEMPLATE ,BDR,2025-02-20,never,0,https://app.salesloft.com/app/cadences/3808640
+3698064,BDR-S - Movers - 2025,BDR,2024-10-01,2025-03-19T08:00:53.263712-07:00,195,https://app.salesloft.com/app/cadences/3698064
+3183096,BDR-S - NMQL ,BDR,2023-07-17,2023-07-17T11:13:19.870363-07:00,15,https://app.salesloft.com/app/cadences/3183096
+3923091,BDR-S - NMQLs Showing Intent - 2025  - July 2025,BDR,2025-06-28,2025-07-28T11:35:42.363226-07:00,100,https://app.salesloft.com/app/cadences/3923091
+2953234,BDR-S - NO SHOW - Aggressive Cadence - Engaged - Rev 1,BDR,2023-01-19,never,0,https://app.salesloft.com/app/cadences/2953234
+3542544,BDR-S - NOSSCR 2024 Follow Up ,BDR,2024-05-15,2025-09-15T06:29:31.381988-07:00,397,https://app.salesloft.com/app/cadences/3542544
+3350689,BDR-S - New to Role - LinkedIn 2024,BDR,2023-12-28,2024-03-19T13:36:38.690944-07:00,21,https://app.salesloft.com/app/cadences/3350689
+3021523,BDR-S - New to Role - Prospecting,BDR,2023-03-08,2023-09-22T10:49:34.789443-07:00,0,https://app.salesloft.com/app/cadences/3021523
+3183227,BDR-S - Nurture MQL Revival ,BDR,2023-07-17,never,0,https://app.salesloft.com/app/cadences/3183227
+3183237,BDR-S - Nurture MQL and NAQL - DO NOT USE,BDR,2023-07-17,2024-12-11T09:14:59.172879-08:00,4218,https://app.salesloft.com/app/cadences/3183237
+3616679,BDR-S - Nurture MQLs 2024 - SOFT TERRITORIES,BDR,2024-07-09,2024-09-17T15:07:47.786047-07:00,188,https://app.salesloft.com/app/cadences/3616679
+3162347,BDR-S - Opportunities Near You,BDR,2023-06-26,2024-01-18T08:42:29.972454-08:00,472,https://app.salesloft.com/app/cadences/3162347
+3342303,BDR-S - PI Power Hour - Wave 1,BDR,2023-12-12,2025-01-31T13:00:07.762648-08:00,4228,https://app.salesloft.com/app/cadences/3342303
+3587562,BDR-S - Personal Injury Specific,BDR,2024-06-13,2024-11-18T15:55:46.539627-08:00,3070,https://app.salesloft.com/app/cadences/3587562
+3140544,BDR-S - Personalized (insert Practice Area) - DO NOT USE,BDR,2023-06-06,never,0,https://app.salesloft.com/app/cadences/3140544
+2949714,BDR-S - Previous Closed Lost - Prospecting - Rev 1,BDR,2023-01-17,never,0,https://app.salesloft.com/app/cadences/2949714
+2458788,BDR-S - Re-Engage Nurture Leads - Prospecting,BDR,2022-02-10,2024-12-20T13:11:45.792040-08:00,11201,https://app.salesloft.com/app/cadences/2458788
+3814390,BDR-S - Sporting Sendoso Send,BDR,2025-02-26,2025-02-26T10:40:47.345353-08:00,0,https://app.salesloft.com/app/cadences/3814390
+3686111,BDR-S - TR - Previous Closed Lost - Prospecting - V1 -Fraser,BDR,2024-09-17,2025-01-17T09:59:09.965492-08:00,24,https://app.salesloft.com/app/cadences/3686111
+2202386,BDR-S - Tailored Emails AQL,BDR,2021-07-23,2025-05-30T10:03:01.849150-07:00,17980,https://app.salesloft.com/app/cadences/2202386
+3590395,BDR-S - Target Accounts - Decision Maker - Something Sweet/Smart - Follow Up,BDR,2024-06-14,2024-08-12T06:49:50.956643-07:00,211,https://app.salesloft.com/app/cadences/3590395
+3590405,BDR-S - Target Accounts - Firm Admin - Something Sweet/Smart - Follow Up,BDR,2024-06-14,2024-07-12T14:40:40.449191-07:00,115,https://app.salesloft.com/app/cadences/3590405
+2962207,BDR-S - WebSights (ZI) - DO NOT USE,BDR,2023-01-26,2024-02-01T06:21:42.443926-08:00,8231,https://app.salesloft.com/app/cadences/2962207
+3279056,BDR-S - WebSights Call Only Office Manager ,BDR,2023-10-10,2023-11-28T15:43:16.582361-08:00,20,https://app.salesloft.com/app/cadences/3279056
+3388450,BDR-S - ZI WebSights 2024 - DO NOT USE,BDR,2024-02-03,2024-02-20T20:48:23.102126-08:00,518,https://app.salesloft.com/app/cadences/3388450
+3395569,BDR-S / MM - Firm Central Users,BDR,2024-02-08,never,0,https://app.salesloft.com/app/cadences/3395569
+3687714,BDR-S ALL Firm Central - High Touch ,BDR,2024-09-18,2025-07-24T08:47:11.438140-07:00,115,https://app.salesloft.com/app/cadences/3687714
+2653283,BDR-S Blitz Cadence,BDR,2022-06-14,2022-08-17T14:49:14.988983-07:00,292,https://app.salesloft.com/app/cadences/2653283
+2199434,BDR-S Clio Con 2021,BDR,2021-07-21,2022-10-04T13:41:28.766069-07:00,3,https://app.salesloft.com/app/cadences/2199434
+4014593,BDR-S ClioCon 2025 Follow Up,BDR,2025-10-20,2025-12-15T18:54:10.890531-08:00,293,https://app.salesloft.com/app/cadences/4014593
+4005257,BDR-S Sprint: Custom Reporting - October 2025 - EMAIL ONLY,BDR,2025-10-08,2025-10-22T08:53:53.924337-07:00,0,https://app.salesloft.com/app/cadences/4005257
+3981710,BDR-S Sprint: Summer Promo CL Sept 2025,BDR,2025-09-10,2025-09-25T08:25:13.136383-07:00,654,https://app.salesloft.com/app/cadences/3981710
+3756329,BDR-S and BDR-MM - Theragun Direct Mail Follow-up - Prospecting,BDR,2024-12-10,2025-02-26T13:55:59.199828-08:00,369,https://app.salesloft.com/app/cadences/3756329
+3699544,BDR-S- Abacus CL Downtime-Isaac,BDR,2024-10-02,2025-02-19T22:17:32.951325-08:00,148,https://app.salesloft.com/app/cadences/3699544
+3667925,BDR-S-Practice Panther Increase-SR,BDR,2024-08-27,2024-09-10T10:24:37.169330-07:00,85,https://app.salesloft.com/app/cadences/3667925
+3256715,BDR-S/AE-S - Customers in Your Building - Prospecting,BDR,2023-09-20,2023-10-26T11:09:51.079732-07:00,110,https://app.salesloft.com/app/cadences/3256715
+3200370,BDR-S/AE-S - Localized Group Demos - Invitations,BDR,2023-08-01,2023-08-21T13:50:57.630276-07:00,198,https://app.salesloft.com/app/cadences/3200370
+3200696,BDR-S/AE-S - Localized Group Demos S-NE-6 - Invitations,BDR,2023-08-01,2023-08-14T09:27:03.994766-07:00,105,https://app.salesloft.com/app/cadences/3200696
+2526678,BDR-S/MM - eGift Offer 2022 - CL no decision ,BDR,2022-03-24,2022-11-22T12:48:09.569822-08:00,153,https://app.salesloft.com/app/cadences/2526678
+3183607,BDR-S/V - Cookies to CL July '23 - Follow Up,BDR,2023-07-17,2024-02-22T11:04:06.022879-08:00,44,https://app.salesloft.com/app/cadences/3183607
+2222813,BDR-S: Nurture - MT,BDR,2021-08-09,2023-01-31T11:25:44.631140-08:00,7,https://app.salesloft.com/app/cadences/2222813
+3320757,BDR-Strat- Disco No Show,BDR,2023-11-17,2025-05-30T10:43:18.487560-07:00,64,https://app.salesloft.com/app/cadences/3320757
+3661929,BDR-UK&I 1,BDR,2024-08-21,2025-03-10T02:58:03.624322-07:00,4843,https://app.salesloft.com/app/cadences/3661929
+3681916,BDR-UK&I 1 - AQL,BDR,2024-09-12,2025-06-04T08:47:39.148855-07:00,6238,https://app.salesloft.com/app/cadences/3681916
+3808022,BDR-V & BDR-S - Prewebinar AQL Test - CD Summit,BDR,2025-02-19,2025-07-25T10:04:20.220564-07:00,61,https://app.salesloft.com/app/cadences/3808022
+3297137,BDR-V - BOFU - AI v1,BDR,2023-10-26,2024-04-23T14:24:49.433347-07:00,46,https://app.salesloft.com/app/cadences/3297137
+2447182,BDR-V - Bad Phone,BDR,2022-02-03,2025-05-16T07:56:38.487297-07:00,0,https://app.salesloft.com/app/cadences/2447182
+2454427,BDR-V - Booked Call - Followup,BDR,2022-02-08,2025-06-03T13:28:26.509384-07:00,61,https://app.salesloft.com/app/cadences/2454427
+2940869,BDR-V - Clio Consultation Reschedule Q1 23 - Re-Engage - V2,BDR,2023-01-10,2024-04-04T06:53:01.785756-07:00,811,https://app.salesloft.com/app/cadences/2940869
+3897810,BDR-V - Enriched Accounts - Family Law - Prospecting (WIP),BDR,2025-05-29,never,0,https://app.salesloft.com/app/cadences/3897810
+3664475,BDR-V - Hot Leads - Call Only Cadence,BDR,2024-08-22,2025-06-04T15:33:14.863339-07:00,881,https://app.salesloft.com/app/cadences/3664475
+2458888,BDR-V - International Lead Cadence,BDR,2022-02-10,2024-02-26T14:30:35.952172-08:00,164,https://app.salesloft.com/app/cadences/2458888
+3297370,BDR-V - MOFU - General,BDR,2023-10-26,2024-07-08T16:06:35.381945-07:00,22,https://app.salesloft.com/app/cadences/3297370
+1693327,BDR-V - Re-Engage Nurture Leads,BDR,2020-07-17,2025-05-22T13:26:26.525105-07:00,15498,https://app.salesloft.com/app/cadences/1693327
+3345437,BDR-V - Re-Engage Nurture Leads - Updated Dec 23,BDR,2023-12-15,2025-05-29T13:46:41.846581-07:00,13511,https://app.salesloft.com/app/cadences/3345437
+3297415,BDR-V - Solo/Sm Firm - General,BDR,2023-10-26,2025-03-12T10:50:25.442752-07:00,31,https://app.salesloft.com/app/cadences/3297415
+3847667,BDR-V - WebSights ,BDR,2025-04-02,2025-05-12T16:07:28.603298-07:00,51,https://app.salesloft.com/app/cadences/3847667
+4057780,BDR-V - vLex Customer Blitz December 2025 - Prospecting,BDR,2025-12-17,2026-01-07T15:27:09.967826-08:00,27,https://app.salesloft.com/app/cadences/4057780
+3688424,BDR-V / BDR-S - Sendoso Golf Accounting Direct Mail Follow-up - Prospecting,BDR,2024-09-19,2024-11-01T15:54:39.937782-07:00,90,https://app.salesloft.com/app/cadences/3688424
+2118783,BDR-V Complete Guide to Starting your Law Firm,BDR,2021-05-21,2025-06-03T06:47:44.226607-07:00,16677,https://app.salesloft.com/app/cadences/2118783
+3315334,BDR-V Funnel - BOFU AQL ,BDR,2023-11-13,2025-05-20T12:19:15.352925-07:00,16080,https://app.salesloft.com/app/cadences/3315334
+3735370,BDR-V Intake/Grow,BDR,2024-11-12,2025-04-16T10:15:55.572107-07:00,26,https://app.salesloft.com/app/cadences/3735370
+3393788,BDR-V JB 2021-2022 Revival Cadence  ,BDR,2024-02-07,2024-02-21T13:31:41.055083-08:00,44,https://app.salesloft.com/app/cadences/3393788
+3753489,BDR-V Long Term Nurture/Drip,BDR,2024-12-05,2025-05-23T07:40:18.500246-07:00,6,https://app.salesloft.com/app/cadences/3753489
+3477249,BDR-V PI Cadence Update - DRAFT,BDR,2024-04-05,never,0,https://app.salesloft.com/app/cadences/3477249
+2094415,BDR-V White Paper,BDR,2021-05-04,2025-06-04T13:11:21.136106-07:00,21415,https://app.salesloft.com/app/cadences/2094415
+3664477,BDR-V- AQL pre call,BDR,2024-08-22,2025-06-04T15:55:09.412533-07:00,158,https://app.salesloft.com/app/cadences/3664477
+3690007,BDR-V- Sendoso Golf Accounting Direct Mail Follow-up - Prospecting ,BDR,2024-09-20,2024-10-08T06:00:50.550713-07:00,216,https://app.salesloft.com/app/cadences/3690007
+2587112,BDR-V/S - Virtual Law Firm / Remote Work,BDR,2022-05-03,2024-12-17T08:34:28.698614-08:00,5203,https://app.salesloft.com/app/cadences/2587112
+3692667,BDR/AE - Houston - Clear Guidance Partners Invite,BDR,2024-09-24,never,0,https://app.salesloft.com/app/cadences/3692667
+2848476,BDR/AE - NYC Meetup Attendees - Follow Up,BDR,2022-10-21,2022-11-15T09:01:18.678735-08:00,17,https://app.salesloft.com/app/cadences/2848476
+2867469,BDR/AE - NYC Meetup Invitation - Last Week to Join ML Edit,BDR,2022-11-03,never,0,https://app.salesloft.com/app/cadences/2867469
+2847725,BDR/AE - NYC Meetup Invitation High Touch - Prospecting,BDR,2022-10-20,2022-11-09T12:27:07.202479-08:00,587,https://app.salesloft.com/app/cadences/2847725
+2847716,BDR/AE - NYC Meetup Invitation Low Touch - Prospecting,BDR,2022-10-20,2022-11-09T12:28:57.118979-08:00,0,https://app.salesloft.com/app/cadences/2847716
+2867801,BDR/AE - NYC Meetup Invitation Low Touch - Prospecting - New Jersey,BDR,2022-11-03,2022-11-03T13:25:41.178329-07:00,0,https://app.salesloft.com/app/cadences/2867801
+2848677,BDR/AE - NYC Meetup No Shows - Follow Up,BDR,2022-10-21,2022-11-15T06:39:22.678765-08:00,55,https://app.salesloft.com/app/cadences/2848677
+3787758,BDR/AE - Paw's and Processo Event - May 2025,BDR,2025-01-29,2025-04-13T22:18:54.714890-07:00,0,https://app.salesloft.com/app/cadences/3787758
+3476616,BDR/AE/Channel - Louisiana Meet-Up - Prospecting,BDR,2024-04-05,2024-04-11T08:19:17.975570-07:00,14,https://app.salesloft.com/app/cadences/3476616
+3518984,BDR: Charleston Stasmayer Meet Up - May 2024,BDR,2024-05-02,2024-05-08T12:27:31.586845-07:00,49,https://app.salesloft.com/app/cadences/3518984
+3923779,BDRS-Scorpion x Clio,BDR,2025-06-30,never,0,https://app.salesloft.com/app/cadences/3923779
+4043069,BDRV - Black Friday ClioWork Untouched Leads,BDR,2025-11-24,2025-11-25T08:07:13.568028-08:00,129,https://app.salesloft.com/app/cadences/4043069
+3604259,BDRV - Call Connected Interest Review,BDR,2024-06-26,2025-04-18T12:21:05.445560-07:00,0,https://app.salesloft.com/app/cadences/3604259
+3604261,BDRV - Call Connected NOT Interest Review,BDR,2024-06-26,2025-05-23T13:39:15.092360-07:00,0,https://app.salesloft.com/app/cadences/3604261
+2911819,BDRV - Clio Consultation Reschedule EOY 22 - Re-Engage,BDR,2022-12-07,2022-12-29T13:54:56.841159-08:00,38,https://app.salesloft.com/app/cadences/2911819
+3994392,BDRV - ClioCon 2025,BDR,2025-09-25,2025-10-22T09:44:15.388720-07:00,25,https://app.salesloft.com/app/cadences/3994392
+3984991,BDRV - Discovery to PreQualify and convert to CC,BDR,2025-09-15,2025-09-17T06:18:17.946175-07:00,5,https://app.salesloft.com/app/cadences/3984991
+3220858,BDRV - EOM RESCHEDULE - DEALS,BDR,2023-08-18,2024-07-25T09:39:35.390812-07:00,372,https://app.salesloft.com/app/cadences/3220858
+3251487,BDRV - Google LSA Cadence,BDR,2023-09-15,2026-02-02T11:45:09.322190-08:00,1639,https://app.salesloft.com/app/cadences/3251487
+3616440,BDRV - Meeting Booked Review,BDR,2024-07-09,2025-06-04T11:58:36.539495-07:00,0,https://app.salesloft.com/app/cadences/3616440
+2913756,BDRV - MyCase Blitz - Before Cadencing,BDR,2022-12-08,2024-10-28T14:24:17.123404-07:00,2,https://app.salesloft.com/app/cadences/2913756
+3876619,BDRV - NMQL- Email / Call Blitz,BDR,2025-05-06,2025-05-22T11:40:03.828189-07:00,2,https://app.salesloft.com/app/cadences/3876619
+3739202,BDRV - November Reschedule + Promo,BDR,2024-11-15,2024-11-26T08:48:08.999031-08:00,0,https://app.salesloft.com/app/cadences/3739202
+3967381,BDRV - Outbound - Draft - Wills & Estates,BDR,2025-08-21,2026-01-13T11:32:26.698087-08:00,9,https://app.salesloft.com/app/cadences/3967381
+3342609,BDRV - PI Power Hour - Wave 1,BDR,2023-12-12,2025-05-22T07:24:14.508079-07:00,3521,https://app.salesloft.com/app/cadences/3342609
+3426418,BDRV - PI Power Hour - Wave 4,BDR,2024-03-01,2024-10-23T14:53:25.700936-07:00,22,https://app.salesloft.com/app/cadences/3426418
+3321763,BDRV - Referral Ask,BDR,2023-11-20,2024-04-10T12:12:41.406808-07:00,26,https://app.salesloft.com/app/cadences/3321763
+3637917,BDRV - Reschedule Coffee Send,BDR,2024-07-26,2025-10-09T16:51:23.295271-07:00,50,https://app.salesloft.com/app/cadences/3637917
+3549796,BDRV - Solo and Small Firm Virtual Summit 2024 - Post-Event Follow Up Mkting,BDR,2024-05-20,2025-05-12T08:05:46.251405-07:00,220,https://app.salesloft.com/app/cadences/3549796
+3228219,BDRV - Virtual ClioCon for Connected (no)Interest Follow-Up,BDR,2023-08-24,never,0,https://app.salesloft.com/app/cadences/3228219
+3396917,BDRV ALL Firm Central - High Touch,BDR,2024-02-09,2025-12-15T13:52:15.019378-08:00,420,https://app.salesloft.com/app/cadences/3396917
+3908494,BDRV AQL - AI Ladder Follow-Up,BDR,2025-06-10,never,0,https://app.salesloft.com/app/cadences/3908494
+3854520,BDRV AQL - Drafting Documents,BDR,2025-04-09,2025-08-28T07:34:07.616125-07:00,543,https://app.salesloft.com/app/cadences/3854520
+3917383,BDRV AQL - New Firm - Copy,BDR,2025-06-20,never,0,https://app.salesloft.com/app/cadences/3917383
+3828709,"BDRV AQL - Post Event Follow-Up - Criminal Defense March 11, 2025",BDR,2025-03-12,2025-03-13T07:46:45.912864-07:00,65,https://app.salesloft.com/app/cadences/3828709
+3798398,BDRV AQL - Post-Event Follow-Up - AI Feb 2025,BDR,2025-02-10,2025-02-21T10:29:10.876705-08:00,1406,https://app.salesloft.com/app/cadences/3798398
+3921554,BDRV AQL - Pre-Event Law Firm Security,BDR,2025-06-26,never,0,https://app.salesloft.com/app/cadences/3921554
+3921536,BDRV AQL - Pre-Event Template,BDR,2025-06-26,never,0,https://app.salesloft.com/app/cadences/3921536
+3921539,BDRV AQL - Pre-Event Wills & Estates,BDR,2025-06-26,2025-09-22T11:44:39.023321-07:00,0,https://app.salesloft.com/app/cadences/3921539
+3911966,BDRV AQL - Trial Lawyer Summit Post-Event,BDR,2025-06-13,2025-06-13T07:57:37.207598-07:00,128,https://app.salesloft.com/app/cadences/3911966
+3978172,BDRV AQL - UNTOUCHED 2 CALL + EMAIL,BDR,2025-09-05,2025-09-05T09:09:24.555867-07:00,18,https://app.salesloft.com/app/cadences/3978172
+3980212,BDRV AQL - Webinar Email marketing - Post Webinar ,BDR,2025-09-09,2026-01-27T07:44:55.154401-08:00,40,https://app.salesloft.com/app/cadences/3980212
+3427300,BDRV April '24 Webinar - Organizational Strategies to Maximize Success at Court,BDR,2024-03-04,2024-04-11T14:02:35.998475-07:00,673,https://app.salesloft.com/app/cadences/3427300
+3507463,"BDRV April EOM (zoominfo intent, websites)",BDR,2024-04-26,2025-04-23T12:43:20.928000-07:00,287,https://app.salesloft.com/app/cadences/3507463
+3365731,BDRV BC Reschedule Blitz,BDR,2024-01-16,never,0,https://app.salesloft.com/app/cadences/3365731
+3743842,BDRV Black Friday Send,BDR,2024-11-21,2025-11-25T06:53:22.261129-08:00,0,https://app.salesloft.com/app/cadences/3743842
+3976546,BDRV CSV Import,BDR,2025-09-03,never,0,https://app.salesloft.com/app/cadences/3976546
+3994459,BDRV ClioCon 1.Qualify Opps ,BDR,2025-09-25,2025-10-15T12:48:29.608895-07:00,22,https://app.salesloft.com/app/cadences/3994459
+3667851,BDRV Coffee + C/L,BDR,2024-08-27,2025-04-23T11:33:14.453035-07:00,247,https://app.salesloft.com/app/cadences/3667851
+3667698,BDRV Coffee + Disco,BDR,2024-08-27,2025-04-24T12:25:49.771849-07:00,297,https://app.salesloft.com/app/cadences/3667698
+3667915,BDRV Coffee + Vague,BDR,2024-08-27,2025-01-09T05:55:46.812487-08:00,2290,https://app.salesloft.com/app/cadences/3667915
+3758646,BDRV Connected No-Interest Duo/AI Blitz,BDR,2024-12-12,2025-02-27T12:39:04.415755-08:00,560,https://app.salesloft.com/app/cadences/3758646
+2077385,BDRV DOGs - MT Cadence,BDR,2021-04-22,2022-08-15T08:10:30.456079-07:00,234,https://app.salesloft.com/app/cadences/2077385
+3309270,BDRV Dec Webinar - Organizing your firm - The AI-Forward Law Firm: A Conversation on What’s Next for Legal,BDR,2023-11-07,2024-12-10T07:38:11.761901-08:00,6252,https://app.salesloft.com/app/cadences/3309270
+3751570,BDRV Duo/AI Blitz,BDR,2024-12-04,2025-05-30T10:48:11.972107-07:00,10119,https://app.salesloft.com/app/cadences/3751570
+3603316,BDRV EOQ C/L OPPS CALL CADENCE,BDR,2024-06-26,2024-06-26T11:49:26.738125-07:00,400,https://app.salesloft.com/app/cadences/3603316
+3603288,BDRV EOQ NMQL Engagement CALL CADENCE,BDR,2024-06-26,2024-06-26T13:26:36.168686-07:00,2686,https://app.salesloft.com/app/cadences/3603288
+3603265,BDRV EOQ ReSCHeDuLE CALL CADENCE,BDR,2024-06-26,2024-07-22T10:37:51.121366-07:00,222,https://app.salesloft.com/app/cadences/3603265
+3685826,BDRV Family Law - Clio Con Hail Mary,BDR,2024-09-17,2024-09-27T08:38:12.001035-07:00,1277,https://app.salesloft.com/app/cadences/3685826
+3651624,BDRV Family Law Focus 90 Day v1,BDR,2024-08-09,2025-03-08T07:41:56.093197-08:00,5135,https://app.salesloft.com/app/cadences/3651624
+3651630,BDRV Family Law Focus Fish Bowl v1,BDR,2024-08-09,2024-08-20T06:24:46.256649-07:00,0,https://app.salesloft.com/app/cadences/3651630
+3753871,BDRV Family Law Summit Follow-Up 90 Day,BDR,2024-12-06,2024-12-09T12:53:30.916817-08:00,194,https://app.salesloft.com/app/cadences/3753871
+3651872,BDRV Family Law Zoom Info Import,BDR,2024-08-09,2024-08-16T07:13:39.180606-07:00,0,https://app.salesloft.com/app/cadences/3651872
+3357780,"BDRV Feb Webinar - Remote Law Firm Essentials to Maximize Efficiency, Security and Scalability",BDR,2024-01-08,2025-03-19T12:45:00.313575-07:00,3722,https://app.salesloft.com/app/cadences/3357780
+3962092,BDRV Follow-Up - Reply Emails,BDR,2025-08-14,never,0,https://app.salesloft.com/app/cadences/3962092
+3224446,BDRV HH 2021-2022 Revival Cadence ,BDR,2023-08-22,2024-04-19T08:45:11.278292-07:00,5430,https://app.salesloft.com/app/cadences/3224446
+3365780,BDRV HH Reschedule Blitz,BDR,2024-01-16,never,0,https://app.salesloft.com/app/cadences/3365780
+3296447,BDRV Halloween Blitz - Rebook,BDR,2023-10-25,2023-10-26T14:00:54.479700-07:00,171,https://app.salesloft.com/app/cadences/3296447
+3403043,BDRV JB 2021-2022 Revival Cadence ,BDR,2024-02-14,2024-02-22T10:20:23.530170-08:00,9,https://app.salesloft.com/app/cadences/3403043
+3365781,BDRV JB Reschedule Blitz,BDR,2024-01-16,never,0,https://app.salesloft.com/app/cadences/3365781
+3341977,BDRV Jan Webinar - Mastering Productivity: MS Word and Outlook Tips for Lawyers,BDR,2023-12-12,2024-01-08T13:40:11.194441-08:00,2710,https://app.salesloft.com/app/cadences/3341977
+3392370,BDRV March '24 Webinar - Top Strategies for Improving Your Firm's Client Intake,BDR,2024-02-06,2025-03-08T07:44:19.797731-08:00,3130,https://app.salesloft.com/app/cadences/3392370
+3953428,BDRV NMQL - Exploring Options - Copy,BDR,2025-08-05,never,0,https://app.salesloft.com/app/cadences/3953428
+3953429,BDRV NMQL - Exploring Options - Team MA ,BDR,2025-08-05,2025-08-21T07:51:17.754154-07:00,0,https://app.salesloft.com/app/cadences/3953429
+3858341,BDRV NMQL - Timeline - C/L and Needs Nurturing,BDR,2025-04-14,2025-04-16T12:40:45.874043-07:00,21,https://app.salesloft.com/app/cadences/3858341
+3776600,BDRV NMQL AI Invite/Duo Focus Jan 2025,BDR,2025-01-15,2025-05-15T13:10:43.057904-07:00,5589,https://app.salesloft.com/app/cadences/3776600
+3929993,BDRV No-CSQL - Draft - Outbound,BDR,2025-07-08,2025-11-17T09:03:25.905006-08:00,5,https://app.salesloft.com/app/cadences/3929993
+3295771,BDRV Nov Webinar - Organizing your firm,BDR,2023-10-25,2024-11-13T10:16:01.601331-08:00,1876,https://app.salesloft.com/app/cadences/3295771
+3923601,BDRV Outbound - Draft Jump-Start,BDR,2025-06-30,2025-09-05T14:48:46.233821-07:00,19,https://app.salesloft.com/app/cadences/3923601
+3309007,BDRV PI Webinar - Nov 16,BDR,2023-11-07,2024-01-05T13:48:57.353861-08:00,585,https://app.salesloft.com/app/cadences/3309007
+3917382,BDRV PILOT - Letter Send & Follow-Up,BDR,2025-06-20,2025-07-09T12:42:32.786267-07:00,482,https://app.salesloft.com/app/cadences/3917382
+3326475,BDRV Personal Injury,BDR,2023-11-27,2025-04-03T13:39:40.919629-07:00,628,https://app.salesloft.com/app/cadences/3326475
+3634274,BDRV Prospect Evaluation,BDR,2024-07-23,2024-07-26T10:44:35.108877-07:00,0,https://app.salesloft.com/app/cadences/3634274
+4015900,BDRV Sarah Family Law Summit 2025,BDR,2025-10-21,2025-11-05T09:25:58.326858-08:00,813,https://app.salesloft.com/app/cadences/4015900
+3741605,BDRV Simmer - Interest,BDR,2024-11-19,never,0,https://app.salesloft.com/app/cadences/3741605
+3840107,BDRV Simmer - Software Advice,BDR,2025-03-25,2025-06-04T09:09:54.968770-07:00,67,https://app.salesloft.com/app/cadences/3840107
+3616451,BDRV Simmer Q3 2024,BDR,2024-07-09,never,0,https://app.salesloft.com/app/cadences/3616451
+3861826,BDRV Special Initiative - Payments/LawPay,BDR,2025-04-17,2025-04-21T12:35:13.442294-07:00,707,https://app.salesloft.com/app/cadences/3861826
+3890417,BDRV WORKING COPY - NFLETTER,BDR,2025-05-20,never,0,https://app.salesloft.com/app/cadences/3890417
+3616489,BDRV Warm-Up Q3 2024,BDR,2024-07-09,never,0,https://app.salesloft.com/app/cadences/3616489
+3733165,BDRV Weekend Email - Demo,BDR,2024-11-08,2024-12-11T20:45:06.629866-08:00,0,https://app.salesloft.com/app/cadences/3733165
+2454185,BDR_CS - Visited App Directory IM (Direct 2022),BDR,2022-02-08,2023-01-18T07:20:36.765545-08:00,25,https://app.salesloft.com/app/cadences/2454185
+3426386,BLIND CAL SEND - Reschedule BDR Opps,BDR,2024-03-01,2024-03-06T14:36:05.378101-08:00,5,https://app.salesloft.com/app/cadences/3426386
+3426415,BLIND CAL SEND - Reschedule BDR Opps CLEANUP,BDR,2024-03-01,2024-03-20T15:02:22.787204-07:00,4,https://app.salesloft.com/app/cadences/3426415
+3412851,BOFU - 90 Day Churn - BDRV,BDR,2024-02-21,never,0,https://app.salesloft.com/app/cadences/3412851
+3313976,BOFU - BDRV Funnel V1 ,BDR,2023-11-12,2024-03-01T12:39:03.200365-08:00,2001,https://app.salesloft.com/app/cadences/3313976
+3411865,BOFU - ZI Intent - BDRV,BDR,2024-02-21,never,0,https://app.salesloft.com/app/cadences/3411865
+3269732,BOFU TEMPLATE - BDRV,BDR,2023-10-03,2024-05-10T07:41:21.959956-07:00,30,https://app.salesloft.com/app/cadences/3269732
+3625477,BRONZE - CLEAN UP CALL BDRV Q3 24 v1,BDR,2024-07-16,2024-12-19T06:50:07.044318-08:00,9347,https://app.salesloft.com/app/cadences/3625477
+3625192,BRONZE - CLEAN UP EMAIL BDRV Q3 24 v1,BDR,2024-07-16,2025-01-11T20:19:39.952448-08:00,366,https://app.salesloft.com/app/cadences/3625192
+4009954,CS-BDR | ClioCon - In Person & Virtual [Attended No CQL],BDR,2025-10-14,2025-11-02T20:13:03.399870-08:00,0,https://app.salesloft.com/app/cadences/4009954
+4009952,CS-BDR | ClioCon - In Person [Lead Scan CQL],BDR,2025-10-14,2025-10-28T08:04:36.488028-07:00,99,https://app.salesloft.com/app/cadences/4009952
+4009959,CS-BDR | ClioCon - Virtual [AI Session CQL],BDR,2025-10-14,2025-11-06T15:55:02.902683-08:00,64,https://app.salesloft.com/app/cadences/4009959
+4009961,CS-BDR | ClioCon - Virtual [Attended No CQL],BDR,2025-10-14,never,0,https://app.salesloft.com/app/cadences/4009961
+4017290,CS-BDR | ClioCon - Virtual [Draft Session CQL],BDR,2025-10-22,2025-10-23T08:46:04.700389-07:00,21,https://app.salesloft.com/app/cadences/4017290
+4017229,CS-BDR | ClioCon - Virtual [PI Session CQL],BDR,2025-10-22,2025-10-22T13:45:48.913800-07:00,4,https://app.salesloft.com/app/cadences/4017229
+4009957,CS-BDR | ClioCon - Virtual [Poll CQL],BDR,2025-10-14,2025-11-25T13:45:45.091585-08:00,84,https://app.salesloft.com/app/cadences/4009957
+3771884,CS-BDR: 2025-01: Duo Email Leads | MM General Customer Cross-Sell,BDR,2025-01-09,never,0,https://app.salesloft.com/app/cadences/3771884
+3920016,CS-BDR: June - EOM CQLs Re-Engage,BDR,2025-06-24,2025-06-25T20:15:57.767906-07:00,111,https://app.salesloft.com/app/cadences/3920016
+3229714,Cross-Sell BDR/AE - LSA - (No calls),BDR,2023-08-28,2024-05-15T12:04:18.119323-07:00,0,https://app.salesloft.com/app/cadences/3229714
+1403322,DO NOT USE -  BDR-V - Webinar Download - Archive 08/31/23,BDR,2020-01-15,2023-08-25T10:32:24.893014-07:00,10786,https://app.salesloft.com/app/cadences/1403322
+3031663,DO NOT USE - AE-S/BDR-MM - Mar 23 Direct Mail - DOGs (Cookies) - Follow Up - Archive 30-06-23,BDR,2023-03-14,2023-06-19T11:43:38.564449-07:00,319,https://app.salesloft.com/app/cadences/3031663
+2661068,DO NOT USE - AE/BDR - Direct Mail - CL Opps Cookie Kit V2 - Archive 07/31/23,BDR,2022-06-17,2023-04-13T13:16:22.288001-07:00,161,https://app.salesloft.com/app/cadences/2661068
+1903591,DO NOT USE - AE/BDR-CS - Cold Drip Email Outreach (June 2022) - Archive 07/31/23,BDR,2020-12-07,2023-05-17T10:54:27.055400-07:00,0,https://app.salesloft.com/app/cadences/1903591
+2874912,DO NOT USE - AE/BDR-MM - EOY Push - DOGs - Archive 08/31/23,BDR,2022-11-08,2023-05-30T14:27:14.864969-07:00,1234,https://app.salesloft.com/app/cadences/2874912
+1550772,DO NOT USE - AE/BDR-S - DOG Opps Cadence - CV - Archive 07/31/23,BDR,2020-04-14,2023-05-15T11:26:47.388315-07:00,101,https://app.salesloft.com/app/cadences/1550772
+2485403,DO NOT USE - AE/BDR-S - Direct Mail - CL Opps Cookie Kit V1 - Archive 08/31/23,BDR,2022-02-28,2023-03-28T09:33:42.619309-07:00,37,https://app.salesloft.com/app/cadences/2485403
+3121100,DO NOT USE - AE/BDR-S/MM - Direct Mail - DOGs (Cookies) - Follow Up - June 23 - Archive 08/31/23,BDR,2023-05-19,2023-07-25T05:51:25.667732-07:00,12,https://app.salesloft.com/app/cadences/3121100
+2868439,DO NOT USE - AE/BDR-S/MM - Direct Mail - Target Accounts (Cookies) - Follow-Up - Archive 07/31/23,BDR,2022-11-03,2023-06-14T19:25:29.871220-07:00,174,https://app.salesloft.com/app/cadences/2868439
+2165648,DO NOT USE - AE/BDR-V - Team HQ Outbound Cadence - Archive 07/31/23,BDR,2021-06-24,2023-02-02T15:10:19.977834-08:00,2942,https://app.salesloft.com/app/cadences/2165648
+2730792,DO NOT USE - AR/BDR - Direct Mail Optimus - Prospecting V1 - 08/31/23,BDR,2022-08-04,2023-04-13T12:33:21.108240-07:00,23,https://app.salesloft.com/app/cadences/2730792
+2925247,DO NOT USE - BDR - Criminal Law - Awareness-ColdCalls - Archive 09/30/23,BDR,2022-12-20,2023-04-10T10:20:49.977793-07:00,780,https://app.salesloft.com/app/cadences/2925247
+1408057,DO NOT USE - BDR - DOG Opps Cadence - V1 - Archive 09/30/23,BDR,2020-01-20,2023-08-14T10:06:11.535102-07:00,9379,https://app.salesloft.com/app/cadences/1408057
+2057560,DO NOT USE - BDR - Email/Call Forgotten Pipeline Cadence - Archive 08/31/23,BDR,2021-04-09,2023-02-21T09:20:14.763887-08:00,86,https://app.salesloft.com/app/cadences/2057560
+1995898,DO NOT USE - BDR - LTR 2021 Solo Download - Archive 08/31/23,BDR,2021-02-25,2023-03-27T06:46:03.127598-07:00,1399,https://app.salesloft.com/app/cadences/1995898
+3156249,DO NOT USE - BDR - Legal Cyber Security Webinar - Follow-Up - Archive 08/31/23,BDR,2023-06-20,2023-06-30T11:13:18.188426-07:00,8,https://app.salesloft.com/app/cadences/3156249
+2328531,DO NOT USE - BDR - Legal Trends Report 2021 - Prospecting - Move to 2022 Cadence - Archive 30-06-23,BDR,2021-10-26,2023-04-14T13:07:42.723782-07:00,4315,https://app.salesloft.com/app/cadences/2328531
+2457987,DO NOT USE - BDR - Missed Call - Archive 08/31/23,BDR,2022-02-09,2023-09-19T12:16:03.153284-07:00,268,https://app.salesloft.com/app/cadences/2457987
+2784711,DO NOT USE - BDR - MyCase - Self Identified Users - Competition - Archive 08/31/23,BDR,2022-09-09,2023-05-24T14:43:33.902542-07:00,353,https://app.salesloft.com/app/cadences/2784711
+2461699,DO NOT USE - BDR - Next Step Email Opt Out - Followup - Archive 08/31/23,BDR,2022-02-12,2023-02-13T16:26:45.183298-08:00,146,https://app.salesloft.com/app/cadences/2461699
+2891223,DO NOT USE - BDR - Nurture MQL Revival 12/22 - Nurture - Archive 09/30/23,BDR,2022-11-21,2024-01-05T08:49:07.490540-08:00,7445,https://app.salesloft.com/app/cadences/2891223
+1702053,DO NOT USE - BDR - Persona - DM - Move Prospects to New DM Persona - Archive 08/31/23,BDR,2020-07-24,2023-05-30T13:39:09.095723-07:00,388,https://app.salesloft.com/app/cadences/1702053
+3080721,DO NOT USE - BDR - Practice42 Webinar Follow up - 04-2023 - Archive 06-30-23,BDR,2023-04-19,2023-05-18T10:55:42.477243-07:00,0,https://app.salesloft.com/app/cadences/3080721
+2875463,DO NOT USE - BDR CS - Criminal Law  (Velocity-Strat) - Follow Up - Archive 08/31/23,BDR,2022-11-09,2023-01-18T09:38:09.463874-08:00,8,https://app.salesloft.com/app/cadences/2875463
+3001954,DO NOT USE - BDR-CS - ABA 2023 Pre-Event - Archive 06-30-23,BDR,2023-02-22,2023-02-24T11:57:23.556158-08:00,0,https://app.salesloft.com/app/cadences/3001954
+3107923,"DO NOT USE - BDR-CS - AI Webinar: Grow (Solo/velocity, Did Not Attend) - Archive 08/31/23",BDR,2023-05-10,2023-05-10T12:23:07.074870-07:00,0,https://app.salesloft.com/app/cadences/3107923
+3107898,"DO NOT USE - BDR-CS - AI Webinar: Grow Cadence (Strat, Attended) - Archive 08/31/23",BDR,2023-05-10,2023-08-10T11:35:42.687348-07:00,0,https://app.salesloft.com/app/cadences/3107898
+3107865,"DO NOT USE - BDR-CS - AI Webinar: Grow Cadence (Strat, Did Not Attend) - Archive 08/31/23",BDR,2023-05-10,2023-07-12T10:12:50.855495-07:00,0,https://app.salesloft.com/app/cadences/3107865
+2995136,DO NOT USE - BDR-CS - Attended Sales Webinar: Watch How Law Firms Use Clio Grow - Archive 08/31/23,BDR,2023-02-17,2023-07-20T12:06:56.310112-07:00,44,https://app.salesloft.com/app/cadences/2995136
+3183658,"DO NOT USE - BDR-CS - Attended, No Info Request - Watch How Law Firms Use Clio for Client Intake - 2023-07 - Archive 08/31/23",BDR,2023-07-17,2023-07-21T06:11:08.418965-07:00,67,https://app.salesloft.com/app/cadences/3183658
+3151641,DO NOT USE - BDR-CS - Customer Webinar: How Clio Customers Take a Stress-Free Summer - Did not request info -  2023-06 Attended - Archive 08/31/23,BDR,2023-06-15,2023-06-29T16:06:16.980011-07:00,67,https://app.salesloft.com/app/cadences/3151641
+3151634,DO NOT USE - BDR-CS - Customer Webinar: How Clio Customers Take a Stress-Free Summer - No Show - 2023-06 - Archive 08/31/23,BDR,2023-06-15,2023-07-03T13:00:54.085731-07:00,150,https://app.salesloft.com/app/cadences/3151634
+2414236,DO NOT USE - BDR-CS - Demo Request - Grow - Archive 08/31/23,BDR,2022-01-11,2023-08-15T07:16:10.349713-07:00,400,https://app.salesloft.com/app/cadences/2414236
+2252632,DO NOT USE - BDR-CS - Direct/Cold Approach - Archive 08/31/23,BDR,2021-08-31,2022-11-09T08:29:51.381780-08:00,265,https://app.salesloft.com/app/cadences/2252632
+3067009,DO NOT USE - BDR-CS - Grow Direct Mail - 04-2023 - Archive 08/31/23,BDR,2023-04-10,2023-05-01T08:52:22.169824-07:00,194,https://app.salesloft.com/app/cadences/3067009
+3089800,DO NOT USE - BDR-CS - Grow Direct Mail E-Gift - Follow up - Archive 08/31/23,BDR,2023-04-26,2023-05-04T11:15:43.138355-07:00,122,https://app.salesloft.com/app/cadences/3089800
+2939008,DO NOT USE - BDR-CS - Grow Intake Resolutions - Follow-Up - Archive 08/31/23,BDR,2023-01-09,2023-01-30T12:30:14.045235-08:00,266,https://app.salesloft.com/app/cadences/2939008
+3183634,DO NOT USE - BDR-CS - No Show - Watch How Law Firms Use Clio for Client Intake - 2023-07 - Archive 08/31/23,BDR,2023-07-17,2023-07-24T14:05:44.422914-07:00,179,https://app.salesloft.com/app/cadences/3183634
+3050923,DO NOT USE - BDR-CS - Solo and Small Firm Virtual Summit - Pre Event Invitation - Archive 06-30-23,BDR,2023-03-28,2023-03-28T16:10:42.749496-07:00,0,https://app.salesloft.com/app/cadences/3050923
+2447540,DO NOT USE - BDR-CS - Visited Product OR Feature Page IM (Educate 2022) - Archive 08/31/23,BDR,2022-02-03,2023-08-15T11:06:27.648186-07:00,878,https://app.salesloft.com/app/cadences/2447540
+3107955,"DO NOT USE - BDR-CS - Webinar: Grow Cadence (Solo/velocity, Attended) - Archive 08/31/23",BDR,2023-05-10,2023-05-10T12:36:33.578443-07:00,0,https://app.salesloft.com/app/cadences/3107955
+3121173,"DO NOT USE - BDR-CS - Webinar: Mastering Client Intake - Attended, did not request info - 2023-05 - Archive 08/31/23",BDR,2023-05-19,2023-06-30T13:47:59.680129-07:00,16,https://app.salesloft.com/app/cadences/3121173
+2994581,DO NOT USE - BDR-CS - Webinar: Watch How Law Firms Use Clio Grow - Archive 08/31/23,BDR,2023-02-16,2023-07-04T04:54:44.759846-07:00,123,https://app.salesloft.com/app/cadences/2994581
+3035302,"DO NOT USE - BDR-CS - Webinar: Watch How Law Firms Use Clio for Client Intake (Attended, didn't request info) - Archive 08/31/23",BDR,2023-03-16,2023-04-27T09:21:06.996122-07:00,74,https://app.salesloft.com/app/cadences/3035302
+3014290,DO NOT USE - BDR-CS - Webinar: Watch How Law Firms Use Clio for Client Intake - Archive 08/31/23,BDR,2023-03-02,2023-08-03T13:35:39.797857-07:00,156,https://app.salesloft.com/app/cadences/3014290
+3088110,"DO NOT USE - BDR-CS - Webinar: Watch How Solo and Small Firms Do Client Intake (Attended, didn't request info) - 2023-04 - Archive 08/31/23",BDR,2023-04-25,2023-04-26T12:02:12.778854-07:00,50,https://app.salesloft.com/app/cadences/3088110
+3088125,DO NOT USE - BDR-CS - Webinar: Watch How Solo and Small Firms Do Client Intake - Registered did not attend - 2023-04 - Archive 08/31/23,BDR,2023-04-25,2023-04-26T12:13:06.871108-07:00,107,https://app.salesloft.com/app/cadences/3088125
+2985724,DO NOT USE - BDR-MM - AQL - Tier 1 - Archive 08/31/23,BDR,2023-02-10,2023-09-07T13:45:44.377507-07:00,613,https://app.salesloft.com/app/cadences/2985724
+2985955,DO NOT USE - BDR-MM - BMC Webinar Follow up - 02-2023 - Archive 06-30-23,BDR,2023-02-10,2023-02-14T12:42:28.640286-08:00,21,https://app.salesloft.com/app/cadences/2985955
+3118961,DO NOT USE - BDR-MM - CJ Vacay - IT - Automated - Archive 07/31/23,BDR,2023-05-18,2023-06-28T07:10:22.241073-07:00,120,https://app.salesloft.com/app/cadences/3118961
+3118956,DO NOT USE - BDR-MM - CJ Vacay - Office & Operations - Automated - Archive 07/31/23,BDR,2023-05-18,2023-05-18T09:05:34.003385-07:00,0,https://app.salesloft.com/app/cadences/3118956
+3043873,DO NOT USE - BDR-MM - CL all reasons - High Grade - Archive 08/31/23,BDR,2023-03-22,2023-07-06T07:45:24.535857-07:00,278,https://app.salesloft.com/app/cadences/3043873
+2898491,DO NOT USE - BDR-MM - DM/OM - Coffee Offer Prospecting - Archive 08/31/23,BDR,2022-11-28,2023-01-03T14:07:06.631360-08:00,469,https://app.salesloft.com/app/cadences/2898491
+2998024,DO NOT USE - BDR-MM - Fully Automated - Archive 07/31/23,BDR,2023-02-21,2023-06-15T13:56:40.557233-07:00,0,https://app.salesloft.com/app/cadences/2998024
+3043801,DO NOT USE - BDR-MM - Intent - Archive 08/31/23,BDR,2023-03-22,2023-06-14T07:25:41.012441-07:00,58,https://app.salesloft.com/app/cadences/3043801
+2068762,DO NOT USE - BDR-MM - Law Firm Communication Webinar/Forgotten Pipeline - Archive 06-30-23,BDR,2021-04-16,2021-04-21T06:12:30.465645-07:00,0,https://app.salesloft.com/app/cadences/2068762
+3043898,DO NOT USE - BDR-MM - NO SHOW REBOOK - Aggressive - Archive 08/31/23,BDR,2023-03-22,2023-09-12T11:07:28.621634-07:00,10,https://app.salesloft.com/app/cadences/3043898
+3105416,DO NOT USE - BDR-MM - ONE400 Webinar Follow up - Archive 06-30-23,BDR,2023-05-09,2023-05-17T09:38:23.384632-07:00,2,https://app.salesloft.com/app/cadences/3105416
+3026533,DO NOT USE - BDR-MM - Office & Operations - Fully Automated - Archive 07/31/23,BDR,2023-03-10,2023-06-29T18:19:49.098195-07:00,0,https://app.salesloft.com/app/cadences/3026533
+3118953,DO NOT USE - BDR-MM - Vacay - Automated - Archive 07/31/23,BDR,2023-05-18,2023-07-06T12:57:29.103912-07:00,0,https://app.salesloft.com/app/cadences/3118953
+2949706,DO NOT USE - BDR-S - Criminal Law - Prospecting - V1 - Archive 08/31/23,BDR,2023-01-17,2023-07-13T07:08:55.295901-07:00,121,https://app.salesloft.com/app/cadences/2949706
+3031000,DO NOT USE - BDR-S - Customer Near You - Chicago - Archive 08/31/23,BDR,2023-03-14,2023-06-29T18:28:30.058958-07:00,3,https://app.salesloft.com/app/cadences/3031000
+3034569,"DO NOT USE - BDR-S - Customer Near You - Dallas, Austin, Houston - Archive 08/31/23",BDR,2023-03-16,2023-06-21T08:26:45.454628-07:00,45,https://app.salesloft.com/app/cadences/3034569
+3063125,DO NOT USE - BDR-S - Customer Near You - San Diego - Archive 08/31/23,BDR,2023-04-06,2023-07-11T18:39:47.087070-07:00,0,https://app.salesloft.com/app/cadences/3063125
+3029030,DO NOT USE - BDR-S - Customer Near You - San Fran - Archive 08/31/23,BDR,2023-03-13,2023-03-29T14:31:45.145862-07:00,14,https://app.salesloft.com/app/cadences/3029030
+3063896,DO NOT USE - BDR-S - Customer Near You - Seattle - Archive 08/31/23,BDR,2023-04-06,2023-07-19T17:01:04.677538-07:00,0,https://app.salesloft.com/app/cadences/3063896
+3026194,DO NOT USE - BDR-S - Customer Near You Newark - Archive 08/31/23,BDR,2023-03-10,never,0,https://app.salesloft.com/app/cadences/3026194
+2949710,DO NOT USE - BDR-S - DM/Owner - Prospecting  - Rev 1 - Archive 08/31/23,BDR,2023-01-17,2023-07-18T12:56:26.288516-07:00,614,https://app.salesloft.com/app/cadences/2949710
+2957584,DO NOT USE - BDR-S - Displacement Cadence - Archive 08/31/23,BDR,2023-01-23,2023-07-11T19:25:20.768886-07:00,0,https://app.salesloft.com/app/cadences/2957584
+2949617,DO NOT USE - BDR-S - Family Law - Prospecting - Rev 1 - Archive 08/31/23,BDR,2023-01-17,2023-07-27T07:05:19.264979-07:00,316,https://app.salesloft.com/app/cadences/2949617
+3037577,DO NOT USE - BDR-S - Paralegals - Fully Automated - Archive 08/31/23,BDR,2023-03-19,2023-07-25T16:00:06.400482-07:00,0,https://app.salesloft.com/app/cadences/3037577
+3064006,DO NOT USE - BDR-S - Solo and Small Firm Virtual Summit - Pre Event Invitation (Low touch) - Archive 06/30/23,BDR,2023-04-06,2023-04-11T16:28:44.617068-07:00,0,https://app.salesloft.com/app/cadences/3064006
+3063862,DO NOT USE - BDR-S - Solo and Small Firm Virtual Summit - Pre Event Invitation - Archive 06-30-23,BDR,2023-04-06,2023-04-07T08:33:20.466714-07:00,584,https://app.salesloft.com/app/cadences/3063862
+2950155,DO NOT USE - BDR-S - TR - Criminal Law - Prospecting - Rev 1 - Archive 08/31/23,BDR,2023-01-17,2023-07-13T07:00:32.260665-07:00,62,https://app.salesloft.com/app/cadences/2950155
+2950154,DO NOT USE - BDR-S - TR - DM/Owner - Prospecting - Rev 1 - Archive 08/31/23,BDR,2023-01-17,2023-07-05T11:36:11.430445-07:00,37,https://app.salesloft.com/app/cadences/2950154
+2950157,DO NOT USE - BDR-S - TR - Family Law - Prospecting - V1 - Archive 06/30/23,BDR,2023-01-17,2023-02-08T07:58:51.609326-08:00,124,https://app.salesloft.com/app/cadences/2950157
+2950156,DO NOT USE - BDR-S - TR - Wills-Estates - Prospecting - Rev 1 - Archive 08/31/23,BDR,2023-01-17,2023-05-04T07:48:28.575186-07:00,59,https://app.salesloft.com/app/cadences/2950156
+2949693,DO NOT USE - BDR-S - Wills-Estates - Prospecting - Rev 1 - Archive 08/31/23,BDR,2023-01-17,2023-04-06T16:54:12.568296-07:00,99,https://app.salesloft.com/app/cadences/2949693
+1693401,DO NOT USE - BDR-S Re-Engage Nurture Leads - Archive 07/31/23,BDR,2020-07-17,2023-06-28T08:17:50.794248-07:00,745,https://app.salesloft.com/app/cadences/1693401
+2332739,DO NOT USE - BDR-S Re-Engage Nurture Leads V2 - Archive 07/31/23,BDR,2021-10-28,2023-06-21T08:06:49.106814-07:00,6486,https://app.salesloft.com/app/cadences/2332739
+2868426,DO NOT USE - BDR-S/MM - Direct Mail-CL Timeline-Cookies - Follow-Up - Archive 08/31/23,BDR,2022-11-03,2023-03-24T07:34:58.020537-07:00,114,https://app.salesloft.com/app/cadences/2868426
+2979394,DO NOT USE - BDR-V - CA Trust Accounting Webinar - Prospecting - Archive 06-30-23,BDR,2023-02-07,2023-05-18T10:58:17.392916-07:00,1,https://app.salesloft.com/app/cadences/2979394
+3133570,DO NOT USE - BDR-V - HK ClioCon Invite - 2023 - Archive 11/30/23,BDR,2023-05-31,2023-09-13T17:51:30.098601-07:00,192,https://app.salesloft.com/app/cadences/3133570
+2861006,DO NOT USE - BDR-V - HK Reschedule - Discovery Call - Archive 08/31/23,BDR,2022-10-31,2023-07-18T11:51:10.695518-07:00,24,https://app.salesloft.com/app/cadences/2861006
+3258511,DO NOT USE - BDR-V - Reschedule Cadence ,BDR,2023-09-21,2025-04-24T06:49:34.474282-07:00,827,https://app.salesloft.com/app/cadences/3258511
+2748293,DO NOT USE - BDR-V Blitz Cadence - Archive 08/31/23,BDR,2022-08-16,2022-08-23T14:01:00.892935-07:00,181,https://app.salesloft.com/app/cadences/2748293
+2782488,DO NOT USE - BDR-V/S - PCLaw Break Free - Outreach (V2) - Archive 30-06-23,BDR,2022-09-08,2023-06-09T13:44:21.658567-07:00,113,https://app.salesloft.com/app/cadences/2782488
+2779417,DO NOT USE - BDR-V/S - PCLaw Break Free - Outreach - Archive 06/30/23,BDR,2022-09-07,2023-05-30T13:32:18.777194-07:00,206,https://app.salesloft.com/app/cadences/2779417
+3654848,DO NOT USE - BDR/AE - Chicago Paragon Tech Invite,BDR,2024-08-13,2024-08-26T14:24:38.922818-07:00,25,https://app.salesloft.com/app/cadences/3654848
+2961084,DO NOT USE - BDR/AE - Dallas Meetup Invitation High-Touch - Prospecting (2023-02-23) - Retire 02-28-2023,BDR,2023-01-25,2023-02-15T13:54:07.215090-08:00,81,https://app.salesloft.com/app/cadences/2961084
+2961136,DO NOT USE - BDR/AE - Dallas Meetup Invitation Low-Touch - Prospecting - Retire 02-28-2023,BDR,2023-01-25,2023-02-16T13:26:04.169325-08:00,0,https://app.salesloft.com/app/cadences/2961136
+2961144,DO NOT USE - BDR/AE - Houston Meetup Invitation High-Touch - Prospecting - Archive 07/31/23,BDR,2023-01-25,2023-02-15T08:41:15.722560-08:00,83,https://app.salesloft.com/app/cadences/2961144
+2961182,DO NOT USE - BDR/AE - Houston Meetup Invitation Low-Touch - Prospecting -Archive - 06-30-23,BDR,2023-01-25,2023-02-27T09:28:32.748577-08:00,0,https://app.salesloft.com/app/cadences/2961182
+2960949,DO NOT USE - BDR/AE - Miami Meetup Invitation High-Touch - Prospecting - Retire 02-28-2023,BDR,2023-01-25,2023-02-06T14:00:20.181369-08:00,16,https://app.salesloft.com/app/cadences/2960949
+2961028,DO NOT USE - BDR/AE - Miami Meetup Invitation Low-Touch - Prospecting - Retire 02-28-2023,BDR,2023-01-25,2023-02-16T06:54:48.541852-08:00,0,https://app.salesloft.com/app/cadences/2961028
+2081900,DO NOT USE - BDR/AE-CS - Outbound KB - Prospecting - Archive 07/31/23,BDR,2021-04-26,2023-07-18T12:40:42.560072-07:00,1267,https://app.salesloft.com/app/cadences/2081900
+1745026,DO NOT USE - BDR/AE-CS - Webinar - Follow-Up - Archive 08/31/23,BDR,2020-08-27,2023-05-09T14:27:38.623675-07:00,22,https://app.salesloft.com/app/cadences/1745026
+3121168,"DO NOT USE - BDR/AE-CS - Webinar: Mastering Client Intake - Registered, did not attend - 2023-05 - Archive 06-30-23",BDR,2023-05-19,2023-05-24T11:38:53.935667-07:00,49,https://app.salesloft.com/app/cadences/3121168
+3082761,DO NOT USE - BDR/AE-S - ALA Conference Attendees - Archive 06-30-23,BDR,2023-04-20,2023-05-04T11:31:37.302393-07:00,70,https://app.salesloft.com/app/cadences/3082761
+3094037,DO NOT USE - BDR/AE/Channel - Atlanta Meet-Up - Prospecting - Archive 30-06-23,BDR,2023-05-01,2023-05-18T07:54:45.528689-07:00,391,https://app.salesloft.com/app/cadences/3094037
+3710371,DO NOT USE - BDRV Family Law Cadence,BDR,2024-10-15,never,0,https://app.salesloft.com/app/cadences/3710371
+3688348,DO NOT USE - BDRV General Practice Cadence,BDR,2024-09-19,never,0,https://app.salesloft.com/app/cadences/3688348
+3067438,DO NOT USE - ML BDR-V - Solo and Small Firm Virtual Summit - Pre Event Invitation (High touch) - Archive 06-30-23,BDR,2023-04-11,2023-04-18T07:30:04.176717-07:00,2328,https://app.salesloft.com/app/cadences/3067438
+3122343,DO NOT USE - ML BDRV 1.Qualify Call Down 5/22 - Archive 09/30/23,BDR,2023-05-22,2023-06-06T11:31:30.364128-07:00,181,https://app.salesloft.com/app/cadences/3122343
+3103433,DO NOT USE - ML BDRV 1st May Blitz Calls - Archive 08/31/23,BDR,2023-05-08,2023-05-17T14:06:13.448056-07:00,2643,https://app.salesloft.com/app/cadences/3103433
+3124880,DO NOT USE - ML BDRV 60 Day Follow Up - Archive 08/31/23,BDR,2023-05-23,2023-05-25T08:18:24.137372-07:00,0,https://app.salesloft.com/app/cadences/3124880
+2884182,DO NOT USE - ML BDRV Coffee FishBowl - Archive 08/31/23,BDR,2022-11-15,2023-03-28T10:08:12.448073-07:00,0,https://app.salesloft.com/app/cadences/2884182
+3126541,DO NOT USE - ML BDRV Cookie Call Down March - Archive 08/31/23,BDR,2023-05-24,2023-05-25T15:00:19.021347-07:00,74,https://app.salesloft.com/app/cadences/3126541
+2884183,DO NOT USE - ML BDRV Family Law Webinar FishBowl - Archive 08/31/23,BDR,2022-11-15,2023-04-20T11:35:34.932317-07:00,0,https://app.salesloft.com/app/cadences/2884183
+3048654,DO NOT USE - ML BDRV MQL Solo/Sm Firm Virtual Summit - 09/19/2023,BDR,2023-03-27,2023-04-14T09:08:22.495861-07:00,4071,https://app.salesloft.com/app/cadences/3048654
+3072417,DO NOT USE - ML BDRV Solo/SM Summit RE: NOT attending & NO - Archive 08/31/23,BDR,2023-04-13,2023-04-14T06:23:08.009819-07:00,8,https://app.salesloft.com/app/cadences/3072417
+3072336,DO NOT USE - ML BDRV Solo/SM Summit RE:ATTENDING - Archive 08/31/23,BDR,2023-04-13,2023-04-18T16:28:22.400463-07:00,26,https://app.salesloft.com/app/cadences/3072336
+3117884,DO NOT USE - ML MGR BDRV Interest Call Down - Archive 09/30/23,BDR,2023-05-17,2023-05-22T15:12:48.133951-07:00,106,https://app.salesloft.com/app/cadences/3117884
+2982053,DO NOT USE - MLBDR-V - CA Trust Accounting Webinar - Prospecting - Archive 09/30/23,BDR,2023-02-08,2023-02-10T11:34:38.868501-08:00,1,https://app.salesloft.com/app/cadences/2982053
+3013951,DO NOT USE - MLBDRV ClioCon 2023 March 3 Discount - Thursdayv2 - Old Content - Archive Pending,BDR,2023-03-02,2023-03-10T08:31:00.467806-08:00,1252,https://app.salesloft.com/app/cadences/3013951
+2827248,DO NOT USE - SDR/BDR - Demo No Show / Cancellation,BDR,2022-10-07,2024-06-03T14:17:13.376452-07:00,2350,https://app.salesloft.com/app/cadences/2827248
+3000956,DO NOT USE - Start using BDR-MM - Nurture MQL Revival - 1 - Archive 09/30/23,BDR,2023-02-22,2023-08-10T06:11:29.461471-07:00,1949,https://app.salesloft.com/app/cadences/3000956
+3452707,DO NOT USE -BC BLIND CAL SEND - Reschedule BDR Opps - V2 ,BDR,2024-03-19,never,0,https://app.salesloft.com/app/cadences/3452707
+3687776,DP BDRV - Firm Central - Copy,BDR,2024-09-18,2024-09-18T13:51:02.964232-07:00,20,https://app.salesloft.com/app/cadences/3687776
+3822999,DP BDRV- Disco Reschedule Cadence  ,BDR,2025-03-06,2025-06-04T08:52:46.994256-07:00,47,https://app.salesloft.com/app/cadences/3822999
+3822987,DP BDRV- Reschedule Cadence ,BDR,2025-03-06,2025-04-23T15:22:46.617337-07:00,22,https://app.salesloft.com/app/cadences/3822987
+3935996,Duo - BDR-CS - Canada,BDR,2025-07-15,2025-07-15T12:47:59.948277-07:00,0,https://app.salesloft.com/app/cadences/3935996
+3936068,Duo - BDR-Core - Canada,BDR,2025-07-15,2025-09-03T08:28:39.338067-07:00,155,https://app.salesloft.com/app/cadences/3936068
+3592103,"EOQ - C/L Timeline, etc BDRV",BDR,2024-06-17,2024-06-25T06:24:03.998635-07:00,222,https://app.salesloft.com/app/cadences/3592103
+3592004,EOQ - C/L Went Dark BDRV,BDR,2024-06-17,2025-02-25T10:21:38.535396-08:00,1283,https://app.salesloft.com/app/cadences/3592004
+3592151,EOQ - NMQL BDRV,BDR,2024-06-17,2024-07-24T09:59:00.252330-07:00,9106,https://app.salesloft.com/app/cadences/3592151
+3592236,EOQ - Reschedule BDRV,BDR,2024-06-17,2024-06-26T11:55:22.308126-07:00,326,https://app.salesloft.com/app/cadences/3592236
+3859134,ERROR - BDRV AQL - Intake Webinar - ERROR,BDR,2025-04-15,2025-04-17T09:00:28.902991-07:00,101,https://app.salesloft.com/app/cadences/3859134
+3788681,Feb BDRV NMQL AI Invite/Duo Focus,BDR,2025-01-29,2025-03-20T08:56:21.652311-07:00,5712,https://app.salesloft.com/app/cadences/3788681
+3733651,GA BDR-V - Virtual Law Firm / Remote Work,BDR,2024-11-11,2024-11-15T10:57:43.055745-08:00,138,https://app.salesloft.com/app/cadences/3733651
+3616524,GOLD - Bulk CALL BDRV Q3 24 v1,BDR,2024-07-09,2024-11-15T08:53:16.969600-08:00,9259,https://app.salesloft.com/app/cadences/3616524
+3614721,GOLD - Bulk EMAIL BDRV Q3 24 v1,BDR,2024-07-08,2025-05-20T13:23:24.494387-07:00,0,https://app.salesloft.com/app/cadences/3614721
+3412237,HH - BOFU - NMQL March 5 Invite - BDRV,BDR,2024-02-21,2025-03-06T06:54:59.304628-08:00,1167,https://app.salesloft.com/app/cadences/3412237
+3489770,HH - Tax Day Email Blitz BDRV,BDR,2024-04-15,2024-05-29T06:53:45.359861-07:00,2827,https://app.salesloft.com/app/cadences/3489770
+3369812,HH BDRV - PI Power Hour - Wave 2,BDR,2024-01-18,2024-07-11T12:03:34.919495-07:00,404,https://app.salesloft.com/app/cadences/3369812
+3393507,HH BDRV - PI Power Hour - Wave 3,BDR,2024-02-07,2024-04-10T08:19:28.447898-07:00,351,https://app.salesloft.com/app/cadences/3393507
+3434578,HH BDRV - PI Power Hour - Wave 4,BDR,2024-03-07,2024-07-23T06:21:10.178034-07:00,1660,https://app.salesloft.com/app/cadences/3434578
+3428662,HH BDRV - PI Power Hour - Wave 4,BDR,2024-03-05,never,0,https://app.salesloft.com/app/cadences/3428662
+3367350,HH BDRV DOG Bulk Invite List Blitz ,BDR,2024-01-17,never,0,https://app.salesloft.com/app/cadences/3367350
+3365870,HH BDRV Reschedule Blitz,BDR,2024-01-16,2024-04-25T06:50:02.578397-07:00,78,https://app.salesloft.com/app/cadences/3365870
+3428653,HH BLIND CAL SEND - Reschedule BDR Opps,BDR,2024-03-05,2024-11-14T05:58:09.518552-08:00,13,https://app.salesloft.com/app/cadences/3428653
+3510438,HH/DP BDRV- Reschedule Cadence  ,BDR,2024-04-29,2024-07-16T08:15:33.315032-07:00,108,https://app.salesloft.com/app/cadences/3510438
+3422674,JB - BDR-V - Funnel - BOFU AQL,BDR,2024-02-28,2024-08-02T07:08:01.366411-07:00,3920,https://app.salesloft.com/app/cadences/3422674
+3412238,JB - BOFU - NMQL March 5 Invite - BDRV,BDR,2024-02-21,2025-06-17T04:55:41.537517-07:00,2022,https://app.salesloft.com/app/cadences/3412238
+3591066,JB - EOQ Promos Email Blitz BDRV ,BDR,2024-06-17,2024-06-28T10:34:11.555655-07:00,6,https://app.salesloft.com/app/cadences/3591066
+3489769,JB - Tax Day Email Blitz BDRV,BDR,2024-04-15,2024-07-18T12:15:03.772364-07:00,1462,https://app.salesloft.com/app/cadences/3489769
+3393789,JB BDR-V - PI Power Hour - Wave 3 ,BDR,2024-02-07,2024-03-07T08:15:38.120526-08:00,434,https://app.salesloft.com/app/cadences/3393789
+3427285,JB BDR-V - PI Power Hour - Wave 4 ,BDR,2024-03-04,2024-03-07T08:52:27.539303-08:00,0,https://app.salesloft.com/app/cadences/3427285
+3396729,JB BDRV - Firm Central,BDR,2024-02-09,2024-09-19T07:11:13.049735-07:00,110,https://app.salesloft.com/app/cadences/3396729
+3369810,JB BDRV - PI Power Hour - Wave 2,BDR,2024-01-18,2024-06-13T12:20:28.260452-07:00,433,https://app.salesloft.com/app/cadences/3369810
+3436747,JB BDRV - PI Power Hour - Wave 4 ,BDR,2024-03-08,2024-07-05T10:25:01.313878-07:00,297,https://app.salesloft.com/app/cadences/3436747
+3434582,JB BDRV - Updated PI Power Hour ,BDR,2024-03-07,2024-10-01T07:49:02.425303-07:00,531,https://app.salesloft.com/app/cadences/3434582
+3421660,JB BDRV Call Only,BDR,2024-02-27,2025-06-03T11:33:36.963652-07:00,765,https://app.salesloft.com/app/cadences/3421660
+3742981,JB BDRV Family Law Focus 2024 90 Day ,BDR,2024-11-20,2024-11-20T14:45:12.086073-08:00,0,https://app.salesloft.com/app/cadences/3742981
+3365868,JB BDRV Reschedule Blitz,BDR,2024-01-16,2024-07-01T12:23:43.115158-07:00,19,https://app.salesloft.com/app/cadences/3365868
+3785799,JB BDRV- Disco Reschedule Cadence  ,BDR,2025-01-27,2025-03-14T07:11:54.614211-07:00,77,https://app.salesloft.com/app/cadences/3785799
+3510026,JB BDRV- Reschedule Cadence  ,BDR,2024-04-29,2025-05-14T10:49:56.750959-07:00,159,https://app.salesloft.com/app/cadences/3510026
+3428710,JB BLIND CAL SEND - Reschedule BDR Opps,BDR,2024-03-05,2024-06-04T11:55:10.104838-07:00,3,https://app.salesloft.com/app/cadences/3428710
+3286188,JM - Hold Cadence for Distribution to BDRs,BDR,2023-10-17,2023-10-17T06:03:52.168928-07:00,0,https://app.salesloft.com/app/cadences/3286188
+3713800,LTR24 - BDRV - October Webinar,BDR,2024-10-17,2024-10-25T14:15:56.973554-07:00,149,https://app.salesloft.com/app/cadences/3713800
+3668745,MARIELLE BDR-V White Paper EMAIL ONLY,BDR,2024-08-28,2025-03-06T12:20:05.174388-08:00,47,https://app.salesloft.com/app/cadences/3668745
+3506412,ML - Tax Day Email Blitz BDRV,BDR,2024-04-25,2024-04-26T06:26:03.793020-07:00,57,https://app.salesloft.com/app/cadences/3506412
+3144117,ML BDRV - Call Connected - Interest 30/60/90 Day Follow Up,BDR,2023-06-08,2025-02-27T12:35:51.476643-08:00,319,https://app.salesloft.com/app/cadences/3144117
+3124885,ML BDRV 30 Day Follow Up,BDR,2023-05-23,2023-10-05T13:47:35.970995-07:00,0,https://app.salesloft.com/app/cadences/3124885
+3109583,ML BDRV AI AQL Follow Up,BDR,2023-05-11,2025-05-09T08:00:54.885336-07:00,267,https://app.salesloft.com/app/cadences/3109583
+3228818,ML BDRV ClioCon Virtual - New to Territory Intro,BDR,2023-08-25,2023-10-10T14:41:58.021335-07:00,334,https://app.salesloft.com/app/cadences/3228818
+3228890,ML BDRV ClioCon Virtual - Revisiting Previous Convos,BDR,2023-08-25,2023-09-26T09:28:15.651388-07:00,232,https://app.salesloft.com/app/cadences/3228890
+2849635,ML BDRV Cold Call v1 9 in 5,BDR,2022-10-24,2024-02-12T11:35:50.970632-08:00,9460,https://app.salesloft.com/app/cadences/2849635
+3219741,ML BDRV H2 Template,BDR,2023-08-17,never,0,https://app.salesloft.com/app/cadences/3219741
+3122323,ML BDRV Interest Call Down 5/22,BDR,2023-05-22,2023-07-13T14:32:32.026944-07:00,1103,https://app.salesloft.com/app/cadences/3122323
+3283860,ML BDRV LTR Virtual - New to Territory Intro,BDR,2023-10-13,2024-02-20T10:28:19.189873-08:00,1130,https://app.salesloft.com/app/cadences/3283860
+3027407,ML BDRV Solo/Sm Firm Virtual Summit,BDR,2023-03-13,2023-04-14T08:54:51.104186-07:00,873,https://app.salesloft.com/app/cadences/3027407
+2883947,ML BDRV ZoomInfo FishBowl,BDR,2022-11-15,2023-06-28T09:19:32.180130-07:00,0,https://app.salesloft.com/app/cadences/2883947
+3149059,ML MGR BDRV Review Call Connected,BDR,2023-06-13,2023-08-11T14:13:59.188257-07:00,0,https://app.salesloft.com/app/cadences/3149059
+3149761,ML MGR BDRV Review Call Connected NO-Interest,BDR,2023-06-13,2023-12-08T10:39:55.997116-08:00,0,https://app.salesloft.com/app/cadences/3149761
+3007846,MLBDRV ClioCon 2023 March 3 Discount,BDR,2023-02-27,2023-03-02T09:56:50.869188-08:00,181,https://app.salesloft.com/app/cadences/3007846
+3013528,MLBDRV ClioCon 2023 March 3 Discount - Thursday,BDR,2023-03-02,2023-03-02T08:48:40.742188-08:00,158,https://app.salesloft.com/app/cadences/3013528
+1889003,MM - BDR - COLD - Persona - Accounting,BDR,2020-11-23,2022-11-16T14:19:58.826784-08:00,48,https://app.salesloft.com/app/cadences/1889003
+1888933,MM - BDR - COLD - Persona - DM,BDR,2020-11-23,2023-02-22T07:33:31.790580-08:00,605,https://app.salesloft.com/app/cadences/1888933
+1889002,MM - BDR - COLD - Persona - Marketing,BDR,2020-11-23,2022-07-13T12:04:53.865704-07:00,66,https://app.salesloft.com/app/cadences/1889002
+1888999,MM - BDR - COLD - Persona - OM,BDR,2020-11-23,2023-01-09T15:58:19.627612-08:00,433,https://app.salesloft.com/app/cadences/1888999
+3121763,MM - BDR - Closed Lost - Number 2,BDR,2023-05-22,2023-05-25T13:50:09.057864-07:00,1,https://app.salesloft.com/app/cadences/3121763
+2997902,MM - BDR - Competition,BDR,2023-02-21,never,0,https://app.salesloft.com/app/cadences/2997902
+1889031,"MM - BDR - Warm/Nurture ""Down the Line""",BDR,2020-11-23,2023-02-17T10:11:54.589993-08:00,0,https://app.salesloft.com/app/cadences/1889031
+1896828,MM - BDR - Warm/Nurture On the Cusp ,BDR,2020-12-01,2022-09-22T07:58:04.320750-07:00,3,https://app.salesloft.com/app/cadences/1896828
+4047442,MM BDR-CS | Q4 Duo Closed Lost Re-Engage - OBC,BDR,2025-12-02,2025-12-18T16:37:29.157716-08:00,0,https://app.salesloft.com/app/cadences/4047442
+3785016,MM-BDR - CL Account - Webinar: How to Drive Change At MM Firms,BDR,2025-01-27,2025-02-04T13:44:32.935145-08:00,315,https://app.salesloft.com/app/cadences/3785016
+2745372,MM-BDR - ClioCon - Invite Cadence,BDR,2022-08-15,2022-09-28T07:29:57.864303-07:00,192,https://app.salesloft.com/app/cadences/2745372
+4058549,MM-BDR-CS - Clio Timekeeping Cohort 1 Outreach - OBC,BDR,2025-12-18,2026-01-07T13:41:42.855372-08:00,13,https://app.salesloft.com/app/cadences/4058549
+3269809,MOFU TEMPLATE - BDRV,BDR,2023-10-03,never,0,https://app.salesloft.com/app/cadences/3269809
+3724146,Michael L BDR-V White Paper EMAIL ONLY,BDR,2024-10-30,2024-11-18T05:45:18.236238-08:00,145,https://app.salesloft.com/app/cadences/3724146
+3726560,NE - BDR-S - AQL 2024 -,BDR,2024-11-01,2024-12-02T12:06:35.229456-08:00,53,https://app.salesloft.com/app/cadences/3726560
+3726561,NE - BDR-S - Nurture MQLs 2024,BDR,2024-11-01,2024-11-05T10:26:02.156024-08:00,123,https://app.salesloft.com/app/cadences/3726561
+2867690,NJ - BDR/AE - NYC Meetup Invitation Low Touch - Prospecting ,BDR,2022-11-03,2022-11-03T11:08:20.931299-07:00,0,https://app.salesloft.com/app/cadences/2867690
+3695549,NOT READY $BDR-MM - A-Tier Account - Attack,BDR,2024-09-27,never,0,https://app.salesloft.com/app/cadences/3695549
+3898834,OB - Civil Litigation - BDR-MM - 2025,BDR,2025-05-29,2025-12-23T07:38:28.681706-08:00,85,https://app.salesloft.com/app/cadences/3898834
+3898867,OB - Civil Litigation - BDR-V - 2025,BDR,2025-05-29,2025-07-16T11:56:03.961677-07:00,0,https://app.salesloft.com/app/cadences/3898867
+3900499,OB - Family Law Firm - BDR-MM - 2025,BDR,2025-06-02,2025-10-27T12:34:31.595334-07:00,20,https://app.salesloft.com/app/cadences/3900499
+3901205,OB - Family Law Firm - BDR-V - 2025,BDR,2025-06-02,2025-10-20T16:51:45.492458-07:00,1,https://app.salesloft.com/app/cadences/3901205
+3899651,OB - IT Director - BDR-S - 2025,BDR,2025-05-30,never,0,https://app.salesloft.com/app/cadences/3899651
+3899653,OB - IT Director - BDR-V - 2025 ,BDR,2025-05-30,never,0,https://app.salesloft.com/app/cadences/3899653
+3860977,PAM/BDR - Bitflow Follow Up -  April 2025,BDR,2025-04-16,2025-04-16T14:58:05.215040-07:00,3,https://app.salesloft.com/app/cadences/3860977
+3855919,PAM/BDR - Rolling Thunder Event Follow Up!,BDR,2025-04-10,2025-04-11T12:24:16.071663-07:00,15,https://app.salesloft.com/app/cadences/3855919
+3961574,PRIORITY CALL - BDRV Outbound - AE Companion List - Cold Outreach,BDR,2025-08-14,2025-08-14T07:37:47.543441-07:00,0,https://app.salesloft.com/app/cadences/3961574
+3624970,SILVER - Accounting Launch BDRV,BDR,2024-07-16,2025-06-03T16:34:54.936852-07:00,1392,https://app.salesloft.com/app/cadences/3624970
+3625502,SILVER - NEW AQL - BDRV,BDR,2024-07-16,never,0,https://app.salesloft.com/app/cadences/3625502
+3428720,SS - BDR-V - Funnel - BOFU AQL,BDR,2024-03-05,2025-01-06T16:58:44.055714-08:00,3696,https://app.salesloft.com/app/cadences/3428720
+3489771,SS - Tax Day Email Blitz BDRV,BDR,2024-04-15,2024-04-25T10:29:19.661984-07:00,943,https://app.salesloft.com/app/cadences/3489771
+3777952,SS BDR-V AI Cadence Team Day,BDR,2025-01-16,2025-01-20T16:03:43.450082-08:00,0,https://app.salesloft.com/app/cadences/3777952
+3434580,SS BDRV - PI Power Hour - Wave 4,BDR,2024-03-07,2024-07-10T15:08:18.771433-07:00,529,https://app.salesloft.com/app/cadences/3434580
+3428708,SS BDRV - PI Power Hour - Wave 4 ,BDR,2024-03-05,never,0,https://app.salesloft.com/app/cadences/3428708
+3791849,SS BDRV Call Only ,BDR,2025-02-03,2025-06-04T13:11:40.826014-07:00,443,https://app.salesloft.com/app/cadences/3791849
+3737144,SS BDRV- Disco Reschedule Cadence ,BDR,2024-11-13,2025-05-08T14:02:34.189726-07:00,277,https://app.salesloft.com/app/cadences/3737144
+3523868,SS BDRV- Reschedule Cadence   ,BDR,2024-05-06,2025-06-03T09:24:10.672687-07:00,173,https://app.salesloft.com/app/cadences/3523868
+3454394,SS BLIND CAL SEND - DO NOT USE Reschedule BDR Opps - Copy - V2,BDR,2024-03-20,never,0,https://app.salesloft.com/app/cadences/3454394
+3428713,SS BLIND CAL SEND - Reschedule BDR Opps - Copy,BDR,2024-03-05,2024-03-20T09:48:10.252112-07:00,1,https://app.salesloft.com/app/cadences/3428713
+3588667,TIM ONLY - FC Callback  - BC - BDRV ,BDR,2024-06-13,2024-06-27T13:54:09.671212-07:00,155,https://app.salesloft.com/app/cadences/3588667
+3313980,TOFU - BDRV Funnel - V1,BDR,2023-11-12,2024-06-12T06:46:07.214731-07:00,1742,https://app.salesloft.com/app/cadences/3313980
+3317584,TOFU - BDRV Funnel - V2 - Email only Pulse check,BDR,2023-11-15,2024-03-01T08:02:25.932510-08:00,937,https://app.salesloft.com/app/cadences/3317584
+3270103,TOFU TEMPLATE - BDRV,BDR,2023-10-03,2024-02-29T08:09:59.653842-08:00,12,https://app.salesloft.com/app/cadences/3270103
+2752331,Today- BDR-V Blitz ,BDR,2022-08-18,2022-10-04T14:13:28.608994-07:00,37,https://app.salesloft.com/app/cadences/2752331
+4026259,[BDR/AE] Frontline Managed Services Event - Nov 2025,BDR,2025-11-03,2025-11-11T08:24:38.997792-08:00,68,https://app.salesloft.com/app/cadences/4026259
+3861117,[BDR] ClientStream Event - April 2025 -,BDR,2025-04-16,2025-04-25T12:05:57.249094-07:00,0,https://app.salesloft.com/app/cadences/3861117
+3787389,[BDR] ClientStream Event - Feb 2025,BDR,2025-01-28,2025-02-10T14:20:04.016758-08:00,14,https://app.salesloft.com/app/cadences/3787389
+3861123,[BDR] Clientstream Event Follow up - April 2025,BDR,2025-04-16,2025-04-28T12:58:20.587569-07:00,11,https://app.salesloft.com/app/cadences/3861123
+3808050,[BDR] Clientstream Event Follow up - Feb 2025,BDR,2025-02-19,2025-03-05T16:30:39.016167-08:00,18,https://app.salesloft.com/app/cadences/3808050
+3415265,*DO NOT USE* - SDR - Consensus - Demo Request - Manage,SDR,2024-02-23,2024-04-16T06:20:18.462408-07:00,2373,https://app.salesloft.com/app/cadences/3415265
+3416712,*DO NOT USE* - SDR - Consensus - Demo Request - Manage (via Webinar),SDR,2024-02-26,2024-04-17T13:49:49.963525-07:00,62,https://app.salesloft.com/app/cadences/3416712
+3416716,*DO NOT USE* - SDR - Consensus - Facebook Demo Request,SDR,2024-02-26,2024-04-15T07:48:04.522111-07:00,231,https://app.salesloft.com/app/cadences/3416716
+3416715,*DO NOT USE* - SDR - Consensus - LinkedIn ,SDR,2024-02-26,2024-04-10T12:14:30.139940-07:00,72,https://app.salesloft.com/app/cadences/3416715
+3416711,*DO NOT USE* - SDR - Consensus - Pricing Page - B - Content,SDR,2024-02-26,2024-04-15T07:41:39.990411-07:00,585,https://app.salesloft.com/app/cadences/3416711
+3416698,*DO NOT USE* -SDR - Consensus - Trial Follow Up - MQL,SDR,2024-02-26,2024-04-16T06:11:42.521882-07:00,2879,https://app.salesloft.com/app/cadences/3416698
+1413488,*Do Not  Use* - SDRM - Nurture - #Winback - 60 days,SDR,2020-01-23,2020-07-14T13:57:23.536079-07:00,28,https://app.salesloft.com/app/cadences/1413488
+1443841,*Do Not Use* - SDR - Next Step - HOT (single),SDR,2020-02-11,2020-07-17T08:25:46.233029-07:00,148,https://app.salesloft.com/app/cadences/1443841
+1024199,*Do Not Use* - SDRM - Nurture - Reengage (Gareth),SDR,2019-05-01,2020-11-02T12:15:27.832672-08:00,608,https://app.salesloft.com/app/cadences/1024199
+1645539,*OLD*   SDR - Pricing Page - ABA Announcement,SDR,2020-06-10,2020-08-28T13:27:03.039449-07:00,46,https://app.salesloft.com/app/cadences/1645539
+1330973,*OLD*  SDR - Pricing Page - Appointment,SDR,2019-11-14,2020-08-04T10:19:09.670978-07:00,207,https://app.salesloft.com/app/cadences/1330973
+1331010,*OLD*  SDR - Pricing Page - How's Business,SDR,2019-11-14,2020-08-12T13:34:30.780049-07:00,173,https://app.salesloft.com/app/cadences/1331010
+1292222,*OLD*  SDR - Pricing Page - LTR 2019,SDR,2019-10-22,2020-08-28T10:11:41.453103-07:00,88,https://app.salesloft.com/app/cadences/1292222
+1330934,*OLD*  SDR - Pricing Page - Webinar,SDR,2019-11-14,2020-08-27T17:01:36.968246-07:00,239,https://app.salesloft.com/app/cadences/1330934
+1005930,*OLD*  SDR - Pricing Page Visit,SDR,2019-04-18,2021-08-03T06:43:29.690200-07:00,887,https://app.salesloft.com/app/cadences/1005930
+3791882,1.Qualify to Reschedule SDRV,SDR,2025-02-03,2025-04-16T08:52:48.742360-07:00,107,https://app.salesloft.com/app/cadences/3791882
+3428649,BC BLIND CAL SEND - Reschedule SDR Opps,SDR,2024-03-05,2024-07-23T14:11:09.185994-07:00,9,https://app.salesloft.com/app/cadences/3428649
+3426356,BLIND CAL SEND - Reschedule SDR Opps,SDR,2024-03-01,2024-03-05T10:16:12.717935-08:00,1,https://app.salesloft.com/app/cadences/3426356
+1221088,DO NOT USE - SDR - Conference - Archive 07-31-2023,SDR,2019-09-09,2023-06-29T12:36:17.114790-07:00,412,https://app.salesloft.com/app/cadences/1221088
+1211669,DO NOT USE - SDR - Homepage - Archive 07/31/23,SDR,2019-09-03,2023-06-21T12:12:38.492208-07:00,0,https://app.salesloft.com/app/cadences/1211669
+1948500,DO NOT USE - SDR - Nurture Winback - 2021 - Email Only - Archive 06-27-23,SDR,2021-01-25,2023-05-04T08:26:57.260259-07:00,0,https://app.salesloft.com/app/cadences/1948500
+897617,DO NOT USE - SDR - Software Advice - Archive 2/14/23,SDR,2019-02-05,2021-04-30T12:35:25.915462-07:00,4170,https://app.salesloft.com/app/cadences/897617
+1518495,DO NOT USE - now SDR TRIAL 2021 - SDR - Trial Signup - B,SDR,2020-03-25,2022-12-02T08:49:17.300235-08:00,13350,https://app.salesloft.com/app/cadences/1518495
+1368591,DO NOT USE - now SDR TRIAL 2021 -SDR - Trial Signup,SDR,2019-12-11,2022-04-08T07:40:21.818815-07:00,7571,https://app.salesloft.com/app/cadences/1368591
+1225502,DO NOT USE - use SDR - Winback Nurture Leads - 2021 = SDRM - Nurture - #Winback,SDR,2019-09-11,2022-10-19T16:32:18.184345-07:00,198,https://app.salesloft.com/app/cadences/1225502
+1288173,Do Not Use - SDR - COVERAGE,SDR,2019-10-18,2020-08-03T13:18:41.173794-07:00,565,https://app.salesloft.com/app/cadences/1288173
+1285216,Do Not Use - SDR - Next Step (single),SDR,2019-10-17,2020-06-23T14:00:43.223699-07:00,568,https://app.salesloft.com/app/cadences/1285216
+1223058,Do Not Use - SDRM - Nurture - #Winback - Long Term,SDR,2019-09-10,2020-05-15T11:12:49.037172-07:00,24,https://app.salesloft.com/app/cadences/1223058
+3627705,Firm Central Cadence SDR,SDR,2024-07-17,2024-10-17T17:36:58.904249-07:00,157,https://app.salesloft.com/app/cadences/3627705
+3428648,HH BLIND CAL SEND - Reschedule SDR Opps,SDR,2024-03-05,2024-03-20T10:05:39.071138-07:00,16,https://app.salesloft.com/app/cadences/3428648
+3428717,JB BLIND CAL SEND - Reschedule SDR Opps,SDR,2024-03-05,2024-03-25T12:46:19.052184-07:00,8,https://app.salesloft.com/app/cadences/3428717
+3436749,JB BLIND CAL SEND - Reschedule SDR Opps - Consensus ,SDR,2024-03-08,2024-03-20T14:14:11.374378-07:00,9,https://app.salesloft.com/app/cadences/3436749
+1547149,SDR -  Next Steps - Demo Not Scheduled,SDR,2020-04-10,2023-01-26T13:52:52.946906-08:00,45,https://app.salesloft.com/app/cadences/1547149
+2179468,SDR - 2021 SUMMER PROMO Nurture Cadence,SDR,2021-07-07,2021-08-12T12:09:31.201305-07:00,341,https://app.salesloft.com/app/cadences/2179468
+1521790,SDR - Adriana,SDR,2020-03-27,2020-03-27T10:09:49.630517-07:00,60,https://app.salesloft.com/app/cadences/1521790
+1503914,SDR - Approved Email Follow Up,SDR,2020-03-18,2021-06-28T06:21:31.891510-07:00,777,https://app.salesloft.com/app/cadences/1503914
+2355264,SDR - Assists,SDR,2021-11-15,2022-01-17T10:43:05.809601-08:00,20,https://app.salesloft.com/app/cadences/2355264
+3745652,SDR - Black Friday 2024 - Mini Cadence,SDR,2024-11-25,2024-12-12T11:29:12.175113-08:00,91,https://app.salesloft.com/app/cadences/3745652
+1418763,SDR - Book Download,SDR,2020-01-27,2022-07-26T11:23:50.210274-07:00,9,https://app.salesloft.com/app/cadences/1418763
+1569543,SDR - COVID Relief Outreach Approved - Followup,SDR,2020-04-23,2020-10-26T13:56:02.050592-07:00,117,https://app.salesloft.com/app/cadences/1569543
+1955928,SDR - Call Only Cadence,SDR,2021-01-28,2021-09-07T10:28:11.709007-07:00,241,https://app.salesloft.com/app/cadences/1955928
+1689806,SDR - ClioCon 2020,SDR,2020-07-15,2021-10-21T08:53:48.414182-07:00,0,https://app.salesloft.com/app/cadences/1689806
+4016276,SDR - ClioCon 2025 Follow Up,SDR,2025-10-21,2025-11-10T13:56:43.969374-08:00,51,https://app.salesloft.com/app/cadences/4016276
+3956799,SDR - Concierge Demo Request + SMS - Pilot,SDR,2025-08-08,2025-10-23T12:20:29.652819-07:00,23,https://app.salesloft.com/app/cadences/3956799
+3791475,SDR - Concierge Demo Request - Pilot,SDR,2025-02-03,2025-11-28T12:20:33.505675-08:00,27,https://app.salesloft.com/app/cadences/3791475
+889273,SDR - Confirmed Demo Booking,SDR,2019-01-29,never,0,https://app.salesloft.com/app/cadences/889273
+2311015,SDR - Demo Request - Lawyaw,SDR,2021-10-13,2025-07-16T06:44:49.457016-07:00,491,https://app.salesloft.com/app/cadences/2311015
+1368588,SDR - Demo Request - Manage,SDR,2019-12-11,2025-07-25T11:03:31.943968-07:00,19111,https://app.salesloft.com/app/cadences/1368588
+1349206,SDR - Drift Next Step No Phone Number,SDR,2019-11-26,2025-12-09T07:27:22.461423-08:00,0,https://app.salesloft.com/app/cadences/1349206
+1608669,SDR - Drift Offline No Phone Number,SDR,2020-05-17,2025-10-22T17:15:07.048015-07:00,0,https://app.salesloft.com/app/cadences/1608669
+3571862,SDR - Expert Market,SDR,2024-05-31,2024-09-16T08:29:17.104142-07:00,234,https://app.salesloft.com/app/cadences/3571862
+3889683,SDR - In person conference - ALA 2025,SDR,2025-05-20,2025-06-23T12:29:31.993082-07:00,109,https://app.salesloft.com/app/cadences/3889683
+3658112,SDR - In person conference - ILTACON 2024,SDR,2024-08-16,2025-01-31T07:30:28.428877-08:00,207,https://app.salesloft.com/app/cadences/3658112
+3963349,SDR - In person conference - ILTACON 2025,SDR,2025-08-18,2025-08-19T10:39:21.955714-07:00,135,https://app.salesloft.com/app/cadences/3963349
+3836041,SDR - In person conference - Legalweek 2025,SDR,2025-03-20,2025-04-14T14:02:39.547403-07:00,62,https://app.salesloft.com/app/cadences/3836041
+3853918,SDR - In person conference - Techshow 2025 - MM,SDR,2025-04-09,2025-09-22T15:14:21.039125-07:00,21,https://app.salesloft.com/app/cadences/3853918
+1014579,SDR - No Engagement Nurture Cadence,SDR,2019-04-24,2020-03-04T14:10:06.265546-08:00,510,https://app.salesloft.com/app/cadences/1014579
+3383338,SDR - Pre Nurture Re-engagement,SDR,2024-01-30,2025-08-25T16:49:43.169950-07:00,12547,https://app.salesloft.com/app/cadences/3383338
+1523023,SDR - Pricing Page - COVID Relief,SDR,2020-03-28,2020-04-02T11:17:41.899309-07:00,13,https://app.salesloft.com/app/cadences/1523023
+1813813,SDR - Referral (E-mail Only),SDR,2020-09-28,2022-02-03T08:44:22.220006-08:00,0,https://app.salesloft.com/app/cadences/1813813
+1360817,SDR - Resources Follow up,SDR,2019-12-06,2020-03-10T10:57:20.772874-07:00,0,https://app.salesloft.com/app/cadences/1360817
+3877123,SDR - Solo/Summit cadence - breakout room MQLs - DO NOT USE UNTIL SUMMIT MQLS ROUTE TO SDRS),SDR,2025-05-06,2025-05-16T12:22:50.916055-07:00,38,https://app.salesloft.com/app/cadences/3877123
+3860562,SDR - Solo/Summit cadence - summit MQLs after event - DO NOT USE UNTIL SUMMIT MQLS ROUTE TO SDRS),SDR,2025-04-16,2025-05-21T18:47:19.103799-07:00,138,https://app.salesloft.com/app/cadences/3860562
+2031874,SDR - Trial,SDR,2021-03-22,2022-12-12T06:36:45.745481-08:00,18992,https://app.salesloft.com/app/cadences/2031874
+2892209,SDR - Trial Follow Up - MQL,SDR,2022-11-21,2025-07-25T11:20:57.450665-07:00,24069,https://app.salesloft.com/app/cadences/2892209
+4020918,SDR - vLex - Trial signup,SDR,2025-10-28,2025-10-28T10:12:51.581730-07:00,29,https://app.salesloft.com/app/cadences/4020918
+2069319,SDR train test,SDR,2021-04-16,2021-06-23T06:43:57.703787-07:00,1,https://app.salesloft.com/app/cadences/2069319
+3316209,"SDR- 1 step cadence experiment - ""Filled Schedule a Demo Form""""",SDR,2023-11-14,2025-06-17T08:07:12.453358-07:00,0,https://app.salesloft.com/app/cadences/3316209
+2379300,SDR- Holiday Referral Offer 2021 Cadence ,SDR,2021-12-06,2021-12-06T13:35:22.809339-08:00,1,https://app.salesloft.com/app/cadences/2379300
+2176679,SDR- Summer Referral Offer 2021 Cadence,SDR,2021-07-06,2021-08-11T06:28:23.115284-07:00,1,https://app.salesloft.com/app/cadences/2176679
+3614600,SDR-MM - Contact Us MQL Reach Out - Copy,SDR,2024-07-08,2025-09-21T13:29:02.721816-07:00,23,https://app.salesloft.com/app/cadences/3614600
+3614537,SDR-MM - Enterprise Form MQL Reach Out,SDR,2024-07-08,2025-10-23T12:11:10.855571-07:00,172,https://app.salesloft.com/app/cadences/3614537
+1061328,SDRG - Cross Sell Pricing Page Visit,SDR,2019-05-24,2020-05-13T09:08:48.580428-07:00,248,https://app.salesloft.com/app/cadences/1061328
+1357707,SDRG - End of Year 2019 Grow,SDR,2019-12-04,2019-12-04T12:28:15.320573-08:00,9,https://app.salesloft.com/app/cadences/1357707
+1003669,SDRG - Lexi Pricing Request,SDR,2019-04-17,2020-06-11T15:01:09.869237-07:00,882,https://app.salesloft.com/app/cadences/1003669
+1348064,SDRG - Lexicata Demo Request,SDR,2019-11-26,2020-06-11T07:02:29.850680-07:00,117,https://app.salesloft.com/app/cadences/1348064
+892772,SDRG - NEW Cross-Sell Request,SDR,2019-01-31,2020-01-08T13:15:11.905580-08:00,142,https://app.salesloft.com/app/cadences/892772
+1324423,SDRG - Trial Sign Up Grow,SDR,2019-11-11,2020-03-27T11:36:55.658754-07:00,183,https://app.salesloft.com/app/cadences/1324423
+971276,SDRM - Demo Request - OLD - DO NOT USE,SDR,2019-03-26,2019-12-11T13:33:37.486827-08:00,3930,https://app.salesloft.com/app/cadences/971276
+1356484,SDRM - End of 2019,SDR,2019-12-04,2019-12-20T10:03:52.091305-08:00,23,https://app.salesloft.com/app/cadences/1356484
+1324642,SDRM - G2 Crowd,SDR,2019-11-11,2020-05-20T15:34:05.804428-07:00,2,https://app.salesloft.com/app/cadences/1324642
+1223063,SDRM - Nurture - #Winback - Legacy,SDR,2019-09-10,2020-01-23T07:59:29.626711-08:00,2,https://app.salesloft.com/app/cadences/1223063
+1545995,SDRM - Reengage COVID Timeline Nurtures,SDR,2020-04-09,2022-06-09T12:57:42.578553-07:00,69,https://app.salesloft.com/app/cadences/1545995
+1378128,SDRM - Start of 2020,SDR,2019-12-19,2020-01-23T14:19:10.080477-08:00,9,https://app.salesloft.com/app/cadences/1378128
+880789,SDRM - Trial Signup - OLD - DO NOT USE,SDR,2019-01-23,2019-12-11T11:30:53.028762-08:00,7724,https://app.salesloft.com/app/cadences/880789
+3428718,SS BLIND CAL SEND - Reschedule SDR Opps,SDR,2024-03-05,2025-04-09T10:33:18.859642-07:00,6,https://app.salesloft.com/app/cadences/3428718
+3833371,Strat - SDR Multi Threading Experiment - Attorney,SDR,2025-03-18,2025-04-16T05:44:23.119309-07:00,0,https://app.salesloft.com/app/cadences/3833371
+3833330,Strat - SDR Multi Threading Experiment - Managing Attorney,SDR,2025-03-18,2025-04-23T08:27:42.193104-07:00,0,https://app.salesloft.com/app/cadences/3833330
+3833389,Strat - SDR Multi Threading Experiment - Support Staff,SDR,2025-03-18,2025-08-07T09:06:42.941829-07:00,0,https://app.salesloft.com/app/cadences/3833389
+3388975,[DO NOT USE] SDR - Firm Central - Demo Request,SDR,2024-02-05,2024-09-12T17:09:48.409222-07:00,332,https://app.salesloft.com/app/cadences/3388975

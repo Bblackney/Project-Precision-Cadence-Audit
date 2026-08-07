@@ -73,6 +73,61 @@ Search.
 - `run_weekly.sh` now also `git add`s `pilot_comparison.html` and
   `pilot_legacy_snapshot.json`.
 
+### Period Comparison mode (added 2026-08-06)
+
+The all-time snapshot above answers "how does the New cadence's cumulative
+performance compare to the Legacy cadence's cumulative performance" — but
+those two totals cover very different time windows and can't be sliced by
+calendar period after the fact (the API returns running totals, not
+per-period breakdowns). To compare like-for-like periods (e.g. Q2 2026 vs.
+Q2 2025, or July 2026 vs. July 2025), the tab has a **View** toggle:
+**All-Time** (existing behavior above) and **By Period**.
+
+- By Period mode adds three controls: Granularity (Quarter / Month), a New
+  period dropdown, and a Legacy period dropdown — each side picks its period
+  independently, so a seasonally-aligned comparison (this quarter vs. the
+  same quarter last year) is possible even though the two cadences have
+  different histories. Defaults: New = most recent period with data, Legacy
+  = the same period one year earlier (falls back to the oldest available
+  period if that exact year-back period has no data).
+- Backing data lives in `pilot_period_metrics.json`, built by
+  `build_period_metrics.py` (needs Salesloft API access — run on Brett's
+  Mac). It pulls **months only** (18 months back by default) for all 15
+  pilot/legacy pairs (both New and Legacy IDs — Legacy cadences are retired
+  but their historical activity still has real per-month numbers, unlike
+  the all-time snapshot which is just one frozen total), then **derives
+  quarters by summing the 3 months' raw counts and recomputing rates** —
+  this is 3x cheaper than separately querying quarter-bounded date ranges
+  and guarantees month/quarter figures are always internally consistent. A
+  quarter only appears once all 3 of its months have been pulled.
+- **Each month's data is pulled once and never re-pulled** (pass `--force`
+  to override) — this matches the "locked snapshot" philosophy of
+  `pilot_legacy_snapshot.json`, but per-period instead of all-time. This is
+  deliberate: the *current*, in-progress month/quarter is necessarily
+  partial, and if it were silently overwritten every Friday by
+  `run_weekly.sh`, older completed periods would look consistent but the
+  most recent one would be quietly re-scoped every week without anyone
+  reviewing it. So **`build_period_metrics.py` is NOT run automatically by
+  `run_weekly.sh`** — run it manually whenever new periods should be
+  pulled in (e.g., a few days into a new month, once that month's data has
+  settled):
+  ```
+  cd <project> && python3 build_period_metrics.py
+  ```
+  To backfill more history or force a re-pull of an already-fetched period
+  (e.g. to refresh a month that was pulled too early and looked partial):
+  ```
+  python3 build_period_metrics.py --months 24     # pull further back
+  python3 build_period_metrics.py --force          # re-pull everything
+  ```
+  `pilot_period_metrics.json` **is** committed (like `pilot_legacy_snapshot.json`,
+  not gitignored) and **is** in `run_weekly.sh`'s regular `git add` list, so
+  once you manually refresh it, the next Friday run sweeps it into the
+  normal push automatically — you don't need a separate commit step.
+- If `pilot_period_metrics.json` is missing entirely, the By Period toggle
+  still renders but every row falls back to a "no data" message (mirrors
+  the existing missing-legacy-snapshot banner pattern).
+
 ## Step-level detail popup on the Cadence Scorecard (added 2026-08-05)
 
 Clicking a cadence name on `index.html` (a "▸ steps" pill appears next to
