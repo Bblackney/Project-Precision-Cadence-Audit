@@ -58,4 +58,10 @@ else
   fi
 fi
 
+# 3) Publish the refreshed dashboards to the Clio Workshop app (auto-merging PR
+#    to clio-internal/cadence-dashboards → Workshop redeploys). Non-fatal:
+#    a publish failure must not fail the scoring run. See publish_workshop.log.
+bash "$PROJECT_DIR/publish_to_workshop.sh" adherence.html index.html >> "$LOG" 2>&1 \
+  || echo "$(date '+%F %T') [WARN] Workshop publish failed — see publish_workshop.log" >> "$LOG"
+
 echo "$(date '+%F %T') OK Done" >> "$LOG"

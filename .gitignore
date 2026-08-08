@@ -27,3 +27,7 @@ step_call_metrics_cache.json.tmp
 overdue_cleanup_*.csv
 overdue_cleanup_*.json
 list0_*.csv
+
+# Workshop publish helper: token + log (never commit the token)
+github_token.json
+publish_workshop.log
