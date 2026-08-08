@@ -2,7 +2,7 @@
   "4381572": {
     "cadence_id": 4381572,
     "cadence_name": "(DO NOT USE) SDR - FILLED GET PRICING-en-US-CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -52,7 +52,7 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 1,
+        "sent": 2,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -104,7 +104,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
+        "sent": 2,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -330,7 +330,7 @@
   "4333113": {
     "cadence_id": 4333113,
     "cadence_name": "BDR - GOV - Canadian Time Matters Phase-Out - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -404,7 +404,7 @@
   "4333115": {
     "cadence_id": 4333115,
     "cadence_name": "BDR - GOV - Legal Assistant Cold - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -528,7 +528,7 @@
   "4333114": {
     "cadence_id": 4333114,
     "cadence_name": "BDR - GOV - Office Manager Cold - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -602,7 +602,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 2,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -612,7 +612,7 @@
   "4333112": {
     "cadence_id": 4333112,
     "cadence_name": "BDR - GOV - Paralegal Cold - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -726,6 +726,342 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
+        "sent": 1,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      }
+    ]
+  },
+  "4480655": {
+    "cadence_id": 4480655,
+    "cadence_name": "BDR - Mid - Market Cluster4 Litigation BelowTheLine - en-US - CNV",
+    "pulled_at": "2026-08-08",
+    "calls_window_days": null,
+    "steps": [
+      {
+        "step_id": 30329933,
+        "name": "Call 1 - Day 1",
+        "display_name": "Day 1: Step 1 - Phone",
+        "day": 1,
+        "step_number": 1,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30329934,
+        "name": "Email 2 - Day 1",
+        "display_name": "Day 1: Step 2 - Email",
+        "day": 1,
+        "step_number": 2,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30329935,
+        "name": "LinkedIn 3 - Day 2",
+        "display_name": "Day 2: Step 3 - Connection Request",
+        "day": 2,
+        "step_number": 3,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30329936,
+        "name": "Call 4 - Day 4",
+        "display_name": "Day 4: Step 4 - Phone",
+        "day": 4,
+        "step_number": 4,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30329937,
+        "name": "Email 5 - Day 6",
+        "display_name": "Day 6: Step 5 - Email",
+        "day": 6,
+        "step_number": 5,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30329938,
+        "name": "Call 6 - Day 9",
+        "display_name": "Day 9: Step 6 - Phone",
+        "day": 9,
+        "step_number": 6,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30329939,
+        "name": "LinkedIn 7 - Day 11",
+        "display_name": "Day 11: Step 7 - InMail",
+        "day": 11,
+        "step_number": 7,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30329940,
+        "name": "Email 8 - Day 14",
+        "display_name": "Day 14: Step 8 - Email",
+        "day": 14,
+        "step_number": 8,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30329941,
+        "name": "LinkedIn 9 - Day 16",
+        "display_name": "Day 16: Step 9 - InMail",
+        "day": 16,
+        "step_number": 9,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30329942,
+        "name": "Call 10 - Day 18",
+        "display_name": "Day 18: Step 10 - Phone",
+        "day": 18,
+        "step_number": 10,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30329943,
+        "name": "Email 11 - Day 20",
+        "display_name": "Day 20: Step 11 - Email",
+        "day": 20,
+        "step_number": 11,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30329944,
+        "name": "Call 12 - Day 23",
+        "display_name": "Day 23: Step 12 - Phone",
+        "day": 23,
+        "step_number": 12,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30329945,
+        "name": "Email 13 - Day 25",
+        "display_name": "Day 25: Step 13 - Email",
+        "day": 25,
+        "step_number": 13,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      }
+    ]
+  },
+  "4480659": {
+    "cadence_id": 4480659,
+    "cadence_name": "BDR - Mid - Market Cluster5 Transactional BelowTheLine - en-US - CNV",
+    "pulled_at": "2026-08-08",
+    "calls_window_days": null,
+    "steps": [
+      {
+        "step_id": 30329959,
+        "name": "Call 1 - Day 1",
+        "display_name": "Day 1: Step 1 - Phone",
+        "day": 1,
+        "step_number": 1,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30329960,
+        "name": "Email 2 - Day 1",
+        "display_name": "Day 1: Step 2 - Email",
+        "day": 1,
+        "step_number": 2,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30329961,
+        "name": "LinkedIn 3 - Day 2",
+        "display_name": "Day 2: Step 3 - Connection Request",
+        "day": 2,
+        "step_number": 3,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30329962,
+        "name": "Call 4 - Day 4",
+        "display_name": "Day 4: Step 4 - Phone",
+        "day": 4,
+        "step_number": 4,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30329963,
+        "name": "Email 5 - Day 6",
+        "display_name": "Day 6: Step 5 - Email",
+        "day": 6,
+        "step_number": 5,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30329964,
+        "name": "Call 6 - Day 9",
+        "display_name": "Day 9: Step 6 - Phone",
+        "day": 9,
+        "step_number": 6,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30329965,
+        "name": "LinkedIn 7 - Day 11",
+        "display_name": "Day 11: Step 7 - InMail",
+        "day": 11,
+        "step_number": 7,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30329966,
+        "name": "Email 8 - Day 14",
+        "display_name": "Day 14: Step 8 - Email",
+        "day": 14,
+        "step_number": 8,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30329967,
+        "name": "LinkedIn 9 - Day 16",
+        "display_name": "Day 16: Step 9 - InMail",
+        "day": 16,
+        "step_number": 9,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30329968,
+        "name": "Call 10 - Day 18",
+        "display_name": "Day 18: Step 10 - Phone",
+        "day": 18,
+        "step_number": 10,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30329969,
+        "name": "Email 11 - Day 20",
+        "display_name": "Day 20: Step 11 - Email",
+        "day": 20,
+        "step_number": 11,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30329970,
+        "name": "Call 12 - Day 23",
+        "display_name": "Day 23: Step 12 - Phone",
+        "day": 23,
+        "step_number": 12,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30329971,
+        "name": "Email 13 - Day 25",
+        "display_name": "Day 25: Step 13 - Email",
+        "day": 25,
+        "step_number": 13,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
         "sent": 0,
         "opened": 0,
         "clicked": 0,
@@ -736,7 +1072,7 @@
   "4329157": {
     "cadence_id": 4329157,
     "cadence_name": "BDR - Mid-Market -  (Ops) Contingency / PI - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -760,8 +1096,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 40,
-        "opened": 14,
+        "sent": 42,
+        "opened": 15,
         "clicked": 4,
         "replied": 0
       },
@@ -796,9 +1132,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 24,
-        "opened": 5,
-        "clicked": 2,
+        "sent": 26,
+        "opened": 6,
+        "clicked": 3,
         "replied": 0
       },
       {
@@ -832,7 +1168,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 2,
+        "sent": 5,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -904,7 +1240,7 @@
   "4329001": {
     "cadence_id": 4329001,
     "cadence_name": "BDR - Mid-Market - (Ops) Hourly & Flat-Fee - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -928,7 +1264,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 84,
+        "sent": 85,
         "opened": 28,
         "clicked": 4,
         "replied": 1
@@ -964,7 +1300,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 15,
+        "sent": 16,
         "opened": 7,
         "clicked": 2,
         "replied": 0
@@ -1000,7 +1336,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 3,
+        "sent": 4,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -1072,7 +1408,7 @@
   "4295481": {
     "cadence_id": 4295481,
     "cadence_name": "BDR - Strategic - AQLs Excl Draft  - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -1096,10 +1432,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 390,
-        "opened": 147,
-        "clicked": 18,
-        "replied": 7
+        "sent": 409,
+        "opened": 151,
+        "clicked": 19,
+        "replied": 8
       },
       {
         "step_id": 29476553,
@@ -1132,10 +1468,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 266,
-        "opened": 89,
-        "clicked": 10,
-        "replied": 2
+        "sent": 292,
+        "opened": 96,
+        "clicked": 11,
+        "replied": 4
       },
       {
         "step_id": 29476556,
@@ -1180,9 +1516,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 94,
-        "opened": 35,
-        "clicked": 2,
+        "sent": 119,
+        "opened": 43,
+        "clicked": 4,
         "replied": 2
       },
       {
@@ -1206,9 +1542,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 60,
-        "opened": 16,
-        "clicked": 0,
+        "sent": 67,
+        "opened": 17,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -1244,7 +1580,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 16,
+        "sent": 18,
         "opened": 5,
         "clicked": 0,
         "replied": 0
@@ -1292,10 +1628,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 5,
+        "opened": 2,
         "clicked": 0,
-        "replied": 0
+        "replied": 1
       },
       {
         "step_id": 29476569,
@@ -1394,7 +1730,7 @@
   "4295482": {
     "cadence_id": 4295482,
     "cadence_name": "BDR - Strategic - NMQL - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -1418,10 +1754,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 314,
-        "opened": 100,
+        "sent": 324,
+        "opened": 105,
         "clicked": 16,
-        "replied": 4
+        "replied": 5
       },
       {
         "step_id": 29476579,
@@ -1454,9 +1790,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 200,
-        "opened": 75,
-        "clicked": 6,
+        "sent": 233,
+        "opened": 82,
+        "clicked": 8,
         "replied": 6
       },
       {
@@ -1502,8 +1838,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 40,
-        "opened": 11,
+        "sent": 53,
+        "opened": 13,
         "clicked": 0,
         "replied": 0
       },
@@ -1528,8 +1864,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 56,
-        "opened": 16,
+        "sent": 60,
+        "opened": 17,
         "clicked": 2,
         "replied": 1
       },
@@ -1566,7 +1902,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 24,
+        "sent": 26,
         "opened": 6,
         "clicked": 0,
         "replied": 0
@@ -1614,7 +1950,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
+        "sent": 2,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -1716,7 +2052,7 @@
   "4295483": {
     "cadence_id": 4295483,
     "cadence_name": "BDR - Strategic - OB - CL INTENT - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -1740,9 +2076,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 177,
-        "opened": 61,
-        "clicked": 6,
+        "sent": 193,
+        "opened": 68,
+        "clicked": 8,
         "replied": 5
       },
       {
@@ -1776,7 +2112,7 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 140,
+        "sent": 143,
         "opened": 51,
         "clicked": 2,
         "replied": 2
@@ -1850,7 +2186,7 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 46,
+        "sent": 48,
         "opened": 21,
         "clicked": 0,
         "replied": 1
@@ -2038,7 +2374,7 @@
   "4295484": {
     "cadence_id": 4295484,
     "cadence_name": "BDR - Strategic - OB - NMQL INTENT - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -2062,8 +2398,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 10,
-        "opened": 2,
+        "sent": 12,
+        "opened": 3,
         "clicked": 0,
         "replied": 0
       },
@@ -2360,7 +2696,7 @@
   "4295394": {
     "cadence_id": 4295394,
     "cadence_name": "BDR - Strategic - WebSights INTENT - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -2384,8 +2720,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 391,
-        "opened": 124,
+        "sent": 405,
+        "opened": 127,
         "clicked": 19,
         "replied": 6
       },
@@ -2420,10 +2756,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 226,
-        "opened": 77,
+        "sent": 245,
+        "opened": 80,
         "clicked": 14,
-        "replied": 3
+        "replied": 5
       },
       {
         "step_id": 29476178,
@@ -2468,9 +2804,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 79,
-        "opened": 25,
-        "clicked": 2,
+        "sent": 93,
+        "opened": 27,
+        "clicked": 3,
         "replied": 0
       },
       {
@@ -2494,8 +2830,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 48,
-        "opened": 19,
+        "sent": 53,
+        "opened": 20,
         "clicked": 3,
         "replied": 0
       },
@@ -2682,7 +3018,7 @@
   "4328921": {
     "cadence_id": 4328921,
     "cadence_name": "BDR - Velocity - AQL / NMQL - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -2706,10 +3042,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1940,
-        "opened": 578,
-        "clicked": 59,
-        "replied": 17
+        "sent": 2107,
+        "opened": 640,
+        "clicked": 68,
+        "replied": 19
       },
       {
         "step_id": 29637742,
@@ -2732,10 +3068,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1178,
-        "opened": 393,
-        "clicked": 22,
-        "replied": 1
+        "sent": 1321,
+        "opened": 431,
+        "clicked": 26,
+        "replied": 2
       },
       {
         "step_id": 29637747,
@@ -2794,10 +3130,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 212,
-        "opened": 79,
+        "sent": 246,
+        "opened": 91,
         "clicked": 4,
-        "replied": 1
+        "replied": 2
       },
       {
         "step_id": 29637786,
@@ -2820,9 +3156,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 124,
-        "opened": 36,
-        "clicked": 2,
+        "sent": 167,
+        "opened": 49,
+        "clicked": 4,
         "replied": 0
       },
       {
@@ -2846,7 +3182,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 17,
+        "sent": 19,
         "opened": 3,
         "clicked": 0,
         "replied": 0
@@ -2884,8 +3220,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 1,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       },
@@ -2918,7 +3254,7 @@
   "4328957": {
     "cadence_id": 4328957,
     "cadence_name": "BDR - Velocity - Closed Lost AI - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -2942,8 +3278,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 424,
-        "opened": 92,
+        "sent": 455,
+        "opened": 101,
         "clicked": 3,
         "replied": 6
       },
@@ -2968,8 +3304,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 229,
-        "opened": 74,
+        "sent": 236,
+        "opened": 77,
         "clicked": 1,
         "replied": 1
       },
@@ -3030,10 +3366,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 13,
-        "opened": 4,
+        "sent": 23,
+        "opened": 6,
         "clicked": 0,
-        "replied": 0
+        "replied": 1
       },
       {
         "step_id": 29637998,
@@ -3154,7 +3490,7 @@
   "4337959": {
     "cadence_id": 4337959,
     "cadence_name": "BDR - Velocity - Closed Lost Transactional - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -3390,7 +3726,7 @@
   "4329154": {
     "cadence_id": 4329154,
     "cadence_name": "BDR - Velocity - Litigation AI - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -3414,9 +3750,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 110,
-        "opened": 28,
-        "clicked": 4,
+        "sent": 120,
+        "opened": 35,
+        "clicked": 5,
         "replied": 0
       },
       {
@@ -3440,9 +3776,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 30,
-        "opened": 8,
-        "clicked": 1,
+        "sent": 32,
+        "opened": 9,
+        "clicked": 2,
         "replied": 0
       },
       {
@@ -3503,7 +3839,7 @@
         "multitouch_enabled": false,
         "disabled": false,
         "sent": 6,
-        "opened": 1,
+        "opened": 3,
         "clicked": 0,
         "replied": 0
       },
@@ -3554,7 +3890,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
+        "sent": 2,
         "opened": 1,
         "clicked": 0,
         "replied": 0
@@ -3626,7 +3962,7 @@
   "4328970": {
     "cadence_id": 4328970,
     "cadence_name": "BDR - Velocity - Outbound - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -3650,10 +3986,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 115,
-        "opened": 33,
-        "clicked": 2,
-        "replied": 2
+        "sent": 149,
+        "opened": 40,
+        "clicked": 3,
+        "replied": 3
       },
       {
         "step_id": 29638144,
@@ -3676,7 +4012,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 84,
+        "sent": 85,
         "opened": 21,
         "clicked": 5,
         "replied": 0
@@ -3862,7 +4198,7 @@
   "4328660": {
     "cadence_id": 4328660,
     "cadence_name": "BDR - Velocity - Transactional AI - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -3886,8 +4222,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 13,
-        "opened": 1,
+        "sent": 22,
+        "opened": 5,
         "clicked": 0,
         "replied": 0
       },
@@ -4098,7 +4434,7 @@
   "4340586": {
     "cadence_id": 4340586,
     "cadence_name": "BDR - Velocity - Win Back AI Emails - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -4110,10 +4446,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 750,
-        "opened": 244,
+        "sent": 755,
+        "opened": 245,
         "clicked": 23,
-        "replied": 2
+        "replied": 3
       },
       {
         "step_id": 29693915,
@@ -4148,10 +4484,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 284,
-        "opened": 92,
+        "sent": 297,
+        "opened": 95,
         "clicked": 5,
-        "replied": 1
+        "replied": 2
       },
       {
         "step_id": 29693919,
@@ -4162,9 +4498,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 172,
-        "opened": 56,
-        "clicked": 2,
+        "sent": 202,
+        "opened": 66,
+        "clicked": 3,
         "replied": 1
       },
       {
@@ -4250,7 +4586,7 @@
   "4340580": {
     "cadence_id": 4340580,
     "cadence_name": "BDR - Velocity - Win Back Templated - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -4284,10 +4620,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 830,
-        "opened": 158,
+        "sent": 924,
+        "opened": 173,
         "clicked": 7,
-        "replied": 6
+        "replied": 7
       },
       {
         "step_id": 29693880,
@@ -4310,8 +4646,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 301,
-        "opened": 83,
+        "sent": 314,
+        "opened": 84,
         "clicked": 3,
         "replied": 2
       },
@@ -4362,8 +4698,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 108,
-        "opened": 28,
+        "sent": 121,
+        "opened": 29,
         "clicked": 0,
         "replied": 1
       },
@@ -4376,8 +4712,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 45,
-        "opened": 8,
+        "sent": 60,
+        "opened": 13,
         "clicked": 0,
         "replied": 0
       },
@@ -4412,7 +4748,7 @@
   "4370009": {
     "cadence_id": 4370009,
     "cadence_name": "BDR-S - Webinar - Litigator's Lounge Follow-Up Cadence - en-US - CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -4598,7 +4934,7 @@
   "4321125": {
     "cadence_id": 4321125,
     "cadence_name": "SDR - CLIO WORK TRIAL (CANCELLED TRIAL WITH CC ENTERED) - en-US - CNV - TRIALON",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -4622,8 +4958,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 18,
-        "opened": 3,
+        "sent": 20,
+        "opened": 4,
         "clicked": 0,
         "replied": 0
       },
@@ -4660,8 +4996,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 9,
-        "opened": 1,
+        "sent": 11,
+        "opened": 3,
         "clicked": 0,
         "replied": 0
       },
@@ -4834,7 +5170,7 @@
   "4320991": {
     "cadence_id": 4320991,
     "cadence_name": "SDR - CLIO WORK TRIAL (CREDIT CARD ENTERED) - en-US - CNV - TRIALON",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -4918,8 +5254,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 47,
-        "opened": 13,
+        "sent": 54,
+        "opened": 14,
         "clicked": 1,
         "replied": 1
       },
@@ -4942,7 +5278,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 40,
+        "sent": 44,
         "opened": 11,
         "clicked": 0,
         "replied": 0
@@ -4990,8 +5326,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 20,
-        "opened": 4,
+        "sent": 23,
+        "opened": 5,
         "clicked": 0,
         "replied": 0
       },
@@ -5016,8 +5352,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 13,
-        "opened": 1,
+        "sent": 15,
+        "opened": 2,
         "clicked": 0,
         "replied": 0
       },
@@ -5042,7 +5378,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 7,
+        "sent": 8,
         "opened": 1,
         "clicked": 0,
         "replied": 0
@@ -5074,7 +5410,7 @@
   "4323272": {
     "cadence_id": 4323272,
     "cadence_name": "SDR - CLIO WORK TRIAL (VISITED SIGN UP PAGE & FAILED SIGN UP)-EN-US-CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -5098,9 +5434,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 245,
-        "opened": 90,
-        "clicked": 15,
+        "sent": 256,
+        "opened": 96,
+        "clicked": 17,
         "replied": 10
       },
       {
@@ -5124,8 +5460,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 164,
-        "opened": 50,
+        "sent": 176,
+        "opened": 54,
         "clicked": 7,
         "replied": 2
       },
@@ -5138,9 +5474,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 126,
-        "opened": 34,
-        "clicked": 6,
+        "sent": 142,
+        "opened": 36,
+        "clicked": 7,
         "replied": 0
       },
       {
@@ -5176,8 +5512,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 49,
-        "opened": 7,
+        "sent": 65,
+        "opened": 11,
         "clicked": 1,
         "replied": 0
       },
@@ -5202,7 +5538,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 23,
+        "sent": 27,
         "opened": 8,
         "clicked": 0,
         "replied": 0
@@ -5388,7 +5724,7 @@
   "4339117": {
     "cadence_id": 4339117,
     "cadence_name": "SDR - Contact Us Form -en-US-CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -5424,10 +5760,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 33,
-        "opened": 17,
+        "sent": 35,
+        "opened": 19,
         "clicked": 5,
-        "replied": 6
+        "replied": 7
       },
       {
         "step_id": 29692896,
@@ -5488,8 +5824,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 8,
-        "opened": 1,
+        "sent": 9,
+        "opened": 2,
         "clicked": 0,
         "replied": 0
       },
@@ -5546,7 +5882,7 @@
   "4291091": {
     "cadence_id": 4291091,
     "cadence_name": "SDR - DEMO-REQ - en-US - CNV - PREDEMO",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -5592,10 +5928,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 719,
-        "opened": 279,
-        "clicked": 102,
-        "replied": 58
+        "sent": 741,
+        "opened": 292,
+        "clicked": 103,
+        "replied": 60
       },
       {
         "step_id": 29458556,
@@ -5632,10 +5968,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 396,
-        "opened": 115,
-        "clicked": 19,
-        "replied": 18
+        "sent": 437,
+        "opened": 129,
+        "clicked": 22,
+        "replied": 21
       },
       {
         "step_id": 29457873,
@@ -5668,8 +6004,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 283,
-        "opened": 94,
+        "sent": 299,
+        "opened": 97,
         "clicked": 12,
         "replied": 11
       },
@@ -5742,9 +6078,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 112,
-        "opened": 36,
-        "clicked": 2,
+        "sent": 130,
+        "opened": 44,
+        "clicked": 3,
         "replied": 7
       },
       {
@@ -5766,9 +6102,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 78,
-        "opened": 30,
-        "clicked": 1,
+        "sent": 97,
+        "opened": 32,
+        "clicked": 2,
         "replied": 1
       },
       {
@@ -5792,8 +6128,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 41,
-        "opened": 9,
+        "sent": 60,
+        "opened": 15,
         "clicked": 1,
         "replied": 1
       },
@@ -5830,8 +6166,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 11,
-        "opened": 2,
+        "sent": 18,
+        "opened": 3,
         "clicked": 0,
         "replied": 0
       },
@@ -5856,7 +6192,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 4,
+        "sent": 6,
         "opened": 1,
         "clicked": 0,
         "replied": 0
@@ -5940,7 +6276,7 @@
   "4294374": {
     "cadence_id": 4294374,
     "cadence_name": "SDR - DEMO-REQ-WEBINAR - en-US - CNV - PREDEMO",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -5964,8 +6300,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 86,
-        "opened": 37,
+        "sent": 91,
+        "opened": 39,
         "clicked": 7,
         "replied": 6
       },
@@ -5990,8 +6326,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 57,
-        "opened": 18,
+        "sent": 60,
+        "opened": 19,
         "clicked": 6,
         "replied": 2
       },
@@ -6054,8 +6390,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 23,
-        "opened": 8,
+        "sent": 26,
+        "opened": 12,
         "clicked": 0,
         "replied": 1
       },
@@ -6092,7 +6428,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 13,
+        "sent": 14,
         "opened": 5,
         "clicked": 0,
         "replied": 1
@@ -6292,7 +6628,7 @@
   "4339116": {
     "cadence_id": 4339116,
     "cadence_name": "SDR - Event Follow-up -en-US-CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -6464,7 +6800,7 @@
   "4339113": {
     "cadence_id": 4339113,
     "cadence_name": "SDR - Live Chat Next Step With Phone Number -en-US-CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -6488,10 +6824,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 16,
-        "opened": 8,
+        "sent": 18,
+        "opened": 10,
         "clicked": 2,
-        "replied": 4
+        "replied": 6
       },
       {
         "step_id": 29683958,
@@ -6526,8 +6862,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 9,
-        "opened": 4,
+        "sent": 10,
+        "opened": 5,
         "clicked": 0,
         "replied": 1
       },
@@ -6540,8 +6876,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 5,
-        "opened": 2,
+        "sent": 7,
+        "opened": 3,
         "clicked": 1,
         "replied": 0
       },
@@ -6580,7 +6916,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 2,
+        "sent": 4,
         "opened": 1,
         "clicked": 0,
         "replied": 1
@@ -6606,10 +6942,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
-        "opened": 1,
+        "sent": 3,
+        "opened": 2,
         "clicked": 0,
-        "replied": 0
+        "replied": 1
       },
       {
         "step_id": 29683967,
@@ -6662,7 +6998,7 @@
   "4291323": {
     "cadence_id": 4291323,
     "cadence_name": "SDR - MANAGE TRIAL - en-US - CNV - TRIALON",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -6696,10 +7032,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 771,
-        "opened": 362,
-        "clicked": 57,
-        "replied": 43
+        "sent": 823,
+        "opened": 383,
+        "clicked": 61,
+        "replied": 44
       },
       {
         "step_id": 29459062,
@@ -6760,8 +7096,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 446,
-        "opened": 157,
+        "sent": 491,
+        "opened": 173,
         "clicked": 16,
         "replied": 22
       },
@@ -6784,10 +7120,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 315,
-        "opened": 127,
-        "clicked": 12,
-        "replied": 11
+        "sent": 352,
+        "opened": 137,
+        "clicked": 14,
+        "replied": 12
       },
       {
         "step_id": 29458804,
@@ -6832,10 +7168,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 214,
-        "opened": 72,
+        "sent": 235,
+        "opened": 78,
         "clicked": 4,
-        "replied": 10
+        "replied": 11
       },
       {
         "step_id": 29506337,
@@ -6858,8 +7194,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 141,
-        "opened": 38,
+        "sent": 160,
+        "opened": 42,
         "clicked": 2,
         "replied": 0
       },
@@ -6896,10 +7232,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 65,
-        "opened": 24,
+        "sent": 77,
+        "opened": 29,
         "clicked": 2,
-        "replied": 5
+        "replied": 6
       },
       {
         "step_id": 29458930,
@@ -6910,8 +7246,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 35,
-        "opened": 17,
+        "sent": 43,
+        "opened": 19,
         "clicked": 0,
         "replied": 0
       },
@@ -6936,8 +7272,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 18,
-        "opened": 2,
+        "sent": 26,
+        "opened": 5,
         "clicked": 0,
         "replied": 0
       },
@@ -7044,7 +7380,7 @@
   "4339114": {
     "cadence_id": 4339114,
     "cadence_name": "SDR - Next Steps - Warm (multiple) - Follow-up -en-US-CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -7068,8 +7404,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 47,
-        "opened": 20,
+        "sent": 50,
+        "opened": 21,
         "clicked": 1,
         "replied": 5
       },
@@ -7082,8 +7418,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 30,
-        "opened": 12,
+        "sent": 34,
+        "opened": 13,
         "clicked": 0,
         "replied": 1
       },
@@ -7108,9 +7444,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 17,
-        "opened": 4,
-        "clicked": 0,
+        "sent": 23,
+        "opened": 7,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -7134,7 +7470,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 5,
+        "sent": 9,
         "opened": 2,
         "clicked": 0,
         "replied": 0
@@ -7206,7 +7542,7 @@
   "4339115": {
     "cadence_id": 4339115,
     "cadence_name": "SDR - Resources Follow-up -en-US-CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -7232,7 +7568,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 11,
+        "sent": 12,
         "opened": 5,
         "clicked": 1,
         "replied": 0
@@ -7260,7 +7596,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 5,
+        "sent": 6,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -7274,10 +7610,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
-        "opened": 0,
+        "sent": 3,
+        "opened": 2,
         "clicked": 0,
-        "replied": 0
+        "replied": 1
       },
       {
         "step_id": 29683983,
@@ -7322,7 +7658,7 @@
   "4295352": {
     "cadence_id": 4295352,
     "cadence_name": "SDR - Software Advice -en-US-CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -7346,8 +7682,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 122,
-        "opened": 47,
+        "sent": 130,
+        "opened": 51,
         "clicked": 6,
         "replied": 10
       },
@@ -7372,9 +7708,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 78,
-        "opened": 28,
-        "clicked": 1,
+        "sent": 85,
+        "opened": 30,
+        "clicked": 2,
         "replied": 2
       },
       {
@@ -7386,7 +7722,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 57,
+        "sent": 63,
         "opened": 16,
         "clicked": 1,
         "replied": 1
@@ -7424,10 +7760,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 36,
-        "opened": 12,
+        "sent": 43,
+        "opened": 14,
         "clicked": 0,
-        "replied": 2
+        "replied": 3
       },
       {
         "step_id": 29525893,
@@ -7450,8 +7786,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 16,
-        "opened": 6,
+        "sent": 24,
+        "opened": 9,
         "clicked": 0,
         "replied": 2
       },
@@ -7636,7 +7972,7 @@
   "4339112": {
     "cadence_id": 4339112,
     "cadence_name": "SDR - Vincent Booked Call Follow-up -en-US-CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -7818,7 +8154,7 @@
   "4295294": {
     "cadence_id": 4295294,
     "cadence_name": "SDR - WEB-PRICING-en-US-CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -7842,10 +8178,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 344,
-        "opened": 167,
-        "clicked": 23,
-        "replied": 19
+        "sent": 368,
+        "opened": 179,
+        "clicked": 26,
+        "replied": 20
       },
       {
         "step_id": 29475720,
@@ -7868,9 +8204,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 239,
-        "opened": 85,
-        "clicked": 16,
+        "sent": 256,
+        "opened": 91,
+        "clicked": 17,
         "replied": 4
       },
       {
@@ -7882,10 +8218,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 189,
-        "opened": 83,
+        "sent": 200,
+        "opened": 89,
         "clicked": 13,
-        "replied": 18
+        "replied": 20
       },
       {
         "step_id": 29475723,
@@ -7920,8 +8256,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 92,
-        "opened": 38,
+        "sent": 100,
+        "opened": 43,
         "clicked": 6,
         "replied": 0
       },
@@ -7946,8 +8282,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 33,
-        "opened": 14,
+        "sent": 42,
+        "opened": 15,
         "clicked": 2,
         "replied": 0
       },
@@ -7972,8 +8308,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 8,
-        "opened": 3,
+        "sent": 10,
+        "opened": 4,
         "clicked": 0,
         "replied": 0
       },
@@ -8024,7 +8360,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 2,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -8146,7 +8482,7 @@
   "4339111": {
     "cadence_id": 4339111,
     "cadence_name": "SDR - vLex - Free Trial -en-US-CNV",
-    "pulled_at": "2026-08-06",
+    "pulled_at": "2026-08-08",
     "calls_window_days": null,
     "steps": [
       {
@@ -8170,10 +8506,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 449,
-        "opened": 160,
-        "clicked": 23,
-        "replied": 15
+        "sent": 491,
+        "opened": 176,
+        "clicked": 24,
+        "replied": 16
       },
       {
         "step_id": 29683928,
@@ -8218,10 +8554,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 206,
-        "opened": 54,
+        "sent": 254,
+        "opened": 70,
         "clicked": 8,
-        "replied": 3
+        "replied": 5
       },
       {
         "step_id": 29683932,
@@ -8242,8 +8578,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 93,
-        "opened": 25,
+        "sent": 149,
+        "opened": 35,
         "clicked": 0,
         "replied": 1
       },
@@ -8278,8 +8614,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 50,
-        "opened": 13,
+        "sent": 69,
+        "opened": 16,
         "clicked": 1,
         "replied": 0
       },
@@ -8292,8 +8628,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 21,
-        "opened": 5,
+        "sent": 37,
+        "opened": 9,
         "clicked": 0,
         "replied": 0
       },
@@ -8318,8 +8654,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 15,
-        "opened": 2,
+        "sent": 26,
+        "opened": 5,
         "clicked": 0,
         "replied": 0
       },
@@ -8344,7 +8680,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 2,
+        "sent": 4,
         "opened": 0,
         "clicked": 0,
         "replied": 0
