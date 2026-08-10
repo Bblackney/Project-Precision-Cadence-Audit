@@ -20,6 +20,20 @@ cd "$PROJECT_DIR" || { echo "$(date '+%F %T') [ERR] cannot cd to project dir" >>
 echo "=================================================================" >> "$LOG"
 echo "$(date '+%F %T') >> Starting daily adherence run" >> "$LOG"
 
+# 0) Wait for network. At 6am the Mac may still be waking from sleep; a DNS
+#    failure would otherwise abort the whole run (happened 2026-08-10). Poll up
+#    to ~10 min for the SalesLoft API host to resolve before scoring.
+NET_OK=0
+for i in $(seq 1 60); do
+  if python3 -c "import socket; socket.gethostbyname('api.salesloft.com')" >/dev/null 2>&1; then NET_OK=1; break; fi
+  echo "$(date '+%F %T') [net] api.salesloft.com not resolvable yet — waiting 10s ($i/60)" >> "$LOG"
+  sleep 10
+done
+if [ "$NET_OK" -ne 1 ]; then
+  echo "$(date '+%F %T') [ERR] network unavailable after ~10 min — skipping run" >> "$LOG"
+  exit 1
+fi
+
 # 1) Pull Salesloft, compute adherence, append CSV + JSON, update the actions ledger
 python3 -u salesloft_adherence_scorer.py >> "$LOG" 2>&1
 RC=$?
