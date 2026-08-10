@@ -11,14 +11,15 @@
     <string>/Users/brettblackney/Documents/Claude/Project Precision/Cadence Performance Scorecard — Weekly Scoring/run_adherence.sh</string>
   </array>
 
-  <!-- Fire every day at 6:00 AM (no Weekday key = daily). -->
+  <!-- Fire every day at 1:00 AM (no Weekday key = daily). ~5h run finishes ~6am. -->
   <key>StartCalendarInterval</key>
   <dict>
-    <key>Hour</key><integer>6</integer>
+    <key>Hour</key><integer>1</integer>
     <key>Minute</key><integer>0</integer>
   </dict>
 
-  <!-- If the Mac is asleep at 6am, launchd runs the missed job on wake. -->
+  <!-- If the Mac is asleep at 1am, launchd runs the missed job on wake. -->
+  <!-- To actually run at 1am, the Mac must be awake/plugged in then (see pmset). -->
   <key>StandardOutPath</key>
   <string>/Users/brettblackney/Documents/Claude/Project Precision/Cadence Performance Scorecard — Weekly Scoring/adherence.launchd.out.log</string>
   <key>StandardErrorPath</key>
