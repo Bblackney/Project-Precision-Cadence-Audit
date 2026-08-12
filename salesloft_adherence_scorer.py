@@ -39,7 +39,7 @@ LEDGER_FILE = os.path.join(BASE_DIR, "actions_ledger.json")
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 SL_BASE_URL   = "https://api.salesloft.com/v2"
-REQUEST_DELAY = 0.5
+REQUEST_DELAY = 0.25  # ~240 req/min, well under SalesLoft's 600/min (avoids costly 429 backoffs; 429s still auto-retry)
 LEDGER_RETENTION_DAYS = 60
 GUID_BATCH = 25                 # user_guids per /actions request (URL length safe)
 
@@ -220,29 +220,59 @@ def cadence_names(token, ids):
     return names
 
 # ── 3) memberships per universe cadence ────────────────────────────────────────
+def _new_member_row():
+    return {"active_people": 0, "scheduled_people": 0,
+            "added_this_week": 0, "added_last_week": 0, "added_last_30": 0,
+            "completed_memberships": 0, "removed_memberships": 0}
+
+def _tally_membership(r, m, windows):
+    """Apply ONE cadence_membership record to a metrics row. Shared by both the
+    per-cadence and batched fetchers so their counting logic can never drift."""
+    st = (m.get("current_state") or "").lower()
+    if m.get("currently_on_cadence"):
+        r["active_people"] += 1
+    if st == "scheduled":
+        r["scheduled_people"] += 1
+    if st == "completed":
+        r["completed_memberships"] += 1
+    if st in ("removed", "removed_no_action"):
+        r["removed_memberships"] += 1
+    added = parse_dt(m.get("added_at"))
+    if in_window(added, windows["this_week"]): r["added_this_week"] += 1
+    if in_window(added, windows["last_week"]): r["added_last_week"] += 1
+    if in_window(added, windows["last_30"]):   r["added_last_30"]   += 1
+
 def membership_metrics(token, cid, users, windows):
+    """Single-cadence fetch — original path. Kept for validation / rollback."""
     per_user = {}
     for m in paginate(token, "/cadence_memberships", {"cadence_id": cid, "per_page": 100}):
         uid = rid(m.get("user"))
         if uid not in users:
             continue
-        r = per_user.setdefault(uid, {"active_people": 0, "scheduled_people": 0,
-                                      "added_this_week": 0, "added_last_week": 0, "added_last_30": 0,
-                                      "completed_memberships": 0, "removed_memberships": 0})
-        st = (m.get("current_state") or "").lower()
-        if m.get("currently_on_cadence"):
-            r["active_people"] += 1
-        if st == "scheduled":
-            r["scheduled_people"] += 1
-        if st == "completed":
-            r["completed_memberships"] += 1
-        if st in ("removed", "removed_no_action"):
-            r["removed_memberships"] += 1
-        added = parse_dt(m.get("added_at"))
-        if in_window(added, windows["this_week"]): r["added_this_week"] += 1
-        if in_window(added, windows["last_week"]): r["added_last_week"] += 1
-        if in_window(added, windows["last_30"]):   r["added_last_30"]   += 1
+        _tally_membership(per_user.setdefault(uid, _new_member_row()), m, windows)
     return per_user
+
+def membership_metrics_bulk(token, cids, users, windows, batch=25):
+    """Batched fetch — pulls memberships for up to `batch` cadences per request
+    via SalesLoft's cadence_id[] array filter, grouping locally by each record's
+    own cadence id. Identical per-record logic to membership_metrics (both call
+    _tally_membership), but ~batch× fewer round-trips. Returns {(uid, cid): row}.
+
+    The membership volume (pages) is the same as the per-cadence path; the win is
+    eliminating the ~500 per-cadence setup round-trips and fuller pages."""
+    out = {}
+    cids = list(cids)
+    total = len(cids)
+    for i in range(0, total, batch):
+        chunk = cids[i:i + batch]
+        for m in paginate(token, "/cadence_memberships", {"cadence_id[]": chunk, "per_page": 100}):
+            uid = rid(m.get("user"))
+            if uid not in users:
+                continue
+            cid = rid(m.get("cadence"))
+            _tally_membership(out.setdefault((uid, cid), _new_member_row()), m, windows)
+        print(f"    …memberships {min(i + batch, total)}/{total} cadences", flush=True)
+    return out
 
 # ── ledger ──────────────────────────────────────────────────────────────────
 def load_ledger():
@@ -303,12 +333,11 @@ def main():
             "active_people": 0, "scheduled_people": 0, "added_this_week": 0,
             "added_last_week": 0, "added_last_30": 0, "completed_memberships": 0,
             "removed_memberships": 0, "open_actions": 0, "overdue_actions": 0, "days_overdue_sum": 0})
-    for i, cid in enumerate(sorted(universe), 1):
-        if i % 25 == 0:
-            print(f"    …memberships {i}/{len(universe)} cadences", flush=True)
-        mm = membership_metrics(token, cid, users, windows)
-        for uid, r in mm.items():
-            ensure(uid, cid).update(r)
+    # Batched membership fetch (25 cadences/request) — replaces the old
+    # one-cadence-at-a-time loop. Same data, ~25x fewer round-trips.
+    mm_all = membership_metrics_bulk(token, sorted(universe), users, windows)
+    for (uid, cid), r in mm_all.items():
+        ensure(uid, cid).update(r)
     for (uid, cid), n in openc.items():
         ensure(uid, cid)["open_actions"] = n
     for (uid, cid), d in overdue.items():
