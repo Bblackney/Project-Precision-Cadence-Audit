@@ -2,7 +2,7 @@
   "4381572": {
     "cadence_id": 4381572,
     "cadence_name": "(DO NOT USE) SDR - FILLED GET PRICING-en-US-CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -27,7 +27,7 @@
         "multitouch_enabled": false,
         "disabled": false,
         "sent": 2,
-        "opened": 0,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       },
@@ -66,10 +66,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
-        "opened": 0,
+        "sent": 2,
+        "opened": 1,
         "clicked": 0,
-        "replied": 0
+        "replied": 1
       },
       {
         "step_id": 29879290,
@@ -80,7 +80,7 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 2,
         "calls_connected": 0
       },
       {
@@ -118,7 +118,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 2,
         "calls_connected": 0
       },
       {
@@ -130,7 +130,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
+        "sent": 2,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -144,7 +144,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 2,
         "calls_connected": 0
       },
       {
@@ -156,7 +156,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 1,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -170,7 +170,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 1,
         "calls_connected": 0
       },
       {
@@ -327,10 +327,976 @@
       }
     ]
   },
+  "4525864": {
+    "cadence_id": 4525864,
+    "cadence_name": "6Sense - BDR - Strategic - OB - CL INTENT - en-US - CNV",
+    "pulled_at": "2026-08-21",
+    "calls_window_days": null,
+    "steps": [
+      {
+        "step_id": 30537397,
+        "name": "Call 1",
+        "display_name": "Day 1: Step 1 - Phone",
+        "day": 1,
+        "step_number": 1,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 5,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537398,
+        "name": "E1 - BDR - Strategic - OB - CL INTENT - en-US - CNV",
+        "display_name": "Day 1: Step 2 - Email",
+        "day": 1,
+        "step_number": 2,
+        "type": "email",
+        "multitouch_enabled": true,
+        "disabled": false,
+        "sent": 3,
+        "opened": 1,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537399,
+        "name": "LinkedIn Connection",
+        "display_name": "Day 2: Step 3 - Connection Request",
+        "day": 2,
+        "step_number": 3,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30537400,
+        "name": "Call 2",
+        "display_name": "Day 3: Step 4 - Phone",
+        "day": 3,
+        "step_number": 4,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 4,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537401,
+        "name": "E2 - BDR - Strategic - OB - CL INTENT - en-US - CNV ",
+        "display_name": "Day 3: Step 5 - Email",
+        "day": 3,
+        "step_number": 5,
+        "type": "email",
+        "multitouch_enabled": true,
+        "disabled": false,
+        "sent": 2,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537402,
+        "name": "InMail",
+        "display_name": "Day 5: Step 6 - InMail",
+        "day": 5,
+        "step_number": 6,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30537405,
+        "name": "Call 3 - No VM",
+        "display_name": "Day 5: Step 7 - Phone",
+        "day": 5,
+        "step_number": 7,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537406,
+        "name": "Call 4 LVM",
+        "display_name": "Day 7: Step 8 - Phone",
+        "day": 7,
+        "step_number": 8,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537407,
+        "name": "E3a - BDR - Strategic - OB - CL INTENT - en-US - CNV",
+        "display_name": "Day 7: Step 9 - Email",
+        "day": 7,
+        "step_number": 9,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537410,
+        "name": "Call 5 - No VM",
+        "display_name": "Day 9: Step 10 - Phone",
+        "day": 9,
+        "step_number": 10,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537411,
+        "name": "E4 - BDR - Strategic - OB - CL INTENT - en-US - CNV ",
+        "display_name": "Day 11: Step 11 - Email",
+        "day": 11,
+        "step_number": 11,
+        "type": "email",
+        "multitouch_enabled": true,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537412,
+        "name": "Call 7 - LVM",
+        "display_name": "Day 13: Step 12 - Phone",
+        "day": 13,
+        "step_number": 12,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537413,
+        "name": "Call 8 - No VM",
+        "display_name": "Day 15: Step 13 - Phone",
+        "day": 15,
+        "step_number": 13,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537414,
+        "name": "E5 - BDR - Strategic - OB - CL INTENT - en-US - CNV ",
+        "display_name": "Day 15: Step 14 - Email",
+        "day": 15,
+        "step_number": 14,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537415,
+        "name": "Call 9 - No VM",
+        "display_name": "Day 18: Step 15 - Phone",
+        "day": 18,
+        "step_number": 15,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537416,
+        "name": "InMail",
+        "display_name": "Day 19: Step 16 - InMail",
+        "day": 19,
+        "step_number": 16,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30537417,
+        "name": "Call 10 - LVM",
+        "display_name": "Day 20: Step 17 - Phone",
+        "day": 20,
+        "step_number": 17,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537418,
+        "name": "E6 - BDR - Strategic - OB - CL INTENT - en-US - CNV ",
+        "display_name": "Day 22: Step 18 - Email",
+        "day": 22,
+        "step_number": 18,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537419,
+        "name": "Call 11 - Final Call, LVM",
+        "display_name": "Day 25: Step 19 - Phone",
+        "day": 25,
+        "step_number": 19,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537420,
+        "name": "E7 - BDR - Strategic - OB - CL INTENT - en-US - CNV ",
+        "display_name": "Day 30: Step 20 - Email",
+        "day": 30,
+        "step_number": 20,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537421,
+        "name": "E8 - BDR - Strategic - OB - CL INTENT - en-US - CNV",
+        "display_name": "Day 37: Step 21 - Email",
+        "day": 37,
+        "step_number": 21,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537422,
+        "name": "E9 - BDR - Strategic - OB - CL INTENT - en-US - CNV",
+        "display_name": "Day 45: Step 22 - Email",
+        "day": 45,
+        "step_number": 22,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537423,
+        "name": "E10 - BDR - Strategic - OB - CL INTENT - en-US - CNV ",
+        "display_name": "Day 53: Step 23 - Email",
+        "day": 53,
+        "step_number": 23,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537424,
+        "name": "Cadence End - Take Action",
+        "display_name": "Day 60: Step 24 - Other",
+        "day": 60,
+        "step_number": 24,
+        "type": "other",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30537425,
+        "name": "E11 - BDR - Strategic - OB - CL INTENT - en-US - CNV ",
+        "display_name": "Day 60: Step 25 - Email",
+        "day": 60,
+        "step_number": 25,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      }
+    ]
+  },
+  "4525868": {
+    "cadence_id": 4525868,
+    "cadence_name": "6Sense - BDR - Strategic - OB - NMQL INTENT - en-US - CNV",
+    "pulled_at": "2026-08-21",
+    "calls_window_days": null,
+    "steps": [
+      {
+        "step_id": 30537435,
+        "name": "Call 1",
+        "display_name": "Day 1: Step 1 - Phone",
+        "day": 1,
+        "step_number": 1,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 3,
+        "calls_connected": 1
+      },
+      {
+        "step_id": 30537436,
+        "name": "E1 - BDR - Strategic - PI - OB - NMQL INTENT - en-US - CNV\u00a0",
+        "display_name": "Day 1: Step 2 - Email",
+        "day": 1,
+        "step_number": 2,
+        "type": "email",
+        "multitouch_enabled": true,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537437,
+        "name": "LinkedIn Connection",
+        "display_name": "Day 2: Step 3 - Connection Request",
+        "day": 2,
+        "step_number": 3,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30537438,
+        "name": "Call 2",
+        "display_name": "Day 3: Step 4 - Phone",
+        "day": 3,
+        "step_number": 4,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537439,
+        "name": "E2 - BDR - Strategic - PI - OB - NMQL INTENT - en-US - CNV\u00a0 ",
+        "display_name": "Day 3: Step 5 - Email",
+        "day": 3,
+        "step_number": 5,
+        "type": "email",
+        "multitouch_enabled": true,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537443,
+        "name": "InMail",
+        "display_name": "Day 5: Step 6 - InMail",
+        "day": 5,
+        "step_number": 6,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30537445,
+        "name": "Call 3 - No VM",
+        "display_name": "Day 5: Step 7 - Phone",
+        "day": 5,
+        "step_number": 7,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537447,
+        "name": "Call 4 LVM",
+        "display_name": "Day 7: Step 8 - Phone",
+        "day": 7,
+        "step_number": 8,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537449,
+        "name": "E3a - BDR - Strategic - OB - NMQL INTENT - en-US - CNV ",
+        "display_name": "Day 7: Step 9 - Email",
+        "day": 7,
+        "step_number": 9,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537452,
+        "name": "Call 5 - No VM",
+        "display_name": "Day 9: Step 10 - Phone",
+        "day": 9,
+        "step_number": 10,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537454,
+        "name": "E4 - BDR - Strategic - PI - OB - NMQL INTENT - en-US - CNV\u00a0",
+        "display_name": "Day 11: Step 11 - Email",
+        "day": 11,
+        "step_number": 11,
+        "type": "email",
+        "multitouch_enabled": true,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537455,
+        "name": "Call 7 - LVM",
+        "display_name": "Day 13: Step 12 - Phone",
+        "day": 13,
+        "step_number": 12,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537456,
+        "name": "Call 8 - No VM",
+        "display_name": "Day 15: Step 13 - Phone",
+        "day": 15,
+        "step_number": 13,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537457,
+        "name": "E5 - BDR - Strategic - PI - OB - NMQL INTENT - en-US - CNV\u00a0",
+        "display_name": "Day 15: Step 14 - Email",
+        "day": 15,
+        "step_number": 14,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537458,
+        "name": "Call 9 - No VM",
+        "display_name": "Day 18: Step 15 - Phone",
+        "day": 18,
+        "step_number": 15,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537459,
+        "name": "InMail",
+        "display_name": "Day 19: Step 16 - InMail",
+        "day": 19,
+        "step_number": 16,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30537460,
+        "name": "Call 10 - LVM",
+        "display_name": "Day 20: Step 17 - Phone",
+        "day": 20,
+        "step_number": 17,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537461,
+        "name": "E6 - BDR - Strategic - PI - OB - NMQL INTENT - en-US - CNV\u00a0",
+        "display_name": "Day 22: Step 18 - Email",
+        "day": 22,
+        "step_number": 18,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537462,
+        "name": "Call 11 - Final Call, LVM",
+        "display_name": "Day 25: Step 19 - Phone",
+        "day": 25,
+        "step_number": 19,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537463,
+        "name": "E7 - BDR - Strategic - PI - OB - NMQL INTENT - en-US - CNV\u00a0",
+        "display_name": "Day 30: Step 20 - Email",
+        "day": 30,
+        "step_number": 20,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537464,
+        "name": "E8 - BDR - Strategic - PI - OB - NMQL INTENT - en-US - CNV\u00a0",
+        "display_name": "Day 37: Step 21 - Email",
+        "day": 37,
+        "step_number": 21,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537465,
+        "name": "E9 - BDR - Strategic - PI - OB - NMQL INTENT - en-US - CNV\u00a0",
+        "display_name": "Day 45: Step 22 - Email",
+        "day": 45,
+        "step_number": 22,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537466,
+        "name": "E10 - BDR - Strategic - PI - OB - NMQL INTENT - en-US - CNV\u00a0 ",
+        "display_name": "Day 53: Step 23 - Email",
+        "day": 53,
+        "step_number": 23,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537467,
+        "name": "Cadence End - Take Action",
+        "display_name": "Day 60: Step 24 - Other",
+        "day": 60,
+        "step_number": 24,
+        "type": "other",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30537468,
+        "name": "E11 - BDR - Strategic - PI - OB - NMQL INTENT - en-US - CNV\u00a0",
+        "display_name": "Day 60: Step 25 - Email",
+        "day": 60,
+        "step_number": 25,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      }
+    ]
+  },
+  "4525861": {
+    "cadence_id": 4525861,
+    "cadence_name": "6Sense - BDR - Strategic - WebSights INTENT - en-US - CNV",
+    "pulled_at": "2026-08-21",
+    "calls_window_days": null,
+    "steps": [
+      {
+        "step_id": 30537362,
+        "name": "Call 1",
+        "display_name": "Day 1: Step 1 - Phone",
+        "day": 1,
+        "step_number": 1,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 7,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537363,
+        "name": "E1 - BDR - Strategic - WebSights INTENT - en-US - CNV ",
+        "display_name": "Day 1: Step 2 - Email",
+        "day": 1,
+        "step_number": 2,
+        "type": "email",
+        "multitouch_enabled": true,
+        "disabled": false,
+        "sent": 2,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537364,
+        "name": "LinkedIn Connection",
+        "display_name": "Day 2: Step 3 - Connection Request",
+        "day": 2,
+        "step_number": 3,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30537365,
+        "name": "Call 2",
+        "display_name": "Day 3: Step 4 - Phone",
+        "day": 3,
+        "step_number": 4,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 1,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537366,
+        "name": "E2 - BDR - Strategic - WebSights INTENT - en-US - CNV ",
+        "display_name": "Day 3: Step 5 - Email",
+        "day": 3,
+        "step_number": 5,
+        "type": "email",
+        "multitouch_enabled": true,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537367,
+        "name": "InMail",
+        "display_name": "Day 5: Step 6 - InMail",
+        "day": 5,
+        "step_number": 6,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30537368,
+        "name": "Call 3 - No VM",
+        "display_name": "Day 5: Step 7 - Phone",
+        "day": 5,
+        "step_number": 7,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537369,
+        "name": "Call 4 LVM",
+        "display_name": "Day 7: Step 8 - Phone",
+        "day": 7,
+        "step_number": 8,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537370,
+        "name": "E3a - BDR - Strategic - WebSights INTENT - en-US - CNV ",
+        "display_name": "Day 7: Step 9 - Email",
+        "day": 7,
+        "step_number": 9,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537371,
+        "name": "Call 5 - No VM",
+        "display_name": "Day 9: Step 10 - Phone",
+        "day": 9,
+        "step_number": 10,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537372,
+        "name": "E4 - BDR - Strategic - WebSights INTENT - en-US - CNV ",
+        "display_name": "Day 11: Step 11 - Email",
+        "day": 11,
+        "step_number": 11,
+        "type": "email",
+        "multitouch_enabled": true,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537373,
+        "name": "Call 7 - LVM",
+        "display_name": "Day 13: Step 12 - Phone",
+        "day": 13,
+        "step_number": 12,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537374,
+        "name": "Call 8 - No VM",
+        "display_name": "Day 15: Step 13 - Phone",
+        "day": 15,
+        "step_number": 13,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537375,
+        "name": "E5 - BDR - Strategic - WebSights INTENT - en-US - CNV ",
+        "display_name": "Day 15: Step 14 - Email",
+        "day": 15,
+        "step_number": 14,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537376,
+        "name": "Call 9 - No VM",
+        "display_name": "Day 18: Step 15 - Phone",
+        "day": 18,
+        "step_number": 15,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537377,
+        "name": "InMail",
+        "display_name": "Day 19: Step 16 - InMail",
+        "day": 19,
+        "step_number": 16,
+        "type": "integration",
+        "multitouch_enabled": false,
+        "disabled": false
+      },
+      {
+        "step_id": 30537378,
+        "name": "Call 10 - LVM",
+        "display_name": "Day 20: Step 17 - Phone",
+        "day": 20,
+        "step_number": 17,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537379,
+        "name": "E6 - BDR - Strategic - WebSights INTENT - en-US - CNV ",
+        "display_name": "Day 22: Step 18 - Email",
+        "day": 22,
+        "step_number": 18,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537380,
+        "name": "Call 11 - Final Call, LVM",
+        "display_name": "Day 25: Step 19 - Phone",
+        "day": 25,
+        "step_number": 19,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 0,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 30537381,
+        "name": "E7 - BDR - Strategic - WebSights INTENT - en-US - CNV ",
+        "display_name": "Day 30: Step 20 - Email",
+        "day": 30,
+        "step_number": 20,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537382,
+        "name": "E8 - BDR - Strategic - WebSights INTENT - en-US - CNV ",
+        "display_name": "Day 37: Step 21 - Email",
+        "day": 37,
+        "step_number": 21,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537383,
+        "name": "E9 - BDR - Strategic - WebSights INTENT - en-US - CNV ",
+        "display_name": "Day 45: Step 22 - Email",
+        "day": 45,
+        "step_number": 22,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537384,
+        "name": "E10 - BDR - Strategic - WebSights INTENT - en-US - CNV ",
+        "display_name": "Day 53: Step 23 - Email",
+        "day": 53,
+        "step_number": 23,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537385,
+        "name": "E11 - BDR - Strategic - WebSights INTENT - en-US - CNV ",
+        "display_name": "Day 60: Step 24 - Email",
+        "day": 60,
+        "step_number": 24,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 30537386,
+        "name": "Cadence End - Take Action",
+        "display_name": "Day 60: Step 25 - Other",
+        "day": 60,
+        "step_number": 25,
+        "type": "other",
+        "multitouch_enabled": false,
+        "disabled": false
+      }
+    ]
+  },
   "4333113": {
     "cadence_id": 4333113,
     "cadence_name": "BDR - GOV - Canadian Time Matters Phase-Out - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -404,7 +1370,7 @@
   "4333115": {
     "cadence_id": 4333115,
     "cadence_name": "BDR - GOV - Legal Assistant Cold - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -518,7 +1484,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 1,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -528,7 +1494,7 @@
   "4333114": {
     "cadence_id": 4333114,
     "cadence_name": "BDR - GOV - Office Manager Cold - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -602,7 +1568,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 2,
+        "sent": 3,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -612,7 +1578,7 @@
   "4333112": {
     "cadence_id": 4333112,
     "cadence_name": "BDR - GOV - Paralegal Cold - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -678,7 +1644,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 42,
+        "calls_made": 43,
         "calls_connected": 5
       },
       {
@@ -700,8 +1666,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 12,
-        "opened": 2,
+        "sent": 22,
+        "opened": 3,
         "clicked": 2,
         "replied": 0
       },
@@ -714,7 +1680,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 4,
+        "calls_made": 21,
         "calls_connected": 0
       },
       {
@@ -736,7 +1702,7 @@
   "4480655": {
     "cadence_id": 4480655,
     "cadence_name": "BDR - Mid - Market Cluster4 Litigation BelowTheLine - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -748,8 +1714,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
-        "calls_connected": 0
+        "calls_made": 15,
+        "calls_connected": 2
       },
       {
         "step_id": 30329934,
@@ -760,8 +1726,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 8,
+        "opened": 3,
         "clicked": 0,
         "replied": 0
       },
@@ -904,7 +1870,7 @@
   "4480659": {
     "cadence_id": 4480659,
     "cadence_name": "BDR - Mid - Market Cluster5 Transactional BelowTheLine - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -916,8 +1882,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
-        "calls_connected": 0
+        "calls_made": 3,
+        "calls_connected": 1
       },
       {
         "step_id": 30329960,
@@ -928,7 +1894,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 2,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -1072,7 +2038,7 @@
   "4329157": {
     "cadence_id": 4329157,
     "cadence_name": "BDR - Mid-Market -  (Ops) Contingency / PI - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -1084,8 +2050,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 29,
-        "calls_connected": 0
+        "calls_made": 44,
+        "calls_connected": 2
       },
       {
         "step_id": 29639076,
@@ -1096,9 +2062,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 42,
-        "opened": 15,
-        "clicked": 4,
+        "sent": 60,
+        "opened": 20,
+        "clicked": 5,
         "replied": 0
       },
       {
@@ -1120,7 +2086,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 15,
+        "calls_made": 28,
         "calls_connected": 0
       },
       {
@@ -1132,8 +2098,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 26,
-        "opened": 6,
+        "sent": 39,
+        "opened": 8,
         "clicked": 3,
         "replied": 0
       },
@@ -1146,7 +2112,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 4,
+        "calls_made": 13,
         "calls_connected": 0
       },
       {
@@ -1168,9 +2134,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 5,
-        "opened": 0,
-        "clicked": 0,
+        "sent": 27,
+        "opened": 8,
+        "clicked": 2,
         "replied": 0
       },
       {
@@ -1192,7 +2158,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 12,
         "calls_connected": 0
       },
       {
@@ -1204,9 +2170,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 2,
-        "opened": 0,
-        "clicked": 0,
+        "sent": 9,
+        "opened": 1,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -1218,7 +2184,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 2,
         "calls_connected": 0
       },
       {
@@ -1230,7 +2196,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 4,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -1240,7 +2206,7 @@
   "4329001": {
     "cadence_id": 4329001,
     "cadence_name": "BDR - Mid-Market - (Ops) Hourly & Flat-Fee - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -1252,8 +2218,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 103,
-        "calls_connected": 2
+        "calls_made": 133,
+        "calls_connected": 7
       },
       {
         "step_id": 29638282,
@@ -1264,9 +2230,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 85,
-        "opened": 28,
-        "clicked": 4,
+        "sent": 120,
+        "opened": 38,
+        "clicked": 5,
         "replied": 1
       },
       {
@@ -1288,8 +2254,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 44,
-        "calls_connected": 4
+        "calls_made": 67,
+        "calls_connected": 5
       },
       {
         "step_id": 29638400,
@@ -1300,9 +2266,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 16,
-        "opened": 7,
-        "clicked": 2,
+        "sent": 55,
+        "opened": 13,
+        "clicked": 5,
         "replied": 0
       },
       {
@@ -1314,7 +2280,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 4,
+        "calls_made": 40,
         "calls_connected": 0
       },
       {
@@ -1336,9 +2302,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 4,
-        "opened": 0,
-        "clicked": 0,
+        "sent": 12,
+        "opened": 1,
+        "clicked": 2,
         "replied": 0
       },
       {
@@ -1360,8 +2326,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
-        "calls_connected": 0
+        "calls_made": 8,
+        "calls_connected": 1
       },
       {
         "step_id": 29638760,
@@ -1372,9 +2338,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
-        "clicked": 0,
+        "sent": 5,
+        "opened": 1,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -1386,7 +2352,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 3,
         "calls_connected": 0
       },
       {
@@ -1398,8 +2364,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 2,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       }
@@ -1408,7 +2374,7 @@
   "4295481": {
     "cadence_id": 4295481,
     "cadence_name": "BDR - Strategic - AQLs Excl Draft  - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -1420,8 +2386,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 507,
-        "calls_connected": 43
+        "calls_made": 794,
+        "calls_connected": 69
       },
       {
         "step_id": 29476552,
@@ -1432,10 +2398,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 409,
-        "opened": 151,
-        "clicked": 19,
-        "replied": 8
+        "sent": 611,
+        "opened": 232,
+        "clicked": 26,
+        "replied": 11
       },
       {
         "step_id": 29476553,
@@ -1456,8 +2422,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 379,
-        "calls_connected": 26
+        "calls_made": 582,
+        "calls_connected": 38
       },
       {
         "step_id": 29476555,
@@ -1468,10 +2434,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 292,
-        "opened": 96,
-        "clicked": 11,
-        "replied": 4
+        "sent": 422,
+        "opened": 140,
+        "clicked": 16,
+        "replied": 5
       },
       {
         "step_id": 29476556,
@@ -1492,8 +2458,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 283,
-        "calls_connected": 10
+        "calls_made": 425,
+        "calls_connected": 17
       },
       {
         "step_id": 29476558,
@@ -1504,8 +2470,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 237,
-        "calls_connected": 9
+        "calls_made": 343,
+        "calls_connected": 13
       },
       {
         "step_id": 29476559,
@@ -1516,10 +2482,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 119,
-        "opened": 43,
-        "clicked": 4,
-        "replied": 2
+        "sent": 188,
+        "opened": 72,
+        "clicked": 7,
+        "replied": 4
       },
       {
         "step_id": 29476560,
@@ -1530,8 +2496,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 83,
-        "calls_connected": 0
+        "calls_made": 250,
+        "calls_connected": 6
       },
       {
         "step_id": 29476561,
@@ -1542,9 +2508,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 67,
-        "opened": 17,
-        "clicked": 1,
+        "sent": 215,
+        "opened": 60,
+        "clicked": 6,
         "replied": 0
       },
       {
@@ -1556,8 +2522,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 30,
-        "calls_connected": 1
+        "calls_made": 137,
+        "calls_connected": 5
       },
       {
         "step_id": 29476563,
@@ -1568,8 +2534,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 20,
-        "calls_connected": 0
+        "calls_made": 113,
+        "calls_connected": 3
       },
       {
         "step_id": 29476564,
@@ -1580,9 +2546,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 18,
-        "opened": 5,
-        "clicked": 0,
+        "sent": 83,
+        "opened": 23,
+        "clicked": 2,
         "replied": 0
       },
       {
@@ -1594,8 +2560,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 6,
-        "calls_connected": 0
+        "calls_made": 60,
+        "calls_connected": 1
       },
       {
         "step_id": 29476566,
@@ -1616,8 +2582,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 5,
-        "calls_connected": 0
+        "calls_made": 36,
+        "calls_connected": 2
       },
       {
         "step_id": 29476568,
@@ -1628,10 +2594,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 5,
-        "opened": 2,
+        "sent": 16,
+        "opened": 5,
         "clicked": 0,
-        "replied": 1
+        "replied": 2
       },
       {
         "step_id": 29476569,
@@ -1642,7 +2608,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 13,
         "calls_connected": 0
       },
       {
@@ -1654,8 +2620,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 3,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       },
@@ -1730,7 +2696,7 @@
   "4295482": {
     "cadence_id": 4295482,
     "cadence_name": "BDR - Strategic - NMQL - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -1742,8 +2708,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 481,
-        "calls_connected": 40
+        "calls_made": 593,
+        "calls_connected": 48
       },
       {
         "step_id": 29476578,
@@ -1754,10 +2720,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 324,
-        "opened": 105,
-        "clicked": 16,
-        "replied": 5
+        "sent": 425,
+        "opened": 147,
+        "clicked": 21,
+        "replied": 10
       },
       {
         "step_id": 29476579,
@@ -1778,8 +2744,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 305,
-        "calls_connected": 19
+        "calls_made": 443,
+        "calls_connected": 29
       },
       {
         "step_id": 29476581,
@@ -1790,9 +2756,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 233,
-        "opened": 82,
-        "clicked": 8,
+        "sent": 308,
+        "opened": 112,
+        "clicked": 12,
         "replied": 6
       },
       {
@@ -1814,8 +2780,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 219,
-        "calls_connected": 11
+        "calls_made": 329,
+        "calls_connected": 17
       },
       {
         "step_id": 29476584,
@@ -1826,8 +2792,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 173,
-        "calls_connected": 6
+        "calls_made": 270,
+        "calls_connected": 10
       },
       {
         "step_id": 29476585,
@@ -1838,10 +2804,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 53,
-        "opened": 13,
-        "clicked": 0,
-        "replied": 0
+        "sent": 107,
+        "opened": 26,
+        "clicked": 1,
+        "replied": 1
       },
       {
         "step_id": 29476586,
@@ -1852,8 +2818,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 86,
-        "calls_connected": 2
+        "calls_made": 245,
+        "calls_connected": 8
       },
       {
         "step_id": 29476587,
@@ -1864,9 +2830,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 60,
-        "opened": 17,
-        "clicked": 2,
+        "sent": 174,
+        "opened": 52,
+        "clicked": 10,
         "replied": 1
       },
       {
@@ -1878,8 +2844,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 44,
-        "calls_connected": 0
+        "calls_made": 117,
+        "calls_connected": 1
       },
       {
         "step_id": 29476589,
@@ -1890,8 +2856,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 31,
-        "calls_connected": 2
+        "calls_made": 80,
+        "calls_connected": 3
       },
       {
         "step_id": 29476590,
@@ -1902,9 +2868,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 26,
-        "opened": 6,
-        "clicked": 0,
+        "sent": 66,
+        "opened": 13,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -1916,8 +2882,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 8,
-        "calls_connected": 0
+        "calls_made": 38,
+        "calls_connected": 1
       },
       {
         "step_id": 29476592,
@@ -1938,8 +2904,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 5,
-        "calls_connected": 0
+        "calls_made": 36,
+        "calls_connected": 1
       },
       {
         "step_id": 29476594,
@@ -1950,10 +2916,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 2,
-        "opened": 0,
+        "sent": 24,
+        "opened": 6,
         "clicked": 0,
-        "replied": 0
+        "replied": 2
       },
       {
         "step_id": 29476595,
@@ -1964,8 +2930,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
-        "calls_connected": 0
+        "calls_made": 21,
+        "calls_connected": 1
       },
       {
         "step_id": 29476596,
@@ -1976,7 +2942,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 1,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -2052,7 +3018,7 @@
   "4295483": {
     "cadence_id": 4295483,
     "cadence_name": "BDR - Strategic - OB - CL INTENT - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -2064,8 +3030,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 239,
-        "calls_connected": 16
+        "calls_made": 341,
+        "calls_connected": 28
       },
       {
         "step_id": 29476604,
@@ -2076,10 +3042,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 193,
-        "opened": 68,
-        "clicked": 8,
-        "replied": 5
+        "sent": 260,
+        "opened": 95,
+        "clicked": 11,
+        "replied": 8
       },
       {
         "step_id": 29476605,
@@ -2100,8 +3066,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 158,
-        "calls_connected": 4
+        "calls_made": 223,
+        "calls_connected": 11
       },
       {
         "step_id": 29476607,
@@ -2112,9 +3078,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 143,
-        "opened": 51,
-        "clicked": 2,
+        "sent": 197,
+        "opened": 72,
+        "clicked": 5,
         "replied": 2
       },
       {
@@ -2136,8 +3102,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 110,
-        "calls_connected": 8
+        "calls_made": 172,
+        "calls_connected": 13
       },
       {
         "step_id": 29476610,
@@ -2148,8 +3114,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 90,
-        "calls_connected": 3
+        "calls_made": 146,
+        "calls_connected": 5
       },
       {
         "step_id": 29476611,
@@ -2160,8 +3126,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 66,
-        "opened": 22,
+        "sent": 88,
+        "opened": 31,
         "clicked": 1,
         "replied": 0
       },
@@ -2174,8 +3140,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 71,
-        "calls_connected": 2
+        "calls_made": 103,
+        "calls_connected": 4
       },
       {
         "step_id": 29476613,
@@ -2186,8 +3152,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 48,
-        "opened": 21,
+        "sent": 68,
+        "opened": 25,
         "clicked": 0,
         "replied": 1
       },
@@ -2200,8 +3166,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 43,
-        "calls_connected": 1
+        "calls_made": 70,
+        "calls_connected": 3
       },
       {
         "step_id": 29476615,
@@ -2212,8 +3178,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 33,
-        "calls_connected": 2
+        "calls_made": 58,
+        "calls_connected": 4
       },
       {
         "step_id": 29476616,
@@ -2224,8 +3190,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 27,
-        "opened": 13,
+        "sent": 49,
+        "opened": 21,
         "clicked": 1,
         "replied": 0
       },
@@ -2238,8 +3204,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 12,
-        "calls_connected": 0
+        "calls_made": 46,
+        "calls_connected": 2
       },
       {
         "step_id": 29476618,
@@ -2260,7 +3226,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 22,
         "calls_connected": 0
       },
       {
@@ -2272,10 +3238,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
-        "clicked": 0,
-        "replied": 0
+        "sent": 22,
+        "opened": 9,
+        "clicked": 2,
+        "replied": 2
       },
       {
         "step_id": 29476621,
@@ -2286,8 +3252,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
-        "calls_connected": 0
+        "calls_made": 18,
+        "calls_connected": 1
       },
       {
         "step_id": 29476622,
@@ -2298,8 +3264,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 4,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       },
@@ -2374,7 +3340,7 @@
   "4295484": {
     "cadence_id": 4295484,
     "cadence_name": "BDR - Strategic - OB - NMQL INTENT - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -2386,8 +3352,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 17,
-        "calls_connected": 2
+        "calls_made": 33,
+        "calls_connected": 5
       },
       {
         "step_id": 29476630,
@@ -2398,8 +3364,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 12,
-        "opened": 3,
+        "sent": 23,
+        "opened": 7,
         "clicked": 0,
         "replied": 0
       },
@@ -2422,7 +3388,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 10,
+        "calls_made": 20,
         "calls_connected": 0
       },
       {
@@ -2434,8 +3400,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 5,
-        "opened": 0,
+        "sent": 15,
+        "opened": 2,
         "clicked": 0,
         "replied": 0
       },
@@ -2458,8 +3424,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 5,
-        "calls_connected": 0
+        "calls_made": 11,
+        "calls_connected": 1
       },
       {
         "step_id": 29476636,
@@ -2470,8 +3436,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 4,
-        "calls_connected": 0
+        "calls_made": 10,
+        "calls_connected": 1
       },
       {
         "step_id": 29476637,
@@ -2482,7 +3448,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 2,
+        "sent": 4,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -2496,7 +3462,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 3,
+        "calls_made": 8,
         "calls_connected": 0
       },
       {
@@ -2508,8 +3474,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 2,
-        "opened": 0,
+        "sent": 5,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       },
@@ -2522,7 +3488,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 2,
+        "calls_made": 4,
         "calls_connected": 0
       },
       {
@@ -2534,7 +3500,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 2,
+        "calls_made": 3,
         "calls_connected": 0
       },
       {
@@ -2560,7 +3526,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 2,
+        "calls_made": 3,
         "calls_connected": 0
       },
       {
@@ -2582,7 +3548,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 2,
         "calls_connected": 0
       },
       {
@@ -2696,7 +3662,7 @@
   "4295394": {
     "cadence_id": 4295394,
     "cadence_name": "BDR - Strategic - WebSights INTENT - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -2708,8 +3674,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 533,
-        "calls_connected": 43
+        "calls_made": 783,
+        "calls_connected": 68
       },
       {
         "step_id": 29476165,
@@ -2720,10 +3686,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 405,
-        "opened": 127,
-        "clicked": 19,
-        "replied": 6
+        "sent": 575,
+        "opened": 171,
+        "clicked": 24,
+        "replied": 7
       },
       {
         "step_id": 29476166,
@@ -2744,8 +3710,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 279,
-        "calls_connected": 15
+        "calls_made": 522,
+        "calls_connected": 28
       },
       {
         "step_id": 29476168,
@@ -2756,9 +3722,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 245,
-        "opened": 80,
-        "clicked": 14,
+        "sent": 378,
+        "opened": 110,
+        "clicked": 17,
         "replied": 5
       },
       {
@@ -2780,8 +3746,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 174,
-        "calls_connected": 5
+        "calls_made": 336,
+        "calls_connected": 11
       },
       {
         "step_id": 29476170,
@@ -2792,8 +3758,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 134,
-        "calls_connected": 6
+        "calls_made": 223,
+        "calls_connected": 8
       },
       {
         "step_id": 29476169,
@@ -2804,9 +3770,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 93,
-        "opened": 27,
-        "clicked": 3,
+        "sent": 128,
+        "opened": 35,
+        "clicked": 4,
         "replied": 0
       },
       {
@@ -2818,8 +3784,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 78,
-        "calls_connected": 1
+        "calls_made": 140,
+        "calls_connected": 5
       },
       {
         "step_id": 29476173,
@@ -2830,9 +3796,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 53,
-        "opened": 20,
-        "clicked": 3,
+        "sent": 92,
+        "opened": 29,
+        "clicked": 6,
         "replied": 0
       },
       {
@@ -2844,7 +3810,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 36,
+        "calls_made": 75,
         "calls_connected": 0
       },
       {
@@ -2856,7 +3822,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 15,
+        "calls_made": 64,
         "calls_connected": 0
       },
       {
@@ -2868,9 +3834,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 20,
-        "opened": 3,
-        "clicked": 3,
+        "sent": 52,
+        "opened": 13,
+        "clicked": 4,
         "replied": 0
       },
       {
@@ -2882,7 +3848,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 10,
+        "calls_made": 37,
         "calls_connected": 0
       },
       {
@@ -2904,7 +3870,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 12,
         "calls_connected": 0
       },
       {
@@ -2916,8 +3882,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 3,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       },
@@ -2930,7 +3896,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 5,
         "calls_connected": 0
       },
       {
@@ -3015,14 +3981,14 @@
       }
     ]
   },
-  "4328921": {
-    "cadence_id": 4328921,
-    "cadence_name": "BDR - Velocity - AQL / NMQL - en-US - CNV",
-    "pulled_at": "2026-08-08",
+  "4540221": {
+    "cadence_id": 4540221,
+    "cadence_name": "BDR - Transactional AI - en-SPAIN - CNV",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
-        "step_id": 29637733,
+        "step_id": 30600843,
         "name": "Call 1 - AM, No Voicemail",
         "display_name": "Day 1: Step 1 - Phone",
         "day": 1,
@@ -3030,11 +3996,11 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 2026,
-        "calls_connected": 214
+        "calls_made": 0,
+        "calls_connected": 0
       },
       {
-        "step_id": 29637740,
+        "step_id": 30600844,
         "name": "Email 1 - AM",
         "display_name": "Day 1: Step 2 - Email",
         "day": 1,
@@ -3042,13 +4008,13 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 2107,
-        "opened": 640,
-        "clicked": 68,
-        "replied": 19
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
       },
       {
-        "step_id": 29637742,
+        "step_id": 30600846,
         "name": "Call 2 - PM, Leave Voicemail",
         "display_name": "Day 1: Step 3 - Phone",
         "day": 1,
@@ -3056,11 +4022,11 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1488,
-        "calls_connected": 87
+        "calls_made": 0,
+        "calls_connected": 0
       },
       {
-        "step_id": 29637746,
+        "step_id": 30600848,
         "name": "Email 2",
         "display_name": "Day 3: Step 4 - Email",
         "day": 3,
@@ -3068,13 +4034,13 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1321,
-        "opened": 431,
-        "clicked": 26,
-        "replied": 2
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
       },
       {
-        "step_id": 29637747,
+        "step_id": 30600850,
         "name": "Call 3 - No Voicemail",
         "display_name": "Day 3: Step 5 - Phone",
         "day": 3,
@@ -3082,11 +4048,11 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 992,
-        "calls_connected": 54
+        "calls_made": 0,
+        "calls_connected": 0
       },
       {
-        "step_id": 29637749,
+        "step_id": 30600852,
         "name": "Call 4 - No Voicemail",
         "display_name": "Day 5: Step 6 - Phone",
         "day": 5,
@@ -3094,11 +4060,11 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 694,
-        "calls_connected": 20
+        "calls_made": 0,
+        "calls_connected": 0
       },
       {
-        "step_id": 29637757,
+        "step_id": 30600853,
         "name": "Call 5 - No Voicemail",
         "display_name": "Day 7: Step 7 - Phone",
         "day": 7,
@@ -3106,11 +4072,11 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 407,
-        "calls_connected": 17
+        "calls_made": 0,
+        "calls_connected": 0
       },
       {
-        "step_id": 29637759,
+        "step_id": 30600854,
         "name": "Call 6 - Leave Voicemail",
         "display_name": "Day 9: Step 8 - Phone",
         "day": 9,
@@ -3118,11 +4084,11 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 223,
-        "calls_connected": 14
+        "calls_made": 0,
+        "calls_connected": 0
       },
       {
-        "step_id": 29637781,
+        "step_id": 30600855,
         "name": "Email 3",
         "display_name": "Day 9: Step 9 - Email",
         "day": 9,
@@ -3130,13 +4096,13 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 246,
-        "opened": 91,
-        "clicked": 4,
-        "replied": 2
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
+        "replied": 0
       },
       {
-        "step_id": 29637786,
+        "step_id": 30600857,
         "name": "Call 7 - No Voicemail",
         "display_name": "Day 11: Step 10 - Phone",
         "day": 11,
@@ -3144,11 +4110,11 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 133,
-        "calls_connected": 1
+        "calls_made": 0,
+        "calls_connected": 0
       },
       {
-        "step_id": 29637812,
+        "step_id": 30600858,
         "name": "Email 4",
         "display_name": "Day 11: Step 11 - Email",
         "day": 11,
@@ -3156,13 +4122,13 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 167,
-        "opened": 49,
-        "clicked": 4,
+        "sent": 0,
+        "opened": 0,
+        "clicked": 0,
         "replied": 0
       },
       {
-        "step_id": 29637817,
+        "step_id": 30600859,
         "name": "Call 8 - No Voicemail",
         "display_name": "Day 14: Step 12 - Phone",
         "day": 14,
@@ -3170,11 +4136,11 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 55,
-        "calls_connected": 1
+        "calls_made": 0,
+        "calls_connected": 0
       },
       {
-        "step_id": 29637832,
+        "step_id": 30600860,
         "name": "Email 5",
         "display_name": "Day 16: Step 13 - Email",
         "day": 16,
@@ -3182,13 +4148,13 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 19,
-        "opened": 3,
+        "sent": 0,
+        "opened": 0,
         "clicked": 0,
         "replied": 0
       },
       {
-        "step_id": 29637835,
+        "step_id": 30600861,
         "name": "Call 9 - Leave Voicemail",
         "display_name": "Day 18: Step 14 - Phone",
         "day": 18,
@@ -3196,11 +4162,11 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 2,
+        "calls_made": 0,
         "calls_connected": 0
       },
       {
-        "step_id": 29637840,
+        "step_id": 30600862,
         "name": "Call 10 - No Voicemail (Break up)",
         "display_name": "Day 21: Step 15 - Phone",
         "day": 21,
@@ -3212,21 +4178,21 @@
         "calls_connected": 0
       },
       {
-        "step_id": 29637875,
-        "name": "Email 6 - Break Up Email",
+        "step_id": 30600863,
+        "name": "Email 6 - Break up email",
         "display_name": "Day 21: Step 16 - Email",
         "day": 21,
         "step_number": 16,
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
-        "opened": 1,
+        "sent": 0,
+        "opened": 0,
         "clicked": 0,
         "replied": 0
       },
       {
-        "step_id": 29637881,
+        "step_id": 30600864,
         "name": "Call 11 - No Voicemail",
         "display_name": "Day 24: Step 17 - Phone",
         "day": 24,
@@ -3238,7 +4204,7 @@
         "calls_connected": 0
       },
       {
-        "step_id": 29637883,
+        "step_id": 30600865,
         "name": "Call 12 - No Voicemail",
         "display_name": "Day 28: Step 18 - Phone",
         "day": 28,
@@ -3251,10 +4217,246 @@
       }
     ]
   },
+  "4328921": {
+    "cadence_id": 4328921,
+    "cadence_name": "BDR - Velocity - AQL / NMQL - en-US - CNV",
+    "pulled_at": "2026-08-21",
+    "calls_window_days": null,
+    "steps": [
+      {
+        "step_id": 29637733,
+        "name": "Call 1 - AM, No Voicemail",
+        "display_name": "Day 1: Step 1 - Phone",
+        "day": 1,
+        "step_number": 1,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 3733,
+        "calls_connected": 383
+      },
+      {
+        "step_id": 29637740,
+        "name": "Email 1 - AM",
+        "display_name": "Day 1: Step 2 - Email",
+        "day": 1,
+        "step_number": 2,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 3956,
+        "opened": 1222,
+        "clicked": 126,
+        "replied": 33
+      },
+      {
+        "step_id": 29637742,
+        "name": "Call 2 - PM, Leave Voicemail",
+        "display_name": "Day 1: Step 3 - Phone",
+        "day": 1,
+        "step_number": 3,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 3100,
+        "calls_connected": 204
+      },
+      {
+        "step_id": 29637746,
+        "name": "Email 2",
+        "display_name": "Day 3: Step 4 - Email",
+        "day": 3,
+        "step_number": 4,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 2829,
+        "opened": 969,
+        "clicked": 70,
+        "replied": 8
+      },
+      {
+        "step_id": 29637747,
+        "name": "Call 3 - No Voicemail",
+        "display_name": "Day 3: Step 5 - Phone",
+        "day": 3,
+        "step_number": 5,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 2411,
+        "calls_connected": 124
+      },
+      {
+        "step_id": 29637749,
+        "name": "Call 4 - No Voicemail",
+        "display_name": "Day 5: Step 6 - Phone",
+        "day": 5,
+        "step_number": 6,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 1708,
+        "calls_connected": 65
+      },
+      {
+        "step_id": 29637757,
+        "name": "Call 5 - No Voicemail",
+        "display_name": "Day 7: Step 7 - Phone",
+        "day": 7,
+        "step_number": 7,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 1133,
+        "calls_connected": 39
+      },
+      {
+        "step_id": 29637759,
+        "name": "Call 6 - Leave Voicemail",
+        "display_name": "Day 9: Step 8 - Phone",
+        "day": 9,
+        "step_number": 8,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 813,
+        "calls_connected": 33
+      },
+      {
+        "step_id": 29637781,
+        "name": "Email 3",
+        "display_name": "Day 9: Step 9 - Email",
+        "day": 9,
+        "step_number": 9,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 832,
+        "opened": 317,
+        "clicked": 25,
+        "replied": 6
+      },
+      {
+        "step_id": 29637786,
+        "name": "Call 7 - No Voicemail",
+        "display_name": "Day 11: Step 10 - Phone",
+        "day": 11,
+        "step_number": 10,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 512,
+        "calls_connected": 14
+      },
+      {
+        "step_id": 29637812,
+        "name": "Email 4",
+        "display_name": "Day 11: Step 11 - Email",
+        "day": 11,
+        "step_number": 11,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 545,
+        "opened": 156,
+        "clicked": 18,
+        "replied": 1
+      },
+      {
+        "step_id": 29637817,
+        "name": "Call 8 - No Voicemail",
+        "display_name": "Day 14: Step 12 - Phone",
+        "day": 14,
+        "step_number": 12,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 301,
+        "calls_connected": 8
+      },
+      {
+        "step_id": 29637832,
+        "name": "Email 5",
+        "display_name": "Day 16: Step 13 - Email",
+        "day": 16,
+        "step_number": 13,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 277,
+        "opened": 66,
+        "clicked": 14,
+        "replied": 0
+      },
+      {
+        "step_id": 29637835,
+        "name": "Call 9 - Leave Voicemail",
+        "display_name": "Day 18: Step 14 - Phone",
+        "day": 18,
+        "step_number": 14,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 162,
+        "calls_connected": 3
+      },
+      {
+        "step_id": 29637840,
+        "name": "Call 10 - No Voicemail (Break up)",
+        "display_name": "Day 21: Step 15 - Phone",
+        "day": 21,
+        "step_number": 15,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 99,
+        "calls_connected": 5
+      },
+      {
+        "step_id": 29637875,
+        "name": "Email 6 - Break Up Email",
+        "display_name": "Day 21: Step 16 - Email",
+        "day": 21,
+        "step_number": 16,
+        "type": "email",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "sent": 90,
+        "opened": 28,
+        "clicked": 0,
+        "replied": 0
+      },
+      {
+        "step_id": 29637881,
+        "name": "Call 11 - No Voicemail",
+        "display_name": "Day 24: Step 17 - Phone",
+        "day": 24,
+        "step_number": 17,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 55,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 29637883,
+        "name": "Call 12 - No Voicemail",
+        "display_name": "Day 28: Step 18 - Phone",
+        "day": 28,
+        "step_number": 18,
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 4,
+        "calls_connected": 0
+      }
+    ]
+  },
   "4328957": {
     "cadence_id": 4328957,
     "cadence_name": "BDR - Velocity - Closed Lost AI - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -3266,8 +4468,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 497,
-        "calls_connected": 60
+        "calls_made": 714,
+        "calls_connected": 82
       },
       {
         "step_id": 29637937,
@@ -3278,10 +4480,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 455,
-        "opened": 101,
-        "clicked": 3,
-        "replied": 6
+        "sent": 662,
+        "opened": 162,
+        "clicked": 6,
+        "replied": 12
       },
       {
         "step_id": 29637943,
@@ -3292,8 +4494,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 291,
-        "calls_connected": 16
+        "calls_made": 487,
+        "calls_connected": 28
       },
       {
         "step_id": 29637955,
@@ -3304,10 +4506,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 236,
-        "opened": 77,
-        "clicked": 1,
-        "replied": 1
+        "sent": 421,
+        "opened": 149,
+        "clicked": 5,
+        "replied": 2
       },
       {
         "step_id": 29637982,
@@ -3318,8 +4520,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 156,
-        "calls_connected": 8
+        "calls_made": 330,
+        "calls_connected": 14
       },
       {
         "step_id": 29637983,
@@ -3330,8 +4532,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 60,
-        "calls_connected": 4
+        "calls_made": 232,
+        "calls_connected": 9
       },
       {
         "step_id": 29637984,
@@ -3342,8 +4544,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 28,
-        "calls_connected": 1
+        "calls_made": 166,
+        "calls_connected": 6
       },
       {
         "step_id": 29637985,
@@ -3354,8 +4556,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 14,
-        "calls_connected": 1
+        "calls_made": 81,
+        "calls_connected": 3
       },
       {
         "step_id": 29637996,
@@ -3366,10 +4568,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 23,
-        "opened": 6,
-        "clicked": 0,
-        "replied": 1
+        "sent": 86,
+        "opened": 27,
+        "clicked": 2,
+        "replied": 2
       },
       {
         "step_id": 29637998,
@@ -3380,8 +4582,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 11,
-        "calls_connected": 0
+        "calls_made": 44,
+        "calls_connected": 3
       },
       {
         "step_id": 29637999,
@@ -3392,10 +4594,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 11,
-        "opened": 3,
-        "clicked": 0,
-        "replied": 0
+        "sent": 47,
+        "opened": 16,
+        "clicked": 1,
+        "replied": 1
       },
       {
         "step_id": 29638000,
@@ -3406,7 +4608,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 5,
+        "calls_made": 26,
         "calls_connected": 0
       },
       {
@@ -3418,8 +4620,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 2,
-        "opened": 0,
+        "sent": 26,
+        "opened": 6,
         "clicked": 0,
         "replied": 0
       },
@@ -3432,7 +4634,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 17,
         "calls_connected": 0
       },
       {
@@ -3444,7 +4646,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 6,
         "calls_connected": 0
       },
       {
@@ -3456,7 +4658,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 6,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -3470,7 +4672,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 2,
         "calls_connected": 0
       },
       {
@@ -3482,7 +4684,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 2,
         "calls_connected": 0
       }
     ]
@@ -3490,7 +4692,7 @@
   "4337959": {
     "cadence_id": 4337959,
     "cadence_name": "BDR - Velocity - Closed Lost Transactional - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -3502,8 +4704,8 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 10,
-        "calls_connected": 2
+        "calls_made": 15,
+        "calls_connected": 3
       },
       {
         "step_id": 29678467,
@@ -3514,9 +4716,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 7,
-        "opened": 4,
-        "clicked": 0,
+        "sent": 11,
+        "opened": 6,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -3528,7 +4730,7 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 2,
+        "calls_made": 5,
         "calls_connected": 0
       },
       {
@@ -3540,8 +4742,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 2,
-        "opened": 0,
+        "sent": 9,
+        "opened": 2,
         "clicked": 0,
         "replied": 0
       },
@@ -3554,8 +4756,8 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 1,
-        "calls_connected": 0
+        "calls_made": 9,
+        "calls_connected": 1
       },
       {
         "step_id": 29678471,
@@ -3566,7 +4768,7 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 5,
         "calls_connected": 0
       },
       {
@@ -3578,8 +4780,8 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 1,
-        "calls_connected": 0
+        "calls_made": 5,
+        "calls_connected": 1
       },
       {
         "step_id": 29678473,
@@ -3590,7 +4792,7 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 2,
         "calls_connected": 0
       },
       {
@@ -3602,7 +4804,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
+        "sent": 3,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -3616,7 +4818,7 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 1,
         "calls_connected": 0
       },
       {
@@ -3628,7 +4830,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 2,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -3642,7 +4844,7 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 1,
         "calls_connected": 0
       },
       {
@@ -3654,7 +4856,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 2,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -3668,7 +4870,7 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 1,
         "calls_connected": 0
       },
       {
@@ -3726,7 +4928,7 @@
   "4329154": {
     "cadence_id": 4329154,
     "cadence_name": "BDR - Velocity - Litigation AI - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -3738,8 +4940,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 113,
-        "calls_connected": 8
+        "calls_made": 259,
+        "calls_connected": 22
       },
       {
         "step_id": 29638996,
@@ -3750,10 +4952,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 120,
-        "opened": 35,
-        "clicked": 5,
-        "replied": 0
+        "sent": 246,
+        "opened": 74,
+        "clicked": 6,
+        "replied": 1
       },
       {
         "step_id": 29639026,
@@ -3764,8 +4966,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 32,
-        "calls_connected": 1
+        "calls_made": 151,
+        "calls_connected": 12
       },
       {
         "step_id": 29639107,
@@ -3776,8 +4978,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 32,
-        "opened": 9,
+        "sent": 123,
+        "opened": 31,
         "clicked": 2,
         "replied": 0
       },
@@ -3790,8 +4992,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 17,
-        "calls_connected": 2
+        "calls_made": 68,
+        "calls_connected": 6
       },
       {
         "step_id": 29639175,
@@ -3802,7 +5004,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 14,
+        "calls_made": 34,
         "calls_connected": 2
       },
       {
@@ -3814,7 +5016,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 11,
+        "calls_made": 24,
         "calls_connected": 1
       },
       {
@@ -3826,8 +5028,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 6,
-        "calls_connected": 0
+        "calls_made": 15,
+        "calls_connected": 1
       },
       {
         "step_id": 29639358,
@@ -3838,9 +5040,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 6,
-        "opened": 3,
-        "clicked": 0,
+        "sent": 13,
+        "opened": 5,
+        "clicked": 2,
         "replied": 0
       },
       {
@@ -3852,8 +5054,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 2,
-        "calls_connected": 0
+        "calls_made": 9,
+        "calls_connected": 1
       },
       {
         "step_id": 29639517,
@@ -3864,9 +5066,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 3,
-        "opened": 1,
-        "clicked": 0,
+        "sent": 9,
+        "opened": 3,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -3878,7 +5080,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 6,
         "calls_connected": 0
       },
       {
@@ -3890,9 +5092,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 2,
-        "opened": 1,
-        "clicked": 0,
+        "sent": 7,
+        "opened": 2,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -3904,7 +5106,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 3,
         "calls_connected": 0
       },
       {
@@ -3916,7 +5118,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 2,
         "calls_connected": 0
       },
       {
@@ -3928,8 +5130,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 3,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       },
@@ -3942,7 +5144,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 1,
         "calls_connected": 0
       },
       {
@@ -3962,7 +5164,7 @@
   "4328970": {
     "cadence_id": 4328970,
     "cadence_name": "BDR - Velocity - Outbound - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -3974,8 +5176,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 352,
-        "calls_connected": 23
+        "calls_made": 575,
+        "calls_connected": 33
       },
       {
         "step_id": 29638139,
@@ -3986,10 +5188,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 149,
-        "opened": 40,
-        "clicked": 3,
-        "replied": 3
+        "sent": 283,
+        "opened": 73,
+        "clicked": 9,
+        "replied": 5
       },
       {
         "step_id": 29638144,
@@ -4000,8 +5202,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 103,
-        "calls_connected": 6
+        "calls_made": 256,
+        "calls_connected": 31
       },
       {
         "step_id": 29638157,
@@ -4012,9 +5214,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 85,
-        "opened": 21,
-        "clicked": 5,
+        "sent": 208,
+        "opened": 58,
+        "clicked": 10,
         "replied": 0
       },
       {
@@ -4026,8 +5228,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 50,
-        "calls_connected": 2
+        "calls_made": 167,
+        "calls_connected": 3
       },
       {
         "step_id": 29638181,
@@ -4038,8 +5240,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 22,
-        "calls_connected": 2
+        "calls_made": 94,
+        "calls_connected": 15
       },
       {
         "step_id": 29638224,
@@ -4050,8 +5252,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 17,
-        "calls_connected": 0
+        "calls_made": 74,
+        "calls_connected": 2
       },
       {
         "step_id": 29638255,
@@ -4062,7 +5264,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 33,
         "calls_connected": 0
       },
       {
@@ -4074,9 +5276,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
-        "clicked": 0,
+        "sent": 30,
+        "opened": 9,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -4088,8 +5290,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
-        "calls_connected": 0
+        "calls_made": 6,
+        "calls_connected": 1
       },
       {
         "step_id": 29638471,
@@ -4100,8 +5302,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 4,
+        "opened": 2,
         "clicked": 0,
         "replied": 0
       },
@@ -4198,7 +5400,7 @@
   "4328660": {
     "cadence_id": 4328660,
     "cadence_name": "BDR - Velocity - Transactional AI - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -4210,8 +5412,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 19,
-        "calls_connected": 2
+        "calls_made": 28,
+        "calls_connected": 3
       },
       {
         "step_id": 29636533,
@@ -4222,8 +5424,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 22,
-        "opened": 5,
+        "sent": 28,
+        "opened": 10,
         "clicked": 0,
         "replied": 0
       },
@@ -4236,8 +5438,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 3,
-        "calls_connected": 0
+        "calls_made": 12,
+        "calls_connected": 1
       },
       {
         "step_id": 29636705,
@@ -4248,8 +5450,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 13,
+        "opened": 3,
         "clicked": 0,
         "replied": 0
       },
@@ -4262,8 +5464,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
-        "calls_connected": 0
+        "calls_made": 15,
+        "calls_connected": 1
       },
       {
         "step_id": 29636739,
@@ -4274,8 +5476,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
-        "calls_connected": 0
+        "calls_made": 13,
+        "calls_connected": 1
       },
       {
         "step_id": 29636751,
@@ -4286,7 +5488,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 10,
         "calls_connected": 0
       },
       {
@@ -4298,7 +5500,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 9,
         "calls_connected": 0
       },
       {
@@ -4310,8 +5512,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 9,
+        "opened": 3,
         "clicked": 0,
         "replied": 0
       },
@@ -4324,7 +5526,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 8,
         "calls_connected": 0
       },
       {
@@ -4336,8 +5538,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 7,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       },
@@ -4434,7 +5636,7 @@
   "4340586": {
     "cadence_id": 4340586,
     "cadence_name": "BDR - Velocity - Win Back AI Emails - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -4446,9 +5648,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 755,
-        "opened": 245,
-        "clicked": 23,
+        "sent": 1001,
+        "opened": 307,
+        "clicked": 33,
         "replied": 3
       },
       {
@@ -4460,8 +5662,8 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 518,
-        "calls_connected": 51
+        "calls_made": 803,
+        "calls_connected": 67
       },
       {
         "step_id": 29693917,
@@ -4472,8 +5674,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 331,
-        "calls_connected": 21
+        "calls_made": 527,
+        "calls_connected": 44
       },
       {
         "step_id": 29693918,
@@ -4484,10 +5686,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 297,
-        "opened": 95,
-        "clicked": 5,
-        "replied": 2
+        "sent": 463,
+        "opened": 134,
+        "clicked": 9,
+        "replied": 8
       },
       {
         "step_id": 29693919,
@@ -4498,10 +5700,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 202,
-        "opened": 66,
-        "clicked": 3,
-        "replied": 1
+        "sent": 295,
+        "opened": 100,
+        "clicked": 5,
+        "replied": 2
       },
       {
         "step_id": 29693920,
@@ -4512,8 +5714,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 106,
-        "calls_connected": 4
+        "calls_made": 216,
+        "calls_connected": 7
       },
       {
         "step_id": 29693921,
@@ -4524,8 +5726,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 54,
-        "calls_connected": 3
+        "calls_made": 123,
+        "calls_connected": 6
       },
       {
         "step_id": 29693922,
@@ -4536,9 +5738,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 36,
-        "opened": 10,
-        "clicked": 1,
+        "sent": 68,
+        "opened": 19,
+        "clicked": 2,
         "replied": 0
       },
       {
@@ -4550,9 +5752,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
-        "clicked": 0,
+        "sent": 68,
+        "opened": 24,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -4564,7 +5766,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 36,
         "calls_connected": 0
       },
       {
@@ -4576,8 +5778,8 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 5,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       }
@@ -4586,160 +5788,150 @@
   "4340580": {
     "cadence_id": 4340580,
     "cadence_name": "BDR - Velocity - Win Back Templated - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
-        "step_id": 30244883,
-        "name": "brett to disperse",
-        "display_name": "Day 1: Step 1 - Other",
-        "day": 1,
-        "step_number": 1,
-        "type": "other",
-        "multitouch_enabled": false,
-        "disabled": false
-      },
-      {
         "step_id": 29693878,
         "name": "Call 1",
-        "display_name": "Day 2: Step 2 - Phone",
+        "display_name": "Day 2: Step 1 - Phone",
         "day": 2,
-        "step_number": 2,
+        "step_number": 1,
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 589,
-        "calls_connected": 49
+        "calls_made": 682,
+        "calls_connected": 52
       },
       {
         "step_id": 29693879,
         "name": "Email 1",
-        "display_name": "Day 2: Step 3 - Email",
+        "display_name": "Day 2: Step 2 - Email",
         "day": 2,
-        "step_number": 3,
+        "step_number": 2,
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 924,
-        "opened": 173,
-        "clicked": 7,
-        "replied": 7
+        "sent": 1019,
+        "opened": 189,
+        "clicked": 9,
+        "replied": 8
       },
       {
         "step_id": 29693880,
         "name": "Call 2",
-        "display_name": "Day 4: Step 4 - Phone",
+        "display_name": "Day 4: Step 3 - Phone",
         "day": 4,
-        "step_number": 4,
+        "step_number": 3,
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 299,
-        "calls_connected": 15
+        "calls_made": 459,
+        "calls_connected": 25
       },
       {
         "step_id": 29693881,
         "name": "Email 2 - Threads off Step 2 (Email 1). Keep short, this is a bump, not a new pitch.",
-        "display_name": "Day 4: Step 5 - Email",
+        "display_name": "Day 4: Step 4 - Email",
         "day": 4,
-        "step_number": 5,
+        "step_number": 4,
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 314,
-        "opened": 84,
-        "clicked": 3,
+        "sent": 479,
+        "opened": 125,
+        "clicked": 4,
         "replied": 2
       },
       {
         "step_id": 29693882,
         "name": "Email 3",
-        "display_name": "Day 7: Step 6 - Email",
+        "display_name": "Day 7: Step 5 - Email",
         "day": 7,
-        "step_number": 6,
+        "step_number": 5,
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 284,
-        "opened": 65,
-        "clicked": 6,
+        "sent": 444,
+        "opened": 93,
+        "clicked": 8,
         "replied": 0
       },
       {
         "step_id": 29693883,
         "name": "Call 3",
-        "display_name": "Day 8: Step 7 - Phone",
+        "display_name": "Day 8: Step 6 - Phone",
         "day": 8,
-        "step_number": 7,
+        "step_number": 6,
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 180,
-        "calls_connected": 11
+        "calls_made": 320,
+        "calls_connected": 19
       },
       {
         "step_id": 29693884,
         "name": "Call 4",
-        "display_name": "Day 12: Step 8 - Phone",
+        "display_name": "Day 12: Step 7 - Phone",
         "day": 12,
-        "step_number": 8,
+        "step_number": 7,
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 99,
-        "calls_connected": 3
+        "calls_made": 164,
+        "calls_connected": 6
       },
       {
         "step_id": 29693885,
         "name": "Email 4",
-        "display_name": "Day 12: Step 9 - Email",
+        "display_name": "Day 12: Step 8 - Email",
         "day": 12,
-        "step_number": 9,
+        "step_number": 8,
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 121,
-        "opened": 29,
+        "sent": 184,
+        "opened": 40,
         "clicked": 0,
         "replied": 1
       },
       {
         "step_id": 29693888,
         "name": "Email 5",
-        "display_name": "Day 17: Step 10 - Email",
+        "display_name": "Day 17: Step 9 - Email",
         "day": 17,
-        "step_number": 10,
+        "step_number": 9,
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 60,
-        "opened": 13,
-        "clicked": 0,
+        "sent": 130,
+        "opened": 33,
+        "clicked": 2,
         "replied": 0
       },
       {
         "step_id": 29693891,
         "name": "Call 5",
-        "display_name": "Day 22: Step 11 - Phone",
+        "display_name": "Day 22: Step 10 - Phone",
         "day": 22,
-        "step_number": 11,
+        "step_number": 10,
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
-        "calls_connected": 0
+        "calls_made": 72,
+        "calls_connected": 4
       },
       {
         "step_id": 29693895,
         "name": "Email 6",
-        "display_name": "Day 26: Step 12 - Email",
+        "display_name": "Day 26: Step 11 - Email",
         "day": 26,
-        "step_number": 12,
+        "step_number": 11,
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 54,
+        "opened": 13,
         "clicked": 0,
         "replied": 0
       }
@@ -4748,7 +5940,7 @@
   "4370009": {
     "cadence_id": 4370009,
     "cadence_name": "BDR-S - Webinar - Litigator's Lounge Follow-Up Cadence - en-US - CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -4934,7 +6126,7 @@
   "4321125": {
     "cadence_id": 4321125,
     "cadence_name": "SDR - CLIO WORK TRIAL (CANCELLED TRIAL WITH CC ENTERED) - en-US - CNV - TRIALON",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -4946,8 +6138,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 20,
-        "calls_connected": 1
+        "calls_made": 33,
+        "calls_connected": 3
       },
       {
         "step_id": 29599915,
@@ -4958,8 +6150,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 20,
-        "opened": 4,
+        "sent": 28,
+        "opened": 8,
         "clicked": 0,
         "replied": 0
       },
@@ -4972,8 +6164,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 14,
-        "calls_connected": 0
+        "calls_made": 25,
+        "calls_connected": 1
       },
       {
         "step_id": 29601327,
@@ -4984,8 +6176,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 12,
-        "calls_connected": 0
+        "calls_made": 22,
+        "calls_connected": 1
       },
       {
         "step_id": 29599927,
@@ -4996,8 +6188,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 11,
-        "opened": 3,
+        "sent": 19,
+        "opened": 4,
         "clicked": 0,
         "replied": 0
       },
@@ -5010,7 +6202,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 8,
+        "calls_made": 15,
         "calls_connected": 0
       },
       {
@@ -5022,8 +6214,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 3,
-        "calls_connected": 0
+        "calls_made": 11,
+        "calls_connected": 1
       },
       {
         "step_id": 29599975,
@@ -5034,8 +6226,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 3,
-        "opened": 0,
+        "sent": 8,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       },
@@ -5048,7 +6240,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 2,
+        "calls_made": 8,
         "calls_connected": 0
       },
       {
@@ -5060,7 +6252,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 7,
         "calls_connected": 0
       },
       {
@@ -5072,7 +6264,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
+        "sent": 5,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -5086,7 +6278,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 5,
         "calls_connected": 0
       },
       {
@@ -5098,7 +6290,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 4,
         "calls_connected": 0
       },
       {
@@ -5110,8 +6302,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 1,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       },
@@ -5124,7 +6316,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 1,
         "calls_connected": 0
       },
       {
@@ -5170,7 +6362,7 @@
   "4320991": {
     "cadence_id": 4320991,
     "cadence_name": "SDR - CLIO WORK TRIAL (CREDIT CARD ENTERED) - en-US - CNV - TRIALON",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -5182,8 +6374,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 96,
-        "calls_connected": 9
+        "calls_made": 172,
+        "calls_connected": 20
       },
       {
         "step_id": 29599200,
@@ -5194,10 +6386,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 85,
-        "opened": 33,
-        "clicked": 7,
-        "replied": 2
+        "sent": 144,
+        "opened": 55,
+        "clicked": 8,
+        "replied": 5
       },
       {
         "step_id": 29599202,
@@ -5218,8 +6410,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 65,
-        "calls_connected": 2
+        "calls_made": 108,
+        "calls_connected": 4
       },
       {
         "step_id": 29599268,
@@ -5230,8 +6422,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 43,
-        "calls_connected": 0
+        "calls_made": 75,
+        "calls_connected": 1
       },
       {
         "step_id": 29599205,
@@ -5242,8 +6434,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 45,
-        "calls_connected": 2
+        "calls_made": 77,
+        "calls_connected": 3
       },
       {
         "step_id": 29599206,
@@ -5254,9 +6446,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 54,
-        "opened": 14,
-        "clicked": 1,
+        "sent": 85,
+        "opened": 26,
+        "clicked": 3,
         "replied": 1
       },
       {
@@ -5278,8 +6470,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 44,
-        "opened": 11,
+        "sent": 71,
+        "opened": 18,
         "clicked": 0,
         "replied": 0
       },
@@ -5292,8 +6484,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 35,
-        "calls_connected": 2
+        "calls_made": 59,
+        "calls_connected": 3
       },
       {
         "step_id": 29599210,
@@ -5314,7 +6506,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 25,
+        "calls_made": 40,
         "calls_connected": 2
       },
       {
@@ -5326,8 +6518,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 23,
-        "opened": 5,
+        "sent": 39,
+        "opened": 12,
         "clicked": 0,
         "replied": 0
       },
@@ -5340,7 +6532,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 16,
+        "calls_made": 29,
         "calls_connected": 1
       },
       {
@@ -5352,8 +6544,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 15,
-        "opened": 2,
+        "sent": 27,
+        "opened": 7,
         "clicked": 0,
         "replied": 0
       },
@@ -5366,7 +6558,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 5,
+        "calls_made": 14,
         "calls_connected": 0
       },
       {
@@ -5378,8 +6570,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 8,
-        "opened": 1,
+        "sent": 17,
+        "opened": 2,
         "clicked": 0,
         "replied": 0
       },
@@ -5392,7 +6584,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 3,
+        "calls_made": 10,
         "calls_connected": 0
       },
       {
@@ -5410,7 +6602,7 @@
   "4323272": {
     "cadence_id": 4323272,
     "cadence_name": "SDR - CLIO WORK TRIAL (VISITED SIGN UP PAGE & FAILED SIGN UP)-EN-US-CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -5422,8 +6614,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 252,
-        "calls_connected": 15
+        "calls_made": 390,
+        "calls_connected": 22
       },
       {
         "step_id": 29609456,
@@ -5434,10 +6626,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 256,
-        "opened": 96,
-        "clicked": 17,
-        "replied": 10
+        "sent": 390,
+        "opened": 154,
+        "clicked": 35,
+        "replied": 16
       },
       {
         "step_id": 29609458,
@@ -5448,8 +6640,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 180,
-        "calls_connected": 5
+        "calls_made": 265,
+        "calls_connected": 10
       },
       {
         "step_id": 29609459,
@@ -5460,10 +6652,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 176,
-        "opened": 54,
-        "clicked": 7,
-        "replied": 2
+        "sent": 254,
+        "opened": 76,
+        "clicked": 8,
+        "replied": 4
       },
       {
         "step_id": 29609460,
@@ -5474,9 +6666,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 142,
-        "opened": 36,
-        "clicked": 7,
+        "sent": 203,
+        "opened": 45,
+        "clicked": 8,
         "replied": 0
       },
       {
@@ -5488,7 +6680,7 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 128,
+        "calls_made": 197,
         "calls_connected": 4
       },
       {
@@ -5500,7 +6692,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 94,
+        "calls_made": 150,
         "calls_connected": 1
       },
       {
@@ -5512,9 +6704,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 65,
-        "opened": 11,
-        "clicked": 1,
+        "sent": 138,
+        "opened": 31,
+        "clicked": 3,
         "replied": 0
       },
       {
@@ -5526,8 +6718,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 42,
-        "calls_connected": 0
+        "calls_made": 116,
+        "calls_connected": 1
       },
       {
         "step_id": 29609465,
@@ -5538,10 +6730,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 27,
-        "opened": 8,
-        "clicked": 0,
-        "replied": 0
+        "sent": 102,
+        "opened": 32,
+        "clicked": 2,
+        "replied": 1
       },
       {
         "step_id": 29609466,
@@ -5552,7 +6744,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 17,
+        "calls_made": 89,
         "calls_connected": 2
       },
       {
@@ -5564,10 +6756,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
-        "clicked": 0,
-        "replied": 0
+        "sent": 37,
+        "opened": 17,
+        "clicked": 1,
+        "replied": 1
       },
       {
         "step_id": 29609468,
@@ -5578,7 +6770,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 34,
         "calls_connected": 0
       },
       {
@@ -5590,8 +6782,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 12,
+        "opened": 2,
         "clicked": 0,
         "replied": 0
       },
@@ -5604,7 +6796,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 10,
         "calls_connected": 0
       },
       {
@@ -5616,7 +6808,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 1,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -5724,7 +6916,7 @@
   "4339117": {
     "cadence_id": 4339117,
     "cadence_name": "SDR - Contact Us Form -en-US-CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -5736,8 +6928,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 35,
-        "calls_connected": 5
+        "calls_made": 60,
+        "calls_connected": 9
       },
       {
         "step_id": 29692895,
@@ -5748,7 +6940,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 20,
+        "calls_made": 34,
         "calls_connected": 1
       },
       {
@@ -5760,10 +6952,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 35,
-        "opened": 19,
-        "clicked": 5,
-        "replied": 7
+        "sent": 55,
+        "opened": 31,
+        "clicked": 9,
+        "replied": 12
       },
       {
         "step_id": 29692896,
@@ -5774,7 +6966,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 15,
+        "calls_made": 28,
         "calls_connected": 1
       },
       {
@@ -5786,8 +6978,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 11,
-        "calls_connected": 0
+        "calls_made": 22,
+        "calls_connected": 1
       },
       {
         "step_id": 29683992,
@@ -5798,8 +6990,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 11,
-        "opened": 4,
+        "sent": 16,
+        "opened": 6,
         "clicked": 1,
         "replied": 1
       },
@@ -5812,7 +7004,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 7,
+        "calls_made": 10,
         "calls_connected": 0
       },
       {
@@ -5824,7 +7016,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 9,
+        "sent": 12,
         "opened": 2,
         "clicked": 0,
         "replied": 0
@@ -5838,7 +7030,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 4,
+        "calls_made": 6,
         "calls_connected": 0
       },
       {
@@ -5850,8 +7042,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 5,
-        "opened": 4,
+        "sent": 11,
+        "opened": 5,
         "clicked": 0,
         "replied": 0
       },
@@ -5874,7 +7066,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 2,
         "calls_connected": 0
       }
     ]
@@ -5882,7 +7074,7 @@
   "4291091": {
     "cadence_id": 4291091,
     "cadence_name": "SDR - DEMO-REQ - en-US - CNV - PREDEMO",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -5894,8 +7086,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 201,
-        "calls_connected": 32
+        "calls_made": 619,
+        "calls_connected": 126
       },
       {
         "step_id": 29457798,
@@ -5906,8 +7098,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 772,
-        "calls_connected": 130
+        "calls_made": 983,
+        "calls_connected": 153
       },
       {
         "step_id": 29457856,
@@ -5928,10 +7120,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 741,
-        "opened": 292,
-        "clicked": 103,
-        "replied": 60
+        "sent": 1036,
+        "opened": 416,
+        "clicked": 146,
+        "replied": 89
       },
       {
         "step_id": 29458556,
@@ -5942,7 +7134,7 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": true,
-        "sent": 1,
+        "sent": 2,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -5956,8 +7148,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 438,
-        "calls_connected": 30
+        "calls_made": 622,
+        "calls_connected": 39
       },
       {
         "step_id": 29457801,
@@ -5968,10 +7160,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 437,
-        "opened": 129,
-        "clicked": 22,
-        "replied": 21
+        "sent": 571,
+        "opened": 174,
+        "clicked": 28,
+        "replied": 33
       },
       {
         "step_id": 29457873,
@@ -5992,8 +7184,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 335,
-        "calls_connected": 14
+        "calls_made": 470,
+        "calls_connected": 24
       },
       {
         "step_id": 29457802,
@@ -6004,10 +7196,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 299,
-        "opened": 97,
-        "clicked": 12,
-        "replied": 11
+        "sent": 436,
+        "opened": 155,
+        "clicked": 19,
+        "replied": 19
       },
       {
         "step_id": 29457803,
@@ -6018,8 +7210,8 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 290,
-        "calls_connected": 18
+        "calls_made": 431,
+        "calls_connected": 20
       },
       {
         "step_id": 29525828,
@@ -6030,8 +7222,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 238,
-        "calls_connected": 8
+        "calls_made": 363,
+        "calls_connected": 12
       },
       {
         "step_id": 29457907,
@@ -6042,8 +7234,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 200,
-        "calls_connected": 4
+        "calls_made": 316,
+        "calls_connected": 8
       },
       {
         "step_id": 29506524,
@@ -6054,8 +7246,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 136,
-        "calls_connected": 0
+        "calls_made": 217,
+        "calls_connected": 1
       },
       {
         "step_id": 29525830,
@@ -6066,8 +7258,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 132,
-        "calls_connected": 1
+        "calls_made": 269,
+        "calls_connected": 3
       },
       {
         "step_id": 29457804,
@@ -6078,10 +7270,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 130,
-        "opened": 44,
-        "clicked": 3,
-        "replied": 7
+        "sent": 256,
+        "opened": 88,
+        "clicked": 6,
+        "replied": 9
       },
       {
         "step_id": 29457893,
@@ -6102,10 +7294,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 97,
-        "opened": 32,
-        "clicked": 2,
-        "replied": 1
+        "sent": 201,
+        "opened": 68,
+        "clicked": 4,
+        "replied": 3
       },
       {
         "step_id": 29457915,
@@ -6116,8 +7308,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 58,
-        "calls_connected": 2
+        "calls_made": 174,
+        "calls_connected": 3
       },
       {
         "step_id": 29457805,
@@ -6128,9 +7320,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 60,
-        "opened": 15,
-        "clicked": 1,
+        "sent": 163,
+        "opened": 48,
+        "clicked": 7,
         "replied": 1
       },
       {
@@ -6142,7 +7334,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 24,
+        "calls_made": 117,
         "calls_connected": 0
       },
       {
@@ -6154,8 +7346,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 14,
-        "calls_connected": 0
+        "calls_made": 82,
+        "calls_connected": 2
       },
       {
         "step_id": 29457806,
@@ -6166,9 +7358,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 18,
-        "opened": 3,
-        "clicked": 0,
+        "sent": 80,
+        "opened": 22,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -6180,7 +7372,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 9,
+        "calls_made": 48,
         "calls_connected": 0
       },
       {
@@ -6192,9 +7384,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 6,
-        "opened": 1,
-        "clicked": 0,
+        "sent": 36,
+        "opened": 7,
+        "clicked": 2,
         "replied": 0
       },
       {
@@ -6206,7 +7398,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 3,
+        "calls_made": 26,
         "calls_connected": 0
       },
       {
@@ -6218,7 +7410,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 2,
+        "calls_made": 6,
         "calls_connected": 0
       },
       {
@@ -6230,7 +7422,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 3,
+        "sent": 6,
         "opened": 2,
         "clicked": 0,
         "replied": 0
@@ -6276,7 +7468,7 @@
   "4294374": {
     "cadence_id": 4294374,
     "cadence_name": "SDR - DEMO-REQ-WEBINAR - en-US - CNV - PREDEMO",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -6288,8 +7480,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 85,
-        "calls_connected": 8
+        "calls_made": 367,
+        "calls_connected": 35
       },
       {
         "step_id": 29471483,
@@ -6300,10 +7492,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 91,
-        "opened": 39,
-        "clicked": 7,
-        "replied": 6
+        "sent": 367,
+        "opened": 180,
+        "clicked": 21,
+        "replied": 39
       },
       {
         "step_id": 29471486,
@@ -6314,8 +7506,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 57,
-        "calls_connected": 2
+        "calls_made": 276,
+        "calls_connected": 10
       },
       {
         "step_id": 29471487,
@@ -6326,10 +7518,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 60,
-        "opened": 19,
-        "clicked": 6,
-        "replied": 2
+        "sent": 280,
+        "opened": 123,
+        "clicked": 14,
+        "replied": 24
       },
       {
         "step_id": 29471488,
@@ -6340,10 +7532,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 46,
-        "opened": 17,
-        "clicked": 1,
-        "replied": 3
+        "sent": 214,
+        "opened": 90,
+        "clicked": 11,
+        "replied": 12
       },
       {
         "step_id": 29471489,
@@ -6354,8 +7546,8 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 46,
-        "calls_connected": 1
+        "calls_made": 211,
+        "calls_connected": 3
       },
       {
         "step_id": 29525839,
@@ -6366,8 +7558,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 36,
-        "calls_connected": 1
+        "calls_made": 132,
+        "calls_connected": 2
       },
       {
         "step_id": 29525840,
@@ -6378,7 +7570,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 24,
+        "calls_made": 55,
         "calls_connected": 1
       },
       {
@@ -6390,8 +7582,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 26,
-        "opened": 12,
+        "sent": 42,
+        "opened": 15,
         "clicked": 0,
         "replied": 1
       },
@@ -6404,8 +7596,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 15,
-        "calls_connected": 2
+        "calls_made": 31,
+        "calls_connected": 3
       },
       {
         "step_id": 29525842,
@@ -6416,7 +7608,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 12,
+        "calls_made": 26,
         "calls_connected": 0
       },
       {
@@ -6428,8 +7620,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 14,
-        "opened": 5,
+        "sent": 28,
+        "opened": 8,
         "clicked": 0,
         "replied": 1
       },
@@ -6442,7 +7634,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 5,
+        "calls_made": 19,
         "calls_connected": 0
       },
       {
@@ -6454,7 +7646,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 3,
+        "calls_made": 13,
         "calls_connected": 1
       },
       {
@@ -6466,8 +7658,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 2,
-        "opened": 0,
+        "sent": 10,
+        "opened": 4,
         "clicked": 0,
         "replied": 0
       },
@@ -6480,8 +7672,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
-        "calls_connected": 0
+        "calls_made": 7,
+        "calls_connected": 1
       },
       {
         "step_id": 29471493,
@@ -6492,7 +7684,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 3,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -6506,7 +7698,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 2,
         "calls_connected": 0
       },
       {
@@ -6518,7 +7710,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 2,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -6532,7 +7724,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 2,
         "calls_connected": 0
       },
       {
@@ -6544,7 +7736,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 2,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -6628,7 +7820,7 @@
   "4339116": {
     "cadence_id": 4339116,
     "cadence_name": "SDR - Event Follow-up -en-US-CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -6640,7 +7832,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 4,
+        "calls_made": 7,
         "calls_connected": 0
       },
       {
@@ -6652,7 +7844,7 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 3,
+        "sent": 6,
         "opened": 3,
         "clicked": 0,
         "replied": 0
@@ -6666,7 +7858,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 2,
+        "calls_made": 4,
         "calls_connected": 1
       },
       {
@@ -6678,8 +7870,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
-        "opened": 1,
+        "sent": 3,
+        "opened": 2,
         "clicked": 0,
         "replied": 0
       },
@@ -6692,7 +7884,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 2,
         "calls_connected": 0
       },
       {
@@ -6704,7 +7896,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 2,
+        "calls_made": 3,
         "calls_connected": 0
       },
       {
@@ -6716,8 +7908,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
-        "opened": 1,
+        "sent": 2,
+        "opened": 2,
         "clicked": 0,
         "replied": 0
       },
@@ -6768,8 +7960,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 1,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       },
@@ -6800,7 +7992,7 @@
   "4339113": {
     "cadence_id": 4339113,
     "cadence_name": "SDR - Live Chat Next Step With Phone Number -en-US-CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -6812,8 +8004,8 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 15,
-        "calls_connected": 2
+        "calls_made": 34,
+        "calls_connected": 3
       },
       {
         "step_id": 29683957,
@@ -6824,10 +8016,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 18,
-        "opened": 10,
-        "clicked": 2,
-        "replied": 6
+        "sent": 46,
+        "opened": 26,
+        "clicked": 3,
+        "replied": 11
       },
       {
         "step_id": 29683958,
@@ -6838,7 +8030,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 10,
+        "calls_made": 23,
         "calls_connected": 0
       },
       {
@@ -6850,8 +8042,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 9,
-        "calls_connected": 0
+        "calls_made": 20,
+        "calls_connected": 2
       },
       {
         "step_id": 29683960,
@@ -6862,8 +8054,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 10,
-        "opened": 5,
+        "sent": 18,
+        "opened": 8,
         "clicked": 0,
         "replied": 1
       },
@@ -6876,8 +8068,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 7,
-        "opened": 3,
+        "sent": 12,
+        "opened": 6,
         "clicked": 1,
         "replied": 0
       },
@@ -6890,7 +8082,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 4,
+        "calls_made": 9,
         "calls_connected": 0
       },
       {
@@ -6902,8 +8094,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 3,
-        "opened": 0,
+        "sent": 8,
+        "opened": 2,
         "clicked": 0,
         "replied": 0
       },
@@ -6916,8 +8108,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 4,
-        "opened": 1,
+        "sent": 6,
+        "opened": 3,
         "clicked": 0,
         "replied": 1
       },
@@ -6930,7 +8122,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 4,
         "calls_connected": 0
       },
       {
@@ -6942,7 +8134,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 3,
+        "sent": 7,
         "opened": 2,
         "clicked": 0,
         "replied": 1
@@ -6956,7 +8148,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 1,
         "calls_connected": 0
       },
       {
@@ -6998,7 +8190,7 @@
   "4291323": {
     "cadence_id": 4291323,
     "cadence_name": "SDR - MANAGE TRIAL - en-US - CNV - TRIALON",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -7010,8 +8202,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 896,
-        "calls_connected": 114
+        "calls_made": 1328,
+        "calls_connected": 173
       },
       {
         "step_id": 29458800,
@@ -7032,10 +8224,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 823,
-        "opened": 383,
-        "clicked": 61,
-        "replied": 44
+        "sent": 1189,
+        "opened": 531,
+        "clicked": 90,
+        "replied": 66
       },
       {
         "step_id": 29459062,
@@ -7060,8 +8252,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 557,
-        "calls_connected": 27
+        "calls_made": 879,
+        "calls_connected": 45
       },
       {
         "step_id": 29506251,
@@ -7072,8 +8264,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 394,
-        "calls_connected": 11
+        "calls_made": 590,
+        "calls_connected": 17
       },
       {
         "step_id": 29458801,
@@ -7084,8 +8276,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 430,
-        "calls_connected": 9
+        "calls_made": 691,
+        "calls_connected": 21
       },
       {
         "step_id": 29458802,
@@ -7096,10 +8288,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 491,
-        "opened": 173,
-        "clicked": 16,
-        "replied": 22
+        "sent": 734,
+        "opened": 243,
+        "clicked": 28,
+        "replied": 27
       },
       {
         "step_id": 29458803,
@@ -7120,10 +8312,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 352,
-        "opened": 137,
-        "clicked": 14,
-        "replied": 12
+        "sent": 580,
+        "opened": 233,
+        "clicked": 26,
+        "replied": 19
       },
       {
         "step_id": 29458804,
@@ -7134,8 +8326,8 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 297,
-        "calls_connected": 6
+        "calls_made": 541,
+        "calls_connected": 11
       },
       {
         "step_id": 29458809,
@@ -7156,8 +8348,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 221,
-        "calls_connected": 3
+        "calls_made": 395,
+        "calls_connected": 6
       },
       {
         "step_id": 29458877,
@@ -7168,10 +8360,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 235,
-        "opened": 78,
-        "clicked": 4,
-        "replied": 11
+        "sent": 403,
+        "opened": 133,
+        "clicked": 11,
+        "replied": 18
       },
       {
         "step_id": 29506337,
@@ -7182,8 +8374,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 153,
-        "calls_connected": 5
+        "calls_made": 285,
+        "calls_connected": 9
       },
       {
         "step_id": 29458899,
@@ -7194,10 +8386,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 160,
-        "opened": 42,
-        "clicked": 2,
-        "replied": 0
+        "sent": 285,
+        "opened": 76,
+        "clicked": 5,
+        "replied": 2
       },
       {
         "step_id": 29525836,
@@ -7208,8 +8400,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 115,
-        "calls_connected": 0
+        "calls_made": 231,
+        "calls_connected": 1
       },
       {
         "step_id": 29458931,
@@ -7220,7 +8412,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 66,
+        "calls_made": 179,
         "calls_connected": 0
       },
       {
@@ -7232,10 +8424,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 77,
-        "opened": 29,
-        "clicked": 2,
-        "replied": 6
+        "sent": 180,
+        "opened": 70,
+        "clicked": 7,
+        "replied": 13
       },
       {
         "step_id": 29458930,
@@ -7246,9 +8438,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 43,
-        "opened": 19,
-        "clicked": 0,
+        "sent": 132,
+        "opened": 48,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -7260,7 +8452,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 20,
+        "calls_made": 88,
         "calls_connected": 0
       },
       {
@@ -7272,9 +8464,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 26,
-        "opened": 5,
-        "clicked": 0,
+        "sent": 92,
+        "opened": 18,
+        "clicked": 3,
         "replied": 0
       },
       {
@@ -7286,7 +8478,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 10,
+        "calls_made": 62,
         "calls_connected": 0
       },
       {
@@ -7298,8 +8490,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 6,
-        "calls_connected": 0
+        "calls_made": 29,
+        "calls_connected": 2
       },
       {
         "step_id": 29506278,
@@ -7310,7 +8502,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 3,
+        "calls_made": 8,
         "calls_connected": 0
       },
       {
@@ -7322,8 +8514,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 3,
-        "opened": 1,
+        "sent": 6,
+        "opened": 2,
         "clicked": 0,
         "replied": 1
       },
@@ -7336,7 +8528,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 3,
         "calls_connected": 0
       },
       {
@@ -7348,7 +8540,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 1,
         "calls_connected": 0
       },
       {
@@ -7380,7 +8572,7 @@
   "4339114": {
     "cadence_id": 4339114,
     "cadence_name": "SDR - Next Steps - Warm (multiple) - Follow-up -en-US-CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -7392,8 +8584,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 70,
-        "calls_connected": 6
+        "calls_made": 125,
+        "calls_connected": 10
       },
       {
         "step_id": 29683971,
@@ -7404,10 +8596,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 50,
-        "opened": 21,
-        "clicked": 1,
-        "replied": 5
+        "sent": 87,
+        "opened": 36,
+        "clicked": 4,
+        "replied": 7
       },
       {
         "step_id": 29683972,
@@ -7418,9 +8610,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 34,
-        "opened": 13,
-        "clicked": 0,
+        "sent": 60,
+        "opened": 18,
+        "clicked": 1,
         "replied": 1
       },
       {
@@ -7432,8 +8624,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 26,
-        "calls_connected": 2
+        "calls_made": 52,
+        "calls_connected": 4
       },
       {
         "step_id": 29683973,
@@ -7444,10 +8636,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 23,
-        "opened": 7,
+        "sent": 47,
+        "opened": 16,
         "clicked": 1,
-        "replied": 0
+        "replied": 1
       },
       {
         "step_id": 29693662,
@@ -7458,8 +8650,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 6,
-        "calls_connected": 0
+        "calls_made": 32,
+        "calls_connected": 2
       },
       {
         "step_id": 29683974,
@@ -7470,10 +8662,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 9,
-        "opened": 2,
+        "sent": 31,
+        "opened": 5,
         "clicked": 0,
-        "replied": 0
+        "replied": 1
       },
       {
         "step_id": 29693663,
@@ -7484,7 +8676,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 6,
+        "calls_made": 20,
         "calls_connected": 0
       },
       {
@@ -7496,10 +8688,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 6,
-        "opened": 2,
+        "sent": 12,
+        "opened": 4,
         "clicked": 1,
-        "replied": 0
+        "replied": 1
       },
       {
         "step_id": 29693693,
@@ -7510,7 +8702,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 9,
         "calls_connected": 0
       },
       {
@@ -7522,8 +8714,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
-        "opened": 0,
+        "sent": 4,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       },
@@ -7542,7 +8734,7 @@
   "4339115": {
     "cadence_id": 4339115,
     "cadence_name": "SDR - Resources Follow-up -en-US-CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -7554,9 +8746,9 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 17,
-        "opened": 10,
-        "clicked": 4,
+        "sent": 25,
+        "opened": 14,
+        "clicked": 6,
         "replied": 1
       },
       {
@@ -7568,8 +8760,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 12,
-        "opened": 5,
+        "sent": 19,
+        "opened": 9,
         "clicked": 1,
         "replied": 0
       },
@@ -7582,8 +8774,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 8,
-        "opened": 4,
+        "sent": 18,
+        "opened": 7,
         "clicked": 2,
         "replied": 0
       },
@@ -7596,8 +8788,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 6,
-        "opened": 0,
+        "sent": 12,
+        "opened": 3,
         "clicked": 0,
         "replied": 0
       },
@@ -7610,10 +8802,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 3,
-        "opened": 2,
-        "clicked": 0,
-        "replied": 1
+        "sent": 8,
+        "opened": 4,
+        "clicked": 1,
+        "replied": 2
       },
       {
         "step_id": 29683983,
@@ -7624,7 +8816,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 4,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -7638,7 +8830,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 2,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -7658,7 +8850,7 @@
   "4295352": {
     "cadence_id": 4295352,
     "cadence_name": "SDR - Software Advice -en-US-CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -7670,8 +8862,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 125,
-        "calls_connected": 15
+        "calls_made": 187,
+        "calls_connected": 27
       },
       {
         "step_id": 29475987,
@@ -7682,10 +8874,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 130,
-        "opened": 51,
-        "clicked": 6,
-        "replied": 10
+        "sent": 185,
+        "opened": 73,
+        "clicked": 8,
+        "replied": 14
       },
       {
         "step_id": 29475989,
@@ -7696,8 +8888,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 83,
-        "calls_connected": 7
+        "calls_made": 129,
+        "calls_connected": 13
       },
       {
         "step_id": 29475990,
@@ -7708,10 +8900,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 85,
-        "opened": 30,
-        "clicked": 2,
-        "replied": 2
+        "sent": 126,
+        "opened": 43,
+        "clicked": 3,
+        "replied": 4
       },
       {
         "step_id": 29475991,
@@ -7722,10 +8914,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 63,
-        "opened": 16,
-        "clicked": 1,
-        "replied": 1
+        "sent": 96,
+        "opened": 25,
+        "clicked": 2,
+        "replied": 2
       },
       {
         "step_id": 29475992,
@@ -7736,8 +8928,8 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 57,
-        "calls_connected": 5
+        "calls_made": 96,
+        "calls_connected": 8
       },
       {
         "step_id": 29525892,
@@ -7748,8 +8940,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 54,
-        "calls_connected": 3
+        "calls_made": 83,
+        "calls_connected": 4
       },
       {
         "step_id": 29475993,
@@ -7760,10 +8952,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 43,
-        "opened": 14,
+        "sent": 68,
+        "opened": 24,
         "clicked": 0,
-        "replied": 3
+        "replied": 4
       },
       {
         "step_id": 29525893,
@@ -7774,8 +8966,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 31,
-        "calls_connected": 0
+        "calls_made": 58,
+        "calls_connected": 1
       },
       {
         "step_id": 29475994,
@@ -7786,10 +8978,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 24,
-        "opened": 9,
+        "sent": 41,
+        "opened": 13,
         "clicked": 0,
-        "replied": 2
+        "replied": 4
       },
       {
         "step_id": 29525894,
@@ -7800,7 +8992,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 14,
+        "calls_made": 33,
         "calls_connected": 1
       },
       {
@@ -7812,8 +9004,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 6,
-        "opened": 0,
+        "sent": 27,
+        "opened": 7,
         "clicked": 0,
         "replied": 0
       },
@@ -7826,8 +9018,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 3,
-        "calls_connected": 0
+        "calls_made": 19,
+        "calls_connected": 1
       },
       {
         "step_id": 29475996,
@@ -7838,8 +9030,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 2,
-        "opened": 0,
+        "sent": 7,
+        "opened": 2,
         "clicked": 0,
         "replied": 0
       },
@@ -7852,7 +9044,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 2,
+        "calls_made": 7,
         "calls_connected": 0
       },
       {
@@ -7864,9 +9056,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
-        "opened": 0,
-        "clicked": 0,
+        "sent": 3,
+        "opened": 1,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -7878,7 +9070,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 1,
         "calls_connected": 0
       },
       {
@@ -7890,7 +9082,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 1,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -7904,7 +9096,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 1,
         "calls_connected": 0
       },
       {
@@ -7972,7 +9164,7 @@
   "4339112": {
     "cadence_id": 4339112,
     "cadence_name": "SDR - Vincent Booked Call Follow-up -en-US-CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -8020,7 +9212,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 2,
         "calls_connected": 0
       },
       {
@@ -8032,7 +9224,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 1,
         "calls_connected": 0
       },
       {
@@ -8058,7 +9250,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 1,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -8082,7 +9274,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 1,
         "calls_connected": 0
       },
       {
@@ -8094,7 +9286,7 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
+        "sent": 1,
         "opened": 0,
         "clicked": 0,
         "replied": 0
@@ -8154,7 +9346,7 @@
   "4295294": {
     "cadence_id": 4295294,
     "cadence_name": "SDR - WEB-PRICING-en-US-CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -8166,8 +9358,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 356,
-        "calls_connected": 31
+        "calls_made": 517,
+        "calls_connected": 50
       },
       {
         "step_id": 29475717,
@@ -8178,10 +9370,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 368,
-        "opened": 179,
-        "clicked": 26,
-        "replied": 20
+        "sent": 506,
+        "opened": 241,
+        "clicked": 39,
+        "replied": 31
       },
       {
         "step_id": 29475720,
@@ -8192,8 +9384,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 242,
-        "calls_connected": 13
+        "calls_made": 355,
+        "calls_connected": 21
       },
       {
         "step_id": 29475721,
@@ -8204,10 +9396,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 256,
-        "opened": 91,
-        "clicked": 17,
-        "replied": 4
+        "sent": 360,
+        "opened": 124,
+        "clicked": 21,
+        "replied": 5
       },
       {
         "step_id": 29475722,
@@ -8218,10 +9410,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 200,
-        "opened": 89,
-        "clicked": 13,
-        "replied": 20
+        "sent": 307,
+        "opened": 136,
+        "clicked": 22,
+        "replied": 29
       },
       {
         "step_id": 29475723,
@@ -8232,8 +9424,8 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 188,
-        "calls_connected": 6
+        "calls_made": 283,
+        "calls_connected": 7
       },
       {
         "step_id": 29525857,
@@ -8244,8 +9436,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 138,
-        "calls_connected": 2
+        "calls_made": 226,
+        "calls_connected": 6
       },
       {
         "step_id": 29475724,
@@ -8256,9 +9448,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 100,
-        "opened": 43,
-        "clicked": 6,
+        "sent": 177,
+        "opened": 64,
+        "clicked": 7,
         "replied": 0
       },
       {
@@ -8270,8 +9462,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 66,
-        "calls_connected": 1
+        "calls_made": 131,
+        "calls_connected": 3
       },
       {
         "step_id": 29475725,
@@ -8282,9 +9474,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 42,
-        "opened": 15,
-        "clicked": 2,
+        "sent": 110,
+        "opened": 30,
+        "clicked": 4,
         "replied": 0
       },
       {
@@ -8296,8 +9488,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 29,
-        "calls_connected": 2
+        "calls_made": 88,
+        "calls_connected": 3
       },
       {
         "step_id": 29475726,
@@ -8308,10 +9500,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 10,
-        "opened": 4,
-        "clicked": 0,
-        "replied": 0
+        "sent": 59,
+        "opened": 22,
+        "clicked": 3,
+        "replied": 2
       },
       {
         "step_id": 29525861,
@@ -8322,7 +9514,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 8,
+        "calls_made": 44,
         "calls_connected": 0
       },
       {
@@ -8334,9 +9526,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
-        "opened": 0,
-        "clicked": 0,
+        "sent": 25,
+        "opened": 9,
+        "clicked": 3,
         "replied": 0
       },
       {
@@ -8348,7 +9540,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 2,
+        "calls_made": 18,
         "calls_connected": 0
       },
       {
@@ -8360,9 +9552,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 2,
-        "opened": 0,
-        "clicked": 0,
+        "sent": 12,
+        "opened": 4,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -8374,7 +9566,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 9,
         "calls_connected": 0
       },
       {
@@ -8386,8 +9578,8 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 1,
-        "opened": 0,
+        "sent": 5,
+        "opened": 1,
         "clicked": 0,
         "replied": 0
       },
@@ -8400,7 +9592,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 1,
+        "calls_made": 3,
         "calls_connected": 0
       },
       {
@@ -8482,7 +9674,7 @@
   "4339111": {
     "cadence_id": 4339111,
     "cadence_name": "SDR - vLex - Free Trial -en-US-CNV",
-    "pulled_at": "2026-08-08",
+    "pulled_at": "2026-08-21",
     "calls_window_days": null,
     "steps": [
       {
@@ -8494,8 +9686,8 @@
         "type": "phone",
         "multitouch_enabled": true,
         "disabled": false,
-        "calls_made": 449,
-        "calls_connected": 32
+        "calls_made": 859,
+        "calls_connected": 73
       },
       {
         "step_id": 29683927,
@@ -8506,10 +9698,10 @@
         "type": "email",
         "multitouch_enabled": true,
         "disabled": false,
-        "sent": 491,
-        "opened": 176,
-        "clicked": 24,
-        "replied": 16
+        "sent": 873,
+        "opened": 294,
+        "clicked": 41,
+        "replied": 29
       },
       {
         "step_id": 29683928,
@@ -8530,8 +9722,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 306,
-        "calls_connected": 13
+        "calls_made": 594,
+        "calls_connected": 22
       },
       {
         "step_id": 29683930,
@@ -8542,8 +9734,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 243,
-        "calls_connected": 8
+        "calls_made": 516,
+        "calls_connected": 19
       },
       {
         "step_id": 29683931,
@@ -8554,10 +9746,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 254,
-        "opened": 70,
-        "clicked": 8,
-        "replied": 5
+        "sent": 508,
+        "opened": 154,
+        "clicked": 16,
+        "replied": 9
       },
       {
         "step_id": 29683932,
@@ -8578,10 +9770,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 149,
-        "opened": 35,
-        "clicked": 0,
-        "replied": 1
+        "sent": 350,
+        "opened": 89,
+        "clicked": 6,
+        "replied": 2
       },
       {
         "step_id": 29683934,
@@ -8592,8 +9784,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 77,
-        "calls_connected": 1
+        "calls_made": 270,
+        "calls_connected": 7
       },
       {
         "step_id": 29683935,
@@ -8614,9 +9806,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 69,
-        "opened": 16,
-        "clicked": 1,
+        "sent": 239,
+        "opened": 65,
+        "clicked": 8,
         "replied": 0
       },
       {
@@ -8628,9 +9820,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 37,
-        "opened": 9,
-        "clicked": 0,
+        "sent": 200,
+        "opened": 54,
+        "clicked": 4,
         "replied": 0
       },
       {
@@ -8642,8 +9834,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 13,
-        "calls_connected": 1
+        "calls_made": 162,
+        "calls_connected": 4
       },
       {
         "step_id": 29683938,
@@ -8654,10 +9846,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 26,
-        "opened": 5,
-        "clicked": 0,
-        "replied": 0
+        "sent": 166,
+        "opened": 34,
+        "clicked": 3,
+        "replied": 4
       },
       {
         "step_id": 29718161,
@@ -8668,8 +9860,8 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 8,
-        "calls_connected": 0
+        "calls_made": 136,
+        "calls_connected": 3
       },
       {
         "step_id": 29683939,
@@ -8680,10 +9872,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 4,
-        "opened": 0,
+        "sent": 94,
+        "opened": 18,
         "clicked": 0,
-        "replied": 0
+        "replied": 2
       },
       {
         "step_id": 29683940,
@@ -8694,9 +9886,9 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
-        "clicked": 0,
+        "sent": 61,
+        "opened": 13,
+        "clicked": 1,
         "replied": 0
       },
       {
@@ -8708,7 +9900,7 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 26,
         "calls_connected": 0
       },
       {
@@ -8720,22 +9912,10 @@
         "type": "email",
         "multitouch_enabled": false,
         "disabled": false,
-        "sent": 0,
-        "opened": 0,
+        "sent": 22,
+        "opened": 9,
         "clicked": 0,
         "replied": 0
-      },
-      {
-        "step_id": 29683943,
-        "name": "Call 8 - LVM",
-        "display_name": "Day 25: Step 20: A - Phone",
-        "day": 25,
-        "step_number": "20: A",
-        "type": "phone",
-        "multitouch_enabled": false,
-        "disabled": false,
-        "calls_made": 0,
-        "calls_connected": 0
       },
       {
         "step_id": 29683944,
@@ -8746,7 +9926,19 @@
         "type": "phone",
         "multitouch_enabled": false,
         "disabled": false,
-        "calls_made": 0,
+        "calls_made": 4,
+        "calls_connected": 0
+      },
+      {
+        "step_id": 29683943,
+        "name": "Call 8 - LVM",
+        "display_name": "Day 25: Step 20: A - Phone",
+        "day": 25,
+        "step_number": "20: A",
+        "type": "phone",
+        "multitouch_enabled": false,
+        "disabled": false,
+        "calls_made": 2,
         "calls_connected": 0
       },
       {

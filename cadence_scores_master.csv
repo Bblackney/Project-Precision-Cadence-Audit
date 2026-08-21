@@ -6659,3 +6659,997 @@ run_date,period_label,cadence_id,cadence_name,score,verdict,model_applied,meetin
 2026-08-08,all-time,3556685,SDR- 2024 Demo No Show / Cancellation,93,KEEP,SDR,27.1,10.1,8.54,41.29,0.0,2447,5217,Leora Winkler,35,30,13,15,0,False,2024-05-22
 2026-08-08,all-time,3600828,SILVER - PI July Refresher BDRV,6,ARCHIVE,BDR,0.87,0.13,5.83,15.14,0.0,2971,5305,Morgan Lamke,0,0,6,0,0,False,2024-06-24
 2026-08-08,all-time,3937623,VAN BDRV Call ONLY,13,ARCHIVE,BDR,0.0,0.0,12.16,0.0,0.0,571,0,Jessica Bayard,0,0,13,0,0,False,2025-07-16
+2026-08-17,all-time,4135410, Canada Draft BDR - Strat - nurture email,5,LOW SAMPLE,BDR,0.44,0.55,0.0,25.53,0.0,185,901,Abigail Humber,0,0,0,5,0,True,2026-04-06
+2026-08-17,all-time,3714260,$BDR-MM - A & B Tier - Educate - Nurture,6,ARCHIVE,BDR,2.17,0.36,5.8,17.21,0.0,927,2533,Graeme Sims,0,0,6,0,0,False,2024-10-18
+2026-08-17,all-time,4034648,$BDR-MM - AI Cadence Nov 25,0,ARCHIVE,BDR,0.02,0.07,0.0,11.88,0.0,9463,156831,Aaqib Quraishi,0,0,0,0,0,False,2025-11-12
+2026-08-17,all-time,3764682,$BDR-MM - AQL - AI Content - Follow-up,11,ARCHIVE,BDR,0.78,0.62,5.56,30.65,0.0,2411,6754,Graeme Sims,0,0,6,5,0,False,2024-12-27
+2026-08-17,all-time,2278025,$BDR-MM - AQL - General Content,38,ARCHIVE,BDR,1.19,2.06,20.69,25.07,0.0,7248,19503,Rahul Dutta,0,13,20,5,0,False,2021-09-20
+2026-08-17,all-time,2721914,$BDR-MM - AQL - Webinar Download / Attendee,31,ARCHIVE,BDR,1.95,2.93,7.86,25.58,0.0,982,3788,Niklas Hoem,0,13,13,5,0,False,2022-07-29
+2026-08-17,all-time,3987781,$BDR-MM - AQL - Webinar Download / Attendee - Law Firm Leadership Specific,6,LOW SAMPLE,BDR,0.9,1.79,5.63,16.59,0.0,48,223,Ashley Duffy,0,0,6,0,0,True,2025-09-17
+2026-08-17,all-time,4085965,$BDR-MM - Amicus/Abacus Win,5,LOW SAMPLE,BDR,0.0,1.13,2.36,20.34,0.0,64,177,Aaqib Quraishi,0,0,0,5,0,True,2026-02-05
+2026-08-17,all-time,3957267,$BDR-MM - BTL Cadence 2025,0,ARCHIVE,BDR,0.07,0.12,0.0,12.21,0.0,3108,51735,Aaqib Quraishi,0,0,0,0,0,False,2025-08-08
+2026-08-17,all-time,3706356,$BDR-MM - C Tier - Educate - Nurture,6,ARCHIVE,BDR,0.5,0.23,5.43,17.09,0.0,1993,6173,Graeme Sims,0,0,6,0,0,False,2024-10-09
+2026-08-17,all-time,2983272,$BDR-MM - Closed Lost - Revival,31,ARCHIVE,BDR,1.78,3.73,7.38,21.57,0.0,9155,19458,Graeme Sims,0,13,13,5,0,False,2023-02-09
+2026-08-17,all-time,4031600,$BDR-MM - Coyote Analytics Sunset Outreach Nov 2025,24,LOW SAMPLE,BDR,0.0,3.64,6.8,25.82,0.0,106,275,Aaqib Quraishi,0,13,6,5,0,True,2025-11-10
+2026-08-17,all-time,3789704,$BDR-MM - Intent - Artificial Intelligence - Outbound,6,ARCHIVE,BDR,0.54,0.65,4.87,11.66,0.0,740,1835,Graeme Sims,0,0,6,0,0,False,2025-01-30
+2026-08-17,all-time,3785148,$BDR-MM - Intent - Case Management - Outbound,6,LOW SAMPLE,BDR,1.68,0.65,3.92,17.23,0.0,310,772,Graeme Sims,0,0,6,0,0,True,2025-01-27
+2026-08-17,all-time,3789724,$BDR-MM - Intent - Intake / Lead Management,6,LOW SAMPLE,BDR,0.5,1.0,4.17,12.44,0.0,91,201,Graeme Sims,0,0,6,0,0,True,2025-01-30
+2026-08-17,all-time,3785147,$BDR-MM - Intent Billing & Payments - Outbound,6,LOW SAMPLE,BDR,0.73,0.73,3.93,13.34,0.0,325,817,Graeme Sims,0,0,6,0,0,True,2025-01-27
+2026-08-17,all-time,4058977,$BDR-MM - OB CWS - April 26,11,ARCHIVE,BDR,0.29,0.23,3.59,22.74,0.0,3699,13740,Aaqib Quraishi,0,0,6,5,0,False,2025-12-20
+2026-08-17,all-time,4276757,$BDR-MM - ProLaw Displacement June 26,11,LOW SAMPLE,BDR,0.0,1.64,5.37,24.04,0.0,86,183,Aaqib Quraishi,0,0,6,5,0,True,2026-06-22
+2026-08-17,all-time,3180820,$BDR-MM - Referral - Outbound,53,LOW SAMPLE,BDR,7.6,9.26,5.57,23.52,0.0,190,421,Graeme Sims,20,22,6,5,0,True,2023-07-13
+2026-08-17,all-time,3762896,$BDR-MM - Target Account - ChatGPT Personalization - Cold,19,ARCHIVE,BDR,1.1,2.4,4.28,16.82,0.0,513,999,Graeme Sims,0,13,6,0,0,False,2024-12-19
+2026-08-17,all-time,3041675,$BDR-MM - Tier 1 Nurture MQL,38,ARCHIVE,BDR,3.26,2.85,44.25,29.8,0.0,1870,4174,Graeme Sims,0,13,20,5,0,False,2023-03-21
+2026-08-17,all-time,4381572,(DO NOT USE) SDR - FILLED GET PRICING-en-US-CNV,83,LOW SAMPLE,SDR,11.11,11.11,14.29,22.22,0.0,7,9,Lars Arreaga,35,30,13,5,0,True,2026-07-21
+2026-08-17,all-time,3753811,2024 LEAP Price Hike revival - BDR,31,LOW SAMPLE,BDR,2.94,2.2,13.23,21.0,0.0,202,681,Patrick Keeney,0,13,13,5,0,True,2024-12-06
+2026-08-17,all-time,4525864,6Sense - BDR - Strategic - OB - CL INTENT - en-US - CNV,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,2,0,John McGurk,0,0,0,0,0,True,2026-08-14
+2026-08-17,all-time,4525868,6Sense - BDR - Strategic - OB - NMQL INTENT - en-US - CNV,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,1,0,John McGurk,0,0,0,0,0,True,2026-08-14
+2026-08-17,all-time,4525861,6Sense - BDR - Strategic - WebSights INTENT - en-US - CNV,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,1,0,John McGurk,0,0,0,0,0,True,2026-08-14
+2026-08-17,all-time,4525850,6Sense - Intent Outbound - BDR-S - AWARE - Email Only,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,1,5,John McGurk,0,0,0,0,0,True,2026-08-14
+2026-08-17,all-time,4525849,6Sense - Intent Outbound - BDR-S - Email Only for Cold,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,1,1,John McGurk,0,0,0,0,0,True,2026-08-14
+2026-08-17,all-time,4525872,6Sense - Intent Outbound AQL - BDR-S,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,John McGurk,0,0,0,0,0,True,2026-08-14
+2026-08-17,all-time,4525853,6Sense - Intent Outbound Engaged w/ Content - BDR-S,15,LOW SAMPLE,BDR,0.0,0.0,0.0,100.0,0.0,1,1,John McGurk,0,0,0,15,0,True,2026-08-14
+2026-08-17,all-time,4403614,AE/BDR - Enterprise - ILTACON 2026 - Event Invite,0,LOW SAMPLE,BDR,0.0,0.0,0.65,6.31,0.0,192,333,Brett Blackney,0,0,0,0,0,True,2026-07-24
+2026-08-17,all-time,4133126,AE/BDR-CS | CAM - Draft Product Offer - OBC,0,LOW SAMPLE,BDR,2.93,0.59,0.0,17.97,0.0,475,512,Salesloft Marketing,0,0,0,0,0,True,2026-04-01
+2026-08-17,all-time,4133141,AE/BDR-CS | CAM - Grow Product Offer - OBC,25,LOW SAMPLE,BDR,9.76,0.0,0.0,21.95,0.0,25,41,Salesloft Marketing,20,0,0,5,0,True,2026-04-01
+2026-08-17,all-time,4133117,AE/BDR-CS | CAM - Manage AI Product Offer - OBC,53,LOW SAMPLE,BDR,16.07,2.68,0.0,28.57,0.0,62,112,Salesloft Marketing,35,13,0,5,0,True,2026-04-01
+2026-08-17,all-time,4003304,AQL/NMQL - BDR-S - Email Only,5,ARCHIVE,BDR,0.13,0.13,0.0,20.18,0.0,519,2250,John McGurk,0,0,0,5,0,False,2025-10-07
+2026-08-17,all-time,3953332,All BDR - AI Summer Camp AQL - Follow Up,11,LOW SAMPLE,BDR,0.8,0.27,6.32,28.69,0.0,177,373,Alex Bramos,0,0,6,5,0,True,2025-08-05
+2026-08-17,all-time,4333113,BDR - GOV - Canadian Time Matters Phase-Out - en-US - CNV,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-07-09
+2026-08-17,all-time,4333115,BDR - GOV - Legal Assistant Cold - en-US - CNV,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,3,5,Brett Blackney,0,0,0,0,0,True,2026-07-09
+2026-08-17,all-time,4333114,BDR - GOV - Office Manager Cold - en-US - CNV,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,3,9,Brett Blackney,0,0,0,0,0,True,2026-07-09
+2026-08-17,all-time,4333112,BDR - GOV - Paralegal Cold - en-US - CNV,18,LOW SAMPLE,BDR,0.0,0.0,13.27,21.1,0.0,55,109,Brett Blackney,0,0,13,5,0,True,2026-07-09
+2026-08-17,all-time,4337749,BDR - GOV - Webinar Cadence,18,LOW SAMPLE,BDR,0.0,0.45,11.11,34.39,0.0,107,221,Aaqib Quraishi,0,0,13,5,0,True,2026-07-10
+2026-08-17,all-time,4126608,BDR - In person conference - Techshow 2026,27,LOW SAMPLE,BDR,0.0,6.82,2.22,34.09,0.0,17,44,Patricio Gonzalez Camilletti,0,22,0,5,0,True,2026-03-25
+2026-08-17,all-time,4376695,BDR - MM - Docket Alarm Defendant Track,30,LOW SAMPLE,BDR,0.0,0.0,18.18,48.48,0.0,3,33,Aaqib Quraishi,0,0,20,10,0,True,2026-07-20
+2026-08-17,all-time,4376688,BDR - MM - Docket Alarm Plaintiff Track,10,LOW SAMPLE,BDR,0.0,1.49,0.0,49.25,0.0,28,67,Aaqib Quraishi,0,0,0,10,0,True,2026-07-20
+2026-08-17,all-time,4074649,BDR - MS WEBINAR CLE,18,ARCHIVE,BDR,1.11,1.53,7.46,30.79,0.0,563,1897,Daniela Ordonez,0,0,13,5,0,False,2026-01-22
+2026-08-17,all-time,4480655,BDR - Mid - Market Cluster4 Litigation BelowTheLine - en-US - CNV,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-08-06
+2026-08-17,all-time,4480659,BDR - Mid - Market Cluster5 Transactional BelowTheLine - en-US - CNV,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-08-06
+2026-08-17,all-time,4329157,BDR - Mid-Market -  (Ops) Contingency / PI - en-US - CNV,5,LOW SAMPLE,BDR,0.95,0.0,2.44,29.52,0.0,61,105,Brett Blackney,0,0,0,5,0,True,2026-07-08
+2026-08-17,all-time,4329001,BDR - Mid-Market - (Ops) Hourly & Flat-Fee - en-US - CNV,11,LOW SAMPLE,BDR,1.2,0.6,4.47,29.94,0.0,121,167,Brett Blackney,0,0,6,5,0,True,2026-07-08
+2026-08-17,all-time,4295481,BDR - Strategic - AQLs Excl Draft  - en-US - CNV,16,ARCHIVE,BDR,1.31,1.57,5.69,35.98,0.0,624,1148,Brett Blackney,0,0,6,10,0,False,2026-06-26
+2026-08-17,all-time,4295482,BDR - Strategic - NMQL - en-US - CNV,11,ARCHIVE,BDR,2.03,1.91,5.38,31.26,0.0,745,838,Brett Blackney,0,0,6,5,0,False,2026-06-26
+2026-08-17,all-time,4295483,BDR - Strategic - OB - CL INTENT - en-US - CNV,16,LOW SAMPLE,BDR,1.14,1.95,6.1,36.97,0.0,336,614,Brett Blackney,0,0,6,10,0,True,2026-06-26
+2026-08-17,all-time,4295484,BDR - Strategic - OB - NMQL INTENT - en-US - CNV,13,LOW SAMPLE,BDR,2.86,0.0,7.46,14.29,0.0,26,35,Brett Blackney,0,0,13,0,0,True,2026-06-26
+2026-08-17,all-time,4295394,BDR - Strategic - WebSights INTENT - en-US - CNV,11,ARCHIVE,BDR,0.88,1.17,5.62,29.53,0.0,762,1026,Brett Blackney,0,0,6,5,0,False,2026-06-26
+2026-08-17,all-time,4328921,BDR - Velocity - AQL / NMQL - en-US - CNV,11,ARCHIVE,BDR,2.08,0.6,6.23,32.41,0.0,3195,5874,Brett Blackney,0,0,6,5,0,False,2026-07-08
+2026-08-17,all-time,4328957,BDR - Velocity - Closed Lost AI - en-US - CNV,18,ARCHIVE,BDR,2.64,1.32,7.39,29.01,0.0,668,986,Brett Blackney,0,0,13,5,0,False,2026-07-08
+2026-08-17,all-time,4337959,BDR - Velocity - Closed Lost Transactional - en-US - CNV,23,LOW SAMPLE,BDR,0.0,0.0,7.14,35.29,0.0,12,17,Brett Blackney,0,0,13,10,0,True,2026-07-10
+2026-08-17,all-time,4329154,BDR - Velocity - Litigation AI - en-US - CNV,18,LOW SAMPLE,BDR,2.36,0.0,7.07,28.35,0.0,196,254,Brett Blackney,0,0,13,5,0,True,2026-07-08
+2026-08-17,all-time,4328970,BDR - Velocity - Outbound - en-US - CNV,11,ARCHIVE,BDR,1.4,1.4,5.21,28.21,0.0,527,358,Brett Blackney,0,0,6,5,0,False,2026-07-08
+2026-08-17,all-time,4328660,BDR - Velocity - Transactional AI - en-US - CNV,18,LOW SAMPLE,BDR,2.63,0.0,7.59,31.58,0.0,30,38,Brett Blackney,0,0,13,5,0,True,2026-07-08
+2026-08-17,all-time,4340586,BDR - Velocity - Win Back AI Emails - en-US - CNV,18,ARCHIVE,BDR,1.8,0.6,7.15,31.47,0.0,1132,1668,Brett Blackney,0,0,13,5,0,False,2026-07-13
+2026-08-17,all-time,4340580,BDR - Velocity - Win Back Templated - en-US - CNV,11,ARCHIVE,BDR,1.02,0.49,6.25,21.99,0.0,1183,2060,Brett Blackney,0,0,6,5,0,False,2026-07-13
+2026-08-17,all-time,4341074,BDR - Velocity/ Strategic - AI Misuse COL,11,LOW SAMPLE,BDR,0.0,0.0,3.92,29.27,0.0,25,41,Daniel Perez,0,0,6,5,0,True,2026-07-13
+2026-08-17,all-time,4341277,BDR - Velocity/ Strategic - AI Misuse DE,18,LOW SAMPLE,BDR,0.0,1.08,8.8,23.66,0.0,40,93,Daniel Perez,0,0,13,5,0,True,2026-07-13
+2026-08-17,all-time,4085749,BDR CS: Clio Work - Trial FU (CQL),78,LOW SAMPLE,BDR,18.79,3.64,18.49,38.18,0.0,103,165,Salesloft Marketing,35,13,20,10,0,True,2026-02-05
+2026-08-17,all-time,3940465,BDR Draft - AQL - Ebook Downloads,36,LOW SAMPLE,BDR,0.38,3.05,9.6,38.55,0.0,120,262,Sebastian Aranguren,0,13,13,10,0,True,2025-07-21
+2026-08-17,all-time,3948175,BDR Draft - AQL Webinar MS Word - Post Webinar,18,LOW SAMPLE,BDR,0.85,0.85,11.58,30.23,0.0,248,708,Sebastian Aranguren,0,0,13,5,0,True,2025-07-29
+2026-08-17,all-time,3963947,BDR Draft - Lead Nurture Revisit,18,LOW SAMPLE,BDR,4.0,1.2,8.12,27.2,0.0,112,250,Sebastian Aranguren,0,0,13,5,0,True,2025-08-18
+2026-08-17,all-time,3913755,BDR | CS: Clio Connects  - Attended an Event CQLs,80,LOW SAMPLE,BDR,10.37,10.37,16.35,41.48,0.0,110,135,Salesloft Marketing,20,30,20,10,0,True,2025-06-16
+2026-08-17,all-time,4193637,BDR | CS: Clio Connects  - Registered but did not attend ,35,LOW SAMPLE,BDR,7.69,0.0,0.0,61.54,0.0,17,13,Salesloft Marketing,20,0,0,15,0,True,2026-05-15
+2026-08-17,all-time,3939510,BDR- Draft - C/L Opportunity Revival,31,LOW SAMPLE,BDR,4.9,3.85,7.21,27.62,0.0,163,286,Sebastian Aranguren,0,13,13,5,0,True,2025-07-18
+2026-08-17,all-time,3064099,BDR-CS - 2023 Solo & Small Firm - Outbound,38,LOW SAMPLE,BDR,5.84,0.94,10.04,31.26,0.0,271,531,Kent Patterson,20,0,13,5,0,True,2023-04-06
+2026-08-17,all-time,3630547,BDR-CS - Accounting - Demo No Show / Cancellation,87,LOW SAMPLE,BDR,26.71,8.07,15.43,42.03,0.0,244,483,Sammy Poortaghi,35,22,20,10,0,True,2024-07-19
+2026-08-17,all-time,3623902,BDR-CS - Accounting - Demo Request,95,KEEP,BDR,41.14,10.71,19.56,42.45,0.0,3371,5797,Salesloft Marketing,35,30,20,10,0,False,2024-07-15
+2026-08-17,all-time,3623844,BDR-CS - Accounting - Downloaded Content,65,LOW SAMPLE,BDR,9.24,5.08,12.15,38.83,0.0,242,649,Salesloft Marketing,20,22,13,10,0,True,2024-07-15
+2026-08-17,all-time,3777257,BDR-CS - Accounting CLE Webinar Follow Up (Jan 15 2025) - Reg/Attended,43,LOW SAMPLE,BDR,7.37,1.38,8.65,48.39,0.0,148,217,Salesloft Marketing,20,0,13,10,0,True,2025-01-16
+2026-08-17,all-time,3730021,BDR-CS - Accounting Re-Engage/Nurture/Closed Lost -,40,LOW SAMPLE,BDR,4.9,5.31,12.41,34.69,0.0,106,245,Sammy Poortaghi,0,22,13,5,0,True,2024-11-06
+2026-08-17,all-time,4132046,BDR-CS - CAM Reputation Management Trial - Pre-Trial - IBC,85,LOW SAMPLE,BDR,30.3,6.06,12.2,51.52,0.0,51,33,Salesloft Marketing,35,22,13,15,0,True,2026-03-31
+2026-08-17,all-time,4132062,BDR-CS - CAM Reputation Management Trial - Trial Welcome + End - IBC,73,LOW SAMPLE,BDR,16.56,6.75,5.26,49.69,0.0,134,163,Salesloft Marketing,35,22,6,10,0,True,2026-03-31
+2026-08-17,all-time,4139240,BDR-CS - Civil Lit - Work - High doc usage ,43,LOW SAMPLE,BDR,7.21,0.0,11.52,36.94,0.0,303,222,Assad Quraishi,20,0,13,10,0,True,2026-04-09
+2026-08-17,all-time,4056071,BDR-CS - Clio Timekeeping Cohort 1 Outreach ,11,ARCHIVE,BDR,3.5,0.63,6.05,27.69,0.0,2135,3489,Brett Blackney,0,0,6,5,0,False,2025-12-15
+2026-08-17,all-time,4056123,BDR-CS - Clio Timekeeping Pilot WITH USAGE,51,LOW SAMPLE,BDR,12.34,4.54,7.28,28.49,0.0,286,551,Brett Blackney,20,13,13,5,0,True,2025-12-15
+2026-08-17,all-time,4056126,BDR-CS - Clio Timekeeping Pilot is ending NO USAGE ,38,ARCHIVE,BDR,5.2,1.85,8.08,25.13,0.0,509,1134,Brett Blackney,20,0,13,5,0,False,2025-12-15
+2026-08-17,all-time,4056127,BDR-CS - Clio Timekeeping Pilot is ending PHONE LOGS ONLY,36,ARCHIVE,BDR,4.21,2.62,10.98,40.4,0.0,941,2708,Brett Blackney,0,13,13,10,0,False,2025-12-15
+2026-08-17,all-time,4050690,BDR-CS - Clio Work - Demo No Show / Cancellation,75,LOW SAMPLE,BDR,17.77,8.43,10.87,34.85,0.0,246,439,Sammy Poortaghi,35,22,13,5,0,True,2025-12-05
+2026-08-17,all-time,3324138,BDR-CS - Disco No Show,88,LOW SAMPLE,BDR,33.64,16.89,11.18,46.04,0.0,423,758,Jordan Stuart,35,30,13,10,0,True,2023-11-21
+2026-08-17,all-time,3933734,BDR-CS - Draft - Re-Engage/Nurture/Closed Lost ,51,LOW SAMPLE,BDR,7.66,4.07,9.43,31.1,0.0,397,418,Sammy Poortaghi,20,13,13,5,0,True,2025-07-13
+2026-08-17,all-time,3143959,BDR-CS - Grow - Client Intake Guide for Law Firms,58,REVIEW,BDR,5.92,2.17,17.36,29.43,0.0,971,3415,Jordan Stuart,20,13,20,5,0,False,2023-06-08
+2026-08-17,all-time,2920802,BDR-CS - Grow - Demo No Show / Cancellation ,95,KEEP,BDR,28.93,11.34,17.94,37.86,0.0,560,1120,Jordan Stuart,35,30,20,10,0,False,2022-12-15
+2026-08-17,all-time,2437228,BDR-CS - Grow - Demo Request,95,KEEP,BDR,54.36,14.36,17.83,45.6,0.0,3225,4735,Salesloft Marketing,35,30,20,10,0,False,2022-01-27
+2026-08-17,all-time,3201575,BDR-CS - Grow - Downloaded Guide: Intake Checklist,58,REVIEW,BDR,6.4,4.23,15.84,34.39,0.0,914,3123,Jordan Stuart,20,13,20,5,0,False,2023-08-02
+2026-08-17,all-time,2789482,BDR-CS - Grow - Prospecting,58,REVIEW,BDR,6.0,2.47,20.3,31.15,0.0,3962,10160,Jordan Stuart,20,13,20,5,0,False,2022-09-13
+2026-08-17,all-time,2952033,BDR-CS - Grow - Prospecting (no calls),5,ARCHIVE,BDR,2.95,1.68,0.0,26.58,0.0,4175,13952,Jordan Stuart,0,0,0,5,0,False,2023-01-18
+2026-08-17,all-time,2676546,BDR-CS - Grow - Re-Engage/Nurture/Closed Lost,67,REVIEW,BDR,8.31,6.42,28.1,32.8,0.0,1263,2960,Jordan Stuart,20,22,20,5,0,False,2022-06-29
+2026-08-17,all-time,2521484,BDR-CS - Grow - Visited Product OR Feature Page IM ,38,ARCHIVE,BDR,6.61,1.84,14.56,29.66,0.0,926,3267,Salesloft Marketing,20,0,13,5,0,False,2022-03-22
+2026-08-17,all-time,3160218,BDR-CS - Grow - Webinar On-Demand: Clio Website,88,LOW SAMPLE,BDR,22.13,10.66,10.84,40.98,0.0,45,122,Jordan Stuart,35,30,13,10,0,True,2023-06-22
+2026-08-17,all-time,3198613,BDR-CS - High Propensity  - Prospecting,18,ARCHIVE,BDR,3.93,0.79,14.6,28.29,0.0,1567,4550,Kent Patterson,0,0,13,5,0,False,2023-07-31
+2026-08-17,all-time,3933737,BDR-CS - Manage AI - Re-Engage/Nurture/Closed Lost  ,43,LOW SAMPLE,BDR,6.34,0.7,9.29,39.44,0.0,64,142,Sammy Poortaghi,20,0,13,10,0,True,2025-07-13
+2026-08-17,all-time,4084196,BDR-CS - Persona Webinar Series Invite,5,LOW SAMPLE,BDR,0.0,0.0,0.0,24.24,0.0,25,33,Salesloft Marketing,0,0,0,5,0,True,2026-02-04
+2026-08-17,all-time,3282457,BDR-CS - Personal Injury - Demo No Show / Cancellation  ,82,LOW SAMPLE,BDR,18.63,8.17,19.34,34.64,0.0,149,306,Jordan Stuart,35,22,20,5,0,True,2023-10-12
+2026-08-17,all-time,3281993,BDR-CS - Personal Injury - Demo Request,95,KEEP,BDR,42.8,12.43,17.28,42.02,0.0,1248,2173,Jordan Stuart,35,30,20,10,0,False,2023-10-12
+2026-08-17,all-time,3608946,BDR-CS - Personal Injury PI - Re-Engage/Nurture/Closed Lost,56,LOW SAMPLE,BDR,7.41,3.28,12.88,38.79,0.0,214,580,Sammy Poortaghi,20,13,13,10,0,True,2024-07-01
+2026-08-17,all-time,4146490,BDR-CS - Reputation Management Pilot Access - IBC,0,NO DATA,BDR,0.0,6.25,0.0,31.25,0.0,0,16,Salesloft Marketing,0,22,0,5,0,True,2026-04-14
+2026-08-17,all-time,4255948,BDR-CS -V | Essentials to Advanced Upgrade Outreach - Subscription Page ‘Abandoned Cart’  ,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Nikki Raw,0,0,0,0,0,True,2026-06-17
+2026-08-17,all-time,4207256,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 1 (MM non-CSM)",18,LOW SAMPLE,BDR,2.91,2.03,2.04,26.45,0.0,71,344,Anton Steinbeck,0,13,0,5,0,True,2026-05-26
+2026-08-17,all-time,4195716,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 1 (Strat)",51,REVIEW,BDR,6.43,2.46,8.14,28.71,0.0,632,1867,Sammy Poortaghi,20,13,13,5,0,False,2026-05-18
+2026-08-17,all-time,4219469,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 2 (MM non-CSM)",18,LOW SAMPLE,BDR,2.71,0.78,14.0,28.55,0.0,180,774,Anton Steinbeck,0,0,13,5,0,True,2026-06-02
+2026-08-17,all-time,4219447,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 2 (Strat)",51,REVIEW,BDR,5.8,2.16,14.79,33.17,0.0,601,1622,Anton Steinbeck,20,13,13,5,0,False,2026-06-02
+2026-08-17,all-time,4225423,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 3 (MM non-CSM)",5,LOW SAMPLE,BDR,2.3,0.68,1.69,33.96,0.0,424,1917,Anton Steinbeck,0,0,0,5,0,True,2026-06-04
+2026-08-17,all-time,4225406,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 3 (Strat)",18,ARCHIVE,BDR,4.54,2.0,12.66,27.58,0.0,1189,3807,Anton Steinbeck,0,0,13,5,0,False,2026-06-04
+2026-08-17,all-time,4328615,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 4 (MM non-CSM)",11,LOW SAMPLE,BDR,0.8,1.14,4.1,23.87,0.0,407,2011,Anton Steinbeck,0,0,6,5,0,True,2026-07-08
+2026-08-17,all-time,4328616,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 4 (Strat)",18,ARCHIVE,BDR,2.77,1.47,11.92,25.35,0.0,1865,6781,Anton Steinbeck,0,0,13,5,0,False,2026-07-08
+2026-08-17,all-time,4480761,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 5 (MM non-CSM)",10,LOW SAMPLE,BDR,1.95,1.95,0.0,46.34,0.0,123,205,Anton Steinbeck,0,0,0,10,0,True,2026-08-06
+2026-08-17,all-time,4480760,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 5 (Strat)",31,ARCHIVE,BDR,2.61,3.18,11.59,30.35,0.0,1461,2488,Anton Steinbeck,0,13,13,5,0,False,2026-08-06
+2026-08-17,all-time,4196209,BDR-CS Apex 30 day Work Trial - Hand Raises HOT All Segments,70,LOW SAMPLE,BDR,50.0,25.0,0.0,25.0,0.0,5,4,Sammy Poortaghi,35,30,0,5,0,True,2026-05-18
+2026-08-17,all-time,4390176,BDR-CS Apex Webinar Leads - CALL ONLY,20,LOW SAMPLE,BDR,0.0,0.0,15.38,0.0,0.0,7,0,Nikki Raw,0,0,20,0,0,True,2026-07-22
+2026-08-17,all-time,4201325,BDR-CS Call Only Nurture,13,LOW SAMPLE,BDR,0.0,0.0,8.08,0.0,0.0,124,0,Nikki Raw,0,0,13,0,0,True,2026-05-21
+2026-08-17,all-time,3866686,BDR-CS Demo Request Platform,88,KEEP,BDR,38.01,11.45,14.01,45.31,0.0,1006,1205,Sammy Poortaghi,35,30,13,10,0,False,2025-04-23
+2026-08-17,all-time,3932426,BDR-CS Draft CQL= Downloaded a Guide - Document Automation / Draft,51,REVIEW,BDR,6.98,2.92,10.34,34.6,0.0,643,1575,Sammy Poortaghi,20,13,13,5,0,False,2025-07-10
+2026-08-17,all-time,3932044,BDR-CS Draft Demo No Show / Cancellation,75,LOW SAMPLE,BDR,21.6,8.4,11.11,33.6,0.0,134,250,Sammy Poortaghi,35,22,13,5,0,True,2025-07-10
+2026-08-17,all-time,4377111,BDR-CS MM - Canada Cohort 1,5,ARCHIVE,BDR,0.39,1.03,0.0,27.99,0.0,1765,4558,Anton Steinbeck,0,0,0,5,0,False,2026-07-20
+2026-08-17,all-time,4327839,BDR-CS MM - ES/Essentials to Advanced Upgrade,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Anton Steinbeck,0,0,0,0,0,True,2026-07-08
+2026-08-17,all-time,4256145,BDR-CS Strat & MM - Apex 30 Hot Leads,23,LOW SAMPLE,BDR,0.0,0.0,10.71,38.1,0.0,16,21,Anton Steinbeck,0,0,13,10,0,True,2026-06-17
+2026-08-17,all-time,4452480,BDR-CS Strat & MM - Customer Briefing,10,LOW SAMPLE,BDR,0.58,0.29,0.0,38.61,0.0,380,689,Anton Steinbeck,0,0,0,10,0,True,2026-08-03
+2026-08-17,all-time,4498668,BDR-CS Strat & MM - Summit Invite Blast,0,NO DATA,BDR,0.0,0.0,0.0,37.27,0.0,0,271,Anton Steinbeck,0,0,0,10,0,True,2026-08-10
+2026-08-17,all-time,4255926,BDR-CS Strat & MM | Essentials to Advanced Upgrade Outreach - Subscription Page ‘Abandoned Cart’ ,15,LOW SAMPLE,BDR,0.0,0.0,0.0,50.0,0.0,4,4,Anton Steinbeck,0,0,0,15,0,True,2026-06-17
+2026-08-17,all-time,4377099,BDR-CS Strat - Canada Cohort 1,31,ARCHIVE,BDR,1.32,2.25,12.8,30.28,0.0,5408,10502,Anton Steinbeck,0,13,13,5,0,False,2026-07-20
+2026-08-17,all-time,4323630,BDR-CS Strat - Clio Draft - Wills & Estates Blast W/O,18,LOW SAMPLE,BDR,0.0,3.26,0.0,28.26,0.0,60,184,Anton Steinbeck,0,13,0,5,0,True,2026-07-07
+2026-08-17,all-time,4313605,BDR-CS Strat - Clio Grow High Contact ,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Anton Steinbeck,0,0,0,0,0,True,2026-07-02
+2026-08-17,all-time,4116722,BDR-CS Strat - Criminal Work Campaign,18,LOW SAMPLE,BDR,4.22,1.58,9.44,32.45,0.0,206,379,Anton Steinbeck,0,0,13,5,0,True,2026-03-13
+2026-08-17,all-time,4313580,BDR-CS Strat - ES/Essentials to Advanced Upgrade,18,LOW SAMPLE,BDR,0.0,1.14,10.0,34.66,0.0,226,176,Anton Steinbeck,0,0,13,5,0,True,2026-07-02
+2026-08-17,all-time,4261699,BDR-CS Strat Abandoned Cart - Clio Work (not Apex),18,LOW SAMPLE,BDR,1.4,1.71,8.33,32.5,0.0,296,643,Anton Steinbeck,0,0,13,5,0,True,2026-06-18
+2026-08-17,all-time,4187027,BDR-CS Strat | Clio Work - Family Law - OBC - May 2026,31,LOW SAMPLE,BDR,6.43,1.95,6.56,30.99,0.0,269,513,Anton Steinbeck,20,0,6,5,0,True,2026-05-13
+2026-08-17,all-time,4099204,BDR-CS Strat: High Adopters ,56,LOW SAMPLE,BDR,7.88,3.28,7.77,36.11,0.0,286,457,Anton Steinbeck,20,13,13,10,0,True,2026-02-23
+2026-08-17,all-time,4132269,BDR-CS Team - Draft Canada Launch Cadence  ,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,4,0,Nikki Raw,0,0,0,0,0,True,2026-03-31
+2026-08-17,all-time,3980173,BDR-CS | 2025-09 Email Marketing Webinar - Attended Optional Demo of Clio Grow CQLs ,27,LOW SAMPLE,BDR,0.0,7.69,0.0,23.08,0.0,10,13,Salesloft Marketing,0,22,0,5,0,True,2025-09-09
+2026-08-17,all-time,4046345,BDR-CS | 2025-12 Legal AI Summit - Poll CQL - IBC,56,LOW SAMPLE,BDR,8.66,4.33,12.71,40.55,0.0,104,254,Salesloft Marketing,20,13,13,10,0,True,2025-12-01
+2026-08-17,all-time,4064932,BDR-CS | 2026-01 MS Word CLE Series  (01/2026) - Attendee CQL - IBC ,36,LOW SAMPLE,BDR,3.17,2.84,13.28,39.07,0.0,219,599,Salesloft Marketing,0,13,13,10,0,True,2026-01-08
+2026-08-17,all-time,4064934,BDR-CS | 2026-01 MS Word CLE Series (01/2026) - Draft Poll CQL - IBC,65,LOW SAMPLE,BDR,11.87,5.84,13.98,35.41,0.0,187,514,Salesloft Marketing,20,22,13,10,0,True,2026-01-08
+2026-08-17,all-time,4064935,BDR-CS | 2026-01 MS Word CLE Series (01/2026) - Platform Poll CQL - IBC,60,LOW SAMPLE,BDR,5.93,5.19,13.19,30.37,0.0,54,135,Salesloft Marketing,20,22,13,5,0,True,2026-01-08
+2026-08-17,all-time,4078004,BDR-CS | 2026-01 What's New in Clio - Poll CQL - IBC,75,LOW SAMPLE,BDR,23.91,7.61,12.99,25.0,0.0,43,92,Salesloft Marketing,35,22,13,5,0,True,2026-01-27
+2026-08-17,all-time,4086085,BDR-CS | 2026-02 CLE (Guide to Not Getting Flagged for AI Use) - Poll CQL - IBC,51,LOW SAMPLE,BDR,11.05,3.87,11.19,34.25,0.0,82,181,Salesloft Marketing,20,13,13,5,0,True,2026-02-05
+2026-08-17,all-time,4092372,BDR-CS | 2026-02 CLE (Soft Skills for Legal Professionals) - Poll CQL - IBC,0,LOW SAMPLE,BDR,0.0,0.0,0.0,16.67,0.0,2,6,Salesloft Marketing,0,0,0,0,0,True,2026-02-13
+2026-08-17,all-time,4107295,BDR-CS | 2026-03 AI Spring Camp - Session CQL - IBC,43,LOW SAMPLE,BDR,7.46,1.49,7.32,37.31,0.0,33,67,Salesloft Marketing,20,0,13,10,0,True,2026-03-03
+2026-08-17,all-time,4152693,BDR-CS | 2026-04 Draft Demo Webinar - Attendee CQL - IBC,51,LOW SAMPLE,BDR,5.13,3.85,7.72,28.63,0.0,161,234,Salesloft Marketing,20,13,13,5,0,True,2026-04-20
+2026-08-17,all-time,4152692,BDR-CS | 2026-04 Draft Demo Webinar - Poll CQL - IBC,71,LOW SAMPLE,BDR,29.41,11.76,6.67,17.65,0.0,12,17,Salesloft Marketing,35,30,6,0,0,True,2026-04-20
+2026-08-17,all-time,4142066,BDR-CS | 2026-04 Get to Know Clio's AI - Poll CQL - IBC,92,LOW SAMPLE,BDR,25.81,9.68,23.33,64.52,0.0,19,31,Salesloft Marketing,35,22,20,15,0,True,2026-04-10
+2026-08-17,all-time,4142130,BDR-CS | 2026-04 Get to Know Clio's AI - Session CQL - IBC,56,LOW SAMPLE,BDR,10.16,4.07,10.4,35.37,0.0,137,246,Salesloft Marketing,20,13,13,10,0,True,2026-04-10
+2026-08-17,all-time,4177530,BDR-CS | 2026-05 Solo & Small Firm Summit - Poll CQL - IBC,80,LOW SAMPLE,BDR,19.95,5.93,9.96,44.74,0.0,168,371,Salesloft Marketing,35,22,13,10,0,True,2026-05-06
+2026-08-17,all-time,4177531,BDR-CS | 2026-05 Solo & Small Firm Summit - Session CQL - IBC,51,LOW SAMPLE,BDR,12.12,3.03,12.5,22.73,0.0,33,66,Salesloft Marketing,20,13,13,5,0,True,2026-05-06
+2026-08-17,all-time,4227751,BDR-CS | 2026-06 - Admin Manage Walkthrough - Reg CQL - IBC ,23,LOW SAMPLE,BDR,3.12,4.17,0.0,35.42,0.0,26,96,Salesloft Marketing,0,13,0,10,0,True,2026-06-05
+2026-08-17,all-time,4227941,BDR-CS | 2026-06 Summer AI CLE - Poll CQL - IBC,58,LOW SAMPLE,BDR,14.52,6.25,6.56,45.77,0.0,187,496,Salesloft Marketing,20,22,6,10,0,True,2026-06-05
+2026-08-17,all-time,4388989,BDR-CS | 2026-07 AI Implementation Workshop - Poll CQL - IBC,73,LOW SAMPLE,BDR,12.5,12.5,9.09,37.5,0.0,11,16,Salesloft Marketing,20,30,13,10,0,True,2026-07-22
+2026-08-17,all-time,4316828,BDR-CS | 2026-07 The Litigator's Lounge - Attendee CQL - IBC,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Salesloft Marketing,0,0,0,0,0,True,2026-07-03
+2026-08-17,all-time,4316827,BDR-CS | 2026-07 The Litigator's Lounge - Poll CQL - IBC,60,LOW SAMPLE,BDR,5.56,16.67,0.0,38.89,0.0,10,18,Salesloft Marketing,20,30,0,10,0,True,2026-07-03
+2026-08-17,all-time,4507886,BDR-CS | 2026-08 Legal AI Summit - Attended Demo CQL - IBC,5,LOW SAMPLE,BDR,0.0,0.0,0.0,30.0,0.0,13,10,Salesloft Marketing,0,0,0,5,0,True,2026-08-11
+2026-08-17,all-time,4507753,BDR-CS | 2026-08 Legal AI Summit - Poll CQL - IBC,65,LOW SAMPLE,BDR,7.69,9.23,13.64,49.23,0.0,93,65,Salesloft Marketing,20,22,13,10,0,True,2026-08-11
+2026-08-17,all-time,4146667,BDR-CS | 2026-14 What's New In Clio - Poll CQL - IBC,80,LOW SAMPLE,BDR,18.8,8.27,13.21,45.11,0.0,77,133,Salesloft Marketing,35,22,13,10,0,True,2026-04-14
+2026-08-17,all-time,4105514,BDR-CS | AI Spring Training - Old AI CQL Ob blast - OBC,5,ARCHIVE,BDR,1.59,0.69,0.0,25.69,0.0,1037,3901,Anton Steinbeck,0,0,0,5,0,False,2026-03-02
+2026-08-17,all-time,3956304,BDR-CS | AI Summer Camp - Poll Respondents,65,LOW SAMPLE,BDR,13.83,7.52,14.33,41.75,0.0,286,412,Salesloft Marketing,20,22,13,10,0,True,2025-08-07
+2026-08-17,all-time,4133314,BDR-CS | April AI Demo Webinar Invite Promo - OBC,5,ARCHIVE,BDR,3.16,1.6,0.0,31.96,0.0,955,2434,Salesloft Marketing,0,0,0,5,0,False,2026-04-01
+2026-08-17,all-time,4021861,BDR-CS | Attorney Webinar - Attended CQLs,16,LOW SAMPLE,BDR,4.44,0.0,5.56,37.78,0.0,40,90,Salesloft Marketing,0,0,6,10,0,True,2025-10-28
+2026-08-17,all-time,4132376,BDR-CS | CAM Demo Incentive - General - OBC,18,LOW SAMPLE,BDR,4.24,1.86,7.72,30.24,0.0,202,377,Salesloft Marketing,0,0,13,5,0,True,2026-03-31
+2026-08-17,all-time,4313280,BDR-CS | CQL Catch All Follow Up,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Salesloft Marketing,0,0,0,0,0,True,2026-07-02
+2026-08-17,all-time,4304860,"BDR-CS | Clio Work Demo, Jul-Aug 2026",50,LOW SAMPLE,BDR,50.0,0.0,0.0,50.0,0.0,3,2,Salesloft Marketing,35,0,0,15,0,True,2026-06-30
+2026-08-17,all-time,3910089,BDR-CS | Cold Outreach June 2025 - Duo,51,LOW SAMPLE,BDR,8.57,2.04,10.65,32.65,0.0,322,245,Kyle Arendale,20,13,13,5,0,True,2025-06-11
+2026-08-17,all-time,4085949,BDR-CS | Content CQL Follow-Up (AI Platform) - IBC,63,LOW SAMPLE,BDR,6.78,2.51,20.0,37.44,0.0,290,398,Salesloft Marketing,20,13,20,10,0,True,2026-02-05
+2026-08-17,all-time,4087583,BDR-CS | Content CQL Follow-Up (Draft) - IBC,38,LOW SAMPLE,BDR,6.45,3.23,0.0,34.68,0.0,77,124,Salesloft Marketing,20,13,0,5,0,True,2026-02-09
+2026-08-17,all-time,4087590,BDR-CS | Content CQL Follow-Up (Grow) - IBC,23,LOW SAMPLE,BDR,4.88,3.66,0.0,40.24,0.0,45,82,Salesloft Marketing,0,13,0,10,0,True,2026-02-09
+2026-08-17,all-time,4128253,BDR-CS | Content CQL Follow-Up (Work) - IBC,30,LOW SAMPLE,BDR,5.91,1.7,0.0,37.54,0.0,402,1473,Salesloft Marketing,20,0,0,10,0,True,2026-03-26
+2026-08-17,all-time,4090769,BDR-CS | Family Law - Clio Work (On-Demand Webinar),85,LOW SAMPLE,BDR,6.25,12.5,19.05,62.5,0.0,9,16,Salesloft Marketing,20,30,20,15,0,True,2026-02-12
+2026-08-17,all-time,4155059,BDR-CS | Family Law - Clio Work Outbound,23,LOW SAMPLE,BDR,2.08,0.0,8.7,35.42,0.0,77,48,Anton Steinbeck,0,0,13,10,0,True,2026-04-22
+2026-08-17,all-time,4065125,BDR-CS | Fastcase Integration - Clio Work Outbound,29,LOW SAMPLE,BDR,1.94,2.91,4.59,48.54,0.0,50,103,Anton Steinbeck,0,13,6,10,0,True,2026-01-09
+2026-08-17,all-time,4127204,BDR-CS | Get to Know Clio's AI,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Jin Lee,0,0,0,0,0,True,2026-03-25
+2026-08-17,all-time,4127189,"BDR-CS | How Law Firms Save Time and Reduce Errors with Document Automation - April 21, 2026",0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Jin Lee,0,0,0,0,0,True,2026-03-25
+2026-08-17,all-time,4412900,BDR-CS | July 2026 Canada Elevate Event Follow Up - Attended,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Salesloft Marketing,0,0,0,0,0,True,2026-07-27
+2026-08-17,all-time,4304834,"BDR-CS | Legal AI Workshop Series, Jul-Aug 2026",0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,1,0,Salesloft Marketing,0,0,0,0,0,True,2026-06-30
+2026-08-17,all-time,4099456,BDR-CS | Level Up with Clio - Attorney Webinar - Poll CQLs - IBC,70,LOW SAMPLE,BDR,9.3,6.98,11.11,58.14,0.0,20,43,Salesloft Marketing,20,22,13,15,0,True,2026-02-23
+2026-08-17,all-time,4103124,BDR-CS | Level Up with Clio - Billing Manager Webinar - Poll CQLs - IBC,0,NO DATA,BDR,0.0,0.0,33.33,0.0,0.0,0,1,Salesloft Marketing,0,0,20,0,0,True,2026-02-26
+2026-08-17,all-time,4103147,BDR-CS | Level Up with Clio - Firm Leader Webinar - Poll CQLs - IBC,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,1,Salesloft Marketing,0,0,0,0,0,True,2026-02-26
+2026-08-17,all-time,4101880,BDR-CS | Level Up with Clio - Legal Admin Webinar - Poll CQLs - IBC,60,LOW SAMPLE,BDR,33.33,0.0,21.05,33.33,0.0,13,15,Salesloft Marketing,35,0,20,5,0,True,2026-02-25
+2026-08-17,all-time,4100742,BDR-CS | Level Up with Clio - Paralegal Webinar - Poll CQLs - IBC,77,LOW SAMPLE,BDR,10.0,5.0,23.53,55.0,0.0,8,20,Salesloft Marketing,20,22,20,15,0,True,2026-02-24
+2026-08-17,all-time,4101885,BDR-CS | Level Up with Clio - Solo Webinar - Poll CQLs - IBC,93,LOW SAMPLE,BDR,28.57,28.57,12.5,64.29,0.0,9,14,Salesloft Marketing,35,30,13,15,0,True,2026-02-25
+2026-08-17,all-time,4119648,BDR-CS | MM LTR CLE - Poll CQLs - IBC,72,LOW SAMPLE,BDR,10.53,5.26,20.0,36.84,0.0,24,57,Salesloft Marketing,20,22,20,10,0,True,2026-03-17
+2026-08-17,all-time,4181055,BDR-CS | Monthly Clio Customer Briefing - OBC,25,LOW SAMPLE,BDR,5.05,0.0,0.0,27.66,0.0,383,376,Anton Steinbeck,20,0,0,5,0,True,2026-05-08
+2026-08-17,all-time,3988481,BDR-CS | Paralegal Essentials Resource Page - CQLs,43,LOW SAMPLE,BDR,8.57,0.0,10.0,37.14,0.0,19,35,Salesloft Marketing,20,0,13,10,0,True,2025-09-18
+2026-08-17,all-time,4119566,BDR-CS | Pt 2 Level Up with Clio - Attorney Webinar - Attendee CQLs - IBC,43,LOW SAMPLE,BDR,8.57,0.95,8.97,37.14,0.0,44,105,Salesloft Marketing,20,0,13,10,0,True,2026-03-17
+2026-08-17,all-time,4119560,BDR-CS | Pt 2 Level Up with Clio - Attorney Webinar - Poll CQLs - IBC,81,LOW SAMPLE,BDR,20.93,11.63,3.03,39.53,0.0,19,43,Salesloft Marketing,35,30,6,10,0,True,2026-03-17
+2026-08-17,all-time,4122872,BDR-CS | Pt 2 Level Up with Clio - Billing Manager Webinar - Attendee CQLs - IBC,80,LOW SAMPLE,BDR,22.22,33.33,0.0,77.78,0.0,7,9,Salesloft Marketing,35,30,0,15,0,True,2026-03-20
+2026-08-17,all-time,4122871,BDR-CS | Pt 2 Level Up with Clio - Firm Leader Webinar - Attendee CQLs - IBC,15,LOW SAMPLE,BDR,0.0,0.0,0.0,66.67,0.0,6,12,Salesloft Marketing,0,0,0,15,0,True,2026-03-20
+2026-08-17,all-time,4122868,BDR-CS | Pt 2 Level Up with Clio - Firm Leader Webinar - Poll CQLs - IBC,10,LOW SAMPLE,BDR,0.0,0.0,0.0,40.0,0.0,3,5,Salesloft Marketing,0,0,0,10,0,True,2026-03-20
+2026-08-17,all-time,4122164,BDR-CS | Pt 2 Level Up with Clio - Legal Admin Webinar - Attendee CQLs - IBC,72,LOW SAMPLE,BDR,10.26,6.41,15.38,43.59,0.0,39,78,Salesloft Marketing,20,22,20,10,0,True,2026-03-19
+2026-08-17,all-time,4122163,BDR-CS | Pt 2 Level Up with Clio - Legal Admin Webinar - Poll CQLs - IBC,72,LOW SAMPLE,BDR,14.29,7.14,20.0,46.43,0.0,12,28,Salesloft Marketing,20,22,20,10,0,True,2026-03-19
+2026-08-17,all-time,4120602,BDR-CS | Pt 2 Level Up with Clio - Paralegal Webinar - Attendee CQLs - IBC,30,LOW SAMPLE,BDR,3.7,1.48,23.6,35.56,0.0,60,135,Salesloft Marketing,0,0,20,10,0,True,2026-03-18
+2026-08-17,all-time,4120574,BDR-CS | Pt 2 Level Up with Clio - Paralegal Webinar - Poll CQLs - IBC,55,LOW SAMPLE,BDR,7.14,5.36,12.82,19.64,0.0,22,56,Salesloft Marketing,20,22,13,0,0,True,2026-03-18
+2026-08-17,all-time,4122165,BDR-CS | Pt 2 Level Up with Clio - Solo Webinar - Attendee CQLs - IBC,20,LOW SAMPLE,BDR,0.0,0.0,15.0,19.23,0.0,10,26,Salesloft Marketing,0,0,20,0,0,True,2026-03-19
+2026-08-17,all-time,4122166,BDR-CS | Pt 2 Level Up with Clio - Solos Webinar - Poll CQLs - IBC,93,LOW SAMPLE,BDR,116.67,16.67,11.11,66.67,0.0,6,6,Salesloft Marketing,35,30,13,15,0,True,2026-03-19
+2026-08-17,all-time,3948658,BDR-CS | Tradeshow: Demo Request via Conference CQLs (Multi-product) ,100,LOW SAMPLE,BDR,37.5,12.5,42.86,50.0,0.0,6,8,Salesloft Marketing,35,30,20,15,0,True,2025-07-30
+2026-08-17,all-time,3977603,BDR-CS | Webinar Follow Up- DRAFT POLL CQLs,80,LOW SAMPLE,BDR,15.13,6.09,14.45,37.91,0.0,270,575,Salesloft Marketing,35,22,13,10,0,True,2025-09-04
+2026-08-17,all-time,4127179,BDR-CS | What's New in Clio - April 2026,5,LOW SAMPLE,BDR,0.0,0.0,0.0,33.33,0.0,3,3,Jin Lee,0,0,0,5,0,True,2026-03-25
+2026-08-17,all-time,4514400,BDR-CS | What's New in Clio - August 2026,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Jin Lee,0,0,0,0,0,True,2026-08-12
+2026-08-17,all-time,4067686,BDR-CS | What's New in Clio - January 2026,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Salesloft Marketing,0,0,0,0,0,True,2026-01-13
+2026-08-17,all-time,4277072,BDR-CS | What's New in Clio - July 2026,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Jin Lee,0,0,0,0,0,True,2026-06-22
+2026-08-17,all-time,4056438,BDR-CS | Work Free Trial Engagement Outbound,21,LOW SAMPLE,BDR,2.47,0.31,6.57,50.31,0.0,142,324,Salesloft Marketing,0,0,6,15,0,True,2025-12-16
+2026-08-17,all-time,4164031,BDR-CS | [Defendant] Complaint Filing - Clio Work Outreach - OBC,25,LOW SAMPLE,BDR,0.0,1.57,16.95,26.77,0.0,77,127,Salesloft Marketing,0,0,20,5,0,True,2026-04-29
+2026-08-17,all-time,4310599,BDR-CS | [Docket Alarm] All Filings - Clio Work Outreach - OBC,16,LOW SAMPLE,BDR,2.18,1.82,6.6,38.18,0.0,191,275,Salesloft Marketing,0,0,6,10,0,True,2026-07-01
+2026-08-17,all-time,4163374,BDR-CS | [Plaintiff] Complaint Filing - Clio Work Outreach - OBC,16,ARCHIVE,BDR,2.63,1.72,6.69,36.61,0.0,535,874,Salesloft Marketing,0,0,6,10,0,False,2026-04-29
+2026-08-17,all-time,4129429,BDR-CS-Draft Canada Launch Cadence - OBC,70,LOW SAMPLE,BDR,33.33,16.67,0.0,33.33,0.0,8,12,Salesloft Marketing,35,30,0,5,0,True,2026-03-27
+2026-08-17,all-time,4260976,BDR-CS-V Abandoned Cart - Clio Work (not Apex),36,ARCHIVE,BDR,4.53,3.64,9.29,41.79,0.0,510,1127,Nikki Raw,0,13,13,10,0,False,2026-06-18
+2026-08-17,all-time,4200294,BDR-CS-V Apex 30 day Work Trial - Pre-trial BDR cadence,70,LOW SAMPLE,BDR,100.0,0.0,100.0,100.0,0.0,1,1,Nikki Raw,35,0,20,15,0,True,2026-05-20
+2026-08-17,all-time,4461999,BDR-CS-V Apex AUGUST CANADA APEX | Firms 2 - 4,36,ARCHIVE,BDR,1.9,3.14,12.67,36.97,0.0,5914,5486,Nikki Raw,0,13,13,10,0,False,2026-08-04
+2026-08-17,all-time,4471545,BDR-CS-V Apex AUGUST CANADA APEX | SOLOS,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Nikki Raw,0,0,0,0,0,True,2026-08-05
+2026-08-17,all-time,4201525,BDR-CS-V Apex COHORT 1 | Firms 2 - 4,51,REVIEW,BDR,9.4,4.2,8.4,34.73,0.0,1139,1405,Nikki Raw,20,13,13,5,0,False,2026-05-21
+2026-08-17,all-time,4208777,BDR-CS-V Apex COHORT 2 | Firms 2 - 4,49,ARCHIVE,BDR,5.24,4.03,6.03,38.77,0.0,1215,2231,Nikki Raw,20,13,6,10,0,False,2026-05-27
+2026-08-17,all-time,4225407,BDR-CS-V Apex COHORT 3 | Firms 2 - 4,56,REVIEW,BDR,5.79,3.59,8.28,39.46,0.0,2464,3624,Nikki Raw,20,13,13,10,0,False,2026-06-04
+2026-08-17,all-time,4238467,BDR-CS-V Apex COHORT 4 | Firms 2 - 4,18,ARCHIVE,BDR,2.06,1.84,7.12,26.97,0.0,8109,10787,Nikki Raw,0,0,13,5,0,False,2026-06-10
+2026-08-17,all-time,4480396,BDR-CS-V Apex COHORT 5 | revised new dates,36,ARCHIVE,BDR,2.47,4.29,9.59,38.93,0.0,6514,5829,Nikki Raw,0,13,13,10,0,False,2026-08-06
+2026-08-17,all-time,4285602,BDR-CS-V Apex Solos - CALL ONLY; Cohort 1,0,NO DATA,BDR,0.0,0.0,6.25,0.0,0.0,0,0,Nikki Raw,0,0,6,0,0,True,2026-06-24
+2026-08-17,all-time,4201331,BDR-CS-V SOLOS - Apex 30 day Work Trial - Pre-trial BDR cadence,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Nikki Raw,0,0,0,0,0,True,2026-05-21
+2026-08-17,all-time,4257306,BDR-CS-V SOLOS Batch 2 Apex,60,LOW SAMPLE,BDR,14.71,13.24,0.0,42.65,0.0,23,68,Nikki Raw,20,30,0,10,0,True,2026-06-17
+2026-08-17,all-time,4214165,BDR-CS-V SOLOS COHORT 1 Apex 30 day Work Trial,23,ARCHIVE,BDR,2.68,3.29,0.0,35.86,0.0,660,2914,Nikki Raw,0,13,0,10,0,False,2026-05-29
+2026-08-17,all-time,4220232,BDR-CS-V SOLOS COHORT 2 Apex 30 day Work Trial,23,LOW SAMPLE,BDR,2.09,2.49,0.0,36.45,0.0,270,3487,Nikki Raw,0,13,0,10,0,True,2026-06-02
+2026-08-17,all-time,4225422,BDR-CS-V SOLOS COHORT 3 Apex 30 day Work Trial,23,ARCHIVE,BDR,2.18,2.13,0.0,38.13,0.0,1549,7104,Nikki Raw,0,13,0,10,0,False,2026-06-04
+2026-08-17,all-time,4238466,BDR-CS-V SOLOS COHORT 4 Apex 30 day Work Trial,5,ARCHIVE,BDR,1.48,1.82,0.0,31.54,0.0,925,10687,Nikki Raw,0,0,0,5,0,False,2026-06-10
+2026-08-17,all-time,4178964,BDR-CS-V | PLG Work Trial FU,93,LOW SAMPLE,BDR,22.55,16.6,8.33,51.91,0.0,142,235,Nikki Raw,35,30,13,15,0,True,2026-05-07
+2026-08-17,all-time,3851767,BDR-CS: 2026-04-02 Webinar: Intake CLE - Grow Demo CQLs-IBC,67,LOW SAMPLE,BDR,11.29,8.06,17.83,30.65,0.0,72,124,Salesloft Marketing,20,22,20,5,0,True,2025-04-07
+2026-08-17,all-time,4077612,BDR-CS: AI CQL= Downloaded a Guide (AI Content) - IBC [archived - do not use],43,LOW SAMPLE,BDR,7.14,1.79,8.0,37.5,0.0,32,56,Salesloft Marketing,20,0,13,10,0,True,2026-01-27
+2026-08-17,all-time,4134072,BDR-CS: AI Suite Demo Webinar - Invite,5,LOW SAMPLE,BDR,0.0,0.0,0.0,25.6,0.0,169,168,Salesloft Marketing,0,0,0,5,0,True,2026-04-02
+2026-08-17,all-time,3947253,BDR-CS: August 2025 Webinar Events Email Invite,5,ARCHIVE,BDR,3.23,0.12,0.0,27.98,0.0,3374,3249,Salesloft Marketing,0,0,0,5,0,False,2025-07-29
+2026-08-17,all-time,3978197,BDR-CS: CLE Optional Draft Walkthrough - CQL Follow-Up ,65,LOW SAMPLE,BDR,7.14,5.1,9.8,37.76,0.0,56,98,Salesloft Marketing,20,22,13,10,0,True,2025-09-05
+2026-08-17,all-time,3476900,BDR-CS: Canada Grow Cadence,5,ARCHIVE,BDR,2.04,0.68,0.0,29.99,0.0,611,2054,Sammy Poortaghi,0,0,0,5,0,False,2024-04-05
+2026-08-17,all-time,4087461,BDR-CS: Clio Draft Canada (US Server) Outbound Cadence,43,LOW SAMPLE,BDR,3.65,2.78,15.59,35.22,0.0,412,1150,Anton Steinbeck,0,13,20,10,0,True,2026-02-09
+2026-08-17,all-time,3926329,BDR-CS: Clio Draft Demo Request,88,KEEP,BDR,43.27,11.01,11.74,40.0,0.0,1270,1835,Sammy Poortaghi,35,30,13,10,0,False,2025-07-02
+2026-08-17,all-time,4052667,BDR-CS: Clio Manage AI Demo Webinar - Invite,5,LOW SAMPLE,BDR,2.9,0.72,0.0,28.26,0.0,135,138,Salesloft Marketing,0,0,0,5,0,True,2025-12-09
+2026-08-17,all-time,4013180,BDR-CS: Clio Work Demo Request,80,KEEP,BDR,31.9,5.84,10.77,37.13,0.0,1899,3135,Sammy Poortaghi,35,22,13,10,0,False,2025-10-17
+2026-08-17,all-time,4021814,BDR-CS: Clio Work Demo Webinar (Weekly on Friday) - Invite Copy ,5,ARCHIVE,BDR,4.45,0.46,0.0,31.75,0.0,641,652,Salesloft Marketing,0,0,0,5,0,False,2025-10-28
+2026-08-17,all-time,4193342,BDR-CS: Clio Work Litigation Webinar - Poll CQLs - IBC,63,LOW SAMPLE,BDR,33.33,4.17,0.0,62.5,0.0,13,24,Salesloft Marketing,35,13,0,15,0,True,2026-05-15
+2026-08-17,all-time,4193398,BDR-CS: Clio Work Litigation Webinar - Registered (Attended + Not Attended) - IBC,51,LOW SAMPLE,BDR,5.0,3.75,10.34,27.5,0.0,54,160,Salesloft Marketing,20,13,13,5,0,True,2026-05-15
+2026-08-17,all-time,4027144,BDR-CS: Clio Work OPT OUT CQLs,88,LOW SAMPLE,BDR,15.41,12.19,10.0,43.01,0.0,207,279,Sammy Poortaghi,35,30,13,10,0,True,2025-11-04
+2026-08-17,all-time,4013445,BDR-CS: Clio Work Outbound,18,ARCHIVE,BDR,3.65,0.55,10.94,27.91,0.0,5687,10605,Sammy Poortaghi,0,0,13,5,0,False,2025-10-17
+2026-08-17,all-time,4190221,BDR-CS: Clio Work PA Webinars - Invite (May 2026),30,ARCHIVE,BDR,6.46,0.55,0.0,36.69,0.0,777,913,Salesloft Marketing,20,0,0,10,0,False,2026-05-14
+2026-08-17,all-time,4193374,BDR-CS: Clio Work Transactional Webinar - Poll CQLs - IBC,85,LOW SAMPLE,BDR,63.64,9.09,7.69,54.55,0.0,5,11,Salesloft Marketing,35,22,13,15,0,True,2026-05-15
+2026-08-17,all-time,4193410,BDR-CS: Clio Work Transactional Webinar - Registered (Attended + Not Attended) - IBC,43,LOW SAMPLE,BDR,7.14,2.68,2.7,41.07,0.0,31,112,Salesloft Marketing,20,13,0,10,0,True,2026-05-15
+2026-08-17,all-time,4024594,BDR-CS: Clio Work Webinar - Registered (Attended + Not Attended),38,LOW SAMPLE,BDR,5.03,1.41,13.86,33.97,0.0,293,995,Salesloft Marketing,20,0,13,5,0,True,2025-10-31
+2026-08-17,all-time,4133512,BDR-CS: Customer AMA Webinar (AI Focus) - Invite,43,LOW SAMPLE,BDR,11.45,3.82,0.0,41.22,0.0,130,131,Salesloft Marketing,20,13,0,10,0,True,2026-04-01
+2026-08-17,all-time,4134164,BDR-CS: Customer AMA Webinar (AI Focus) - Invite,5,LOW SAMPLE,BDR,4.86,0.0,0.0,30.77,0.0,248,247,Salesloft Marketing,0,0,0,5,0,True,2026-04-02
+2026-08-17,all-time,4134159,BDR-CS: Customer AMA Webinar (Clio Work) - Invite,25,LOW SAMPLE,BDR,7.07,1.09,0.0,31.52,0.0,184,184,Salesloft Marketing,20,0,0,5,0,True,2026-04-02
+2026-08-17,all-time,4133526,BDR-CS: Customer AMA Webinar (Clio Work) - Invite,5,LOW SAMPLE,BDR,1.12,0.56,0.0,30.9,0.0,178,178,Salesloft Marketing,0,0,0,5,0,True,2026-04-01
+2026-08-17,all-time,4133528,BDR-CS: Customer AMA Webinar (Draft) - General Invite,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Salesloft Marketing,0,0,0,0,0,True,2026-04-01
+2026-08-17,all-time,4133522,BDR-CS: Customer AMA Webinar (Draft) - Open Opp Invite,43,LOW SAMPLE,BDR,13.54,3.12,0.0,41.67,0.0,95,96,Salesloft Marketing,20,13,0,10,0,True,2026-04-01
+2026-08-17,all-time,4133521,BDR-CS: Customer AMA Webinar (Manage AI) - Invite,30,LOW SAMPLE,BDR,6.94,0.69,0.0,39.58,0.0,147,144,Salesloft Marketing,20,0,0,10,0,True,2026-04-01
+2026-08-17,all-time,3968619,BDR-CS: Customer Subscription Upgrade Demo Request,95,LOW SAMPLE,BDR,48.39,12.9,16.67,35.48,0.0,44,62,Sammy Poortaghi,35,30,20,10,0,True,2025-08-22
+2026-08-17,all-time,3976330,BDR-CS: Draft - Document Automation Focus - No Court forms,11,LOW SAMPLE,BDR,1.59,0.4,3.42,21.03,0.0,79,252,Sammy Poortaghi,0,0,6,5,0,True,2025-09-03
+2026-08-17,all-time,3933736,BDR-CS: Draft - Visited Feature Page CQL,38,LOW SAMPLE,BDR,7.99,1.92,11.58,31.31,0.0,175,313,Sammy Poortaghi,20,0,13,5,0,True,2025-07-13
+2026-08-17,all-time,3932479,BDR-CS: Draft Walkthrough Webinar CQL Follow-Up,60,LOW SAMPLE,BDR,6.18,5.62,8.04,31.46,0.0,68,178,Salesloft Marketing,20,22,13,5,0,True,2025-07-10
+2026-08-17,all-time,4255942,BDR-CS: Essentials to Advanced Upgrade Outreach - Subscription Page ‘Abandoned Cart’ - Copy,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Sammy Poortaghi,0,0,0,0,0,True,2026-06-17
+2026-08-17,all-time,4147661,BDR-CS: Essentials upsell - Plan Harmonization,80,LOW SAMPLE,BDR,7.11,13.2,15.0,40.1,0.0,103,197,Anton Steinbeck,20,30,20,10,0,True,2026-04-15
+2026-08-17,all-time,3836839,BDR-CS: Feature Heavy  - Copy,80,LOW SAMPLE,BDR,16.67,16.67,0.0,50.0,0.0,5,6,Shannon Wolfe,35,30,0,15,0,True,2025-03-21
+2026-08-17,all-time,3634939,BDR-CS: Feature Heavy Accounting ,18,ARCHIVE,BDR,3.11,0.7,11.95,25.44,0.0,5059,11924,Sammy Poortaghi,0,0,13,5,0,False,2024-07-24
+2026-08-17,all-time,3956782,BDR-CS: Feature Heavy Draft Outbound - Wills & Estates/Family,18,LOW SAMPLE,BDR,1.16,0.45,10.19,25.5,0.0,461,1553,Sammy Poortaghi,0,0,13,5,0,True,2025-08-08
+2026-08-17,all-time,3927682,BDR-CS: Feature Heavy Draft Outbound Cadence,18,ARCHIVE,BDR,2.97,0.6,7.04,25.07,0.0,2396,5361,Sammy Poortaghi,0,0,13,5,0,False,2025-07-04
+2026-08-17,all-time,3932309,BDR-CS: Feature Heavy Draft Outbound Cadence - Copy,25,LOW SAMPLE,BDR,7.5,0.0,0.0,22.5,0.0,21,40,Anna Ryczko,20,0,0,5,0,True,2025-07-10
+2026-08-17,all-time,3306014,BDR-CS: Feature Heavy Grow,25,ARCHIVE,BDR,4.51,0.74,17.19,25.7,0.0,4958,12497,Jordan Stuart,0,0,20,5,0,False,2023-11-03
+2026-08-17,all-time,3372184,BDR-CS: Feature Heavy Personal Injury ,45,ARCHIVE,BDR,6.28,1.48,17.0,27.06,0.0,2164,4394,Sammy Poortaghi,20,0,20,5,0,False,2024-01-19
+2026-08-17,all-time,3395367,"BDR-CS: Grow Demo Webinar-  ""Watch How Law Firms Use Clio for Client Intake""",45,LOW SAMPLE,BDR,11.83,1.54,17.03,31.95,0.0,283,651,Jordan Stuart,20,0,20,5,0,True,2024-02-08
+2026-08-17,all-time,4103869,BDR-CS: Manage AI Free Trial Pilot: March 2026 [Pre-Trial] - IBC,50,LOW SAMPLE,BDR,25.0,0.0,0.0,50.0,0.0,1,4,Salesloft Marketing,35,0,0,15,0,True,2026-02-27
+2026-08-17,all-time,4057832,BDR-CS: Manage AI Webinar - Poll CQL - IBC,75,LOW SAMPLE,BDR,16.98,5.66,11.39,20.75,0.0,36,53,Salesloft Marketing,35,22,13,5,0,True,2025-12-17
+2026-08-17,all-time,4071526,BDR-CS: Manage AI Webinar - Reg + Attendee CQL - IBC,33,LOW SAMPLE,BDR,8.22,1.37,8.33,15.07,0.0,76,146,Salesloft Marketing,20,0,13,0,0,True,2026-01-20
+2026-08-17,all-time,4057564,BDR-CS: Manage AI Webinar - Registered (Attended + Not Attended),56,LOW SAMPLE,BDR,7.58,3.03,13.92,48.86,0.0,85,264,Salesloft Marketing,20,13,13,10,0,True,2025-12-17
+2026-08-17,all-time,4154866,BDR-CS: Personal Injury Add-on + Work,38,LOW SAMPLE,BDR,7.83,0.36,8.47,22.06,0.0,156,281,Anton Steinbeck,20,0,13,5,0,True,2026-04-22
+2026-08-17,all-time,3935745,BDR-CS: Personal Injury Outbound Cadence PART 2 ,18,ARCHIVE,BDR,2.59,0.38,8.48,20.57,0.0,1299,2358,Sammy Poortaghi,0,0,13,5,0,False,2025-07-15
+2026-08-17,all-time,4024841,BDR-CS: Webinar Poll Follow-Up: Work CQLs - IBC,73,LOW SAMPLE,BDR,26.54,5.56,6.83,43.21,0.0,92,162,Salesloft Marketing,35,22,6,10,0,True,2025-10-31
+2026-08-17,all-time,3691796,BDR-Customer Sales - Hot Leads - Call Only Cadence,6,LOW SAMPLE,BDR,0.0,0.0,3.7,0.0,0.0,152,0,Brett Blackney,0,0,6,0,0,True,2024-09-24
+2026-08-17,all-time,4305832,BDR-ENT - Auto - Insurance Sprint,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-17,all-time,4323133,BDR-ENT - BigLaw - Inbound Demo Form Cadence,39,LOW SAMPLE,BDR,5.56,2.78,4.26,16.67,0.0,14,36,Tanpreet Anand,20,13,6,0,0,True,2026-07-07
+2026-08-17,all-time,4305779,BDR-ENT - BigLaw - MQL Tier A1 ,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-17,all-time,4305793,BDR-ENT - BigLaw - MQL Tier A2,18,LOW SAMPLE,BDR,1.69,2.54,0.0,31.36,0.0,41,118,Brett Blackney,0,13,0,5,0,True,2026-06-30
+2026-08-17,all-time,4380633,BDR-ENT - BigLaw - Vincent AI Free Trial Cadence,35,LOW SAMPLE,BDR,0.0,15.38,0.0,23.08,0.0,12,13,Tanpreet Anand,0,30,0,5,0,True,2026-07-21
+2026-08-17,all-time,4323211,BDR-ENT - Corporate - Inbound Demo Form Cadence,38,LOW SAMPLE,BDR,5.88,1.18,7.92,27.06,0.0,31,85,Tanpreet Anand,20,0,13,5,0,True,2026-07-07
+2026-08-17,all-time,4305783,BDR-ENT - Corporate - MQL Tier A1,18,LOW SAMPLE,BDR,1.41,4.23,0.0,23.94,0.0,20,71,Brett Blackney,0,13,0,5,0,True,2026-06-30
+2026-08-17,all-time,4305794,BDR-ENT - Corporate - MQL Tier A2,0,LOW SAMPLE,BDR,0.0,0.0,0.0,13.42,0.0,54,149,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-17,all-time,4380560,BDR-ENT - Corporate - Vincent AI Free Trial Cadence,51,LOW SAMPLE,BDR,6.0,2.0,12.73,26.0,0.0,27,50,Tanpreet Anand,20,13,13,5,0,True,2026-07-21
+2026-08-17,all-time,4305836,BDR-ENT - Defense - US Insurance - Tier 2,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-17,all-time,4305814,BDR-ENT - Health - Insurance Sprint,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-17,all-time,4305827,BDR-ENT - Liability/P&C - Insurance Sprint,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-17,all-time,4305797,BDR-ENT - MQL - Tier B,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-17,all-time,4305801,BDR-ENT - MQL - Tier C,5,LOW SAMPLE,BDR,1.54,1.54,0.0,27.69,0.0,37,65,Brett Blackney,0,0,0,5,0,True,2026-06-30
+2026-08-17,all-time,4305830,BDR-ENT - Speciality - Insurance Sprint,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-17,all-time,4375603,BDR-ENT - Trigger Based Cadence - Universal_Outbound,25,LOW SAMPLE,BDR,14.29,0.0,0.0,28.57,0.0,3,7,Tanpreet Anand,20,0,0,5,0,True,2026-07-20
+2026-08-17,all-time,4305833,BDR-ENT - UK/EURO - Insurance Sprint,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-17,all-time,4253328,BDR-GOV - Closed Lost - Revival,35,LOW SAMPLE,BDR,0.0,0.0,100.0,100.0,0.0,1,1,Aaqib Quraishi,0,0,20,15,0,True,2026-06-16
+2026-08-17,all-time,4257065,BDR-GOV Carahsoft Webinar Attendees - April 26,46,LOW SAMPLE,BDR,9.09,4.55,11.11,18.18,0.0,33,44,Aaqib Quraishi,20,13,13,0,0,True,2026-06-17
+2026-08-17,all-time,3946557,BDR-MM - Call Only Cadence,13,ARCHIVE,BDR,0.0,0.0,8.36,0.0,0.0,1838,0,Aaqib Quraishi,0,0,13,0,0,False,2025-07-28
+2026-08-17,all-time,4295211,BDR-MM - Dallas Lunch - W-3,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Aaqib Quraishi,0,0,0,0,0,True,2026-06-26
+2026-08-17,all-time,4295205,BDR-MM - FW Dinner - W-3,23,LOW SAMPLE,BDR,0.0,0.0,11.11,47.06,0.0,17,17,Aaqib Quraishi,0,0,13,10,0,True,2026-06-26
+2026-08-17,all-time,4148573,BDR-MM - In person conference - ALA 2026,44,LOW SAMPLE,BDR,5.26,2.63,3.8,21.05,0.0,12,38,Ashley Duffy,20,13,6,5,0,True,2026-04-16
+2026-08-17,all-time,4136824,BDR-MM 2026 - Revised Cadence,5,ARCHIVE,BDR,0.0,0.5,0.0,25.87,0.0,1105,4218,Aaqib Quraishi,0,0,0,5,0,False,2026-04-07
+2026-08-17,all-time,4147917,BDR-MM April 26 - PI AMA,5,LOW SAMPLE,BDR,0.0,0.0,0.0,20.88,0.0,183,182,Aaqib Quraishi,0,0,0,5,0,True,2026-04-15
+2026-08-17,all-time,4328557,BDR-MM OB - General Litigation 2026,11,LOW SAMPLE,BDR,0.6,0.3,4.19,33.33,0.0,198,333,Aaqib Quraishi,0,0,6,5,0,True,2026-07-08
+2026-08-17,all-time,4313083,BDR-MM OB - Plaintiff Litigation 2026,11,LOW SAMPLE,BDR,0.0,0.0,6.12,31.67,0.0,40,60,Aaqib Quraishi,0,0,6,5,0,True,2026-07-02
+2026-08-17,all-time,4328532,BDR-MM OB - Transactional Law 2026,11,LOW SAMPLE,BDR,0.0,0.0,5.83,33.65,0.0,62,104,Aaqib Quraishi,0,0,6,5,0,True,2026-07-08
+2026-08-17,all-time,4149742,BDR-Outbound-Velocity-APRIL2026,6,ARCHIVE,BDR,0.4,0.11,6.22,18.88,0.0,1069,3512,Jessica Bayard,0,0,6,0,0,False,2026-04-17
+2026-08-17,all-time,4087549,BDR-Outbound-Velocity-February26,13,LOW SAMPLE,BDR,0.09,0.19,7.93,19.55,0.0,311,1074,Jessica Bayard,0,0,13,0,0,True,2026-02-09
+2026-08-17,all-time,4295105,BDR-Outbound-Velocity-June2026,11,LOW SAMPLE,BDR,0.28,0.56,3.63,26.54,0.0,140,358,Jessica Bayard,0,0,6,5,0,True,2026-06-26
+2026-08-17,all-time,4192606,BDR-Outbound-Velocity-MAY2026,6,ARCHIVE,BDR,0.53,0.05,6.83,19.84,0.0,731,2092,Jessica Bayard,0,0,6,0,0,False,2026-05-15
+2026-08-17,all-time,4116412,BDR-Outbound-Velocity-March2026,6,LOW SAMPLE,BDR,1.03,0.27,6.75,19.05,0.0,495,1837,Jessica Bayard,0,0,6,0,0,True,2026-03-13
+2026-08-17,all-time,4080025,BDR-S  Vincent CA New Senate Bill SB 574 - West Coast blitz,6,LOW SAMPLE,BDR,0.0,1.06,6.67,16.76,0.0,327,376,Kaeli Finlayson,0,0,6,0,0,True,2026-01-29
+2026-08-17,all-time,3976935,BDR-S - AQL - Draft - Ebook Downloads,18,LOW SAMPLE,BDR,2.91,1.12,9.35,32.89,0.0,192,447,John McGurk,0,0,13,5,0,True,2025-09-03
+2026-08-17,all-time,3976937,BDR-S - AQL - Draft Webinar,18,LOW SAMPLE,BDR,3.62,1.09,8.59,34.06,0.0,174,276,John McGurk,0,0,13,5,0,True,2025-09-03
+2026-08-17,all-time,3760621,BDR-S - AQLs Excl Draft - September 2025,18,ARCHIVE,BDR,1.99,1.83,7.56,28.78,0.0,8231,19528,John McGurk,0,0,13,5,0,False,2024-12-16
+2026-08-17,all-time,3928856,BDR-S - CSQL,100,LOW SAMPLE,BDR,200.0,33.33,33.33,100.0,0.0,7,3,Cooper Feldman,35,30,20,15,0,True,2025-07-07
+2026-08-17,all-time,4217646,BDR-S - California AI Compliance - Prospecting,5,LOW SAMPLE,BDR,0.14,0.58,2.7,20.41,0.0,466,691,Abby Openshaw,0,0,0,5,0,True,2026-06-01
+2026-08-17,all-time,3096741,BDR-S - Call Only Cadence,13,ARCHIVE,BDR,0.0,0.0,7.85,0.0,0.0,3989,0,Daniel Newton,0,0,13,0,0,False,2023-05-02
+2026-08-17,all-time,4193173,BDR-S - Call Only Cadence,6,LOW SAMPLE,BDR,0.0,0.0,5.3,0.0,0.0,186,0,Cooper Feldman,0,0,6,0,0,True,2026-05-15
+2026-08-17,all-time,4017696,BDR-S - Clio AI - AQL,11,ARCHIVE,BDR,1.22,0.7,5.48,27.83,0.0,3014,9016,Brett Blackney,0,0,6,5,0,False,2025-10-22
+2026-08-17,all-time,4018607,BDR-S - Clio Work - ClosedLost,18,LOW SAMPLE,BDR,1.42,1.34,7.63,24.31,0.0,449,1271,John McGurk,0,0,13,5,0,True,2025-10-23
+2026-08-17,all-time,4042251,BDR-S - ClioWork / vLex AQL,11,ARCHIVE,BDR,0.81,0.13,5.18,22.21,0.0,1498,3948,Ryan Zurakowski,0,0,6,5,0,False,2025-11-21
+2026-08-17,all-time,4153274,"BDR-S - ClioWork Standalone, AI Intent YTD",0,ARCHIVE,BDR,0.09,0.15,0.0,17.15,0.0,2556,10233,John McGurk,0,0,0,0,0,False,2026-04-21
+2026-08-17,all-time,3764827,BDR-S - Closed Lost - 2025,51,REVIEW,BDR,6.65,2.8,7.83,26.65,0.0,9553,10393,John McGurk,20,13,13,5,0,False,2024-12-30
+2026-08-17,all-time,4083836,BDR-S - Divorce Month Family Law Sprint Q1 2026,11,LOW SAMPLE,BDR,0.75,0.61,5.18,21.69,0.0,465,1466,Kaeli Finlayson,0,0,6,5,0,True,2026-02-03
+2026-08-17,all-time,4233133,BDR-S - Docket Alarm - Defendant,10,LOW SAMPLE,BDR,0.0,0.0,2.27,35.71,0.0,7,28,John McGurk,0,0,0,10,0,True,2026-06-09
+2026-08-17,all-time,4233092,BDR-S - Docket Alarm - Plaintiff,11,LOW SAMPLE,BDR,1.63,0.0,4.82,28.26,0.0,72,184,John McGurk,0,0,6,5,0,True,2026-06-09
+2026-08-17,all-time,4092303,BDR-S - EMAIL ONLY Divorce Month Family Law Sprint,0,ARCHIVE,BDR,0.05,0.16,0.0,18.19,0.0,683,3640,Kaeli Finlayson,0,0,0,0,0,False,2026-02-13
+2026-08-17,all-time,4075112,BDR-S - MS WEBINAR CLE,11,LOW SAMPLE,BDR,0.27,0.8,4.97,31.83,0.0,86,377,John McGurk,0,0,6,5,0,True,2026-01-23
+2026-08-17,all-time,3764782,BDR-S - NMQLs - 2025,11,ARCHIVE,BDR,3.45,1.71,5.73,25.87,0.0,9176,17433,John McGurk,0,0,6,5,0,False,2024-12-28
+2026-08-17,all-time,4103813,BDR-S - No Show Cadence - 2026,51,LOW SAMPLE,BDR,13.39,4.72,7.51,29.13,0.0,73,127,Kaeli Finlayson,20,13,13,5,0,True,2026-02-27
+2026-08-17,all-time,2953399,BDR-S - No Show Cadence - Sept 2025,75,LOW SAMPLE,BDR,17.64,7.2,13.82,30.01,0.0,495,1083,John McGurk,35,22,13,5,0,True,2023-01-19
+2026-08-17,all-time,4102883,BDR-S - Post Demo Booked Cadence,75,LOW SAMPLE,BDR,55.15,10.0,0.0,48.79,0.0,283,330,Kaeli Finlayson,35,30,0,10,0,True,2026-02-26
+2026-08-17,all-time,3923794,BDR-S - Scorpion x Clio,11,LOW SAMPLE,BDR,3.81,0.0,6.8,29.66,0.0,159,236,Cooper Feldman,0,0,6,5,0,True,2025-06-30
+2026-08-17,all-time,4370009,BDR-S - Webinar - Litigator's Lounge Follow-Up Cadence - en-US - CNV,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-07-17
+2026-08-17,all-time,3934755,BDR-S CORE Cold Draft-Only Customer,11,LOW SAMPLE,BDR,1.97,0.73,6.46,28.22,0.0,330,964,Hannah Hudson,0,0,6,5,0,True,2025-07-14
+2026-08-17,all-time,4106678,BDR-S ClioWork Email Only 1.0,5,ARCHIVE,BDR,0.07,0.1,0.0,21.12,0.0,7023,26064,Hannah Hudson,0,0,0,5,0,False,2026-03-03
+2026-08-17,all-time,3881137,BDR-S Cold Outbound 2025,11,ARCHIVE,BDR,0.71,1.06,6.01,21.21,0.0,1822,3965,Kaeli Finlayson,0,0,6,5,0,False,2025-05-09
+2026-08-17,all-time,4124493,BDR-S Enriched Accounts - Litigators,11,LOW SAMPLE,BDR,1.38,0.92,4.54,27.19,0.0,362,217,John McGurk,0,0,6,5,0,True,2026-03-23
+2026-08-17,all-time,4131520,BDR-S Enriched Accounts - Litigators - Email Only,0,ARCHIVE,BDR,0.05,0.02,0.0,19.92,0.0,849,4187,John McGurk,0,0,0,0,0,False,2026-03-31
+2026-08-17,all-time,4129934,BDR-S Enriched Accounts - Multi-Practice,31,LOW SAMPLE,BDR,7.28,0.66,4.54,29.8,0.0,398,151,John McGurk,20,0,6,5,0,True,2026-03-30
+2026-08-17,all-time,4131563,BDR-S Enriched Accounts - Multi-Practice - Email Only,0,ARCHIVE,BDR,0.0,0.05,0.0,14.86,0.0,1071,5836,John McGurk,0,0,0,0,0,False,2026-03-31
+2026-08-17,all-time,4124516,BDR-S Enriched Accounts - Personal Injury,11,LOW SAMPLE,BDR,2.11,1.05,4.13,33.68,0.0,362,95,John McGurk,0,0,6,5,0,True,2026-03-23
+2026-08-17,all-time,4131551,BDR-S Enriched Accounts - Personal Injury - Email Only,5,ARCHIVE,BDR,0.09,0.09,0.0,20.54,0.0,1444,7776,John McGurk,0,0,0,5,0,False,2026-03-31
+2026-08-17,all-time,4124505,BDR-S Enriched Accounts - Transactional,11,LOW SAMPLE,BDR,2.88,0.0,3.82,25.96,0.0,234,104,John McGurk,0,0,6,5,0,True,2026-03-23
+2026-08-17,all-time,4131537,BDR-S Enriched Accounts - Transactional - Email Only,5,ARCHIVE,BDR,0.0,0.03,0.0,21.05,0.0,628,3088,John McGurk,0,0,0,5,0,False,2026-03-31
+2026-08-17,all-time,4117451,BDR-S HH Litigation Sprint - EMAIL ONLY - Copy,0,ARCHIVE,BDR,0.09,0.12,0.0,19.78,0.0,777,3245,Hannah Hudson,0,0,0,0,0,False,2026-03-16
+2026-08-17,all-time,4117452,BDR-S HH Litigation Sprint March 2026,11,LOW SAMPLE,BDR,0.34,1.59,5.86,24.52,0.0,309,881,Hannah Hudson,0,0,6,5,0,True,2026-03-16
+2026-08-17,all-time,4198083,BDR-S HH May Sprint  - Attorney PI,11,LOW SAMPLE,BDR,0.32,0.53,6.81,21.16,0.0,325,950,Hannah Hudson,0,0,6,5,0,True,2026-05-19
+2026-08-17,all-time,4198090,BDR-S HH May Sprint - PI EMAIL ONLY,5,ARCHIVE,BDR,0.0,0.24,0.0,21.52,0.0,1415,5106,Hannah Hudson,0,0,0,5,0,False,2026-05-19
+2026-08-17,all-time,4196394,BDR-S IS Litigation May 2026 - EMAIL ONLY,0,LOW SAMPLE,BDR,0.0,0.0,0.0,14.08,0.0,33,142,Ilyas Sahib,0,0,0,0,0,True,2026-05-18
+2026-08-17,all-time,4196393,BDR-S IS Litigation May 2026 - Muli-touch,38,LOW SAMPLE,BDR,0.0,5.88,4.17,47.06,0.0,4,17,Ilyas Sahib,0,22,6,10,0,True,2026-05-18
+2026-08-17,all-time,4199346,BDR-S IS PA Sprint  - Family Law- EMAIL ONLY,15,LOW SAMPLE,BDR,0.0,0.0,0.0,54.29,0.0,12,35,Ilyas Sahib,0,0,0,15,0,True,2026-05-19
+2026-08-17,all-time,4199326,BDR-S IS PA Sprint  - Family Law- Multi Touch,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,1,1,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-17,all-time,4199387,BDR-S IS PA Sprint - Business & Corp -  EMAIL ONLY ,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-17,all-time,4199386,BDR-S IS PA Sprint - Business & Corp -  Multi Touch,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-17,all-time,4199381,BDR-S IS PA Sprint - Employment Law -  EMAIL ONLY,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-17,all-time,4199373,BDR-S IS PA Sprint - Employment Law -  Multi Touch ,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-17,all-time,4199384,BDR-S IS PA Sprint - Real Estate -  EMAIL ONLY,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-17,all-time,4199383,BDR-S IS PA Sprint - Real Estate -  Multi Touch,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-17,all-time,4199350,BDR-S IS PA Sprint - W&E -  Multi Touch,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-17,all-time,4199352,BDR-S IS PA Sprint - W&E - EMAIL ONLY,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-17,all-time,3939406,BDR-S Keep Warm / Nurture,11,ARCHIVE,BDR,2.91,0.55,6.91,21.84,0.0,1266,1996,Hannah Hudson,0,0,6,5,0,False,2025-07-18
+2026-08-17,all-time,4119568,BDR-S PI COLD EMAIL ONLY Sprint - KF,0,LOW SAMPLE,BDR,0.0,0.22,0.0,16.79,0.0,465,2763,Kaeli Finlayson,0,0,0,0,0,True,2026-03-17
+2026-08-17,all-time,4119549,BDR-S PI COLD Sprint - KF,5,LOW SAMPLE,BDR,0.52,0.69,2.65,24.8,0.0,480,1153,Kaeli Finlayson,0,0,0,5,0,True,2026-03-17
+2026-08-17,all-time,4069701,BDR-S PI vLex Sprint - EMAIL ONLY,0,ARCHIVE,BDR,0.08,0.13,0.0,19.67,0.0,2838,11999,John McGurk,0,0,0,0,0,False,2026-01-15
+2026-08-17,all-time,4069651,BDR-S PI vLex Sprint Jan 2026,11,ARCHIVE,BDR,1.05,0.92,5.55,23.28,0.0,1873,5628,John McGurk,0,0,6,5,0,False,2026-01-15
+2026-08-17,all-time,4089005,BDR-V  Vincent CA New Senate Bill SB 574,18,ARCHIVE,BDR,2.1,0.5,7.84,28.49,0.0,501,1190,Sarah Seplin,0,0,13,5,0,False,2026-02-10
+2026-08-17,all-time,4200450,BDR-V - 1st No Show Cadence - 2026,66,LOW SAMPLE,BDR,16.06,3.65,12.84,22.63,0.0,75,137,Jessica Bayard,35,13,13,5,0,True,2026-05-20
+2026-08-17,all-time,4200730,BDR-V - 2+ No Show Cadence - 2026,25,LOW SAMPLE,BDR,13.33,0.0,0.0,20.0,0.0,10,15,Jessica Bayard,20,0,0,5,0,True,2026-05-20
+2026-08-17,all-time,4175687,BDR-V - Outbound New Firm - Litigators,10,LOW SAMPLE,BDR,0.0,0.0,1.59,42.31,0.0,25,78,Sarah Seplin,0,0,0,10,0,True,2026-05-05
+2026-08-17,all-time,4181125,BDR-V - Outbound New Firm - Transactional,18,LOW SAMPLE,BDR,1.59,0.0,11.63,28.57,0.0,27,63,Sarah Seplin,0,0,13,5,0,True,2026-05-08
+2026-08-17,all-time,4057774,BDR-V - vLex Territory Revival Blitz December 2025 - Prospecting,18,ARCHIVE,BDR,2.82,1.28,7.05,26.35,0.0,1106,3048,Alex Bramos,0,0,13,5,0,False,2025-12-17
+2026-08-17,all-time,4076501,BDR-V - vLex Territory Revival January 26- Prospecting,25,ARCHIVE,BDR,1.2,0.43,15.96,28.55,0.0,2596,8383,Sarah Seplin,0,0,20,5,0,False,2026-01-26
+2026-08-17,all-time,4412722,BDR-V AMA SOLO July 31 2026,11,ARCHIVE,BDR,0.19,0.19,5.13,23.91,0.0,907,1079,Jessica Bayard,0,0,6,5,0,False,2026-07-27
+2026-08-17,all-time,4088031,BDR-V California Senate Bill 574 - Copy,23,LOW SAMPLE,BDR,0.0,0.0,9.09,36.36,0.0,56,44,Sarah Seplin,0,0,13,10,0,True,2026-02-09
+2026-08-17,all-time,4253055,BDR-V Close Your File Email,23,ARCHIVE,BDR,0.9,5.0,0.0,35.73,0.0,2167,2102,Jessica Bayard,0,13,0,10,0,False,2026-06-16
+2026-08-17,all-time,4143622,BDR-V Discovery Call and Long Term Simmer,11,ARCHIVE,BDR,1.0,0.17,5.65,29.07,0.0,1018,2298,Jessica Bayard,0,0,6,5,0,False,2026-04-13
+2026-08-17,all-time,4332858,BDR-V July Summer Promo Blitz,11,ARCHIVE,BDR,0.7,0.59,6.98,32.45,0.0,1972,2860,Daniel Perez,0,0,6,5,0,False,2026-07-09
+2026-08-17,all-time,4249367,BDR-V Legal AI Implementation Workshops Email Blast June 23 2026,11,ARCHIVE,BDR,1.33,0.13,5.75,25.86,0.0,792,1578,Jessica Bayard,0,0,6,5,0,False,2026-06-15
+2026-08-17,all-time,4328758,BDR-V Litigators Lounge Email Blast July 2026,18,ARCHIVE,BDR,1.55,0.68,7.44,32.33,0.0,819,1030,Jessica Bayard,0,0,13,5,0,False,2026-07-08
+2026-08-17,all-time,4085076,BDR-V PI ClioWork and vLex,11,ARCHIVE,BDR,0.83,0.51,5.11,22.25,0.0,932,2755,Sarah Seplin,0,0,6,5,0,False,2026-02-04
+2026-08-17,all-time,4462174,BDR-V The Legal AI Accelerator Summit Email Blast Aug 11 2026,18,ARCHIVE,BDR,0.7,0.74,8.4,28.09,0.0,1261,2293,Jessica Bayard,0,0,13,5,0,False,2026-08-04
+2026-08-17,all-time,4207412,BDR-V Webinar Email Blast June 4 2026,13,ARCHIVE,BDR,1.14,0.23,7.59,18.86,0.0,850,1750,Jessica Bayard,0,0,13,0,0,False,2026-05-26
+2026-08-17,all-time,4234036,BDR-V Wills & Estates AI First ,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Jessica Bayard,0,0,0,0,0,True,2026-06-09
+2026-08-17,all-time,4089755,BDR-Velo-CS Cancelled Draft Accounts,66,REVIEW,BDR,6.19,10.74,6.07,46.77,0.0,766,1099,Nikki Raw,20,30,6,10,0,False,2026-02-11
+2026-08-17,all-time,4069886,BDR-Velo-CS Civil Lit Work Cadence,49,ARCHIVE,BDR,5.36,2.38,5.76,41.3,0.0,897,1305,Nikki Raw,20,13,6,10,0,False,2026-01-15
+2026-08-17,all-time,4090064,BDR-Velo-CS Closed Lost Draft,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,1,Nikki Raw,0,0,0,0,0,True,2026-02-11
+2026-08-17,all-time,4095366,BDR-Velo-CS Criminal Work Campaign,23,ARCHIVE,BDR,3.95,1.89,7.79,42.75,0.0,1290,2227,Nikki Raw,0,0,13,10,0,False,2026-02-18
+2026-08-17,all-time,4157016,BDR-Velo-CS Draft Call Only,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,51,0,Nikki Raw,0,0,0,0,0,True,2026-04-24
+2026-08-17,all-time,4143552,BDR-Velo-CS Family Draft Cadence,16,ARCHIVE,BDR,2.67,1.83,4.42,40.32,0.0,1098,1421,Nikki Raw,0,0,6,10,0,False,2026-04-13
+2026-08-17,all-time,4064304,BDR-Velo-CS Family Law Work Campaign,36,ARCHIVE,BDR,5.7,1.77,6.28,46.02,0.0,2685,2773,Nikki Raw,20,0,6,10,0,False,2026-01-08
+2026-08-17,all-time,4122401,BDR-Velo-CS Manage + Grow - Draft Cadence,49,ARCHIVE,BDR,6.69,4.43,6.61,41.22,0.0,3172,2436,Nikki Raw,20,13,6,10,0,False,2026-03-20
+2026-08-17,all-time,4174624,BDR-Velo-CS May '26 Family Law Work,16,ARCHIVE,BDR,3.37,1.71,6.2,41.17,0.0,1695,2045,Nikki Raw,0,0,6,10,0,False,2026-05-05
+2026-08-17,all-time,4132927,BDR-Velo-CS PI Work Cadence,23,LOW SAMPLE,BDR,3.6,1.94,7.51,41.77,0.0,497,723,Nikki Raw,0,0,13,10,0,True,2026-04-01
+2026-08-17,all-time,4117471,BDR-Velo-CS Real Estate Draft Cadence,49,ARCHIVE,BDR,5.29,4.12,5.3,40.39,0.0,710,1020,Nikki Raw,20,13,6,10,0,False,2026-03-16
+2026-08-17,all-time,4187515,BDR-Velo-CS Real Estate Grow,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Nikki Raw,0,0,0,0,0,True,2026-05-13
+2026-08-17,all-time,4083068,BDR-Velo-CS Wills & Estates Draft Cadence,29,ARCHIVE,BDR,4.73,4.12,6.06,39.26,0.0,1737,3128,Nikki Raw,0,13,6,10,0,False,2026-02-03
+2026-08-17,all-time,4157023,BDR-Velo-CS Work Call Only,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Nikki Raw,0,0,0,0,0,True,2026-04-24
+2026-08-17,all-time,4030811,BDR:CS MQL vLex Free Trial from customers,56,LOW SAMPLE,BDR,9.66,3.05,7.37,38.31,0.0,216,590,Sammy Poortaghi,20,13,13,10,0,True,2025-11-07
+2026-08-17,all-time,3973351,BDRV - AQL - Draft - General Practice,23,LOW SAMPLE,BDR,1.52,1.21,7.6,35.36,0.0,296,659,Morgan Lamke,0,0,13,10,0,True,2025-08-28
+2026-08-17,all-time,4017580,BDRV - C/L - ClioWork Litigators,11,ARCHIVE,BDR,4.73,1.0,6.44,28.81,0.0,601,2412,Sarah Seplin,0,0,6,5,0,False,2025-10-22
+2026-08-17,all-time,4017668,BDRV - C/L - ClioWork Transactional,11,LOW SAMPLE,BDR,4.29,1.29,6.79,31.73,0.0,250,933,Sarah Seplin,0,0,6,5,0,True,2025-10-22
+2026-08-17,all-time,3861267,BDRV - C/L Last 120 Days & 3+Weeks No Activity,43,ARCHIVE,BDR,6.49,1.73,8.8,35.97,0.0,1008,1618,Morgan Lamke,20,0,13,10,0,False,2025-04-16
+2026-08-17,all-time,3859625,BDRV - C/L Opportunity Revival,38,ARCHIVE,BDR,5.66,1.71,8.12,32.06,0.0,2254,4454,Morgan Lamke,20,0,13,5,0,False,2025-04-15
+2026-08-17,all-time,4149042,BDRV - FLORIDA ClioWork Litigators,0,LOW SAMPLE,BDR,0.0,0.0,0.0,19.05,0.0,10,21,Daniel Perez,0,0,0,0,0,True,2026-04-16
+2026-08-17,all-time,4017536,BDRV - Outbound - ClioWork - Not Personalized,11,ARCHIVE,BDR,2.01,0.21,5.66,26.33,0.0,1016,2833,Morgan Lamke,0,0,6,5,0,False,2025-10-22
+2026-08-17,all-time,4018816,BDRV - Outbound - ClioWork - Personalized,11,ARCHIVE,BDR,1.88,0.28,6.57,22.9,0.0,1883,6442,Morgan Lamke,0,0,6,5,0,False,2025-10-23
+2026-08-17,all-time,3967659,BDRV - Outbound - Draft - Criminal Law,18,ARCHIVE,BDR,1.68,0.25,7.36,23.26,0.0,1859,3628,Morgan Lamke,0,0,13,5,0,False,2025-08-21
+2026-08-17,all-time,3932588,BDRV - Velo CORE Prospecting Stand Alone Draft,18,ARCHIVE,BDR,3.01,0.38,8.41,31.6,0.0,644,2092,Jessica Bayard,0,0,13,5,0,False,2025-07-10
+2026-08-17,all-time,4148988,BDRV - Webinar - Blast - The Future of Legal AI is Here,10,ARCHIVE,BDR,0.69,0.39,0.0,43.18,0.0,1019,1019,Jessica Bayard,0,0,0,10,0,False,2026-04-16
+2026-08-17,all-time,4149044,BDRV -FLORIDA ClioWork Transactional,32,LOW SAMPLE,BDR,0.0,9.09,0.0,45.45,0.0,10,11,Daniel Perez,0,22,0,10,0,True,2026-04-16
+2026-08-17,all-time,4097239,BDRV 2026 10x10,11,ARCHIVE,BDR,2.54,0.73,6.99,25.67,0.0,8420,29982,Daniel Perez,0,0,6,5,0,False,2026-02-19
+2026-08-17,all-time,4097644,BDRV 2026 ClioWork/vLex Family Law,6,ARCHIVE,BDR,0.32,0.56,3.89,19.26,0.0,616,1241,Jessica Bayard,0,0,6,0,0,False,2026-02-20
+2026-08-17,all-time,4155928,BDRV 2026 Solo and Small Firm Summit Email Blast,20,ARCHIVE,BDR,0.15,0.08,16.5,17.35,0.0,792,1326,Jessica Bayard,0,0,20,0,0,False,2026-04-23
+2026-08-17,all-time,3912135,BDRV AQL - Personalized FRESH AQL Follow-up,31,LOW SAMPLE,BDR,4.82,2.41,8.42,34.54,0.0,102,249,Morgan Lamke,0,13,13,5,0,True,2025-06-13
+2026-08-17,all-time,3832663,BDRV AQL - ZoomInfo Intent/Websites,6,ARCHIVE,BDR,0.71,0.19,4.77,15.34,0.0,540,1545,Morgan Lamke,0,0,6,0,0,False,2025-03-17
+2026-08-17,all-time,3667739,BDRV Coffee + Reschedule,38,LOW SAMPLE,BDR,12.05,0.65,11.02,31.92,0.0,182,307,Morgan Lamke,20,0,13,5,0,True,2024-08-27
+2026-08-17,all-time,3830937,BDRV MQL - Requested a Demo,44,ARCHIVE,BDR,6.79,3.36,5.72,32.74,0.0,1071,3036,Morgan Lamke,20,13,6,5,0,False,2025-03-14
+2026-08-17,all-time,3788563,BDRV Reschedule - Discovery Meetings,43,LOW SAMPLE,BDR,7.41,1.85,9.01,37.04,0.0,57,108,Morgan Lamke,20,0,13,10,0,True,2025-01-29
+2026-08-17,all-time,3832402,BDRV Reschedule - Opportunities in 1.Qualify,53,LOW SAMPLE,BDR,21.86,1.65,9.77,31.44,0.0,410,668,Morgan Lamke,35,0,13,5,0,True,2025-03-17
+2026-08-17,all-time,3832493,BDRV Reschedule - SDR Opportunities,38,LOW SAMPLE,BDR,8.41,1.74,8.78,32.71,0.0,310,749,Morgan Lamke,20,0,13,5,0,True,2025-03-17
+2026-08-17,all-time,3788289,BDRV Simmer - Future Meeting Booked,38,ARCHIVE,BDR,6.57,1.77,10.16,31.76,0.0,2450,7630,Morgan Lamke,20,0,13,5,0,False,2025-01-29
+2026-08-17,all-time,4172434,BDRV VAN C/L Revival Cadence,11,ARCHIVE,BDR,1.81,1.62,5.38,24.98,0.0,716,2042,Sarah Seplin,0,0,6,5,0,False,2026-05-04
+2026-08-17,all-time,4150440,BDRs-Strat - In person conference - ALA 2026 ,30,LOW SAMPLE,BDR,0.0,20.0,0.0,0.0,0.0,5,5,Ilyas Sahib,0,30,0,0,0,True,2026-04-17
+2026-08-17,all-time,4115269,Belgium - BDR Email Only,5,LOW SAMPLE,BDR,0.12,0.87,0.0,21.14,0.0,142,804,Patrick Keeney,0,0,0,5,0,True,2026-03-12
+2026-08-17,all-time,4130858,Canada Draft BDR - MM,23,LOW SAMPLE,BDR,0.0,0.0,8.7,40.28,0.0,74,72,Abigail Humber,0,0,13,10,0,True,2026-03-30
+2026-08-17,all-time,4132697,Canada Draft BDR - MM - nurture,10,LOW SAMPLE,BDR,0.0,1.27,0.0,47.77,0.0,26,157,Abigail Humber,0,0,0,10,0,True,2026-04-01
+2026-08-17,all-time,4132594,Canada Draft BDR - Strat,30,LOW SAMPLE,BDR,0.0,0.0,16.67,38.71,0.0,14,31,Abigail Humber,0,0,20,10,0,True,2026-04-01
+2026-08-17,all-time,3982399,European Countries - BDR Outbound,18,LOW SAMPLE,BDR,0.18,1.18,10.95,27.74,0.0,244,1103,Patrick Keeney,0,0,13,5,0,True,2025-09-11
+2026-08-17,all-time,3982463,European Countries - BDR ReEngage,38,LOW SAMPLE,BDR,1.59,2.27,15.6,33.26,0.0,215,881,Patrick Keeney,0,13,20,5,0,True,2025-09-11
+2026-08-17,all-time,3978560,Intent Outbound - BDR-S - AWARE - Email Only,0,ARCHIVE,BDR,0.09,0.07,0.0,18.41,0.0,22281,91308,John McGurk,0,0,0,0,0,False,2025-09-07
+2026-08-17,all-time,3975961,Intent Outbound - BDR-S - Email Only for Cold,0,ARCHIVE,BDR,0.07,0.05,0.0,15.25,0.0,21614,98800,John McGurk,0,0,0,0,0,False,2025-09-03
+2026-08-17,all-time,3946737,Intent Outbound AQL - BDR-S,11,ARCHIVE,BDR,2.52,1.49,5.95,30.32,0.0,1946,1946,John McGurk,0,0,6,5,0,False,2025-07-28
+2026-08-17,all-time,4154299,Intent Outbound Civil Litigation - BDR-S,6,LOW SAMPLE,BDR,0.37,0.0,5.66,18.59,0.0,135,269,John McGurk,0,0,6,0,0,True,2026-04-22
+2026-08-17,all-time,3946742,Intent Outbound Closed Lost - BDR-S,44,ARCHIVE,BDR,10.94,2.98,6.81,28.46,0.0,3722,2112,John McGurk,20,13,6,5,0,False,2025-07-28
+2026-08-17,all-time,3948810,Intent Outbound Engaged w/ Content - BDR-S,11,ARCHIVE,BDR,0.33,0.27,6.57,21.05,0.0,553,1506,John McGurk,0,0,6,5,0,False,2025-07-30
+2026-08-17,all-time,4154309,Intent Outbound Family - BDR-S,11,LOW SAMPLE,BDR,1.32,0.44,3.94,25.99,0.0,105,227,John McGurk,0,0,6,5,0,True,2026-04-22
+2026-08-17,all-time,3946741,Intent Outbound NMQL - BDR-S,31,ARCHIVE,BDR,3.78,3.45,10.3,28.37,0.0,1207,1854,John McGurk,0,13,13,5,0,False,2025-07-28
+2026-08-17,all-time,4155506,Intent Outbound Personal Injury - BDR-S,11,LOW SAMPLE,BDR,1.11,0.83,5.63,21.39,0.0,191,360,John McGurk,0,0,6,5,0,True,2026-04-23
+2026-08-17,all-time,4078432,Intent Outbound SCOOPS - BDR-S,16,LOW SAMPLE,BDR,0.0,0.0,4.76,40.0,0.0,4,5,John McGurk,0,0,6,10,0,True,2026-01-28
+2026-08-17,all-time,3948800,Intent Outbound WebSights - BDR-S,18,ARCHIVE,BDR,2.64,0.94,8.08,23.14,0.0,5856,5717,John McGurk,0,0,13,5,0,False,2025-07-30
+2026-08-17,all-time,4154276,Intent Outbound Wills & Estates - BDR-S,24,LOW SAMPLE,BDR,0.0,2.0,3.86,20.0,0.0,62,100,John McGurk,0,13,6,5,0,True,2026-04-22
+2026-08-17,all-time,4064313,JM  - Intent Outbound - BDR-S - Email Only for Cold,0,ARCHIVE,BDR,0.01,0.1,0.0,16.37,0.0,1635,7194,John McGurk,0,0,0,0,0,False,2026-01-08
+2026-08-17,all-time,4112311,MM BDR-CS | MM LTR Download Follow Up - IBC,5,LOW SAMPLE,BDR,3.43,0.49,0.0,23.04,0.0,59,204,Salesloft Marketing,0,0,0,5,0,True,2026-03-09
+2026-08-17,all-time,4111274,MM-BDR - MM LTR AQL Follow Up,11,LOW SAMPLE,BDR,0.51,0.0,5.56,26.02,0.0,59,196,Ashley Duffy,0,0,6,5,0,True,2026-03-09
+2026-08-17,all-time,4184989,MM-BDR-CS | [Defendant] Complaint Filing - Clio Work Outreach - OBC,0,LOW SAMPLE,BDR,0.54,0.0,0.0,16.3,0.0,48,184,Salesloft Marketing,0,0,0,0,0,True,2026-05-12
+2026-08-17,all-time,4184987,MM-BDR-CS | [Plaintiff] Complaint Filing - Clio Work Outreach - OBC,5,LOW SAMPLE,BDR,0.69,0.23,0.0,32.49,0.0,140,434,Salesloft Marketing,0,0,0,5,0,True,2026-05-12
+2026-08-17,all-time,3986840,NOLA BDRV New Firm Nurture Follow Up,18,ARCHIVE,BDR,1.97,0.18,7.46,21.65,0.0,564,559,Jessica Bayard,0,0,13,5,0,False,2025-09-16
+2026-08-17,all-time,4089134,No Intent - CL - BDR-S - Email Only,0,LOW SAMPLE,BDR,0.13,0.13,0.0,18.96,0.0,201,786,Hannah Hudson,0,0,0,0,0,True,2026-02-10
+2026-08-17,all-time,4106547,SDR - AI Rebook Cadence (blank),93,LOW SAMPLE,SDR,33.33,10.58,7.55,41.27,0.0,215,189,Alex Moore,35,30,13,15,0,True,2026-03-03
+2026-08-17,all-time,1031700,SDR - Bad Phone Number,40,ARCHIVE,SDR,0.0,3.54,0.0,34.9,0.0,10824,35212,Gareth Ritcey,0,30,0,10,0,False,2019-05-06
+2026-08-17,all-time,1477409,SDR - Booked Call - Followup,65,REVIEW,SDR,0.0,17.06,39.78,48.09,0.0,12917,14393,Gareth Ritcey,0,30,20,15,0,False,2020-03-03
+2026-08-17,all-time,4321125,SDR - CLIO WORK TRIAL (CANCELLED TRIAL WITH CC ENTERED) - en-US - CNV - TRIALON,31,LOW SAMPLE,SDR,5.77,0.0,5.26,23.08,0.0,32,52,Brittany Baron,20,0,6,5,0,True,2026-07-06
+2026-08-17,all-time,4320991,SDR - CLIO WORK TRIAL (CREDIT CARD ENTERED) - en-US - CNV - TRIALON,58,LOW SAMPLE,SDR,6.27,1.32,5.53,31.02,0.0,140,303,Brittany Baron,20,22,6,10,0,True,2026-07-06
+2026-08-17,all-time,4323272,SDR - CLIO WORK TRIAL (VISITED SIGN UP PAGE & FAILED SIGN UP)-EN-US-CNV,51,LOW SAMPLE,SDR,4.14,2.13,3.56,31.8,0.0,370,893,Brittany Baron,13,22,6,10,0,True,2026-07-07
+2026-08-17,all-time,4339714,SDR - COI Winback,0,LOW SAMPLE,SDR,0.0,0.0,0.0,0.0,0.0,2,5,Alex Moore,0,0,0,0,0,True,2026-07-13
+2026-08-17,all-time,4017688,SDR - Clio Work - Demo Request (MQL),86,LOW SAMPLE,SDR,15.33,3.89,6.63,40.96,0.0,151,437,Brett Blackney,35,30,6,15,0,True,2025-10-22
+2026-08-17,all-time,4018883,SDR - Clio Work - Demo Request (MQL) - Copy,80,LOW SAMPLE,SDR,28.57,3.57,2.38,53.57,0.0,10,28,Patrick Keeney,35,30,0,15,0,True,2025-10-24
+2026-08-17,all-time,4339117,SDR - Contact Us Form -en-US-CNV,93,LOW SAMPLE,SDR,27.85,12.66,7.04,49.37,0.0,60,79,Brett Blackney,35,30,13,15,0,True,2026-07-10
+2026-08-17,all-time,4291091,SDR - DEMO-REQ - en-US - CNV - PREDEMO,93,KEEP,SDR,20.82,5.8,8.57,36.69,0.0,1247,2257,Brett Blackney,35,30,13,15,0,False,2026-06-25
+2026-08-17,all-time,4294374,SDR - DEMO-REQ-WEBINAR - en-US - CNV - PREDEMO,86,LOW SAMPLE,SDR,11.78,8.99,6.08,45.27,0.0,391,645,Brett Blackney,35,30,6,15,0,True,2026-06-26
+2026-08-17,all-time,3974220,SDR - Demo Request - DRAFT ONLY MQLS,63,LOW SAMPLE,SDR,7.95,2.2,6.55,35.33,0.0,417,1183,Brittany Baron,20,22,6,15,0,True,2025-08-29
+2026-08-17,all-time,4078929,SDR - Demo Request - Event: NTLS,63,LOW SAMPLE,SDR,8.11,2.7,4.17,56.76,0.0,11,37,Daniela Ordonez,20,22,6,15,0,True,2026-01-28
+2026-08-17,all-time,1347191,SDR - Demo Request - Grow,65,REVIEW,SDR,0.0,13.29,27.6,48.03,0.0,775,1114,Gareth Ritcey,0,30,20,15,0,False,2019-11-25
+2026-08-17,all-time,3973486,SDR - Demo Request - MS WEBINAR (update from Daniela 2026),66,LOW SAMPLE,SDR,5.12,3.04,5.18,34.4,0.0,174,625,Brittany Baron,20,30,6,10,0,True,2025-08-28
+2026-08-17,all-time,4163397,SDR - Downloaded a Guide,38,LOW SAMPLE,SDR,0.44,2.65,3.24,28.76,0.0,74,226,Alex Moore,0,22,6,10,0,True,2026-04-29
+2026-08-17,all-time,1955893,SDR - Dupe Check,65,REVIEW,SDR,0.0,24.56,24.97,50.7,0.0,1104,2280,Palak Ghambhir,0,30,20,15,0,False,2021-01-28
+2026-08-17,all-time,4339116,SDR - Event Follow-up -en-US-CNV,28,LOW SAMPLE,SDR,0.0,0.0,9.09,77.78,0.0,6,9,Brett Blackney,0,0,13,15,0,True,2026-07-10
+2026-08-17,all-time,2145617,SDR - Facebook Demo Request,65,REVIEW,SDR,5.75,2.63,8.06,29.48,0.0,9048,23618,Ryan Basco,20,22,13,10,0,False,2021-06-10
+2026-08-17,all-time,4217557,SDR - GOV Demo Request - Manage (via Webinar) - Government Specific,5,LOW SAMPLE,SDR,0.0,0.0,0.0,17.65,0.0,3,17,Ashley Duffy,0,0,0,5,0,True,2026-06-01
+2026-08-17,all-time,2145637,SDR - How Law Firms Use Clio,93,KEEP,SDR,14.53,6.84,13.68,43.14,0.0,13323,29826,Ryan Basco,35,30,13,15,0,False,2021-06-10
+2026-08-17,all-time,1911581,SDR - International Lead Cadence,45,ARCHIVE,SDR,0.0,4.97,0.0,48.23,0.0,4418,15829,Marika McTague,0,30,0,15,0,False,2020-12-14
+2026-08-17,all-time,1327272,SDR - LinkedIn,65,REVIEW,SDR,0.0,7.49,17.86,45.14,0.0,2972,6117,Mike Wei,0,30,20,15,0,False,2019-11-12
+2026-08-17,all-time,4339113,SDR - Live Chat Next Step With Phone Number -en-US-CNV,86,LOW SAMPLE,SDR,13.85,18.46,4.84,46.15,0.0,42,65,Brett Blackney,35,30,6,15,0,True,2026-07-10
+2026-08-17,all-time,4291323,SDR - MANAGE TRIAL - en-US - CNV - TRIALON,71,REVIEW,SDR,9.65,4.09,5.4,38.97,0.0,1318,2838,Brett Blackney,20,30,6,15,0,False,2026-06-25
+2026-08-17,all-time,3614585,SDR - MM - Demo Form MQL Reach Out,88,LOW SAMPLE,SDR,33.47,12.97,10.62,34.31,0.0,132,239,Ashley Duffy,35,30,13,10,0,True,2024-07-08
+2026-08-17,all-time,1540401,SDR - Next Step Email Opt Out - Followup,13,ARCHIVE,SDR,0.0,0.0,10.0,0.0,0.0,1618,0,Mike Wei,0,0,13,0,0,False,2020-04-07
+2026-08-17,all-time,1482615,SDR - Next Steps - HOT (multiple) - Followup,65,REVIEW,SDR,0.0,12.29,16.44,44.96,0.0,4294,3207,Gareth Ritcey,0,30,20,15,0,False,2020-03-05
+2026-08-17,all-time,4339114,SDR - Next Steps - Warm (multiple) - Follow-up -en-US-CNV,71,LOW SAMPLE,SDR,6.01,4.37,6.15,36.07,0.0,119,183,Brett Blackney,20,30,6,15,0,True,2026-07-10
+2026-08-17,all-time,1346849,SDR - Non-Prospect (LinkedIn) - Disqualified,58,REVIEW,SDR,0.0,12.63,14.65,46.72,0.0,1388,3786,Derek Biondi,0,30,13,15,0,False,2019-11-25
+2026-08-17,all-time,1388930,SDR - Non-Prospect (Website) - Disqualified,65,REVIEW,SDR,0.0,19.4,17.04,47.09,0.0,1070,2402,Gareth Ritcey,0,30,20,15,0,False,2020-01-07
+2026-08-17,all-time,1959654,SDR - Not a Law Firm - Automated,65,REVIEW,SDR,0.0,12.02,17.39,43.38,0.0,10095,25328,Palak Ghambhir,0,30,20,15,0,False,2021-02-01
+2026-08-17,all-time,1547416,SDR - Nurture - Cold Lead Winback,45,ARCHIVE,SDR,0.0,2.36,8.68,33.92,0.0,4993,10687,Jesse Chan,0,22,13,10,0,False,2020-04-10
+2026-08-17,all-time,1895298,SDR - Referral - Follow-Up,58,LOW SAMPLE,SDR,0.0,7.2,7.71,38.96,0.0,156,403,Shane Sethi,0,30,13,15,0,True,2020-11-30
+2026-08-17,all-time,4339115,SDR - Resources Follow-up -en-US-CNV,45,LOW SAMPLE,SDR,1.54,3.08,0.0,49.23,0.0,23,65,Brett Blackney,0,30,0,15,0,True,2026-07-10
+2026-08-17,all-time,4295352,SDR - Software Advice -en-US-CNV,73,LOW SAMPLE,SDR,7.76,5.1,8.24,32.37,0.0,188,451,Brett Blackney,20,30,13,10,0,True,2026-06-26
+2026-08-17,all-time,1348039,SDR - Student - Disqualified,65,LOW SAMPLE,SDR,0.0,18.94,18.82,49.12,0.0,401,908,Gareth Ritcey,0,30,20,15,0,True,2019-11-26
+2026-08-17,all-time,4339112,SDR - Vincent Booked Call Follow-up -en-US-CNV,80,LOW SAMPLE,SDR,66.67,66.67,0.0,66.67,0.0,3,3,Brett Blackney,35,30,0,15,0,True,2026-07-10
+2026-08-17,all-time,4295294,SDR - WEB-PRICING-en-US-CNV,71,REVIEW,SDR,7.16,4.25,5.4,42.8,0.0,554,1271,Brett Blackney,20,30,6,15,0,False,2026-06-26
+2026-08-17,all-time,4163409,SDR - Watched On-Demand Webinar,64,LOW SAMPLE,SDR,3.38,3.69,6.38,38.0,0.0,179,650,Alex Moore,13,30,6,15,0,True,2026-04-29
+2026-08-17,all-time,4015093,SDR - vLex - Demo Request (MQL),93,LOW SAMPLE,SDR,33.7,9.67,9.1,40.19,0.0,298,724,Brett Blackney,35,30,13,15,0,True,2025-10-20
+2026-08-17,all-time,4030812,SDR - vLex - Free Trial - Copy,45,LOW SAMPLE,SDR,3.96,2.97,1.37,27.72,0.0,41,101,Sammy Poortaghi,13,22,0,10,0,True,2025-11-07
+2026-08-17,all-time,4339111,SDR - vLex - Free Trial -en-US-CNV,51,REVIEW,SDR,2.92,1.93,4.92,29.83,0.0,783,1713,Brett Blackney,13,22,6,10,0,False,2026-07-10
+2026-08-17,all-time,4020919,SDR - vLex - Not a Lawyer,58,REVIEW,SDR,0.59,4.99,9.36,36.01,0.0,2109,7059,Brittany Baron,0,30,13,15,0,False,2025-10-28
+2026-08-17,all-time,4038321,SDR - vLex - Warm Nurture,45,LOW SAMPLE,SDR,2.89,1.31,0.45,29.13,0.0,164,381,Brittany Baron,13,22,0,10,0,True,2025-11-18
+2026-08-17,all-time,4036658,SDR - vLex -Booked Call - Followup,81,LOW SAMPLE,SDR,22.73,12.5,4.44,32.95,0.0,42,88,Brittany Baron,35,30,6,10,0,True,2025-11-14
+2026-08-17,all-time,3556685,SDR- 2024 Demo No Show / Cancellation,93,KEEP,SDR,27.15,10.06,8.53,41.2,0.0,2465,5260,Leora Winkler,35,30,13,15,0,False,2024-05-22
+2026-08-17,all-time,3600828,SILVER - PI July Refresher BDRV,6,ARCHIVE,BDR,0.87,0.13,5.83,15.14,0.0,2971,5305,Morgan Lamke,0,0,6,0,0,False,2024-06-24
+2026-08-17,all-time,3937623,VAN BDRV Call ONLY,13,ARCHIVE,BDR,0.0,0.0,12.1,0.0,0.0,594,0,Jessica Bayard,0,0,13,0,0,False,2025-07-16
+2026-08-21,all-time,4135410, Canada Draft BDR - Strat - nurture email,5,LOW SAMPLE,BDR,0.44,0.55,0.0,25.53,0.0,185,901,Abigail Humber,0,0,0,5,0,True,2026-04-06
+2026-08-21,all-time,3714260,$BDR-MM - A & B Tier - Educate - Nurture,6,ARCHIVE,BDR,2.17,0.36,5.8,17.21,0.0,927,2533,Graeme Sims,0,0,6,0,0,False,2024-10-18
+2026-08-21,all-time,4034648,$BDR-MM - AI Cadence Nov 25,0,ARCHIVE,BDR,0.02,0.07,0.0,11.89,0.0,9482,157231,Aaqib Quraishi,0,0,0,0,0,False,2025-11-12
+2026-08-21,all-time,3764682,$BDR-MM - AQL - AI Content - Follow-up,11,ARCHIVE,BDR,0.79,0.61,5.48,30.74,0.0,2454,6858,Graeme Sims,0,0,6,5,0,False,2024-12-27
+2026-08-21,all-time,2278025,$BDR-MM - AQL - General Content,38,ARCHIVE,BDR,1.19,2.06,20.67,25.09,0.0,7252,19517,Rahul Dutta,0,13,20,5,0,False,2021-09-20
+2026-08-21,all-time,2721914,$BDR-MM - AQL - Webinar Download / Attendee,31,ARCHIVE,BDR,1.94,2.94,7.82,25.71,0.0,998,3812,Niklas Hoem,0,13,13,5,0,False,2022-07-29
+2026-08-21,all-time,3987781,$BDR-MM - AQL - Webinar Download / Attendee - Law Firm Leadership Specific,6,LOW SAMPLE,BDR,0.9,1.79,5.63,16.59,0.0,48,223,Ashley Duffy,0,0,6,0,0,True,2025-09-17
+2026-08-21,all-time,4085965,$BDR-MM - Amicus/Abacus Win,5,LOW SAMPLE,BDR,0.0,1.13,2.36,20.34,0.0,64,177,Aaqib Quraishi,0,0,0,5,0,True,2026-02-05
+2026-08-21,all-time,3957267,$BDR-MM - BTL Cadence 2025,0,ARCHIVE,BDR,0.08,0.12,0.0,12.21,0.0,3112,51755,Aaqib Quraishi,0,0,0,0,0,False,2025-08-08
+2026-08-21,all-time,3706356,$BDR-MM - C Tier - Educate - Nurture,6,ARCHIVE,BDR,0.5,0.23,5.43,17.09,0.0,1993,6173,Graeme Sims,0,0,6,0,0,False,2024-10-09
+2026-08-21,all-time,2983272,$BDR-MM - Closed Lost - Revival,31,ARCHIVE,BDR,1.8,3.73,7.37,21.56,0.0,9157,19490,Graeme Sims,0,13,13,5,0,False,2023-02-09
+2026-08-21,all-time,4031600,$BDR-MM - Coyote Analytics Sunset Outreach Nov 2025,24,LOW SAMPLE,BDR,0.0,3.64,6.8,25.82,0.0,106,275,Aaqib Quraishi,0,13,6,5,0,True,2025-11-10
+2026-08-21,all-time,3789704,$BDR-MM - Intent - Artificial Intelligence - Outbound,6,ARCHIVE,BDR,0.54,0.65,4.87,11.66,0.0,740,1835,Graeme Sims,0,0,6,0,0,False,2025-01-30
+2026-08-21,all-time,3785148,$BDR-MM - Intent - Case Management - Outbound,6,LOW SAMPLE,BDR,1.68,0.65,3.92,17.36,0.0,310,772,Graeme Sims,0,0,6,0,0,True,2025-01-27
+2026-08-21,all-time,3789724,$BDR-MM - Intent - Intake / Lead Management,6,LOW SAMPLE,BDR,0.5,1.0,4.17,12.44,0.0,91,201,Graeme Sims,0,0,6,0,0,True,2025-01-30
+2026-08-21,all-time,3785147,$BDR-MM - Intent Billing & Payments - Outbound,6,LOW SAMPLE,BDR,0.73,0.73,3.91,13.33,0.0,325,818,Graeme Sims,0,0,6,0,0,True,2025-01-27
+2026-08-21,all-time,4058977,$BDR-MM - OB CWS - April 26,11,ARCHIVE,BDR,0.3,0.23,3.58,22.85,0.0,3718,13915,Aaqib Quraishi,0,0,6,5,0,False,2025-12-20
+2026-08-21,all-time,4276757,$BDR-MM - ProLaw Displacement June 26,11,LOW SAMPLE,BDR,0.0,1.59,5.06,23.81,0.0,86,189,Aaqib Quraishi,0,0,6,5,0,True,2026-06-22
+2026-08-21,all-time,3180820,$BDR-MM - Referral - Outbound,53,LOW SAMPLE,BDR,7.6,9.26,5.57,23.52,0.0,190,421,Graeme Sims,20,22,6,5,0,True,2023-07-13
+2026-08-21,all-time,3762896,$BDR-MM - Target Account - ChatGPT Personalization - Cold,19,ARCHIVE,BDR,1.1,2.4,4.28,16.82,0.0,513,999,Graeme Sims,0,13,6,0,0,False,2024-12-19
+2026-08-21,all-time,3041675,$BDR-MM - Tier 1 Nurture MQL,38,ARCHIVE,BDR,3.26,2.85,44.15,29.82,0.0,1870,4178,Graeme Sims,0,13,20,5,0,False,2023-03-21
+2026-08-21,all-time,4381572,(DO NOT USE) SDR - FILLED GET PRICING-en-US-CNV,68,LOW SAMPLE,SDR,9.09,9.09,12.5,18.18,0.0,7,11,Lars Arreaga,20,30,13,5,0,True,2026-07-21
+2026-08-21,all-time,3753811,2024 LEAP Price Hike revival - BDR,31,LOW SAMPLE,BDR,2.86,2.15,13.16,20.74,0.0,209,699,Patrick Keeney,0,13,13,5,0,True,2024-12-06
+2026-08-21,all-time,4525864,6Sense - BDR - Strategic - OB - CL INTENT - en-US - CNV,5,LOW SAMPLE,BDR,0.0,0.0,0.0,20.0,0.0,7,5,John McGurk,0,0,0,5,0,True,2026-08-14
+2026-08-21,all-time,4525868,6Sense - BDR - Strategic - OB - NMQL INTENT - en-US - CNV,20,LOW SAMPLE,BDR,0.0,0.0,50.0,0.0,0.0,2,0,John McGurk,0,0,20,0,0,True,2026-08-14
+2026-08-21,all-time,4525861,6Sense - BDR - Strategic - WebSights INTENT - en-US - CNV,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,6,2,John McGurk,0,0,0,0,0,True,2026-08-14
+2026-08-21,all-time,4525850,6Sense - Intent Outbound - BDR-S - AWARE - Email Only,5,LOW SAMPLE,BDR,0.0,0.0,0.0,20.19,0.0,248,317,John McGurk,0,0,0,5,0,True,2026-08-14
+2026-08-21,all-time,4525849,6Sense - Intent Outbound - BDR-S - Email Only for Cold,0,LOW SAMPLE,BDR,0.0,0.0,0.0,19.0,0.0,386,742,John McGurk,0,0,0,0,0,True,2026-08-14
+2026-08-21,all-time,4525872,6Sense - Intent Outbound AQL - BDR-S,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,1,2,John McGurk,0,0,0,0,0,True,2026-08-14
+2026-08-21,all-time,4525853,6Sense - Intent Outbound Engaged w/ Content - BDR-S,15,LOW SAMPLE,BDR,0.0,0.0,0.0,100.0,0.0,1,1,John McGurk,0,0,0,15,0,True,2026-08-14
+2026-08-21,all-time,4403614,AE/BDR - Enterprise - ILTACON 2026 - Event Invite,0,LOW SAMPLE,BDR,0.0,0.0,0.6,6.29,0.0,192,334,Brett Blackney,0,0,0,0,0,True,2026-07-24
+2026-08-21,all-time,4133126,AE/BDR-CS | CAM - Draft Product Offer - OBC,0,LOW SAMPLE,BDR,2.93,0.59,0.0,17.97,0.0,475,512,Salesloft Marketing,0,0,0,0,0,True,2026-04-01
+2026-08-21,all-time,4133141,AE/BDR-CS | CAM - Grow Product Offer - OBC,25,LOW SAMPLE,BDR,9.76,0.0,0.0,21.95,0.0,25,41,Salesloft Marketing,20,0,0,5,0,True,2026-04-01
+2026-08-21,all-time,4133117,AE/BDR-CS | CAM - Manage AI Product Offer - OBC,53,LOW SAMPLE,BDR,16.07,2.68,0.0,28.57,0.0,62,112,Salesloft Marketing,35,13,0,5,0,True,2026-04-01
+2026-08-21,all-time,4003304,AQL/NMQL - BDR-S - Email Only,5,ARCHIVE,BDR,0.13,0.13,0.0,20.45,0.0,526,2303,John McGurk,0,0,0,5,0,False,2025-10-07
+2026-08-21,all-time,3953332,All BDR - AI Summer Camp AQL - Follow Up,11,LOW SAMPLE,BDR,0.8,0.27,6.32,28.69,0.0,177,373,Alex Bramos,0,0,6,5,0,True,2025-08-05
+2026-08-21,all-time,4333113,BDR - GOV - Canadian Time Matters Phase-Out - en-US - CNV,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-07-09
+2026-08-21,all-time,4333115,BDR - GOV - Legal Assistant Cold - en-US - CNV,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,3,6,Brett Blackney,0,0,0,0,0,True,2026-07-09
+2026-08-21,all-time,4333114,BDR - GOV - Office Manager Cold - en-US - CNV,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,3,9,Brett Blackney,0,0,0,0,0,True,2026-07-09
+2026-08-21,all-time,4333112,BDR - GOV - Paralegal Cold - en-US - CNV,18,LOW SAMPLE,BDR,0.0,0.0,12.15,21.1,0.0,55,109,Brett Blackney,0,0,13,5,0,True,2026-07-09
+2026-08-21,all-time,4337749,BDR - GOV - Webinar Cadence,18,LOW SAMPLE,BDR,0.0,0.45,11.11,34.39,0.0,107,221,Aaqib Quraishi,0,0,13,5,0,True,2026-07-10
+2026-08-21,all-time,4126608,BDR - In person conference - Techshow 2026,27,LOW SAMPLE,BDR,0.0,6.82,2.22,34.09,0.0,17,44,Patricio Gonzalez Camilletti,0,22,0,5,0,True,2026-03-25
+2026-08-21,all-time,4376695,BDR - MM - Docket Alarm Defendant Track,30,LOW SAMPLE,BDR,0.0,0.0,18.18,44.74,0.0,3,38,Aaqib Quraishi,0,0,20,10,0,True,2026-07-20
+2026-08-21,all-time,4376688,BDR - MM - Docket Alarm Plaintiff Track,10,LOW SAMPLE,BDR,0.0,1.47,0.0,48.53,0.0,28,68,Aaqib Quraishi,0,0,0,10,0,True,2026-07-20
+2026-08-21,all-time,4074649,BDR - MS WEBINAR CLE,18,ARCHIVE,BDR,1.11,1.53,7.46,30.79,0.0,563,1897,Daniela Ordonez,0,0,13,5,0,False,2026-01-22
+2026-08-21,all-time,4480655,BDR - Mid - Market Cluster4 Litigation BelowTheLine - en-US - CNV,23,LOW SAMPLE,BDR,0.0,0.0,13.33,37.5,0.0,6,8,Brett Blackney,0,0,13,10,0,True,2026-08-06
+2026-08-21,all-time,4480659,BDR - Mid - Market Cluster5 Transactional BelowTheLine - en-US - CNV,20,LOW SAMPLE,BDR,0.0,0.0,33.33,0.0,0.0,2,2,Brett Blackney,0,0,20,0,0,True,2026-08-06
+2026-08-21,all-time,4329157,BDR - Mid-Market -  (Ops) Contingency / PI - en-US - CNV,5,LOW SAMPLE,BDR,1.44,0.0,1.92,26.62,0.0,64,139,Brett Blackney,0,0,0,5,0,True,2026-07-08
+2026-08-21,all-time,4329001,BDR - Mid-Market - (Ops) Hourly & Flat-Fee - en-US - CNV,11,LOW SAMPLE,BDR,2.06,0.52,5.11,27.84,0.0,128,194,Brett Blackney,0,0,6,5,0,True,2026-07-08
+2026-08-21,all-time,4295481,BDR - Strategic - AQLs Excl Draft  - en-US - CNV,11,ARCHIVE,BDR,1.25,1.44,5.71,34.8,0.0,794,1523,Brett Blackney,0,0,6,5,0,False,2026-06-26
+2026-08-21,all-time,4295482,BDR - Strategic - NMQL - en-US - CNV,11,ARCHIVE,BDR,1.64,1.82,5.25,32.3,0.0,821,1099,Brett Blackney,0,0,6,5,0,False,2026-06-26
+2026-08-21,all-time,4295483,BDR - Strategic - OB - CL INTENT - en-US - CNV,16,LOW SAMPLE,BDR,1.02,1.9,6.22,37.03,0.0,378,686,Brett Blackney,0,0,6,10,0,True,2026-06-26
+2026-08-21,all-time,4295484,BDR - Strategic - OB - NMQL INTENT - en-US - CNV,18,LOW SAMPLE,BDR,2.08,0.0,7.22,20.83,0.0,34,48,Brett Blackney,0,0,13,5,0,True,2026-06-26
+2026-08-21,all-time,4295394,BDR - Strategic - WebSights INTENT - en-US - CNV,11,ARCHIVE,BDR,0.82,0.98,5.35,29.26,0.0,867,1220,Brett Blackney,0,0,6,5,0,False,2026-06-26
+2026-08-21,all-time,4540221,BDR - Transactional AI - en-SPAIN - CNV,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-08-17
+2026-08-21,all-time,4328921,BDR - Velocity - AQL / NMQL - en-US - CNV,11,ARCHIVE,BDR,2.05,0.57,6.23,32.63,0.0,4271,8444,Brett Blackney,0,0,6,5,0,False,2026-07-08
+2026-08-21,all-time,4328957,BDR - Velocity - Closed Lost AI - en-US - CNV,11,ARCHIVE,BDR,2.53,1.43,6.89,30.22,0.0,763,1188,Brett Blackney,0,0,6,5,0,False,2026-07-08
+2026-08-21,all-time,4337959,BDR - Velocity - Closed Lost Transactional - en-US - CNV,18,LOW SAMPLE,BDR,0.0,0.0,11.36,29.63,0.0,17,27,Brett Blackney,0,0,13,5,0,True,2026-07-10
+2026-08-21,all-time,4329154,BDR - Velocity - Litigation AI - en-US - CNV,18,LOW SAMPLE,BDR,1.76,0.25,8.09,29.15,0.0,283,398,Brett Blackney,0,0,13,5,0,True,2026-07-08
+2026-08-21,all-time,4328970,BDR - Velocity - Outbound - en-US - CNV,18,ARCHIVE,BDR,0.98,0.98,7.13,27.34,0.0,623,512,Brett Blackney,0,0,13,5,0,False,2026-07-08
+2026-08-21,all-time,4328660,BDR - Velocity - Transactional AI - en-US - CNV,11,LOW SAMPLE,BDR,1.75,0.0,5.36,29.82,0.0,38,57,Brett Blackney,0,0,6,5,0,True,2026-07-08
+2026-08-21,all-time,4340586,BDR - Velocity - Win Back AI Emails - en-US - CNV,18,ARCHIVE,BDR,1.54,0.69,7.27,30.95,0.0,1149,1887,Brett Blackney,0,0,13,5,0,False,2026-07-13
+2026-08-21,all-time,4340580,BDR - Velocity - Win Back Templated - en-US - CNV,11,ARCHIVE,BDR,1.18,0.48,6.19,21.57,0.0,1185,2281,Brett Blackney,0,0,6,5,0,False,2026-07-13
+2026-08-21,all-time,4341074,BDR - Velocity/ Strategic - AI Misuse COL,11,LOW SAMPLE,BDR,0.0,0.0,3.92,29.27,0.0,25,41,Daniel Perez,0,0,6,5,0,True,2026-07-13
+2026-08-21,all-time,4341277,BDR - Velocity/ Strategic - AI Misuse DE,18,LOW SAMPLE,BDR,0.0,1.01,8.46,24.24,0.0,45,99,Daniel Perez,0,0,13,5,0,True,2026-07-13
+2026-08-21,all-time,4085749,BDR CS: Clio Work - Trial FU (CQL),78,LOW SAMPLE,BDR,19.08,4.05,17.97,38.15,0.0,109,173,Salesloft Marketing,35,13,20,10,0,True,2026-02-05
+2026-08-21,all-time,3940465,BDR Draft - AQL - Ebook Downloads,36,LOW SAMPLE,BDR,0.38,3.04,9.58,38.4,0.0,120,263,Sebastian Aranguren,0,13,13,10,0,True,2025-07-21
+2026-08-21,all-time,3948175,BDR Draft - AQL Webinar MS Word - Post Webinar,18,LOW SAMPLE,BDR,0.85,0.85,11.56,30.18,0.0,249,709,Sebastian Aranguren,0,0,13,5,0,True,2025-07-29
+2026-08-21,all-time,3963947,BDR Draft - Lead Nurture Revisit,18,LOW SAMPLE,BDR,4.0,1.2,8.12,27.2,0.0,112,250,Sebastian Aranguren,0,0,13,5,0,True,2025-08-18
+2026-08-21,all-time,3913755,BDR | CS: Clio Connects  - Attended an Event CQLs,80,LOW SAMPLE,BDR,10.37,10.37,16.35,41.48,0.0,110,135,Salesloft Marketing,20,30,20,10,0,True,2025-06-16
+2026-08-21,all-time,4193637,BDR | CS: Clio Connects  - Registered but did not attend ,35,LOW SAMPLE,BDR,7.69,0.0,0.0,61.54,0.0,17,13,Salesloft Marketing,20,0,0,15,0,True,2026-05-15
+2026-08-21,all-time,3939510,BDR- Draft - C/L Opportunity Revival,31,LOW SAMPLE,BDR,4.9,3.85,7.21,27.62,0.0,163,286,Sebastian Aranguren,0,13,13,5,0,True,2025-07-18
+2026-08-21,all-time,3064099,BDR-CS - 2023 Solo & Small Firm - Outbound,38,LOW SAMPLE,BDR,5.84,0.94,10.04,31.26,0.0,271,531,Kent Patterson,20,0,13,5,0,True,2023-04-06
+2026-08-21,all-time,3630547,BDR-CS - Accounting - Demo No Show / Cancellation,87,LOW SAMPLE,BDR,26.71,8.07,15.43,42.03,0.0,244,483,Sammy Poortaghi,35,22,20,10,0,True,2024-07-19
+2026-08-21,all-time,3623902,BDR-CS - Accounting - Demo Request,95,KEEP,BDR,41.19,10.74,19.56,42.48,0.0,3377,5803,Salesloft Marketing,35,30,20,10,0,False,2024-07-15
+2026-08-21,all-time,3623844,BDR-CS - Accounting - Downloaded Content,65,LOW SAMPLE,BDR,9.24,5.08,12.15,38.83,0.0,242,649,Salesloft Marketing,20,22,13,10,0,True,2024-07-15
+2026-08-21,all-time,3777257,BDR-CS - Accounting CLE Webinar Follow Up (Jan 15 2025) - Reg/Attended,43,LOW SAMPLE,BDR,7.37,1.38,8.65,48.39,0.0,148,217,Salesloft Marketing,20,0,13,10,0,True,2025-01-16
+2026-08-21,all-time,3730021,BDR-CS - Accounting Re-Engage/Nurture/Closed Lost -,40,LOW SAMPLE,BDR,4.9,5.31,12.41,34.69,0.0,106,245,Sammy Poortaghi,0,22,13,5,0,True,2024-11-06
+2026-08-21,all-time,4132046,BDR-CS - CAM Reputation Management Trial - Pre-Trial - IBC,85,LOW SAMPLE,BDR,30.3,6.06,12.2,51.52,0.0,51,33,Salesloft Marketing,35,22,13,15,0,True,2026-03-31
+2026-08-21,all-time,4132062,BDR-CS - CAM Reputation Management Trial - Trial Welcome + End - IBC,78,LOW SAMPLE,BDR,17.18,6.75,5.26,50.31,0.0,134,163,Salesloft Marketing,35,22,6,15,0,True,2026-03-31
+2026-08-21,all-time,4139240,BDR-CS - Civil Lit - Work - High doc usage ,43,LOW SAMPLE,BDR,7.21,0.0,11.52,36.94,0.0,303,222,Assad Quraishi,20,0,13,10,0,True,2026-04-09
+2026-08-21,all-time,4056071,BDR-CS - Clio Timekeeping Cohort 1 Outreach ,11,ARCHIVE,BDR,3.53,0.63,6.05,27.69,0.0,2135,3489,Brett Blackney,0,0,6,5,0,False,2025-12-15
+2026-08-21,all-time,4056123,BDR-CS - Clio Timekeeping Pilot WITH USAGE,51,LOW SAMPLE,BDR,12.34,4.54,7.28,28.49,0.0,286,551,Brett Blackney,20,13,13,5,0,True,2025-12-15
+2026-08-21,all-time,4056126,BDR-CS - Clio Timekeeping Pilot is ending NO USAGE ,38,ARCHIVE,BDR,5.29,1.85,8.08,25.13,0.0,509,1134,Brett Blackney,20,0,13,5,0,False,2025-12-15
+2026-08-21,all-time,4056127,BDR-CS - Clio Timekeeping Pilot is ending PHONE LOGS ONLY,36,ARCHIVE,BDR,4.21,2.62,10.98,40.4,0.0,941,2708,Brett Blackney,0,13,13,10,0,False,2025-12-15
+2026-08-21,all-time,4050690,BDR-CS - Clio Work - Demo No Show / Cancellation,80,LOW SAMPLE,BDR,17.94,8.52,10.81,35.43,0.0,249,446,Sammy Poortaghi,35,22,13,10,0,True,2025-12-05
+2026-08-21,all-time,3324138,BDR-CS - Disco No Show,88,LOW SAMPLE,BDR,34.12,17.0,11.16,46.11,0.0,424,759,Jordan Stuart,35,30,13,10,0,True,2023-11-21
+2026-08-21,all-time,3933734,BDR-CS - Draft - Re-Engage/Nurture/Closed Lost ,51,LOW SAMPLE,BDR,7.89,4.07,9.43,31.1,0.0,397,418,Sammy Poortaghi,20,13,13,5,0,True,2025-07-13
+2026-08-21,all-time,3143959,BDR-CS - Grow - Client Intake Guide for Law Firms,58,REVIEW,BDR,5.92,2.17,17.36,29.43,0.0,971,3415,Jordan Stuart,20,13,20,5,0,False,2023-06-08
+2026-08-21,all-time,2920802,BDR-CS - Grow - Demo No Show / Cancellation ,95,KEEP,BDR,28.93,11.34,17.94,37.86,0.0,560,1120,Jordan Stuart,35,30,20,10,0,False,2022-12-15
+2026-08-21,all-time,2437228,BDR-CS - Grow - Demo Request,95,KEEP,BDR,54.46,14.37,17.83,45.66,0.0,3228,4739,Salesloft Marketing,35,30,20,10,0,False,2022-01-27
+2026-08-21,all-time,3201575,BDR-CS - Grow - Downloaded Guide: Intake Checklist,58,REVIEW,BDR,6.4,4.23,15.84,34.39,0.0,914,3123,Jordan Stuart,20,13,20,5,0,False,2023-08-02
+2026-08-21,all-time,2789482,BDR-CS - Grow - Prospecting,58,REVIEW,BDR,6.0,2.47,20.3,31.15,0.0,3962,10160,Jordan Stuart,20,13,20,5,0,False,2022-09-13
+2026-08-21,all-time,2952033,BDR-CS - Grow - Prospecting (no calls),5,ARCHIVE,BDR,2.96,1.68,0.0,26.58,0.0,4175,13952,Jordan Stuart,0,0,0,5,0,False,2023-01-18
+2026-08-21,all-time,2676546,BDR-CS - Grow - Re-Engage/Nurture/Closed Lost,67,REVIEW,BDR,8.31,6.42,28.1,32.8,0.0,1263,2960,Jordan Stuart,20,22,20,5,0,False,2022-06-29
+2026-08-21,all-time,2521484,BDR-CS - Grow - Visited Product OR Feature Page IM ,38,ARCHIVE,BDR,6.61,1.84,14.56,29.66,0.0,926,3267,Salesloft Marketing,20,0,13,5,0,False,2022-03-22
+2026-08-21,all-time,3160218,BDR-CS - Grow - Webinar On-Demand: Clio Website,88,LOW SAMPLE,BDR,22.13,10.66,10.84,40.98,0.0,45,122,Jordan Stuart,35,30,13,10,0,True,2023-06-22
+2026-08-21,all-time,3198613,BDR-CS - High Propensity  - Prospecting,18,ARCHIVE,BDR,3.93,0.79,14.6,28.29,0.0,1567,4550,Kent Patterson,0,0,13,5,0,False,2023-07-31
+2026-08-21,all-time,3933737,BDR-CS - Manage AI - Re-Engage/Nurture/Closed Lost  ,43,LOW SAMPLE,BDR,6.34,0.7,9.29,39.44,0.0,64,142,Sammy Poortaghi,20,0,13,10,0,True,2025-07-13
+2026-08-21,all-time,4084196,BDR-CS - Persona Webinar Series Invite,5,LOW SAMPLE,BDR,0.0,0.0,0.0,24.24,0.0,25,33,Salesloft Marketing,0,0,0,5,0,True,2026-02-04
+2026-08-21,all-time,3282457,BDR-CS - Personal Injury - Demo No Show / Cancellation  ,82,LOW SAMPLE,BDR,18.95,8.17,19.34,34.64,0.0,149,306,Jordan Stuart,35,22,20,5,0,True,2023-10-12
+2026-08-21,all-time,3281993,BDR-CS - Personal Injury - Demo Request,95,KEEP,BDR,42.84,12.43,17.28,42.02,0.0,1248,2173,Jordan Stuart,35,30,20,10,0,False,2023-10-12
+2026-08-21,all-time,3608946,BDR-CS - Personal Injury PI - Re-Engage/Nurture/Closed Lost,56,LOW SAMPLE,BDR,7.41,3.28,12.88,38.79,0.0,214,580,Sammy Poortaghi,20,13,13,10,0,True,2024-07-01
+2026-08-21,all-time,4146490,BDR-CS - Reputation Management Pilot Access - IBC,0,NO DATA,BDR,0.0,6.25,0.0,31.25,0.0,0,16,Salesloft Marketing,0,22,0,5,0,True,2026-04-14
+2026-08-21,all-time,4255948,BDR-CS -V | Essentials to Advanced Upgrade Outreach - Subscription Page ‘Abandoned Cart’  ,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Nikki Raw,0,0,0,0,0,True,2026-06-17
+2026-08-21,all-time,4207256,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 1 (MM non-CSM)",18,LOW SAMPLE,BDR,2.91,2.03,2.04,26.45,0.0,71,344,Anton Steinbeck,0,13,0,5,0,True,2026-05-26
+2026-08-21,all-time,4195716,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 1 (Strat)",51,REVIEW,BDR,6.43,2.46,8.14,28.76,0.0,632,1867,Sammy Poortaghi,20,13,13,5,0,False,2026-05-18
+2026-08-21,all-time,4219469,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 2 (MM non-CSM)",18,LOW SAMPLE,BDR,2.84,0.78,14.0,28.55,0.0,180,774,Anton Steinbeck,0,0,13,5,0,True,2026-06-02
+2026-08-21,all-time,4219447,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 2 (Strat)",51,REVIEW,BDR,5.79,2.16,14.79,33.13,0.0,601,1624,Anton Steinbeck,20,13,13,5,0,False,2026-06-02
+2026-08-21,all-time,4225423,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 3 (MM non-CSM)",5,LOW SAMPLE,BDR,2.35,0.68,1.69,33.96,0.0,424,1917,Anton Steinbeck,0,0,0,5,0,True,2026-06-04
+2026-08-21,all-time,4225406,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 3 (Strat)",18,ARCHIVE,BDR,4.54,2.0,12.65,27.61,0.0,1189,3807,Anton Steinbeck,0,0,13,5,0,False,2026-06-04
+2026-08-21,all-time,4328615,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 4 (MM non-CSM)",11,LOW SAMPLE,BDR,0.8,1.14,4.1,23.92,0.0,407,2011,Anton Steinbeck,0,0,6,5,0,True,2026-07-08
+2026-08-21,all-time,4328616,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 4 (Strat)",18,ARCHIVE,BDR,2.88,1.47,11.96,25.41,0.0,1865,6816,Anton Steinbeck,0,0,13,5,0,False,2026-07-08
+2026-08-21,all-time,4480761,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 5 (MM non-CSM)",10,LOW SAMPLE,BDR,1.95,1.62,0.0,44.48,0.0,123,308,Anton Steinbeck,0,0,0,10,0,True,2026-08-06
+2026-08-21,all-time,4480760,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 5 (Strat)",31,ARCHIVE,BDR,3.0,3.05,12.04,31.48,0.0,1465,3701,Anton Steinbeck,0,13,13,5,0,False,2026-08-06
+2026-08-21,all-time,4566046,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 6 (MM CSM owned)",0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,5,0,Anton Steinbeck,0,0,0,0,0,True,2026-08-20
+2026-08-21,all-time,4557880,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 6 (MM non-CSM)",15,LOW SAMPLE,BDR,4.72,0.0,0.0,52.83,0.0,126,106,Anton Steinbeck,0,0,0,15,0,True,2026-08-19
+2026-08-21,all-time,4557879,"BDR-CS Apex 30 Day Work Trial - Main Cadence, Cohort 6 (Strat)",10,ARCHIVE,BDR,1.88,1.54,0.0,36.77,0.0,1469,1172,Anton Steinbeck,0,0,0,10,0,False,2026-08-19
+2026-08-21,all-time,4196209,BDR-CS Apex 30 day Work Trial - Hand Raises HOT All Segments,70,LOW SAMPLE,BDR,50.0,25.0,0.0,25.0,0.0,5,4,Sammy Poortaghi,35,30,0,5,0,True,2026-05-18
+2026-08-21,all-time,4390176,BDR-CS Apex Webinar Leads - CALL ONLY,13,LOW SAMPLE,BDR,0.0,0.0,11.11,0.0,0.0,13,0,Nikki Raw,0,0,13,0,0,True,2026-07-22
+2026-08-21,all-time,4201325,BDR-CS Call Only Nurture,13,LOW SAMPLE,BDR,0.0,0.0,8.08,0.0,0.0,124,0,Nikki Raw,0,0,13,0,0,True,2026-05-21
+2026-08-21,all-time,3866686,BDR-CS Demo Request Platform,88,KEEP,BDR,38.0,11.38,13.99,45.42,0.0,1013,1213,Sammy Poortaghi,35,30,13,10,0,False,2025-04-23
+2026-08-21,all-time,3932426,BDR-CS Draft CQL= Downloaded a Guide - Document Automation / Draft,51,REVIEW,BDR,7.11,2.92,10.34,34.6,0.0,643,1575,Sammy Poortaghi,20,13,13,5,0,False,2025-07-10
+2026-08-21,all-time,3932044,BDR-CS Draft Demo No Show / Cancellation,75,LOW SAMPLE,BDR,22.4,8.4,11.11,33.6,0.0,134,250,Sammy Poortaghi,35,22,13,5,0,True,2025-07-10
+2026-08-21,all-time,4377111,BDR-CS MM - Canada Cohort 1,5,ARCHIVE,BDR,0.39,1.14,0.0,28.28,0.0,1765,4558,Anton Steinbeck,0,0,0,5,0,False,2026-07-20
+2026-08-21,all-time,4327839,BDR-CS MM - ES/Essentials to Advanced Upgrade,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,1,1,Anton Steinbeck,0,0,0,0,0,True,2026-07-08
+2026-08-21,all-time,3703704,BDR-CS Manage AI Demo Request,75,KEEP,BDR,36.75,5.58,14.53,34.33,0.0,4478,7775,Sammy Poortaghi,35,22,13,5,0,False,2024-10-07
+2026-08-21,all-time,4256145,BDR-CS Strat & MM - Apex 30 Hot Leads,23,LOW SAMPLE,BDR,0.0,0.0,10.71,38.1,0.0,16,21,Anton Steinbeck,0,0,13,10,0,True,2026-06-17
+2026-08-21,all-time,4452480,BDR-CS Strat & MM - Customer Briefing,10,LOW SAMPLE,BDR,0.72,0.29,0.0,38.84,0.0,380,690,Anton Steinbeck,0,0,0,10,0,True,2026-08-03
+2026-08-21,all-time,4498668,BDR-CS Strat & MM - Summit Invite Blast,0,NO DATA,BDR,0.37,0.0,0.0,38.01,0.0,0,271,Anton Steinbeck,0,0,0,10,0,True,2026-08-10
+2026-08-21,all-time,4255926,BDR-CS Strat & MM | Essentials to Advanced Upgrade Outreach - Subscription Page ‘Abandoned Cart’ ,15,LOW SAMPLE,BDR,0.0,0.0,0.0,50.0,0.0,4,4,Anton Steinbeck,0,0,0,15,0,True,2026-06-17
+2026-08-21,all-time,4377099,BDR-CS Strat - Canada Cohort 1,31,ARCHIVE,BDR,1.46,2.28,12.96,30.34,0.0,5408,10503,Anton Steinbeck,0,13,13,5,0,False,2026-07-20
+2026-08-21,all-time,4323630,BDR-CS Strat - Clio Draft - Wills & Estates Blast W/O,18,LOW SAMPLE,BDR,0.0,3.26,0.0,28.26,0.0,60,184,Anton Steinbeck,0,13,0,5,0,True,2026-07-07
+2026-08-21,all-time,4313605,BDR-CS Strat - Clio Grow High Contact ,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Anton Steinbeck,0,0,0,0,0,True,2026-07-02
+2026-08-21,all-time,4116722,BDR-CS Strat - Criminal Work Campaign,18,LOW SAMPLE,BDR,4.22,1.58,9.44,32.45,0.0,206,379,Anton Steinbeck,0,0,13,5,0,True,2026-03-13
+2026-08-21,all-time,4313580,BDR-CS Strat - ES/Essentials to Advanced Upgrade,18,LOW SAMPLE,BDR,0.57,1.14,10.0,34.66,0.0,226,176,Anton Steinbeck,0,0,13,5,0,True,2026-07-02
+2026-08-21,all-time,4261699,BDR-CS Strat Abandoned Cart - Clio Work (not Apex),11,LOW SAMPLE,BDR,1.56,1.71,6.94,32.5,0.0,296,643,Anton Steinbeck,0,0,6,5,0,True,2026-06-18
+2026-08-21,all-time,4187027,BDR-CS Strat | Clio Work - Family Law - OBC - May 2026,31,LOW SAMPLE,BDR,6.43,1.95,6.56,30.99,0.0,269,513,Anton Steinbeck,20,0,6,5,0,True,2026-05-13
+2026-08-21,all-time,4099204,BDR-CS Strat: High Adopters ,56,LOW SAMPLE,BDR,8.1,3.28,7.77,36.11,0.0,286,457,Anton Steinbeck,20,13,13,10,0,True,2026-02-23
+2026-08-21,all-time,4132269,BDR-CS Team - Draft Canada Launch Cadence  ,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,4,0,Nikki Raw,0,0,0,0,0,True,2026-03-31
+2026-08-21,all-time,3980173,BDR-CS | 2025-09 Email Marketing Webinar - Attended Optional Demo of Clio Grow CQLs ,27,LOW SAMPLE,BDR,0.0,7.69,0.0,23.08,0.0,10,13,Salesloft Marketing,0,22,0,5,0,True,2025-09-09
+2026-08-21,all-time,4046345,BDR-CS | 2025-12 Legal AI Summit - Poll CQL - IBC,56,LOW SAMPLE,BDR,8.66,4.33,12.71,40.55,0.0,103,254,Salesloft Marketing,20,13,13,10,0,True,2025-12-01
+2026-08-21,all-time,4064932,BDR-CS | 2026-01 MS Word CLE Series  (01/2026) - Attendee CQL - IBC ,36,LOW SAMPLE,BDR,3.34,2.84,13.28,39.07,0.0,219,599,Salesloft Marketing,0,13,13,10,0,True,2026-01-08
+2026-08-21,all-time,4064934,BDR-CS | 2026-01 MS Word CLE Series (01/2026) - Draft Poll CQL - IBC,65,LOW SAMPLE,BDR,12.06,5.84,13.98,35.41,0.0,187,514,Salesloft Marketing,20,22,13,10,0,True,2026-01-08
+2026-08-21,all-time,4064935,BDR-CS | 2026-01 MS Word CLE Series (01/2026) - Platform Poll CQL - IBC,60,LOW SAMPLE,BDR,5.93,5.19,13.19,30.37,0.0,54,135,Salesloft Marketing,20,22,13,5,0,True,2026-01-08
+2026-08-21,all-time,4078004,BDR-CS | 2026-01 What's New in Clio - Poll CQL - IBC,75,LOW SAMPLE,BDR,23.91,7.61,12.99,25.0,0.0,43,92,Salesloft Marketing,35,22,13,5,0,True,2026-01-27
+2026-08-21,all-time,4086085,BDR-CS | 2026-02 CLE (Guide to Not Getting Flagged for AI Use) - Poll CQL - IBC,51,LOW SAMPLE,BDR,11.05,3.87,11.19,34.25,0.0,82,181,Salesloft Marketing,20,13,13,5,0,True,2026-02-05
+2026-08-21,all-time,4092372,BDR-CS | 2026-02 CLE (Soft Skills for Legal Professionals) - Poll CQL - IBC,0,LOW SAMPLE,BDR,0.0,0.0,0.0,16.67,0.0,2,6,Salesloft Marketing,0,0,0,0,0,True,2026-02-13
+2026-08-21,all-time,4107295,BDR-CS | 2026-03 AI Spring Camp - Session CQL - IBC,43,LOW SAMPLE,BDR,7.46,1.49,7.32,37.31,0.0,33,67,Salesloft Marketing,20,0,13,10,0,True,2026-03-03
+2026-08-21,all-time,4152693,BDR-CS | 2026-04 Draft Demo Webinar - Attendee CQL - IBC,51,LOW SAMPLE,BDR,5.06,3.8,7.69,28.69,0.0,161,237,Salesloft Marketing,20,13,13,5,0,True,2026-04-20
+2026-08-21,all-time,4152692,BDR-CS | 2026-04 Draft Demo Webinar - Poll CQL - IBC,71,LOW SAMPLE,BDR,29.41,11.76,6.67,17.65,0.0,12,17,Salesloft Marketing,35,30,6,0,0,True,2026-04-20
+2026-08-21,all-time,4142066,BDR-CS | 2026-04 Get to Know Clio's AI - Poll CQL - IBC,92,LOW SAMPLE,BDR,25.81,9.68,23.33,64.52,0.0,19,31,Salesloft Marketing,35,22,20,15,0,True,2026-04-10
+2026-08-21,all-time,4142130,BDR-CS | 2026-04 Get to Know Clio's AI - Session CQL - IBC,56,LOW SAMPLE,BDR,10.98,4.07,10.4,35.37,0.0,137,246,Salesloft Marketing,20,13,13,10,0,True,2026-04-10
+2026-08-21,all-time,4177530,BDR-CS | 2026-05 Solo & Small Firm Summit - Poll CQL - IBC,80,LOW SAMPLE,BDR,19.89,5.91,9.96,44.62,0.0,168,372,Salesloft Marketing,35,22,13,10,0,True,2026-05-06
+2026-08-21,all-time,4177531,BDR-CS | 2026-05 Solo & Small Firm Summit - Session CQL - IBC,51,LOW SAMPLE,BDR,12.12,3.03,12.5,22.73,0.0,33,66,Salesloft Marketing,20,13,13,5,0,True,2026-05-06
+2026-08-21,all-time,4227751,BDR-CS | 2026-06 - Admin Manage Walkthrough - Reg CQL - IBC ,23,LOW SAMPLE,BDR,3.12,4.17,0.0,35.42,0.0,26,96,Salesloft Marketing,0,13,0,10,0,True,2026-06-05
+2026-08-21,all-time,4227941,BDR-CS | 2026-06 Summer AI CLE - Poll CQL - IBC,58,LOW SAMPLE,BDR,14.92,6.25,6.56,45.77,0.0,187,496,Salesloft Marketing,20,22,6,10,0,True,2026-06-05
+2026-08-21,all-time,4388989,BDR-CS | 2026-07 AI Implementation Workshop - Poll CQL - IBC,68,LOW SAMPLE,BDR,11.11,11.11,8.33,33.33,0.0,11,18,Salesloft Marketing,20,30,13,5,0,True,2026-07-22
+2026-08-21,all-time,4316828,BDR-CS | 2026-07 The Litigator's Lounge - Attendee CQL - IBC,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Salesloft Marketing,0,0,0,0,0,True,2026-07-03
+2026-08-21,all-time,4316827,BDR-CS | 2026-07 The Litigator's Lounge - Poll CQL - IBC,60,LOW SAMPLE,BDR,5.56,16.67,0.0,38.89,0.0,10,18,Salesloft Marketing,20,30,0,10,0,True,2026-07-03
+2026-08-21,all-time,4507886,BDR-CS | 2026-08 Legal AI Summit - Attended Demo CQL - IBC,16,LOW SAMPLE,BDR,2.78,0.0,6.25,36.11,0.0,27,36,Salesloft Marketing,0,0,6,10,0,True,2026-08-11
+2026-08-21,all-time,4507753,BDR-CS | 2026-08 Legal AI Summit - Poll CQL - IBC,65,LOW SAMPLE,BDR,9.71,8.57,9.28,49.71,0.0,152,175,Salesloft Marketing,20,22,13,10,0,True,2026-08-11
+2026-08-21,all-time,4567041,BDR-CS | 2026-08 What's New In Clio (August) - Poll CQL - IBC,31,LOW SAMPLE,BDR,4.17,4.17,11.43,25.0,0.0,20,24,Salesloft Marketing,0,13,13,5,0,True,2026-08-20
+2026-08-21,all-time,4146667,BDR-CS | 2026-14 What's New In Clio - Poll CQL - IBC,80,LOW SAMPLE,BDR,19.55,8.27,13.21,45.11,0.0,77,133,Salesloft Marketing,35,22,13,10,0,True,2026-04-14
+2026-08-21,all-time,4105514,BDR-CS | AI Spring Training - Old AI CQL Ob blast - OBC,5,ARCHIVE,BDR,1.64,0.69,0.0,25.69,0.0,1037,3901,Anton Steinbeck,0,0,0,5,0,False,2026-03-02
+2026-08-21,all-time,3956304,BDR-CS | AI Summer Camp - Poll Respondents,65,LOW SAMPLE,BDR,13.83,7.52,14.33,41.75,0.0,286,412,Salesloft Marketing,20,22,13,10,0,True,2025-08-07
+2026-08-21,all-time,4133314,BDR-CS | April AI Demo Webinar Invite Promo - OBC,5,ARCHIVE,BDR,3.2,1.6,0.0,31.96,0.0,955,2434,Salesloft Marketing,0,0,0,5,0,False,2026-04-01
+2026-08-21,all-time,4021861,BDR-CS | Attorney Webinar - Attended CQLs,16,LOW SAMPLE,BDR,4.44,0.0,5.56,37.78,0.0,40,90,Salesloft Marketing,0,0,6,10,0,True,2025-10-28
+2026-08-21,all-time,4132376,BDR-CS | CAM Demo Incentive - General - OBC,18,LOW SAMPLE,BDR,4.51,1.86,7.72,30.24,0.0,202,377,Salesloft Marketing,0,0,13,5,0,True,2026-03-31
+2026-08-21,all-time,4313280,BDR-CS | CQL Catch All Follow Up,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Salesloft Marketing,0,0,0,0,0,True,2026-07-02
+2026-08-21,all-time,4304860,"BDR-CS | Clio Work Demo, Jul-Aug 2026",50,LOW SAMPLE,BDR,50.0,0.0,0.0,50.0,0.0,3,2,Salesloft Marketing,35,0,0,15,0,True,2026-06-30
+2026-08-21,all-time,3910089,BDR-CS | Cold Outreach June 2025 - Duo,51,LOW SAMPLE,BDR,8.57,2.04,10.65,32.65,0.0,322,245,Kyle Arendale,20,13,13,5,0,True,2025-06-11
+2026-08-21,all-time,4085949,BDR-CS | Content CQL Follow-Up (AI Platform) - IBC,63,LOW SAMPLE,BDR,6.41,2.99,16.67,40.6,0.0,338,468,Salesloft Marketing,20,13,20,10,0,True,2026-02-05
+2026-08-21,all-time,4087583,BDR-CS | Content CQL Follow-Up (Draft) - IBC,38,LOW SAMPLE,BDR,6.62,2.94,0.0,33.82,0.0,83,136,Salesloft Marketing,20,13,0,5,0,True,2026-02-09
+2026-08-21,all-time,4087590,BDR-CS | Content CQL Follow-Up (Grow) - IBC,23,LOW SAMPLE,BDR,4.44,3.33,0.0,42.22,0.0,52,90,Salesloft Marketing,0,13,0,10,0,True,2026-02-09
+2026-08-21,all-time,4128253,BDR-CS | Content CQL Follow-Up (Work) - IBC,30,LOW SAMPLE,BDR,6.0,1.96,0.0,37.97,0.0,476,1683,Salesloft Marketing,20,0,0,10,0,True,2026-03-26
+2026-08-21,all-time,4090769,BDR-CS | Family Law - Clio Work (On-Demand Webinar),85,LOW SAMPLE,BDR,6.25,12.5,19.05,62.5,0.0,9,16,Salesloft Marketing,20,30,20,15,0,True,2026-02-12
+2026-08-21,all-time,4155059,BDR-CS | Family Law - Clio Work Outbound,23,LOW SAMPLE,BDR,2.08,0.0,8.7,35.42,0.0,77,48,Anton Steinbeck,0,0,13,10,0,True,2026-04-22
+2026-08-21,all-time,4065125,BDR-CS | Fastcase Integration - Clio Work Outbound,29,LOW SAMPLE,BDR,1.94,2.91,4.59,48.54,0.0,50,103,Anton Steinbeck,0,13,6,10,0,True,2026-01-09
+2026-08-21,all-time,4127204,BDR-CS | Get to Know Clio's AI,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Jin Lee,0,0,0,0,0,True,2026-03-25
+2026-08-21,all-time,4127189,"BDR-CS | How Law Firms Save Time and Reduce Errors with Document Automation - April 21, 2026",0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Jin Lee,0,0,0,0,0,True,2026-03-25
+2026-08-21,all-time,4412900,BDR-CS | July 2026 Canada Elevate Event Follow Up - Attended,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Salesloft Marketing,0,0,0,0,0,True,2026-07-27
+2026-08-21,all-time,4304834,"BDR-CS | Legal AI Workshop Series, Jul-Aug 2026",0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,1,0,Salesloft Marketing,0,0,0,0,0,True,2026-06-30
+2026-08-21,all-time,4099456,BDR-CS | Level Up with Clio - Attorney Webinar - Poll CQLs - IBC,70,LOW SAMPLE,BDR,9.3,6.98,11.11,58.14,0.0,20,43,Salesloft Marketing,20,22,13,15,0,True,2026-02-23
+2026-08-21,all-time,4103124,BDR-CS | Level Up with Clio - Billing Manager Webinar - Poll CQLs - IBC,0,NO DATA,BDR,0.0,0.0,33.33,0.0,0.0,0,1,Salesloft Marketing,0,0,20,0,0,True,2026-02-26
+2026-08-21,all-time,4103147,BDR-CS | Level Up with Clio - Firm Leader Webinar - Poll CQLs - IBC,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,1,Salesloft Marketing,0,0,0,0,0,True,2026-02-26
+2026-08-21,all-time,4101880,BDR-CS | Level Up with Clio - Legal Admin Webinar - Poll CQLs - IBC,60,LOW SAMPLE,BDR,33.33,0.0,21.05,33.33,0.0,13,15,Salesloft Marketing,35,0,20,5,0,True,2026-02-25
+2026-08-21,all-time,4100742,BDR-CS | Level Up with Clio - Paralegal Webinar - Poll CQLs - IBC,77,LOW SAMPLE,BDR,10.0,5.0,23.53,55.0,0.0,8,20,Salesloft Marketing,20,22,20,15,0,True,2026-02-24
+2026-08-21,all-time,4101885,BDR-CS | Level Up with Clio - Solo Webinar - Poll CQLs - IBC,93,LOW SAMPLE,BDR,28.57,28.57,12.5,64.29,0.0,9,14,Salesloft Marketing,35,30,13,15,0,True,2026-02-25
+2026-08-21,all-time,4119648,BDR-CS | MM LTR CLE - Poll CQLs - IBC,72,LOW SAMPLE,BDR,10.53,5.26,20.0,36.84,0.0,24,57,Salesloft Marketing,20,22,20,10,0,True,2026-03-17
+2026-08-21,all-time,4181055,BDR-CS | Monthly Clio Customer Briefing - OBC,25,LOW SAMPLE,BDR,5.32,0.0,0.0,27.66,0.0,383,376,Anton Steinbeck,20,0,0,5,0,True,2026-05-08
+2026-08-21,all-time,3988481,BDR-CS | Paralegal Essentials Resource Page - CQLs,43,LOW SAMPLE,BDR,5.71,0.0,10.0,37.14,0.0,19,35,Salesloft Marketing,20,0,13,10,0,True,2025-09-18
+2026-08-21,all-time,4119566,BDR-CS | Pt 2 Level Up with Clio - Attorney Webinar - Attendee CQLs - IBC,43,LOW SAMPLE,BDR,8.57,0.95,8.97,37.14,0.0,44,105,Salesloft Marketing,20,0,13,10,0,True,2026-03-17
+2026-08-21,all-time,4119560,BDR-CS | Pt 2 Level Up with Clio - Attorney Webinar - Poll CQLs - IBC,81,LOW SAMPLE,BDR,20.93,11.63,3.03,39.53,0.0,19,43,Salesloft Marketing,35,30,6,10,0,True,2026-03-17
+2026-08-21,all-time,4122872,BDR-CS | Pt 2 Level Up with Clio - Billing Manager Webinar - Attendee CQLs - IBC,80,LOW SAMPLE,BDR,22.22,33.33,0.0,77.78,0.0,7,9,Salesloft Marketing,35,30,0,15,0,True,2026-03-20
+2026-08-21,all-time,4122871,BDR-CS | Pt 2 Level Up with Clio - Firm Leader Webinar - Attendee CQLs - IBC,15,LOW SAMPLE,BDR,0.0,0.0,0.0,66.67,0.0,6,12,Salesloft Marketing,0,0,0,15,0,True,2026-03-20
+2026-08-21,all-time,4122868,BDR-CS | Pt 2 Level Up with Clio - Firm Leader Webinar - Poll CQLs - IBC,10,LOW SAMPLE,BDR,0.0,0.0,0.0,40.0,0.0,3,5,Salesloft Marketing,0,0,0,10,0,True,2026-03-20
+2026-08-21,all-time,4122164,BDR-CS | Pt 2 Level Up with Clio - Legal Admin Webinar - Attendee CQLs - IBC,72,LOW SAMPLE,BDR,10.26,6.41,15.38,43.59,0.0,39,78,Salesloft Marketing,20,22,20,10,0,True,2026-03-19
+2026-08-21,all-time,4122163,BDR-CS | Pt 2 Level Up with Clio - Legal Admin Webinar - Poll CQLs - IBC,72,LOW SAMPLE,BDR,14.29,7.14,20.0,46.43,0.0,12,28,Salesloft Marketing,20,22,20,10,0,True,2026-03-19
+2026-08-21,all-time,4120602,BDR-CS | Pt 2 Level Up with Clio - Paralegal Webinar - Attendee CQLs - IBC,30,LOW SAMPLE,BDR,3.7,1.48,23.6,35.56,0.0,60,135,Salesloft Marketing,0,0,20,10,0,True,2026-03-18
+2026-08-21,all-time,4120574,BDR-CS | Pt 2 Level Up with Clio - Paralegal Webinar - Poll CQLs - IBC,55,LOW SAMPLE,BDR,7.14,5.36,12.82,19.64,0.0,22,56,Salesloft Marketing,20,22,13,0,0,True,2026-03-18
+2026-08-21,all-time,4122165,BDR-CS | Pt 2 Level Up with Clio - Solo Webinar - Attendee CQLs - IBC,20,LOW SAMPLE,BDR,0.0,0.0,15.0,19.23,0.0,10,26,Salesloft Marketing,0,0,20,0,0,True,2026-03-19
+2026-08-21,all-time,4122166,BDR-CS | Pt 2 Level Up with Clio - Solos Webinar - Poll CQLs - IBC,93,LOW SAMPLE,BDR,116.67,16.67,11.11,66.67,0.0,6,6,Salesloft Marketing,35,30,13,15,0,True,2026-03-19
+2026-08-21,all-time,3948658,BDR-CS | Tradeshow: Demo Request via Conference CQLs (Multi-product) ,100,LOW SAMPLE,BDR,37.5,12.5,42.86,50.0,0.0,6,8,Salesloft Marketing,35,30,20,15,0,True,2025-07-30
+2026-08-21,all-time,3977603,BDR-CS | Webinar Follow Up- DRAFT POLL CQLs,80,LOW SAMPLE,BDR,15.13,6.09,14.45,37.91,0.0,270,575,Salesloft Marketing,35,22,13,10,0,True,2025-09-04
+2026-08-21,all-time,4127179,BDR-CS | What's New in Clio - April 2026,5,LOW SAMPLE,BDR,0.0,0.0,0.0,33.33,0.0,3,3,Jin Lee,0,0,0,5,0,True,2026-03-25
+2026-08-21,all-time,4514400,BDR-CS | What's New in Clio - August 2026,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Jin Lee,0,0,0,0,0,True,2026-08-12
+2026-08-21,all-time,4067686,BDR-CS | What's New in Clio - January 2026,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Salesloft Marketing,0,0,0,0,0,True,2026-01-13
+2026-08-21,all-time,4277072,BDR-CS | What's New in Clio - July 2026,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Jin Lee,0,0,0,0,0,True,2026-06-22
+2026-08-21,all-time,4056438,BDR-CS | Work Free Trial Engagement Outbound,21,LOW SAMPLE,BDR,2.78,0.31,6.57,50.31,0.0,142,324,Salesloft Marketing,0,0,6,15,0,True,2025-12-16
+2026-08-21,all-time,4164031,BDR-CS | [Defendant] Complaint Filing - Clio Work Outreach - OBC,25,LOW SAMPLE,BDR,0.0,1.57,16.95,26.77,0.0,77,127,Salesloft Marketing,0,0,20,5,0,True,2026-04-29
+2026-08-21,all-time,4310599,BDR-CS | [Docket Alarm] All Filings - Clio Work Outreach - OBC,16,LOW SAMPLE,BDR,1.87,1.56,5.74,38.01,0.0,216,321,Salesloft Marketing,0,0,6,10,0,True,2026-07-01
+2026-08-21,all-time,4163374,BDR-CS | [Plaintiff] Complaint Filing - Clio Work Outreach - OBC,16,ARCHIVE,BDR,2.46,1.6,6.69,36.65,0.0,535,936,Salesloft Marketing,0,0,6,10,0,False,2026-04-29
+2026-08-21,all-time,4129429,BDR-CS-Draft Canada Launch Cadence - OBC,70,LOW SAMPLE,BDR,33.33,16.67,0.0,33.33,0.0,8,12,Salesloft Marketing,35,30,0,5,0,True,2026-03-27
+2026-08-21,all-time,4260976,BDR-CS-V Abandoned Cart - Clio Work (not Apex),36,ARCHIVE,BDR,4.88,3.64,9.29,41.79,0.0,510,1127,Nikki Raw,0,13,13,10,0,False,2026-06-18
+2026-08-21,all-time,4200294,BDR-CS-V Apex 30 day Work Trial - Pre-trial BDR cadence,70,LOW SAMPLE,BDR,100.0,0.0,100.0,100.0,0.0,1,1,Nikki Raw,35,0,20,15,0,True,2026-05-20
+2026-08-21,all-time,4461999,BDR-CS-V Apex AUGUST CANADA APEX | Firms 2 - 4,36,ARCHIVE,BDR,2.35,3.23,12.56,37.29,0.0,5928,5541,Nikki Raw,0,13,13,10,0,False,2026-08-04
+2026-08-21,all-time,4471545,BDR-CS-V Apex AUGUST CANADA APEX | SOLOS,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Nikki Raw,0,0,0,0,0,True,2026-08-05
+2026-08-21,all-time,4201525,BDR-CS-V Apex COHORT 1 | Firms 2 - 4,51,REVIEW,BDR,9.68,4.2,8.4,34.73,0.0,1139,1405,Nikki Raw,20,13,13,5,0,False,2026-05-21
+2026-08-21,all-time,4208777,BDR-CS-V Apex COHORT 2 | Firms 2 - 4,49,ARCHIVE,BDR,5.24,4.03,6.03,38.82,0.0,1215,2231,Nikki Raw,20,13,6,10,0,False,2026-05-27
+2026-08-21,all-time,4225407,BDR-CS-V Apex COHORT 3 | Firms 2 - 4,56,REVIEW,BDR,6.02,3.59,8.28,39.46,0.0,2464,3624,Nikki Raw,20,13,13,10,0,False,2026-06-04
+2026-08-21,all-time,4238467,BDR-CS-V Apex COHORT 4 | Firms 2 - 4,18,ARCHIVE,BDR,2.16,1.85,7.03,27.06,0.0,8109,10838,Nikki Raw,0,0,13,5,0,False,2026-06-10
+2026-08-21,all-time,4480396,BDR-CS-V Apex COHORT 5 | revised new dates,36,ARCHIVE,BDR,3.61,4.36,8.2,38.98,0.0,6521,6014,Nikki Raw,0,13,13,10,0,False,2026-08-06
+2026-08-21,all-time,4555794,BDR-CS-V Apex COHORT 6,23,LOW SAMPLE,BDR,0.0,4.0,0.0,48.0,0.0,11,25,Nikki Raw,0,13,0,10,0,True,2026-08-19
+2026-08-21,all-time,4285602,BDR-CS-V Apex Solos - CALL ONLY; Cohort 1,0,NO DATA,BDR,0.0,0.0,6.25,0.0,0.0,0,0,Nikki Raw,0,0,6,0,0,True,2026-06-24
+2026-08-21,all-time,4201331,BDR-CS-V SOLOS - Apex 30 day Work Trial - Pre-trial BDR cadence,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Nikki Raw,0,0,0,0,0,True,2026-05-21
+2026-08-21,all-time,4257306,BDR-CS-V SOLOS Batch 2 Apex,60,LOW SAMPLE,BDR,14.71,13.24,0.0,42.65,0.0,23,68,Nikki Raw,20,30,0,10,0,True,2026-06-17
+2026-08-21,all-time,4214165,BDR-CS-V SOLOS COHORT 1 Apex 30 day Work Trial,23,ARCHIVE,BDR,2.85,3.29,0.0,35.86,0.0,660,2914,Nikki Raw,0,13,0,10,0,False,2026-05-29
+2026-08-21,all-time,4220232,BDR-CS-V SOLOS COHORT 2 Apex 30 day Work Trial,23,LOW SAMPLE,BDR,2.15,2.49,0.0,36.48,0.0,270,3487,Nikki Raw,0,13,0,10,0,True,2026-06-02
+2026-08-21,all-time,4225422,BDR-CS-V SOLOS COHORT 3 Apex 30 day Work Trial,23,ARCHIVE,BDR,2.28,2.13,0.0,38.13,0.0,1549,7105,Nikki Raw,0,13,0,10,0,False,2026-06-04
+2026-08-21,all-time,4238466,BDR-CS-V SOLOS COHORT 4 Apex 30 day Work Trial,5,ARCHIVE,BDR,1.36,1.86,0.0,30.55,0.0,925,12955,Nikki Raw,0,0,0,5,0,False,2026-06-10
+2026-08-21,all-time,4178964,BDR-CS-V | PLG Work Trial FU,93,LOW SAMPLE,BDR,21.84,16.48,8.59,50.57,0.0,155,261,Nikki Raw,35,30,13,15,0,True,2026-05-07
+2026-08-21,all-time,3851767,BDR-CS: 2026-04-02 Webinar: Intake CLE - Grow Demo CQLs-IBC,67,LOW SAMPLE,BDR,11.29,8.06,17.83,30.65,0.0,72,124,Salesloft Marketing,20,22,20,5,0,True,2025-04-07
+2026-08-21,all-time,4077612,BDR-CS: AI CQL= Downloaded a Guide (AI Content) - IBC [archived - do not use],43,LOW SAMPLE,BDR,7.14,1.79,8.0,37.5,0.0,32,56,Salesloft Marketing,20,0,13,10,0,True,2026-01-27
+2026-08-21,all-time,4134072,BDR-CS: AI Suite Demo Webinar - Invite,5,LOW SAMPLE,BDR,0.0,0.0,0.0,25.6,0.0,169,168,Salesloft Marketing,0,0,0,5,0,True,2026-04-02
+2026-08-21,all-time,3947253,BDR-CS: August 2025 Webinar Events Email Invite,5,ARCHIVE,BDR,3.23,0.12,0.0,27.98,0.0,3374,3249,Salesloft Marketing,0,0,0,5,0,False,2025-07-29
+2026-08-21,all-time,3978197,BDR-CS: CLE Optional Draft Walkthrough - CQL Follow-Up ,65,LOW SAMPLE,BDR,7.14,5.1,9.8,37.76,0.0,56,98,Salesloft Marketing,20,22,13,10,0,True,2025-09-05
+2026-08-21,all-time,3476900,BDR-CS: Canada Grow Cadence,5,ARCHIVE,BDR,2.24,0.68,0.0,29.99,0.0,611,2054,Sammy Poortaghi,0,0,0,5,0,False,2024-04-05
+2026-08-21,all-time,4087461,BDR-CS: Clio Draft Canada (US Server) Outbound Cadence,43,LOW SAMPLE,BDR,3.74,2.78,15.59,35.22,0.0,412,1150,Anton Steinbeck,0,13,20,10,0,True,2026-02-09
+2026-08-21,all-time,3926329,BDR-CS: Clio Draft Demo Request,88,KEEP,BDR,43.05,10.88,11.65,40.14,0.0,1272,1856,Sammy Poortaghi,35,30,13,10,0,False,2025-07-02
+2026-08-21,all-time,4052667,BDR-CS: Clio Manage AI Demo Webinar - Invite,5,LOW SAMPLE,BDR,2.9,0.72,0.0,28.26,0.0,135,138,Salesloft Marketing,0,0,0,5,0,True,2025-12-09
+2026-08-21,all-time,4013180,BDR-CS: Clio Work Demo Request,80,KEEP,BDR,31.27,5.81,10.72,37.27,0.0,1933,3236,Sammy Poortaghi,35,22,13,10,0,False,2025-10-17
+2026-08-21,all-time,4021814,BDR-CS: Clio Work Demo Webinar (Weekly on Friday) - Invite Copy ,5,ARCHIVE,BDR,4.6,0.46,0.0,31.75,0.0,641,652,Salesloft Marketing,0,0,0,5,0,False,2025-10-28
+2026-08-21,all-time,4193342,BDR-CS: Clio Work Litigation Webinar - Poll CQLs - IBC,63,LOW SAMPLE,BDR,33.33,4.17,0.0,62.5,0.0,13,24,Salesloft Marketing,35,13,0,15,0,True,2026-05-15
+2026-08-21,all-time,4193398,BDR-CS: Clio Work Litigation Webinar - Registered (Attended + Not Attended) - IBC,51,LOW SAMPLE,BDR,5.0,3.75,10.0,27.5,0.0,54,160,Salesloft Marketing,20,13,13,5,0,True,2026-05-15
+2026-08-21,all-time,4027144,BDR-CS: Clio Work OPT OUT CQLs,88,LOW SAMPLE,BDR,15.41,12.19,10.0,43.01,0.0,207,279,Sammy Poortaghi,35,30,13,10,0,True,2025-11-04
+2026-08-21,all-time,4013445,BDR-CS: Clio Work Outbound,18,ARCHIVE,BDR,3.65,0.55,10.94,27.91,0.0,5687,10605,Sammy Poortaghi,0,0,13,5,0,False,2025-10-17
+2026-08-21,all-time,4190221,BDR-CS: Clio Work PA Webinars - Invite (May 2026),30,ARCHIVE,BDR,6.9,0.55,0.0,36.69,0.0,777,913,Salesloft Marketing,20,0,0,10,0,False,2026-05-14
+2026-08-21,all-time,4193374,BDR-CS: Clio Work Transactional Webinar - Poll CQLs - IBC,85,LOW SAMPLE,BDR,63.64,9.09,7.69,54.55,0.0,5,11,Salesloft Marketing,35,22,13,15,0,True,2026-05-15
+2026-08-21,all-time,4193410,BDR-CS: Clio Work Transactional Webinar - Registered (Attended + Not Attended) - IBC,43,LOW SAMPLE,BDR,7.14,2.68,2.7,41.07,0.0,31,112,Salesloft Marketing,20,13,0,10,0,True,2026-05-15
+2026-08-21,all-time,4024594,BDR-CS: Clio Work Webinar - Registered (Attended + Not Attended),38,LOW SAMPLE,BDR,5.13,1.41,13.86,33.97,0.0,293,995,Salesloft Marketing,20,0,13,5,0,True,2025-10-31
+2026-08-21,all-time,4133512,BDR-CS: Customer AMA Webinar (AI Focus) - Invite,43,LOW SAMPLE,BDR,12.98,3.82,0.0,41.22,0.0,130,131,Salesloft Marketing,20,13,0,10,0,True,2026-04-01
+2026-08-21,all-time,4134164,BDR-CS: Customer AMA Webinar (AI Focus) - Invite,5,LOW SAMPLE,BDR,4.86,0.0,0.0,30.77,0.0,248,247,Salesloft Marketing,0,0,0,5,0,True,2026-04-02
+2026-08-21,all-time,4134159,BDR-CS: Customer AMA Webinar (Clio Work) - Invite,25,LOW SAMPLE,BDR,7.61,1.09,0.0,31.52,0.0,184,184,Salesloft Marketing,20,0,0,5,0,True,2026-04-02
+2026-08-21,all-time,4133526,BDR-CS: Customer AMA Webinar (Clio Work) - Invite,5,LOW SAMPLE,BDR,1.12,0.56,0.0,30.9,0.0,178,178,Salesloft Marketing,0,0,0,5,0,True,2026-04-01
+2026-08-21,all-time,4133528,BDR-CS: Customer AMA Webinar (Draft) - General Invite,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Salesloft Marketing,0,0,0,0,0,True,2026-04-01
+2026-08-21,all-time,4133522,BDR-CS: Customer AMA Webinar (Draft) - Open Opp Invite,58,LOW SAMPLE,BDR,15.62,3.12,0.0,41.67,0.0,95,96,Salesloft Marketing,35,13,0,10,0,True,2026-04-01
+2026-08-21,all-time,4133521,BDR-CS: Customer AMA Webinar (Manage AI) - Invite,30,LOW SAMPLE,BDR,6.94,0.69,0.0,39.58,0.0,147,144,Salesloft Marketing,20,0,0,10,0,True,2026-04-01
+2026-08-21,all-time,3968619,BDR-CS: Customer Subscription Upgrade Demo Request,95,LOW SAMPLE,BDR,48.39,12.9,16.67,35.48,0.0,44,62,Sammy Poortaghi,35,30,20,10,0,True,2025-08-22
+2026-08-21,all-time,3976330,BDR-CS: Draft - Document Automation Focus - No Court forms,11,LOW SAMPLE,BDR,1.59,0.4,3.42,21.03,0.0,79,252,Sammy Poortaghi,0,0,6,5,0,True,2025-09-03
+2026-08-21,all-time,3933736,BDR-CS: Draft - Visited Feature Page CQL,38,LOW SAMPLE,BDR,7.99,1.92,11.58,31.31,0.0,175,313,Sammy Poortaghi,20,0,13,5,0,True,2025-07-13
+2026-08-21,all-time,3932479,BDR-CS: Draft Walkthrough Webinar CQL Follow-Up,60,LOW SAMPLE,BDR,6.18,5.62,8.04,31.46,0.0,68,178,Salesloft Marketing,20,22,13,5,0,True,2025-07-10
+2026-08-21,all-time,4255942,BDR-CS: Essentials to Advanced Upgrade Outreach - Subscription Page ‘Abandoned Cart’ - Copy,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Sammy Poortaghi,0,0,0,0,0,True,2026-06-17
+2026-08-21,all-time,4147661,BDR-CS: Essentials upsell - Plan Harmonization,80,LOW SAMPLE,BDR,7.61,13.2,15.0,40.1,0.0,103,197,Anton Steinbeck,20,30,20,10,0,True,2026-04-15
+2026-08-21,all-time,3836839,BDR-CS: Feature Heavy  - Copy,80,LOW SAMPLE,BDR,16.67,16.67,0.0,50.0,0.0,5,6,Shannon Wolfe,35,30,0,15,0,True,2025-03-21
+2026-08-21,all-time,3634939,BDR-CS: Feature Heavy Accounting ,18,ARCHIVE,BDR,3.13,0.7,11.95,25.44,0.0,5059,11924,Sammy Poortaghi,0,0,13,5,0,False,2024-07-24
+2026-08-21,all-time,3956782,BDR-CS: Feature Heavy Draft Outbound - Wills & Estates/Family,18,LOW SAMPLE,BDR,1.16,0.45,10.19,25.5,0.0,461,1553,Sammy Poortaghi,0,0,13,5,0,True,2025-08-08
+2026-08-21,all-time,3927682,BDR-CS: Feature Heavy Draft Outbound Cadence,18,ARCHIVE,BDR,2.97,0.6,7.04,25.07,0.0,2396,5361,Sammy Poortaghi,0,0,13,5,0,False,2025-07-04
+2026-08-21,all-time,3932309,BDR-CS: Feature Heavy Draft Outbound Cadence - Copy,25,LOW SAMPLE,BDR,7.5,0.0,0.0,22.5,0.0,21,40,Anna Ryczko,20,0,0,5,0,True,2025-07-10
+2026-08-21,all-time,3306014,BDR-CS: Feature Heavy Grow,25,ARCHIVE,BDR,4.52,0.74,17.19,25.7,0.0,4958,12497,Jordan Stuart,0,0,20,5,0,False,2023-11-03
+2026-08-21,all-time,3372184,BDR-CS: Feature Heavy Personal Injury ,45,ARCHIVE,BDR,6.28,1.48,17.0,27.06,0.0,2164,4394,Sammy Poortaghi,20,0,20,5,0,False,2024-01-19
+2026-08-21,all-time,3395367,"BDR-CS: Grow Demo Webinar-  ""Watch How Law Firms Use Clio for Client Intake""",45,LOW SAMPLE,BDR,11.83,1.54,17.03,31.95,0.0,283,651,Jordan Stuart,20,0,20,5,0,True,2024-02-08
+2026-08-21,all-time,4103869,BDR-CS: Manage AI Free Trial Pilot: March 2026 [Pre-Trial] - IBC,50,LOW SAMPLE,BDR,25.0,0.0,0.0,50.0,0.0,1,4,Salesloft Marketing,35,0,0,15,0,True,2026-02-27
+2026-08-21,all-time,4057832,BDR-CS: Manage AI Webinar - Poll CQL - IBC,75,LOW SAMPLE,BDR,16.98,5.66,11.39,20.75,0.0,36,53,Salesloft Marketing,35,22,13,5,0,True,2025-12-17
+2026-08-21,all-time,4071526,BDR-CS: Manage AI Webinar - Reg + Attendee CQL - IBC,33,LOW SAMPLE,BDR,8.9,1.37,8.33,15.07,0.0,76,146,Salesloft Marketing,20,0,13,0,0,True,2026-01-20
+2026-08-21,all-time,4057564,BDR-CS: Manage AI Webinar - Registered (Attended + Not Attended),56,LOW SAMPLE,BDR,7.58,3.03,13.92,48.86,0.0,85,264,Salesloft Marketing,20,13,13,10,0,True,2025-12-17
+2026-08-21,all-time,4154866,BDR-CS: Personal Injury Add-on + Work,38,LOW SAMPLE,BDR,7.83,0.36,8.47,22.06,0.0,156,281,Anton Steinbeck,20,0,13,5,0,True,2026-04-22
+2026-08-21,all-time,3935745,BDR-CS: Personal Injury Outbound Cadence PART 2 ,18,ARCHIVE,BDR,2.59,0.38,8.48,20.57,0.0,1299,2358,Sammy Poortaghi,0,0,13,5,0,False,2025-07-15
+2026-08-21,all-time,4024841,BDR-CS: Webinar Poll Follow-Up: Work CQLs - IBC,73,LOW SAMPLE,BDR,27.16,5.56,6.83,43.21,0.0,92,162,Salesloft Marketing,35,22,6,10,0,True,2025-10-31
+2026-08-21,all-time,3691796,BDR-Customer Sales - Hot Leads - Call Only Cadence,0,LOW SAMPLE,BDR,0.0,0.0,2.78,0.0,0.0,152,0,Brett Blackney,0,0,0,0,0,True,2024-09-24
+2026-08-21,all-time,4305832,BDR-ENT - Auto - Insurance Sprint,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-21,all-time,4323133,BDR-ENT - BigLaw - Inbound Demo Form Cadence,39,LOW SAMPLE,BDR,5.56,2.78,4.26,16.67,0.0,14,36,Tanpreet Anand,20,13,6,0,0,True,2026-07-07
+2026-08-21,all-time,4305779,BDR-ENT - BigLaw - MQL Tier A1 ,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-21,all-time,4305793,BDR-ENT - BigLaw - MQL Tier A2,18,LOW SAMPLE,BDR,2.54,2.54,0.0,31.36,0.0,41,118,Brett Blackney,0,13,0,5,0,True,2026-06-30
+2026-08-21,all-time,4380633,BDR-ENT - BigLaw - Vincent AI Free Trial Cadence,35,LOW SAMPLE,BDR,0.0,12.5,0.0,31.25,0.0,16,16,Tanpreet Anand,0,30,0,5,0,True,2026-07-21
+2026-08-21,all-time,4323211,BDR-ENT - Corporate - Inbound Demo Form Cadence,38,LOW SAMPLE,BDR,6.67,1.11,7.77,26.67,0.0,34,90,Tanpreet Anand,20,0,13,5,0,True,2026-07-07
+2026-08-21,all-time,4305783,BDR-ENT - Corporate - MQL Tier A1,27,LOW SAMPLE,BDR,1.41,5.63,0.0,25.35,0.0,20,71,Brett Blackney,0,22,0,5,0,True,2026-06-30
+2026-08-21,all-time,4305794,BDR-ENT - Corporate - MQL Tier A2,0,LOW SAMPLE,BDR,0.0,0.0,0.0,12.82,0.0,54,156,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-21,all-time,4380560,BDR-ENT - Corporate - Vincent AI Free Trial Cadence,38,LOW SAMPLE,BDR,5.0,1.67,12.7,25.0,0.0,33,60,Tanpreet Anand,20,0,13,5,0,True,2026-07-21
+2026-08-21,all-time,4305836,BDR-ENT - Defense - US Insurance - Tier 2,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-21,all-time,4305814,BDR-ENT - Health - Insurance Sprint,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-21,all-time,4305827,BDR-ENT - Liability/P&C - Insurance Sprint,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-21,all-time,4305797,BDR-ENT - MQL - Tier B,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-21,all-time,4305801,BDR-ENT - MQL - Tier C,5,LOW SAMPLE,BDR,1.54,1.54,0.0,27.69,0.0,37,65,Brett Blackney,0,0,0,5,0,True,2026-06-30
+2026-08-21,all-time,4305830,BDR-ENT - Speciality - Insurance Sprint,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-21,all-time,4375603,BDR-ENT - Trigger Based Cadence - Universal_Outbound,25,LOW SAMPLE,BDR,14.29,0.0,0.0,28.57,0.0,5,7,Tanpreet Anand,20,0,0,5,0,True,2026-07-20
+2026-08-21,all-time,4305833,BDR-ENT - UK/EURO - Insurance Sprint,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-06-30
+2026-08-21,all-time,4253328,BDR-GOV - Closed Lost - Revival,35,LOW SAMPLE,BDR,0.0,0.0,100.0,100.0,0.0,1,1,Aaqib Quraishi,0,0,20,15,0,True,2026-06-16
+2026-08-21,all-time,4257065,BDR-GOV Carahsoft Webinar Attendees - April 26,46,LOW SAMPLE,BDR,9.09,4.55,11.11,18.18,0.0,33,44,Aaqib Quraishi,20,13,13,0,0,True,2026-06-17
+2026-08-21,all-time,3946557,BDR-MM - Call Only Cadence,13,ARCHIVE,BDR,0.0,0.0,8.09,0.0,0.0,1949,0,Aaqib Quraishi,0,0,13,0,0,False,2025-07-28
+2026-08-21,all-time,4295211,BDR-MM - Dallas Lunch - W-3,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Aaqib Quraishi,0,0,0,0,0,True,2026-06-26
+2026-08-21,all-time,4295205,BDR-MM - FW Dinner - W-3,23,LOW SAMPLE,BDR,0.0,0.0,11.11,47.06,0.0,17,17,Aaqib Quraishi,0,0,13,10,0,True,2026-06-26
+2026-08-21,all-time,4148573,BDR-MM - In person conference - ALA 2026,44,LOW SAMPLE,BDR,5.0,2.5,3.7,20.0,0.0,12,40,Ashley Duffy,20,13,6,5,0,True,2026-04-16
+2026-08-21,all-time,4136824,BDR-MM 2026 - Revised Cadence,5,ARCHIVE,BDR,0.0,0.54,0.0,26.15,0.0,1120,4298,Aaqib Quraishi,0,0,0,5,0,False,2026-04-07
+2026-08-21,all-time,4147917,BDR-MM April 26 - PI AMA,5,LOW SAMPLE,BDR,0.0,0.0,0.0,20.88,0.0,183,182,Aaqib Quraishi,0,0,0,5,0,True,2026-04-15
+2026-08-21,all-time,4328557,BDR-MM OB - General Litigation 2026,11,LOW SAMPLE,BDR,0.48,0.24,4.1,32.78,0.0,222,421,Aaqib Quraishi,0,0,6,5,0,True,2026-07-08
+2026-08-21,all-time,4313083,BDR-MM OB - Plaintiff Litigation 2026,11,LOW SAMPLE,BDR,0.0,0.0,5.08,33.33,0.0,44,72,Aaqib Quraishi,0,0,6,5,0,True,2026-07-02
+2026-08-21,all-time,4328532,BDR-MM OB - Transactional Law 2026,16,LOW SAMPLE,BDR,0.0,0.0,4.96,38.06,0.0,66,134,Aaqib Quraishi,0,0,6,10,0,True,2026-07-08
+2026-08-21,all-time,4149742,BDR-Outbound-Velocity-APRIL2026,6,ARCHIVE,BDR,0.4,0.11,6.21,18.8,0.0,1069,3526,Jessica Bayard,0,0,6,0,0,False,2026-04-17
+2026-08-21,all-time,4087549,BDR-Outbound-Velocity-February26,13,LOW SAMPLE,BDR,0.19,0.19,7.93,19.55,0.0,311,1074,Jessica Bayard,0,0,13,0,0,True,2026-02-09
+2026-08-21,all-time,4295105,BDR-Outbound-Velocity-June2026,11,LOW SAMPLE,BDR,0.25,0.51,3.64,27.48,0.0,147,393,Jessica Bayard,0,0,6,5,0,True,2026-06-26
+2026-08-21,all-time,4192606,BDR-Outbound-Velocity-MAY2026,6,ARCHIVE,BDR,0.52,0.05,6.79,19.9,0.0,731,2106,Jessica Bayard,0,0,6,0,0,False,2026-05-15
+2026-08-21,all-time,4116412,BDR-Outbound-Velocity-March2026,6,LOW SAMPLE,BDR,1.03,0.27,6.75,19.1,0.0,495,1838,Jessica Bayard,0,0,6,0,0,True,2026-03-13
+2026-08-21,all-time,4080025,BDR-S  Vincent CA New Senate Bill SB 574 - West Coast blitz,6,LOW SAMPLE,BDR,0.0,1.06,6.67,16.76,0.0,327,376,Kaeli Finlayson,0,0,6,0,0,True,2026-01-29
+2026-08-21,all-time,3976935,BDR-S - AQL - Draft - Ebook Downloads,18,LOW SAMPLE,BDR,2.9,1.11,9.32,32.74,0.0,192,449,John McGurk,0,0,13,5,0,True,2025-09-03
+2026-08-21,all-time,3976937,BDR-S - AQL - Draft Webinar,18,LOW SAMPLE,BDR,3.99,1.09,8.75,34.06,0.0,175,276,John McGurk,0,0,13,5,0,True,2025-09-03
+2026-08-21,all-time,3928856,BDR-S - CSQL,100,LOW SAMPLE,BDR,200.0,33.33,33.33,100.0,0.0,7,3,Cooper Feldman,35,30,20,15,0,True,2025-07-07
+2026-08-21,all-time,4217646,BDR-S - California AI Compliance - Prospecting,5,LOW SAMPLE,BDR,0.14,0.58,2.7,20.41,0.0,466,691,Abby Openshaw,0,0,0,5,0,True,2026-06-01
+2026-08-21,all-time,3096741,BDR-S - Call Only Cadence,13,ARCHIVE,BDR,0.0,0.0,7.87,0.0,0.0,4035,0,Daniel Newton,0,0,13,0,0,False,2023-05-02
+2026-08-21,all-time,4193173,BDR-S - Call Only Cadence,6,LOW SAMPLE,BDR,0.0,0.0,5.11,0.0,0.0,194,0,Cooper Feldman,0,0,6,0,0,True,2026-05-15
+2026-08-21,all-time,4017696,BDR-S - Clio AI - AQL,11,ARCHIVE,BDR,1.22,0.69,5.52,27.99,0.0,3200,9565,Brett Blackney,0,0,6,5,0,False,2025-10-22
+2026-08-21,all-time,4018607,BDR-S - Clio Work - ClosedLost,18,LOW SAMPLE,BDR,1.45,1.3,7.43,24.5,0.0,460,1310,John McGurk,0,0,13,5,0,True,2025-10-23
+2026-08-21,all-time,4042251,BDR-S - ClioWork / vLex AQL,11,ARCHIVE,BDR,0.79,0.12,5.17,22.14,0.0,1515,4034,Ryan Zurakowski,0,0,6,5,0,False,2025-11-21
+2026-08-21,all-time,4153274,"BDR-S - ClioWork Standalone, AI Intent YTD",0,ARCHIVE,BDR,0.1,0.15,0.0,17.16,0.0,2556,10242,John McGurk,0,0,0,0,0,False,2026-04-21
+2026-08-21,all-time,3764827,BDR-S - Closed Lost - 2025,51,REVIEW,BDR,6.7,2.8,7.82,26.66,0.0,9637,10465,John McGurk,20,13,13,5,0,False,2024-12-30
+2026-08-21,all-time,4083836,BDR-S - Divorce Month Family Law Sprint Q1 2026,11,LOW SAMPLE,BDR,0.75,0.61,5.18,21.68,0.0,465,1467,Kaeli Finlayson,0,0,6,5,0,True,2026-02-03
+2026-08-21,all-time,4233133,BDR-S - Docket Alarm - Defendant,10,LOW SAMPLE,BDR,0.0,0.0,2.27,35.71,0.0,7,28,John McGurk,0,0,0,10,0,True,2026-06-09
+2026-08-21,all-time,4233092,BDR-S - Docket Alarm - Plaintiff,11,LOW SAMPLE,BDR,1.61,0.0,4.76,28.49,0.0,72,186,John McGurk,0,0,6,5,0,True,2026-06-09
+2026-08-21,all-time,4092303,BDR-S - EMAIL ONLY Divorce Month Family Law Sprint,0,ARCHIVE,BDR,0.05,0.16,0.0,18.19,0.0,683,3640,Kaeli Finlayson,0,0,0,0,0,False,2026-02-13
+2026-08-21,all-time,4075112,BDR-S - MS WEBINAR CLE,11,LOW SAMPLE,BDR,0.26,0.79,4.92,31.93,0.0,86,379,John McGurk,0,0,6,5,0,True,2026-01-23
+2026-08-21,all-time,4103813,BDR-S - No Show Cadence - 2026,60,LOW SAMPLE,BDR,13.74,5.34,7.87,29.01,0.0,75,131,Kaeli Finlayson,20,22,13,5,0,True,2026-02-27
+2026-08-21,all-time,2953399,BDR-S - No Show Cadence - Sept 2025,75,LOW SAMPLE,BDR,17.64,7.2,13.82,30.01,0.0,495,1083,John McGurk,35,22,13,5,0,True,2023-01-19
+2026-08-21,all-time,4102883,BDR-S - Post Demo Booked Cadence,67,LOW SAMPLE,BDR,56.47,9.71,0.0,48.82,0.0,292,340,Kaeli Finlayson,35,22,0,10,0,True,2026-02-26
+2026-08-21,all-time,3923794,BDR-S - Scorpion x Clio,11,LOW SAMPLE,BDR,3.81,0.0,6.8,29.66,0.0,159,236,Cooper Feldman,0,0,6,5,0,True,2025-06-30
+2026-08-21,all-time,4370009,BDR-S - Webinar - Litigator's Lounge Follow-Up Cadence - en-US - CNV,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Brett Blackney,0,0,0,0,0,True,2026-07-17
+2026-08-21,all-time,3934755,BDR-S CORE Cold Draft-Only Customer,11,LOW SAMPLE,BDR,1.94,0.71,6.53,28.24,0.0,330,981,Hannah Hudson,0,0,6,5,0,True,2025-07-14
+2026-08-21,all-time,4106678,BDR-S ClioWork Email Only 1.0,5,ARCHIVE,BDR,0.07,0.11,0.0,21.44,0.0,7257,27537,Hannah Hudson,0,0,0,5,0,False,2026-03-03
+2026-08-21,all-time,3881137,BDR-S Cold Outbound 2025,11,ARCHIVE,BDR,0.73,1.06,6.0,21.21,0.0,1822,3969,Kaeli Finlayson,0,0,6,5,0,False,2025-05-09
+2026-08-21,all-time,4124493,BDR-S Enriched Accounts - Litigators,11,LOW SAMPLE,BDR,1.37,0.91,4.54,26.94,0.0,362,219,John McGurk,0,0,6,5,0,True,2026-03-23
+2026-08-21,all-time,4131520,BDR-S Enriched Accounts - Litigators - Email Only,5,ARCHIVE,BDR,0.05,0.02,0.0,20.06,0.0,850,4293,John McGurk,0,0,0,5,0,False,2026-03-31
+2026-08-21,all-time,4129934,BDR-S Enriched Accounts - Multi-Practice,31,LOW SAMPLE,BDR,6.71,0.61,4.54,29.27,0.0,399,164,John McGurk,20,0,6,5,0,True,2026-03-30
+2026-08-21,all-time,4131563,BDR-S Enriched Accounts - Multi-Practice - Email Only,0,ARCHIVE,BDR,0.0,0.05,0.0,14.83,0.0,1080,5940,John McGurk,0,0,0,0,0,False,2026-03-31
+2026-08-21,all-time,4124516,BDR-S Enriched Accounts - Personal Injury,11,LOW SAMPLE,BDR,2.02,1.01,4.08,32.32,0.0,370,99,John McGurk,0,0,6,5,0,True,2026-03-23
+2026-08-21,all-time,4131551,BDR-S Enriched Accounts - Personal Injury - Email Only,5,ARCHIVE,BDR,0.09,0.09,0.0,20.54,0.0,1447,7900,John McGurk,0,0,0,5,0,False,2026-03-31
+2026-08-21,all-time,4124505,BDR-S Enriched Accounts - Transactional,11,LOW SAMPLE,BDR,2.86,0.0,3.84,25.71,0.0,234,105,John McGurk,0,0,6,5,0,True,2026-03-23
+2026-08-21,all-time,4131537,BDR-S Enriched Accounts - Transactional - Email Only,5,ARCHIVE,BDR,0.0,0.03,0.0,21.25,0.0,630,3125,John McGurk,0,0,0,5,0,False,2026-03-31
+2026-08-21,all-time,4117451,BDR-S HH Litigation Sprint - EMAIL ONLY - Copy,0,ARCHIVE,BDR,0.12,0.12,0.0,19.78,0.0,777,3245,Hannah Hudson,0,0,0,0,0,False,2026-03-16
+2026-08-21,all-time,4117452,BDR-S HH Litigation Sprint March 2026,11,LOW SAMPLE,BDR,0.34,1.59,5.86,24.49,0.0,309,882,Hannah Hudson,0,0,6,5,0,True,2026-03-16
+2026-08-21,all-time,4198083,BDR-S HH May Sprint  - Attorney PI,11,LOW SAMPLE,BDR,0.32,0.53,6.86,21.11,0.0,325,952,Hannah Hudson,0,0,6,5,0,True,2026-05-19
+2026-08-21,all-time,4198090,BDR-S HH May Sprint - PI EMAIL ONLY,5,ARCHIVE,BDR,0.0,0.23,0.0,21.51,0.0,1415,5110,Hannah Hudson,0,0,0,5,0,False,2026-05-19
+2026-08-21,all-time,4196394,BDR-S IS Litigation May 2026 - EMAIL ONLY,0,LOW SAMPLE,BDR,0.0,0.0,0.0,14.08,0.0,33,142,Ilyas Sahib,0,0,0,0,0,True,2026-05-18
+2026-08-21,all-time,4196393,BDR-S IS Litigation May 2026 - Muli-touch,38,LOW SAMPLE,BDR,0.0,5.88,4.17,47.06,0.0,4,17,Ilyas Sahib,0,22,6,10,0,True,2026-05-18
+2026-08-21,all-time,4199346,BDR-S IS PA Sprint  - Family Law- EMAIL ONLY,15,LOW SAMPLE,BDR,0.0,0.0,0.0,54.29,0.0,12,35,Ilyas Sahib,0,0,0,15,0,True,2026-05-19
+2026-08-21,all-time,4199326,BDR-S IS PA Sprint  - Family Law- Multi Touch,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,1,1,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-21,all-time,4199387,BDR-S IS PA Sprint - Business & Corp -  EMAIL ONLY ,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-21,all-time,4199386,BDR-S IS PA Sprint - Business & Corp -  Multi Touch,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-21,all-time,4199381,BDR-S IS PA Sprint - Employment Law -  EMAIL ONLY,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-21,all-time,4199373,BDR-S IS PA Sprint - Employment Law -  Multi Touch ,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-21,all-time,4199384,BDR-S IS PA Sprint - Real Estate -  EMAIL ONLY,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-21,all-time,4199383,BDR-S IS PA Sprint - Real Estate -  Multi Touch,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-21,all-time,4199350,BDR-S IS PA Sprint - W&E -  Multi Touch,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-21,all-time,4199352,BDR-S IS PA Sprint - W&E - EMAIL ONLY,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ilyas Sahib,0,0,0,0,0,True,2026-05-19
+2026-08-21,all-time,3939406,BDR-S Keep Warm / Nurture,11,ARCHIVE,BDR,2.83,0.54,6.87,22.11,0.0,1292,2049,Hannah Hudson,0,0,6,5,0,False,2025-07-18
+2026-08-21,all-time,4119568,BDR-S PI COLD EMAIL ONLY Sprint - KF,0,LOW SAMPLE,BDR,0.0,0.22,0.0,16.79,0.0,465,2763,Kaeli Finlayson,0,0,0,0,0,True,2026-03-17
+2026-08-21,all-time,4119549,BDR-S PI COLD Sprint - KF,5,LOW SAMPLE,BDR,0.61,0.69,2.65,24.8,0.0,480,1153,Kaeli Finlayson,0,0,0,5,0,True,2026-03-17
+2026-08-21,all-time,4069701,BDR-S PI vLex Sprint - EMAIL ONLY,0,ARCHIVE,BDR,0.08,0.13,0.0,19.68,0.0,2838,12008,John McGurk,0,0,0,0,0,False,2026-01-15
+2026-08-21,all-time,4069651,BDR-S PI vLex Sprint Jan 2026,11,ARCHIVE,BDR,1.08,0.92,5.55,23.27,0.0,1873,5633,John McGurk,0,0,6,5,0,False,2026-01-15
+2026-08-21,all-time,4089005,BDR-V  Vincent CA New Senate Bill SB 574,18,ARCHIVE,BDR,2.1,0.5,7.84,28.49,0.0,501,1190,Sarah Seplin,0,0,13,5,0,False,2026-02-10
+2026-08-21,all-time,4200450,BDR-V - 1st No Show Cadence - 2026,51,LOW SAMPLE,BDR,14.77,3.36,12.4,22.82,0.0,80,149,Jessica Bayard,20,13,13,5,0,True,2026-05-20
+2026-08-21,all-time,4200730,BDR-V - 2+ No Show Cadence - 2026,20,LOW SAMPLE,BDR,12.5,0.0,0.0,18.75,0.0,10,16,Jessica Bayard,20,0,0,0,0,True,2026-05-20
+2026-08-21,all-time,4175687,BDR-V - Outbound New Firm - Litigators,10,LOW SAMPLE,BDR,0.0,0.0,1.59,42.31,0.0,25,78,Sarah Seplin,0,0,0,10,0,True,2026-05-05
+2026-08-21,all-time,4181125,BDR-V - Outbound New Firm - Transactional,18,LOW SAMPLE,BDR,1.59,0.0,11.63,28.57,0.0,27,63,Sarah Seplin,0,0,13,5,0,True,2026-05-08
+2026-08-21,all-time,4057774,BDR-V - vLex Territory Revival Blitz December 2025 - Prospecting,18,ARCHIVE,BDR,2.82,1.28,7.05,26.35,0.0,1106,3048,Alex Bramos,0,0,13,5,0,False,2025-12-17
+2026-08-21,all-time,4076501,BDR-V - vLex Territory Revival January 26- Prospecting,25,ARCHIVE,BDR,1.22,0.43,15.96,28.55,0.0,2596,8383,Sarah Seplin,0,0,20,5,0,False,2026-01-26
+2026-08-21,all-time,4412722,BDR-V AMA SOLO July 31 2026,11,ARCHIVE,BDR,0.22,0.22,5.83,21.13,0.0,907,899,Jessica Bayard,0,0,6,5,0,False,2026-07-27
+2026-08-21,all-time,4088031,BDR-V California Senate Bill 574 - Copy,23,LOW SAMPLE,BDR,0.0,0.0,9.09,36.36,0.0,56,44,Sarah Seplin,0,0,13,10,0,True,2026-02-09
+2026-08-21,all-time,4253055,BDR-V Close Your File Email,23,ARCHIVE,BDR,0.91,4.89,0.0,35.16,0.0,2246,2190,Jessica Bayard,0,13,0,10,0,False,2026-06-16
+2026-08-21,all-time,4143622,BDR-V Discovery Call and Long Term Simmer,11,ARCHIVE,BDR,1.05,0.23,5.43,28.55,0.0,1117,2581,Jessica Bayard,0,0,6,5,0,False,2026-04-13
+2026-08-21,all-time,4332858,BDR-V July Summer Promo Blitz,11,ARCHIVE,BDR,0.7,0.59,6.98,32.48,0.0,1972,2860,Daniel Perez,0,0,6,5,0,False,2026-07-09
+2026-08-21,all-time,4249367,BDR-V Legal AI Implementation Workshops Email Blast June 23 2026,11,ARCHIVE,BDR,1.33,0.13,5.75,25.92,0.0,792,1578,Jessica Bayard,0,0,6,5,0,False,2026-06-15
+2026-08-21,all-time,4328758,BDR-V Litigators Lounge Email Blast July 2026,18,ARCHIVE,BDR,1.65,0.68,7.43,32.43,0.0,819,1030,Jessica Bayard,0,0,13,5,0,False,2026-07-08
+2026-08-21,all-time,4085076,BDR-V PI ClioWork and vLex,11,ARCHIVE,BDR,0.87,0.51,5.1,22.22,0.0,932,2763,Sarah Seplin,0,0,6,5,0,False,2026-02-04
+2026-08-21,all-time,4462174,BDR-V The Legal AI Accelerator Summit Email Blast Aug 11 2026,18,ARCHIVE,BDR,0.91,0.74,8.17,28.76,0.0,1263,2309,Jessica Bayard,0,0,13,5,0,False,2026-08-04
+2026-08-21,all-time,4207412,BDR-V Webinar Email Blast June 4 2026,13,ARCHIVE,BDR,1.14,0.23,7.51,18.87,0.0,850,1754,Jessica Bayard,0,0,13,0,0,False,2026-05-26
+2026-08-21,all-time,4234036,BDR-V Wills & Estates AI First ,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Jessica Bayard,0,0,0,0,0,True,2026-06-09
+2026-08-21,all-time,4565250,BDR-V email blast Mastering MS Word and AI Sept 8 2026,5,ARCHIVE,BDR,0.2,0.39,0.0,26.97,0.0,524,508,Jessica Bayard,0,0,0,5,0,False,2026-08-20
+2026-08-21,all-time,4089755,BDR-Velo-CS Cancelled Draft Accounts,66,REVIEW,BDR,6.19,10.74,6.07,46.77,0.0,766,1099,Nikki Raw,20,30,6,10,0,False,2026-02-11
+2026-08-21,all-time,4069886,BDR-Velo-CS Civil Lit Work Cadence,49,ARCHIVE,BDR,5.44,2.38,5.76,41.3,0.0,897,1305,Nikki Raw,20,13,6,10,0,False,2026-01-15
+2026-08-21,all-time,4090064,BDR-Velo-CS Closed Lost Draft,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,1,Nikki Raw,0,0,0,0,0,True,2026-02-11
+2026-08-21,all-time,4095366,BDR-Velo-CS Criminal Work Campaign,23,ARCHIVE,BDR,4.04,1.89,7.79,42.75,0.0,1290,2227,Nikki Raw,0,0,13,10,0,False,2026-02-18
+2026-08-21,all-time,4157016,BDR-Velo-CS Draft Call Only,0,LOW SAMPLE,BDR,0.0,0.0,0.0,0.0,0.0,51,0,Nikki Raw,0,0,0,0,0,True,2026-04-24
+2026-08-21,all-time,4143552,BDR-Velo-CS Family Draft Cadence,16,ARCHIVE,BDR,2.67,1.83,4.42,40.32,0.0,1098,1421,Nikki Raw,0,0,6,10,0,False,2026-04-13
+2026-08-21,all-time,4064304,BDR-Velo-CS Family Law Work Campaign,36,ARCHIVE,BDR,5.7,1.77,6.28,46.02,0.0,2685,2773,Nikki Raw,20,0,6,10,0,False,2026-01-08
+2026-08-21,all-time,4122401,BDR-Velo-CS Manage + Grow - Draft Cadence,49,ARCHIVE,BDR,6.77,4.43,6.61,41.22,0.0,3172,2436,Nikki Raw,20,13,6,10,0,False,2026-03-20
+2026-08-21,all-time,4174624,BDR-Velo-CS May '26 Family Law Work,16,ARCHIVE,BDR,3.47,1.71,6.2,41.17,0.0,1695,2045,Nikki Raw,0,0,6,10,0,False,2026-05-05
+2026-08-21,all-time,4132927,BDR-Velo-CS PI Work Cadence,23,LOW SAMPLE,BDR,4.15,1.94,7.51,41.77,0.0,497,723,Nikki Raw,0,0,13,10,0,True,2026-04-01
+2026-08-21,all-time,4117471,BDR-Velo-CS Real Estate Draft Cadence,49,ARCHIVE,BDR,5.29,4.12,5.3,40.39,0.0,710,1020,Nikki Raw,20,13,6,10,0,False,2026-03-16
+2026-08-21,all-time,4187515,BDR-Velo-CS Real Estate Grow,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Nikki Raw,0,0,0,0,0,True,2026-05-13
+2026-08-21,all-time,4083068,BDR-Velo-CS Wills & Estates Draft Cadence,29,ARCHIVE,BDR,4.76,4.12,6.06,39.26,0.0,1737,3128,Nikki Raw,0,13,6,10,0,False,2026-02-03
+2026-08-21,all-time,4157023,BDR-Velo-CS Work Call Only,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Nikki Raw,0,0,0,0,0,True,2026-04-24
+2026-08-21,all-time,4030811,BDR:CS MQL vLex Free Trial from customers,56,LOW SAMPLE,BDR,9.52,3.01,7.32,38.4,0.0,223,599,Sammy Poortaghi,20,13,13,10,0,True,2025-11-07
+2026-08-21,all-time,3973351,BDRV - AQL - Draft - General Practice,23,LOW SAMPLE,BDR,1.5,1.2,7.53,35.33,0.0,300,668,Morgan Lamke,0,0,13,10,0,True,2025-08-28
+2026-08-21,all-time,4017580,BDRV - C/L - ClioWork Litigators,11,ARCHIVE,BDR,4.77,0.99,6.48,28.8,0.0,601,2413,Sarah Seplin,0,0,6,5,0,False,2025-10-22
+2026-08-21,all-time,4017668,BDRV - C/L - ClioWork Transactional,11,LOW SAMPLE,BDR,4.29,1.29,6.79,31.73,0.0,250,933,Sarah Seplin,0,0,6,5,0,True,2025-10-22
+2026-08-21,all-time,3861267,BDRV - C/L Last 120 Days & 3+Weeks No Activity,43,ARCHIVE,BDR,6.49,1.73,8.8,35.97,0.0,1008,1618,Morgan Lamke,20,0,13,10,0,False,2025-04-16
+2026-08-21,all-time,3859625,BDRV - C/L Opportunity Revival,38,ARCHIVE,BDR,5.68,1.7,8.15,32.08,0.0,2258,4458,Morgan Lamke,20,0,13,5,0,False,2025-04-15
+2026-08-21,all-time,4149042,BDRV - FLORIDA ClioWork Litigators,0,LOW SAMPLE,BDR,0.0,0.0,0.0,19.05,0.0,10,21,Daniel Perez,0,0,0,0,0,True,2026-04-16
+2026-08-21,all-time,4017536,BDRV - Outbound - ClioWork - Not Personalized,11,ARCHIVE,BDR,2.01,0.21,5.66,26.37,0.0,1016,2833,Morgan Lamke,0,0,6,5,0,False,2025-10-22
+2026-08-21,all-time,4018816,BDRV - Outbound - ClioWork - Personalized,11,ARCHIVE,BDR,1.89,0.28,6.57,22.86,0.0,1883,6458,Morgan Lamke,0,0,6,5,0,False,2025-10-23
+2026-08-21,all-time,3967659,BDRV - Outbound - Draft - Criminal Law,18,ARCHIVE,BDR,1.68,0.25,7.36,23.26,0.0,1859,3628,Morgan Lamke,0,0,13,5,0,False,2025-08-21
+2026-08-21,all-time,3932588,BDRV - Velo CORE Prospecting Stand Alone Draft,18,ARCHIVE,BDR,3.06,0.38,8.39,31.61,0.0,644,2094,Jessica Bayard,0,0,13,5,0,False,2025-07-10
+2026-08-21,all-time,4148988,BDRV - Webinar - Blast - The Future of Legal AI is Here,10,ARCHIVE,BDR,0.78,0.39,0.0,43.14,0.0,1020,1020,Jessica Bayard,0,0,0,10,0,False,2026-04-16
+2026-08-21,all-time,4149044,BDRV -FLORIDA ClioWork Transactional,37,LOW SAMPLE,BDR,0.0,8.33,0.0,58.33,0.0,10,12,Daniel Perez,0,22,0,15,0,True,2026-04-16
+2026-08-21,all-time,4097239,BDRV 2026 10x10,11,ARCHIVE,BDR,2.55,0.74,7.0,25.66,0.0,8446,30189,Daniel Perez,0,0,6,5,0,False,2026-02-19
+2026-08-21,all-time,4097644,BDRV 2026 ClioWork/vLex Family Law,6,ARCHIVE,BDR,0.32,0.56,3.79,19.07,0.0,616,1253,Jessica Bayard,0,0,6,0,0,False,2026-02-20
+2026-08-21,all-time,4155928,BDRV 2026 Solo and Small Firm Summit Email Blast,20,ARCHIVE,BDR,0.15,0.08,16.5,17.35,0.0,792,1326,Jessica Bayard,0,0,20,0,0,False,2026-04-23
+2026-08-21,all-time,3912135,BDRV AQL - Personalized FRESH AQL Follow-up,31,LOW SAMPLE,BDR,4.78,2.39,8.39,34.66,0.0,104,251,Morgan Lamke,0,13,13,5,0,True,2025-06-13
+2026-08-21,all-time,3832663,BDRV AQL - ZoomInfo Intent/Websites,6,ARCHIVE,BDR,0.71,0.19,4.76,15.38,0.0,540,1547,Morgan Lamke,0,0,6,0,0,False,2025-03-17
+2026-08-21,all-time,3667739,BDRV Coffee + Reschedule,38,LOW SAMPLE,BDR,12.05,0.65,11.02,31.92,0.0,182,307,Morgan Lamke,20,0,13,5,0,True,2024-08-27
+2026-08-21,all-time,3830937,BDRV MQL - Requested a Demo,44,ARCHIVE,BDR,6.71,3.37,5.7,32.78,0.0,1104,3115,Morgan Lamke,20,13,6,5,0,False,2025-03-14
+2026-08-21,all-time,3788563,BDRV Reschedule - Discovery Meetings,43,LOW SAMPLE,BDR,7.41,1.85,9.01,37.04,0.0,57,108,Morgan Lamke,20,0,13,10,0,True,2025-01-29
+2026-08-21,all-time,3832402,BDRV Reschedule - Opportunities in 1.Qualify,53,LOW SAMPLE,BDR,21.6,1.63,9.84,31.66,0.0,413,676,Morgan Lamke,35,0,13,5,0,True,2025-03-17
+2026-08-21,all-time,3832493,BDRV Reschedule - SDR Opportunities,38,LOW SAMPLE,BDR,8.34,1.85,8.84,32.72,0.0,319,755,Morgan Lamke,20,0,13,5,0,True,2025-03-17
+2026-08-21,all-time,3788289,BDRV Simmer - Future Meeting Booked,38,ARCHIVE,BDR,6.58,1.77,10.16,31.76,0.0,2453,7633,Morgan Lamke,20,0,13,5,0,False,2025-01-29
+2026-08-21,all-time,4172434,BDRV VAN C/L Revival Cadence,11,ARCHIVE,BDR,1.84,1.65,5.34,24.96,0.0,716,2063,Sarah Seplin,0,0,6,5,0,False,2026-05-04
+2026-08-21,all-time,4150440,BDRs-Strat - In person conference - ALA 2026 ,30,LOW SAMPLE,BDR,0.0,20.0,0.0,0.0,0.0,5,5,Ilyas Sahib,0,30,0,0,0,True,2026-04-17
+2026-08-21,all-time,4115269,Belgium - BDR Email Only,5,LOW SAMPLE,BDR,0.12,0.87,0.0,21.14,0.0,142,804,Patrick Keeney,0,0,0,5,0,True,2026-03-12
+2026-08-21,all-time,4130858,Canada Draft BDR - MM,23,LOW SAMPLE,BDR,0.0,0.0,8.7,40.28,0.0,74,72,Abigail Humber,0,0,13,10,0,True,2026-03-30
+2026-08-21,all-time,4132697,Canada Draft BDR - MM - nurture,10,LOW SAMPLE,BDR,0.0,1.27,0.0,47.77,0.0,26,157,Abigail Humber,0,0,0,10,0,True,2026-04-01
+2026-08-21,all-time,4132594,Canada Draft BDR - Strat,30,LOW SAMPLE,BDR,0.0,0.0,16.67,38.71,0.0,14,31,Abigail Humber,0,0,20,10,0,True,2026-04-01
+2026-08-21,all-time,3982399,European Countries - BDR Outbound,18,LOW SAMPLE,BDR,0.18,1.18,10.8,27.74,0.0,244,1103,Patrick Keeney,0,0,13,5,0,True,2025-09-11
+2026-08-21,all-time,3982463,European Countries - BDR ReEngage,38,LOW SAMPLE,BDR,1.57,2.24,15.28,33.15,0.0,215,893,Patrick Keeney,0,13,20,5,0,True,2025-09-11
+2026-08-21,all-time,3978560,Intent Outbound - BDR-S - AWARE - Email Only,0,ARCHIVE,BDR,0.09,0.07,0.0,18.64,0.0,22444,92670,John McGurk,0,0,0,0,0,False,2025-09-07
+2026-08-21,all-time,3975961,Intent Outbound - BDR-S - Email Only for Cold,0,ARCHIVE,BDR,0.07,0.05,0.0,15.4,0.0,21677,99464,John McGurk,0,0,0,0,0,False,2025-09-03
+2026-08-21,all-time,3946737,Intent Outbound AQL - BDR-S,11,ARCHIVE,BDR,2.51,1.48,5.98,30.28,0.0,1948,1955,John McGurk,0,0,6,5,0,False,2025-07-28
+2026-08-21,all-time,4154299,Intent Outbound Civil Litigation - BDR-S,6,LOW SAMPLE,BDR,0.36,0.0,5.77,18.48,0.0,135,276,John McGurk,0,0,6,0,0,True,2026-04-22
+2026-08-21,all-time,3948810,Intent Outbound Engaged w/ Content - BDR-S,11,ARCHIVE,BDR,0.27,0.27,6.56,21.1,0.0,553,1507,John McGurk,0,0,6,5,0,False,2025-07-30
+2026-08-21,all-time,4154309,Intent Outbound Family - BDR-S,11,LOW SAMPLE,BDR,1.32,0.44,3.92,25.99,0.0,105,227,John McGurk,0,0,6,5,0,True,2026-04-22
+2026-08-21,all-time,4155506,Intent Outbound Personal Injury - BDR-S,11,LOW SAMPLE,BDR,1.07,0.8,5.66,21.39,0.0,192,374,John McGurk,0,0,6,5,0,True,2026-04-23
+2026-08-21,all-time,4078432,Intent Outbound SCOOPS - BDR-S,16,LOW SAMPLE,BDR,0.0,0.0,4.55,40.0,0.0,4,5,John McGurk,0,0,6,10,0,True,2026-01-28
+2026-08-21,all-time,4154276,Intent Outbound Wills & Estates - BDR-S,11,LOW SAMPLE,BDR,0.0,1.98,3.77,20.79,0.0,62,101,John McGurk,0,0,6,5,0,True,2026-04-22
+2026-08-21,all-time,4064313,JM  - Intent Outbound - BDR-S - Email Only for Cold,0,ARCHIVE,BDR,0.03,0.1,0.0,16.4,0.0,1613,7197,John McGurk,0,0,0,0,0,False,2026-01-08
+2026-08-21,all-time,4112311,MM BDR-CS | MM LTR Download Follow Up - IBC,5,LOW SAMPLE,BDR,3.92,0.49,0.0,23.04,0.0,59,204,Salesloft Marketing,0,0,0,5,0,True,2026-03-09
+2026-08-21,all-time,4111274,MM-BDR - MM LTR AQL Follow Up,11,LOW SAMPLE,BDR,0.51,0.0,5.56,25.89,0.0,59,197,Ashley Duffy,0,0,6,5,0,True,2026-03-09
+2026-08-21,all-time,4564762,MM-BDR - Sendoso Follow Up - Prospecting,0,NO DATA,BDR,0.0,0.0,0.0,0.0,0.0,0,0,Ashley Duffy,0,0,0,0,0,True,2026-08-20
+2026-08-21,all-time,4184989,MM-BDR-CS | [Defendant] Complaint Filing - Clio Work Outreach - OBC,0,LOW SAMPLE,BDR,0.54,0.0,0.0,16.3,0.0,48,184,Salesloft Marketing,0,0,0,0,0,True,2026-05-12
+2026-08-21,all-time,4184987,MM-BDR-CS | [Plaintiff] Complaint Filing - Clio Work Outreach - OBC,5,LOW SAMPLE,BDR,0.69,0.23,0.0,32.49,0.0,140,434,Salesloft Marketing,0,0,0,5,0,True,2026-05-12
+2026-08-21,all-time,3986840,NOLA BDRV New Firm Nurture Follow Up,18,ARCHIVE,BDR,1.97,0.18,7.46,21.65,0.0,564,559,Jessica Bayard,0,0,13,5,0,False,2025-09-16
+2026-08-21,all-time,4089134,No Intent - CL - BDR-S - Email Only,0,LOW SAMPLE,BDR,0.13,0.13,0.0,19.04,0.0,201,788,Hannah Hudson,0,0,0,0,0,True,2026-02-10
+2026-08-21,all-time,4106547,SDR - AI Rebook Cadence (blank),93,LOW SAMPLE,SDR,33.33,10.61,7.67,41.41,0.0,228,198,Alex Moore,35,30,13,15,0,True,2026-03-03
+2026-08-21,all-time,1031700,SDR - Bad Phone Number,40,ARCHIVE,SDR,0.0,3.54,0.0,34.92,0.0,10850,35293,Gareth Ritcey,0,30,0,10,0,False,2019-05-06
+2026-08-21,all-time,1477409,SDR - Booked Call - Followup,65,REVIEW,SDR,0.0,17.06,39.76,48.08,0.0,12927,14402,Gareth Ritcey,0,30,20,15,0,False,2020-03-03
+2026-08-21,all-time,4321125,SDR - CLIO WORK TRIAL (CANCELLED TRIAL WITH CC ENTERED) - en-US - CNV - TRIALON,31,LOW SAMPLE,SDR,6.56,0.0,4.26,22.95,0.0,40,61,Brittany Baron,20,0,6,5,0,True,2026-07-06
+2026-08-21,all-time,4320991,SDR - CLIO WORK TRIAL (CREDIT CARD ENTERED) - en-US - CNV - TRIALON,58,LOW SAMPLE,SDR,7.61,1.57,5.79,31.5,0.0,178,381,Brittany Baron,20,22,6,10,0,True,2026-07-06
+2026-08-21,all-time,4323272,SDR - CLIO WORK TRIAL (VISITED SIGN UP PAGE & FAILED SIGN UP)-EN-US-CNV,51,LOW SAMPLE,SDR,3.54,1.95,3.18,31.36,0.0,440,1129,Brittany Baron,13,22,6,10,0,True,2026-07-07
+2026-08-21,all-time,4339714,SDR - COI Winback,0,LOW SAMPLE,SDR,0.0,0.0,0.0,0.0,0.0,2,6,Alex Moore,0,0,0,0,0,True,2026-07-13
+2026-08-21,all-time,4017688,SDR - Clio Work - Demo Request (MQL),86,LOW SAMPLE,SDR,14.95,3.74,6.65,40.88,0.0,154,455,Brett Blackney,35,30,6,15,0,True,2025-10-22
+2026-08-21,all-time,4018883,SDR - Clio Work - Demo Request (MQL) - Copy,80,LOW SAMPLE,SDR,25.81,3.23,2.17,54.84,0.0,10,31,Patrick Keeney,35,30,0,15,0,True,2025-10-24
+2026-08-21,all-time,4339117,SDR - Contact Us Form -en-US-CNV,93,LOW SAMPLE,SDR,27.96,13.98,7.02,47.31,0.0,72,93,Brett Blackney,35,30,13,15,0,True,2026-07-10
+2026-08-21,all-time,4291091,SDR - DEMO-REQ - en-US - CNV - PREDEMO,93,KEEP,SDR,21.02,5.6,8.28,35.85,0.0,1439,2731,Brett Blackney,35,30,13,15,0,False,2026-06-25
+2026-08-21,all-time,4294374,SDR - DEMO-REQ-WEBINAR - en-US - CNV - PREDEMO,71,LOW SAMPLE,SDR,9.28,8.2,5.01,44.98,0.0,416,927,Brett Blackney,20,30,6,15,0,True,2026-06-26
+2026-08-21,all-time,3974220,SDR - Demo Request - DRAFT ONLY MQLS,63,LOW SAMPLE,SDR,7.93,2.19,6.54,35.27,0.0,417,1185,Brittany Baron,20,22,6,15,0,True,2025-08-29
+2026-08-21,all-time,4078929,SDR - Demo Request - Event: NTLS,63,LOW SAMPLE,SDR,8.11,2.7,4.17,56.76,0.0,11,37,Daniela Ordonez,20,22,6,15,0,True,2026-01-28
+2026-08-21,all-time,1347191,SDR - Demo Request - Grow,65,REVIEW,SDR,0.0,13.27,27.6,47.98,0.0,775,1115,Gareth Ritcey,0,30,20,15,0,False,2019-11-25
+2026-08-21,all-time,3973486,SDR - Demo Request - MS WEBINAR (update from Daniela 2026),66,LOW SAMPLE,SDR,5.12,3.04,5.18,34.4,0.0,174,625,Brittany Baron,20,30,6,10,0,True,2025-08-28
+2026-08-21,all-time,4163397,SDR - Downloaded a Guide,38,LOW SAMPLE,SDR,0.78,2.34,3.14,31.25,0.0,83,256,Alex Moore,0,22,6,10,0,True,2026-04-29
+2026-08-21,all-time,1955893,SDR - Dupe Check,65,REVIEW,SDR,0.0,24.44,24.97,50.55,0.0,1104,2291,Palak Ghambhir,0,30,20,15,0,False,2021-01-28
+2026-08-21,all-time,4339116,SDR - Event Follow-up -en-US-CNV,21,LOW SAMPLE,SDR,0.0,0.0,6.25,75.0,0.0,7,12,Brett Blackney,0,0,6,15,0,True,2026-07-10
+2026-08-21,all-time,2145617,SDR - Facebook Demo Request,65,REVIEW,SDR,5.75,2.61,8.03,29.41,0.0,9133,23864,Ryan Basco,20,22,13,10,0,False,2021-06-10
+2026-08-21,all-time,4217557,SDR - GOV Demo Request - Manage (via Webinar) - Government Specific,5,LOW SAMPLE,SDR,0.0,0.0,0.0,17.65,0.0,3,17,Ashley Duffy,0,0,0,5,0,True,2026-06-01
+2026-08-21,all-time,2145637,SDR - How Law Firms Use Clio,93,KEEP,SDR,14.54,6.83,13.67,43.14,0.0,13347,29897,Ryan Basco,35,30,13,15,0,False,2021-06-10
+2026-08-21,all-time,1911581,SDR - International Lead Cadence,45,ARCHIVE,SDR,0.0,4.96,0.0,48.23,0.0,4420,15833,Marika McTague,0,30,0,15,0,False,2020-12-14
+2026-08-21,all-time,1327272,SDR - LinkedIn,65,REVIEW,SDR,0.0,7.46,17.79,45.05,0.0,2977,6137,Mike Wei,0,30,20,15,0,False,2019-11-12
+2026-08-21,all-time,4339113,SDR - Live Chat Next Step With Phone Number -en-US-CNV,86,LOW SAMPLE,SDR,18.95,14.74,5.26,49.47,0.0,57,95,Brett Blackney,35,30,6,15,0,True,2026-07-10
+2026-08-21,all-time,4291323,SDR - MANAGE TRIAL - en-US - CNV - TRIALON,86,KEEP,SDR,10.05,4.11,5.37,38.09,0.0,1523,3552,Brett Blackney,35,30,6,15,0,False,2026-06-25
+2026-08-21,all-time,3614585,SDR - MM - Demo Form MQL Reach Out,88,LOW SAMPLE,SDR,33.75,13.33,10.79,34.17,0.0,134,240,Ashley Duffy,35,30,13,10,0,True,2024-07-08
+2026-08-21,all-time,1540401,SDR - Next Step Email Opt Out - Followup,13,ARCHIVE,SDR,0.0,0.0,9.96,0.0,0.0,1622,0,Mike Wei,0,0,13,0,0,False,2020-04-07
+2026-08-21,all-time,1482615,SDR - Next Steps - HOT (multiple) - Followup,65,REVIEW,SDR,0.0,12.34,16.37,45.0,0.0,4318,3233,Gareth Ritcey,0,30,20,15,0,False,2020-03-05
+2026-08-21,all-time,4339114,SDR - Next Steps - Warm (multiple) - Follow-up -en-US-CNV,66,LOW SAMPLE,SDR,7.3,4.72,6.69,34.33,0.0,147,233,Brett Blackney,20,30,6,10,0,True,2026-07-10
+2026-08-21,all-time,1346849,SDR - Non-Prospect (LinkedIn) - Disqualified,58,REVIEW,SDR,0.0,12.63,14.65,46.72,0.0,1388,3786,Derek Biondi,0,30,13,15,0,False,2019-11-25
+2026-08-21,all-time,1388930,SDR - Non-Prospect (Website) - Disqualified,65,REVIEW,SDR,0.0,19.4,17.04,47.09,0.0,1070,2402,Gareth Ritcey,0,30,20,15,0,False,2020-01-07
+2026-08-21,all-time,1959654,SDR - Not a Law Firm - Automated,65,REVIEW,SDR,0.0,12.03,17.36,43.41,0.0,10120,25393,Palak Ghambhir,0,30,20,15,0,False,2021-02-01
+2026-08-21,all-time,1547416,SDR - Nurture - Cold Lead Winback,45,ARCHIVE,SDR,0.0,2.34,8.64,33.86,0.0,5037,10758,Jesse Chan,0,22,13,10,0,False,2020-04-10
+2026-08-21,all-time,1895298,SDR - Referral - Follow-Up,58,LOW SAMPLE,SDR,0.0,7.18,7.65,38.86,0.0,156,404,Shane Sethi,0,30,13,15,0,True,2020-11-30
+2026-08-21,all-time,4339115,SDR - Resources Follow-up -en-US-CNV,45,LOW SAMPLE,SDR,1.16,3.49,0.0,43.02,0.0,25,86,Brett Blackney,0,30,0,15,0,True,2026-07-10
+2026-08-21,all-time,4295352,SDR - Software Advice -en-US-CNV,73,LOW SAMPLE,SDR,8.89,5.08,8.8,33.94,0.0,228,551,Brett Blackney,20,30,13,10,0,True,2026-06-26
+2026-08-21,all-time,1348039,SDR - Student - Disqualified,65,LOW SAMPLE,SDR,0.0,18.94,18.82,49.12,0.0,401,908,Gareth Ritcey,0,30,20,15,0,True,2019-11-26
+2026-08-21,all-time,4339112,SDR - Vincent Booked Call Follow-up -en-US-CNV,80,LOW SAMPLE,SDR,40.0,40.0,0.0,40.0,0.0,3,5,Brett Blackney,35,30,0,15,0,True,2026-07-10
+2026-08-21,all-time,4295294,SDR - WEB-PRICING-en-US-CNV,71,REVIEW,SDR,7.78,4.38,5.23,40.92,0.0,611,1530,Brett Blackney,20,30,6,15,0,False,2026-06-26
+2026-08-21,all-time,4163409,SDR - Watched On-Demand Webinar,64,LOW SAMPLE,SDR,3.76,3.76,6.58,37.0,0.0,194,719,Alex Moore,13,30,6,15,0,True,2026-04-29
+2026-08-21,all-time,4015093,SDR - vLex - Demo Request (MQL),93,LOW SAMPLE,SDR,33.15,9.7,9.19,39.76,0.0,306,742,Brett Blackney,35,30,13,15,0,True,2025-10-20
+2026-08-21,all-time,4030812,SDR - vLex - Free Trial - Copy,45,LOW SAMPLE,SDR,3.45,2.59,1.2,27.59,0.0,42,116,Sammy Poortaghi,13,22,0,10,0,True,2025-11-07
+2026-08-21,all-time,4339111,SDR - vLex - Free Trial -en-US-CNV,51,REVIEW,SDR,2.96,1.86,4.89,29.25,0.0,995,2468,Brett Blackney,13,22,6,10,0,False,2026-07-10
+2026-08-21,all-time,4020919,SDR - vLex - Not a Lawyer,58,REVIEW,SDR,0.61,5.04,9.32,36.1,0.0,2118,7083,Brittany Baron,0,30,13,15,0,False,2025-10-28
+2026-08-21,all-time,4038321,SDR - vLex - Warm Nurture,45,LOW SAMPLE,SDR,2.89,1.31,0.44,29.13,0.0,164,381,Brittany Baron,13,22,0,10,0,True,2025-11-18
+2026-08-21,all-time,4036658,SDR - vLex -Booked Call - Followup,81,LOW SAMPLE,SDR,22.47,12.36,4.4,32.58,0.0,42,89,Brittany Baron,35,30,6,10,0,True,2025-11-14
+2026-08-21,all-time,3556685,SDR- 2024 Demo No Show / Cancellation,93,KEEP,SDR,27.1,10.08,8.56,41.15,0.0,2484,5295,Leora Winkler,35,30,13,15,0,False,2024-05-22
+2026-08-21,all-time,3600828,SILVER - PI July Refresher BDRV,6,ARCHIVE,BDR,0.87,0.13,5.83,15.14,0.0,2971,5305,Morgan Lamke,0,0,6,0,0,False,2024-06-24
+2026-08-21,all-time,3937623,VAN BDRV Call ONLY,13,ARCHIVE,BDR,0.0,0.0,11.76,0.0,0.0,643,0,Jessica Bayard,0,0,13,0,0,False,2025-07-16

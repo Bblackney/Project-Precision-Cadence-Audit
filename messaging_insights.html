@@ -1,0 +1,262 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Messaging Insights</title><style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#f6f8fa;color:#1f2733;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.55}
+  .hdr{padding:18px 32px 8px}
+  .hdr h1{margin:0 0 4px;font-size:24px;font-weight:800;letter-spacing:-.2px}
+  .hdr p{margin:0;color:#6b7280;font-size:13px}
+  .wrap{padding:8px 32px 48px;max-width:1180px}
+  .kpis{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0 26px}
+  .kpi{background:#fff;border:1px solid #e6eaef;border-radius:10px;padding:14px 18px;min-width:132px}
+  .kpi .num{font-size:24px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+  .kpi .lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#6b7280;margin-top:5px}
+  .kpi.bad .num{color:#dc2626}.kpi.bad .lbl{color:#991b1b}
+  .kpi.good .num{color:#16a34a}.kpi.good .lbl{color:#166534}
+  h2{font-size:17px;font-weight:800;margin:30px 0 3px;letter-spacing:-.1px}
+  h3{font-size:14px;font-weight:700;margin:20px 0 6px;color:#374151}
+  .sub{color:#6b7280;font-size:12.5px;margin:0 0 12px}
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 2px rgba(16,24,40,.05);font-size:13px;margin-bottom:6px}
+  th{background:#f9fafb;text-align:left;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#6b7280;padding:9px 12px;border-bottom:1px solid #eef1f4}
+  td{padding:9px 12px;border-bottom:1px solid #f3f4f6;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .num{font-variant-numeric:tabular-nums;text-align:right}
+  .ci{color:#8b95a1;font-size:11.5px;font-variant-numeric:tabular-nums}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px}
+  .tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
+  .t-find{background:#dcfce7;color:#166534}
+  .t-hyp{background:#e6eaef;color:#4b5563}
+  .t-conf{background:#fef3c7;color:#92400e}
+  .t-lock{background:#fee2e2;color:#991b1b}
+  .up{color:#16a34a;font-weight:700}
+  .down{color:#dc2626;font-weight:700}
+  .card{background:#fff;border:1px solid #e6eaef;border-radius:12px;padding:18px 20px;margin:0 0 22px}
+  .card.hero{border-color:#2f5bd0}
+  .card h3{margin-top:0}
+  .ins{background:#fff;border:1px solid #e6eaef;border-radius:12px;padding:0;margin:0 0 14px;overflow:hidden}
+  .ins .top{display:flex;gap:14px;padding:16px 20px 14px}
+  .ins .rank{flex:0 0 26px;height:26px;border-radius:50%;background:#eef2fb;color:#2f5bd0;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+  .ins h3{margin:0 0 8px;font-size:16px;font-weight:800;line-height:1.35;letter-spacing:-.1px}
+  .ins .why{color:#4b5563;font-size:13px;margin:0 0 12px}
+  .ins .do{background:#f4f8f4;border-left:3px solid #16a34a;border-radius:0;padding:9px 12px;font-size:13px;color:#14532d}
+  .ins.defect .rank{background:#fee2e2;color:#dc2626}
+  .ins.defect .do{background:#fef6f6;border-left-color:#dc2626;color:#7f1d1d}
+  .ins.structural .rank{background:#fef3c7;color:#92400e}
+  .ins.structural .do{background:#fffdf5;border-left-color:#d97706;color:#78350f}
+  .ins .ev{border-top:1px solid #f3f4f6;padding:8px 20px;font-size:11px;color:#9aa3ad;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  details{margin:0 0 18px}
+  details>summary{cursor:pointer;font-size:13px;font-weight:700;color:#2f5bd0;padding:9px 0;list-style:none}
+  details>summary::-webkit-details-marker{display:none}
+  details>summary:before{content:"\25B8  ";color:#8b95a1}
+  details[open]>summary:before{content:"\25BE  "}
+  .note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:14px 18px;margin:22px 0;font-size:12.5px;color:#78350f}
+  .note b{color:#92400e}
+  .bar{height:16px;background:#eef1f4;border-radius:4px;overflow:hidden;min-width:80px}
+  .bar span{display:block;height:100%;background:#2f5bd0}
+  .foot{color:#8b95a1;font-size:11.5px;margin-top:34px;border-top:1px solid #e6eaef;padding-top:14px}
+</style></head><body>
+<nav style="padding:14px 32px 0;display:flex;gap:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+  <a href="index.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #e3e7ec;background:#fff;color:#65707d;font-weight:600;font-size:13px;text-decoration:none">Cadence Performance</a>
+  <a href="adherence.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #e3e7ec;background:#fff;color:#65707d;font-weight:600;font-size:13px;text-decoration:none">Cadence Adherence</a>
+  <a href="pilot_comparison.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #e3e7ec;background:#fff;color:#65707d;font-weight:600;font-size:13px;text-decoration:none">Pilot Comparison</a>
+  <a href="messaging_insights.html" style="display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid #2f5bd0;background:#2f5bd0;color:#fff;font-weight:600;font-size:13px;text-decoration:none">Messaging Insights</a>
+</nav>
+<div class="hdr"><h1>Messaging Insights</h1><p>What the emails say, and which framing earns replies. Pilot + CNV scope &middot; 15 cadences &middot; built 2026-08-21</p></div>
+<div class="wrap">
+<div class="kpis">
+<div class="kpi "><div class="num">22,094</div><div class="lbl">Sends</div></div>
+<div class="kpi "><div class="num">557</div><div class="lbl">Replies</div></div>
+<div class="kpi "><div class="num">2.52%</div><div class="lbl">Reply rate</div></div>
+<div class="kpi good"><div class="num">1</div><div class="lbl">Theme findings</div></div>
+<div class="kpi bad"><div class="num">890</div><div class="lbl">Defect sends</div></div>
+<div class="kpi bad"><div class="num">467</div><div class="lbl">Bounces</div></div>
+</div>
+<h2>What to do about it</h2>
+<p class="sub">3 things worth acting on this week, ordered by how many replies each is costing. Everything below this section is the supporting detail.</p>
+<div class="ins structural">
+<div class="top">
+<div class="rank">1</div><div style="flex:1">
+<h3>SDR reply rate falls 53% from the first two steps to step 7 and beyond</h3>
+<p class="why">Early steps reply at 6.57%, late steps at 3.08%, with no interval overlap. Early steps are mostly inbound_ack (6.57%). At late steps no theme clears the volume and cadence-diversity bar, so there is no copy swap to recommend: the decay looks structural, not a framing choice.</p>
+<div class="do"><b>Do:</b> 3,177 late-step sends earned 98 replies. Question whether those steps should exist before rewriting them. Cutting the tail is the lever here, not new copy.</div>
+</div></div>
+<div class="ev">early 6.57% [5.59-7.70] n=2,131; late 3.08% [2.54-3.75] n=3,177</div>
+</div>
+<div class="ins opportunity">
+<div class="top">
+<div class="rank">2</div><div style="flex:1">
+<h3>BDR-Strategic replies 2.4x better than BDR-Velocity, and 24% of it is which themes they run</h3>
+<p class="why">BDR-Strategic runs at 1.58% and BDR-Velocity at 0.67%. The concrete difference in the copy: BDR-Strategic puts 40% of its volume into peer_proof against 7% for BDR-Velocity; BDR-Velocity puts 28% of its volume into risk_trust, which replies at 0.24% for them, while BDR-Strategic does not use it at all. Re-weighting BDR-Velocity to BDR-Strategic&#x27;s theme mix would take it to 0.87%, which is about 24% of the gap. The rest is audience or execution, not which themes are used.</p>
+<div class="do"><b>Do:</b> Move BDR-Velocity&#x27;s risk_trust volume (2,535 sends) into peer_proof. That closes roughly 24% of the gap. Investigate the remaining 76% separately, it is not a copy problem.</div>
+<p class="sub" style="margin:14px 0 6px;font-size:12px">"% of sends" is the share of that team&rsquo;s total email volume carrying the theme, not a count of templates. Each pair of columns is one team.</p>
+<table style="margin-top:0"><tr><th rowspan="2">Theme</th><th colspan="2" style="text-align:center;border-left:1px solid #eef1f4">BDR-Strategic</th><th colspan="2" style="text-align:center;border-left:1px solid #eef1f4">BDR-Velocity</th></tr><tr><th style="text-align:right;border-left:1px solid #eef1f4">% of sends</th><th style="text-align:right">Reply rate</th><th style="text-align:right;border-left:1px solid #eef1f4">% of sends</th><th style="text-align:right">Reply rate</th></tr>
+<tr><td class="mono">peer_proof</td><td class="num" style="border-left:1px solid #f3f4f6">40%</td><td class="num">1.24%</td><td class="num up" style="border-left:1px solid #f3f4f6">7%</td><td class="num">0.76%</td></tr>
+<tr><td class="mono">risk_trust</td><td class="num" style="border-left:1px solid #f3f4f6"><span class="ci">not used</span></td><td class="num">&mdash;</td><td class="num down" style="border-left:1px solid #f3f4f6">28%</td><td class="num">0.24%</td></tr>
+<tr><td class="mono">cost_of_inaction</td><td class="num" style="border-left:1px solid #f3f4f6"><span class="ci">not used</span></td><td class="num">&mdash;</td><td class="num down" style="border-left:1px solid #f3f4f6">12%</td><td class="num">0.29%</td></tr>
+<tr><td class="mono">other</td><td class="num" style="border-left:1px solid #f3f4f6"><span class="ci">not used</span></td><td class="num">&mdash;</td><td class="num down" style="border-left:1px solid #f3f4f6">2%</td><td class="num">0.00%</td></tr>
+</table>
+</div></div>
+<div class="ev">BDR-Strategic [1.22-2.04] n=3,603; BDR-Velocity [0.52-0.86] n=8,952; standardised 0.87%</div>
+</div>
+<div class="ins defect">
+<div class="top">
+<div class="rank">3</div><div style="flex:1">
+<h3>890 emails shipped with unfinished copy across 11 templates</h3>
+<p class="why">2 with an unfinished subject line and 9 with rep-facing instructions left in the body. These are subjects that are literally a variable name, notes written for the rep, or an empty subject. Valid merge fields that render at send time are not counted.</p>
+<div class="do"><b>Do:</b> Fix the templates. No analysis or volume threshold needed, and this is the only item on the page that needs no judgement call.</div>
+</div></div>
+<div class="ev">&quot;*Insert their practice area as s&quot; 250 sends; &quot;Depositions, in minutes&quot; 175 sends; &quot;Depositions, in minutes&quot; 125 sends</div>
+</div>
+<h2>Rewrite queue</h2>
+<p class="sub">Live emails replying below other emails at the same step position, ranked by how many replies the gap is costing. Needs 500+ sends to appear. Broken templates are in Defects below, not here.</p>
+<div class="card" style="margin-bottom:12px">
+<div style="display:flex;gap:12px;align-items:baseline"><span class="ci" style="font-size:15px;font-weight:800">1</span><div style="flex:1"><div style="font-size:15px;font-weight:800;margin-bottom:2px"><span class="mono" style="font-size:14px">Your practice</span></div><p class="sub" style="margin:0 0 10px">BDR - Velocity - AQL / NMQL - en-US - CNV &middot; step 2 &middot; theme <span class="mono">workflow_shift</span> &middot; 3,687 sends</p></div><span class="tag t-conf">Same framing, better execution</span></div>
+<table style="margin:0 0 10px"><tr><th style="text-align:right">This email</th><th style="text-align:right">Others at this step</th><th style="text-align:right">Replies lost</th><th>Certainty</th></tr>
+<tr><td class="num down">0.81%<div class="ci">0.57&ndash;1.16</div></td><td class="num">1.22%</td><td class="num">15</td><td><span class="tag t-find">clear gap</span></td></tr></table>
+<p class="sub" style="margin:0 0 8px"><b>Why it is flagged:</b> Replies at 0.81% while other BDR emails at early (1-2) steps reply at 1.22%. The interval [0.57-1.16] sits entirely below that, so the gap is real.</p>
+<div class="do"><b>Which direction:</b> Keep the workflow_shift framing, it is the best available at this step. The problem is execution: a sibling email in the same theme replies at 3.38%. Model this on it. Different cadence, so check the audience is comparable before copying wholesale.</div>
+<p class="sub" style="margin:8px 0 0"><b>Model it on:</b> <span class="mono">What&#x27;s changed</span> &mdash; 3.38%, BDR - Strategic - OB - CL INTENT - en-US - CNV</p>
+</div>
+<div class="card" style="margin-bottom:12px">
+<div style="display:flex;gap:12px;align-items:baseline"><span class="ci" style="font-size:15px;font-weight:800">2</span><div style="flex:1"><div style="font-size:15px;font-weight:800;margin-bottom:2px"><span class="mono" style="font-size:14px">Your Clio trial</span></div><p class="sub" style="margin:0 0 10px">SDR - MANAGE TRIAL - en-US - CNV - TRIALON &middot; step 2: A &middot; theme <span class="mono">inbound_ack</span> &middot; 1,121 sends</p></div><span class="tag t-conf">Same framing, better execution</span></div>
+<table style="margin:0 0 10px"><tr><th style="text-align:right">This email</th><th style="text-align:right">Others at this step</th><th style="text-align:right">Replies lost</th><th>Certainty</th></tr>
+<tr><td class="num down">5.35%<div class="ci">4.18&ndash;6.83</div></td><td class="num">6.57%</td><td class="num">14</td><td><span class="tag t-hyp">tentative</span></td></tr></table>
+<p class="sub" style="margin:0 0 8px"><b>Why it is flagged:</b> Replies at 5.35% while other SDR emails at early (1-2) steps reply at 6.57%. The interval [4.18-6.83] overlaps it, so treat this as a lead rather than a conclusion.</p>
+<div class="do"><b>Which direction:</b> Keep the inbound_ack framing, it is the best available at this step. The problem is execution: a sibling email in the same theme replies at 10.80%. Model this on it. Different cadence, so check the audience is comparable before copying wholesale.</div>
+<p class="sub" style="margin:8px 0 0"><b>Model it on:</b> <span class="mono">Your demo request</span> &mdash; 10.80%, SDR - DEMO-REQ-WEBINAR - en-US - CNV - PREDEMO</p>
+</div>
+<div class="card" style="margin-bottom:12px">
+<div style="display:flex;gap:12px;align-items:baseline"><span class="ci" style="font-size:15px;font-weight:800">3</span><div style="flex:1"><div style="font-size:15px;font-weight:800;margin-bottom:2px"><span class="mono" style="font-size:14px">Client confidentiality</span></div><p class="sub" style="margin:0 0 10px">BDR - Velocity - AQL / NMQL - en-US - CNV &middot; step 4 &middot; theme <span class="mono">risk_trust</span> &middot; 2,374 sends</p></div><span class="tag t-find">Change the framing</span></div>
+<table style="margin:0 0 10px"><tr><th style="text-align:right">This email</th><th style="text-align:right">Others at this step</th><th style="text-align:right">Replies lost</th><th>Certainty</th></tr>
+<tr><td class="num down">0.25%<div class="ci">0.12&ndash;0.55</div></td><td class="num">0.59%</td><td class="num">8</td><td><span class="tag t-find">clear gap</span></td></tr></table>
+<p class="sub" style="margin:0 0 8px"><b>Why it is flagged:</b> Replies at 0.25% while other BDR emails at mid (3-6) steps reply at 0.59%. The interval [0.12-0.55] sits entirely below that, so the gap is real.</p>
+<div class="do"><b>Which direction:</b> Switch the framing from risk_trust to peer_proof, which replies at 1.43% at this step position across 4 cadences.</div>
+<p class="sub" style="margin:8px 0 0"><b>Model it on:</b> <span class="mono">Firms your size</span> &mdash; 2.25%, BDR - Strategic - NMQL - en-US - CNV</p>
+</div>
+<div class="card" style="margin-bottom:12px">
+<div style="display:flex;gap:12px;align-items:baseline"><span class="ci" style="font-size:15px;font-weight:800">4</span><div style="flex:1"><div style="font-size:15px;font-weight:800;margin-bottom:2px"><span class="mono" style="font-size:14px">RE: your demo</span></div><p class="sub" style="margin:0 0 10px">SDR - DEMO-REQ - en-US - CNV - PREDEMO &middot; step 6 &middot; theme <span class="mono">logistics_followup</span> &middot; 536 sends</p></div><span class="tag t-hyp">No clear direction</span></div>
+<table style="margin:0 0 10px"><tr><th style="text-align:right">This email</th><th style="text-align:right">Others at this step</th><th style="text-align:right">Replies lost</th><th>Certainty</th></tr>
+<tr><td class="num down">5.78%<div class="ci">4.10&ndash;8.09</div></td><td class="num">6.53%</td><td class="num">4</td><td><span class="tag t-hyp">tentative</span></td></tr></table>
+<p class="sub" style="margin:0 0 8px"><b>Why it is flagged:</b> Replies at 5.78% while other SDR emails at mid (3-6) steps reply at 6.53%. The interval [4.10-8.09] overlaps it, so treat this as a lead rather than a conclusion.</p>
+<div class="do"><b>Which direction:</b> No better theme and no clearly better sibling at this step position, so there is no data-backed direction. Worth an A/B test rather than a rewrite on instinct.</div>
+</div>
+<div class="card" style="margin-bottom:12px">
+<div style="display:flex;gap:12px;align-items:baseline"><span class="ci" style="font-size:15px;font-weight:800">5</span><div style="flex:1"><div style="font-size:15px;font-weight:800;margin-bottom:2px"><span class="mono" style="font-size:14px">Passed on it</span></div><p class="sub" style="margin:0 0 10px">BDR - Velocity - AQL / NMQL - en-US - CNV &middot; step 9 &middot; theme <span class="mono">peer_proof</span> &middot; 656 sends</p></div><span class="tag t-hyp">No clear direction</span></div>
+<table style="margin:0 0 10px"><tr><th style="text-align:right">This email</th><th style="text-align:right">Others at this step</th><th style="text-align:right">Replies lost</th><th>Certainty</th></tr>
+<tr><td class="num down">0.76%<div class="ci">0.33&ndash;1.77</div></td><td class="num">0.81%</td><td class="num">0</td><td><span class="tag t-hyp">tentative</span></td></tr></table>
+<p class="sub" style="margin:0 0 8px"><b>Why it is flagged:</b> Replies at 0.76% while other BDR emails at late (7+) steps reply at 0.81%. The interval [0.33-1.77] overlaps it, so treat this as a lead rather than a conclusion.</p>
+<div class="do"><b>Which direction:</b> No better theme and no clearly better sibling at this step position, so there is no data-backed direction. Worth an A/B test rather than a rewrite on instinct.</div>
+</div>
+<h2>Defects</h2>
+<p class="sub">Copy that reached prospects as something other than a finished message. No volume floor applies, these are bugs rather than performance. Valid merge fields such as <span class="mono">{{first_name}}</span> are excluded because they render correctly at send time.</p>
+<table><tr><th>Subject as sent</th><th>Problem</th><th>Cadence</th><th>Step</th><th style="text-align:right">Sends</th><th style="text-align:right">Replies lost</th></tr>
+<tr><td class="mono">*Insert their practice area as subject* (Exs: Estate pla</td><td>rep instruction as subject</td><td>BDR - Velocity - Outbound - en-US - CNV</td><td>2</td><td class="num">250</td><td class="num">0</td></tr>
+<tr><td class="mono">Depositions, in minutes</td><td>rep instruction in body</td><td>BDR - Strategic - AQLs Excl Draft  - en-US - CNV</td><td>9</td><td class="num">175</td><td class="num">0</td></tr>
+<tr><td class="mono">Depositions, in minutes</td><td>rep instruction in body</td><td>BDR - Strategic - WebSights INTENT - en-US - CNV</td><td>9</td><td class="num">125</td><td class="num">1</td></tr>
+<tr><td class="mono">{{account_name_or_company}}</td><td>rep instruction in body</td><td>SDR - MANAGE TRIAL - en-US - CNV - TRIALON</td><td>19</td><td class="num">105</td><td class="num">3</td></tr>
+<tr><td class="mono">Firms your size</td><td>rep instruction in body</td><td>BDR - Strategic - NMQL - en-US - CNV</td><td>9</td><td class="num">101</td><td class="num">0</td></tr>
+<tr><td class="mono">Depositions, in minutes</td><td>rep instruction in body</td><td>BDR - Strategic - OB - CL INTENT - en-US - CNV</td><td>9</td><td class="num">87</td><td class="num">1</td></tr>
+<tr><td class="mono">{{account_name_or_company}}</td><td>rep instruction in body</td><td>SDR - DEMO-REQ - en-US - CNV - PREDEMO</td><td>24</td><td class="num">20</td><td class="num">1</td></tr>
+<tr><td class="mono">{{account_name_or_company}}</td><td>rep instruction in body</td><td>SDR - WEB-PRICING-en-US-CNV</td><td>14</td><td class="num">16</td><td class="num">0</td></tr>
+<tr><td class="mono">{{account_name_or_company}}</td><td>rep instruction in body</td><td>SDR - Software Advice -en-US-CNV</td><td>14</td><td class="num">5</td><td class="num">0</td></tr>
+<tr><td class="mono">Firms your size</td><td>rep instruction in body</td><td>BDR - Strategic - OB - NMQL INTENT - en-US - CNV</td><td>9</td><td class="num">4</td><td class="num">0</td></tr>
+<tr><td class="mono"><i>(empty subject)</i></td><td>empty subject</td><td>SDR - DEMO-REQ - en-US - CNV - PREDEMO</td><td>3: B</td><td class="num">2</td><td class="num">0</td></tr>
+</table>
+<h2>Supporting detail</h2>
+<p class="sub">The tables behind the insights above. Open these when you want to check a number or brief someone who will.</p>
+<details><summary>Reply rate by segment and step position</summary>
+<p class="sub">A segment needs 30+ replies for theme and feature analysis. Below that it gets subject lines and defects only, because a general claim off a handful of replies is not a claim.</p>
+<table><tr><th>Segment</th><th style="text-align:right">Reply</th><th>95% CI</th><th style="text-align:right">Sends</th><th style="text-align:right">Replies</th><th>Relative</th><th style="text-align:right">Steps</th><th style="text-align:right">Cadences</th><th>Depth</th></tr>
+<tr><td>BDR-Velocity</td><td class="num">0.67%</td><td class="ci">0.52&ndash;0.86</td><td class="num">8,952</td><td class="num">60</td><td><div class="bar"><span style="width:13%"></span></div></td><td class="num">10</td><td class="num">4</td><td class="ci">full</td></tr>
+<tr><td>SDR</td><td class="num">5.22%</td><td class="ci">4.75&ndash;5.73</td><td class="num">7,988</td><td class="num">417</td><td><div class="bar"><span style="width:100%"></span></div></td><td class="num">22</td><td class="num">5</td><td class="ci">full</td></tr>
+<tr><td>BDR-Strategic</td><td class="num">1.58%</td><td class="ci">1.22&ndash;2.04</td><td class="num">3,603</td><td class="num">57</td><td><div class="bar"><span style="width:30%"></span></div></td><td class="num">13</td><td class="num">4</td><td class="ci">full</td></tr>
+</table>
+<h3>BDR-Velocity</h3>
+<table><tr><th>Band</th><th style="text-align:right">Reply</th><th>95% CI</th><th style="text-align:right">Sends</th><th style="text-align:right">Replies</th><th style="text-align:right">Open (untrusted)</th><th style="text-align:right">Bounce</th></tr>
+<tr><td>early (1-2)</td><td class="num">0.97%</td><td class="ci">0.73&ndash;1.29</td><td class="num">4,752</td><td class="num">46</td><td class="num ci">30.1%</td><td class="num">4.5%</td></tr>
+<tr><td>mid (3-6)</td><td class="num">0.27%</td><td class="ci">0.14&ndash;0.54</td><td class="num">2,915</td><td class="num">8</td><td class="num ci">34.1%</td><td class="num">0.3%</td></tr>
+<tr><td>late (7+)</td><td class="num">0.47%</td><td class="ci">0.21&ndash;1.01</td><td class="num">1,285</td><td class="num">6</td><td class="num ci">32.5%</td><td class="num">0.2%</td></tr>
+</table>
+<h3>SDR</h3>
+<table><tr><th>Band</th><th style="text-align:right">Reply</th><th>95% CI</th><th style="text-align:right">Sends</th><th style="text-align:right">Replies</th><th style="text-align:right">Open (untrusted)</th><th style="text-align:right">Bounce</th></tr>
+<tr><td>early (1-2)</td><td class="num">6.57%</td><td class="ci">5.59&ndash;7.70</td><td class="num">2,131</td><td class="num">140</td><td class="num ci">45.9%</td><td class="num">2.0%</td></tr>
+<tr><td>mid (3-6)</td><td class="num">6.68%</td><td class="ci">5.79&ndash;7.69</td><td class="num">2,680</td><td class="num">179</td><td class="num ci">38.3%</td><td class="num">1.7%</td></tr>
+<tr><td>late (7+)</td><td class="num">3.08%</td><td class="ci">2.54&ndash;3.75</td><td class="num">3,177</td><td class="num">98</td><td class="num ci">35.0%</td><td class="num">0.4%</td></tr>
+</table>
+<h3>BDR-Strategic</h3>
+<table><tr><th>Band</th><th style="text-align:right">Reply</th><th>95% CI</th><th style="text-align:right">Sends</th><th style="text-align:right">Replies</th><th style="text-align:right">Open (untrusted)</th><th style="text-align:right">Bounce</th></tr>
+<tr><td>early (1-2)</td><td class="num">1.94%</td><td class="ci">1.39&ndash;2.69</td><td class="num">1,755</td><td class="num">34</td><td class="num ci">34.7%</td><td class="num">6.0%</td></tr>
+<tr><td>mid (3-6)</td><td class="num">1.43%</td><td class="ci">0.89&ndash;2.28</td><td class="num">1,190</td><td class="num">17</td><td class="num ci">33.5%</td><td class="num">1.3%</td></tr>
+<tr><td>late (7+)</td><td class="num">0.91%</td><td class="ci">0.42&ndash;1.98</td><td class="num">658</td><td class="num">6</td><td class="num ci">29.2%</td><td class="num">1.1%</td></tr>
+</table>
+</details>
+<details><summary>What each segment&rsquo;s emails are actually made of</summary>
+<p class="sub">Share of each segment&rsquo;s send volume by theme, with the reply rate that theme earns inside that segment. This is the table to open when someone asks what the better segment does differently.</p>
+<table><tr><th>Theme</th><th style="text-align:right">BDR-Velocity</th><th style="text-align:right">SDR</th><th style="text-align:right">BDR-Strategic</th></tr>
+<tr><td class="mono">workflow_shift</td><td class="num">48%<div class="ci">0.95% reply</div></td><td class="num ci">&mdash;</td><td class="num">49%<div class="ci">1.94% reply</div></td></tr>
+<tr><td class="mono">inbound_ack</td><td class="num ci">&mdash;</td><td class="num">39%<div class="ci">7.19% reply</div></td><td class="num ci">&mdash;</td></tr>
+<tr><td class="mono">risk_trust</td><td class="num">28%<div class="ci">0.24% reply</div></td><td class="num ci">&mdash;</td><td class="num ci">&mdash;</td></tr>
+<tr><td class="mono">peer_proof</td><td class="num">7%<div class="ci">0.76% reply</div></td><td class="num ci">&mdash;</td><td class="num">40%<div class="ci">1.24% reply</div></td></tr>
+<tr><td class="mono">cost_of_inaction</td><td class="num">12%<div class="ci">0.29% reply</div></td><td class="num">6%<div class="ci">1.27% reply</div></td><td class="num ci">&mdash;</td></tr>
+<tr><td class="mono">logistics_followup</td><td class="num ci">&mdash;</td><td class="num">18%<div class="ci">4.88% reply</div></td><td class="num ci">&mdash;</td></tr>
+<tr><td class="mono">soft_close</td><td class="num ci">&mdash;</td><td class="num">13%<div class="ci">4.88% reply</div></td><td class="num ci">&mdash;</td></tr>
+<tr><td class="mono">status_menu</td><td class="num ci">&mdash;</td><td class="num">12%<div class="ci">4.58% reply</div></td><td class="num ci">&mdash;</td></tr>
+<tr><td class="mono">check_in</td><td class="num ci">&mdash;</td><td class="num">12%<div class="ci">2.79% reply</div></td><td class="num ci">&mdash;</td></tr>
+<tr><td class="mono">defect</td><td class="num">3%<div class="ci">2.00% reply</div></td><td class="num">1%<div class="ci">0.00% reply</div></td><td class="num">8%<div class="ci">1.33% reply</div></td></tr>
+<tr><td class="mono">other</td><td class="num">2%<div class="ci">0.00% reply</div></td><td class="num ci">&mdash;</td><td class="num ci">&mdash;</td></tr>
+<tr><td class="mono">unlabeled</td><td class="num ci">&mdash;</td><td class="num ci">&mdash;</td><td class="num">3%<div class="ci">0.99% reply</div></td></tr>
+</table>
+<p class="sub">Read down a column to see a segment&rsquo;s composition; read across a row to see who leans on that theme. A theme absent from a segment shows a dash.</p>
+</details>
+<details><summary>Every theme, by model and step position</summary>
+<p class="sub">Themes are only ever compared inside a step band, because position beats copy. A theme with 90%+ of its sends in one band is POSITION-LOCKED: its effect cannot be separated from its position at any volume.</p>
+<h3>BDR &mdash; 0.90% overall (107 replies / 11,904 sends)</h3>
+<p class="sub" style="margin:14px 0 4px"><b>early (1-2)</b> &middot; band baseline 1.20% (75 / 6,257)</p>
+<table><tr><th>Theme</th><th style="text-align:right">Reply</th><th>95% CI</th><th style="text-align:right">Sends</th><th style="text-align:right">Replies</th><th style="text-align:right">vs band</th><th style="text-align:right">Cadences</th><th>Status</th></tr>
+<tr><td class="mono">workflow_shift</td><td class="num">1.24%</td><td class="ci">0.99&ndash;1.55</td><td class="num">6,051</td><td class="num">75</td><td class="num up">+0.04pp</td><td class="num">6</td><td><span class="tag t-hyp">HYPOTHESIS</span></td></tr>
+<tr><td class="mono">cost_of_inaction</td><td class="num">0.00%</td><td class="ci">0.00&ndash;1.83</td><td class="num">206</td><td class="num">0</td><td class="num down">-1.20pp</td><td class="num">1</td><td><span class="tag t-conf">CONFOUNDED</span></td></tr>
+</table>
+<p class="sub" style="margin:14px 0 4px"><b>mid (3-6)</b> &middot; band baseline 0.61% (25 / 4,105)</p>
+<table><tr><th>Theme</th><th style="text-align:right">Reply</th><th>95% CI</th><th style="text-align:right">Sends</th><th style="text-align:right">Replies</th><th style="text-align:right">vs band</th><th style="text-align:right">Cadences</th><th>Status</th></tr>
+<tr><td class="mono">peer_proof</td><td class="num">1.43%</td><td class="ci">0.89&ndash;2.28</td><td class="num">1,190</td><td class="num">17</td><td class="num up">+0.82pp</td><td class="num">4</td><td><span class="tag t-find">FINDING</span></td></tr>
+<tr><td class="mono">cost_of_inaction</td><td class="num">0.53%</td><td class="ci">0.14&ndash;1.90</td><td class="num">380</td><td class="num">2</td><td class="num down">-0.08pp</td><td class="num">1</td><td><span class="tag t-conf">CONFOUNDED</span></td></tr>
+<tr><td class="mono">risk_trust</td><td class="num">0.24%</td><td class="ci">0.11&ndash;0.52</td><td class="num">2,535</td><td class="num">6</td><td class="num down">-0.37pp</td><td class="num">2</td><td><span class="tag t-conf">CONFOUNDED</span></td></tr>
+</table>
+<p class="sub" style="margin:14px 0 4px"><b>late (7+)</b> &middot; band baseline 0.45% (7 / 1,542)</p>
+<table><tr><th>Theme</th><th style="text-align:right">Reply</th><th>95% CI</th><th style="text-align:right">Sends</th><th style="text-align:right">Replies</th><th style="text-align:right">vs band</th><th style="text-align:right">Cadences</th><th>Status</th></tr>
+<tr><td class="mono">peer_proof</td><td class="num">0.66%</td><td class="ci">0.30&ndash;1.43</td><td class="num">913</td><td class="num">6</td><td class="num up">+0.20pp</td><td class="num">3</td><td><span class="tag t-hyp">HYPOTHESIS</span></td></tr>
+<tr><td class="mono">cost_of_inaction</td><td class="num">0.23%</td><td class="ci">0.04&ndash;1.27</td><td class="num">443</td><td class="num">1</td><td class="num down">-0.23pp</td><td class="num">1</td><td><span class="tag t-conf">CONFOUNDED</span></td></tr>
+</table>
+<h3>SDR &mdash; 5.29% overall (417 replies / 7,883 sends)</h3>
+<p class="sub" style="margin:14px 0 4px"><b>early (1-2)</b> &middot; band baseline 6.57% (140 / 2,131)</p>
+<table><tr><th>Theme</th><th style="text-align:right">Reply</th><th>95% CI</th><th style="text-align:right">Sends</th><th style="text-align:right">Replies</th><th style="text-align:right">vs band</th><th style="text-align:right">Cadences</th><th>Status</th></tr>
+<tr><td class="mono">inbound_ack</td><td class="num">6.57%</td><td class="ci">5.59&ndash;7.70</td><td class="num">2,131</td><td class="num">140</td><td class="num ">+0.00pp</td><td class="num">4</td><td><span class="tag t-hyp">HYPOTHESIS</span></td></tr>
+</table>
+<p class="sub" style="margin:14px 0 4px"><b>mid (3-6)</b> &middot; band baseline 6.68% (179 / 2,680)</p>
+<table><tr><th>Theme</th><th style="text-align:right">Reply</th><th>95% CI</th><th style="text-align:right">Sends</th><th style="text-align:right">Replies</th><th style="text-align:right">vs band</th><th style="text-align:right">Cadences</th><th>Status</th></tr>
+<tr><td class="mono">soft_close</td><td class="num">9.72%</td><td class="ci">6.81&ndash;13.69</td><td class="num">288</td><td class="num">28</td><td class="num up">+3.04pp</td><td class="num">1</td><td><span class="tag t-conf">CONFOUNDED</span></td></tr>
+<tr><td class="mono">inbound_ack</td><td class="num">8.56%</td><td class="ci">6.96&ndash;10.48</td><td class="num">970</td><td class="num">83</td><td class="num up">+1.88pp</td><td class="num">1</td><td><span class="tag t-conf">CONFOUNDED</span></td></tr>
+<tr><td class="mono">logistics_followup</td><td class="num">5.91%</td><td class="ci">4.56&ndash;7.63</td><td class="num">914</td><td class="num">54</td><td class="num down">-0.77pp</td><td class="num">3</td><td><span class="tag t-hyp">HYPOTHESIS</span></td></tr>
+<tr><td class="mono">cost_of_inaction</td><td class="num">1.49%</td><td class="ci">0.64&ndash;3.45</td><td class="num">335</td><td class="num">5</td><td class="num down">-5.19pp</td><td class="num">1</td><td><span class="tag t-conf">CONFOUNDED</span></td></tr>
+</table>
+<p class="sub" style="margin:14px 0 4px"><b>late (7+)</b> &middot; band baseline 3.19% (98 / 3,072)</p>
+<table><tr><th>Theme</th><th style="text-align:right">Reply</th><th>95% CI</th><th style="text-align:right">Sends</th><th style="text-align:right">Replies</th><th style="text-align:right">vs band</th><th style="text-align:right">Cadences</th><th>Status</th></tr>
+<tr><td class="mono">status_menu</td><td class="num">4.44%</td><td class="ci">3.19&ndash;6.14</td><td class="num">766</td><td class="num">34</td><td class="num up">+1.25pp</td><td class="num">2</td><td><span class="tag t-conf">CONFOUNDED</span></td></tr>
+<tr><td class="mono">logistics_followup</td><td class="num">3.08%</td><td class="ci">1.91&ndash;4.95</td><td class="num">519</td><td class="num">16</td><td class="num down">-0.11pp</td><td class="num">1</td><td><span class="tag t-conf">CONFOUNDED</span></td></tr>
+<tr><td class="mono">soft_close</td><td class="num">2.93%</td><td class="ci">1.93&ndash;4.44</td><td class="num">716</td><td class="num">21</td><td class="num down">-0.26pp</td><td class="num">3</td><td><span class="tag t-hyp">HYPOTHESIS</span></td></tr>
+<tr><td class="mono">check_in</td><td class="num">2.79%</td><td class="ci">1.91&ndash;4.06</td><td class="num">932</td><td class="num">26</td><td class="num down">-0.40pp</td><td class="num">1</td><td><span class="tag t-conf">CONFOUNDED</span></td></tr>
+</table>
+</details>
+<details><summary>Checked and rejected &mdash; things that looked like findings and were not</summary>
+<p class="sub">Shown deliberately. These are the patterns the analysis threw out, which is what makes the insights above trustworthy.</p>
+<div class="note">
+<p style="margin:0 0 8px"><b>4 position-locked theme cells.</b> A pooled theme rate here is the step-position gradient, not the theme. BDR <span class="mono">workflow_shift</span> (100% in one band), BDR <span class="mono">risk_trust</span> (100% in one band), BDR <span class="mono">other</span> (100% in one band), SDR <span class="mono">check_in</span> (100% in one band).</p>
+<p style="margin:0 0 8px"><b>Features that reverse direction between bands.</b> BDR <span class="mono">body_word_band</span>: different values win in different bands ([&#x27;40-59w&#x27;, &#x27;60-79w&#x27;]). No single direction holds across step positions.</p>
+<p style="margin:0"><b>15 feature cells drawn from fewer than 3 cadences</b>, so they measure cadence identity rather than the feature. Suppressed.</p>
+</div>
+</details>
+<details><summary>Templates needing a theme label (1)</summary>
+<p class="sub">Not yet in template_themes.json, so excluded from theme analysis rather than guessed at.</p>
+<table><tr><th>Template ID</th><th>Subject</th><th style="text-align:right">Sends</th><th style="text-align:right">Replies</th></tr>
+<tr><td class="mono">359457937</td><td class="mono">Firms your size</td><td class="num">101</td><td class="num">1</td></tr>
+</table></details>
+<p class="foot">Reply rate is the outcome throughout. Open rate is shown for context and never used for a claim: Apple Mail Privacy Protection and scanner prefetch inflate views non-uniformly, which biases comparisons rather than merely adding noise. BDR and SDR are never pooled. Every rate carries a 95% Wilson interval. Floors: 100 sends for a step to enter the pool, 500 sends and 3+ cadences for a cell to be a finding, 500 sends for rewrite advice. All findings are correlational: reps choose which copy goes to which audience, so copy is entangled with audience quality. Generated by generate_messaging_html.py from messaging_insights.json.</p>
+</div></body></html>
