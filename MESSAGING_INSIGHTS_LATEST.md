@@ -1,6 +1,6 @@
 # Messaging Insights — Latest Run
 
-Generated 2026-08-21T16:08:24 by `build_messaging_insights.py`. Reply rate is the outcome; open rate is shown but never used for a claim.
+Generated 2026-08-21T17:37:20 by `build_messaging_insights.py`. Reply rate is the outcome; open rate is shown but never used for a claim.
 
 Scope: 15 cadences, 102 email steps with sends, 45 in the analysis pool. 22,094 sends, 557 replies, 467 bounces.
 
