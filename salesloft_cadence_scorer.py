@@ -1538,6 +1538,22 @@ def main():
         if i % 50 == 0 or i == len(ids):
             print(f"  {i}/{len(ids)} stats fetched…")
 
+    # ── Sanity check: Salesloft occasionally returns calls_count = 0 for every
+    # cadence in a run (seen 2026-08-29) while emails_sent/people_acted_on stay
+    # normal. Since connect_rate = connects / calls_count, a total calls_count
+    # of 0 across cadences with real activity silently zeroes every connect
+    # rate instead of erroring. That's not a real 0% connect rate — it's a
+    # missing field. Abort rather than publish it.
+    total_calls_count     = sum(int(s.get("calls_count") or 0) for s in stats.values())
+    total_people_acted_on = sum(int(s.get("people_acted_on_count") or 0) for s in stats.values())
+    if total_calls_count == 0 and total_people_acted_on > 0:
+        print("  [ERR] calls_count came back 0 for every cadence, but "
+              f"{total_people_acted_on:,} people were worked. This looks like a "
+              "Salesloft API gap on the calls_count field, not a real 0% connect "
+              "rate. Aborting this run instead of publishing bad connect_rate "
+              "data — rerun once calls_count is populated again.")
+        return 1
+
     # ── Phase 3: Connected calls — cumulative cache + weekly delta ───────────
     # We no longer stream all-time connected calls every run (≈1.4M records,
     # hours). build_connected_cache.py backfills an all-time per-cadence count
